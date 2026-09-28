@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+body {
+
+    background: linear-gradient(135deg, #ede9fe, #dbeafe);
+
+    color: #1e293b;
+
+    padding: 30px;
+
+}
+
+
+
+/* Header */
+
+header {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background:white;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+header h1 {
+
+    font-size:45px;
+
+    color:#4f46e5;
+
+}
+
+
+header h2 {
+
+    color:#7c3aed;
+
+    margin:10px 0;
+
+}
+
+
+
+/* All Sections */
+
+section {
+
+    max-width:900px;
+
+    margin:25px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+}
+
+
+h2 {
+
+    color:#4f46e5;
+
+    margin-bottom:20px;
+
+}
+
+
+h3 {
+
+    color:#9333ea;
+
+    margin-top:15px;
+
+}
+
+
+
+/* Profile Image */
+
+img {
+
+    display:block;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
+}
+
+
+
+/* Paragraph */
+
+p {
+
+    line-height:1.7;
+
+    font-size:17px;
+
+}
+
+
+
+/* Education Table */
+
+table {
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+th {
+
+    background:#4f46e5;
+
+    color:white;
+
+}
+
+
+td,th {
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+
+/* Skills */
+
+ul,ol {
+
+    padding-left:30px;
+
+}
+
+
+li {
+
+    margin:10px 0;
+
+}
+
+
+
+/* Work Experience */
+
+article {
+
+    background:#f5f3ff;
+
+    padding:20px;
+
+    margin:15px 0;
+
+    border-radius:12px;
+
+}
+
+
+
+/* Contact Form */
+
+form {
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:15px;
+
+}
+
+
+label {
+
+    font-weight:bold;
+
+}
+
+
+input,
+textarea {
+
+    width:100%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:8px;
+
+}
+
+
+
+button {
+
+    background:#4f46e5;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover {
+
+    background:#3730a3;
+
+}
+
+
+
+/* Footer */
+
+footer {
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:#1e293b;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+
+footer a {
+
+    color:#38bdf8;
+
+    text-decoration:none;
+
+    margin:10px;
+
+}

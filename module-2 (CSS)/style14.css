@@ -1,0 +1,265 @@
+/*
+=================================
+CSS Position Practice
+Topic: Static Relative Absolute
+Fixed Sticky
+=================================
+*/
+
+
+body{
+
+    font-family:Arial, sans-serif;
+
+    background:#f3f4f6;
+
+    padding:30px;
+
+}
+
+
+
+h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+}
+
+
+
+h2{
+
+    margin-top:35px;
+
+    color:#111827;
+
+}
+
+
+
+
+
+/*
+=========================
+RELATIVE POSITION
+
+Move element from
+its original position
+=========================
+*/
+
+
+.relative-box{
+
+
+    width:200px;
+
+    height:100px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding-top:40px;
+
+
+
+    position:relative;
+
+
+    left:50px;
+
+
+    top:20px;
+
+
+}
+
+
+
+
+
+
+
+
+/*
+=========================
+ABSOLUTE POSITION
+
+Child moves according
+to parent
+=========================
+*/
+
+
+.card{
+
+
+    width:300px;
+
+
+    height:250px;
+
+
+    background:white;
+
+
+    position:relative;
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+
+.card img{
+
+
+    width:100%;
+
+    height:100%;
+
+
+}
+
+
+
+.card span{
+
+
+    position:absolute;
+
+
+    top:15px;
+
+
+    right:15px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    padding:10px;
+
+
+    border-radius:5px;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+FIXED POSITION
+
+Always stays on screen
+=========================
+*/
+
+
+.chat-button{
+
+
+    position:fixed;
+
+
+    right:30px;
+
+
+    bottom:30px;
+
+
+
+    background:#16a34a;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:15px 25px;
+
+
+    border-radius:30px;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+STICKY POSITION
+
+Stays at top during scroll
+=========================
+*/
+
+
+.sticky-menu{
+
+
+    position:sticky;
+
+
+    top:0;
+
+
+    background:#111827;
+
+
+    color:white;
+
+
+    padding:20px;
+
+
+    margin-top:40px;
+
+
+}
+
+
+
+
+
+
+
+.content{
+
+
+    background:white;
+
+
+    padding:30px;
+
+
+    line-height:1.8;
+
+
+}

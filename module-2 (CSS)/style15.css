@@ -1,0 +1,415 @@
+/*
+=====================================
+15_CSS_Z_Index_Stacking_Order
+
+Full Stack MERN Developer Practice
+
+=====================================
+*/
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+body{
+
+    background:#f3f4f6;
+
+    padding:30px;
+
+}
+
+
+
+
+
+/* =========================
+Navbar Layer Example
+========================= */
+
+
+.navbar{
+
+
+    background:#111827;
+
+    color:white;
+
+    padding:25px;
+
+
+    position:relative;
+
+
+    z-index:100;
+
+
+}
+
+
+
+.navbar h1{
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.navbar a{
+
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-right:20px;
+
+
+}
+
+
+
+
+
+/* =========================
+Profile Card
+========================= */
+
+
+.profile-card{
+
+
+    width:320px;
+
+
+    background:white;
+
+
+    padding:20px;
+
+
+    border-radius:15px;
+
+
+    position:relative;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+.profile-card img{
+
+
+    width:100%;
+
+
+    border-radius:15px;
+
+
+}
+
+
+
+.profile-details{
+
+
+    padding-top:15px;
+
+
+}
+
+
+
+
+
+/*
+Badge appears above image
+
+Higher z-index = top layer
+
+*/
+
+
+.online-badge{
+
+
+    position:absolute;
+
+
+    top:30px;
+
+
+    right:30px;
+
+
+    background:#16a34a;
+
+
+    color:white;
+
+
+    padding:8px 15px;
+
+
+    border-radius:20px;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+Stacking Order Practice
+========================= */
+
+
+.layer-container{
+
+
+    position:relative;
+
+
+    height:300px;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+.layer{
+
+
+    width:220px;
+
+
+    height:120px;
+
+
+    color:white;
+
+
+    padding:35px;
+
+
+    position:absolute;
+
+
+    border-radius:10px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+.backend-layer{
+
+
+    background:#2563eb;
+
+
+    top:20px;
+
+
+    left:20px;
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+.frontend-layer{
+
+
+    background:#dc2626;
+
+
+    top:60px;
+
+
+    left:80px;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.popup-layer{
+
+
+    background:#16a34a;
+
+
+    top:100px;
+
+
+    left:140px;
+
+
+    z-index:3;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+Modal Popup
+
+Above normal content
+========================= */
+
+
+.modal{
+
+
+    width:350px;
+
+
+    background:white;
+
+
+    padding:30px;
+
+
+    margin-top:40px;
+
+
+    border-radius:15px;
+
+
+    box-shadow:0 10px 30px gray;
+
+
+    position:relative;
+
+
+    z-index:50;
+
+
+}
+
+
+
+.modal button{
+
+
+    margin-top:15px;
+
+
+    padding:10px 20px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    border-radius:5px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+Fixed Chat Button
+
+Real website feature
+========================= */
+
+
+.chat-button{
+
+
+    position:fixed;
+
+
+    right:30px;
+
+
+    bottom:30px;
+
+
+    width:60px;
+
+
+    height:60px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+    background:#16a34a;
+
+
+    color:white;
+
+
+    font-weight:bold;
+
+
+    z-index:200;
+
+
+}

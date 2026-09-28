@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Cursor Pointer Events User Select Tailwind
+</title>
+
+
+<link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+
+
+<body class="bg-gray-100 p-8">
+
+
+
+<div class="max-w-6xl mx-auto">
+
+
+
+<!-- Page Header -->
+
+<div class="text-center mb-12">
+
+
+<h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
+
+Cursor, Pointer Events & User Select
+
+</h1>
+
+
+<p class="text-gray-600 text-lg">
+
+Control mouse behavior and text selection using Tailwind CSS.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Cursor Section -->
+
+<section class="bg-white p-8 rounded-2xl shadow-xl mb-10">
+
+
+<h2 class="text-3xl font-bold mb-6">
+
+1. Cursor Styles
+
+</h2>
+
+
+
+
+<div class="grid md:grid-cols-3 gap-6">
+
+
+
+<!-- Pointer Cursor -->
+
+<div class="bg-blue-600 text-white p-6 rounded-xl cursor-pointer text-center">
+
+
+<p class="font-bold">
+
+cursor-pointer
+
+</p>
+
+
+<p class="mt-2">
+
+Hover mouse here
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Default Cursor -->
+
+<div class="bg-green-600 text-white p-6 rounded-xl cursor-default text-center">
+
+
+<p class="font-bold">
+
+cursor-default
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Not Allowed -->
+
+<div class="bg-red-600 text-white p-6 rounded-xl cursor-not-allowed text-center">
+
+
+<p class="font-bold">
+
+cursor-not-allowed
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Pointer Events Section -->
+
+<section class="bg-white p-8 rounded-2xl shadow-xl mb-10">
+
+
+<h2 class="text-3xl font-bold mb-6">
+
+2. Pointer Events
+
+</h2>
+
+
+
+<div class="grid md:grid-cols-2 gap-6">
+
+
+
+<!-- Active Button -->
+
+<button class="bg-blue-600 text-white p-5 rounded-xl cursor-pointer">
+
+Clickable Button
+
+</button>
+
+
+
+
+
+<!-- Disabled Click -->
+
+<button class="bg-gray-400 text-white p-5 rounded-xl pointer-events-none">
+
+Disabled Button
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- User Select Section -->
+
+<section class="bg-white p-8 rounded-2xl shadow-xl">
+
+
+<h2 class="text-3xl font-bold mb-6">
+
+3. User Select
+
+</h2>
+
+
+
+
+
+<div class="space-y-5">
+
+
+
+
+
+<!-- Selectable Text -->
+
+<div class="bg-blue-50 p-5 rounded-xl select-text">
+
+
+<p class="font-bold text-blue-600">
+
+select-text
+
+</p>
+
+
+<p>
+
+You can select this text with mouse.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Non Selectable Text -->
+
+<div class="bg-red-50 p-5 rounded-xl select-none">
+
+
+<p class="font-bold text-red-600">
+
+select-none
+
+</p>
+
+
+<p>
+
+This text cannot be selected.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- All Select -->
+
+<div class="bg-green-50 p-5 rounded-xl select-all">
+
+
+<p class="font-bold text-green-600">
+
+select-all
+
+</p>
+
+
+<p>
+
+Click once and all text will be selected.
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>
