@@ -7,8 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Smart Tech Store</title>
-    <link rel="stylesheet" href="style4.css">
+    <title>SmartTech Product Store</title>
+
 </head>
 
 
@@ -17,14 +17,16 @@
 
 <header>
 
-    <h1>Smart Tech Store</h1>
-
+    <h1>SmartTech Store</h1>
 
     <nav>
 
-        <a href="#">Home</a> |
-        <a href="#">Products</a> |
-        <a href="#">About</a> |
+        <a href="#">Home</a>
+
+        <a href="#">Products</a>
+
+        <a href="#">About</a>
+
         <a href="#">Contact</a>
 
     </nav>
@@ -38,36 +40,37 @@
 
 
 
+
 <section>
 
 
-<h2>Premium Smartphone</h2>
+    <h2>Premium Smartphone</h2>
 
 
-
-<img 
-src="phone.jpg"
-alt="Premium Smartphone"
-width="500"
->
+    <img 
+    src="https://via.placeholder.com/400x250"
+    alt="Smartphone Product Image"
+    >
 
 
-
-<h3>Galaxy S25 Ultra Smartphone</h3>
-
+    <h3>Galaxy Pro Ultra Smartphone</h3>
 
 
-<p>
-This premium smartphone provides powerful performance,
-large storage, advanced camera system and modern design.
-</p>
+    <p>
+
+        A powerful smartphone with advanced camera,
+        high performance processor and premium design.
+
+    </p>
 
 
-
-<h3>Price: $1200</h3>
+    <h2>
+        Price: $999
+    </h2>
 
 
 </section>
+
 
 
 
@@ -80,15 +83,15 @@ large storage, advanced camera system and modern design.
 
 <ul>
 
-<li>16GB RAM</li>
+    <li>12GB RAM</li>
 
-<li>1024GB Large Storage</li>
+    <li>512GB Storage</li>
 
-<li>Advanced Camera System</li>
+    <li>Advanced Camera System</li>
 
-<li>Powerful Processor</li>
+    <li>Fast Charging Support</li>
 
-<li>1 Year Warranty</li>
+    <li>One Year Warranty</li>
 
 
 </ul>
@@ -99,10 +102,12 @@ large storage, advanced camera system and modern design.
 
 
 
+
 <section>
 
 
-<h2>Product Information</h2>
+<h2>Product Specification</h2>
+
 
 
 <table border="1">
@@ -110,18 +115,9 @@ large storage, advanced camera system and modern design.
 
 <tr>
 
-<th>Feature</th>
+    <th>Feature</th>
 
-<th>Details</th>
-
-</tr>
-
-
-<tr>
-
-<td>Brand</td>
-
-<td>Samsung</td>
+    <th>Details</th>
 
 </tr>
 
@@ -129,19 +125,9 @@ large storage, advanced camera system and modern design.
 
 <tr>
 
-<td>Model</td>
+    <td>Brand</td>
 
-<td>Galaxy S25 Ultra</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>Storage</td>
-
-<td>1024GB</td>
+    <td>Samsung</td>
 
 </tr>
 
@@ -149,9 +135,9 @@ large storage, advanced camera system and modern design.
 
 <tr>
 
-<td>RAM</td>
+    <td>Model</td>
 
-<td>16GB</td>
+    <td>Galaxy Pro Ultra</td>
 
 </tr>
 
@@ -159,11 +145,32 @@ large storage, advanced camera system and modern design.
 
 <tr>
 
-<td>Warranty</td>
+    <td>RAM</td>
 
-<td>1 Year</td>
+    <td>12GB</td>
 
 </tr>
+
+
+
+<tr>
+
+    <td>Storage</td>
+
+    <td>512GB</td>
+
+</tr>
+
+
+
+<tr>
+
+    <td>Warranty</td>
+
+    <td>1 Year</td>
+
+</tr>
+
 
 
 </table>
@@ -175,14 +182,15 @@ large storage, advanced camera system and modern design.
 
 
 
+
 <section>
 
 
-<h2>Order Form</h2>
+<h2>Order Product</h2>
+
 
 
 <form>
-
 
 
 <label>
@@ -190,6 +198,7 @@ Full Name:
 </label>
 
 <br>
+
 
 <input 
 type="text"
@@ -201,13 +210,15 @@ placeholder="Enter your name"
 
 
 
+
 <label>
 Email:
 </label>
 
 <br>
 
-<input 
+
+<input
 type="email"
 placeholder="Enter your email"
 >
@@ -217,19 +228,24 @@ placeholder="Enter your email"
 
 
 
+
+
 <label>
 Phone Number:
 </label>
 
 <br>
 
-<input 
+
+<input
 type="tel"
 placeholder="Enter phone number"
 >
 
 
 <br><br>
+
+
 
 
 
@@ -243,7 +259,7 @@ Delivery Address:
 <textarea 
 rows="5"
 cols="30"
-placeholder="Enter your address">
+placeholder="Enter address">
 </textarea>
 
 
@@ -251,20 +267,6 @@ placeholder="Enter your address">
 <br><br>
 
 
-
-<label>
-Quantity:
-</label>
-
-
-<input 
-type="number"
-min="1"
->
-
-
-
-<br><br>
 
 
 
@@ -278,19 +280,25 @@ Select Color:
 
 
 <input type="radio" name="color">
+
 Black
 
 
 <input type="radio" name="color">
+
 Blue
 
 
 <input type="radio" name="color">
+
 Silver
 
 
 
 <br><br>
+
+
+
 
 
 
@@ -306,7 +314,7 @@ Payment Method:
 
 
 <option>
-Cash on Delivery
+Cash On Delivery
 </option>
 
 
@@ -328,50 +336,20 @@ Mobile Banking
 
 
 
+<button>
 
-<label>
-Accessories:
-</label>
+Place Order
 
-
-<br>
-
-
-<input type="checkbox">
-Charger
-
-
-<input type="checkbox">
-Cover
-
-
-<input type="checkbox">
-Screen Protector
-
-
-
-<br><br>
-
-
-
-<input 
-type="submit"
-value="Place Order"
->
-
-
-
-<input 
-type="reset"
-value="Reset"
->
+</button>
 
 
 
 </form>
 
 
+
 </section>
+
 
 
 
@@ -380,11 +358,14 @@ value="Reset"
 
 
 
+
 <footer>
 
 
 <p>
-Copyright © 2026 Smart Tech Store
+
+© 2026 SmartTech Store
+
 </p>
 
 
