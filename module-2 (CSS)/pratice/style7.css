@@ -1,0 +1,96 @@
+/*
+CSS Margin and Padding
+
+Margin = Outside Space
+Padding = Inside Space
+
+*/
+
+
+body {
+
+    background-color: lightgray;
+
+}
+
+
+
+/* Margin Example */
+
+.margin-box {
+
+
+    width: 300px;
+
+    height: 100px;
+
+
+    background-color: blue;
+
+    color: white;
+
+
+    text-align: center;
+
+
+    padding-top: 40px;
+
+
+    margin: 50px;
+
+
+}
+
+
+
+/* Padding Example */
+
+.padding-box {
+
+
+    width: 300px;
+
+
+    background-color: green;
+
+
+    color: white;
+
+
+    padding: 40px;
+
+
+    margin: 20px;
+
+
+}
+
+
+
+/* Both Margin and Padding */
+
+.box {
+
+
+    width: 300px;
+
+
+    height: 100px;
+
+
+    background-color: orange;
+
+
+    color: white;
+
+
+    text-align: center;
+
+
+    padding: 30px;
+
+
+    margin: 40px;
+
+
+}

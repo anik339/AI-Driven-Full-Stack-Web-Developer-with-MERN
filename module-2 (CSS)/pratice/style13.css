@@ -1,0 +1,199 @@
+/*
+=================================
+CSS Float and Clear Practice
+Topic: Float & Clear
+=================================
+*/
+
+
+body{
+
+    font-family:Arial, sans-serif;
+
+    background:#f3f4f6;
+
+    padding:30px;
+
+}
+
+
+
+h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:30px;
+
+}
+
+
+
+h2{
+
+    color:#111827;
+
+    margin-top:30px;
+
+}
+
+
+
+
+/*
+========================
+FLOAT PROPERTY
+
+Image moves left
+Text wraps beside image
+========================
+*/
+
+
+.profile-box{
+
+
+    width:700px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+
+}
+
+
+
+
+.profile-image{
+
+
+    width:150px;
+
+    height:150px;
+
+
+    border-radius:50%;
+
+
+    float:left;
+
+
+    margin-right:25px;
+
+
+}
+
+
+
+
+.profile-box p{
+
+
+    line-height:1.8;
+
+    color:#444;
+
+
+}
+
+
+
+
+
+/*
+========================
+CLEAR PROPERTY
+
+Stops float effect
+========================
+*/
+
+
+.clear-box{
+
+
+    clear:both;
+
+
+    width:700px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    padding:25px;
+
+
+    margin-top:40px;
+
+
+    border-radius:12px;
+
+
+}
+
+
+
+
+
+
+
+/*
+========================
+FLOAT CARD LAYOUT
+
+Three columns
+========================
+*/
+
+
+.skill-card{
+
+
+    width:180px;
+
+
+    background:#111827;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding:30px;
+
+
+    margin-right:20px;
+
+
+    float:left;
+
+
+    border-radius:10px;
+
+
+}
+
+
+
+/*
+Clear after floating cards
+*/
+
+
+.skill-card:last-child{
+
+
+    margin-right:0;
+
+
+}

@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+body {
+
+    background: linear-gradient(135deg, #0f172a, #1e40af);
+    padding: 40px;
+    color: white;
+
+}
+
+
+/* Heading */
+
+h1 {
+
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #38bdf8;
+
+}
+
+
+/* Form Container */
+
+form {
+
+    max-width: 650px;
+    margin: auto;
+
+    background: rgba(255,255,255,0.1);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+}
+
+
+/* Labels */
+
+label {
+
+    font-weight: 600;
+    color: #e0f2fe;
+
+}
+
+
+/* All Input */
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 8px;
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+/* Radio and Checkbox */
+
+input[type="radio"],
+input[type="checkbox"] {
+
+    width: auto;
+    margin: 8px;
+
+}
+
+
+/* Color Input */
+
+input[type="color"] {
+
+    height: 45px;
+    padding: 5px;
+
+}
+
+
+/* Range */
+
+input[type="range"] {
+
+    accent-color: #38bdf8;
+
+}
+
+
+/* File Input */
+
+input[type="file"] {
+
+    background: white;
+    color: black;
+    padding: 10px;
+
+}
+
+
+/* Text Area */
+
+textarea {
+
+    resize: none;
+
+}
+
+
+/* Submit Button */
+
+input[type="submit"] {
+
+    background: #06b6d4;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+input[type="submit"]:hover {
+
+    background: #0891b2;
+
+}
+
+
+/* Reset Button */
+
+input[type="reset"] {
+
+    background: #ef4444;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+input[type="reset"]:hover {
+
+    background:#dc2626;
+
+}

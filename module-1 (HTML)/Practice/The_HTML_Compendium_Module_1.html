@@ -1,0 +1,3373 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="A complete HTML5 reference compendium — every tag, every concept, one beautiful page. MERN Batch 18, Module 1." />
+		<meta
+			name="author"
+			content="MERN Batch 18" />
+		<meta
+			name="keywords"
+			content="HTML5, semantic tags, web development, forms, multimedia, canvas, dialog" />
+		<meta
+			name="theme-color"
+			content="#FAF7F0" />
+		<meta
+			property="og:title"
+			content="The HTML Compendium — Batch 18" />
+		<meta
+			property="og:description"
+			content="Every HTML tag you actually need, demonstrated live." />
+		<meta
+			property="og:type"
+			content="website" />
+		<title>The HTML Compendium — Module 1</title>
+
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+			rel="stylesheet" />
+
+		<style>
+			/* ===== DESIGN TOKENS ===== */
+			:root {
+				--bg: oklch(97.5% 0.012 82);
+				--surface: oklch(95% 0.015 80);
+				--surface-2: oklch(91% 0.018 78);
+				--ink: oklch(17% 0.025 55);
+				--ink-2: oklch(40% 0.022 55);
+				--ink-3: oklch(58% 0.018 55);
+				--accent: oklch(50% 0.19 27);
+				--accent-2: oklch(60% 0.12 72);
+				--border: oklch(87% 0.02 80);
+				--border-2: oklch(79% 0.024 78);
+
+				--ff-display: "Cormorant Garant", Georgia, serif;
+				--ff-body: "DM Sans", system-ui, sans-serif;
+
+				--step--1: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+				--step-0: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+				--step-1: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
+				--step-2: clamp(1.35rem, 1.2rem + 0.8vw, 1.7rem);
+				--step-3: clamp(1.7rem, 1.5rem + 1.2vw, 2.4rem);
+				--step-4: clamp(2.2rem, 1.9rem + 1.8vw, 3.4rem);
+				--step-5: clamp(2.8rem, 2.4rem + 2.5vw, 5rem);
+
+				--space-xs: clamp(0.4rem, 0.35rem + 0.35vw, 0.6rem);
+				--space-s: clamp(0.7rem, 0.6rem + 0.4vw, 0.9rem);
+				--space-m: clamp(1rem, 0.9rem + 0.5vw, 1.4rem);
+				--space-l: clamp(1.4rem, 1.2rem + 0.8vw, 2rem);
+				--space-xl: clamp(2rem, 1.7rem + 1.3vw, 3rem);
+				--space-2xl: clamp(2.8rem, 2.4rem + 2vw, 5rem);
+				--space-3xl: clamp(4rem, 3rem + 4vw, 8rem);
+			}
+
+			/* ===== RESET ===== */
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				font-family: var(--ff-body);
+				font-size: var(--step-0);
+				background: var(--bg);
+				color: var(--ink);
+				line-height: 1.7;
+				-webkit-font-smoothing: antialiased;
+			}
+			img,
+			video {
+				max-width: 100%;
+				display: block;
+			}
+
+			/* ===== LAYOUT ===== */
+			.wrap {
+				width: min(1280px, 100% - 3rem);
+				margin-inline: auto;
+			}
+			.narrow {
+				width: min(720px, 100%);
+				margin-inline: auto;
+			}
+
+			/* ===== TYPOGRAPHY ===== */
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: var(--ff-display);
+				line-height: 1.15;
+				font-weight: 600;
+			}
+			h1 {
+				font-size: var(--step-5);
+			}
+			h2 {
+				font-size: var(--step-4);
+			}
+			h3 {
+				font-size: var(--step-3);
+			}
+			h4 {
+				font-size: var(--step-2);
+			}
+			h5 {
+				font-size: var(--step-1);
+			}
+			h6 {
+				font-size: var(--step-0);
+			}
+			p {
+				margin-bottom: var(--space-s);
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			/* ===== INLINE TEXT ELEMENTS ===== */
+			abbr {
+				text-decoration: underline dotted;
+				cursor: help;
+			}
+			mark {
+				background: oklch(92% 0.13 90);
+				color: var(--ink);
+				padding: 0.05em 0.25em;
+				border-radius: 2px;
+			}
+			kbd {
+				font-family: "Courier New", monospace;
+				font-size: 0.82em;
+				background: var(--surface-2);
+				border: 1px solid var(--border-2);
+				border-bottom-width: 3px;
+				border-radius: 4px;
+				padding: 0.12em 0.45em;
+			}
+			code {
+				font-family: "Courier New", monospace;
+				font-size: 0.83em;
+				background: var(--surface-2);
+				padding: 0.12em 0.4em;
+				border-radius: 3px;
+				color: var(--accent);
+			}
+			pre {
+				background: var(--ink);
+				color: oklch(88% 0.018 80);
+				padding: var(--space-l);
+				overflow-x: auto;
+				border-radius: 3px;
+				font-size: var(--step--1);
+				line-height: 1.65;
+			}
+			pre code {
+				background: none;
+				padding: 0;
+				border-radius: 0;
+				color: inherit;
+			}
+			blockquote {
+				border-left: 4px solid var(--accent);
+				padding: var(--space-s) var(--space-l);
+				background: var(--surface);
+				margin-block: var(--space-l);
+			}
+			blockquote p {
+				font-family: var(--ff-display);
+				font-size: var(--step-2);
+				font-style: italic;
+				font-weight: 300;
+				line-height: 1.4;
+				color: var(--ink-2);
+			}
+			blockquote cite {
+				font-size: var(--step--1);
+				color: var(--ink-3);
+				font-style: normal;
+			}
+			address {
+				font-style: normal;
+			}
+
+			/* ===== UTILITY ===== */
+			.tag {
+				display: inline-block;
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				padding: 0.2em 0.7em;
+				border: 1px solid currentColor;
+				border-radius: 2px;
+			}
+			.section-label {
+				display: flex;
+				align-items: center;
+				gap: var(--space-m);
+				margin-bottom: var(--space-l);
+			}
+			.section-label::after {
+				content: "";
+				flex: 1;
+				height: 1px;
+				background: var(--border);
+			}
+			.divider {
+				border: none;
+				border-top: 1px solid var(--border);
+				margin-block: var(--space-xl);
+			}
+
+			/* ===== MASTHEAD ===== */
+			.masthead {
+				border-bottom: 2px solid var(--ink);
+				padding-block: var(--space-m);
+			}
+			.masthead__inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: var(--space-m);
+				flex-wrap: wrap;
+			}
+			.masthead__wordmark {
+				font-family: var(--ff-display);
+				font-size: clamp(1.3rem, 1rem + 2vw, 2.2rem);
+				font-weight: 700;
+				letter-spacing: -0.01em;
+				color: var(--ink);
+				text-decoration: none;
+			}
+			.masthead__meta {
+				font-size: var(--step--1);
+				color: var(--ink-3);
+				line-height: 1.5;
+				text-align: right;
+			}
+
+			/* ===== NAV ===== */
+			.primary-nav {
+				background: var(--ink);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+			.primary-nav__list {
+				display: flex;
+				flex-wrap: wrap;
+				list-style: none;
+			}
+			.primary-nav__list a {
+				display: block;
+				padding: 0.6rem 0.9rem;
+				color: oklch(75% 0.015 80);
+				text-decoration: none;
+				font-size: var(--step--1);
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				transition:
+					background 0.12s,
+					color 0.12s;
+			}
+			.primary-nav__list a:hover {
+				background: var(--accent);
+				color: white;
+			}
+
+			/* ===== HERO ===== */
+			.hero {
+				padding-block: var(--space-3xl);
+				border-bottom: 1px solid var(--border);
+				position: relative;
+				overflow: hidden;
+			}
+			.hero::after {
+				content: "01";
+				position: absolute;
+				right: -0.02em;
+				bottom: -0.15em;
+				font-family: var(--ff-display);
+				font-size: clamp(10rem, 25vw, 28rem);
+				font-weight: 700;
+				color: oklch(94% 0.012 82);
+				line-height: 1;
+				pointer-events: none;
+				user-select: none;
+			}
+			.hero__issue {
+				font-size: var(--step--1);
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--accent);
+				font-weight: 500;
+				margin-bottom: var(--space-s);
+			}
+			.hero__title {
+				font-size: var(--step-5);
+				font-weight: 300;
+				line-height: 1.05;
+				max-width: 15ch;
+				margin-bottom: var(--space-l);
+			}
+			.hero__title em {
+				font-style: italic;
+				color: var(--accent);
+			}
+			.hero__lead {
+				font-size: var(--step-1);
+				color: var(--ink-2);
+				max-width: 50ch;
+				line-height: 1.65;
+				border-left: 3px solid var(--accent);
+				padding-left: var(--space-m);
+			}
+
+			/* ===== SECTION WRAPPER ===== */
+			.page-section {
+				padding-block: var(--space-2xl);
+				border-bottom: 1px solid var(--border);
+			}
+			.section-header {
+				margin-bottom: var(--space-xl);
+			}
+			.section-title {
+				font-size: var(--step-4);
+				font-weight: 300;
+				margin-bottom: var(--space-xs);
+			}
+			.section-title strong {
+				font-weight: 700;
+			}
+			.section-sub {
+				font-size: var(--step-0);
+				color: var(--ink-3);
+			}
+
+			/* ===== EXPLAINER CARDS ===== */
+			.cards-3 {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: var(--space-l);
+				margin-top: var(--space-l);
+			}
+			.card {
+				padding: var(--space-l);
+				background: var(--surface);
+				border-top: 3px solid var(--accent);
+			}
+			.card--amber {
+				border-top-color: var(--accent-2);
+			}
+			.card--green {
+				border-top-color: oklch(58% 0.13 145);
+			}
+			.card__num {
+				font-family: var(--ff-display);
+				font-size: var(--step-4);
+				font-weight: 700;
+				color: var(--accent);
+				opacity: 0.25;
+				line-height: 1;
+				margin-bottom: var(--space-xs);
+			}
+			.card__title {
+				font-size: var(--step-1);
+				font-weight: 600;
+				margin-bottom: var(--space-xs);
+			}
+			.card__body {
+				font-size: var(--step--1);
+				color: var(--ink-2);
+				line-height: 1.6;
+			}
+
+			/* ===== TEXT FORMAT GRID ===== */
+			.format-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--space-l) var(--space-2xl);
+				margin-top: var(--space-l);
+			}
+			@media (max-width: 600px) {
+				.format-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.format-item__label {
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: var(--ink-3);
+				margin-bottom: var(--space-xs);
+			}
+			.format-item__demo {
+				font-size: var(--step-1);
+				padding: var(--space-xs) 0;
+				border-bottom: 1px solid var(--border);
+				margin-bottom: var(--space-xs);
+				line-height: 1.5;
+			}
+			.format-item__tag {
+				font-size: var(--step--1);
+				color: var(--ink-3);
+				font-family: "Courier New", monospace;
+			}
+
+			/* ===== LISTS ===== */
+			.lists-3 {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: var(--space-l);
+				margin-top: var(--space-l);
+			}
+			@media (max-width: 700px) {
+				.lists-3 {
+					grid-template-columns: 1fr;
+				}
+			}
+			.list-block {
+				padding: var(--space-l);
+				background: var(--surface);
+			}
+			.list-block h4 {
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-bottom: var(--space-m);
+				padding-bottom: var(--space-xs);
+				border-bottom: 1px solid var(--border);
+			}
+			ul.clean {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			ul.clean li {
+				padding-left: 1.2em;
+				position: relative;
+				font-size: var(--step-0);
+			}
+			ul.clean li::before {
+				content: "—";
+				position: absolute;
+				left: 0;
+				color: var(--accent);
+			}
+			ol.clean {
+				padding-left: 1.5em;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			ol.clean li {
+				font-size: var(--step-0);
+				padding-left: 0.4em;
+			}
+			ol.clean li::marker {
+				color: var(--accent);
+				font-weight: 600;
+			}
+			dl.clean {
+				display: flex;
+				flex-direction: column;
+				gap: 0.8rem;
+			}
+			dl.clean dt {
+				font-weight: 500;
+				color: var(--accent);
+				font-size: var(--step--1);
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+			}
+			dl.clean dd {
+				margin-left: 0;
+				font-size: var(--step-0);
+				color: var(--ink-2);
+				padding-left: var(--space-s);
+				border-left: 2px solid var(--border);
+			}
+
+			/* ===== BUTTONS / LINKS ===== */
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4em;
+				padding: 0.55em 1.2em;
+				border-radius: 2px;
+				font-family: var(--ff-body);
+				font-size: var(--step-0);
+				font-weight: 500;
+				text-decoration: none;
+				cursor: pointer;
+				transition:
+					background 0.12s,
+					border-color 0.12s,
+					color 0.12s;
+				border: 1px solid transparent;
+			}
+			.btn--primary {
+				background: var(--accent);
+				color: white;
+				border-color: var(--accent);
+			}
+			.btn--primary:hover {
+				background: oklch(43% 0.19 27);
+				border-color: oklch(43% 0.19 27);
+			}
+			.btn--outline {
+				background: transparent;
+				color: var(--ink);
+				border-color: var(--border-2);
+			}
+			.btn--outline:hover {
+				border-color: var(--ink);
+			}
+			.btn--ghost {
+				background: transparent;
+				color: var(--accent);
+			}
+			.btn--ghost:hover {
+				border-color: var(--accent);
+			}
+			.links-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: var(--space-s);
+				margin-top: var(--space-l);
+				align-items: center;
+			}
+
+			/* ===== MEDIA ===== */
+			.media-2 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--space-l);
+				margin-top: var(--space-l);
+			}
+			@media (max-width: 640px) {
+				.media-2 {
+					grid-template-columns: 1fr;
+				}
+			}
+			figure {
+				display: flex;
+				flex-direction: column;
+				gap: var(--space-xs);
+			}
+			figcaption {
+				font-size: var(--step--1);
+				color: var(--ink-3);
+				font-style: italic;
+				padding-top: var(--space-xs);
+				border-top: 1px solid var(--border);
+			}
+			.media-block {
+				padding: var(--space-l);
+				background: var(--surface);
+				margin-top: var(--space-l);
+			}
+			.media-block h4 {
+				font-size: var(--step-0);
+				font-weight: 600;
+				margin-bottom: var(--space-m);
+			}
+			video,
+			audio {
+				border-radius: 2px;
+			}
+
+			/* ===== TABLE ===== */
+			.table-scroll {
+				overflow-x: auto;
+				margin-top: var(--space-l);
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: var(--step-0);
+			}
+			caption {
+				font-family: var(--ff-display);
+				font-size: var(--step-1);
+				font-style: italic;
+				color: var(--ink-2);
+				text-align: left;
+				margin-bottom: var(--space-s);
+			}
+			thead tr {
+				border-bottom: 2px solid var(--ink);
+			}
+			thead th {
+				padding: var(--space-s) var(--space-m);
+				text-align: left;
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: var(--ink-3);
+				font-family: var(--ff-body);
+			}
+			tbody tr {
+				border-bottom: 1px solid var(--border);
+				transition: background 0.1s;
+			}
+			tbody tr:hover {
+				background: var(--surface);
+			}
+			tbody td {
+				padding: var(--space-s) var(--space-m);
+				vertical-align: top;
+			}
+			tfoot td {
+				padding: var(--space-s) var(--space-m);
+				font-size: var(--step--1);
+				color: var(--ink-3);
+				border-top: 1px solid var(--border-2);
+				font-style: italic;
+			}
+			.badge {
+				display: inline-block;
+				padding: 0.2em 0.65em;
+				border-radius: 2px;
+				font-size: var(--step--1);
+				font-weight: 500;
+			}
+			.badge--g {
+				background: oklch(91% 0.08 145);
+				color: oklch(33% 0.12 145);
+			}
+			.badge--a {
+				background: oklch(92% 0.1 82);
+				color: oklch(36% 0.1 76);
+			}
+			.badge--r {
+				background: oklch(91% 0.08 26);
+				color: oklch(36% 0.12 26);
+			}
+
+			/* ===== FORM ===== */
+			.form-shell {
+				background: var(--surface);
+				padding: var(--space-xl);
+				margin-top: var(--space-l);
+			}
+			.form-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--space-m) var(--space-l);
+			}
+			@media (max-width: 600px) {
+				.form-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.fg {
+				display: flex;
+				flex-direction: column;
+				gap: 0.35rem;
+			}
+			.fg--full {
+				grid-column: 1 / -1;
+			}
+			label {
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				color: var(--ink-2);
+			}
+			input:not([type="radio"]):not([type="checkbox"]):not(
+					[type="color"]
+				):not([type="range"]),
+			textarea,
+			select {
+				width: 100%;
+				padding: 0.6em 0.85em;
+				border: 1px solid var(--border-2);
+				background: var(--bg);
+				color: var(--ink);
+				font-family: var(--ff-body);
+				font-size: var(--step-0);
+				border-radius: 2px;
+				transition:
+					border-color 0.12s,
+					box-shadow 0.12s;
+				outline: none;
+				appearance: none;
+			}
+			input:focus,
+			textarea:focus,
+			select:focus {
+				border-color: var(--accent);
+				box-shadow: 0 0 0 3px oklch(50% 0.19 27 / 0.12);
+			}
+			textarea {
+				resize: vertical;
+				min-height: 90px;
+			}
+			input[type="range"] {
+				accent-color: var(--accent);
+				width: 100%;
+				padding: 0;
+			}
+			input[type="color"] {
+				accent-color: var(--accent);
+				padding: 0.15em;
+				height: 2.6em;
+				cursor: pointer;
+			}
+			.check-group,
+			.radio-group {
+				display: flex;
+				flex-direction: column;
+				gap: 0.45rem;
+			}
+			.check-item,
+			.radio-item {
+				display: flex;
+				align-items: center;
+				gap: 0.55em;
+				cursor: pointer;
+				font-size: var(--step-0);
+			}
+			.check-item input,
+			.radio-item input {
+				accent-color: var(--accent);
+			}
+			fieldset {
+				border: 1px solid var(--border);
+				padding: var(--space-m);
+				border-radius: 2px;
+			}
+			legend {
+				font-size: var(--step--1);
+				font-weight: 500;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				color: var(--ink-2);
+				padding-inline: 0.5em;
+			}
+			.form-actions {
+				display: flex;
+				gap: var(--space-s);
+				margin-top: var(--space-l);
+				padding-top: var(--space-l);
+				border-top: 1px solid var(--border);
+			}
+
+			/* ===== INTERACTIVE ===== */
+			.interactive-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+				gap: var(--space-l);
+				margin-top: var(--space-l);
+			}
+			.iblock {
+				padding: var(--space-l);
+				background: var(--surface);
+			}
+			.iblock h4 {
+				font-size: var(--step-0);
+				font-weight: 600;
+				margin-bottom: var(--space-m);
+				padding-bottom: var(--space-xs);
+				border-bottom: 1px solid var(--border);
+			}
+			details {
+				border: 1px solid var(--border);
+				margin-bottom: 0.4rem;
+			}
+			summary {
+				padding: var(--space-s) var(--space-m);
+				cursor: pointer;
+				font-weight: 500;
+				user-select: none;
+				list-style: none;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: var(--step-0);
+			}
+			summary::-webkit-details-marker {
+				display: none;
+			}
+			summary::after {
+				content: "+";
+				color: var(--accent);
+				font-size: 1.2em;
+				font-weight: 300;
+			}
+			details[open] summary::after {
+				content: "−";
+			}
+			details[open] {
+				border-color: var(--accent);
+			}
+			.details-body {
+				padding: var(--space-s) var(--space-m) var(--space-m);
+				color: var(--ink-2);
+				font-size: var(--step-0);
+				border-top: 1px solid var(--border);
+			}
+			progress {
+				width: 100%;
+				height: 5px;
+				appearance: none;
+				border-radius: 3px;
+				overflow: hidden;
+				margin-bottom: 0.3rem;
+				border: none;
+			}
+			progress::-webkit-progress-bar {
+				background: var(--surface-2);
+			}
+			progress::-webkit-progress-value {
+				background: var(--accent);
+			}
+			progress::-moz-progress-bar {
+				background: var(--accent);
+			}
+			meter {
+				width: 100%;
+				height: 5px;
+				appearance: none;
+				margin-bottom: 0.3rem;
+			}
+			meter::-webkit-meter-bar {
+				background: var(--surface-2);
+				border-radius: 3px;
+				border: none;
+			}
+			meter::-webkit-meter-optimum-value {
+				background: oklch(57% 0.13 145);
+				border-radius: 3px;
+			}
+			meter::-webkit-meter-suboptimum-value {
+				background: oklch(70% 0.13 82);
+				border-radius: 3px;
+			}
+			meter::-webkit-meter-even-less-good-value {
+				background: var(--accent);
+				border-radius: 3px;
+			}
+			output {
+				font-family: var(--ff-display);
+				font-size: var(--step-3);
+				font-weight: 700;
+				color: var(--accent);
+			}
+			dialog {
+				border: 2px solid var(--ink);
+				background: var(--bg);
+				padding: var(--space-xl);
+				max-width: 460px;
+				width: 90%;
+				border-radius: 2px;
+				box-shadow: 8px 8px 0 var(--ink);
+			}
+			dialog::backdrop {
+				background: oklch(17% 0.025 55 / 0.6);
+				backdrop-filter: blur(3px);
+			}
+			dialog h3 {
+				font-size: var(--step-2);
+				margin-bottom: var(--space-s);
+			}
+			dialog p {
+				color: var(--ink-2);
+				margin-bottom: var(--space-l);
+			}
+			dialog .btns {
+				display: flex;
+				gap: var(--space-s);
+			}
+
+			/* ===== CANVAS ===== */
+			.canvas-shell {
+				background: oklch(14% 0.02 55);
+				padding: var(--space-l);
+				margin-top: var(--space-l);
+			}
+			canvas {
+				display: block;
+				margin-inline: auto;
+				cursor: crosshair;
+				touch-action: none;
+				border: 1px solid oklch(25% 0.02 55);
+				max-width: 100%;
+			}
+			.canvas-controls {
+				display: flex;
+				flex-wrap: wrap;
+				gap: var(--space-m);
+				margin-top: var(--space-s);
+				justify-content: center;
+				align-items: center;
+			}
+			.canvas-controls label {
+				color: oklch(75% 0.015 80);
+				font-size: var(--step--1);
+				display: flex;
+				align-items: center;
+				gap: 0.4em;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+			}
+			.canvas-controls input[type="color"] {
+				height: 1.8em;
+				padding: 0.1em;
+				border: none;
+				background: none;
+				cursor: pointer;
+			}
+			.canvas-controls input[type="range"] {
+				width: 80px;
+				padding: 0;
+			}
+			.canvas-controls .btn--outline {
+				color: oklch(75% 0.015 80);
+				border-color: oklch(30% 0.02 55);
+			}
+			.canvas-controls .btn--outline:hover {
+				border-color: var(--accent);
+				color: var(--accent);
+			}
+
+			/* ===== SPECIAL TAGS ===== */
+			.special-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				gap: var(--space-m);
+				margin-top: var(--space-l);
+			}
+			.special-item {
+				border: 1px solid var(--border);
+				padding: var(--space-m);
+				transition: border-color 0.12s;
+			}
+			.special-item:hover {
+				border-color: var(--accent);
+			}
+			.special-item__tag {
+				font-family: "Courier New", monospace;
+				font-size: var(--step-1);
+				color: var(--accent);
+				margin-bottom: 0.4em;
+			}
+			.special-item__desc {
+				font-size: var(--step--1);
+				color: var(--ink-2);
+				line-height: 1.6;
+			}
+
+			/* ===== DARK BAND ===== */
+			.dark-band {
+				background: var(--ink);
+				color: oklch(80% 0.015 80);
+				padding-block: var(--space-2xl);
+				border-bottom: none;
+			}
+			.dark-band .section-title {
+				color: white;
+			}
+			.dark-band .section-sub {
+				color: oklch(55% 0.015 80);
+			}
+			.dark-band .section-label::after {
+				background: oklch(28% 0.02 55);
+			}
+			.dark-band .tag {
+				color: oklch(65% 0.15 27);
+				border-color: currentColor;
+			}
+			.pillars {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: var(--space-l);
+				margin-top: var(--space-xl);
+			}
+			.pillar {
+				border-left: 3px solid var(--accent);
+				padding-left: var(--space-m);
+			}
+			.pillar h4 {
+				font-size: var(--step-0);
+				color: white;
+				font-family: var(--ff-body);
+				font-weight: 500;
+				margin-bottom: 0.4em;
+			}
+			.pillar p {
+				font-size: var(--step--1);
+				color: oklch(58% 0.015 80);
+				line-height: 1.65;
+			}
+			.pillar--amber {
+				border-left-color: var(--accent-2);
+			}
+			.pillar--green {
+				border-left-color: oklch(58% 0.13 145);
+			}
+			.pillar--blue {
+				border-left-color: oklch(62% 0.14 258);
+			}
+
+			/* ===== FOOTER ===== */
+			footer {
+				background: var(--ink);
+				color: oklch(72% 0.015 80);
+				padding-block: var(--space-2xl);
+			}
+			.footer-grid {
+				display: grid;
+				grid-template-columns: 2fr 1fr 1fr;
+				gap: var(--space-2xl);
+			}
+			@media (max-width: 680px) {
+				.footer-grid {
+					grid-template-columns: 1fr;
+					gap: var(--space-xl);
+				}
+			}
+			footer h3 {
+				font-family: var(--ff-display);
+				font-size: var(--step-4);
+				color: oklch(94% 0.01 80);
+				font-weight: 300;
+				line-height: 1.1;
+				margin-bottom: var(--space-m);
+			}
+			footer h5 {
+				font-size: var(--step--1);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: oklch(50% 0.015 80);
+				margin-bottom: var(--space-s);
+				font-weight: 400;
+			}
+			footer p,
+			footer li {
+				font-size: var(--step--1);
+				line-height: 1.7;
+			}
+			footer ul {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+			}
+			footer a {
+				color: oklch(62% 0.02 80);
+				text-decoration: none;
+				transition: color 0.12s;
+			}
+			footer a:hover {
+				color: var(--accent);
+			}
+			.footer-bottom {
+				border-top: 1px solid oklch(26% 0.02 55);
+				padding-top: var(--space-l);
+				margin-top: var(--space-xl);
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: var(--space-s);
+				font-size: var(--step--1);
+				color: oklch(42% 0.015 80);
+			}
+
+			/* ===== SCROLL ANIMATION ===== */
+			.reveal {
+				opacity: 0;
+				transform: translateY(20px);
+				transition:
+					opacity 0.55s ease,
+					transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+			}
+			.reveal.visible {
+				opacity: 1;
+				transform: none;
+			}
+
+			/* ===== MISC ===== */
+			::selection {
+				background: oklch(50% 0.19 27 / 0.18);
+			}
+			::-webkit-scrollbar {
+				width: 5px;
+				height: 5px;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--surface);
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--border-2);
+				border-radius: 3px;
+			}
+
+			@media print {
+				.primary-nav,
+				.canvas-shell,
+				dialog {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- =============================================
+       MASTHEAD — <header> semantic landmark
+  ============================================== -->
+		<header
+			class="masthead"
+			role="banner">
+			<div class="wrap">
+				<div class="masthead__inner">
+					<a
+						href="#top"
+						class="masthead__wordmark"
+						>The HTML Compendium</a
+					>
+					<div class="masthead__meta">
+						Module 1 · Class 1<br />
+						MERN Batch 18 · <time datetime="2024">2024</time>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- =============================================
+       PRIMARY NAV — <nav> + <ul> + <li> + <a>
+  ============================================== -->
+		<nav
+			class="primary-nav"
+			aria-label="Main navigation"
+			id="top">
+			<div class="wrap">
+				<ul
+					class="primary-nav__list"
+					role="list">
+					<li><a href="#s-internet">Internet</a></li>
+					<li><a href="#s-structure">Structure</a></li>
+					<li><a href="#s-text">Text</a></li>
+					<li><a href="#s-lists">Lists</a></li>
+					<li><a href="#s-links">Links</a></li>
+					<li><a href="#s-media">Media</a></li>
+					<li><a href="#s-table">Table</a></li>
+					<li><a href="#s-form">Form</a></li>
+					<li><a href="#s-interactive">Interactive</a></li>
+					<li><a href="#s-scripting">Canvas</a></li>
+					<li><a href="#s-special">Special</a></li>
+					<li><a href="#s-advanced">Advanced</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main id="main-content">
+			<!-- =============================================
+         HERO — advanced layout + text elements
+    ============================================== -->
+			<div class="hero">
+				<div class="wrap">
+					<p class="hero__issue">
+						Issue 01 · Module 1 · Complete Reference
+					</p>
+					<h1 class="hero__title">
+						Every HTML Tag You <em>Actually</em> Need
+					</h1>
+					<p class="hero__lead">
+						A living compendium of HTML5 — from structural
+						foundations to advanced interactive elements. This page
+						<em>is</em> the demo: every concept below is
+						demonstrated in the markup you're looking at right now.
+					</p>
+				</div>
+			</div>
+
+			<!-- =============================================
+         §1 — HOW THE INTERNET WORKS
+         Concepts: IP, DNS, request cycle
+         Elements: section, article, address, time, abbr, code
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-internet"
+				aria-labelledby="h-internet">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Foundation</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-internet">
+							How the <strong>Internet</strong> Works
+						</h2>
+						<p class="section-sub">
+							IP Addresses · DNS · The request-response cycle
+						</p>
+					</header>
+
+					<div class="narrow">
+						<p>
+							When you type <code>example.com</code> into a
+							browser, a remarkable chain of events unfolds in
+							milliseconds. Your computer doesn't know where
+							<abbr title="example.com">that site</abbr> lives —
+							it must ask.
+						</p>
+					</div>
+
+					<div
+						class="cards-3"
+						style="margin-top: var(--space-l)">
+						<article class="card reveal">
+							<div class="card__num">01</div>
+							<h3 class="card__title">IP Address</h3>
+							<p class="card__body">
+								Every device has a unique numerical address.
+								IPv4 looks like
+								<code>192.168.1.1</code>; IPv6 like
+								<code>2001:0db8::1</code>. It's the postal
+								address of the internet.
+							</p>
+						</article>
+						<article class="card reveal">
+							<div class="card__num">02</div>
+							<h3 class="card__title">DNS</h3>
+							<p class="card__body">
+								The
+								<abbr title="Domain Name System">DNS</abbr>
+								translates human-readable domains
+								(<code>google.com</code>) into machine IPs. A
+								distributed, hierarchical directory — the
+								internet's phone book.
+							</p>
+						</article>
+						<article class="card reveal">
+							<div class="card__num">03</div>
+							<h3 class="card__title">HTTP Request</h3>
+							<p class="card__body">
+								Once the IP is known, your browser sends an
+								<abbr title="HyperText Transfer Protocol"
+									>HTTP</abbr
+								>
+								request. The server responds with HTML, CSS, and
+								JS. The browser parses and renders.
+							</p>
+						</article>
+					</div>
+
+					<blockquote style="margin-top: var(--space-xl)">
+						<p>
+							"The internet is a network of networks — each device
+							a node, each connection a thread in an
+							ever-expanding web."
+						</p>
+						<cite>— Web Fundamentals, Module 1</cite>
+					</blockquote>
+
+					<address
+						style="
+							margin-top: var(--space-l);
+							padding: var(--space-m);
+							border: 1px solid var(--border);
+						">
+						<strong>Course Contact</strong><br />
+						MERN Batch 18 · Ostad<br />
+						<a href="mailto:batch18@ostad.app">batch18@ostad.app</a>
+						·
+						<time datetime="2024-01-01">January 2024</time>
+					</address>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §2 — STRUCTURAL / SEMANTIC TAGS
+         Elements: header, nav, main, article, section,
+                   aside, footer, figure, time, address
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-structure"
+				aria-labelledby="h-structure">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Semantic HTML5</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-structure">
+							<strong>Semantic</strong> Structure
+						</h2>
+						<p class="section-sub">
+							Tags that give meaning to content — not just visual
+							style
+						</p>
+					</header>
+
+					<div class="narrow">
+						<p>
+							Semantic HTML5 tags communicate the
+							<em>purpose</em> of content to browsers, assistive
+							technologies, and search engines. This very page
+							uses all of the structural landmarks shown below.
+						</p>
+					</div>
+
+					<pre
+						style="
+							margin-top: var(--space-l);
+						"><code>&lt;!DOCTYPE html&gt;        — Document type declaration (required, not a tag)
+&lt;html lang="en"&gt;      — Root element with language attribute
+
+&lt;head&gt;                — Metadata container (invisible to user)
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+
+&lt;body&gt;                — All visible content lives here
+  &lt;header&gt;            — Masthead or section intro
+  &lt;nav&gt;               — Navigation block (use aria-label for multiples)
+  &lt;main&gt;             — Primary content — only ONE per page
+  &lt;article&gt;           — Self-contained, re-usable content unit
+  &lt;section&gt;           — Thematic grouping (needs a heading)
+  &lt;aside&gt;             — Tangentially related / sidebar content
+  &lt;footer&gt;            — Footer for page or section
+  &lt;figure&gt;            — Self-contained media with optional caption
+  &lt;figcaption&gt;        — Caption for figure
+  &lt;address&gt;           — Contact information
+  &lt;time datetime=""&gt;  — Machine-readable date/time</code></pre>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §3 — TEXT FORMATTING
+         Elements: strong, b, em, i, mark, del, ins,
+                   sub, sup, abbr, kbd, code, pre, s,
+                   q, blockquote, small, cite, dfn, var
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-text"
+				aria-labelledby="h-text">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Text Formatting</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-text">
+							<strong>Text</strong> Formatting
+						</h2>
+						<p class="section-sub">
+							Every way HTML lets you annotate and shape text
+						</p>
+					</header>
+
+					<div class="format-grid">
+						<div>
+							<div class="format-item__label">Strong / Bold</div>
+							<div class="format-item__demo">
+								<strong>Strong importance</strong> vs
+								<b>bold presentational</b>
+							</div>
+							<div class="format-item__tag">
+								&lt;strong&gt; &lt;b&gt;
+							</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Emphasis / Italic
+							</div>
+							<div class="format-item__demo">
+								<em>Stressed emphasis</em> vs
+								<i>idiomatic italic</i>
+							</div>
+							<div class="format-item__tag">
+								&lt;em&gt; &lt;i&gt;
+							</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Mark / Highlight
+							</div>
+							<div class="format-item__demo">
+								Search results contain
+								<mark>HTML5</mark> elements
+							</div>
+							<div class="format-item__tag">&lt;mark&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Delete / Insert
+							</div>
+							<div class="format-item__demo">
+								Price: <del>$99</del> <ins>$49</ins> — limited
+								offer
+							</div>
+							<div class="format-item__tag">
+								&lt;del&gt; &lt;ins&gt;
+							</div>
+						</div>
+						<div>
+							<div class="format-item__label">Strikethrough</div>
+							<div class="format-item__demo">
+								<s>No longer accurate</s> — use &lt;del&gt; for
+								edits
+							</div>
+							<div class="format-item__tag">&lt;s&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Superscript / Subscript
+							</div>
+							<div class="format-item__demo">
+								H<sub>2</sub>O and E&nbsp;=&nbsp;mc<sup>2</sup>
+							</div>
+							<div class="format-item__tag">
+								&lt;sub&gt; &lt;sup&gt;
+							</div>
+						</div>
+						<div>
+							<div class="format-item__label">Abbreviation</div>
+							<div class="format-item__demo">
+								<abbr title="HyperText Markup Language"
+									>HTML</abbr
+								>
+								and
+								<abbr title="Cascading Style Sheets">CSS</abbr>
+								(hover me)
+							</div>
+							<div class="format-item__tag">
+								&lt;abbr title="..."&gt;
+							</div>
+						</div>
+						<div>
+							<div class="format-item__label">Keyboard Input</div>
+							<div class="format-item__demo">
+								Save with <kbd>Ctrl</kbd> + <kbd>S</kbd>
+							</div>
+							<div class="format-item__tag">&lt;kbd&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">Inline Code</div>
+							<div class="format-item__demo">
+								Call <code>document.querySelector()</code> to
+								find elements
+							</div>
+							<div class="format-item__tag">&lt;code&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Small / Fine Print
+							</div>
+							<div class="format-item__demo">
+								Main content
+								<small>and the fine print disclaimer</small>
+							</div>
+							<div class="format-item__tag">&lt;small&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">Inline Quote</div>
+							<div class="format-item__demo">
+								He said <q>semantic HTML matters</q> and he was
+								right
+							</div>
+							<div class="format-item__tag">&lt;q&gt;</div>
+						</div>
+						<div>
+							<div class="format-item__label">
+								Definition / Variable
+							</div>
+							<div class="format-item__demo">
+								<dfn>Bandwidth</dfn> is measured in
+								<var>Mbps</var>
+							</div>
+							<div class="format-item__tag">
+								&lt;dfn&gt; &lt;var&gt;
+							</div>
+						</div>
+					</div>
+
+					<hr class="divider" />
+
+					<!-- Heading hierarchy demo -->
+					<h3
+						style="
+							font-size: var(--step-2);
+							margin-bottom: var(--space-m);
+						">
+						Heading Hierarchy
+					</h3>
+					<div
+						style="
+							display: flex;
+							flex-direction: column;
+							gap: 0.6rem;
+							border-left: 3px solid var(--border);
+							padding-left: var(--space-l);
+						">
+						<h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem)">
+							H1 — Page Title (one per page)
+						</h1>
+						<h2
+							style="
+								font-size: clamp(1.5rem, 3vw, 2.2rem);
+								font-weight: 600;
+							">
+							H2 — Major Section
+						</h2>
+						<h3
+							style="
+								font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+								font-weight: 500;
+							">
+							H3 — Sub-section
+						</h3>
+						<h4
+							style="
+								font-size: clamp(1rem, 2vw, 1.3rem);
+								font-weight: 500;
+							">
+							H4 — Component Heading
+						</h4>
+						<h5
+							style="
+								font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+								font-weight: 500;
+							">
+							H5 — Small heading
+						</h5>
+						<h6 style="font-size: 1rem; font-weight: 500">
+							H6 — Smallest heading
+						</h6>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §4 — LISTS
+         Elements: ul, ol, li, dl, dt, dd (+ nested)
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-lists"
+				aria-labelledby="h-lists">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Lists</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-lists">
+							Lists &amp; <strong>Enumerations</strong>
+						</h2>
+						<p class="section-sub">
+							Unordered, ordered, and definition lists — including
+							nesting
+						</p>
+					</header>
+
+					<div class="lists-3">
+						<div class="list-block">
+							<h4>Unordered &lt;ul&gt;</h4>
+							<ul class="clean">
+								<li>HTML — Structure</li>
+								<li>CSS — Presentation</li>
+								<li>JavaScript — Behaviour</li>
+								<li>Node.js — Server runtime</li>
+								<li>React — UI library</li>
+							</ul>
+						</div>
+						<div class="list-block">
+							<h4>Ordered &lt;ol&gt;</h4>
+							<ol class="clean">
+								<li>Browser sends DNS query</li>
+								<li>DNS returns the IP address</li>
+								<li>TCP connection is opened</li>
+								<li>HTTP request is sent</li>
+								<li>Server returns HTML page</li>
+							</ol>
+						</div>
+						<div class="list-block">
+							<h4>Definition &lt;dl&gt;</h4>
+							<dl class="clean">
+								<dt>HTML</dt>
+								<dd>
+									HyperText Markup Language — structure layer
+								</dd>
+								<dt>DNS</dt>
+								<dd>
+									Domain Name System — internet address book
+								</dd>
+								<dt>API</dt>
+								<dd>
+									Application Programming Interface — the
+									contract between services
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<!-- Nested list -->
+					<div
+						style="
+							margin-top: var(--space-l);
+							padding: var(--space-l);
+							background: var(--surface);
+						">
+						<h4 style="margin-bottom: var(--space-m)">
+							Nested Lists
+						</h4>
+						<ul class="clean">
+							<li>
+								Frontend Stack
+								<ul
+									class="clean"
+									style="
+										margin-top: 0.5rem;
+										margin-left: 1rem;
+									">
+									<li>HTML5 + CSS3</li>
+									<li>React + TypeScript</li>
+									<li>Tailwind CSS</li>
+								</ul>
+							</li>
+							<li>
+								Backend Stack
+								<ul
+									class="clean"
+									style="
+										margin-top: 0.5rem;
+										margin-left: 1rem;
+									">
+									<li>Node.js + Express</li>
+									<li>MongoDB + Mongoose</li>
+									<li>REST &amp; GraphQL APIs</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §5 — LINKS / ANCHORS
+         Elements: a (href, target, rel, download, mailto, tel)
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-links"
+				aria-labelledby="h-links">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Navigation</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-links">
+							Links &amp; <strong>Anchors</strong>
+						</h2>
+						<p class="section-sub">
+							The <code>&lt;a&gt;</code> tag — the connective
+							tissue of the web
+						</p>
+					</header>
+
+					<div class="narrow">
+						<p>
+							The anchor tag is the fundamental primitive of
+							hypertext. Its <code>href</code>,
+							<code>target</code>, <code>rel</code>, and
+							<code>download</code> attributes unlock different
+							linking behaviours.
+						</p>
+					</div>
+
+					<div class="links-row">
+						<a
+							href="#s-internet"
+							class="btn btn--primary"
+							>Anchor / Jump ↑</a
+						>
+						<a
+							href="#s-form"
+							class="btn btn--outline"
+							>Section Jump ↓</a
+						>
+						<a
+							href="mailto:hello@example.com"
+							class="btn btn--outline"
+							>Email Link</a
+						>
+						<a
+							href="tel:+8801700000000"
+							class="btn btn--outline"
+							>Tel Link</a
+						>
+						<a
+							href="https://developer.mozilla.org"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="btn btn--ghost"
+							>External ↗</a
+						>
+						<a
+							href="#"
+							download="filename.txt"
+							class="btn btn--ghost"
+							>Download</a
+						>
+					</div>
+
+					<pre
+						style="
+							margin-top: var(--space-l);
+						"><code>&lt;a href="https://..."&gt;Regular link&lt;/a&gt;
+&lt;a href="#section-id"&gt;Jump to anchor&lt;/a&gt;
+&lt;a href="mailto:you@example.com"&gt;Email&lt;/a&gt;
+&lt;a href="tel:+880..."&gt;Phone call&lt;/a&gt;
+&lt;a href="file.pdf" download&gt;Force download&lt;/a&gt;
+&lt;a href="..." target="_blank" rel="noopener noreferrer"&gt;New tab&lt;/a&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §6 — IMAGE & MULTIMEDIA
+         Elements: img, picture, source, figure, figcaption,
+                   video, audio, track, iframe, map, area
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-media"
+				aria-labelledby="h-media">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Multimedia</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-media">
+							Images &amp; <strong>Multimedia</strong>
+						</h2>
+						<p class="section-sub">
+							img · picture · figure · video · audio · iframe
+						</p>
+					</header>
+
+					<div class="media-2">
+						<!-- figure + img with inline SVG as src -->
+						<figure>
+							<img
+								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231C1C1E'/%3E%3Cdefs%3E%3Cpattern id='g' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0L0 0 0 40' fill='none' stroke='%23333' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g)'/%3E%3Ccircle cx='400' cy='200' r='90' fill='none' stroke='%23C9372C' stroke-width='2'/%3E%3Cline x1='400' y1='110' x2='400' y2='290' stroke='%23C9372C' stroke-width='1'/%3E%3Cline x1='310' y1='200' x2='490' y2='200' stroke='%23C9372C' stroke-width='1'/%3E%3Ctext x='400' y='390' text-anchor='middle' fill='%23888' font-family='sans-serif' font-size='13'%3E%26lt%3Bimg%26gt%3B — provide a meaningful alt attribute%3C/text%3E%3Ctext x='400' y='195' text-anchor='middle' fill='%23C9372C' font-family='Georgia%2C serif' font-size='20' font-style='italic'%3Efigure%3C/text%3E%3C/svg%3E"
+								alt="Diagram illustrating the figure element with a crosshair placeholder"
+								width="800"
+								height="450"
+								loading="lazy"
+								decoding="async" />
+							<figcaption>
+								Fig. 1 — <code>&lt;figure&gt;</code> wraps
+								images with a
+								<code>&lt;figcaption&gt;</code> for accessible,
+								semantic pairing. Always use <code>alt</code>.
+							</figcaption>
+						</figure>
+
+						<!-- picture element with multiple sources -->
+						<figure>
+							<picture>
+								<!-- WebP source for modern browsers -->
+								<source
+									srcset="../How-the-Internet-Works.webp"
+									type="image/webp" />
+								<!-- PNG fallback -->
+								<img
+									src="../How-the-Internet-Works.webp"
+									alt="Diagram showing how the internet works — from user browser through DNS to web server"
+									width="800"
+									height="450"
+									loading="lazy"
+									decoding="async"
+									style="
+										width: 100%;
+										object-fit: cover;
+										aspect-ratio: 16/9;
+									" />
+							</picture>
+							<figcaption>
+								Fig. 2 — <code>&lt;picture&gt;</code> serves
+								different formats/sizes per browser support and
+								viewport. The actual lecture diagram from Module
+								1.
+							</figcaption>
+						</figure>
+					</div>
+
+					<!-- Video -->
+					<div class="media-block">
+						<h4>Video Element — <code>&lt;video&gt;</code></h4>
+						<video
+							controls
+							preload="none"
+							style="
+								width: 100%;
+								max-width: 560px;
+								background: var(--ink);
+							"
+							aria-label="Demo video — replace src with a real video file">
+							<source
+								src="video-sample.mp4"
+								type="video/mp4" />
+							<source
+								src="video-sample.webm"
+								type="video/webm" />
+							<track
+								kind="subtitles"
+								src="captions.vtt"
+								srclang="en"
+								label="English" />
+							<p>
+								Your browser doesn't support HTML video.
+								<a href="video-sample.mp4">Download instead.</a>
+							</p>
+						</video>
+						<pre
+							style="
+								margin-top: var(--space-s);
+							"><code>&lt;video controls preload="none" poster="thumb.jpg"&gt;
+  &lt;source src="video.mp4"  type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;track kind="subtitles" srclang="en" label="English"&gt;
+  &lt;p&gt;Fallback text for unsupported browsers.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+					</div>
+
+					<!-- Audio -->
+					<div class="media-block">
+						<h4>Audio Element — <code>&lt;audio&gt;</code></h4>
+						<audio
+							controls
+							style="width: 100%; max-width: 400px"
+							aria-label="Demo audio — replace src with a real audio file">
+							<source
+								src="audio-sample.mp3"
+								type="audio/mpeg" />
+							<source
+								src="audio-sample.ogg"
+								type="audio/ogg" />
+							Your browser doesn't support HTML audio.
+						</audio>
+						<pre
+							style="
+								margin-top: var(--space-s);
+							"><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;</code></pre>
+					</div>
+
+					<!-- iframe -->
+					<div class="media-block">
+						<h4>Iframe Embed — <code>&lt;iframe&gt;</code></h4>
+						<div
+							style="
+								aspect-ratio: 16/9;
+								background: var(--surface-2);
+								border: 1px solid var(--border);
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								max-width: 560px;
+							">
+							<p
+								style="
+									color: var(--ink-3);
+									font-size: var(--step--1);
+									text-align: center;
+									padding: var(--space-m);
+								">
+								<code>&lt;iframe&gt;</code> would embed a
+								YouTube video, Google Map, or any external page
+								here.
+							</p>
+						</div>
+						<pre style="margin-top: var(--space-s)"><code>&lt;iframe
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Accessible video title"
+  width="560" height="315"
+  allow="accelerometer; autoplay; clipboard-write"
+  allowfullscreen
+&gt;&lt;/iframe&gt;</code></pre>
+					</div>
+
+					<!-- Image map -->
+					<div class="media-block">
+						<h4>
+							Image Map — <code>&lt;map&gt;</code> &amp;
+							<code>&lt;area&gt;</code>
+						</h4>
+						<p
+							style="
+								font-size: var(--step--1);
+								color: var(--ink-2);
+								margin-bottom: var(--space-s);
+							">
+							Image maps define clickable regions (hotspots)
+							within a single image.
+						</p>
+						<pre><code>&lt;img src="diagram.png" alt="Network diagram" usemap="#netmap"&gt;
+&lt;map name="netmap"&gt;
+  &lt;area shape="rect"   coords="10,10,100,80" href="server.html" alt="Web Server"&gt;
+  &lt;area shape="circle" coords="200,50,40"    href="dns.html"    alt="DNS Node"&gt;
+  &lt;area shape="poly"   coords="0,0,50,0,25,50" href="client.html" alt="Client"&gt;
+&lt;/map&gt;</code></pre>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §7 — TABLE
+         Elements: table, caption, thead, tbody, tfoot,
+                   tr, th (scope), td, colspan, rowspan
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-table"
+				aria-labelledby="h-table">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Data</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-table">
+							<strong>Table</strong>
+						</h2>
+						<p class="section-sub">
+							thead · tbody · tfoot · th (scope) · td · colspan ·
+							rowspan
+						</p>
+					</header>
+
+					<div class="table-scroll">
+						<table>
+							<caption>
+								HTML5 Element Reference — Common Tags &amp;
+								Their Category
+							</caption>
+							<thead>
+								<tr>
+									<th scope="col">Tag</th>
+									<th scope="col">Category</th>
+									<th scope="col">Purpose</th>
+									<th scope="col">HTML Version</th>
+									<th scope="col">Support</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>&lt;header&gt;</code></td>
+									<td>Semantic</td>
+									<td>Page or section header landmark</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All major browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;nav&gt;</code></td>
+									<td>Semantic</td>
+									<td>Navigation block landmark</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All major browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;article&gt;</code></td>
+									<td>Semantic</td>
+									<td>Self-contained reusable content</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All major browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;details&gt;</code></td>
+									<td>Interactive</td>
+									<td>Expandable disclosure widget</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All modern browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;dialog&gt;</code></td>
+									<td>Interactive</td>
+									<td>Native modal/non-modal dialog</td>
+									<td>
+										<span class="badge badge--a"
+											>Newer</span
+										>
+									</td>
+									<td>
+										Chrome 37+, Firefox 98+, Safari 15.4+
+									</td>
+								</tr>
+								<tr>
+									<td><code>&lt;canvas&gt;</code></td>
+									<td>Scripting</td>
+									<td>2D/3D pixel-based drawing surface</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All major browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;template&gt;</code></td>
+									<td>Special</td>
+									<td>Inert reusable markup fragment</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All modern browsers</td>
+								</tr>
+								<tr>
+									<td><code>&lt;font&gt;</code></td>
+									<td>Deprecated</td>
+									<td>Old presentational font styling</td>
+									<td>
+										<span class="badge badge--r"
+											>Deprecated</span
+										>
+									</td>
+									<td>Avoid — use CSS instead</td>
+								</tr>
+								<tr>
+									<td><code>&lt;picture&gt;</code></td>
+									<td>Media</td>
+									<td>Responsive image art direction</td>
+									<td>
+										<span class="badge badge--g"
+											>HTML5</span
+										>
+									</td>
+									<td>All modern browsers</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										Source: MDN Web Docs · HTML Living
+										Standard · Data current as of 2024. Use
+										<abbr title="Can I Use"
+											>caniuse.com</abbr
+										>
+										to verify browser support before
+										shipping.
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §8 — FORM
+         Elements: form, fieldset, legend, label, input
+                   (all types), textarea, select, optgroup,
+                   option, datalist, button, output
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-form"
+				aria-labelledby="h-form">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Forms</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-form">
+							<strong>Forms</strong> &amp; Inputs
+						</h2>
+						<p class="section-sub">
+							Every input type · fieldset · datalist · validation
+							attributes
+						</p>
+					</header>
+
+					<form
+						class="form-shell"
+						action="#"
+						method="post"
+						novalidate
+						aria-label="HTML demo registration form">
+						<div class="form-grid">
+							<div class="fg">
+								<label for="fullname"
+									>Full Name
+									<sup style="color: var(--accent)"
+										>*</sup
+									></label
+								>
+								<input
+									type="text"
+									id="fullname"
+									name="fullname"
+									placeholder="Ada Lovelace"
+									autocomplete="name"
+									required
+									maxlength="100" />
+							</div>
+
+							<div class="fg">
+								<label for="email"
+									>Email Address
+									<sup style="color: var(--accent)"
+										>*</sup
+									></label
+								>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									placeholder="ada@example.com"
+									autocomplete="email"
+									required />
+							</div>
+
+							<div class="fg">
+								<label for="password">Password</label>
+								<input
+									type="password"
+									id="password"
+									name="password"
+									placeholder="Min. 8 characters"
+									minlength="8"
+									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+							</div>
+
+							<div class="fg">
+								<label for="phone">Phone Number</label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									placeholder="+880 1700 000000"
+									autocomplete="tel" />
+							</div>
+
+							<div class="fg">
+								<label for="website">Portfolio URL</label>
+								<input
+									type="url"
+									id="website"
+									name="website"
+									placeholder="https://yourportfolio.com" />
+							</div>
+
+							<div class="fg">
+								<label for="age">Age</label>
+								<input
+									type="number"
+									id="age"
+									name="age"
+									min="16"
+									max="99"
+									placeholder="25" />
+							</div>
+
+							<div class="fg">
+								<label for="dob">Date of Birth</label>
+								<input
+									type="date"
+									id="dob"
+									name="dob"
+									max="2008-01-01" />
+							</div>
+
+							<div class="fg">
+								<label for="appt">Preferred Call Time</label>
+								<input
+									type="datetime-local"
+									id="appt"
+									name="appt" />
+							</div>
+
+							<!-- Datalist autocomplete -->
+							<div class="fg fg--full">
+								<label for="course"
+									>Course (with autocomplete)</label
+								>
+								<input
+									type="text"
+									id="course"
+									name="course"
+									list="course-list"
+									placeholder="Start typing a course name..." />
+								<datalist id="course-list">
+									<option
+										value="HTML &amp; CSS Fundamentals"></option>
+									<option
+										value="JavaScript Deep Dive"></option>
+									<option value="React + TypeScript"></option>
+									<option
+										value="Node.js &amp; Express"></option>
+									<option
+										value="MongoDB &amp; Mongoose"></option>
+									<option value="Full Stack MERN"></option>
+								</datalist>
+							</div>
+
+							<!-- Select with optgroup -->
+							<div class="fg">
+								<label for="level">Skill Level</label>
+								<select
+									id="level"
+									name="level">
+									<option
+										value=""
+										disabled
+										selected>
+										Choose level…
+									</option>
+									<optgroup label="Beginner">
+										<option value="abs">
+											Absolute Beginner
+										</option>
+										<option value="some">
+											Some Exposure
+										</option>
+									</optgroup>
+									<optgroup label="Intermediate">
+										<option value="fam">
+											Familiar with basics
+										</option>
+										<option value="build">
+											Already building projects
+										</option>
+									</optgroup>
+									<optgroup label="Advanced">
+										<option value="pro">
+											Professional Developer
+										</option>
+									</optgroup>
+								</select>
+							</div>
+
+							<div class="fg">
+								<label for="favcolor">Favourite Colour</label>
+								<input
+									type="color"
+									id="favcolor"
+									name="favcolor"
+									value="#C9372C" />
+							</div>
+
+							<!-- Range + output -->
+							<div class="fg fg--full">
+								<label for="satisfaction">
+									Satisfaction Level:
+									<output
+										for="satisfaction"
+										id="sat-out"
+										>7</output
+									>/10
+								</label>
+								<input
+									type="range"
+									id="satisfaction"
+									name="satisfaction"
+									min="1"
+									max="10"
+									value="7"
+									oninput="
+										document.getElementById(
+											'sat-out',
+										).value = this.value
+									" />
+							</div>
+
+							<!-- Search -->
+							<div class="fg">
+								<label for="search">Search Topics</label>
+								<input
+									type="search"
+									id="search"
+									name="search"
+									placeholder="Search…" />
+							</div>
+
+							<!-- File upload -->
+							<div class="fg">
+								<label for="avatar">Profile Photo</label>
+								<input
+									type="file"
+									id="avatar"
+									name="avatar"
+									accept="image/*" />
+							</div>
+
+							<!-- Radio fieldset -->
+							<div class="fg">
+								<fieldset>
+									<legend>Preferred Learning Mode</legend>
+									<div
+										class="radio-group"
+										style="margin-top: var(--space-s)">
+										<label class="radio-item"
+											><input
+												type="radio"
+												name="mode"
+												value="video"
+												checked />
+											Video lectures</label
+										>
+										<label class="radio-item"
+											><input
+												type="radio"
+												name="mode"
+												value="docs" />
+											Reading / docs</label
+										>
+										<label class="radio-item"
+											><input
+												type="radio"
+												name="mode"
+												value="projects" />
+											Hands-on projects</label
+										>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- Checkbox fieldset -->
+							<div class="fg">
+								<fieldset>
+									<legend>Topics of Interest</legend>
+									<div
+										class="check-group"
+										style="margin-top: var(--space-s)">
+										<label class="check-item"
+											><input
+												type="checkbox"
+												name="topics"
+												value="html"
+												checked />
+											HTML &amp; Semantics</label
+										>
+										<label class="check-item"
+											><input
+												type="checkbox"
+												name="topics"
+												value="css" />
+											CSS &amp; Layout</label
+										>
+										<label class="check-item"
+											><input
+												type="checkbox"
+												name="topics"
+												value="js" />
+											JavaScript</label
+										>
+										<label class="check-item"
+											><input
+												type="checkbox"
+												name="topics"
+												value="react" />
+											React &amp; Ecosystem</label
+										>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- Textarea -->
+							<div class="fg fg--full">
+								<label for="bio">Goals &amp; Background</label>
+								<textarea
+									id="bio"
+									name="bio"
+									rows="4"
+									placeholder="What do you hope to build after this course?"></textarea>
+							</div>
+
+							<!-- Hidden fields -->
+							<input
+								type="hidden"
+								name="batch"
+								value="18" />
+							<input
+								type="hidden"
+								name="module"
+								value="1" />
+						</div>
+
+						<div class="form-actions">
+							<button
+								type="submit"
+								class="btn btn--primary">
+								Submit Application
+							</button>
+							<button
+								type="reset"
+								class="btn btn--outline">
+								Reset Form
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §9 — INTERACTIVE ELEMENTS
+         Elements: details, summary, dialog, progress,
+                   meter, output, input[range], button
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-interactive"
+				aria-labelledby="h-interactive">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Interactive</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-interactive">
+							<strong>Interactive</strong> Elements
+						</h2>
+						<p class="section-sub">
+							details · summary · dialog · progress · meter ·
+							output
+						</p>
+					</header>
+
+					<div class="interactive-grid">
+						<!-- Details / Summary -->
+						<div class="iblock">
+							<h4>&lt;details&gt; / &lt;summary&gt; — FAQ</h4>
+							<details>
+								<summary>What is the DOM?</summary>
+								<div class="details-body">
+									The Document Object Model is a programming
+									interface for web documents. It represents
+									the page as a tree so JavaScript can modify
+									structure, style, and content dynamically.
+								</div>
+							</details>
+							<details>
+								<summary>What is the CSS Box Model?</summary>
+								<div class="details-body">
+									Every element is a rectangle: content →
+									padding → border → margin. Understanding
+									this model is foundational to laying out any
+									web page.
+								</div>
+							</details>
+							<details>
+								<summary>What is event bubbling?</summary>
+								<div class="details-body">
+									Events fire on the target element and
+									propagate upward through ancestors. A click
+									on a button also fires on its parent div,
+									then body, then document.
+								</div>
+							</details>
+							<details>
+								<summary>What is semantic HTML?</summary>
+								<div class="details-body">
+									Using HTML tags that describe the meaning of
+									content (not just appearance).
+									<code>&lt;nav&gt;</code> communicates
+									navigation;
+									<code>&lt;article&gt;</code> communicates an
+									independent piece of content.
+								</div>
+							</details>
+						</div>
+
+						<!-- Progress & Meter -->
+						<div class="iblock">
+							<h4>&lt;progress&gt; &amp; &lt;meter&gt;</h4>
+							<div
+								style="
+									display: flex;
+									flex-direction: column;
+									gap: var(--space-m);
+								">
+								<div>
+									<div
+										style="
+											display: flex;
+											justify-content: space-between;
+											margin-bottom: 0.35rem;
+											font-size: var(--step--1);
+											color: var(--ink-2);
+										">
+										<span>HTML Mastery</span
+										><span>72%</span>
+									</div>
+									<progress
+										value="72"
+										max="100">
+										72%
+									</progress>
+								</div>
+								<div>
+									<div
+										style="
+											display: flex;
+											justify-content: space-between;
+											margin-bottom: 0.35rem;
+											font-size: var(--step--1);
+											color: var(--ink-2);
+										">
+										<span>CSS Skills</span><span>55%</span>
+									</div>
+									<progress
+										value="55"
+										max="100">
+										55%
+									</progress>
+								</div>
+								<div>
+									<div
+										style="
+											display: flex;
+											justify-content: space-between;
+											margin-bottom: 0.35rem;
+											font-size: var(--step--1);
+											color: var(--ink-2);
+										">
+										<span>JavaScript</span><span>38%</span>
+									</div>
+									<progress
+										value="38"
+										max="100">
+										38%
+									</progress>
+								</div>
+								<hr
+									class="divider"
+									style="margin-block: var(--space-s)" />
+								<div>
+									<div
+										style="
+											margin-bottom: 0.35rem;
+											font-size: var(--step--1);
+											color: var(--ink-2);
+										">
+										Server load (meter — optimal)
+									</div>
+									<meter
+										value="0.45"
+										min="0"
+										max="1"
+										low="0.3"
+										high="0.75"
+										optimum="0.5">
+										45%
+									</meter>
+								</div>
+								<div>
+									<div
+										style="
+											margin-bottom: 0.35rem;
+											font-size: var(--step--1);
+											color: var(--ink-2);
+										">
+										Disk usage (meter — critical)
+									</div>
+									<meter
+										value="0.91"
+										min="0"
+										max="1"
+										low="0.5"
+										high="0.8"
+										optimum="0.2">
+										91%
+									</meter>
+								</div>
+							</div>
+						</div>
+
+						<!-- Output element calculator -->
+						<div class="iblock">
+							<h4>&lt;output&gt; — Live Calculator</h4>
+							<p
+								style="
+									font-size: var(--step--1);
+									color: var(--ink-2);
+									margin-bottom: var(--space-m);
+								">
+								The <code>&lt;output&gt;</code> element displays
+								the result of a calculation. The
+								<code>for</code> attribute links it to input
+								IDs.
+							</p>
+							<div
+								style="
+									display: flex;
+									align-items: center;
+									gap: var(--space-l);
+									flex-wrap: wrap;
+								">
+								<div style="flex: 1; min-width: 120px">
+									<label
+										for="na"
+										style="font-size: var(--step--1)"
+										>Value A</label
+									>
+									<input
+										type="number"
+										id="na"
+										value="14"
+										style="margin-bottom: 0.6rem"
+										oninput="calc()" />
+									<label
+										for="nb"
+										style="font-size: var(--step--1)"
+										>Value B</label
+									>
+									<input
+										type="number"
+										id="nb"
+										value="28"
+										oninput="calc()" />
+								</div>
+								<div style="text-align: center">
+									<div
+										style="
+											font-size: var(--step--1);
+											color: var(--ink-3);
+											margin-bottom: 0.25rem;
+										">
+										Sum
+									</div>
+									<output
+										id="result"
+										for="na nb"
+										>42</output
+									>
+								</div>
+							</div>
+						</div>
+
+						<!-- Dialog element -->
+						<div class="iblock">
+							<h4>&lt;dialog&gt; — Native Modal</h4>
+							<p
+								style="
+									font-size: var(--step--1);
+									color: var(--ink-2);
+									margin-bottom: var(--space-m);
+								">
+								The <code>&lt;dialog&gt;</code> element is a
+								native modal — no JavaScript library needed. It
+								handles focus trapping, backdrop, and
+								<kbd>Escape</kbd> to close.
+							</p>
+							<button
+								class="btn btn--primary"
+								onclick="
+									document
+										.getElementById('demo-dialog')
+										.showModal()
+								">
+								Open Dialog
+							</button>
+
+							<dialog
+								id="demo-dialog"
+								aria-labelledby="dlg-title">
+								<h3 id="dlg-title">Native HTML Dialog</h3>
+								<p>
+									No libraries, no hacks. This is a
+									<code>&lt;dialog&gt;</code> element. Focus
+									is trapped inside, the backdrop is part of
+									the spec, and <kbd>Escape</kbd> closes it
+									automatically.
+								</p>
+								<div class="btns">
+									<button
+										class="btn btn--primary"
+										onclick="
+											document
+												.getElementById('demo-dialog')
+												.close()
+										">
+										Confirm
+									</button>
+									<button
+										class="btn btn--outline"
+										onclick="
+											document
+												.getElementById('demo-dialog')
+												.close()
+										">
+										Cancel
+									</button>
+								</div>
+							</dialog>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §10 — SCRIPTING & CANVAS
+         Elements: script, noscript, canvas
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-scripting"
+				aria-labelledby="h-scripting">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Scripting</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-scripting">
+							<strong>Scripting</strong> &amp; Canvas
+						</h2>
+						<p class="section-sub">
+							script · noscript · canvas — bringing HTML to life
+							with JavaScript
+						</p>
+					</header>
+
+					<div class="narrow">
+						<p>
+							The <code>&lt;script&gt;</code> tag embeds or links
+							JavaScript. The <code>&lt;canvas&gt;</code> tag
+							provides a pixel-based 2D drawing surface accessible
+							via the Canvas API. Draw on the canvas below:
+						</p>
+					</div>
+
+					<noscript>
+						<div
+							style="
+								background: var(--accent);
+								color: white;
+								padding: var(--space-m);
+								margin-top: var(--space-l);
+							">
+							JavaScript is disabled — the interactive canvas
+							below requires it to function.
+						</div>
+					</noscript>
+
+					<div class="canvas-shell">
+						<canvas
+							id="draw-canvas"
+							width="700"
+							height="300"
+							aria-label="Interactive drawing canvas — click and drag to draw, touch supported"></canvas>
+						<div class="canvas-controls">
+							<label
+								>Colour
+								<input
+									type="color"
+									id="brush-color"
+									value="#C9372C"
+							/></label>
+							<label
+								>Size
+								<input
+									type="range"
+									id="brush-size"
+									min="2"
+									max="32"
+									value="8"
+							/></label>
+							<button
+								class="btn btn--outline"
+								onclick="clearCanvas()">
+								Clear
+							</button>
+						</div>
+					</div>
+
+					<pre
+						style="
+							margin-top: var(--space-l);
+						"><code>&lt;!-- Inline script --&gt;
+&lt;script&gt;
+  console.log('Hello, world!');
+&lt;/script&gt;
+
+&lt;!-- External script (defer = non-blocking) --&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- ES module --&gt;
+&lt;script type="module" src="main.js"&gt;&lt;/script&gt;
+
+&lt;!-- Fallback when JS is disabled --&gt;
+&lt;noscript&gt;
+  &lt;p&gt;This page requires JavaScript.&lt;/p&gt;
+&lt;/noscript&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §11 — SPECIAL PURPOSE TAGS
+         Elements: meta, link, base, template, slot,
+                   noscript, wbr, data, ruby, rt
+    ============================================== -->
+			<section
+				class="page-section"
+				id="s-special"
+				aria-labelledby="h-special">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Special Purpose</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-special">
+							<strong>Special Purpose</strong> Tags
+						</h2>
+						<p class="section-sub">
+							meta · link · base · template · slot · noscript ·
+							data · ruby
+						</p>
+					</header>
+
+					<div class="special-grid">
+						<div class="special-item">
+							<div class="special-item__tag">&lt;meta&gt;</div>
+							<p class="special-item__desc">
+								Document metadata — charset, viewport,
+								description, author, Open Graph, theme-color.
+								Lives in <code>&lt;head&gt;</code>. Void
+								element.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">&lt;link&gt;</div>
+							<p class="special-item__desc">
+								Links external resources: stylesheets, icons,
+								manifest, preconnect hints. Void element — no
+								closing tag needed.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">
+								&lt;template&gt;
+							</div>
+							<p class="special-item__desc">
+								Inert HTML not rendered until cloned via
+								JavaScript. Used in Web Components and repeated
+								UI patterns. See the live demo below.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">&lt;slot&gt;</div>
+							<p class="special-item__desc">
+								A placeholder inside a Web Component's shadow
+								DOM where consumer-provided (light DOM) content
+								is projected.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">
+								&lt;noscript&gt;
+							</div>
+							<p class="special-item__desc">
+								Fallback content when JavaScript is disabled.
+								Critical for progressive enhancement. Can appear
+								in <code>&lt;head&gt;</code> or
+								<code>&lt;body&gt;</code>.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">&lt;base&gt;</div>
+							<p class="special-item__desc">
+								Sets the base URL for all relative links and the
+								default <code>target</code> for links. One per
+								page; must be in <code>&lt;head&gt;</code>.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">&lt;data&gt;</div>
+							<p class="special-item__desc">
+								Links machine-readable content to human-readable
+								text via the <code>value</code> attribute. E.g.
+								<code
+									>&lt;data
+									value="398"&gt;Mini&lt;/data&gt;</code
+								>.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">
+								&lt;ruby&gt; / &lt;rt&gt;
+							</div>
+							<p class="special-item__desc">
+								Ruby annotations for East Asian typography —
+								shows pronunciation or meaning above/beside
+								characters. Critical for CJK accessibility.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">&lt;wbr&gt;</div>
+							<p class="special-item__desc">
+								Word Break Opportunity — hints where long
+								strings may wrap. Useful for URLs, variable
+								names, or long compound words.
+							</p>
+						</div>
+						<div class="special-item">
+							<div class="special-item__tag">data-*</div>
+							<p class="special-item__desc">
+								Custom data attributes on any element. Accessed
+								via <code>element.dataset.myKey</code>. Store
+								private data for JavaScript without abusing
+								class names.
+							</p>
+						</div>
+					</div>
+
+					<!-- Template live demo -->
+					<div style="margin-top: var(--space-2xl)">
+						<h3
+							style="
+								font-size: var(--step-2);
+								margin-bottom: var(--space-m);
+							">
+							Live <code>&lt;template&gt;</code> Demo
+						</h3>
+						<p
+							style="
+								font-size: var(--step--1);
+								color: var(--ink-2);
+								margin-bottom: var(--space-l);
+							">
+							The template below is hidden from the page. Each
+							button click clones it and injects a card with real
+							content — this is how frameworks like React work
+							under the hood.
+						</p>
+
+						<!-- Hidden template — not rendered -->
+						<template id="card-tpl">
+							<article
+								class="card reveal"
+								style="border-top-color: var(--accent-2)">
+								<div
+									class="card__num"
+									data-num></div>
+								<h3
+									class="card__title"
+									data-title></h3>
+								<p
+									class="card__body"
+									data-body></p>
+							</article>
+						</template>
+
+						<div
+							id="tpl-output"
+							class="cards-3"></div>
+						<button
+							class="btn btn--primary"
+							style="margin-top: var(--space-m)"
+							onclick="addCard()">
+							+ Clone Template Card
+						</button>
+					</div>
+
+					<!-- Ruby example -->
+					<div
+						style="
+							margin-top: var(--space-xl);
+							padding: var(--space-l);
+							background: var(--surface);
+						">
+						<h4 style="margin-bottom: var(--space-s)">
+							&lt;ruby&gt; Annotation Example
+						</h4>
+						<p
+							style="
+								font-size: var(--step-2);
+								font-family: var(--ff-display);
+							">
+							<ruby>明<rt>míng</rt></ruby>
+							<ruby>日<rt>rì</rt></ruby>
+							&nbsp;&nbsp;
+							<ruby>東<rt>とう</rt></ruby
+							><ruby>京<rt>きょう</rt></ruby>
+						</p>
+						<pre
+							style="
+								margin-top: var(--space-s);
+							"><code>&lt;ruby&gt;東&lt;rt&gt;とう&lt;/rt&gt;&lt;/ruby&gt;&lt;ruby&gt;京&lt;rt&gt;きょう&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+					</div>
+				</div>
+			</section>
+
+			<!-- =============================================
+         §12 — ADVANCED WEB PAGE STRUCTURE
+         Concepts: ARIA, accessibility, performance,
+                   progressive enhancement, SEO meta
+    ============================================== -->
+			<section
+				class="page-section dark-band"
+				id="s-advanced"
+				aria-labelledby="h-advanced">
+				<div class="wrap">
+					<div class="section-label">
+						<span class="tag">Advanced</span>
+					</div>
+					<header class="section-header">
+						<h2
+							class="section-title"
+							id="h-advanced">
+							Advanced Web Page <strong>Structure</strong>
+						</h2>
+						<p class="section-sub">
+							ARIA · Accessibility · Performance · Progressive
+							Enhancement · SEO
+						</p>
+					</header>
+
+					<div class="pillars">
+						<div class="pillar">
+							<h4>ARIA &amp; Roles</h4>
+							<p>
+								Add <code>role</code>, <code>aria-label</code>,
+								<code>aria-labelledby</code>,
+								<code>aria-hidden</code>, and
+								<code>aria-live</code> to bridge the gap between
+								visual design and screen readers. This page uses
+								them throughout.
+							</p>
+						</div>
+						<div class="pillar pillar--amber">
+							<h4>Loading Performance</h4>
+							<p>
+								<code>loading="lazy"</code>,
+								<code>decoding="async"</code>,
+								<code>&lt;link rel="preconnect"&gt;</code>,
+								<code>fetchpriority="high"</code>, and
+								<code>defer</code>/<code>async</code> on scripts
+								reduce LCP and TTI.
+							</p>
+						</div>
+						<div class="pillar pillar--green">
+							<h4>Progressive Enhancement</h4>
+							<p>
+								Start with semantic HTML that works without CSS
+								or JS. Layer in styles, then behaviour. Every
+								user — regardless of device or network — gets a
+								functional experience.
+							</p>
+						</div>
+						<div class="pillar pillar--blue">
+							<h4>SEO &amp; Meta</h4>
+							<p>
+								Open Graph, Twitter Cards, JSON-LD structured
+								data, canonical URLs, and a sensible heading
+								hierarchy help search engines parse content and
+								social platforms generate rich previews.
+							</p>
+						</div>
+					</div>
+
+					<pre
+						style="
+							margin-top: var(--space-xl);
+							background: oklch(12% 0.02 55);
+						"><code>&lt;!-- Core meta in &lt;head&gt; --&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="…"&gt;
+&lt;meta name="theme-color" content="#FAF7F0"&gt;
+
+&lt;!-- Open Graph --&gt;
+&lt;meta property="og:title"       content="Page Title"&gt;
+&lt;meta property="og:description" content="…"&gt;
+&lt;meta property="og:image"       content="https://…/og.jpg"&gt;
+&lt;meta property="og:type"        content="website"&gt;
+
+&lt;!-- ARIA landmarks already set by semantic tags --&gt;
+&lt;header role="banner"&gt;
+&lt;nav    aria-label="Main navigation"&gt;
+&lt;main   id="main-content"&gt;
+&lt;footer role="contentinfo"&gt;
+
+&lt;!-- Skip link (keyboard / screen reader UX) --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;</code></pre>
+				</div>
+			</section>
+		</main>
+
+		<!-- =============================================
+       FOOTER — semantic <footer> + nav + address
+  ============================================== -->
+		<footer role="contentinfo">
+			<div class="wrap">
+				<div class="footer-grid">
+					<div>
+						<h3>The HTML<br />Compendium</h3>
+						<p>
+							A complete living reference for MERN Batch 18. Every
+							element on this page is a live demonstration of the
+							HTML concept it describes.
+						</p>
+						<address
+							style="
+								margin-top: var(--space-m);
+								font-size: var(--step--1);
+								color: oklch(55% 0.015 80);
+							">
+							MERN Batch 18 · Ostad<br />
+							Module 1 · Class 1 ·
+							<time datetime="2024">2024</time>
+						</address>
+					</div>
+
+					<nav aria-label="Page sections footer">
+						<h5>Sections</h5>
+						<ul>
+							<li><a href="#s-internet">The Internet</a></li>
+							<li>
+								<a href="#s-structure">Semantic Structure</a>
+							</li>
+							<li><a href="#s-text">Text Formatting</a></li>
+							<li><a href="#s-lists">Lists</a></li>
+							<li><a href="#s-links">Links &amp; Anchors</a></li>
+							<li><a href="#s-media">Images &amp; Media</a></li>
+						</ul>
+					</nav>
+
+					<nav aria-label="More sections footer">
+						<h5>More</h5>
+						<ul>
+							<li><a href="#s-table">Tables</a></li>
+							<li><a href="#s-form">Forms &amp; Inputs</a></li>
+							<li>
+								<a href="#s-interactive"
+									>Interactive Elements</a
+								>
+							</li>
+							<li>
+								<a href="#s-scripting"
+									>Scripting &amp; Canvas</a
+								>
+							</li>
+							<li>
+								<a href="#s-special">Special Purpose Tags</a>
+							</li>
+							<li>
+								<a href="#s-advanced">Advanced Structure</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="footer-bottom">
+					<span>MERN Batch 18 · Ostad · Module 1, Class 1</span>
+					<span>Built with HTML5 · Living Standard</span>
+				</div>
+			</div>
+		</footer>
+
+		<!-- =============================================
+       SCRIPTS — canvas, calculator, template demo,
+                 scroll reveal, IntersectionObserver
+  ============================================== -->
+		<script>
+			/* ---- Output element calculator ---- */
+			function calc() {
+				const a = parseFloat(document.getElementById("na").value) || 0;
+				const b = parseFloat(document.getElementById("nb").value) || 0;
+				document.getElementById("result").value = a + b;
+			}
+
+			/* ---- Canvas drawing ---- */
+			const canvas = document.getElementById("draw-canvas");
+			const ctx = canvas.getContext("2d");
+			let drawing = false;
+			let lastX = 0,
+				lastY = 0;
+
+			function pos(e) {
+				const r = canvas.getBoundingClientRect();
+				const sx = canvas.width / r.width;
+				const sy = canvas.height / r.height;
+				const cx = e.touches ? e.touches[0].clientX : e.clientX;
+				const cy = e.touches ? e.touches[0].clientY : e.clientY;
+				return { x: (cx - r.left) * sx, y: (cy - r.top) * sy };
+			}
+			function startDraw(e) {
+				drawing = true;
+				const p = pos(e);
+				lastX = p.x;
+				lastY = p.y;
+				e.preventDefault();
+			}
+			function draw(e) {
+				if (!drawing) return;
+				e.preventDefault();
+				const p = pos(e);
+				const col = document.getElementById("brush-color").value;
+				const size = document.getElementById("brush-size").value;
+				ctx.beginPath();
+				ctx.moveTo(lastX, lastY);
+				ctx.lineTo(p.x, p.y);
+				ctx.strokeStyle = col;
+				ctx.lineWidth = size;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+				ctx.stroke();
+				lastX = p.x;
+				lastY = p.y;
+			}
+			function stopDraw() {
+				drawing = false;
+			}
+			function clearCanvas() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				drawPlaceholder();
+			}
+
+			canvas.addEventListener("mousedown", startDraw);
+			canvas.addEventListener("mousemove", draw);
+			canvas.addEventListener("mouseup", stopDraw);
+			canvas.addEventListener("mouseleave", stopDraw);
+			canvas.addEventListener("touchstart", startDraw, {
+				passive: false,
+			});
+			canvas.addEventListener("touchmove", draw, { passive: false });
+			canvas.addEventListener("touchend", stopDraw);
+
+			function drawPlaceholder() {
+				ctx.fillStyle = "#1a1a1f";
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+				ctx.fillStyle = "#444";
+				ctx.font = "15px DM Sans, sans-serif";
+				ctx.textAlign = "center";
+				ctx.fillText(
+					"Click and drag to draw  ·  change colour and size below",
+					canvas.width / 2,
+					canvas.height / 2,
+				);
+			}
+			drawPlaceholder();
+
+			/* ---- Template card demo ---- */
+			const CARDS = [
+				{
+					num: "01",
+					title: "DNS Resolution",
+					body: "Browser queries the DNS resolver to convert a domain name into an IP address.",
+				},
+				{
+					num: "02",
+					title: "TCP Handshake",
+					body: "A three-way handshake (SYN, SYN-ACK, ACK) establishes a reliable TCP connection.",
+				},
+				{
+					num: "03",
+					title: "HTTP Request",
+					body: "Browser sends GET /path HTTP/1.1 — server responds with status, headers, and HTML body.",
+				},
+				{
+					num: "04",
+					title: "DOM Construction",
+					body: "Browser parses HTML into the DOM, fetches CSS/JS, applies styles, and paints pixels.",
+				},
+			];
+			let cardIdx = 0;
+
+			function addCard() {
+				const tpl = document.getElementById("card-tpl");
+				const output = document.getElementById("tpl-output");
+				const clone = tpl.content.cloneNode(true);
+				const data = CARDS[cardIdx % CARDS.length];
+				cardIdx++;
+				clone.querySelector("[data-num]").textContent = data.num;
+				clone.querySelector("[data-title]").textContent = data.title;
+				clone.querySelector("[data-body]").textContent = data.body;
+				output.appendChild(clone);
+				// trigger reveal animation
+				requestAnimationFrame(() => {
+					const last = output.lastElementChild;
+					if (last) last.classList.add("visible");
+				});
+			}
+
+			/* ---- Scroll reveal ---- */
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((e) => {
+						if (e.isIntersecting) {
+							e.target.classList.add("visible");
+							observer.unobserve(e.target);
+						}
+					});
+				},
+				{ threshold: 0.12 },
+			);
+
+			document
+				.querySelectorAll(".reveal")
+				.forEach((el) => observer.observe(el));
+		</script>
+	</body>
+</html>
