@@ -1,0 +1,57 @@
+/* Learning note: Style11 | module-2 (CSS)/pratice/style11.css */
+/*
+CSS Text Spacing
+
+1. line-height
+2. letter-spacing
+3. word-spacing
+4. text-indent
+
+*/
+
+
+body {
+
+    font-family: Arial;
+
+}
+
+
+
+/* Line Height */
+
+.line {
+
+    line-height: 35px;
+
+}
+
+
+
+/* Letter Spacing */
+
+.letter {
+
+    letter-spacing: 5px;
+
+}
+
+
+
+/* Word Spacing */
+
+.word {
+
+    word-spacing: 15px;
+
+}
+
+
+
+/* Text Indent */
+
+.indent {
+
+    text-indent: 50px;
+
+}

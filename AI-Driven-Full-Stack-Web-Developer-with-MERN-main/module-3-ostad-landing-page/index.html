@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- Learning note: Index | module-3-ostad-landing-page/index.html -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epixelab - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { abel: ['Abel', 'sans-serif'], dm: ['"DM Sans"', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
+          colors: { brand: '#FF6600', navy: '#1B2547', indigo: '#1E1B6B' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-dm text-navy bg-white">
+
+  <!-- Navbar -->
+  <header class="relative">
+    <nav class="max-w-6xl mx-auto px-5 py-5 flex items-center justify-between">
+      <a href="#"><img src="images/logo.png" alt="epixelab" class="h-8 w-auto" /></a>
+      <ul class="hidden md:flex gap-8 text-sm font-poppins text-black">
+        <li><a href="#" class="hover:text-brand">Home</a></li>
+        <li><a href="#about" class="hover:text-brand">About Us</a></li>
+        <li><a href="#vision" class="hover:text-brand">Our App</a></li>
+        <li><a href="#subscribe" class="hover:text-brand">Contacts</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-6 text-sm font-poppins">
+        <a href="#" class="hover:text-brand">Log in</a>
+        <a href="#" class="bg-brand text-white px-6 py-2 rounded-md">Sign up</a>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-100 px-5 pb-5 font-poppins text-sm">
+      <a href="#" class="block py-2">Home</a>
+      <a href="#about" class="block py-2">About Us</a>
+      <a href="#vision" class="block py-2">Our App</a>
+      <a href="#subscribe" class="block py-2">Contacts</a>
+      <div class="flex items-center gap-5 pt-3">
+        <a href="#">Log in</a>
+        <a href="#" class="bg-brand text-white px-6 py-2 rounded-md">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-6 pb-16 lg:pt-10 grid lg:grid-cols-2 gap-8 items-center">
+    <div class="text-center lg:text-left">
+      <h1 class="font-poppins font-bold text-[#0B1536] text-4xl sm:text-5xl xl:text-7xl leading-[1.1] tracking-tight">We boost growth for your statup business</h1>
+      <p class="mt-6 font-poppins text-sm sm:text-base text-black max-w-md mx-auto lg:mx-0">Our goal is top at the heart of creativity services industry as a digital creator. In has a after comment</p>
+      <div class="mt-8 flex items-center gap-8 justify-center lg:justify-start">
+        <a href="#" class="bg-brand text-white font-poppins text-sm px-8 py-3 rounded-md">Get Started</a>
+        <a href="#" class="flex items-center gap-3 font-poppins text-sm text-black">
+          <img src="images/play-icon.png" alt="" class="h-9 w-auto" />Learn More
+        </a>
+      </div>
+    </div>
+    <div>
+      <img src="images/hero.png" alt="Smiling man using a phone with business growth and happy clients cards" class="w-full max-w-md sm:max-w-lg mx-auto lg:max-w-full" />
+    </div>
+  </section>
+
+  <!-- Vision & Goal -->
+  <section id="vision" class="max-w-6xl mx-auto px-5 pb-16">
+    <p class="text-center text-[10px] tracking-[0.3em] text-gray-400 uppercase">Service</p>
+    <h2 class="mt-1 text-center font-abel text-3xl sm:text-4xl">Our Vison &amp; Our Goal</h2>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6">
+      <!-- card 1 -->
+      <article class="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-8 py-8 text-center">
+        <div class="mx-auto w-11 h-11 rounded-xl bg-black text-white flex items-center justify-center relative">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 4 3 6-7"/></svg>
+          <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-black"></span>
+        </div>
+        <h3 class="mt-5 font-abel text-2xl">Graphic Design</h3>
+        <p class="mt-4 font-poppins text-xs leading-relaxed text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui mi, bibendum eu erat id, ultricies semper metus. Nunc dapibus laoreet dolor nec imperdiet.</p>
+        <a href="#" class="inline-block mt-6 bg-brand text-white font-poppins text-xs px-12 py-2.5 rounded-md">Learn More</a>
+      </article>
+      <!-- card 2 -->
+      <article class="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-8 py-8 text-center">
+        <div class="mx-auto w-11 h-11 rounded-xl bg-black text-white flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3z"/></svg>
+        </div>
+        <h3 class="mt-5 font-abel text-2xl">Video Editing</h3>
+        <p class="mt-4 font-poppins text-xs leading-relaxed text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui mi, bibendum eu erat id, ultricies semper metus. Nunc dapibus laoreet dolor nec imperdiet.</p>
+        <a href="#" class="inline-block mt-6 bg-brand text-white font-poppins text-xs px-12 py-2.5 rounded-md">Learn More</a>
+      </article>
+      <!-- card 3 -->
+      <article class="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-8 py-8 text-center sm:col-span-2 sm:max-w-md sm:mx-auto lg:col-span-1 lg:max-w-none lg:mx-0">
+        <div class="mx-auto w-11 h-11 rounded-xl bg-black text-white flex items-center justify-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M7 18v-6M12 18V6M17 18v-9"/></svg>
+        </div>
+        <h3 class="mt-5 font-abel text-2xl">Digital Marketing</h3>
+        <p class="mt-4 font-poppins text-xs leading-relaxed text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui mi, bibendum eu erat id, ultricies semper metus. Nunc dapibus laoreet dolor nec imperdiet.</p>
+        <a href="#" class="inline-block mt-6 bg-brand text-white font-poppins text-xs px-12 py-2.5 rounded-md">Learn More</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Many Blocks and Components -->
+  <section id="about" class="max-w-6xl mx-auto px-5 pb-20 grid md:grid-cols-[1fr_1.8fr] gap-8 md:gap-12 items-stretch">
+    <div class="flex flex-col justify-between gap-6 order-2 md:order-1 py-2">
+      <div>
+        <h3 class="text-indigo text-base font-medium leading-snug max-w-[12rem]">Many Blocks and Components</h3>
+        <p class="mt-6 text-xs leading-relaxed text-gray-400 max-w-[15rem]">Startup Framework contains components and complex blocks which can easily be integrated into almost any design.</p>
+      </div>
+      <a href="#" class="self-start text-indigo text-xs border border-gray-200 rounded-full px-6 py-2.5 shadow-sm">Explore</a>
+    </div>
+    <img src="images/video.png" alt="Video player preview" class="order-1 md:order-2 w-full rounded-lg object-cover" />
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-6xl mx-auto px-5 pb-20">
+    <p class="text-center text-[10px] tracking-[0.3em] text-gray-400 uppercase">Testimonials</p>
+    <h2 class="mt-1 text-center font-abel text-3xl sm:text-4xl">What Clients say about us</h2>
+    <div class="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-12 max-w-3xl mx-auto">
+      <figure class="flex gap-4">
+        <img src="images/client-1.png" alt="Rayhan Curran" class="w-9 h-9 rounded-md object-cover shrink-0" onerror="this.onerror=null;this.src='images/userpic.png'" />
+        <div><p class="text-xs leading-relaxed">Get a fully retina ready site when you build with Startup. Websites look sharper and more gorgeous on devices with retina display support</p><figcaption class="mt-5 text-[10px] tracking-widest text-gray-400 uppercase">Rayhan Curran</figcaption></div>
+      </figure>
+      <figure class="flex gap-4">
+        <img src="images/client-2.png" alt="Kayley Frame" class="w-9 h-9 rounded-md object-cover shrink-0" onerror="this.onerror=null;this.src='images/userpic.png'" />
+        <div><p class="text-xs leading-relaxed">As a business targeting high net worth individuals, we were looking for a slick, cool and mini-malistic design for our website</p><figcaption class="mt-5 text-[10px] tracking-widest text-gray-400 uppercase">Kayley Frame</figcaption></div>
+      </figure>
+      <figure class="flex gap-4">
+        <img src="images/client-3.png" alt="Gene Whitfield" class="w-9 h-9 rounded-md object-cover shrink-0" onerror="this.onerror=null;this.src='images/userpic.png'" />
+        <div><p class="text-xs leading-relaxed">The most important part of the Startup Framework is the samples</p><figcaption class="mt-8 text-[10px] tracking-widest text-gray-400 uppercase">Gene Whitfield</figcaption></div>
+      </figure>
+      <figure class="flex gap-4">
+        <img src="images/client-4.png" alt="Allan Kim" class="w-9 h-9 rounded-md object-cover shrink-0" onerror="this.onerror=null;this.src='images/userpic.png'" />
+        <div><p class="text-xs leading-relaxed">I've built my website with Startup just in one day, and it was ready-to-go.</p><figcaption class="mt-8 text-[10px] tracking-widest text-gray-400 uppercase">Allan Kim</figcaption></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="max-w-6xl mx-auto px-5 pb-20">
+    <p class="text-center text-[10px] tracking-[0.3em] text-gray-400 uppercase">Our Team</p>
+    <h2 class="mt-1 text-center font-abel text-3xl sm:text-4xl">Meet The Team</h2>
+    <div class="mt-10 grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+      <div class="border border-gray-200 rounded-lg overflow-hidden text-center">
+        <div class="pt-6 pb-8"><img src="images/team-1.png" alt="Vanessa Laird" class="mx-auto w-[60px] h-[60px] rounded-full object-cover" onerror="this.onerror=null;this.src='images/userpic.png'" /><h3 class="mt-4 text-sm text-indigo">Vanessa Laird</h3><p class="mt-3 text-[9px] tracking-widest text-gray-400 uppercase">UI Designer</p></div>
+        <div class="grid grid-cols-3 border-t border-gray-200 h-8"><span></span><span class="border-x border-gray-200"></span><span></span></div>
+      </div>
+      <div class="border border-gray-200 rounded-lg overflow-hidden text-center">
+        <div class="pt-6 pb-8"><img src="images/team-2.png" alt="Mason Campbell" class="mx-auto w-[60px] h-[60px] rounded-full object-cover" onerror="this.onerror=null;this.src='images/userpic.png'" /><h3 class="mt-4 text-sm text-indigo">Mason Campbell</h3><p class="mt-3 text-[9px] tracking-widest text-gray-400 uppercase">UI Designer</p></div>
+        <div class="grid grid-cols-3 border-t border-gray-200 h-8"><span></span><span class="border-x border-gray-200"></span><span></span></div>
+      </div>
+      <div class="border border-gray-200 rounded-lg overflow-hidden text-center">
+        <div class="pt-6 pb-8"><img src="images/team-3.png" alt="Irea Evans" class="mx-auto w-[60px] h-[60px] rounded-full object-cover" onerror="this.onerror=null;this.src='images/userpic.png'" /><h3 class="mt-4 text-sm text-indigo">Irea Evans</h3><p class="mt-3 text-[9px] tracking-widest text-gray-400 uppercase">Client Manager</p></div>
+        <div class="grid grid-cols-3 border-t border-gray-200 h-8"><span></span><span class="border-x border-gray-200"></span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="subscribe" class="max-w-6xl mx-auto px-5 pb-20">
+    <p class="text-center text-[10px] tracking-[0.3em] text-gray-400 uppercase">Our Team</p>
+    <h2 class="mt-1 text-center font-abel text-3xl sm:text-4xl">Subscribe Our Newsletter</h2>
+    <div class="mt-12 grid md:grid-cols-[1fr_1.6fr] gap-10 items-center max-w-4xl mx-auto">
+      <img src="images/newsletter.png" alt="Orange envelope with a letter" class="mx-auto w-44 md:w-56" />
+      <form onsubmit="event.preventDefault()">
+        <p class="font-poppins text-xs leading-relaxed text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <label for="email" class="sr-only">Your E-mail</label>
+        <input id="email" type="email" placeholder="Your E-mail here..." class="mt-6 w-full rounded-full bg-white shadow-[0_10px_25px_rgba(0,0,0,0.12)] border border-gray-100 px-8 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand" />
+        <button class="mt-6 w-full bg-brand text-white font-poppins text-xs py-3.5 rounded-md">Subscribe Our Newsletter</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-5 pb-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-5 text-[11px] text-indigo">
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-10">
+        <img src="images/logo.png" alt="epixelab" class="h-5 w-auto" />
+        <span>© 2020 Epixelab. All rights reserved.</span>
+      </div>
+      <ul class="flex flex-wrap justify-center gap-6">
+        <li><a href="#">Portfolio</a></li><li><a href="#">How it Works</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Login</a></li>
+      </ul>
+    </div>
+    <hr class="my-6 border-gray-200" />
+    <p class="text-[11px] text-gray-400 text-center md:text-left">Startup Framework contains components and complex blocks which can easily be integrated into almost any design.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!-- Learning note: Index | module-3 (Tailwind CSS)/project/05-tailwind-dashboard/index.html -->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-slate-100 text-slate-800">
+
+
+
+<div class="min-h-screen flex flex-col md:flex-row">
+
+
+
+<!-- Sidebar -->
+
+
+<aside class="bg-slate-900 text-white w-full md:w-64 p-6">
+
+
+<h2 class="text-3xl font-bold text-cyan-400 mb-10">
+
+EduPanel
+
+</h2>
+
+
+
+
+<ul class="space-y-4">
+
+
+<li class="bg-blue-600 p-3 rounded-lg">
+
+Dashboard
+
+</li>
+
+
+
+<li class="hover:bg-slate-700 p-3 rounded-lg cursor-pointer">
+
+Students
+
+</li>
+
+
+
+<li class="hover:bg-slate-700 p-3 rounded-lg cursor-pointer">
+
+Courses
+
+</li>
+
+
+
+<li class="hover:bg-slate-700 p-3 rounded-lg cursor-pointer">
+
+Attendance
+
+</li>
+
+
+
+<li class="hover:bg-slate-700 p-3 rounded-lg cursor-pointer">
+
+Results
+
+</li>
+
+
+
+<li class="hover:bg-slate-700 p-3 rounded-lg cursor-pointer">
+
+Settings
+
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+
+
+
+<!-- Main Content -->
+
+
+<main class="flex-1 p-6 md:p-10">
+
+
+
+<!-- Header -->
+
+
+<div class="flex flex-col md:flex-row justify-between items-center gap-5 mb-8">
+
+
+<h1 class="text-4xl font-bold">
+
+Student Dashboard
+
+</h1>
+
+
+
+<input
+
+type="text"
+
+placeholder="Search Student..."
+
+class="px-5 py-3 rounded-xl border w-full md:w-80"
+
+>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Profile -->
+
+
+<section class="bg-white rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-8">
+
+
+
+<img
+
+src="./image/student.jpg"
+
+alt="Student"
+
+class="w-32 h-32 rounded-full object-cover"
+
+>
+
+
+
+
+<div>
+
+
+<h2 class="text-3xl font-bold">
+
+Anik Dey
+
+</h2>
+
+
+
+<p class="text-slate-600 mt-2">
+
+Computer Science Student
+
+</p>
+
+
+
+<p class="mt-2">
+
+Student ID: 23-50589-1
+
+</p>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Statistics Cards -->
+
+
+<section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+
+
+<div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+
+
+<h3 class="font-semibold text-lg">
+
+Total Students
+
+</h3>
+
+
+<h1 class="text-4xl font-bold text-blue-600 mt-3">
+
+850
+
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+
+
+<h3 class="font-semibold text-lg">
+
+Present Today
+
+</h3>
+
+
+<h1 class="text-4xl font-bold text-green-600 mt-3">
+
+780
+
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+
+
+<h3 class="font-semibold text-lg">
+
+Courses
+
+</h3>
+
+
+<h1 class="text-4xl font-bold text-purple-600 mt-3">
+
+12
+
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+
+
+<h3 class="font-semibold text-lg">
+
+Average Result
+
+</h3>
+
+
+<h1 class="text-4xl font-bold text-orange-500 mt-3">
+
+92%
+
+</h1>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Student Table -->
+
+
+<section class="bg-white p-6 rounded-2xl shadow-lg">
+
+
+<h2 class="text-3xl font-bold text-blue-600 mb-6">
+
+Student List
+
+</h2>
+
+
+
+
+<div class="overflow-x-auto">
+
+
+<table class="w-full text-center">
+
+
+<tr class="bg-blue-600 text-white">
+
+
+<th class="p-4">
+Name
+</th>
+
+
+<th class="p-4">
+ID
+</th>
+
+
+<th class="p-4">
+Department
+</th>
+
+
+<th class="p-4">
+Status
+</th>
+
+
+</tr>
+
+
+
+
+
+<tr class="border">
+
+
+<td class="p-4">
+
+Anik Dey
+
+</td>
+
+
+<td>
+
+001
+
+</td>
+
+
+<td>
+
+CSE
+
+</td>
+
+
+<td class="text-green-600 font-bold">
+
+Present
+
+</td>
+
+
+</tr>
+
+
+
+
+
+
+
+<tr class="border">
+
+
+<td class="p-4">
+
+John Smith
+
+</td>
+
+
+<td>
+
+002
+
+</td>
+
+
+<td>
+
+CSE
+
+</td>
+
+
+<td class="text-red-600 font-bold">
+
+Absent
+
+</td>
+
+
+</tr>
+
+
+
+
+
+
+
+<tr class="border">
+
+
+<td class="p-4">
+
+Sarah Lee
+
+</td>
+
+
+<td>
+
+003
+
+</td>
+
+
+<td>
+
+EEE
+
+</td>
+
+
+<td class="text-green-600 font-bold">
+
+Present
+
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Attendance -->
+
+
+<section class="bg-white p-6 rounded-2xl shadow-lg mt-8">
+
+
+<h2 class="text-3xl font-bold text-blue-600">
+
+Attendance Progress
+
+</h2>
+
+
+
+
+<div class="bg-slate-200 h-6 rounded-full mt-6 overflow-hidden">
+
+
+<div class="bg-blue-600 h-full w-[85%] rounded-full">
+
+</div>
+
+
+</div>
+
+
+
+<p class="mt-4 font-semibold">
+
+85% Attendance Completed
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

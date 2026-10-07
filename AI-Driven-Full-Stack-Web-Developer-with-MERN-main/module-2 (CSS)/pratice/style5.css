@@ -1,0 +1,172 @@
+/* Learning note: Style5 | module-2 (CSS)/pratice/style5.css */
+/*
+CSS Background Properties
+
+1. background-color
+2. background-image
+3. background-repeat
+4. background-size
+5. background-position
+6. gradient
+7. attachment
+
+*/
+
+
+body {
+
+    font-family: Arial;
+
+}
+
+
+
+/* Background Color */
+
+.color {
+
+    width: 300px;
+
+    height: 100px;
+
+    background-color: orange;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 40px;
+
+    margin: 20px;
+
+}
+
+
+
+/* Background Image */
+
+.image {
+
+    width: 300px;
+
+    height: 150px;
+
+
+    background-image: url("image.jpg");
+
+
+    background-size: cover;
+
+
+    color: white;
+
+
+    text-align: center;
+
+    padding-top: 50px;
+
+    margin: 20px;
+
+}
+
+
+
+/* Background Repeat */
+
+.repeat {
+
+    width: 300px;
+
+    height: 150px;
+
+
+    background-image: url("image.jpg");
+
+
+    background-repeat: no-repeat;
+
+
+    background-size: contain;
+
+
+    background-color: black;
+
+
+    color: white;
+
+
+    text-align: center;
+
+    padding-top: 50px;
+
+    margin: 20px;
+
+}
+
+
+
+/* Linear Gradient */
+
+.gradient {
+
+
+    width: 300px;
+
+    height: 100px;
+
+
+    background: linear-gradient(
+        to right,
+        blue,
+        purple
+    );
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding-top:40px;
+
+
+    margin:20px;
+
+
+}
+
+
+
+/* Background Position */
+
+.position {
+
+
+    width:300px;
+
+    height:150px;
+
+
+    background-image:url("image.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding-top:50px;
+
+
+    margin:20px;
+
+
+}

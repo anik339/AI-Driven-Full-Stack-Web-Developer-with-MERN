@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- Learning note: Grid | module-3 (Tailwind CSS)/pratice/11_Grid_System_Tailwind/grid.html -->
+
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Grid System Tailwind
+</title>
+
+
+<link rel="stylesheet" href="./src/grid-output.css">
+
+
+</head>
+
+
+<body class="bg-gray-100 p-10">
+
+
+
+<h1 class="
+text-4xl
+font-bold
+text-center
+text-blue-600
+mb-10
+">
+
+Grid System in Tailwind CSS
+
+</h1>
+
+
+
+
+
+
+
+
+<!-- Basic Grid -->
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+1. Grid Columns
+
+</h2>
+
+
+
+<div class="
+grid
+grid-cols-3
+gap-5
+">
+
+
+<div class="
+bg-red-500
+text-white
+p-6
+rounded-lg
+">
+
+Box 1
+
+</div>
+
+
+
+<div class="
+bg-green-500
+text-white
+p-6
+rounded-lg
+">
+
+Box 2
+
+</div>
+
+
+
+<div class="
+bg-blue-500
+text-white
+p-6
+rounded-lg
+">
+
+Box 3
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Responsive Grid -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+2. Responsive Grid
+
+</h2>
+
+
+
+<div class="
+grid
+grid-cols-1
+md:grid-cols-2
+lg:grid-cols-4
+gap-5
+">
+
+
+<div class="
+bg-white
+p-6
+shadow
+rounded-lg
+">
+
+Card 1
+
+</div>
+
+
+<div class="
+bg-white
+p-6
+shadow
+rounded-lg
+">
+
+Card 2
+
+</div>
+
+
+<div class="
+bg-white
+p-6
+shadow
+rounded-lg
+">
+
+Card 3
+
+</div>
+
+
+<div class="
+bg-white
+p-6
+shadow
+rounded-lg
+">
+
+Card 4
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Grid Rows -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+3. Grid Rows
+
+</h2>
+
+
+
+<div class="
+grid
+grid-rows-3
+gap-4
+h-96
+">
+
+
+<div class="
+bg-purple-500
+text-white
+p-5
+">
+
+Row 1
+
+</div>
+
+
+
+<div class="
+bg-yellow-500
+p-5
+">
+
+Row 2
+
+</div>
+
+
+
+<div class="
+bg-pink-500
+text-white
+p-5
+">
+
+Row 3
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Column Span -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+4. Column Span
+
+</h2>
+
+
+
+<div class="
+grid
+grid-cols-3
+gap-5
+">
+
+
+<div class="
+bg-blue-600
+text-white
+p-6
+col-span-2
+">
+
+Span 2 Columns
+
+</div>
+
+
+
+<div class="
+bg-gray-500
+text-white
+p-6
+">
+
+Normal
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Auto Flow -->
+
+
+<section>
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+5. Grid Auto Flow
+
+</h2>
+
+
+
+<div class="
+grid
+grid-flow-col
+gap-5
+">
+
+
+<div class="
+bg-red-500
+text-white
+p-5
+">
+
+A
+
+</div>
+
+
+<div class="
+bg-green-500
+text-white
+p-5
+">
+
+B
+
+</div>
+
+
+<div class="
+bg-blue-500
+text-white
+p-5
+">
+
+C
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+</body>
+
+</html>

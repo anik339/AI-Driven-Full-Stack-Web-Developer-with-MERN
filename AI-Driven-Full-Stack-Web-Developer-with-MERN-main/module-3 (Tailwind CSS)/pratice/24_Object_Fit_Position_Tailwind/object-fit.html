@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!-- Learning note: Object Fit | module-3 (Tailwind CSS)/pratice/24_Object_Fit_Position_Tailwind/object-fit.html -->
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Object Fit and Object Position Tailwind
+    </title>
+
+
+    <!-- Tailwind CSS Output -->
+    <link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+
+<body class="bg-gray-100 p-8">
+
+
+<div class="max-w-7xl mx-auto">
+
+
+
+    <!-- Page Heading -->
+    <div class="text-center mb-12">
+
+
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
+
+            Object Fit & Object Position
+
+        </h1>
+
+
+        <p class="text-gray-600 text-lg">
+
+            Control image size, cropping and positioning using Tailwind CSS.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Object Fit Section -->
+    <section class="bg-white p-8 rounded-2xl shadow-xl mb-10">
+
+
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+
+            1. Object Fit Examples
+
+        </h2>
+
+
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+
+
+            <!-- Object Cover -->
+            <div>
+
+
+                <h3 class="font-bold text-xl mb-3">
+
+                    Object Cover
+
+                </h3>
+
+
+                <img 
+                src="https://picsum.photos/600/400"
+                class="w-full h-64 object-cover rounded-xl"
+                alt="Object Cover Example">
+
+
+            </div>
+
+
+
+
+
+            <!-- Object Contain -->
+            <div>
+
+
+                <h3 class="font-bold text-xl mb-3">
+
+                    Object Contain
+
+                </h3>
+
+
+                <div class="bg-gray-200 h-64 rounded-xl">
+
+
+                    <img 
+                    src="https://picsum.photos/500/500"
+                    class="w-full h-full object-contain rounded-xl"
+                    alt="Object Contain Example">
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Object Fill -->
+            <div>
+
+
+                <h3 class="font-bold text-xl mb-3">
+
+                    Object Fill
+
+                </h3>
+
+
+                <img 
+                src="https://picsum.photos/700/400"
+                class="w-full h-64 object-fill rounded-xl"
+                alt="Object Fill Example">
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- Object Position Section -->
+    <section class="bg-white p-8 rounded-2xl shadow-xl mb-10">
+
+
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+
+            2. Object Position
+
+        </h2>
+
+
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+
+
+            <!-- Center Position -->
+            <div>
+
+
+                <h3 class="font-bold mb-3">
+
+                    Center
+
+                </h3>
+
+
+                <img 
+                src="https://picsum.photos/600/400"
+                class="w-full h-64 object-cover object-center rounded-xl"
+                alt="Center Position">
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Top Position -->
+            <div>
+
+
+                <h3 class="font-bold mb-3">
+
+                    Top
+
+                </h3>
+
+
+                <img 
+                src="https://picsum.photos/600/400"
+                class="w-full h-64 object-cover object-top rounded-xl"
+                alt="Top Position">
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Bottom Position -->
+            <div>
+
+
+                <h3 class="font-bold mb-3">
+
+                    Bottom
+
+                </h3>
+
+
+                <img 
+                src="https://picsum.photos/600/400"
+                class="w-full h-64 object-cover object-bottom rounded-xl"
+                alt="Bottom Position">
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- Real Project Example -->
+    <section class="bg-white p-8 rounded-2xl shadow-xl">
+
+
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+
+            Profile Card Example
+
+        </h2>
+
+
+
+
+        <div class="max-w-md bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+
+
+            <img
+            src="https://picsum.photos/800/500"
+            class="w-full h-60 object-cover"
+            alt="Profile Image">
+
+
+
+            <div class="p-6">
+
+
+                <h3 class="text-2xl font-bold text-blue-600">
+
+                    Modern Developer Card
+
+                </h3>
+
+
+                <p class="text-gray-600 mt-3">
+
+                    Object-fit is commonly used in cards, galleries and websites.
+
+                </p>
+
+
+                <button class="mt-5 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+
+                    View Profile
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

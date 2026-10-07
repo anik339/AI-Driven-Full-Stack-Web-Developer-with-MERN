@@ -1,0 +1,113 @@
+/* Learning note: Style4 | module-2 (CSS)/pratice/style4.css */
+/*
+CSS Colors
+
+1. Color Name
+2. RGB
+3. HEX
+4. HSL
+5. Background Color
+6. Border Color
+7. Opacity
+
+*/
+
+
+
+/* Page Background */
+
+body {
+
+    background-color: lightgray;
+
+}
+
+
+
+/* Color Name */
+
+.name-color {
+
+    color: blue;
+
+}
+
+
+
+/* RGB Color */
+
+.rgb-color {
+
+    color: rgb(255, 0, 0);
+
+}
+
+
+
+/* HEX Color */
+
+.hex-color {
+
+    color: #008000;
+
+}
+
+
+
+/* HSL Color */
+
+.hsl-color {
+
+    color: hsl(240, 100%, 50%);
+
+}
+
+
+
+/* Background Color */
+
+.background-box {
+
+    width: 300px;
+
+    height: 100px;
+
+    background-color: orange;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 40px;
+
+}
+
+
+
+/* Border Color */
+
+.border-box {
+
+    width: 300px;
+
+    padding: 20px;
+
+    border: 3px solid purple;
+
+}
+
+
+
+/* Opacity */
+
+.opacity-box {
+
+    width: 300px;
+
+    height: 80px;
+
+    background-color: red;
+
+    opacity: 0.5;
+
+}

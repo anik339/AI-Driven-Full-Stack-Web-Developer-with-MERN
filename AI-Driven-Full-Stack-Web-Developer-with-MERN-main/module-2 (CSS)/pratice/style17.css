@@ -1,0 +1,218 @@
+/* Learning note: Style17 | module-2 (CSS)/pratice/style17.css */
+/* Basic Reset */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f4f4;
+
+    padding: 30px;
+
+}
+
+
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+section {
+
+    margin-bottom: 40px;
+
+}
+
+
+
+h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+/* ==========================
+   FLEX ROW AXIS
+   Main Axis = Horizontal
+   ========================== */
+
+
+.flex-row {
+
+
+    display: flex;
+
+
+    flex-direction: row;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    gap: 20px;
+
+
+    height: 200px;
+
+
+    background: white;
+
+
+    border: 2px solid black;
+
+
+}
+
+
+
+
+/* ==========================
+   FLEX COLUMN AXIS
+   Main Axis = Vertical
+   ========================== */
+
+
+.flex-column {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    gap: 15px;
+
+
+    height: 350px;
+
+
+    background: white;
+
+
+    border: 2px solid black;
+
+
+}
+
+
+
+
+
+/* Flex Items */
+
+
+.box {
+
+
+    width: 120px;
+
+
+    height: 80px;
+
+
+    background: black;
+
+
+    color: white;
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    border-radius: 10px;
+
+
+    font-weight: bold;
+
+
+}
+
+
+
+.box1 {
+
+    background: #e74c3c;
+
+}
+
+
+
+.box2 {
+
+    background: #3498db;
+
+}
+
+
+
+.box3 {
+
+    background: #27ae60;
+
+}
+
+
+
+/* ==========================
+   CENTER USING FLEX
+   ========================== */
+
+
+.center-box {
+
+
+    height: 250px;
+
+
+    background: white;
+
+
+    border: 2px solid black;
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+}

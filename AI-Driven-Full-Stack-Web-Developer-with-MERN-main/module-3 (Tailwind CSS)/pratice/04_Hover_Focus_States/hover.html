@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- Learning note: Hover | module-3 (Tailwind CSS)/pratice/04_Hover_Focus_States/hover.html -->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Hover Focus States Tailwind
+</title>
+
+
+<link rel="stylesheet" href="./src/hover-output.css">
+
+
+</head>
+
+
+<body class="bg-gray-100 p-10">
+
+
+
+<h1 class="
+text-4xl
+font-bold
+text-center
+text-blue-600
+mb-10
+">
+
+Hover, Focus & Other States
+
+</h1>
+
+
+
+
+
+
+
+<!-- Hover Example -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+1. Hover Effect
+
+</h2>
+
+
+
+<button class="
+bg-blue-600
+text-white
+px-6
+py-3
+rounded-lg
+hover:bg-blue-900
+hover:scale-110
+transition
+duration-300
+">
+
+Hover Me
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Focus Example -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+2. Focus State
+
+</h2>
+
+
+
+<input
+
+type="text"
+
+placeholder="Click here"
+
+class="
+
+border
+
+border-gray-400
+
+p-3
+
+rounded-lg
+
+focus:outline-none
+
+focus:ring-4
+
+focus:ring-blue-300
+
+"
+
+>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Active Example -->
+
+
+<section class="mb-10">
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+3. Active State
+
+</h2>
+
+
+
+<button class="
+
+bg-green-600
+
+text-white
+
+px-6
+
+py-3
+
+rounded-lg
+
+active:scale-95
+
+transition
+
+">
+
+Click Me
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Disabled Example -->
+
+
+<section>
+
+
+<h2 class="
+text-2xl
+font-bold
+mb-5
+">
+
+4. Disabled State
+
+</h2>
+
+
+
+<button
+
+disabled
+
+class="
+
+bg-gray-400
+
+text-white
+
+px-6
+
+py-3
+
+rounded-lg
+
+disabled:cursor-not-allowed
+
+disabled:opacity-50
+
+">
+
+Disabled Button
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+/* Learning note: Style2 | module-2 (CSS)/pratice/style2.css */
+/*
+CSS Syntax:
+
+selector {
+
+    property: value;
+
+}
+
+*/
+
+
+/* Element Selector */
+
+h1 {
+
+    color: blue;
+
+}
+
+
+
+/* Class Selector */
+
+.text {
+
+    color: green;
+
+    font-size: 20px;
+
+}
+
+
+
+/* ID Selector */
+
+#demo {
+
+    color: red;
+
+}
+
+
+
+/* Element Selector */
+
+div {
+
+    color: purple;
+
+}

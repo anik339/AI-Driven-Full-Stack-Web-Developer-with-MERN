@@ -1,0 +1,250 @@
+/* Learning note: Style16 | module-2 (CSS)/pratice/style16.css */
+/*
+====================================
+16_CSS_Overflow
+
+Full Stack MERN Developer Practice
+
+====================================
+*/
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+
+body{
+
+    background:#f3f4f6;
+
+    padding:30px;
+
+}
+
+
+
+
+h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:30px;
+
+}
+
+
+
+h2{
+
+    margin:30px 0 15px;
+
+    color:#111827;
+
+}
+
+
+
+
+/*
+=========================
+Common Box
+=========================
+*/
+
+
+.box{
+
+
+    width:350px;
+
+
+    height:120px;
+
+
+    background:white;
+
+
+    padding:20px;
+
+
+    border:2px solid #2563eb;
+
+
+}
+
+
+
+
+
+
+/*
+=========================
+1. Visible
+
+Default behaviour
+=========================
+*/
+
+
+.visible-box{
+
+
+    overflow:visible;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+2. Hidden
+
+Extra content removed
+=========================
+*/
+
+
+.hidden-box{
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+3. Scroll
+
+Always scrollbar
+=========================
+*/
+
+
+.scroll-box{
+
+
+    overflow:scroll;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+Dashboard Table
+
+Auto creates scrollbar
+when needed
+=========================
+*/
+
+
+.dashboard{
+
+
+    width:600px;
+
+
+    height:200px;
+
+
+    background:white;
+
+
+    overflow:auto;
+
+
+}
+
+
+
+table{
+
+
+    width:800px;
+
+
+    border-collapse:collapse;
+
+
+}
+
+
+
+th,td{
+
+
+    border:1px solid gray;
+
+
+    padding:15px;
+
+
+}
+
+
+
+
+
+
+
+/*
+=========================
+Overflow X
+
+Horizontal scrolling
+=========================
+*/
+
+
+.code-box{
+
+
+    width:300px;
+
+
+    padding:20px;
+
+
+    background:#111827;
+
+
+    color:white;
+
+
+    overflow-x:auto;
+
+
+    white-space:nowrap;
+
+
+}

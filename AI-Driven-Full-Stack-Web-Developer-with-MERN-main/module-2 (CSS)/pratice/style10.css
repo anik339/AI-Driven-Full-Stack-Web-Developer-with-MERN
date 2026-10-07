@@ -1,0 +1,92 @@
+/* Learning note: Style10 | module-2 (CSS)/pratice/style10.css */
+/*
+CSS Text Transform
+
+1. uppercase
+2. lowercase
+3. capitalize
+
+
+CSS Text Decoration
+
+1. underline
+2. overline
+3. line-through
+4. none
+
+*/
+
+
+/* Text Transform */
+
+
+/* All letters capital */
+
+.uppercase {
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* All letters small */
+
+.lowercase {
+
+    text-transform: lowercase;
+
+}
+
+
+
+/* First letter capital */
+
+.capitalize {
+
+    text-transform: capitalize;
+
+}
+
+
+
+/* Text Decoration */
+
+
+/* Underline */
+
+.underline {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* Line above text */
+
+.overline {
+
+    text-decoration: overline;
+
+}
+
+
+
+/* Line through text */
+
+.line-through {
+
+    text-decoration: line-through;
+
+}
+
+
+
+/* Remove underline from link */
+
+.remove-line {
+
+    text-decoration: none;
+
+}

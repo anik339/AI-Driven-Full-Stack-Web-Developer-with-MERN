@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- Learning note: Index | module-3 (Tailwind CSS)/project/03-tailwind-blog/index.html -->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DevBlog | Technology Blog</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-slate-50 text-slate-800">
+
+
+<!-- Navbar -->
+
+<header class="bg-slate-900 text-white">
+
+<nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+
+<h2 class="text-3xl font-bold text-cyan-400">
+DevBlog
+</h2>
+
+
+
+<ul class="hidden md:flex gap-8 font-semibold">
+
+<li>
+<a href="#" class="hover:text-cyan-400">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="#" class="hover:text-cyan-400">
+Articles
+</a>
+</li>
+
+
+<li>
+<a href="#" class="hover:text-cyan-400">
+Technology
+</a>
+</li>
+
+
+<li>
+<a href="#" class="hover:text-cyan-400">
+Contact
+</a>
+</li>
+
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+
+
+<!-- Hero Section -->
+
+
+<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+
+
+<div>
+
+
+<p class="text-blue-600 font-bold text-lg">
+
+Technology • Web Development
+
+</p>
+
+
+
+<h1 class="text-5xl font-bold mt-5 leading-tight">
+
+Build Modern Websites With Latest Technology
+
+</h1>
+
+
+
+<p class="text-lg text-slate-600 mt-6 leading-8">
+
+Learn HTML, CSS, JavaScript and modern web
+development techniques to become a professional developer.
+
+</p>
+
+
+
+<button class="mt-8 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700">
+
+Read Article
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div>
+
+
+<img
+
+src="./image/blog1.jpg"
+
+alt="Web Development"
+
+class="rounded-3xl shadow-2xl w-full h-96 object-cover"
+
+>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Blog Cards -->
+
+
+<section class="max-w-7xl mx-auto px-6 py-16">
+
+
+<h2 class="text-4xl font-bold text-center text-blue-600 mb-12">
+
+Featured Articles
+
+</h2>
+
+
+
+
+<div class="grid md:grid-cols-3 gap-8">
+
+
+
+<!-- Card 1 -->
+
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition">
+
+
+<img
+
+src="./image/blog1.jpg"
+
+class="w-full h-56 object-cover"
+
+>
+
+
+<div class="p-6">
+
+
+<h3 class="text-2xl font-bold">
+
+Complete Web Development Roadmap
+
+</h3>
+
+
+<p class="mt-4 text-slate-600">
+
+Learn frontend, backend and full stack development step by step.
+
+</p>
+
+
+<a href="#" class="inline-block mt-5 text-blue-600 font-bold">
+
+Read More →
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Card 2 -->
+
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition">
+
+
+<img
+
+src="./image/blog2.jpg"
+
+class="w-full h-56 object-cover"
+
+>
+
+
+<div class="p-6">
+
+
+<h3 class="text-2xl font-bold">
+
+Artificial Intelligence Future
+
+</h3>
+
+
+<p class="mt-4 text-slate-600">
+
+How AI technology is changing modern software development.
+
+</p>
+
+
+<a href="#" class="inline-block mt-5 text-blue-600 font-bold">
+
+Read More →
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Card 3 -->
+
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition">
+
+
+<img
+
+src="./image/blog1.jpg"
+
+class="w-full h-56 object-cover"
+
+>
+
+
+<div class="p-6">
+
+
+<h3 class="text-2xl font-bold">
+
+Master CSS Design
+
+</h3>
+
+
+<p class="mt-4 text-slate-600">
+
+Create beautiful responsive websites using CSS.
+
+</p>
+
+
+<a href="#" class="inline-block mt-5 text-blue-600 font-bold">
+
+Read More →
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Author Section -->
+
+
+<section class="bg-white py-16 px-6">
+
+
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+
+
+<img
+
+src="./image/author.jpg"
+
+alt="Author"
+
+class="w-60 h-60 rounded-full object-cover shadow-xl border-8 border-slate-100"
+
+>
+
+
+
+
+<div>
+
+
+<h2 class="text-4xl font-bold text-blue-600">
+
+About Author
+
+</h2>
+
+
+
+<h3 class="text-2xl font-bold mt-4">
+
+Anik
+
+</h3>
+
+
+
+<p class="mt-4 text-lg leading-8 text-slate-600">
+
+Hi, I am Anik.
+A beginner Full Stack Web Developer learning
+MERN Stack and building real-world projects.
+
+</p>
+
+
+
+<p class="mt-3 text-lg leading-8 text-slate-600">
+
+I enjoy creating modern responsive websites
+and improving my frontend and backend skills.
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Categories -->
+
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+
+
+<h2 class="text-4xl font-bold text-center text-blue-600 mb-10">
+
+Popular Categories
+
+</h2>
+
+
+
+<div class="grid md:grid-cols-4 gap-6">
+
+
+<div class="bg-white p-8 rounded-2xl shadow-lg text-center font-bold">
+
+Frontend Development
+
+</div>
+
+
+<div class="bg-white p-8 rounded-2xl shadow-lg text-center font-bold">
+
+Backend Development
+
+</div>
+
+
+<div class="bg-white p-8 rounded-2xl shadow-lg text-center font-bold">
+
+Artificial Intelligence
+
+</div>
+
+
+<div class="bg-white p-8 rounded-2xl shadow-lg text-center font-bold">
+
+Programming Tips
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Newsletter -->
+
+
+<section class="bg-blue-100 py-16 px-6 text-center">
+
+
+<h2 class="text-4xl font-bold text-blue-600">
+
+Subscribe For Updates
+
+</h2>
+
+
+
+<p class="mt-4 text-lg">
+
+Get latest technology articles directly in your inbox.
+
+</p>
+
+
+
+<div class="mt-6">
+
+
+<input
+
+type="email"
+
+placeholder="Enter your email"
+
+class="px-5 py-3 rounded-xl w-72 border"
+
+>
+
+
+<button class="bg-blue-600 text-white px-8 py-3 rounded-full ml-3">
+
+Subscribe
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="bg-slate-900 text-white text-center py-6">
+
+
+<p>
+
+© 2026 DevBlog | Technology & Development
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+/* Learning note: Style8 | module-2 (CSS)/pratice/style8.css */
+/*
+CSS Text Styling
+
+1. color
+2. text-align
+3. text-decoration
+4. text-transform
+5. text-indent
+6. letter-spacing
+7. line-height
+8. word-spacing
+9. text-shadow
+
+*/
+
+
+body {
+
+    font-family: Arial;
+
+}
+
+
+
+/* Text Color */
+
+.color {
+
+    color: blue;
+
+}
+
+
+
+/* Text Alignment */
+
+.align {
+
+    text-align: center;
+
+}
+
+
+
+/* Text Decoration */
+
+.decoration {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* Text Transform */
+
+.transform {
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* Text Spacing */
+
+.spacing {
+
+    letter-spacing: 3px;
+
+    word-spacing: 10px;
+
+    line-height: 30px;
+
+}
+
+
+
+/* Text Shadow */
+
+.shadow {
+
+    text-shadow: 2px 2px 5px gray;
+
+}

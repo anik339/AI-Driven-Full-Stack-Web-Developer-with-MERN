@@ -1,0 +1,99 @@
+/* Learning note: Style9 | module-2 (CSS)/pratice/style9.css */
+/*
+CSS Font Styling
+
+1. Font Family
+2. Font Size
+3. Font Weight
+4. Font Style
+5. Font Variant
+6. Font Shorthand
+7. Google Font
+8. Custom Font
+
+*/
+
+
+/* Custom Font Add */
+
+@font-face {
+
+    font-family: MyFont;
+
+    src: url("fonts/myfont.ttf");
+
+}
+
+
+
+/* Normal Font */
+
+.family {
+
+    font-family: Arial;
+
+}
+
+
+
+/* Font Size */
+
+.size {
+
+    font-size: 30px;
+
+}
+
+
+
+/* Font Weight */
+
+.weight {
+
+    font-weight: bold;
+
+}
+
+
+
+/* Font Style */
+
+.italic {
+
+    font-style: italic;
+
+}
+
+
+
+/* Font Variant */
+
+.google {
+
+    font-family: "Poppins";
+
+    font-variant: small-caps;
+
+}
+
+
+
+/* Custom Font */
+
+.custom {
+
+    font-family: MyFont;
+
+    font-size: 25px;
+
+}
+
+
+
+/* Font Shorthand */
+
+.shorthand {
+
+    font: italic bold 25px Arial;
+
+}

@@ -1,0 +1,48 @@
+/* Learning note: Style3 | module-2 (CSS)/pratice/style3.css */
+/*
+CSS Comment
+
+This text will not show in browser.
+It is only for developers.
+*/
+
+
+/* Heading Style */
+
+h1 {
+
+    color: blue;
+
+}
+
+
+
+/* Paragraph Style */
+
+p {
+
+    color: green;
+
+    font-size: 20px;
+
+}
+
+
+
+/* Box Style */
+
+.box {
+
+    width: 300px;
+
+    height: 100px;
+
+    background-color: orange;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 40px;
+
+}

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<!-- Learning note: Index | module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/03-Git-and-GitHub-Essentials/index.html -->
+
+<html lang="en">
+
+<head>
+
+    <!-- Basic HTML setup -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Git & GitHub Essentials</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="bg-gray-900 text-white sticky top-0 z-50">
+
+        <nav class="max-w-7xl mx-auto px-6 py-5
+                    flex flex-col md:flex-row
+                    justify-between items-center gap-4">
+
+            <!-- Logo -->
+            <a href="#home"
+               class="text-2xl font-bold text-blue-400">
+
+                GitHub Essentials
+
+            </a>
+
+
+            <!-- Navigation -->
+            <div class="flex flex-wrap justify-center gap-4">
+
+                <a href="#git"
+                   class="hover:text-blue-400">
+                    Git
+                </a>
+
+                <a href="#repository"
+                   class="hover:text-blue-400">
+                    Repository
+                </a>
+
+                <a href="#commit"
+                   class="hover:text-blue-400">
+                    Commit
+                </a>
+
+                <a href="#branch"
+                   class="hover:text-blue-400">
+                    Branch
+                </a>
+
+                <a href="#github"
+                   class="hover:text-blue-400">
+                    GitHub
+                </a>
+
+                <a href="#workflow"
+                   class="hover:text-blue-400">
+                    Workflow
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         HERO
+    =================================================== -->
+
+    <section id="home"
+             class="min-h-[75vh]
+                    flex items-center
+                    justify-center
+                    text-center
+                    px-6
+                    bg-gradient-to-br
+                    from-gray-900
+                    via-gray-800
+                    to-blue-900
+                    text-white">
+
+        <div class="max-w-4xl mx-auto">
+
+            <p class="text-blue-400
+                      font-semibold
+                      mb-4">
+
+                GIT & GITHUB ESSENTIALS
+
+            </p>
+
+
+            <h1 class="text-4xl
+                       sm:text-5xl
+                       md:text-6xl
+                       font-bold
+                       mb-6">
+
+                Learn Git → Build → Commit → Push
+
+            </h1>
+
+
+            <p class="text-gray-300
+                      text-lg
+                      md:text-xl
+                      leading-8
+                      max-w-2xl
+                      mx-auto
+                      mb-8">
+
+                A practical project covering Git installation,
+                repository management, commits, branches,
+                merging, GitHub integration, push, pull,
+                pull requests and merge conflicts.
+
+            </p>
+
+
+            <a href="#topics"
+               class="inline-block
+                      bg-blue-600
+                      px-7 py-3
+                      rounded-lg
+                      font-semibold
+                      hover:bg-blue-700
+                      transition">
+
+                Explore Topics
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         TOPICS
+    =================================================== -->
+
+    <section id="topics"
+             class="py-20 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600
+                          font-semibold
+                          mb-2">
+
+                    COMPLETE TOPICS
+
+                </p>
+
+                <h2 class="text-3xl
+                           md:text-4xl
+                           font-bold">
+
+                    Git & GitHub Essentials
+
+                </h2>
+
+            </div>
+
+
+            <!-- Responsive grid -->
+
+            <div class="grid grid-cols-1
+                        sm:grid-cols-2
+                        lg:grid-cols-3
+                        gap-6">
+
+
+                <!-- Topic 1 -->
+
+                <article class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        ⚙️
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Git Installation
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Git is a version control system
+                        used to track changes in projects.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 2 -->
+
+                <article id="repository"
+                         class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        📁
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Repository Management
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        A repository stores project files
+                        and keeps track of their history.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 3 -->
+
+                <article id="commit"
+                         class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        💾
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Commit Workflow
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Changes can be staged and saved
+                        using Git commits.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 4 -->
+
+                <article id="branch"
+                         class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        🌿
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Branching & Merging
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Branches allow developers to work
+                        on different features independently.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 5 -->
+
+                <article id="github"
+                         class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        🐙
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        GitHub Integration
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        GitHub provides online hosting
+                        for Git repositories.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 6 -->
+
+                <article class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        🔄
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Push & Pull
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Push sends local changes to GitHub.
+                        Pull brings remote changes locally.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 7 -->
+
+                <article class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        🔀
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Pull Requests
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Pull requests allow developers to
+                        propose changes before merging them.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 8 -->
+
+                <article class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        ⚠️
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Merge Conflicts
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        Conflicts can happen when different
+                        changes affect the same part of a file.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Topic 9 -->
+
+                <article class="bg-white
+                                p-6
+                                rounded-2xl
+                                shadow-sm
+                                border
+                                hover:shadow-lg
+                                transition">
+
+                    <div class="text-4xl mb-4">
+                        🖥️
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        GitHub Desktop
+
+                    </h3>
+
+                    <p class="text-gray-600
+                              leading-7">
+
+                        GitHub Desktop provides a graphical
+                        interface for common Git operations.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         GIT WORKFLOW
+    =================================================== -->
+
+    <section id="git"
+             class="bg-white py-20 px-6">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600
+                          font-semibold
+                          mb-2">
+
+                    BASIC WORKFLOW
+
+                </p>
+
+                <h2 class="text-3xl
+                           md:text-4xl
+                           font-bold">
+
+                    Git Command Workflow
+
+                </h2>
+
+            </div>
+
+
+            <div class="bg-gray-900
+                        text-green-400
+                        rounded-2xl
+                        p-6 md:p-10
+                        overflow-x-auto">
+
+                <pre class="text-sm md:text-base
+                            leading-8"><code># Check project status
+git status
+
+# Add changes
+git add .
+
+# Create a commit
+git commit -m "Complete project"
+
+# Connect remote repository
+git remote add origin YOUR_GITHUB_URL
+
+# Push changes
+git push
+
+# Get latest changes
+git pull</code></pre>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         BRANCHING
+    =================================================== -->
+
+    <section class="py-20 px-6">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600
+                          font-semibold
+                          mb-2">
+
+                    BRANCHING
+
+                </p>
+
+                <h2 class="text-3xl
+                           md:text-4xl
+                           font-bold">
+
+                    Branch → Work → Merge
+
+                </h2>
+
+            </div>
+
+
+            <div class="grid grid-cols-1
+                        md:grid-cols-3
+                        gap-6">
+
+
+                <div class="bg-white
+                            p-6
+                            rounded-2xl
+                            shadow-sm
+                            border">
+
+                    <div class="text-4xl mb-4">
+                        🌿
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Create Branch
+
+                    </h3>
+
+                    <code class="text-blue-600">
+
+                        git branch feature
+
+                    </code>
+
+                </div>
+
+
+                <div class="bg-white
+                            p-6
+                            rounded-2xl
+                            shadow-sm
+                            border">
+
+                    <div class="text-4xl mb-4">
+                        💻
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Switch Branch
+
+                    </h3>
+
+                    <code class="text-blue-600">
+
+                        git switch feature
+
+                    </code>
+
+                </div>
+
+
+                <div class="bg-white
+                            p-6
+                            rounded-2xl
+                            shadow-sm
+                            border">
+
+                    <div class="text-4xl mb-4">
+                        🔀
+                    </div>
+
+                    <h3 class="text-xl
+                               font-bold
+                               mb-3">
+
+                        Merge Branch
+
+                    </h3>
+
+                    <code class="text-blue-600">
+
+                        git merge feature
+
+                    </code>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         GITHUB WORKFLOW
+    =================================================== -->
+
+    <section id="workflow"
+             class="bg-blue-600
+                    text-white
+                    py-20
+                    px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-200
+                          font-semibold
+                          mb-2">
+
+                    REAL WORLD WORKFLOW
+
+                </p>
+
+                <h2 class="text-3xl
+                           md:text-4xl
+                           font-bold">
+
+                    Local → Git → GitHub
+
+                </h2>
+
+            </div>
+
+
+            <div class="grid grid-cols-1
+                        md:grid-cols-4
+                        gap-6
+                        text-center">
+
+
+                <div class="bg-white/10
+                            rounded-2xl
+                            p-6">
+
+                    <div class="text-4xl mb-4">
+                        💻
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Code
+                    </h3>
+
+                    <p class="text-blue-100 mt-2">
+                        Write and test code in VS Code.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white/10
+                            rounded-2xl
+                            p-6">
+
+                    <div class="text-4xl mb-4">
+                        💾
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Commit
+                    </h3>
+
+                    <p class="text-blue-100 mt-2">
+                        Save project changes with Git.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white/10
+                            rounded-2xl
+                            p-6">
+
+                    <div class="text-4xl mb-4">
+                        🚀
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Push
+                    </h3>
+
+                    <p class="text-blue-100 mt-2">
+                        Upload commits to GitHub.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white/10
+                            rounded-2xl
+                            p-6">
+
+                    <div class="text-4xl mb-4">
+                        👥
+                    </div>
+
+                    <h3 class="font-bold text-xl">
+                        Collaborate
+                    </h3>
+
+                    <p class="text-blue-100 mt-2">
+                        Use pull requests and branches.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PULL REQUEST & CONFLICT
+    =================================================== -->
+
+    <section class="py-20 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="grid grid-cols-1
+                        md:grid-cols-2
+                        gap-8">
+
+
+                <!-- Pull Request -->
+
+                <article class="bg-white
+                                p-8
+                                rounded-2xl
+                                shadow-sm
+                                border">
+
+                    <div class="text-4xl mb-4">
+                        🔀
+                    </div>
+
+                    <h2 class="text-2xl
+                               font-bold
+                               mb-4">
+
+                        Pull Request
+
+                    </h2>
+
+                    <p class="text-gray-600
+                              leading-8">
+
+                        A developer creates a branch,
+                        pushes the changes to GitHub and
+                        opens a pull request for review
+                        before merging into the main branch.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- Merge Conflict -->
+
+                <article class="bg-white
+                                p-8
+                                rounded-2xl
+                                shadow-sm
+                                border">
+
+                    <div class="text-4xl mb-4">
+                        ⚠️
+                    </div>
+
+                    <h2 class="text-2xl
+                               font-bold
+                               mb-4">
+
+                        Merge Conflict
+
+                    </h2>
+
+                    <p class="text-gray-600
+                              leading-8">
+
+                        When Git cannot automatically combine
+                        changes, the developer manually fixes
+                        the conflict and commits the resolved
+                        version.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         GITHUB DESKTOP
+    =================================================== -->
+
+    <section class="bg-white py-20 px-6">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <div class="text-5xl mb-5">
+                🖥️
+            </div>
+
+            <h2 class="text-3xl
+                       md:text-4xl
+                       font-bold
+                       mb-5">
+
+                GitHub Desktop
+
+            </h2>
+
+            <p class="text-gray-600
+                      leading-8
+                      max-w-2xl
+                      mx-auto">
+
+                GitHub Desktop provides a graphical interface
+                for cloning repositories, creating commits,
+                creating branches, pulling changes and
+                pushing changes without using every Git
+                command manually.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FINAL CHECKLIST
+    =================================================== -->
+
+    <section class="py-20 px-6">
+
+        <div class="max-w-3xl mx-auto">
+
+            <div class="text-center mb-10">
+
+                <p class="text-blue-600
+                          font-semibold
+                          mb-2">
+
+                    COMPLETION CHECKLIST
+
+                </p>
+
+                <h2 class="text-3xl
+                           md:text-4xl
+                           font-bold">
+
+                    Git & GitHub Completed
+
+                </h2>
+
+            </div>
+
+
+            <div class="bg-white
+                        rounded-2xl
+                        shadow-sm
+                        border
+                        p-6">
+
+
+                <div class="space-y-4">
+
+                    <p>✅ Git Installation</p>
+
+                    <p>✅ Repository Management</p>
+
+                    <p>✅ Commit Workflow</p>
+
+                    <p>✅ Branching & Merging</p>
+
+                    <p>✅ GitHub Integration</p>
+
+                    <p>✅ Push / Pull</p>
+
+                    <p>✅ Pull Requests</p>
+
+                    <p>✅ Merge Conflicts</p>
+
+                    <p>✅ GitHub Desktop</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="bg-gray-900
+                   text-white
+                   text-center
+                   py-8
+                   px-6">
+
+        <p class="font-semibold">
+
+            Git & GitHub Essentials
+
+        </p>
+
+        <p class="text-gray-400
+                  text-sm
+                  mt-2">
+
+            Built with HTML + Tailwind CSS
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

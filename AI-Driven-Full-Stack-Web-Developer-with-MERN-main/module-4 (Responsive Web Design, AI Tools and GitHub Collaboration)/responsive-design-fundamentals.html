@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<!-- Learning note: Responsive Design Fundamentals | module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/responsive-design-fundamentals.html -->
+
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         MODULE 4: RESPONSIVE WEB DESIGN
+         Project: Responsive Design Studio
+
+         Technologies:
+         HTML5 + CSS3 + Tailwind CSS
+
+         JavaScript: Not Used
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <!-- IMPORTANT:
+         This makes the website responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Responsive Design Fundamentals - Module 4">
+
+    <title>Responsive Design Studio | Module 4</title>
+
+
+    <!-- =====================================================
+         TAILWIND CSS
+    ====================================================== -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- =====================================================
+         CUSTOM CSS
+         Media Queries + Responsive Fundamentals
+    ====================================================== -->
+
+    <style>
+
+        /* -------------------------------
+           BASIC RESET
+        -------------------------------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* -------------------------------
+           BODY
+        -------------------------------- */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f8fafc;
+            line-height: 1.6;
+
+            /* Prevent accidental horizontal overflow */
+            overflow-x: hidden;
+        }
+
+
+        /* -------------------------------
+           MAIN CONTAINER
+           Content will not become
+           unnecessarily wide.
+        -------------------------------- */
+
+        .container-custom {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* -------------------------------
+           RESPONSIVE IMAGES
+        -------------------------------- */
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* -------------------------------
+           CARD
+        -------------------------------- */
+
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+        }
+
+
+        /* -------------------------------
+           SECTION
+        -------------------------------- */
+
+        .section {
+            padding: 80px 0;
+        }
+
+
+        /* =================================================
+           MEDIA QUERY — TABLET
+           
+           When screen width is 900px or smaller,
+           these CSS rules will apply.
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+        }
+
+
+        /* =================================================
+           MEDIA QUERY — MOBILE
+           
+           When screen width is 640px or smaller,
+           layout becomes mobile-friendly.
+        ================================================== */
+
+        @media (max-width: 640px) {
+
+            .container-custom {
+                width: 94%;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .hero-title {
+                font-size: 36px;
+                line-height: 1.15;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .mobile-center {
+                text-align: center;
+            }
+
+            /* Prevent long text from breaking layout */
+            h1,
+            h2,
+            h3,
+            p {
+                overflow-wrap: break-word;
+            }
+
+            /* Mobile form fields */
+            input,
+            select,
+            textarea,
+            button {
+                width: 100%;
+            }
+
+        }
+
+
+        /* -------------------------------
+           RESPONSIVE TABLE
+        -------------------------------- */
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+
+        /* -------------------------------
+           FORM INPUT FOCUS
+        -------------------------------- */
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================== -->
+
+<header class="bg-white border-b border-slate-200">
+
+    <nav class="container-custom
+                min-h-[72px]
+                flex
+                flex-col
+                md:flex-row
+                items-center
+                justify-between
+                py-4
+                gap-4">
+
+        <!-- Logo -->
+
+        <a href="#home"
+           class="text-2xl font-black text-slate-900">
+
+            Responsive
+            <span class="text-blue-600">
+                Studio
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <div class="flex
+                    flex-wrap
+                    justify-center
+                    gap-2
+                    md:gap-6
+                    text-sm
+                    font-semibold">
+
+            <a href="#home"
+               class="px-2 py-1 hover:text-blue-600">
+
+                Home
+
+            </a>
+
+            <a href="#grid"
+               class="px-2 py-1 hover:text-blue-600">
+
+                Grid
+
+            </a>
+
+            <a href="#images"
+               class="px-2 py-1 hover:text-blue-600">
+
+                Images
+
+            </a>
+
+            <a href="#forms"
+               class="px-2 py-1 hover:text-blue-600">
+
+                Forms
+
+            </a>
+
+            <a href="#table"
+               class="px-2 py-1 hover:text-blue-600">
+
+                Table
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+     Responsive Design Introduction
+========================================================== -->
+
+<section id="home"
+         class="section bg-white">
+
+    <div class="container-custom
+                grid
+                grid-cols-1
+                lg:grid-cols-2
+                gap-12
+                items-center">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="mobile-center">
+
+            <!-- Module label -->
+
+            <span class="inline-block
+                         bg-blue-50
+                         text-blue-700
+                         px-4
+                         py-2
+                         rounded-full
+                         text-sm
+                         font-bold">
+
+                MODULE 04 • RESPONSIVE DESIGN
+
+            </span>
+
+
+            <!-- Main heading -->
+
+            <h1 class="hero-title
+                       text-5xl
+                       font-black
+                       text-slate-950
+                       mt-6">
+
+                Build Once.
+                <span class="text-blue-600">
+                    Adapt Everywhere.
+                </span>
+
+            </h1>
+
+
+            <!-- Description -->
+
+            <p class="hero-text
+                      text-lg
+                      text-slate-600
+                      mt-6
+                      max-w-xl">
+
+                A simple responsive website demonstrating
+                modern layout techniques for mobile,
+                tablet and desktop screens.
+
+            </p>
+
+
+            <!-- Buttons -->
+
+            <div class="flex
+                        flex-wrap
+                        justify-center
+                        lg:justify-start
+                        gap-3
+                        mt-8">
+
+                <a href="#grid"
+                   class="bg-blue-600
+                          text-white
+                          px-6
+                          py-3
+                          rounded-lg
+                          font-bold
+                          hover:bg-blue-700">
+
+                    Learn Responsive Design
+
+                </a>
+
+
+                <a href="#forms"
+                   class="border
+                          border-slate-300
+                          px-6
+                          py-3
+                          rounded-lg
+                          font-bold
+                          hover:border-blue-600
+                          hover:text-blue-600">
+
+                    View Example
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div>
+
+            <!-- Responsive image -->
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+                alt="Web development workspace"
+                class="w-full
+                       rounded-2xl
+                       shadow-xl">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESPONSIVE DESIGN INTRO
+========================================================== -->
+
+<section class="section bg-slate-950 text-white">
+
+    <div class="container-custom">
+
+
+        <div class="max-w-3xl">
+
+            <p class="text-blue-400
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                01 — Responsive Design Intro
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                One website,
+                different screen sizes.
+
+            </h2>
+
+
+            <p class="text-slate-400
+                      text-lg
+                      mt-5">
+
+                Responsive design allows a website to
+                change its layout according to the
+                available screen size.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- RESPONSIVE GRID -->
+
+        <div class="grid
+                    grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-4
+                    gap-5
+                    mt-12">
+
+
+            <!-- Mobile -->
+
+            <div class="border
+                        border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="text-3xl">
+                    📱
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Mobile
+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+
+                    Single-column layout for
+                    smaller screens.
+
+                </p>
+
+            </div>
+
+
+            <!-- Tablet -->
+
+            <div class="border
+                        border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="text-3xl">
+                    📲
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Tablet
+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+
+                    Balanced layout for medium
+                    screen sizes.
+
+                </p>
+
+            </div>
+
+
+            <!-- Laptop -->
+
+            <div class="border
+                        border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="text-3xl">
+                    💻
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Laptop
+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+
+                    Multi-column layout for
+                    desktop screens.
+
+                </p>
+
+            </div>
+
+
+            <!-- Desktop -->
+
+            <div class="border
+                        border-slate-800
+                        rounded-2xl
+                        p-6">
+
+                <div class="text-3xl">
+                    🖥️
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Desktop
+
+                </h3>
+
+                <p class="text-slate-400 mt-2">
+
+                    Wider layout with maximum
+                    content width.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOOTSTRAP GRID SYSTEM CONCEPT
+========================================================== -->
+
+<section id="grid"
+         class="section bg-white">
+
+    <div class="container-custom">
+
+
+        <div class="text-center">
+
+            <p class="text-blue-600
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                02 — Bootstrap Grid System
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                12 Column Grid
+
+            </h2>
+
+
+            <p class="text-slate-500
+                      max-w-2xl
+                      mx-auto
+                      mt-4">
+
+                Bootstrap uses a 12-column grid concept.
+                Here we demonstrate the same responsive
+                idea using Tailwind CSS.
+
+            </p>
+
+        </div>
+
+
+
+        <!--
+            Tailwind Grid
+
+            Mobile:
+            1 column
+
+            Tablet:
+            2 columns
+
+            Desktop:
+            4 columns
+        -->
+
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    lg:grid-cols-4
+                    gap-6
+                    mt-12">
+
+
+            <div class="card">
+
+                <span class="text-blue-600
+                             font-black
+                             text-3xl">
+
+                    01
+
+                </span>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Grid
+
+                </h3>
+
+                <p class="text-slate-500 mt-2">
+
+                    Creates structured page layouts.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="text-blue-600
+                             font-black
+                             text-3xl">
+
+                    02
+
+                </span>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Columns
+
+                </h3>
+
+                <p class="text-slate-500 mt-2">
+
+                    Content can occupy different
+                    column widths.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="text-blue-600
+                             font-black
+                             text-3xl">
+
+                    03
+
+                </span>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Breakpoints
+
+                </h3>
+
+                <p class="text-slate-500 mt-2">
+
+                    Layout changes at different
+                    screen sizes.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="text-blue-600
+                             font-black
+                             text-3xl">
+
+                    04
+
+                </span>
+
+                <h3 class="text-xl
+                           font-bold
+                           mt-4">
+
+                    Flexible
+
+                </h3>
+
+                <p class="text-slate-500 mt-2">
+
+                    The layout adapts automatically.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     UTILITY CLASSES
+========================================================== -->
+
+<section class="section bg-slate-100">
+
+    <div class="container-custom
+                grid
+                grid-cols-1
+                lg:grid-cols-2
+                gap-12
+                items-center">
+
+
+        <!-- Explanation -->
+
+        <div>
+
+            <p class="text-blue-600
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                03 — Utility Classes
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                Small classes.
+                Powerful results.
+
+            </h2>
+
+
+            <p class="text-slate-600
+                      text-lg
+                      mt-5">
+
+                Tailwind CSS provides utility classes
+                for spacing, colors, typography, borders,
+                layout and responsive behavior.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Code Example -->
+
+        <div class="bg-slate-950
+                    text-white
+                    rounded-2xl
+                    p-7
+                    font-mono
+                    text-sm
+                    overflow-x-auto">
+
+<pre><code>&lt;div class="
+    bg-blue-600
+    text-white
+    px-6
+    py-3
+    rounded-lg
+    md:px-10
+"&gt;
+
+    Responsive Button
+
+&lt;/div&gt;</code></pre>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESPONSIVE IMAGES
+========================================================== -->
+
+<section id="images"
+         class="section bg-white">
+
+    <div class="container-custom">
+
+
+        <div class="text-center">
+
+            <p class="text-blue-600
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                04 — Responsive Images
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                Images that fit every screen
+
+            </h2>
+
+        </div>
+
+
+
+        <!-- Responsive Image Grid -->
+
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    lg:grid-cols-3
+                    gap-6
+                    mt-12">
+
+
+            <div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                    alt="Developer workspace"
+                    loading="lazy"
+                    class="w-full
+                           h-64
+                           object-cover
+                           rounded-2xl">
+
+                <h3 class="font-bold
+                           text-xl
+                           mt-4">
+
+                    Flexible Width
+
+                </h3>
+
+                <p class="text-slate-500">
+
+                    Image automatically fits
+                    its container.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                    alt="Modern office"
+                    loading="lazy"
+                    class="w-full
+                           h-64
+                           object-cover
+                           rounded-2xl">
+
+                <h3 class="font-bold
+                           text-xl
+                           mt-4">
+
+                    Object Fit
+
+                </h3>
+
+                <p class="text-slate-500">
+
+                    Keeps the image visually balanced.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+                    alt="Creative workspace"
+                    loading="lazy"
+                    class="w-full
+                           h-64
+                           object-cover
+                           rounded-2xl">
+
+                <h3 class="font-bold
+                           text-xl
+                           mt-4">
+
+                    Lazy Loading
+
+                </h3>
+
+                <p class="text-slate-500">
+
+                    Images can load when needed.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TYPOGRAPHY
+========================================================== -->
+
+<section class="section bg-slate-950 text-white">
+
+    <div class="container-custom
+                grid
+                grid-cols-1
+                lg:grid-cols-2
+                gap-12
+                items-center">
+
+
+        <div>
+
+            <p class="text-blue-400
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                05 — Typography Optimization
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                Better typography,
+                better readability.
+
+            </h2>
+
+
+            <p class="text-slate-400
+                      text-lg
+                      mt-5
+                      leading-8">
+
+                Good typography uses appropriate font
+                size, weight, line height, spacing and
+                contrast.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Typography Example -->
+
+        <div class="bg-white
+                    text-slate-900
+                    rounded-2xl
+                    p-8">
+
+            <p class="text-sm
+                      text-blue-600
+                      font-bold
+                      uppercase">
+
+                Typography Example
+
+            </p>
+
+
+            <h3 class="text-4xl
+                       font-black
+                       mt-4">
+
+                Main Heading
+
+            </h3>
+
+
+            <h4 class="text-2xl
+                       font-bold
+                       mt-3">
+
+                Section Heading
+
+            </h4>
+
+
+            <p class="text-lg
+                      leading-8
+                      text-slate-600
+                      mt-4">
+
+                Body text should remain comfortable
+                to read on every screen size.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESPONSIVE FORM
+========================================================== -->
+
+<section id="forms"
+         class="section bg-slate-100">
+
+    <div class="container-custom">
+
+
+        <div class="text-center">
+
+            <p class="text-blue-600
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                06 — Responsive Forms
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                Contact Form
+
+            </h2>
+
+
+            <p class="text-slate-500
+                      mt-4">
+
+                One column on mobile,
+                two columns on larger screens.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form class="max-w-4xl
+                     mx-auto
+                     bg-white
+                     p-6
+                     md:p-10
+                     rounded-2xl
+                     shadow-sm
+                     mt-10">
+
+
+            <div class="grid
+                        grid-cols-1
+                        md:grid-cols-2
+                        gap-6">
+
+
+                <!-- First Name -->
+
+                <div>
+
+                    <label
+                        for="firstName"
+                        class="block
+                               font-bold
+                               mb-2">
+
+                        First Name
+
+                    </label>
+
+
+                    <input
+                        id="firstName"
+                        type="text"
+                        placeholder="Your first name"
+                        class="form-input
+                               w-full
+                               border
+                               border-slate-300
+                               rounded-lg
+                               px-4
+                               py-3">
+
+                </div>
+
+
+
+                <!-- Last Name -->
+
+                <div>
+
+                    <label
+                        for="lastName"
+                        class="block
+                               font-bold
+                               mb-2">
+
+                        Last Name
+
+                    </label>
+
+
+                    <input
+                        id="lastName"
+                        type="text"
+                        placeholder="Your last name"
+                        class="form-input
+                               w-full
+                               border
+                               border-slate-300
+                               rounded-lg
+                               px-4
+                               py-3">
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div>
+
+                    <label
+                        for="email"
+                        class="block
+                               font-bold
+                               mb-2">
+
+                        Email
+
+                    </label>
+
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        class="form-input
+                               w-full
+                               border
+                               border-slate-300
+                               rounded-lg
+                               px-4
+                               py-3">
+
+                </div>
+
+
+
+                <!-- Topic -->
+
+                <div>
+
+                    <label
+                        for="topic"
+                        class="block
+                               font-bold
+                               mb-2">
+
+                        Topic
+
+                    </label>
+
+
+                    <select
+                        id="topic"
+                        class="form-input
+                               w-full
+                               border
+                               border-slate-300
+                               rounded-lg
+                               px-4
+                               py-3
+                               bg-white">
+
+                        <option>
+                            Responsive Design
+                        </option>
+
+                        <option>
+                            Grid System
+                        </option>
+
+                        <option>
+                            Responsive Forms
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div class="md:col-span-2">
+
+                    <label
+                        for="message"
+                        class="block
+                               font-bold
+                               mb-2">
+
+                        Message
+
+                    </label>
+
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Write your message..."
+                        class="form-input
+                               w-full
+                               border
+                               border-slate-300
+                               rounded-lg
+                               px-4
+                               py-3"></textarea>
+
+                </div>
+
+
+
+                <!-- Button -->
+
+                <div class="md:col-span-2">
+
+                    <button
+                        type="submit"
+                        class="w-full
+                               bg-blue-600
+                               text-white
+                               py-3
+                               rounded-lg
+                               font-bold
+                               hover:bg-blue-700">
+
+                        Send Message
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESPONSIVE TABLE
+========================================================== -->
+
+<section id="table"
+         class="section bg-white">
+
+    <div class="container-custom">
+
+
+        <div class="text-center">
+
+            <p class="text-blue-600
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                07 — Responsive Tables
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                Responsive Data Table
+
+            </h2>
+
+
+            <p class="text-slate-500
+                      mt-4">
+
+                On mobile, the table can scroll horizontally
+                instead of breaking the page.
+
+            </p>
+
+        </div>
+
+
+
+        <!--
+            overflow-x-auto
+            = Makes wide table usable on mobile.
+        -->
+
+        <div class="table-wrapper
+                    mt-10
+                    border
+                    border-slate-200
+                    rounded-xl">
+
+
+            <table class="w-full
+                          min-w-[700px]
+                          text-left">
+
+
+                <thead class="bg-slate-900
+                              text-white">
+
+                    <tr>
+
+                        <th class="px-5 py-4">
+                            Component
+                        </th>
+
+                        <th class="px-5 py-4">
+                            Mobile
+                        </th>
+
+                        <th class="px-5 py-4">
+                            Tablet
+                        </th>
+
+                        <th class="px-5 py-4">
+                            Desktop
+                        </th>
+
+                        <th class="px-5 py-4">
+                            Technique
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr class="border-b">
+
+                        <td class="px-5 py-4 font-bold">
+                            Navigation
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Wrapped
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Compact
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Full
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Flexbox
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="border-b">
+
+                        <td class="px-5 py-4 font-bold">
+                            Grid
+                        </td>
+
+                        <td class="px-5 py-4">
+                            1 Column
+                        </td>
+
+                        <td class="px-5 py-4">
+                            2 Columns
+                        </td>
+
+                        <td class="px-5 py-4">
+                            4 Columns
+                        </td>
+
+                        <td class="px-5 py-4">
+                            CSS Grid
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="border-b">
+
+                        <td class="px-5 py-4 font-bold">
+                            Images
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Full Width
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Flexible
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Optimized
+                        </td>
+
+                        <td class="px-5 py-4">
+                            max-width
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td class="px-5 py-4 font-bold">
+                            Form
+                        </td>
+
+                        <td class="px-5 py-4">
+                            1 Column
+                        </td>
+
+                        <td class="px-5 py-4">
+                            2 Columns
+                        </td>
+
+                        <td class="px-5 py-4">
+                            2 Columns
+                        </td>
+
+                        <td class="px-5 py-4">
+                            Grid
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MEDIA QUERIES
+========================================================== -->
+
+<section class="section bg-blue-600 text-white">
+
+    <div class="container-custom
+                grid
+                grid-cols-1
+                lg:grid-cols-2
+                gap-12
+                items-center">
+
+
+        <div>
+
+            <p class="text-blue-200
+                      font-bold
+                      text-sm
+                      uppercase">
+
+                08 — Media Queries
+
+            </p>
+
+
+            <h2 class="text-4xl
+                       md:text-5xl
+                       font-black
+                       mt-3">
+
+                CSS that changes
+                with screen size.
+
+            </h2>
+
+
+            <p class="text-blue-100
+                      text-lg
+                      mt-5
+                      leading-8">
+
+                Media queries allow us to apply different
+                CSS rules for different viewport sizes.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Code -->
+
+        <div class="bg-slate-950
+                    rounded-2xl
+                    p-7
+                    font-mono
+                    text-sm
+                    overflow-x-auto">
+
+<pre><code>@media (max-width: 640px) {
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+}</code></pre>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL SECTION
+========================================================== -->
+
+<section class="section bg-slate-50">
+
+    <div class="container-custom text-center">
+
+
+        <p class="text-blue-600
+                  font-bold
+                  text-sm
+                  uppercase">
+
+            MODULE 04 COMPLETE
+
+        </p>
+
+
+        <h2 class="text-4xl
+                   md:text-5xl
+                   font-black
+                   mt-3">
+
+            Responsive Design Fundamentals
+
+        </h2>
+
+
+        <p class="max-w-2xl
+                  mx-auto
+                  text-slate-500
+                  text-lg
+                  mt-5">
+
+            Responsive Design Intro • Bootstrap Grid
+            System • Utility Classes • Responsive Images
+            • Responsive Forms • Responsive Tables
+            • Typography Optimization • Media Queries
+
+        </p>
+
+
+        <a href="#home"
+           class="inline-block
+                  bg-slate-950
+                  text-white
+                  px-6
+                  py-3
+                  rounded-lg
+                  font-bold
+                  mt-8
+                  hover:bg-blue-600">
+
+            Back to Top ↑
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="bg-slate-950
+               text-slate-400
+               py-8">
+
+    <div class="container-custom
+                flex
+                flex-col
+                md:flex-row
+                justify-between
+                items-center
+                gap-3
+                text-sm">
+
+        <p>
+            © 2026 Responsive Design Studio
+        </p>
+
+        <p>
+            Module 04 — Responsive Web Design
+        </p>
+
+        <p>
+            HTML • CSS • Tailwind CSS
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
