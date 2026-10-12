@@ -1,0 +1,16 @@
+# Installed dependencies must never be committed.
+node_modules/
+
+# System/editor files.
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local environment files and potential secrets.
+.env
+.env.*
+!.env.example
+
+# Logs and temporary builds (compiled dist/output.css is intentionally tracked).
+npm-debug.log*
+*.tmp
