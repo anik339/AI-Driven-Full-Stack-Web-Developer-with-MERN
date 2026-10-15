@@ -152,10 +152,46 @@ My goal is to become a professional Full-Stack Web Developer with a strong found
 ## 📁 Repository Structure
 
 ```text
+
 ├── Assignment/
 ├── Ostad_Learning_Tracker/
 ├── module-1 (HTML)/
 ├── module-2 (CSS)/
 ├── module-3 (Tailwind CSS)/
 ├── module-3-ostad-landing-page/
-└── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+└── module-4-responsive-agency-landing-page/
+
+
+```
+
+
+## 🚀 Featured Projects
+
+### 1. Epixelab Landing Page — Module 3
+
+**Technologies:** HTML5, Tailwind CSS
+
+**Features:**
+- Responsive landing page
+- Modern UI design
+- Reusable Tailwind components
+- Mobile-friendly layouts
+
+**Source Code:** [View Project](./module-3-ostad-landing-page/)
+---
+
+### 2. Dream Agency Landing Page — Module 4
+
+**Technologies:** HTML5, Tailwind CSS, JavaScript
+
+**Features:**
+- Fully responsive layout
+- Mobile navigation
+- Interactive portfolio dialog
+- Client-side form validation
+- Accessibility improvements
+
+**Source Code:** [View Project](./module-4-responsive-agency-landing-page/)
+
+**Note:** The contact form is a front-end demo without backend integration.
