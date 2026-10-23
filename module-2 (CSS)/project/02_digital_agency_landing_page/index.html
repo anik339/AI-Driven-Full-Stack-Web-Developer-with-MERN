@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A responsive digital agency landing page using HTML and CSS only." name="description"/>
+  <title>
+   Northstar Studio | Digital Agency
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body>
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+   <div class="container nav">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="logo" href="#home">
+     northstar
+     <span>
+      ®
+     </span>
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Main navigation" class="nav-links">
+     <a href="#services">
+      Services
+     </a>
+     <a href="#work">
+      Work
+     </a>
+     <a href="#process">
+      Process
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </nav>
+    <a class="button nav-cta" href="#contact">
+     Start a project
+    </a>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="home">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="agency-hero">
+    <!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+    <div class="container agency-grid">
+     <div>
+      <p class="eyebrow">
+       Independent digital studio
+      </p>
+      <h1>
+       Good ideas deserve
+       <em>
+        great
+       </em>
+       digital experiences.
+      </h1>
+      <p class="lead">
+       We help thoughtful teams shape clear brands, useful websites, and digital products people enjoy using.
+      </p>
+      <div class="actions">
+       <a class="button" href="#contact">
+        Let's talk
+       </a>
+       <a class="text-link" href="#work">
+        See selected work ↗
+       </a>
+      </div>
+      <p class="hero-note">
+       Strategy · Design · Development
+      </p>
+     </div>
+     <div aria-label="Abstract brand illustration" class="shape-stage">
+      <div class="shape shape-a">
+      </div>
+      <div class="shape shape-b">
+      </div>
+      <div class="shape shape-c">
+      </div>
+      <span>
+       Make it
+       <br/>
+       matter.
+      </span>
+     </div>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="services">
+    <div class="section-head">
+     <p class="eyebrow">
+      01 / What we do
+     </p>
+     <h2>
+      Small team. Big-picture thinking.
+     </h2>
+    </div>
+    <div class="grid">
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card service">
+      <span>
+       01
+      </span>
+      <h3>
+       Brand systems
+      </h3>
+      <p class="muted">
+       A distinct voice, visual direction, and reusable design language.
+      </p>
+     </article>
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card service">
+      <span>
+       02
+      </span>
+      <h3>
+       Web experiences
+      </h3>
+      <p class="muted">
+       Accessible, responsive websites designed around real user needs.
+      </p>
+     </article>
+     <article class="card service">
+      <span>
+       03
+      </span>
+      <h3>
+       Product thinking
+      </h3>
+      <p class="muted">
+       Clear information architecture and practical product journeys.
+      </p>
+     </article>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="work">
+    <div class="section-head">
+     <p class="eyebrow">
+      02 / Selected work
+     </p>
+     <h2>
+      Built to make a difference.
+     </h2>
+    </div>
+    <div class="work-grid">
+     <article class="work-card work-sun">
+      <p>
+       01 / E-commerce
+      </p>
+      <h3>
+       Sunroom Goods
+      </h3>
+      <span>
+       Product story and store experience
+      </span>
+     </article>
+     <article class="work-card work-green">
+      <p>
+       02 / Climate
+      </p>
+      <h3>
+       Common Ground
+      </h3>
+      <span>
+       A clearer path to local action
+      </span>
+     </article>
+     <article class="work-card work-purple">
+      <p>
+       03 / Education
+      </p>
+      <h3>
+       Open Course
+      </h3>
+      <span>
+       Learning made easier to navigate
+      </span>
+     </article>
+    </div>
+   </section>
+   <section class="container section" id="process">
+    <div class="section-head">
+     <p class="eyebrow">
+      03 / Our process
+     </p>
+     <h2>
+      Simple, transparent, collaborative.
+     </h2>
+    </div>
+    
+<!-- ORDERED LIST: items follow a meaningful sequence. -->
+<ol class="process-list">
+     <li>
+      <strong>
+       Discover
+      </strong>
+      <span>
+       Understand the audience, goals, and constraints.
+      </span>
+     </li>
+     <li>
+      <strong>
+       Define
+      </strong>
+      <span>
+       Agree on the structure, content, and visual direction.
+      </span>
+     </li>
+     <li>
+      <strong>
+       Deliver
+      </strong>
+      <span>
+       Build, test, refine, and hand over maintainable work.
+      </span>
+     </li>
+    </ol>
+   </section>
+   <section class="container section contact-panel" id="contact">
+    <div>
+     <p class="eyebrow">
+      Have a good one?
+     </p>
+     <h2>
+      Let's make something useful.
+     </h2>
+     <p class="lead">
+      Tell us a little about your project using this static frontend form.
+     </p>
+    </div>
+    
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#contact" method="get">
+     
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="agency-name">
+      Name
+     </label>
+     
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input id="agency-name" name="name" required=""/>
+     <label for="agency-email">
+      Work email
+     </label>
+     <input id="agency-email" name="email" required="" type="email"/>
+     <label for="agency-project">
+      What are you building?
+     </label>
+     
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea id="agency-project" name="project" required="" rows="3"></textarea>
+     
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="button" type="submit">
+      Send project details
+     </button>
+    </form>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+   <div class="container foot-row">
+    <span>
+     northstar® studio · Demo website
+    </span>
+    <span>
+     Strategy with care. Design with purpose.
+    </span>
+   </div>
+  </footer>
+ </body>
+</html>

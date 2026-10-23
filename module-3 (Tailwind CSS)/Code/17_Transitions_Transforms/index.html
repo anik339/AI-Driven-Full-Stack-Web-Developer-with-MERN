@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 3: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="UTF-8">
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tailwind CSS learning practice with short Bangla explanations.">
+  <title>Transitions and transforms | Tailwind CSS Practice</title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body class="min-h-screen bg-slate-50 text-slate-800 antialiased">
+
+<!-- HEADER: introduces the page or a content section. -->
+<header class="border-b border-slate-200 bg-white">
+    <!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+    <!-- FLEX WHY: flex aligns content along one main axis; justify and items control alignment. -->
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6">
+      
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="../index.html" class="font-bold text-indigo-700 hover:text-indigo-900">← All lessons</a>
+      <span class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">TAILWIND CSS · PRACTICE</span>
+    </div>
+  </header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+    
+<!-- SECTION: groups related content under a heading. -->
+<section class="mb-8 max-w-3xl">
+      <p class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-indigo-600">Learn · Try · Change</p>
+      <h1 class="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Transitions and transforms</h1>
+      <p class="mt-3 text-base leading-7 text-slate-600">Hover-এ movement বা scale দিন; transition ও motion-reduce ব্যবহার করে experience উন্নত করুন।</p>
+    </section>
+
+<!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+<div class="grid gap-5 sm:grid-cols-2">
+  
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="group rounded-2xl bg-white p-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none"><span class="grid h-12 w-12 place-items-center rounded-xl bg-indigo-100 text-xl transition group-hover:rotate-6 group-hover:scale-110">✦</span><h2 class="mt-4 text-xl font-bold">Lift on hover</h2><p class="mt-2 text-sm leading-6 text-slate-600">hover:-translate-y-1 এবং hover:shadow-xl চেষ্টা করুন।</p></button>
+  <button class="rounded-2xl bg-indigo-600 p-6 text-left text-white transition duration-300 hover:scale-[1.02] hover:bg-indigo-700 active:scale-[0.98] motion-reduce:transition-none"><span class="text-sm font-semibold uppercase tracking-wider text-indigo-200">Micro interaction</span><h2 class="mt-4 text-xl font-bold">Scale feedback</h2><p class="mt-2 text-sm leading-6 text-indigo-100">duration-300 animation-এর সময় নির্ধারণ করে।</p></button>
+</div>
+
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-5 text-sm text-slate-500 sm:px-6">Practice tip: change one utility class at a time and observe the result.</div>
+  </footer>
+</body>
+</html>

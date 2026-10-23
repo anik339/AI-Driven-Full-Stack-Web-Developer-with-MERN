@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Claude Code: Prompting and Safe Editing - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Claude Code: Prompting and Safe Editing | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 10 / MODULE 05</p><h1>Claude Code: Prompting and Safe Editing</h1><p>Use Claude Code to inspect first, change a small part second, and verify diffs and output before saving a commit.</p><div class="pills"><span class="pill">Prompts</span><span class="pill">Review</span><span class="pill">Human-in-the-loop</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Inspect before editing</h2><p>Ask for a code explanation first. This keeps you in control of what will change.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>Read my project structure. Explain how index.html and style.css work.
+Do not modify any files. List the main accessibility and responsive issues.</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Make a bounded request</h2><p>Specify the exact file, device sizes, expected behavior and constraints.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>Edit only Project/01_developer_portfolio/index.html and style.css.
+Improve the mobile navigation and spacing for screens from 320px to 768px.
+Keep the existing content and use HTML/CSS/Tailwind only.
+Do not add JavaScript or external libraries.
+Show a summary of the changes and any remaining issues.</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Ask for a verification plan</h2><p>Review and test the output yourself; do not trust an AI assertion of success.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>Review the change for broken links, semantics and focus styles.
+Show which files changed and suggest manual tests at 375px, 768px and 1280px.
+Do not commit or push anything.</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Safety with AI tools</h2><p>Check file diffs, dependencies and any commands before approving them.</p></header><div class="example"><div class="grid"><div class="demo-card"><b>Review</b><small>Check proposed edits.</small></div><div class="demo-card"><b>Test</b><small>Use browser and DevTools.</small></div><div class="demo-card"><b>Commit</b><small>Save a verified change.</small></div></div></div><p class="tip"><strong>Remember:</strong> Never allow an assistant to commit secrets or run destructive commands without careful review.</p></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

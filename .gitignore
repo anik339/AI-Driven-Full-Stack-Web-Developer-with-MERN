@@ -19,3 +19,6 @@ dist/
 # Operating System Files
 .DS_Store
 Thumbs.db
+
+# Ignore generated diagnostic files
+**/build-error.txt

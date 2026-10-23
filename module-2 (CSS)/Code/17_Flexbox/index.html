@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="CSS practice lesson: Flexbox Layout." name="description"/>
+  <title>
+   Flexbox Layout
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body id="top">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="site-header">
+   <div class="wrap">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="brand" href="../index.html">
+     CSS Practice Lab
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Lesson navigation">
+     <a href="../index.html">
+      All lessons
+     </a>
+     <a href="#practice">
+      Practice
+     </a>
+    </nav>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main class="wrap">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="hero">
+    <p class="eyebrow">
+     CSS Core Practice
+    </p>
+    <h1>
+     Flexbox Layout
+    </h1>
+    <p class="lead">
+     Use flex direction, wrapping, gap, alignment, and distribution.
+    </p>
+    <span class="pill">
+     HTML + CSS only
+    </span>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="section" id="practice">
+    
+<!-- SECTION: groups related content under a heading. -->
+<section class="demo">
+     <!-- FLEX WHY: flex aligns content along one main axis; justify and items control alignment. -->
+     <div class="flex-toolbar">
+      <a href="#home">
+       Brand
+      </a>
+      <a href="#work">
+       Work
+      </a>
+      <a href="#about">
+       About
+      </a>
+      <a href="#contact">
+       Contact
+      </a>
+     </div>
+     <h2>
+      Responsive card row
+     </h2>
+     <div class="flex-cards">
+      
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+       <h3>
+        Structure
+       </h3>
+       <p>
+        Use display: flex for one-dimensional layout.
+       </p>
+      </article>
+      
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+       <h3>
+        Spacing
+       </h3>
+       <p>
+        Use gap rather than manual margins.
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Wrapping
+       </h3>
+       <p>
+        Allow items to wrap when space is limited.
+       </p>
+      </article>
+     </div>
+    </section>
+   </section>
+   <section class="section card">
+    <h2>
+     Practice task
+    </h2>
+    <p>
+     Change at least three CSS values in
+     <code>
+      style.css
+     </code>
+     , save the file, and refresh the browser. Explain what changed before moving to the next lesson.
+    </p>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer class="site-footer">
+   <div class="wrap">
+    CSS Practice Lab · Build understanding by experimenting.
+   </div>
+  </footer>
+ </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio built for HTML and CSS practice.">
+    <title>Assignment 01 | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- HEADER: Shows the page title and navigation. -->
+    <header class="site-header" id="top">
+        <h1>Anik Chandra Dey</h1>
+        <p>Web Development Student</p>
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN: Contains all important page sections. -->
+    <main class="page-width">
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>I am practicing HTML, CSS and responsive layouts. My long-term goal is to become a MERN developer.</p>
+            <figure class="profile">
+                <!-- ALT: Describes the image if it cannot be displayed. -->
+                <img src="assets/profile.jpg" alt="Portrait of the portfolio owner" width="300" height="370">
+                <figcaption>My profile picture</figcaption>
+            </figure>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>Skills and Learning Plan</h2>
+            <div class="two-columns">
+                <div>
+                    <h3>Practiced So Far</h3>
+                    <ul>
+                        <li>HTML structure and forms</li>
+                        <li>CSS selectors and layouts</li>
+                        <li>Tailwind CSS utility classes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Next Learning Goals</h3>
+                    <ol>
+                        <li>Review responsive design</li>
+                        <li>Practice Git branches</li>
+                        <li>Try Claude Code for reviewing layouts</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Small Image Exercise</h2>
+            <!-- FIGURE: Keeps an image and its caption together. -->
+            <figure class="product-image">
+                <img src="assets/7up_drink.jfif" alt="Green soft-drink product image" width="420" height="260">
+                <figcaption>Practicing the HTML image element</figcaption>
+            </figure>
+        </section>
+
+        <section id="schedule" class="card">
+            <h2>Weekly Practice Plan</h2>
+            <!-- TABLE: Use a table for related rows and columns. -->
+            <div class="table-scroll">
+                <table>
+                    <caption>My weekly learning schedule</caption>
+                    <thead><tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Task</th></tr></thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>HTML</td><td>Build a semantic page</td></tr>
+                        <tr><td>Tuesday</td><td>CSS</td><td>Style a small layout</td></tr>
+                        <tr><td>Wednesday</td><td>Tailwind CSS</td><td>Build reusable cards</td></tr>
+                        <tr><td>Thursday</td><td>Git &amp; GitHub</td><td>Review and commit changes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Contact Form</h2>
+            <p class="note">Practice form only. No information is sent or stored.</p>
+            <!-- FORM: Input fields are grouped for future backend work. -->
+            <form action="#" method="post">
+                <label for="full-name">Name</label>
+                <input type="text" id="full-name" name="full_name" placeholder="Your name" autocomplete="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write a message..."></textarea>
+                <button type="submit">Send (demo)</button>
+            </form>
+        </section>
+    </main>
+    <!-- FOOTER: Closes the page and links back to top. -->
+    <footer class="footer"><p>Personal portfolio practice · <a href="#top">Back to top</a></p></footer>
+</body>
+</html>

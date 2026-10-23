@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 19 html accessibility. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Make content easier to use with keyboard, screen readers and meaningful labels.">
+
+  <title>HTML Accessibility | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Accessibility</h1>
+
+    <p>Make content easier to use with keyboard, screen readers and meaningful labels.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="#accessible-main">Skip directly to demo section</a>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="accessible-main">
+
+      <h2>Accessible examples</h2>
+
+<!-- FIGURE: groups a media item with its caption. -->
+<figure>
+
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img src="profile.jpg" alt="Student seated outdoors wearing a blue striped shirt" width="240" height="320" loading="lazy">
+
+        <figcaption>Descriptive image text is useful when the picture is unavailable.</figcaption>
+      </figure>
+
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Small navigation example">
+
+        <a href="#accessible-form">Open form section</a>
+      </nav>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="accessible-form">
+
+        <h3>Associated form labels</h3>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#accessible-form" method="get">
+
+          <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="a11y-name">Full name</label></p>
+
+          <p>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input type="text" id="a11y-name" name="name" autocomplete="name" required></p>
+
+          <p><label for="a11y-email">Email</label></p>
+
+          <p><input type="email" id="a11y-email" name="email" autocomplete="email" required></p>
+
+          <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="submit">Test validation</button></p>
+        </form>
+
+        <p><small>HTML-only form: nothing is stored or emailed.</small></p>
+      </section>
+
+      <p>Avoid labels such as 'Click here'; link text should describe its destination.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* PAGE: Light background highlights the form. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0 14px; font-family: Arial, sans-serif; background: #edf3fc; color: #263951; line-height: 1.5; }
+.heading { text-align: center; padding: 25px 0 10px; }
+h1 { margin: 0; color: #2256a2; }
+.heading p { color: #627289; }
+.form-card { max-width: 700px; margin: 10px auto 35px; padding: 24px; border: 1px solid #d8e3f0; background: white; border-radius: 12px; }
+fieldset { margin: 0 0 20px; padding: 18px; border: 1px solid #cdd9e9; border-radius: 9px; }
+legend { font-weight: bold; color: #275b9f; padding: 0 6px; }
+label, .group-title { display: block; font-weight: 600; margin: 10px 0 5px; }
+/* INPUTS: Keep each field readable and easy to tap. */
+input:not([type="radio"]):not([type="checkbox"]), select, textarea { display: block; width: 100%; max-width: 100%; padding: 10px; font: inherit; border-radius: 6px; border: 1px solid #9eafc4; }
+.choices { display: flex; gap: 16px; flex-wrap: wrap; }
+.choices label { margin: 2px 0 8px; font-weight: normal; }
+.choices input { accent-color: #2256a2; }
+.notice { font-size: 0.88rem; color: #65748a; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+button { padding: 11px 18px; border: 0; background: #275b9f; color: white; border-radius: 6px; cursor: pointer; }
+button.secondary { background: #dbe6f6; color: #1d4c87; }
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #f1b84b; outline-offset: 2px; }
+footer { text-align: center; color: #64748b; font-size: 0.88rem; }
+/* MOBILE: Reduce side spacing for smaller screens. */
+@media (max-width: 540px) { .form-card { padding: 12px; } fieldset { padding: 12px; } }

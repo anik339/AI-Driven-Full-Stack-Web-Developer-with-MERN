@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 09 | Responsive Campus Event</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header id="top" class="site-header">
+        <div class="container nav-row"><a class="logo" href="#top">Campus Connect</a>
+            <nav aria-label="Main navigation"><a href="#schedule">Schedule</a><a href="#speakers">Speakers</a><a href="#join">Join</a></nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero"><div class="container hero-grid">
+            <div><p class="eyebrow">STUDENT EVENT · OCTOBER 2026</p><h1>Build, learn and share.</h1><p>A one-day student event with short talks and practical web design sessions.</p><a class="button" href="#join">See registration details</a></div>
+            <div class="event-box"><p>HTML</p><p>CSS</p><p>TAILWIND</p></div>
+        </div></section>
+        <section id="schedule" class="container section"><h2>Event Schedule</h2><div class="table-scroll">
+            <!-- TABLE: Horizontal scroll avoids squashing a wide table on phones. -->
+            <table><thead><tr><th scope="col">Time</th><th scope="col">Activity</th><th scope="col">Room</th></tr></thead>
+                <tbody><tr><td>10:00 AM</td><td>HTML Review</td><td>A1</td></tr><tr><td>11:30 AM</td><td>Responsive CSS</td><td>A2</td></tr><tr><td>2:00 PM</td><td>Tailwind Cards</td><td>Lab</td></tr></tbody>
+            </table></div></section>
+        <section id="speakers" class="soft-bg"><div class="container section"><h2>Session Hosts</h2>
+            <!-- GRID: Mobile-first cards expand to columns on larger screens. -->
+            <div class="speaker-grid"><article class="speaker"><div class="avatar">S</div><h3>Samira</h3><p>HTML Basics</p></article><article class="speaker"><div class="avatar">R</div><h3>Rafi</h3><p>Responsive Layouts</p></article><article class="speaker"><div class="avatar">N</div><h3>Nila</h3><p>Tailwind Utilities</p></article></div>
+        </div></section>
+        <section id="join" class="container section"><h2>Interested in Joining?</h2><p>This is a practice landing page. The event information and sign-up are only examples.</p><a href="mailto:events@example.com">Contact event team</a></section>
+    </main>
+    <footer><p>Campus Connect · Responsive Design Assignment</p></footer>
+</body>
+</html>

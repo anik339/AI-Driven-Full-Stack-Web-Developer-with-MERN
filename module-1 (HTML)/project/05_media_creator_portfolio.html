@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 05 media creator portfolio. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="A complete static media portfolio with the uploaded photo, working audio and video.">
+
+  <title>Media Creator Portfolio | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="#main-content">Skip to main content</a>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Static Project</p>
+
+    <h1>Media Creator Portfolio</h1>
+
+    <p>A complete static media portfolio with the uploaded photo, working audio and video.</p>
+
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Media site navigation">
+
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#photo">Photograph</a></li>
+
+        <li><a href="#audio">Audio</a></li>
+
+        <li><a href="#video">Video</a></li>
+
+        <li><a href="#services">Services</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="about">
+
+      <h2>Stories through image, sound and motion.</h2>
+
+      <p>This sample personal portfolio demonstrates accessible, native HTML media elements.</p>
+
+      <p>The photo, audio and video were supplied for the exercise; descriptive text must match your own published work.</p>
+    </section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="photo">
+
+      <h2>Portrait photography</h2>
+
+<!-- FIGURE: groups a media item with its caption. -->
+<figure>
+
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img src="../Code/profile.jpg" alt="Person wearing a blue striped shirt sitting outdoors under a large tree" width="360" height="480" loading="lazy">
+
+        <figcaption>Sample profile photograph included in the project.</figcaption>
+      </figure>
+    </section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="audio">
+
+      <h2>Audio sample</h2>
+
+      <p>The browser's native player can play, pause and change the volume.</p>
+
+<!-- AUDIO: controls shows the browser player; source points to audio. -->
+<audio controls preload="metadata">
+
+        <source src="../Code/sample_audio.mpeg" type="audio/mpeg">
+
+        Your browser cannot play this file. <a href="../Code/sample_audio.mpeg">Download audio sample</a>.
+      </audio>
+
+      <p><small>Provide a real transcript if you publish spoken audio. No audio transcript is invented.</small></p>
+    </section>
+
+    <section id="video">
+
+      <h2>Video sample</h2>
+
+<!-- VIDEO: controls shows playback; source points to video. -->
+<video controls preload="metadata" width="640">
+
+        <source src="../Code/sample_video.mp4" type="video/mp4">
+
+        Your browser cannot play this file. <a href="../Code/sample_video.mp4">Download video sample</a>.
+      </video>
+
+      <p><small>For production, attach accurate subtitles or captions to your uploaded video.</small></p>
+    </section>
+
+    <section id="services">
+
+      <h2>Media services</h2>
+
+<!-- ARTICLE: independent content that can stand alone. -->
+<article>
+
+        <h3>Photography</h3>
+
+        <p>Portraits, documentary imagery and portfolio showcases.</p>
+      </article>
+
+<!-- ARTICLE: independent content that can stand alone. -->
+<article>
+
+        <h3>Audio editing</h3>
+
+        <p>Clear sample presentation with native audio controls.</p>
+      </article>
+
+      <article>
+
+        <h3>Video publishing</h3>
+
+        <p>Accessible video markup and descriptive context.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+
+      <h2>Send an enquiry</h2>
+
+      <p><small>This form is a static demonstration: messages are not sent or stored.</small></p>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#contact" method="get">
+
+        <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="media-name">Your name</label></p>
+
+        <p>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input id="media-name" name="name" type="text" autocomplete="name" required></p>
+
+        <p><label for="media-email">Email</label></p>
+
+        <p><input id="media-email" name="email" type="email" autocomplete="email" required></p>
+
+        <p><label for="media-service">Choose a service</label></p>
+
+        <p>
+<!-- SELECT: offers a predefined list of choices. -->
+<select id="media-service" name="service" required>
+
+          <option value="">Select one</option>
+
+          <option value="photo">Photography</option>
+
+          <option value="audio">Audio</option>
+
+          <option value="video">Video</option>
+        </select></p>
+
+        <p><label for="media-message">What are you looking for?</label></p>
+
+        <p>
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea id="media-message" name="message" rows="4" cols="45" required></textarea></p>
+
+        <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="submit">Validate contact form</button></p>
+      </form>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

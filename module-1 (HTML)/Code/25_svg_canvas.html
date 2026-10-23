@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 25 svg canvas. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Vector graphics can be written as markup; canvas drawing needs JavaScript later.">
+
+  <title>SVG and Canvas in HTML | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>SVG and Canvas in HTML</h1>
+
+    <p>Vector graphics can be written as markup; canvas drawing needs JavaScript later.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Inline SVG graphic</h2>
+
+<!-- SVG: resolution-independent vector graphics in the document. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="svg-title">
+
+        <title id="svg-title">Simple rectangle and circle illustration</title>
+
+        <rect x="5" y="5" width="250" height="110" fill="#e8f1fa" stroke="#225588"></rect>
+
+        <circle cx="55" cy="60" r="28" fill="#3a82ad"></circle>
+
+        <text x="102" y="66" font-size="18" fill="#173e59">HTML SVG</text>
+      </svg>
+
+      <h2>Canvas placeholder</h2>
+
+<!-- CANVAS: drawing surface; drawing requires JavaScript later. -->
+<canvas width="260" height="100">Canvas graphics require a supported browser.</canvas>
+
+      <p>SVG shapes render from markup. Canvas pixels need later JavaScript, so it is blank now.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

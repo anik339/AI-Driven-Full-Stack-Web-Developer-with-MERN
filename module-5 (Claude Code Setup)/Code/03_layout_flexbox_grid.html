@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Modern Layout: Flexbox and Grid - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Modern Layout: Flexbox and Grid | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 03 / MODULE 05</p><h1>Modern Layout: Flexbox and Grid</h1><p>Use Flexbox for one-dimensional alignment and Grid for rows and columns.</p><div class="pills"><span class="pill">Flexbox</span><span class="pill">Grid</span><span class="pill">Gap</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Flexbox for navigation</h2><p>Items can align and wrap when space runs out.</p></header><div class="example"><div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><span class="fake-btn">Home</span><span class="fake-btn secondary">Projects</span><span class="fake-btn secondary">Contact</span></div></div><p class="small-head">CODE EXAMPLE</p><pre><code>.navigation { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.navigation a { text-decoration: none; }</code></pre><p class="tip"><strong>Remember:</strong> Use justify-content for the main axis and align-items for the cross axis.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Grid for cards</h2><p>The minmax pattern fits as many columns as the space allows.</p></header><div class="example"><div class="grid"><div class="demo-card">01 / Plan</div><div class="demo-card">02 / Design</div><div class="demo-card">03 / Build</div></div></div><p class="small-head">CODE EXAMPLE</p><pre><code>.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 1rem; }</code></pre></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

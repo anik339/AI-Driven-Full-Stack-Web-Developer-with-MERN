@@ -1,0 +1,22 @@
+/* RESET: Use border-box so padding stays inside widths. */
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.6 Arial, sans-serif; color: #243047; background: #f6f8fc; }
+.site-header { text-align: center; padding: 32px 14px; background: #e6efff; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { margin: 0 0 8px; color: #234f9d; }
+.container { max-width: 1050px; margin: auto; padding: 28px 18px; }
+/* GRID: Three columns fit neatly on large screens. */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+.card { padding: 24px; background: #fff; border: 1px solid #dce3ed; border-radius: 10px; }
+.card:hover { box-shadow: 0 6px 17px rgba(33,48,84,.08); }
+.card h3 { margin: 10px 0; }
+.card a { font-weight: bold; color: #2559a5; }
+.number { display: inline-block; background: #e7f0ff; color: #2559a5; padding: 4px 10px; border-radius: 4px; }
+.contact { max-width: 600px; margin-top: 38px; }
+label { display: block; margin-top: 12px; }
+input, select { width: 100%; padding: 11px; border: 1px solid #aebccf; border-radius: 6px; font: inherit; }
+button { display: block; margin-top: 18px; padding: 10px 18px; background: #2559a5; color: white; border: 0; border-radius: 6px; }
+footer { text-align: center; padding: 18px; background: #e6efff; }
+/* TABLET AND MOBILE: Reduce columns when space gets small. */
+@media (max-width: 820px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 570px) { .cards { grid-template-columns: 1fr; } }

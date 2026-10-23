@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A responsive conference landing page with speaker cards, schedule, and an accessible registration form." name="description"/>
+  <title>
+   Frontend Forward | Tech Conference
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body>
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+   <div class="container nav">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="logo" href="#home">
+     FF
+     <span>
+      /26
+     </span>
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Main navigation" class="nav-links">
+     <a href="#about">
+      About
+     </a>
+     <a href="#speakers">
+      Speakers
+     </a>
+     <a href="#schedule">
+      Schedule
+     </a>
+     <a href="#venue">
+      Venue
+     </a>
+    </nav>
+    <a class="button" href="#register">
+     Register interest
+    </a>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="home">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="conference-hero">
+    <!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+    <div class="container conference-grid">
+     <div>
+      <p class="eyebrow">
+       A community conference for builders
+      </p>
+      <h1>
+       Make the web
+       <span>
+        work better.
+       </span>
+      </h1>
+      <p class="lead">
+       A one-day learning event about accessible interfaces, modern CSS, performance, and building for real people.
+      </p>
+      <div class="event-details">
+       <span>
+        October 22, 2026
+       </span>
+       <span>
+        Singapore · Online stream
+       </span>
+      </div>
+      <a class="button" href="#register">
+       Join the interest list
+      </a>
+     </div>
+     <div aria-label="Abstract conference artwork" class="poster">
+      <div class="poster-circle circle-one">
+      </div>
+      <div class="poster-circle circle-two">
+      </div>
+      <div class="poster-circle circle-three">
+      </div>
+      <span>
+       Build
+       <br/>
+       with
+       <br/>
+       purpose.
+      </span>
+      <small>
+       FF / 26
+      </small>
+     </div>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="about">
+    <div class="section-head">
+     <p class="eyebrow">
+      01 / Why attend
+     </p>
+     <h2>
+      Practical ideas. Better interfaces.
+     </h2>
+    </div>
+    <div class="grid">
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+      <span class="number">
+       01
+      </span>
+      <h3>
+       Learn by doing
+      </h3>
+      <p class="muted">
+       Real examples from design systems, CSS layouts, and accessible components.
+      </p>
+     </article>
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+      <span class="number">
+       02
+      </span>
+      <h3>
+       Meet the community
+      </h3>
+      <p class="muted">
+       Share ideas with students, developers, designers, and educators.
+      </p>
+     </article>
+     <article class="card">
+      <span class="number">
+       03
+      </span>
+      <h3>
+       Take home patterns
+      </h3>
+      <p class="muted">
+       Leave with techniques you can apply to your own projects.
+      </p>
+     </article>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="speakers">
+    <div class="section-head">
+     <p class="eyebrow">
+      02 / Sample speakers
+     </p>
+     <h2>
+      People who care about the details.
+     </h2>
+     <p class="muted">
+      These are fictional sample profiles for a student project.
+     </p>
+    </div>
+    <div class="grid">
+     <article class="speaker-card">
+      <div class="avatar avatar-blue">
+       JL
+      </div>
+      <h3>
+       Jamie Lee
+      </h3>
+      <p class="muted">
+       Design systems
+      </p>
+      <p>
+       Building consistent interfaces without slowing teams down.
+      </p>
+     </article>
+     <article class="speaker-card">
+      <div class="avatar avatar-orange">
+       AK
+      </div>
+      <h3>
+       Amir Khan
+      </h3>
+      <p class="muted">
+       Web accessibility
+      </p>
+      <p>
+       Small HTML and CSS decisions that help more people.
+      </p>
+     </article>
+     <article class="speaker-card">
+      <div class="avatar avatar-green">
+       SR
+      </div>
+      <h3>
+       Sofia Reyes
+      </h3>
+      <p class="muted">
+       Frontend performance
+      </p>
+      <p>
+       Responsive experiences that feel fast and dependable.
+      </p>
+     </article>
+    </div>
+   </section>
+   <section class="container section" id="schedule">
+    <div class="section-head">
+     <p class="eyebrow">
+      03 / The day
+     </p>
+     <h2>
+      A focused schedule.
+     </h2>
+    </div>
+    <div class="schedule">
+     <div>
+      <time>
+       09:00
+      </time>
+      <span>
+       <strong>
+        Doors open
+       </strong>
+       <small>
+        Welcome coffee and community introductions
+       </small>
+      </span>
+     </div>
+     <div>
+      <time>
+       10:00
+      </time>
+      <span>
+       <strong>
+        Semantic foundations
+       </strong>
+       <small>
+        HTML that communicates meaning
+       </small>
+      </span>
+     </div>
+     <div>
+      <time>
+       11:30
+      </time>
+      <span>
+       <strong>
+        CSS layout lab
+       </strong>
+       <small>
+        Flexbox, Grid, and responsive patterns
+       </small>
+      </span>
+     </div>
+     <div>
+      <time>
+       14:00
+      </time>
+      <span>
+       <strong>
+        Accessibility clinic
+       </strong>
+       <small>
+        Practical improvements for everyday interfaces
+       </small>
+      </span>
+     </div>
+     <div>
+      <time>
+       16:00
+      </time>
+      <span>
+       <strong>
+        Project showcase
+       </strong>
+       <small>
+        Learn from the community's work
+       </small>
+      </span>
+     </div>
+    </div>
+   </section>
+   <section class="container section register" id="register">
+    <div>
+     <p class="eyebrow">
+      Save your seat
+     </p>
+     <h2>
+      Get event updates.
+     </h2>
+     <p class="lead">
+      This demo form is for HTML/CSS practice and does not submit to a backend.
+     </p>
+    </div>
+    
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#register" method="get">
+     
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="attendee">
+      Full name
+     </label>
+     
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input autocomplete="name" id="attendee" name="name" required=""/>
+     <label for="attendee-email">
+      Email
+     </label>
+     <input autocomplete="email" id="attendee-email" name="email" required="" type="email"/>
+     <label class="consent">
+      <input required="" type="checkbox"/>
+      I agree to receive event updates for this demo.
+     </label>
+     
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="button" type="submit">
+      Register interest
+     </button>
+    </form>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+   <div class="container foot-row">
+    <span>
+     Frontend Forward 2026 · Fictional student project
+    </span>
+    <a href="#home">
+     Back to top ↑
+    </a>
+   </div>
+  </footer>
+ </body>
+</html>

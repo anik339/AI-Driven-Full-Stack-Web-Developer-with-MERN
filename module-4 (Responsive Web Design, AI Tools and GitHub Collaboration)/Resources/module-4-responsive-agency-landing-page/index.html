@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- MODULE 4 - Responsive Agency Landing Page (Figma to Tailwind CSS)
+       QUICK START: Open THIS index.html with VS Code Live Server.
+       The pre-built Tailwind file at dist/output.css is included, so no terminal is
+       necessary just to preview the completed project. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#331B3B" />
+  <meta name="description" content="Dream Agency - a responsive agency landing page built from a Figma design with HTML, Tailwind CSS and JavaScript." />
+  <title>Dream Agency | Responsive Agency Landing Page</title>
+
+  <!-- Optional web fonts; Georgia/system-ui are used automatically without internet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- IMPORTANT: Local, pre-compiled CSS works with VS Code Live Server. -->
+  <link rel="stylesheet" href="./dist/output.css" />
+  <!-- JavaScript adds working mobile menu, project details and form feedback. -->
+  <script src="./src/main.js" defer></script>
+</head>
+<body class="bg-white font-sans text-ink antialiased">
+  <!-- Keyboard users can skip the navigation. -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===================== 01. HEADER / NAVIGATION ===================== -->
+  <header id="site-header" class="sticky top-0 z-50 border-b border-ink/5 bg-white/95 backdrop-blur-lg transition-shadow">
+    <div class="site-container flex h-[82px] items-center justify-between gap-4">
+      <a href="#home" aria-label="Dream Agency homepage" class="group inline-flex shrink-0 items-center gap-3">
+        <span class="brand-mark" aria-hidden="true"><span>D</span></span>
+        <span class="font-heading text-[21px] font-extrabold tracking-tight sm:text-[25px]">Dream <span class="text-[#D49C00]">Agency</span></span>
+      </a>
+
+      <!-- Desktop links: hidden on mobile and shown at the lg breakpoint. -->
+      <nav aria-label="Main navigation" class="hidden items-center gap-9 lg:flex">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#about">About Us</a>
+        <a class="nav-link" href="#work">Our Work</a>
+        <a class="nav-link" href="#contact">Contact Us</a>
+      </nav>
+      <a href="#contact" class="btn-primary hidden min-h-[44px] py-3 text-sm lg:inline-flex">Let's Talk <span aria-hidden="true">↗</span></a>
+
+      <!-- Mobile menu button: JavaScript updates aria-expanded and the icon. -->
+      <button id="menu-button" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-ink/15 text-ink transition-colors hover:bg-cloud focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink lg:hidden">
+        <svg id="menu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="close-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-6 w-6"><path stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <!-- Starts hidden to prevent flashing on page load. -->
+    <nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-ink/10 bg-white px-5 pb-5 pt-3 shadow-soft lg:hidden">
+      <div class="mx-auto grid max-w-xl gap-1">
+        <a class="mobile-nav-link" href="#home">Home</a>
+        <a class="mobile-nav-link" href="#services">Services</a>
+        <a class="mobile-nav-link" href="#about">About Us</a>
+        <a class="mobile-nav-link" href="#work">Our Work</a>
+        <a class="mobile-nav-link" href="#contact">Contact Us</a>
+        <a class="btn-primary mt-3 justify-center" href="#contact">Let's Talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- ===================== 02. HERO ===================== -->
+    <!-- Figma source heading: "We Help you to grow your Business". -->
+    <section id="home" class="relative isolate overflow-hidden bg-white pb-20 pt-10 md:pb-24 lg:pt-16">
+      <div class="hero-decoration absolute -left-36 bottom-0 h-80 w-80 rounded-full bg-cloud blur-3xl" aria-hidden="true"></div>
+      <div class="site-container relative grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-14">
+        <div class="relative z-10 max-w-2xl">
+          <span class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> CREATE • DESIGN • GROW</span>
+          <h1 class="mt-7 font-heading text-[clamp(2.7rem,6.1vw,5.7rem)] font-extrabold leading-[1.1] tracking-[-0.045em] text-ink">
+            We Help You <span class="relative inline-block">Grow<svg aria-hidden="true" class="absolute -bottom-3 left-0 w-full text-accent" viewBox="0 0 310 26" fill="none"><path d="M5 19C80 2 169 2 305 13" stroke="currentColor" stroke-width="12" stroke-linecap="round"/></svg></span> Your Business
+          </h1>
+          <p class="mt-9 max-w-[540px] text-base leading-8 text-muted sm:text-lg">
+            We turn ambitious ideas into websites, apps and digital experiences that make a lasting impression. Let's build something people love to use.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a class="btn-primary" href="#services">Get Started <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn-outline" href="#work">Explore Our Work <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="mt-11 flex flex-wrap gap-x-8 gap-y-3 border-t border-ink/10 pt-7 text-sm font-semibold text-muted">
+            <span class="inline-flex items-center gap-2"><span class="feature-tick" aria-hidden="true">✓</span> Creative approach</span>
+            <span class="inline-flex items-center gap-2"><span class="feature-tick" aria-hidden="true">✓</span> Responsive layouts</span>
+            <span class="inline-flex items-center gap-2"><span class="feature-tick" aria-hidden="true">✓</span> Thoughtful design</span>
+          </div>
+        </div>
+
+        <!-- Image optimized from the photo embedded in the user's .fig file. -->
+        <div class="relative mx-auto w-full max-w-[600px] py-5 lg:py-10">
+          <div class="absolute inset-x-[3%] inset-y-[6%] rounded-[52%_48%_44%_56%/48%_43%_57%_52%] bg-[#FFDE9A]" aria-hidden="true"></div>
+          <div class="absolute -right-5 top-3 h-24 w-24 rounded-full bg-cloud sm:h-36 sm:w-36" aria-hidden="true"></div>
+          <div class="absolute -left-7 bottom-1 h-20 w-20 rounded-full bg-blush sm:h-32 sm:w-32" aria-hidden="true"></div>
+          <div class="hero-photo-wrap relative mx-5 overflow-hidden border-[9px] border-white shadow-raised sm:mx-8 sm:border-[13px]">
+            <img src="./assets/images/hero-collaboration.webp" alt="Two colleagues discussing a project together at a table with a laptop" width="1200" height="800" class="h-[335px] w-full object-cover object-center sm:h-[445px] lg:h-[490px]" fetchpriority="high" />
+          </div>
+          <div class="floating-note absolute -bottom-2 left-0 flex items-center gap-3 rounded-2xl border border-ink/5 bg-white px-4 py-3 shadow-raised sm:-left-3 sm:px-5 sm:py-4">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#E6F8EF] text-[#1E915B]" aria-hidden="true">✦</span>
+            <div><span class="block text-sm font-extrabold text-ink">Ideas into impact</span><span class="block text-xs text-muted">Design • Develop • Deliver</span></div>
+          </div>
+          <div class="floating-badge absolute -right-2 top-14 hidden rounded-2xl bg-ink px-4 py-3 text-sm font-bold text-white shadow-soft sm:block" aria-hidden="true">Inspired by Figma ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03. SERVICES ===================== -->
+    <section id="services" class="relative overflow-hidden bg-cloud py-20 md:py-28">
+      <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[55px] border-white/55" aria-hidden="true"></div>
+      <div class="site-container relative">
+        <div class="mx-auto max-w-[720px] text-center">
+          <span class="section-label">WHAT WE DO</span>
+          <h2 class="section-heading mt-4">What We Do <span class="underlined-word">For Your Business</span></h2>
+          <p class="section-description mx-auto mt-5">Four complementary services to bring your digital ideas from first sketch to final launch.</p>
+        </div>
+        <!-- On small devices cards stack; on tablets: 2 columns; desktop: 4. -->
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="service-card group">
+            <div class="service-icon bg-[#FFF1D4] text-[#AA7500]"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M3 9h18M8 13h5M8 16h8"/></svg></div>
+            <h3 class="mt-6 text-xl font-bold">Website Design</h3><p class="mt-3 text-sm leading-7 text-muted">Clear visual systems, accessible layouts and interfaces tailored to your audience.</p>
+            <a href="#contact" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card group">
+            <div class="service-icon bg-[#E9E2FF] text-[#7654BA]"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path stroke-linecap="round" d="m9 9-3 3 3 3m6-6 3 3-3 3"/></svg></div>
+            <h3 class="mt-6 text-xl font-bold">Web Development</h3><p class="mt-3 text-sm leading-7 text-muted">Fast, maintainable websites built with clean code and responsive components.</p>
+            <a href="#contact" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card group">
+            <div class="service-icon bg-[#DFF7F5] text-[#19867B]"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path stroke-linecap="round" d="M10 5h4m-2 13h.01"/></svg></div>
+            <h3 class="mt-6 text-xl font-bold">Mobile App Development</h3><p class="mt-3 text-sm leading-7 text-muted">Mobile-first experiences designed for useful interactions on every screen.</p>
+            <a href="#contact" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="service-card group">
+            <div class="service-icon bg-[#FFE3E6] text-[#B7475E]"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m3 11 13-6v14L3 13v-2Zm13-4h3a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-3M6 14l2 6h3l-2-5"/></svg></div>
+            <h3 class="mt-6 text-xl font-bold">Marketing</h3><p class="mt-3 text-sm leading-7 text-muted">Digital storytelling and campaigns that connect your brand with the right people.</p>
+            <a href="#contact" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 04. ABOUT ===================== -->
+    <section id="about" class="site-container py-20 md:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div class="relative mx-auto w-full max-w-[590px]">
+          <div class="absolute -left-5 -top-5 h-36 w-36 rounded-full bg-blush" aria-hidden="true"></div>
+          <div class="absolute -bottom-6 right-1 h-44 w-44 rounded-[43%_57%_35%_65%] bg-cloud" aria-hidden="true"></div>
+          <!-- Second supplied Figma image -->
+          <img src="./assets/images/about-creative-team.webp" alt="Creative team collaborating around a laptop in a bright office" loading="lazy" width="1100" height="734" class="relative h-[300px] w-full rounded-[36px] object-cover shadow-soft sm:h-[430px]" />
+          <div class="absolute -bottom-5 left-5 rounded-2xl bg-white px-5 py-4 shadow-raised sm:left-10"><span class="block font-heading text-2xl font-bold">Creative minds.</span><span class="block text-sm text-muted">Better digital experiences.</span></div>
+        </div>
+        <div class="pt-6 lg:pt-0">
+          <span class="section-label">ABOUT US</span>
+          <h2 class="section-heading mt-4">Real People. <span class="underlined-word">Real Ideas.</span></h2>
+          <p class="section-description mt-6">Dream Agency is a sample creative-agency website based on the supplied Figma layout. The goal is to make great design work on phones, tablets and desktops.</p>
+          <p class="mt-5 leading-8 text-muted">From the first wireframe to the finishing touches, each section balances visual clarity, readable content and straightforward interaction.</p>
+          <div class="mt-7 grid gap-4 sm:grid-cols-2">
+            <div class="flex gap-3"><span class="about-tick" aria-hidden="true">✓</span><div><h3 class="font-bold">Design minded</h3><p class="mt-1 text-sm leading-6 text-muted">Purposeful visual hierarchy.</p></div></div>
+            <div class="flex gap-3"><span class="about-tick" aria-hidden="true">✓</span><div><h3 class="font-bold">Code focused</h3><p class="mt-1 text-sm leading-6 text-muted">Responsive utility classes.</p></div></div>
+          </div>
+          <a href="#work" class="btn-primary mt-9">Explore More <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 05. RECENT WORK ===================== -->
+    <!-- Project titles + screenshots are based on the provided Figma artboard. -->
+    <section id="work" class="bg-[#FFF9F5] py-20 md:py-28">
+      <div class="site-container">
+        <div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+          <div class="max-w-[640px]"><span class="section-label">OUR PORTFOLIO</span><h2 class="section-heading mt-4">Our Recent Work <span class="underlined-word">By Our Experts</span></h2></div>
+          <p class="max-w-[370px] text-base leading-7 text-muted">A few project previews from the Figma design, presented as responsive cards. Click a project to see its details.</p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="project-card group">
+            <div class="project-image-shell bg-[#F9DDEB]"><div class="project-browser"><span></span><span></span><span></span></div><img src="./assets/images/project-ui-soup.webp" alt="UI Soup web design screenshot from the provided Figma project" loading="lazy" width="309" height="238" class="project-image" /></div>
+            <div class="flex items-center justify-between gap-4 p-6"><div><span class="text-xs font-bold uppercase tracking-widest text-[#8E7291]">UI/UX Design</span><h3 class="mt-2 font-heading text-xl font-bold">UI Soup</h3></div><button type="button" class="project-open" data-project="ui" aria-label="View UI Soup project details">↗</button></div>
+          </article>
+          <article class="project-card group">
+            <div class="project-image-shell bg-[#DFF7F7]"><div class="project-browser"><span></span><span></span><span></span></div><img src="./assets/images/project-goldcrown.webp" alt="Goldcrown Labs website screenshot from the provided Figma project" loading="lazy" width="302" height="233" class="project-image" /></div>
+            <div class="flex items-center justify-between gap-4 p-6"><div><span class="text-xs font-bold uppercase tracking-widest text-[#8E7291]">Web Development</span><h3 class="mt-2 font-heading text-xl font-bold">Goldcrown Labs</h3></div><button type="button" class="project-open" data-project="gold" aria-label="View Goldcrown Labs project details">↗</button></div>
+          </article>
+          <article class="project-card group">
+            <div class="project-image-shell bg-[#E8E8F7]"><div class="project-browser"><span></span><span></span><span></span></div><img src="./assets/images/project-close-concierge.webp" alt="Close Concierge website screenshot from the provided Figma project" loading="lazy" width="731" height="563" class="project-image" /></div>
+            <div class="flex items-center justify-between gap-4 p-6"><div><span class="text-xs font-bold uppercase tracking-widest text-[#8E7291]">Website Design</span><h3 class="mt-2 font-heading text-xl font-bold">Close Concierge</h3></div><button type="button" class="project-open" data-project="concierge" aria-label="View Close Concierge project details">↗</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 06. TESTIMONIALS ===================== -->
+    <!-- Content is clearly labeled SAMPLE; no real-client endorsement is implied. -->
+    <section id="testimonials" class="site-container py-20 md:py-28">
+      <div class="mx-auto max-w-[650px] text-center"><span class="section-label">KIND WORDS</span><h2 class="section-heading mt-4">What Our Clients <span class="underlined-word">Are Saying</span></h2><p class="mt-4 leading-7 text-muted">Illustrative testimonials for this front-end learning project.</p></div>
+      <div class="mx-auto mt-12 grid max-w-[1050px] gap-6 md:grid-cols-2">
+        <figure class="testimonial-card"><div class="text-3xl font-bold tracking-widest text-[#F3A717]" aria-label="Five stars">★★★★★</div><blockquote class="mt-5 text-base leading-8 text-muted">“The navigation is clear, the layout feels balanced and the page adapts comfortably to smaller screens.”</blockquote><figcaption class="mt-6 flex items-center gap-3 border-t border-ink/10 pt-5"><span class="testimonial-avatar bg-[#FFF1CF]">D</span><span><span class="block font-bold">Design Review</span><span class="text-xs text-muted">Sample feedback • Demo</span></span></figcaption></figure>
+        <figure class="testimonial-card"><div class="text-3xl font-bold tracking-widest text-[#F3A717]" aria-label="Five stars">★★★★★</div><blockquote class="mt-5 text-base leading-8 text-muted">“Thoughtful spacing and consistent components make the agency design easy to explore and understand.”</blockquote><figcaption class="mt-6 flex items-center gap-3 border-t border-ink/10 pt-5"><span class="testimonial-avatar bg-[#E6E5FF]">U</span><span><span class="block font-bold">UI Review</span><span class="text-xs text-muted">Sample feedback • Demo</span></span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ===================== 07. CONTACT / DEMO FORM ===================== -->
+    <section id="contact" class="relative overflow-hidden bg-ink py-20 text-white md:py-24">
+      <div class="absolute -left-40 -top-48 h-96 w-96 rounded-full border-[65px] border-white/[.045]" aria-hidden="true"></div>
+      <div class="site-container relative grid items-center gap-12 lg:grid-cols-[1fr_.9fr] lg:gap-16">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[.3em] text-accent">LET'S CONNECT</span>
+          <h2 class="mt-5 max-w-[620px] font-heading text-[clamp(2.5rem,4.5vw,4.3rem)] font-bold leading-[1.15]">Let's Make Something <span class="text-accent">Wonderful.</span></h2>
+          <p class="mt-6 max-w-lg text-base leading-8 text-[#E5DDE8]">Have an idea? This is a front-end demo contact section inspired by the Figma design. Try the email form below to see client-side validation in action.</p>
+          <!-- Demo only. This form does NOT send messages to a server. -->
+          <form id="contact-form" class="mt-9 max-w-lg" novalidate>
+            <label for="contact-email" class="mb-2 block text-sm font-semibold">Your email address</label>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <input id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com" class="min-w-0 flex-1 rounded-xl border border-white/30 bg-white px-5 py-3.5 text-ink outline-none transition-shadow placeholder:text-[#8A8190] focus-visible:ring-4 focus-visible:ring-accent/40" />
+              <button type="submit" class="btn-primary justify-center whitespace-nowrap bg-accent text-ink hover:bg-[#FFE27A] hover:text-ink">Send <span aria-hidden="true">↗</span></button>
+            </div>
+            <p id="form-feedback" class="mt-3 min-h-[1.75rem] text-sm text-[#EADCE6]" role="status" aria-live="polite">Demo form: no information is transmitted.</p>
+          </form>
+          <a href="mailto:hello@dreamagency.example" class="mt-4 inline-block text-sm text-[#DCCADB] underline underline-offset-4">hello@dreamagency.example <span class="sr-only">(example email address)</span></a>
+        </div>
+        <!-- Static map image extracted from the Figma mockup (not an interactive map). -->
+        <div class="overflow-hidden rounded-[28px] border border-white/20 bg-white p-2 shadow-raised sm:p-3">
+          <div class="relative overflow-hidden rounded-[21px]"><img src="./assets/images/map-texas.webp" alt="Static map illustration of the Dallas and Fort Worth area, Texas" width="840" height="534" loading="lazy" class="h-[300px] w-full object-cover sm:h-[385px]" /><div class="absolute left-4 top-4 rounded-xl bg-white/95 px-4 py-3 text-ink shadow-soft"><span class="block text-sm font-extrabold">Texas, United States</span><span class="block text-xs text-muted">Location shown in the Figma design</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== 08. FOOTER ===================== -->
+  <footer class="bg-[#241329] py-8 text-white">
+    <div class="site-container flex flex-col items-start justify-between gap-5 text-sm sm:flex-row sm:items-center">
+      <div><a href="#home" class="font-heading text-2xl font-bold">Dream <span class="text-accent">Agency</span></a><p class="mt-1 text-white/60">Module 4 • HTML • Tailwind CSS • JavaScript</p></div>
+      <p class="text-white/70">© <span id="current-year">2026</span> Dream Agency. Learning project.</p>
+      <a href="#home" class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-4 py-2.5 font-semibold hover:border-accent hover:text-accent">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- ===================== 09. PROJECT DETAILS DIALOG ===================== -->
+  <!-- Javascript uses showModal() when a portfolio card arrow is clicked. -->
+  <dialog id="project-dialog" aria-labelledby="dialog-title" class="project-dialog w-[min(92vw,640px)] rounded-3xl bg-white p-0 text-ink shadow-raised">
+    <div class="p-5 sm:p-7"><div class="mb-5 flex items-center justify-between gap-4"><h2 id="dialog-title" class="font-heading text-2xl font-bold">Project Preview</h2><button id="dialog-close" type="button" aria-label="Close project details" class="grid h-10 w-10 place-items-center rounded-full bg-cloud text-2xl font-medium hover:bg-[#DDECF6]">×</button></div><img id="dialog-image" src="./assets/images/project-ui-soup.webp" alt="Project design preview" class="max-h-[350px] w-full rounded-2xl bg-cloud object-cover object-top" /><p id="dialog-description" class="mt-5 leading-7 text-muted"></p><p class="mt-3 text-xs text-muted">Figma screenshot / demo preview. No external link is attached.</p></div>
+  </dialog>
+</body>
+</html>

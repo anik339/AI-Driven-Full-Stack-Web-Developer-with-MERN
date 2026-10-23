@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 10 | Frontend Review Board</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="site-header"><div class="container"><p class="eyebrow">ASSIGNMENT 10 · MODULE 5</p><h1>Frontend Review Board</h1><p>A small project to practice HTML, CSS, GitHub and Claude Code review prompts.</p></div></header>
+    <main class="container">
+        <section class="intro"><h2>My Frontend Learning Tasks</h2><p>This example uses static HTML cards. Claude Code can help review them, but it does not run inside this webpage.</p></section>
+        <!-- TASK LIST: Articles are static items; no JavaScript needed. -->
+        <section class="task-grid" aria-label="Learning tasks">
+            <article class="task"><span class="status">Module 1</span><h3>HTML Semantic Structure</h3><p>Review heading order, landmarks and meaningful links.</p><ul><li>Header</li><li>Main</li><li>Footer</li></ul></article>
+            <article class="task"><span class="status">Module 2</span><h3>CSS Layout Review</h3><p>Check spacing, grid columns and small-screen styles.</p><ul><li>Grid</li><li>Box Model</li><li>Media Queries</li></ul></article>
+            <article class="task"><span class="status">Module 3</span><h3>Tailwind Design Practice</h3><p>Compare the same card design using Tailwind utilities.</p><ul><li>Colors</li><li>Spacing</li><li>Breakpoints</li></ul></article>
+        </section>
+        <section class="review"><h2>Review Checklist</h2>
+            <!-- DETAILS: Expandable sections work without custom JavaScript. -->
+            <details><summary>1. Is the HTML structure clear?</summary><p>There should be one page title and useful section headings.</p></details>
+            <details><summary>2. Does the page fit a phone screen?</summary><p>Reduce the browser width and check for horizontal scrolling.</p></details>
+            <details><summary>3. Are buttons and links understandable?</summary><p>Use meaningful labels and visible keyboard focus styles.</p></details>
+            <details><summary>4. Have I reviewed AI changes?</summary><p>Read the diff before accepting edits and never share secret keys.</p></details>
+        </section>
+        <section class="next"><h2>Next Practice</h2><p>Open the <code>CLAUDE.md</code> file and use its limited edit instructions when you are ready. Test the result yourself.</p></section>
+    </main>
+    <footer><p>Module 5 · Claude Code Review Practice · Static Site</p></footer>
+</body>
+</html>

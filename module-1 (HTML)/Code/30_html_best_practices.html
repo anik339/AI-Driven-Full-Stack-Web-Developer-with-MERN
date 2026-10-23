@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 30 html best practices. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="A final HTML-only review of semantic structure, accessibility and security.">
+
+  <title>HTML Best Practices Checklist | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Best Practices Checklist</h1>
+
+    <p>A final HTML-only review of semantic structure, accessibility and security.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Before calling your HTML finished</h2>
+
+<!-- ORDERED LIST: items follow a meaningful sequence. -->
+<ol>
+
+        <li>Set DOCTYPE, language, charset and viewport.</li>
+
+        <li>Use a descriptive title and meta description.</li>
+
+        <li>Use one clear top-level h1 and meaningful heading order.</li>
+
+        <li>Use nav, main, article and section when appropriate.</li>
+
+        <li>Use alt text for informative images and labels for inputs.</li>
+
+        <li>Use table elements only for actual tabular data.</li>
+
+        <li>Use rel="noopener noreferrer" on new-tab external links.</li>
+
+        <li>Do not assume HTML-only forms are backed by a server.</li>
+      </ol>
+
+      <h2>Test links and media</h2>
+
+      <p>
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="20_audio_video.html">Open the working local audio/video lesson</a>.</p>
+
+      <p><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validate your own HTML with W3C</a>.</p>
+
+<!-- DETAILS: native expandable content; no custom JavaScript needed. -->
+<details>
+
+<!-- SUMMARY: clickable heading for its parent details element. -->
+<summary>Can HTML alone store or process user data?</summary>
+
+        <p>No. HTML describes the user interface. Real saving and application logic need a backend or JavaScript later.</p>
+      </details>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

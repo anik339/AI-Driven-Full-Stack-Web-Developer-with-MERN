@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 02 | Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="heading"><h1>Student Registration</h1><p>HTML form practice</p></header>
+    <main class="form-card">
+        <p class="notice">Demo only: the form is not connected to a database. Use sample details.</p>
+        <!-- FORM: The name attribute identifies each submitted field. -->
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- FIELDSET: Groups personal details with a clear heading. -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+                <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="017XXXXXXXX">
+                <label for="dob">Date of Birth</label>
+                <input id="dob" name="dob" type="date">
+                <div class="group-title">Gender</div>
+                <div class="choices">
+                    <!-- RADIO: Sharing one name makes the choice exclusive. -->
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Academic Information</legend>
+                <label for="department">Department</label>
+                <select id="department" name="department" required>
+                    <option value="">Select department</option>
+                    <option value="cse">CSE</option><option value="eee">EEE</option>
+                    <option value="bba">BBA</option><option value="english">English</option>
+                </select>
+                <div class="group-title">Skills you want to practice</div>
+                <div class="choices">
+                    <!-- CHECKBOX: Allows multiple skills to be selected. -->
+                    <label><input type="checkbox" name="skills" value="html"> HTML</label>
+                    <label><input type="checkbox" name="skills" value="css"> CSS</label>
+                    <label><input type="checkbox" name="skills" value="tailwind"> Tailwind CSS</label>
+                </div>
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Your address"></textarea>
+                <label for="profile">Profile Picture (optional)</label>
+                <input id="profile" name="profile" type="file" accept="image/*">
+            </fieldset>
+            <fieldset>
+                <legend>Login Practice</legend>
+                <p class="notice">Never enter a real password into this static demo.</p>
+                <label for="password">Example Password</label>
+                <input id="password" name="password" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required>
+                <label for="confirm">Retype Example Password</label>
+                <input id="confirm" name="confirm" type="password" minlength="8" autocomplete="new-password" placeholder="Retype password" required>
+                <p class="notice">Matching the two password fields requires validation in a later module or on a server.</p>
+            </fieldset>
+            <div class="actions"><button type="submit">Submit (demo)</button><button type="reset" class="secondary">Reset</button></div>
+        </form>
+    </main>
+    <footer><p>Assignment 02 · HTML Forms</p></footer>
+</body>
+</html>

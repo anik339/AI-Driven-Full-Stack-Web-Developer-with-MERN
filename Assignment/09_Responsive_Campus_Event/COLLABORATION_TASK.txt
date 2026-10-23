@@ -1,0 +1,13 @@
+MODULE 4 - GIT AND GITHUB COLLABORATION PRACTICE
+
+1. Create a feature branch: git switch -c feature/update-event
+2. Change one text section in index.html.
+3. Test the layout at mobile and desktop widths.
+4. Review changes: git diff
+5. Commit only after checking: git add . && git commit -m "Improve event page"
+6. Push your feature branch: git push -u origin feature/update-event
+7. On GitHub, open a pull request into main and review the changes.
+8. If a conflict happens, resolve it carefully before merging.
+
+These are instructions to practice, not claims that the steps were completed.
+Do not add passwords, access tokens or private data to Git.

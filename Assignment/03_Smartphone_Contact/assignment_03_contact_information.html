@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 03 | Smartphone Information</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="hero"><h1>Smartphone Contact Information</h1><p>Customer details and product preference form</p></header>
+    <main class="content">
+        <div class="intro">
+            <img src="assets/phone.jpg" alt="Mobile phone used for this form practice" width="250" height="250">
+            <p>This assignment practices different HTML input types and CSS form layout.</p>
+        </div>
+        <p class="small-note">This is only a static practice form. No order or payment is processed.</p>
+        <!-- FORM: Organize fields into smaller sections. -->
+        <form action="#" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name" name="customer_name" required placeholder="Enter full name" autocomplete="name">
+                <label for="customer-email">Email</label>
+                <input type="email" id="customer-email" name="email" required placeholder="you@example.com" autocomplete="email">
+                <label for="customer-phone">Mobile Number</label>
+                <input type="tel" id="customer-phone" name="phone" placeholder="01XXXXXXXXX" autocomplete="tel">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="16" max="100">
+            </fieldset>
+            <fieldset>
+                <legend>Phone Details</legend>
+                <label for="brand">Smartphone Brand</label>
+                <select id="brand" name="brand">
+                    <option value="">Select a brand</option>
+                    <option>Samsung</option><option>Apple</option><option>Google Pixel</option><option>Xiaomi</option>
+                </select>
+                <label for="purchase-date">Date of Purchase</label>
+                <input type="date" id="purchase-date" name="purchase_date">
+                <p class="field-title">Phone Condition</p>
+                <div class="options"><label><input type="radio" name="condition" value="new"> New</label><label><input type="radio" name="condition" value="used"> Used</label></div>
+                <p class="field-title">Accessories</p>
+                <div class="options">
+                    <!-- CHECKBOX: Multiple accessories may be selected. -->
+                    <label><input type="checkbox" name="accessory" value="charger"> Charger</label>
+                    <label><input type="checkbox" name="accessory" value="cover"> Cover</label>
+                    <label><input type="checkbox" name="accessory" value="earphones"> Earphones</label>
+                </div>
+                <label for="color">Preferred Color</label><input type="color" id="color" name="color" value="#2b73cd">
+                <label for="budget">Budget Preference (1 to 10)</label><input type="range" id="budget" name="budget" min="1" max="10" value="5">
+                <label for="model">Model Search</label><input type="search" id="model" name="model" placeholder="Search model name">
+                <label for="website">Reference Website</label><input type="url" id="website" name="website" placeholder="https://example.com">
+            </fieldset>
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="address">Delivery Address</label><textarea id="address" name="address" rows="3"></textarea>
+                <label for="sample-photo">Photo (optional)</label><input type="file" id="sample-photo" name="sample_photo" accept="image/*">
+                <label for="payment">Preferred Payment Method</label>
+                <select id="payment" name="payment"><option>Cash on delivery</option><option>Mobile banking</option><option>Bank transfer</option></select>
+            </fieldset>
+            <div class="actions"><button type="submit">Submit (demo)</button><button type="reset" class="reset">Clear</button></div>
+        </form>
+    </main>
+</body>
+</html>

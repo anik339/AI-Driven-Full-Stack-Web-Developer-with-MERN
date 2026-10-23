@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A media creator portfolio with responsive image, video, audio, and contact-form sections." name="description"/>
+  <title>
+   Frame &amp; Frequency | Media Portfolio
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body>
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+   <div class="container nav">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="logo" href="#home">
+     frame
+     <span>
+      &amp;
+     </span>
+     frequency
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Main navigation" class="nav-links">
+     <a href="#work">
+      Work
+     </a>
+     <a href="#reel">
+      Reel
+     </a>
+     <a href="#audio">
+      Audio
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="home">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="media-hero">
+    <!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+    <div class="container media-hero-grid">
+     <div>
+      <p class="eyebrow">
+       Independent visual storyteller
+      </p>
+      <h1>
+       Stories with a sense of
+       <em>
+        place.
+       </em>
+      </h1>
+      <p class="lead">
+       A sample portfolio for a filmmaker, photographer, and audio creator. Built with semantic HTML and responsive CSS.
+      </p>
+      <a class="button" href="#work">
+       Explore selected work
+      </a>
+     </div>
+     
+<!-- FIGURE: groups a media item with its caption. -->
+<figure class="profile-frame">
+      
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img alt="Portrait of the creator" src="../assets/profile.jpg"/>
+      <figcaption>
+       Image supplied for this practice project.
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="work">
+    <div class="section-head">
+     <p class="eyebrow">
+      01 / Selected work
+     </p>
+     <h2>
+      Visual notes from the field.
+     </h2>
+    </div>
+    <div class="gallery">
+     <figure class="gallery-item gallery-large">
+      <div class="scene scene-one">
+       <span>
+        01
+       </span>
+      </div>
+      <figcaption>
+       <strong>
+        Quiet mornings
+       </strong>
+       <small>
+        Short film · 2026
+       </small>
+      </figcaption>
+     </figure>
+     <figure class="gallery-item">
+      <div class="scene scene-two">
+       <span>
+        02
+       </span>
+      </div>
+      <figcaption>
+       <strong>
+        Soft geometry
+       </strong>
+       <small>
+        Photography · 2025
+       </small>
+      </figcaption>
+     </figure>
+     <figure class="gallery-item">
+      <div class="scene scene-three">
+       <span>
+        03
+       </span>
+      </div>
+      <figcaption>
+       <strong>
+        Open water
+       </strong>
+       <small>
+        Field recording · 2025
+       </small>
+      </figcaption>
+     </figure>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section media-player-grid" id="reel">
+    <div>
+     <p class="eyebrow">
+      02 / Moving image
+     </p>
+     <h2>
+      Latest reel
+     </h2>
+     <p class="muted">
+      The supplied sample video is used as a local media example. Use the controls to play or pause.
+     </p>
+    </div>
+    <div class="player-card">
+     
+<!-- VIDEO: controls shows playback; source points to video. -->
+<video controls="" poster="../assets/profile.jpg" preload="metadata">
+      <source src="../assets/sample_video.mp4" type="video/mp4"/>
+      Your browser does not support HTML video.
+     </video>
+     <p>
+      Sample video · Local file
+     </p>
+    </div>
+   </section>
+   <section class="container section media-player-grid" id="audio">
+    <div>
+     <p class="eyebrow">
+      03 / Sound
+     </p>
+     <h2>
+      Listen closely.
+     </h2>
+     <p class="muted">
+      An audio element demonstrates native browser playback controls.
+     </p>
+    </div>
+    <div class="player-card audio-card">
+     <div aria-hidden="true" class="sound-art">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </div>
+     
+<!-- AUDIO: controls shows the browser player; source points to audio. -->
+<audio controls="" preload="metadata">
+      <source src="../assets/sample_audio.mpeg" type="audio/mpeg"/>
+      Your browser does not support HTML audio.
+     </audio>
+     <p>
+      Sample audio · Local file
+     </p>
+    </div>
+   </section>
+   <section class="container section contact" id="contact">
+    <div>
+     <p class="eyebrow">
+      04 / Work together
+     </p>
+     <h2>
+      Have a story to tell?
+     </h2>
+     <p class="lead">
+      This is a frontend-only contact form. It does not send messages to a server.
+     </p>
+    </div>
+    
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#contact" method="get">
+     
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="creator-name">
+      Name
+     </label>
+     
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input autocomplete="name" id="creator-name" name="name" required=""/>
+     <label for="creator-email">
+      Email
+     </label>
+     <input autocomplete="email" id="creator-email" name="email" required="" type="email"/>
+     <label for="project-type">
+      Project type
+     </label>
+     
+<!-- SELECT: offers a predefined list of choices. -->
+<select id="project-type" name="type">
+      <option>
+       Film
+      </option>
+      <option>
+       Photography
+      </option>
+      <option>
+       Audio
+      </option>
+      <option>
+       Other
+      </option>
+     </select>
+     <label for="creator-message">
+      A little about the project
+     </label>
+     
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea id="creator-message" name="message" required="" rows="4"></textarea>
+     
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="button" type="submit">
+      Send demo inquiry
+     </button>
+    </form>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+   <div class="container foot-row">
+    <span>
+     frame&amp;frequency · Media portfolio practice
+    </span>
+    <a href="#home">
+     Back to top ↑
+    </a>
+   </div>
+  </footer>
+ </body>
+</html>

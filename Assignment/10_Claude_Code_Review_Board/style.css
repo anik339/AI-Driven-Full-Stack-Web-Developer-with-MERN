@@ -1,0 +1,22 @@
+/* BASE: Simple, readable styling for a junior project. */
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.6 Arial, sans-serif; background: #f5f7fa; color: #243147; }
+.container { width: 92%; max-width: 1000px; margin: auto; }
+.site-header { background: #24375d; color: white; padding: 35px 0; }
+h1 { margin: 8px 0; font-size: clamp(2rem, 5vw, 3rem); }
+.eyebrow { font-size: .8rem; font-weight: bold; color: #b8d5ff; letter-spacing: .7px; }
+.intro { padding-top: 30px; }
+/* GRID: Cards are one column on mobile. */
+.task-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 22px 0; }
+.task { background: white; border: 1px solid #dce3ef; padding: 20px; border-radius: 9px; }
+.task h3 { margin: 15px 0 8px; }
+.status { font-size: .82rem; font-weight: bold; color: #1d568d; background: #e5f0fe; padding: 5px 10px; border-radius: 4px; }
+.task ul { margin-bottom: 0; }
+.review, .next { background: white; padding: 22px; border: 1px solid #dce3ef; border-radius: 9px; margin: 25px 0; }
+details { border-top: 1px solid #e2e7ef; padding: 12px 2px; }
+summary { cursor: pointer; font-weight: 600; }
+summary:focus-visible { outline: 3px solid #f4b544; }
+code { background: #e8edf5; border-radius: 4px; padding: 2px 4px; }
+footer { margin-top: 30px; padding: 16px; text-align: center; background: #24375d; color: white; }
+/* DESKTOP: Three task columns when the screen is wide enough. */
+@media (min-width: 760px) { .task-grid { grid-template-columns: repeat(3, 1fr); } }

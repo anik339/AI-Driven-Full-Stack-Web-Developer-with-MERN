@@ -1,0 +1,13 @@
+{
+  "name": "module-4-responsive-agency-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Module 4: responsive Dream Agency landing page from the supplied Figma design, built with Tailwind CSS v3.",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

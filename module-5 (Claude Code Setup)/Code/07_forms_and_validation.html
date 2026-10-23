@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Forms, Labels and Validation - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Forms, Labels and Validation | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 07 / MODULE 05</p><h1>Forms, Labels and Validation</h1><p>Build clear, accessible forms and understand what native browser validation can and cannot do.</p><div class="pills"><span class="pill">Forms</span><span class="pill">Validation</span><span class="pill">Semantics</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Accessible form elements</h2><p>Every input needs an associated label; required marks mandatory input.</p></header><div class="example"><form action="#sample" method="get" class="demo-card"><label for="demo-email"><b>Email address</b></label><br><input class="sample-input" type="email" id="demo-email" name="email" placeholder="hello@example.com" required><p class="micro">Demo form uses GET; do not enter sensitive data.</p><button class="fake-btn" type="submit">Validate</button></form></div><p class="small-head">CODE EXAMPLE</p><pre><code>&lt;form action=&quot;/subscribe&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email address&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;email&quot; required&gt;
+  &lt;button type=&quot;submit&quot;&gt;Subscribe&lt;/button&gt;
+&lt;/form&gt;</code></pre><p class="tip"><strong>Remember:</strong> Browser validation is not a substitute for backend validation.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Grouping related inputs</h2><p>Use fieldset and legend for related radio buttons and checkboxes.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Preferred contact&lt;/legend&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;contact&quot; value=&quot;email&quot;&gt; Email&lt;/label&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;contact&quot; value=&quot;phone&quot;&gt; Phone&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

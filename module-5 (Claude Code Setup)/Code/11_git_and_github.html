@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Git &amp; GitHub: Branch-based Workflow - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Git &amp; GitHub: Branch-based Workflow | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 11 / MODULE 05</p><h1>Git &amp; GitHub: Branch-based Workflow</h1><p>Learn the difference between local changes, commits, branches, remote pushes and pull requests.</p><div class="pills"><span class="pill">Git</span><span class="pill">Branches</span><span class="pill">Pull Requests</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Inspect and commit</h2><p>These commands assume Git is installed and a repository is already initialized.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>git status
+git diff
+git add .
+git commit -m &quot;Refine mobile portfolio layout&quot;
+git status</code></pre><p class="tip"><strong>Remember:</strong> Review changes before git add. Do not add secrets or generated credentials.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Make a feature branch</h2><p>Create a separate line of work instead of editing main directly.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>git switch main
+git pull --ff-only
+git switch -c feature/mobile-navigation
+# Edit, test and review files, then:
+git add .
+git commit -m &quot;Improve mobile navigation&quot;
+git push -u origin feature/mobile-navigation</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Pull request and merge</h2><p>Open a pull request on GitHub from feature/mobile-navigation into main; request review, run checks, and merge if approved.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code># After your PR is merged on GitHub:
+git switch main
+git pull --ff-only
+git branch -d feature/mobile-navigation</code></pre><p class="tip"><strong>Remember:</strong> Never use git push --force to override shared work unless you understand the consequences.</p></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

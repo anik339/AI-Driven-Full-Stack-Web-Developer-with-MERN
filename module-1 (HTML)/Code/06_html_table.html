@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 06 html table. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="caption, thead, tbody, tfoot, th, scope, colspan and rowspan.">
+
+  <title>HTML Tables | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Tables</h1>
+
+    <p>caption, thead, tbody, tfoot, th, scope, colspan and rowspan.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Student results</h2>
+
+<!-- TABLE: use only for tabular data, not general layout. -->
+<table>
+
+        <caption>Demo marks by student and subject</caption>
+
+<!-- TABLE HEAD: names columns for easier scanning. -->
+<thead>
+
+          <tr>
+<!-- TH: scope explains whether a header describes a row or column. -->
+<th scope="col">Name</th><th scope="col">Subject</th><th scope="col">Marks</th></tr>
+        </thead>
+
+        <tbody>
+
+          <tr><th scope="row" rowspan="2">Rahim</th><td>HTML</td><td>90</td></tr>
+
+          <tr><td>Web fundamentals</td><td>85</td></tr>
+
+          <tr><th scope="row">Mina</th><td>HTML</td><td>95</td></tr>
+        </tbody>
+
+        <tfoot>
+
+          <tr><td colspan="3">End of demonstration table</td></tr>
+        </tfoot>
+      </table>
+
+      <p>rowspan merges rows; colspan merges columns. Use tables for data, not layout.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

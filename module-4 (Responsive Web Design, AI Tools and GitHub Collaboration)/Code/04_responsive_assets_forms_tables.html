@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: 04 responsive assets forms tables. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Responsive Images, Forms and Tables
+  </title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+  </script>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="bg-slate-950 px-5 py-10 text-white">
+   <div class="mx-auto max-w-5xl">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="text-sm text-cyan-300 hover:underline" href="index.html">
+     Back to Code Lessons
+    </a>
+    <h1 class="mt-3 text-4xl font-black">
+     Responsive Assets, Forms and Tables
+    </h1>
+    <p class="mt-3 text-slate-300">
+     Media and controls should fit the available width without making the whole page overflow.
+    </p>
+   </div>
+  </header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-5xl space-y-8 px-5 py-10">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Responsive images
+    </h2>
+    
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img alt="Computer workstation used for web development" class="mt-4 h-auto w-full rounded-xl object-cover" loading="lazy" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-sm text-cyan-200"><code>&lt;img src="workspace.jpg" alt="Web development workspace"
+     class="h-auto w-full" loading="lazy"&gt;</code></pre>
+    <p class="mt-3 text-slate-600">
+     Always provide meaningful alternative text. Use
+     <code>
+      width
+     </code>
+     and
+     <code>
+      height
+     </code>
+     attributes when dimensions are known to reduce layout shifts.
+    </p>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Responsive form
+    </h2>
+    
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#" class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2" method="get">
+     <div>
+      
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label class="mb-1 block font-semibold" for="name">
+       Full name
+      </label>
+      
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input autocomplete="name" class="w-full rounded-lg border border-slate-300 px-3 py-3 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100" id="name" name="name" required=""/>
+     </div>
+     <div>
+      <label class="mb-1 block font-semibold" for="email">
+       Email
+      </label>
+      <input autocomplete="email" class="w-full rounded-lg border border-slate-300 px-3 py-3 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100" id="email" name="email" required="" type="email"/>
+     </div>
+     <!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+     <div class="sm:col-span-2">
+      <label class="mb-1 block font-semibold" for="message">
+       Message
+      </label>
+      
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea class="w-full rounded-lg border border-slate-300 px-3 py-3 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100" id="message" name="message" rows="4"></textarea>
+     </div>
+     <div class="sm:col-span-2">
+      
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="w-full rounded-lg bg-blue-700 px-5 py-3 font-bold text-white hover:bg-blue-800 sm:w-auto" type="submit">
+       Submit demo form
+      </button>
+     </div>
+    </form>
+    <p class="mt-3 text-sm text-slate-500">
+     This static demo does not store or send submissions to a backend.
+    </p>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Responsive table
+    </h2>
+    <p class="mt-2 text-slate-600">
+     Keep data readable. Let the table scroll inside its own wrapper on narrow screens.
+    </p>
+    <!-- TABLE WHY: horizontal scrolling prevents wide tables from squeezing small screens. -->
+    <div class="mt-4 overflow-x-auto rounded-xl border border-slate-200">
+     
+<!-- TABLE: use only for tabular data, not general layout. -->
+<table class="w-full min-w-[620px] border-collapse text-left">
+      <caption class="p-3 text-left font-semibold">
+       Responsive testing matrix
+      </caption>
+      
+<!-- TABLE HEAD: names columns for easier scanning. -->
+<thead class="bg-slate-900 text-white">
+       <tr>
+        
+<!-- TH: scope explains whether a header describes a row or column. -->
+<th class="p-3" scope="col">
+         Component
+        </th>
+        <th class="p-3" scope="col">
+         Mobile
+        </th>
+        <th class="p-3" scope="col">
+         Tablet
+        </th>
+        <th class="p-3" scope="col">
+         Desktop
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="border-t">
+        <th class="p-3" scope="row">
+         Navigation
+        </th>
+        <td class="p-3">
+         Wrap or stack
+        </td>
+        <td class="p-3">
+         Compact
+        </td>
+        <td class="p-3">
+         Full row
+        </td>
+       </tr>
+       <tr class="border-t">
+        <th class="p-3" scope="row">
+         Cards
+        </th>
+        <td class="p-3">
+         One column
+        </td>
+        <td class="p-3">
+         Two columns
+        </td>
+        <td class="p-3">
+         Three columns
+        </td>
+       </tr>
+       <tr class="border-t">
+        <th class="p-3" scope="row">
+         Form
+        </th>
+        <td class="p-3">
+         One column
+        </td>
+        <td class="p-3">
+         Two columns
+        </td>
+        <td class="p-3">
+         Comfortable width
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-sm text-cyan-200"><code>&lt;div class="overflow-x-auto"&gt;
+  &lt;table class="w-full min-w-[620px]"&gt;...&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+   </section>
+  </main>
+ </body>
+</html>

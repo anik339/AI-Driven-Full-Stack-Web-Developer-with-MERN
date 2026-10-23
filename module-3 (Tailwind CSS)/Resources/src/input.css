@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navLink {
+    @apply text-[#111018] font-medium text-[18px] hover:text-[#1700FF] ease-linear duration-150 transition-all;
+  }
+}

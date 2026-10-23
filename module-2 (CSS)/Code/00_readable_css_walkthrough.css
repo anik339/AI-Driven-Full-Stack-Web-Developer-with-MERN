@@ -1,0 +1,14 @@
+/* ROOT WHY: shared tokens allow one edit to change the whole design. */
+:root { --brand: #1d4ed8; --line: #dbe3f0; --paper: #f6f9fe; }
+/* BOX WHY: dimensions now include padding and border. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: #17203a; font: 1rem/1.6 system-ui, sans-serif; }
+/* CONTAINER WHY: keep content centered and readable on wide monitors. */
+.container { width: min(100% - 2rem, 1100px); margin-inline: auto; }
+.hero { padding-block: 3rem; }
+/* GRID WHY: create as many columns as will fit without overflow. */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1rem; }
+/* CARD WHY: padding makes breathing room; border and radius create hierarchy. */
+.card { background: white; border: 1px solid var(--line); border-radius: 1rem; padding: 1.5rem; }
+/* BREAKPOINT WHY: reduce large heading sizes when screen space is limited. */
+@media (max-width: 640px) { .hero h1 { font-size: 1.7rem; } }

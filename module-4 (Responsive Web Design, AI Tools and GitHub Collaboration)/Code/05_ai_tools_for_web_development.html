@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: 05 ai tools for web development. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8">
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Tools for Web Development</title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+
+<!-- HEADER: introduces the page or a content section. -->
+<header class="bg-slate-950 px-5 py-10 text-white"><div class="mx-auto max-w-5xl">
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="index.html" class="text-sm text-cyan-300 hover:underline">Back to Code Lessons</a><h1 class="mt-3 text-4xl font-black">AI Tools for Web Development</h1><p class="mt-3 max-w-3xl leading-7 text-slate-300">Use AI to learn faster, but keep control of the code, decisions, testing and final result.</p></div></header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-5xl space-y-8 px-5 py-10">
+
+<!-- SECTION: groups related content under a heading. -->
+<!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+<!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">Useful tool categories</h2><div class="mt-5 grid gap-4 md:grid-cols-2">
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-xl border border-slate-200 p-5"><h3 class="text-lg font-bold">ChatGPT or Gemini</h3><p class="mt-2 text-slate-600">Ask for explanations, layout ideas, accessibility checks, responsive debugging and small code examples.</p></article>
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-xl border border-slate-200 p-5"><h3 class="text-lg font-bold">GitHub Copilot or an IDE assistant</h3><p class="mt-2 text-slate-600">Get inline suggestions, test ideas and explanations while working in the editor. Review every suggestion.</p></article><article class="rounded-xl border border-slate-200 p-5"><h3 class="text-lg font-bold">Browser DevTools</h3><p class="mt-2 text-slate-600">Use device emulation, inspect computed styles, locate overflow and test multiple viewport widths.</p></article><article class="rounded-xl border border-slate-200 p-5"><h3 class="text-lg font-bold">GitHub</h3><p class="mt-2 text-slate-600">Track versions, discuss tasks, review proposed changes and collaborate through branches and pull requests.</p></article></div></section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">A responsible AI workflow</h2>
+<!-- ORDERED LIST: items follow a meaningful sequence. -->
+<ol class="mt-4 list-decimal space-y-3 pl-6 text-slate-700"><li><strong>Describe the problem.</strong> Include the screen width, expected behavior and actual behavior.</li><li><strong>Ask for an explanation first.</strong> Learn what the suggested class or media query does.</li><li><strong>Request a small change.</strong> Avoid replacing the entire project for one layout bug.</li><li><strong>Inspect the diff.</strong> Check every changed line before accepting it.</li><li><strong>Test manually.</strong> Resize the browser, check keyboard use and verify links and forms.</li><li><strong>Commit your own verified result.</strong> Use a clear commit message and mention AI assistance if your course or team policy requires it.</li></ol></section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl border border-amber-200 bg-amber-50 p-6"><h2 class="text-xl font-bold text-amber-950">Protect your work and data</h2>
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="mt-3 list-disc space-y-2 pl-6 text-amber-950"><li>Do not paste passwords, API keys, private customer data or confidential company code into public AI tools.</li><li>Do not assume generated code is secure, accessible or correct just because it looks polished.</li><li>Follow your instructor's, employer's or team's rules for AI use and attribution.</li><li>Never claim you personally authored code you cannot explain.</li></ul></section>
+    
+    <section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">Example prompt</h2><pre class="mt-4 whitespace-pre-wrap rounded-xl bg-slate-950 p-5 text-sm leading-6 text-cyan-200">I am learning responsive web design. Review only the provided HTML and CSS.
+Problem: the card grid overflows at 360px viewport width.
+Please identify the exact cause, explain it in beginner-friendly English,
+propose the smallest fix, and show the changed lines only.
+Keep the page accessible. Do not add JavaScript or a new framework.
+Tell me how to verify the fix in browser DevTools.</pre></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 21 responsive images picture. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Use picture and srcset with a real local image.">
+
+  <title>Responsive Images and Picture | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>Responsive Images and Picture</h1>
+
+    <p>Use picture and srcset with a real local image.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Picture with image fallback</h2>
+
+<!-- FIGURE: groups a media item with its caption. -->
+<figure>
+
+<!-- PICTURE: chooses image sources for different conditions. -->
+<picture>
+
+          <source media="(min-width: 800px)" srcset="profile.jpg">
+
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img src="profile.jpg" srcset="profile.jpg 1536w" sizes="(max-width: 600px) 100vw, 380px" alt="Person sitting on an outdoor circular bench" width="300" height="400" loading="lazy">
+        </picture>
+
+        <figcaption>The same image is used for all sizes in this demo; use multiple optimized files in production.</figcaption>
+      </figure>
+
+      <p>srcset = alternative image widths; sizes = expected display width; picture = source selection.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

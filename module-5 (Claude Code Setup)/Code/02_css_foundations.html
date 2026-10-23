@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CSS Fundamentals and the Cascade - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>CSS Fundamentals and the Cascade | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 02 / MODULE 05</p><h1>CSS Fundamentals and the Cascade</h1><p>Learn selectors, reusable classes, inheritance, specificity and readable stylesheets.</p><div class="pills"><span class="pill">Selectors</span><span class="pill">Box model</span><span class="pill">Specificity</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Three parts of a rule</h2><p>The selector finds elements; the property names what changes; the value supplies the change.</p></header><div class="example"><div class="demo-card" style="border-left:6px solid #355ee8"><b>Reusable class</b><small>One declaration can style many cards.</small></div></div><p class="small-head">CODE EXAMPLE</p><pre><code>/* This class is reused on multiple elements. */
+.card { padding: 1.25rem; border: 1px solid #d9e4f0; border-radius: 12px; }
+.card h2 { color: #17243c; }
+.card:hover { border-color: #355ee8; }</code></pre><p class="tip"><strong>Remember:</strong> Prefer classes for component styling; use IDs for unique anchors and labels.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Box model and fluid width</h2><p>Padding is inside the border; margin is outside. Use border-box to make sizes easier to control.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>*, *::before, *::after { box-sizing: border-box; }
+.container { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
+.box { padding: 1rem; margin-block: 1rem; border: 1px solid #ddd; }</code></pre><p class="tip"><strong>Remember:</strong> Avoid fixed page widths that break on phones.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Cascade and specificity</h2><p>In simplified terms, matched rules are resolved by origin/importance, cascade layers, specificity, scoping proximity and source order.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>p { color: #334155; }
+.notice { color: #1d4ed8; } /* More specific than p. */
+/* Keep selectors simple; avoid unnecessary !important. */</code></pre></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

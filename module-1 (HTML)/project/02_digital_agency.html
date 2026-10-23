@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 02 digital agency. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="A static business landing page: services, workflow, case studies, pricing, FAQ and enquiry.">
+
+  <title>Digital Agency Website | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="#main-content">Skip to main content</a>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Static Project</p>
+
+    <h1>Digital Agency Website</h1>
+
+    <p>A static business landing page: services, workflow, case studies, pricing, FAQ and enquiry.</p>
+
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Agency main menu">
+
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul>
+
+        <li><a href="#services">Services</a></li>
+
+        <li><a href="#process">Process</a></li>
+
+        <li><a href="#case-studies">Work</a></li>
+
+        <li><a href="#plans">Packages</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section aria-labelledby="hero-heading">
+
+      <h2 id="hero-heading">Thoughtful digital experiences, built on clear structure.</h2>
+
+      <p>Northline Studio is a fictional agency used for this HTML-only learning project.</p>
+
+      <p><a href="#contact">Discuss a project</a> · <a href="#services">Explore services</a></p>
+    </section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="services">
+
+      <h2>What we do</h2>
+
+<!-- ARTICLE: independent content that can stand alone. -->
+<article>
+
+        <h3>Website planning</h3>
+
+        <p>Information architecture, page outlines and accessibility-focused structure.</p>
+      </article>
+
+<!-- ARTICLE: independent content that can stand alone. -->
+<article>
+
+        <h3>Content strategy</h3>
+
+        <p>Clear headings, search-friendly descriptions and helpful navigation.</p>
+      </article>
+
+      <article>
+
+        <h3>Content publishing</h3>
+
+        <p>Reusable article structures and dependable content conventions.</p>
+      </article>
+    </section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="process">
+
+      <h2>Our process</h2>
+
+<!-- ORDERED LIST: items follow a meaningful sequence. -->
+<ol>
+
+        <li><strong>Discover:</strong> understand the audience and goal.</li>
+
+        <li><strong>Structure:</strong> arrange pages, headings and content.</li>
+
+        <li><strong>Review:</strong> test links, forms and accessibility.</li>
+
+        <li><strong>Deliver:</strong> hand over a maintainable foundation.</li>
+      </ol>
+    </section>
+
+    <section id="case-studies">
+
+      <h2>Sample case studies</h2>
+
+      <article>
+
+        <h3>Nonprofit information website</h3>
+
+        <p>Organized programmes and resources into clear navigation groups.</p>
+
+        <p><strong>Deliverable:</strong> multi-page content structure.</p>
+      </article>
+
+      <article>
+
+        <h3>Small business service page</h3>
+
+        <p>Created a semantically organized service and inquiry experience.</p>
+
+        <p><strong>Deliverable:</strong> landing page with HTML form.</p>
+      </article>
+
+      <p><small>All case studies here are fictional HTML practice examples, not client claims.</small></p>
+    </section>
+
+    <section id="plans">
+
+      <h2>Illustrative service packages</h2>
+
+<!-- TABLE: use only for tabular data, not general layout. -->
+<table>
+
+        <caption>Example scope; prices are fictional estimates</caption>
+
+<!-- TABLE HEAD: names columns for easier scanning. -->
+<thead><tr>
+<!-- TH: scope explains whether a header describes a row or column. -->
+<th scope="col">Package</th><th scope="col">Includes</th><th scope="col">Sample price</th></tr></thead>
+
+        <tbody>
+
+          <tr><th scope="row">Starter</th><td>3-page information structure</td><td><data value="299">$299</data></td></tr>
+
+          <tr><th scope="row">Growth</th><td>5-page structure and content audit</td><td><data value="599">$599</data></td></tr>
+
+          <tr><th scope="row">Custom</th><td>Scoping workshop</td><td>On request</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+
+      <h2>Frequently asked questions</h2>
+
+<!-- DETAILS: native expandable content; no custom JavaScript needed. -->
+<details>
+
+<!-- SUMMARY: clickable heading for its parent details element. -->
+<summary>What is included in the first delivery?</summary>
+
+        <p>A structured HTML outline with clearly named sections and pages.</p>
+      </details>
+
+      <details>
+
+        <summary>Does this practice website process real enquiries?</summary>
+
+        <p>No. It demonstrates a frontend form only.</p>
+      </details>
+    </section>
+
+    <section id="contact">
+
+      <h2>Tell us what you need</h2>
+
+      <p><small>Demo form, not connected to any email service or database.</small></p>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#contact" method="get">
+
+        <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="agency-name">Your name</label></p>
+
+        <p>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input id="agency-name" name="name" type="text" autocomplete="name" required></p>
+
+        <p><label for="agency-mail">Business email</label></p>
+
+        <p><input id="agency-mail" name="email" type="email" autocomplete="email" required></p>
+
+        <p><label for="agency-type">Project type</label></p>
+
+        <p>
+<!-- SELECT: offers a predefined list of choices. -->
+<select id="agency-type" name="project" required>
+
+          <option value="">Choose one</option>
+
+          <option value="website">New website</option>
+
+          <option value="content">Content structure</option>
+
+          <option value="other">Something else</option>
+        </select></p>
+
+        <p><label for="agency-brief">Project description</label></p>
+
+        <p>
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea id="agency-brief" name="brief" rows="5" cols="45" required></textarea></p>
+
+        <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="submit">Test enquiry validation</button></p>
+      </form>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

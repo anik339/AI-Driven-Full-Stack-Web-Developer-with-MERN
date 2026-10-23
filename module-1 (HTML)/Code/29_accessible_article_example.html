@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 29 accessible article example. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="A realistic article with byline, categories, image, dates and related content.">
+
+  <title>Complete Semantic Article | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>Complete Semantic Article</h1>
+
+    <p>A realistic article with byline, categories, image, dates and related content.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- ARTICLE: independent content that can stand alone. -->
+<article>
+
+      <header>
+
+        <p>Web Development / HTML Fundamentals</p>
+
+        <h2>Why Accessible HTML Is a Good Starting Point</h2>
+
+        <p>By Demo Author · <time datetime="2026-10-21">21 October 2026</time></p>
+      </header>
+
+      <p>Good HTML gives a document structure that is understandable to readers, browsers and assistive technology.</p>
+
+<!-- FIGURE: groups a media item with its caption. -->
+<figure>
+
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img src="profile.jpg" alt="Learner sitting under a leafy tree outdoors" width="280" height="373" loading="lazy">
+
+        <figcaption>Thoughtful content structure helps everyone navigate a page.</figcaption>
+      </figure>
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+        <h3>Start with meaning</h3>
+
+        <p>Use headings in order and label each form input.</p>
+      </section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+        <h3>Write helpful link text</h3>
+
+        <p>For further reading, visit 
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN's HTML guide</a>.</p>
+      </section>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer><p>Article category: <data value="html">HTML</data></p></footer>
+    </article>
+
+<!-- ASIDE: supporting content separate from the main flow. -->
+<aside>
+
+      <h2>Related topics</h2>
+
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul><li>Semantic landmarks</li><li>Form labels</li><li>Image alternative text</li></ul>
+    </aside>
+  </main>
+
+  <footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 04 | Chess Board</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="top"><h1>Chess Board</h1><p>Practicing CSS selectors, square sizing and table styling.</p></header>
+    <main>
+        <!-- BOARD: Each table cell represents one chess square. -->
+        <table class="board" aria-label="Static chessboard with pieces in starting positions">
+            <caption>Chess Board Assignment — Static Layout</caption>
+            <tbody>
+            <tr>
+                <td class="light" aria-label="a8 with piece">♜</td>
+                <td class="dark" aria-label="b8 with piece">♞</td>
+                <td class="light" aria-label="c8 with piece">♝</td>
+                <td class="dark" aria-label="d8 with piece">♛</td>
+                <td class="light" aria-label="e8 with piece">♚</td>
+                <td class="dark" aria-label="f8 with piece">♝</td>
+                <td class="light" aria-label="g8 with piece">♞</td>
+                <td class="dark" aria-label="h8 with piece">♜</td>
+            </tr>
+            <tr>
+                <td class="dark" aria-label="a7 with piece">♟</td>
+                <td class="light" aria-label="b7 with piece">♟</td>
+                <td class="dark" aria-label="c7 with piece">♟</td>
+                <td class="light" aria-label="d7 with piece">♟</td>
+                <td class="dark" aria-label="e7 with piece">♟</td>
+                <td class="light" aria-label="f7 with piece">♟</td>
+                <td class="dark" aria-label="g7 with piece">♟</td>
+                <td class="light" aria-label="h7 with piece">♟</td>
+            </tr>
+            <tr>
+                <td class="light" aria-label="a6 empty"></td>
+                <td class="dark" aria-label="b6 empty"></td>
+                <td class="light" aria-label="c6 empty"></td>
+                <td class="dark" aria-label="d6 empty"></td>
+                <td class="light" aria-label="e6 empty"></td>
+                <td class="dark" aria-label="f6 empty"></td>
+                <td class="light" aria-label="g6 empty"></td>
+                <td class="dark" aria-label="h6 empty"></td>
+            </tr>
+            <tr>
+                <td class="dark" aria-label="a5 empty"></td>
+                <td class="light" aria-label="b5 empty"></td>
+                <td class="dark" aria-label="c5 empty"></td>
+                <td class="light" aria-label="d5 empty"></td>
+                <td class="dark" aria-label="e5 empty"></td>
+                <td class="light" aria-label="f5 empty"></td>
+                <td class="dark" aria-label="g5 empty"></td>
+                <td class="light" aria-label="h5 empty"></td>
+            </tr>
+            <tr>
+                <td class="light" aria-label="a4 empty"></td>
+                <td class="dark" aria-label="b4 empty"></td>
+                <td class="light" aria-label="c4 empty"></td>
+                <td class="dark" aria-label="d4 empty"></td>
+                <td class="light" aria-label="e4 empty"></td>
+                <td class="dark" aria-label="f4 empty"></td>
+                <td class="light" aria-label="g4 empty"></td>
+                <td class="dark" aria-label="h4 empty"></td>
+            </tr>
+            <tr>
+                <td class="dark" aria-label="a3 empty"></td>
+                <td class="light" aria-label="b3 empty"></td>
+                <td class="dark" aria-label="c3 empty"></td>
+                <td class="light" aria-label="d3 empty"></td>
+                <td class="dark" aria-label="e3 empty"></td>
+                <td class="light" aria-label="f3 empty"></td>
+                <td class="dark" aria-label="g3 empty"></td>
+                <td class="light" aria-label="h3 empty"></td>
+            </tr>
+            <tr>
+                <td class="light" aria-label="a2 with piece">♙</td>
+                <td class="dark" aria-label="b2 with piece">♙</td>
+                <td class="light" aria-label="c2 with piece">♙</td>
+                <td class="dark" aria-label="d2 with piece">♙</td>
+                <td class="light" aria-label="e2 with piece">♙</td>
+                <td class="dark" aria-label="f2 with piece">♙</td>
+                <td class="light" aria-label="g2 with piece">♙</td>
+                <td class="dark" aria-label="h2 with piece">♙</td>
+            </tr>
+            <tr>
+                <td class="dark" aria-label="a1 with piece">♖</td>
+                <td class="light" aria-label="b1 with piece">♘</td>
+                <td class="dark" aria-label="c1 with piece">♗</td>
+                <td class="light" aria-label="d1 with piece">♕</td>
+                <td class="dark" aria-label="e1 with piece">♔</td>
+                <td class="light" aria-label="f1 with piece">♗</td>
+                <td class="dark" aria-label="g1 with piece">♘</td>
+                <td class="light" aria-label="h1 with piece">♖</td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="hint">This is a visual board only. Moving pieces requires JavaScript in a later module.</p>
+    </main>
+</body>
+</html>

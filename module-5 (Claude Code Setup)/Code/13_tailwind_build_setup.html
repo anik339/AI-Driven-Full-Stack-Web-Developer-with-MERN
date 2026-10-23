@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tailwind CSS: Development vs Production - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Tailwind CSS: Development vs Production | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 13 / MODULE 05</p><h1>Tailwind CSS: Development vs Production</h1><p>Practice with the v4 browser CDN now; learn the correct CLI build concept for later production work.</p><div class="pills"><span class="pill">Tailwind v4</span><span class="pill">Build process</span><span class="pill">CLI</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Practice with a CDN</h2><p>The v4 browser package works in an HTML file immediately when internet is available.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;mx-auto max-w-4xl px-6 py-12 md:py-20&quot;&gt;
+  &lt;h1 class=&quot;text-4xl font-black md:text-6xl&quot;&gt;Project title&lt;/h1&gt;
+&lt;/div&gt;</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Compile for production later</h2><p>When you work with Node tooling, install Tailwind v4 and its CLI, create an input stylesheet, then generate an output CSS file.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>npm install -D tailwindcss @tailwindcss/cli
+# Create src/input.css containing: @import &quot;tailwindcss&quot;;
+npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch</code></pre><p class="tip"><strong>Remember:</strong> The command does not automatically build or deploy the projects inside this ZIP.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Important separation</h2><p>Installing Claude Code is unrelated to installing Tailwind. Claude Code can assist with editing files; Tailwind itself is a CSS framework.</p></header><div class="example"><p><a class="fake-btn" href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer">Official Tailwind v4 Guide ↗</a></p></div></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

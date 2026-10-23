@@ -1,0 +1,25 @@
+/* BASE: Keep spacing consistent across devices. */
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 Arial, sans-serif; color: #e7f2ff; background: #132440; }
+.hero { padding: 30px 15px; background: #1f406a; text-align: center; }
+h1 { margin: 0 0 10px; font-size: 2rem; }
+.content { max-width: 760px; margin: 25px auto; padding: 0 15px; }
+.intro { display: flex; gap: 20px; align-items: center; }
+.intro img { width: 140px; height: 130px; object-fit: contain; background: white; border-radius: 10px; }
+.small-note { color: #bdd2ec; font-size: 0.88rem; }
+form { padding: 20px; background: #1d3556; border-radius: 12px; }
+fieldset { margin-bottom: 18px; padding: 18px; border: 1px solid #6d87aa; border-radius: 8px; }
+legend { padding: 0 7px; font-weight: bold; }
+label, .field-title { display: block; margin: 12px 0 5px; font-weight: 600; }
+/* FIELDS: Full-width inputs make the form easy to read. */
+input:not([type="checkbox"]):not([type="radio"]),select,textarea { display: block; width: 100%; padding: 10px; font: inherit; border: 1px solid #92a8c4; border-radius: 5px; }
+input[type="color"] { max-width: 85px; height: 44px; }
+input[type="range"] { accent-color: #3fb9ee; }
+.options { display: flex; flex-wrap: wrap; gap: 14px; }
+.options label { font-weight: normal; margin: 0 0 8px; }
+.actions { display: flex; gap: 12px; }
+button { background: #1ea6ce; color: #08203a; border: none; border-radius: 6px; padding: 12px 20px; font-weight: bold; cursor: pointer; }
+button.reset { background: #e3eaf6; }
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible { outline: 3px solid #ffcf6d; outline-offset: 2px; }
+/* MOBILE: Intro content becomes a single column. */
+@media (max-width: 540px) { .intro { flex-direction: column; align-items: flex-start; } form { padding: 11px; } fieldset { padding: 12px; } }

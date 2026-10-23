@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive and Mobile-first Design - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Responsive and Mobile-first Design | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 05 / MODULE 05</p><h1>Responsive and Mobile-first Design</h1><p>Practice fluid grids, flexible text, images and breakpoints on small and large screens.</p><div class="pills"><span class="pill">Mobile-first</span><span class="pill">Breakpoints</span><span class="pill">clamp()</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>A responsive pattern</h2><p>The cards below automatically stack on smaller screens.</p></header><div class="example"><div class="grid"><article class="demo-card">Mobile: 1 column</article><article class="demo-card">Tablet: 2 columns</article><article class="demo-card">Desktop: 3 columns</article></div></div><p class="small-head">CODE EXAMPLE</p><pre><code>/* Start with a single column. */
+.grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }</code></pre><p class="tip"><strong>Remember:</strong> Test real content at 375px, 768px and 1280px, then test widths in between.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Fluid typography and images</h2><p>Use clamp for responsive fonts and max-width for images.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>h1 { font-size: clamp(2rem, 5vw, 4.5rem); }
+img { display: block; max-width: 100%; height: auto; }
+/* Avoid overflow from long words. */
+p { overflow-wrap: anywhere; }</code></pre></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* RESET: Use predictable spacing for every element. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; background: #f3f6fb; color: #23334a; }
+a { color: #1b60b4; }
+/* HEADER: Centers the introduction and keeps links visible. */
+.site-header { padding: 32px 16px; background: #dcecff; text-align: center; }
+.site-header h1 { margin: 0; color: #204b8c; }
+nav { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 16px; }
+.page-width { max-width: 920px; padding: 20px; margin: auto; }
+.card { padding: 24px; margin: 20px 0; background: #fff; border: 1px solid #dae2ed; border-radius: 12px; }
+h2 { margin-top: 0; color: #24539c; }
+h3 { margin-bottom: 6px; }
+/* GRID: Places learning lists side by side on a wide screen. */
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+figure { margin: 14px 0 0; }
+.profile img { width: 180px; height: 210px; border-radius: 10px; object-fit: cover; }
+.product-image img { width: 290px; max-width: 100%; height: auto; border-radius: 8px; }
+figcaption { font-size: 0.85rem; color: #66758b; margin-top: 8px; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+caption { text-align: left; margin-bottom: 9px; }
+th, td { padding: 12px; border: 1px solid #cbd5e1; }
+th { background: #e8f0ff; }
+form { max-width: 520px; }
+label { display: block; font-weight: bold; margin: 14px 0 5px; }
+input, textarea { width: 100%; padding: 11px; border: 1px solid #bdc8d8; border-radius: 7px; font: inherit; }
+input:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #f0ad2b; outline-offset: 2px; }
+button { border: 0; border-radius: 7px; background: #245caa; color: white; padding: 12px 18px; margin-top: 12px; cursor: pointer; }
+.note { color: #69758c; font-size: 0.9rem; }
+.footer { padding: 18px; text-align: center; background: #e4ebf4; }
+/* MEDIA QUERY: Stack columns on narrow devices. */
+@media (max-width: 640px) { .page-width { padding: 12px; } .card { padding: 18px; } .two-columns { grid-template-columns: 1fr; } }

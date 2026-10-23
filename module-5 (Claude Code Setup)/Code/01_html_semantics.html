@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML Structure and Semantic Sections - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>HTML Structure and Semantic Sections | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 01 / MODULE 05</p><h1>HTML Structure and Semantic Sections</h1><p>Build an accessible page structure before you style anything. Semantics make content easier to navigate, test and maintain.</p><div class="pills"><span class="pill">HTML5</span><span class="pill">Landmarks</span><span class="pill">Accessibility</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Page landmarks</h2><p>A header identifies the site, nav holds navigation links, main contains the primary content, and footer provides closing information.</p></header><div class="example"><article class="demo-card"><header><strong>Northstar Studio</strong></header><nav aria-label="Example navigation"><a href="#example-home">Home</a> &nbsp; <a href="#example-about">About</a></nav><main id="example-home"><h3>Welcome to the studio</h3><p>A simple, meaningful layout.</p></main><footer><small>2026 &copy; Northstar</small></footer></article></div><p class="small-head">CODE EXAMPLE</p><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Site header --&gt;
+  &lt;header&gt;&lt;h1&gt;Northstar Studio&lt;/h1&gt;&lt;/header&gt;
+  &lt;!-- Primary navigation --&gt;
+  &lt;nav aria-label=&quot;Primary&quot;&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/nav&gt;
+  &lt;!-- Main page content --&gt;
+  &lt;main id=&quot;about&quot;&gt;&lt;h2&gt;Our work&lt;/h2&gt;&lt;p&gt;Welcome.&lt;/p&gt;&lt;/main&gt;
+  &lt;!-- Footer --&gt;
+  &lt;footer&gt;&lt;p&gt;Copyright 2026&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p class="tip"><strong>Remember:</strong> Use one visible main landmark; headings should form a logical hierarchy.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Links and images</h2><p>Use descriptive link text, meaningful alternative text on informative images, and width/height to reduce layout shift.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Visit project website&lt;/a&gt;
+&lt;img src=&quot;photo.jpg&quot; alt=&quot;Student presenting a web app&quot; width=&quot;800&quot; height=&quot;500&quot; loading=&quot;lazy&quot;&gt;</code></pre><p class="tip"><strong>Remember:</strong> A link navigates; a button performs an action.</p></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

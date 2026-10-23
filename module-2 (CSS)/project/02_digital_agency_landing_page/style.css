@@ -1,0 +1,415 @@
+/* TOPIC: style. Read each selector and test one property at a time. */
+/* Global reset and design tokens. */
+
+/* DESIGN TOKENS: central variables keep colors and spacing consistent. */
+:root  {
+  --ink: #182235;
+  --muted: #68748a;
+  --paper: #f7f8fc;
+  --surface: #fff;
+  --brand: #3157d5;
+  --brand-dark: #203da0;
+  --accent: #f2b84b;
+  --line: #e0e5ef;
+  --radius: 18px;
+  --shadow: 0 18px 44px rgba(24,34,53,.09);
+}
+/* BOX SIZING: makes element dimensions easier to predict. */
+
+*  {
+  box-sizing: border-box;
+}
+html  {
+  scroll-behavior: smooth;
+}
+/* BODY: sets the default font, page background and readable text. */
+
+body  {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+img, video  {
+  display: block;
+  max-width: 100%;
+}
+a  {
+  color: inherit;
+}
+button, input, textarea, select  {
+  font: inherit;
+}
+/* FOCUS: helps keyboard users find their current target. */
+
+/* ACCESSIBILITY WHY: keep an obvious keyboard focus indicator. */
+:focus-visible  {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+/* CONTAINER: limits width and centers content on large screens. */
+
+.container  {
+  width: min(1120px, calc(100% - 36px));
+  margin-inline: auto;
+}
+header  {
+  padding: 20px 0;
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--line);
+}
+/* NAVIGATION: aligns menu items and keeps spacing consistent. */
+
+.nav  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.logo  {
+  font-weight: 900;
+  letter-spacing: -.05em;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.nav-links  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.nav-links a  {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 700;
+}
+.nav-links a:hover  {
+  color: var(--brand);
+}
+main  {
+  padding-bottom: 64px;
+}
+.eyebrow  {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .75rem;
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+h1,h2,h3  {
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+h1  {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  margin: 0 0 18px;
+}
+h2  {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  margin: 0 0 12px;
+}
+h3  {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+p  {
+  margin: 0 0 14px;
+}
+.lead  {
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+.section  {
+  padding-top: 66px;
+}
+.section-head  {
+  max-width: 680px;
+  margin-bottom: 26px;
+}
+/* GRID: places cards into responsive rows and columns. */
+
+.grid  {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+}
+/* CARD: groups information with a reusable visual treatment. */
+
+.card  {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.muted  {
+  color: var(--muted);
+}
+.button  {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 17px;
+  border: 1px solid var(--brand);
+  border-radius: 10px;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+.button:hover  {
+  background: var(--brand-dark);
+}
+.button.secondary  {
+  color: var(--brand);
+  background: transparent;
+}
+.button.secondary:hover  {
+  color: white;
+  background: var(--brand);
+}
+footer  {
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: white;
+}
+/* MEDIA QUERY: adapts the layout when the screen width changes. */
+
+/* WIDTH WHY: cap long lines and prevent content from stretching on large screens. */
+@media (max-width: 640px)  {
+  .container  {
+    width: min(100% - 26px, 1120px);
+  }
+  .section  {
+    padding-top: 46px;
+  }
+  .card  {
+    padding: 19px;
+  }
+}
+/* BREAKPOINT WHY: change the layout only when the given condition matches. */
+@media (prefers-reduced-motion: reduce)  {
+  html  {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after  {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* Project-specific layout and components. */
+.logo span  {
+  color: var(--brand);
+}
+.nav-cta  {
+  padding: 9px 13px;
+}
+.agency-hero  {
+  padding: 70px 0;
+  background: #fff;
+  overflow: hidden;
+}
+.agency-grid  {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 34px;
+  align-items: center;
+}
+.agency-hero h1  {
+  max-width: 700px;
+}
+.agency-hero h1 em  {
+  color: var(--brand);
+  font-family: Georgia, serif;
+  font-weight: 500;
+}
+.actions  {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 25px 0;
+}
+.text-link  {
+  color: var(--brand);
+  font-weight: 800;
+  text-underline-offset: 5px;
+}
+/* HERO: styles the first prominent section of the page. */
+
+.hero-note  {
+  color: var(--muted);
+  font-size: .88rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.shape-stage  {
+  position: relative;
+  min-height: 360px;
+  background: #e8edff;
+  border-radius: 48% 52% 40% 60% / 55% 38% 62% 45%;
+  overflow: hidden;
+}
+.shape  {
+  position: absolute;
+  border-radius: 50%;
+}
+.shape-a  {
+  width: 230px;
+  height: 230px;
+  top: 20px;
+  left: 30px;
+  background: #3157d5;
+}
+.shape-b  {
+  width: 190px;
+  height: 190px;
+  right: 12px;
+  bottom: 20px;
+  background: #f2b84b;
+  mix-blend-mode: multiply;
+}
+.shape-c  {
+  width: 115px;
+  height: 115px;
+  top: 105px;
+  right: 45px;
+  background: #0d9488;
+  mix-blend-mode: multiply;
+}
+.shape-stage span  {
+  position: absolute;
+  left: 30%;
+  top: 42%;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+.service span  {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  background: #e8edff;
+  color: var(--brand);
+  border-radius: 12px;
+  font-weight: 900;
+}
+.work-grid  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.work-card  {
+  min-height: 240px;
+  padding: 28px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+}
+.work-card:first-child  {
+  grid-row: span 2;
+  min-height: 500px;
+}
+.work-card p  {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+.work-card h3  {
+  font-size: 2rem;
+}
+.work-card span  {
+  color: rgba(255,255,255,.8);
+}
+.work-sun  {
+  background: linear-gradient(145deg, #b45309, #f59e0b 50%, #713f12);
+}
+.work-green  {
+  background: linear-gradient(145deg, #064e3b, #0d9488);
+}
+.work-purple  {
+  background: linear-gradient(145deg, #4c1d95, #8b5cf6);
+}
+.process-list  {
+  list-style: none;
+  padding: 0;
+  counter-reset: process;
+}
+.process-list li  {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  counter-increment: process;
+}
+.process-list strong::before  {
+  content: "0" counter(process) " / ";
+  color: var(--brand);
+}
+.contact-panel  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: clamp(22px, 5vw, 46px);
+  border-radius: 22px;
+  background: #e8edff;
+}
+.contact-panel form  {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.contact-panel label  {
+  font-weight: 800;
+  font-size: .9rem;
+}
+.contact-panel input, .contact-panel textarea  {
+  padding: 12px;
+  border: 1px solid #b9c5df;
+  border-radius: 9px;
+  background: white;
+}
+.contact-panel button  {
+  margin-top: 8px;
+  cursor: pointer;
+}
+.foot-row  {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 760px)  {
+  .agency-grid, .contact-panel  {
+    grid-template-columns: 1fr;
+  }
+  .agency-hero  {
+    padding: 45px 0;
+  }
+  .shape-stage  {
+    min-height: 270px;
+  }
+  .work-grid  {
+    grid-template-columns: 1fr;
+  }
+  .work-card:first-child  {
+    grid-row: auto;
+    min-height: 280px;
+  }
+  .process-list li  {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}

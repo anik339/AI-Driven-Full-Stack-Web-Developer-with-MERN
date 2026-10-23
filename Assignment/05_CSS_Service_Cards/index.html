@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 05 | Service Cards</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="site-header"><h1>Student Services</h1><p>A card layout using HTML and CSS</p></header>
+    <main class="container">
+        <section>
+            <h2>What I Can Practice</h2>
+            <p>These cards are examples of common sections on a company website.</p>
+            <!-- CARD GRID: The CSS grid keeps related services aligned. -->
+            <div class="cards">
+                <article class="card"><span class="number">01</span><h3>HTML Page</h3><p>Write semantic sections, links and forms.</p><a href="#contact">Ask about HTML</a></article>
+                <article class="card"><span class="number">02</span><h3>CSS Layout</h3><p>Use margin, padding, border and Flexbox.</p><a href="#contact">Ask about CSS</a></article>
+                <article class="card"><span class="number">03</span><h3>Responsive Page</h3><p>Adjust columns and text for small screens.</p><a href="#contact">Ask about design</a></article>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Project Enquiry</h2>
+            <p>Static example — no message will be sent.</p>
+            <form action="#" method="post">
+                <label for="person">Name</label><input type="text" name="person" id="person" required>
+                <label for="service">Preferred Service</label>
+                <select id="service" name="service"><option>HTML</option><option>CSS</option><option>Responsive Design</option></select>
+                <button type="submit">Send (demo)</button>
+            </form>
+        </section>
+    </main>
+    <footer><p>Assignment 05 · CSS Card Layout</p></footer>
+</body>
+</html>

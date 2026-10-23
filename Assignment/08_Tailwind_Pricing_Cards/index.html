@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment 08 | Tailwind Pricing</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="bg-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-5 py-12 text-center"><p class="text-teal-300 font-bold text-sm">ASSIGNMENT 08</p><h1 class="text-4xl font-bold mt-2">Simple Website Plans</h1><p class="text-slate-300 mt-4">Pricing card design using Tailwind CSS utilities.</p></div>
+    </header>
+    <main class="bg-slate-50 py-10 px-4 min-h-screen">
+        <!-- GRID: Pricing cards stack on mobile and align on desktop. -->
+        <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5" aria-label="Example pricing plans">
+            <article class="rounded-xl bg-white border border-slate-200 p-6">
+                <h2 class="text-xl font-bold">Starter</h2><p class="mt-3 text-3xl font-extrabold">৳ 2,000</p><p class="text-sm text-slate-500">Demo project price</p>
+                <ul class="mt-5 space-y-3 text-slate-700"><li>✓ One page layout</li><li>✓ Contact section</li><li>✓ Simple styling</li></ul>
+                <a href="#note" class="block mt-7 text-center border border-teal-700 text-teal-800 rounded-lg py-3 font-semibold hover:bg-teal-50">Choose Starter</a>
+            </article>
+            <article class="rounded-xl bg-white border-2 border-teal-600 p-6">
+                <p class="text-xs text-teal-700 font-bold uppercase">Common Choice</p><h2 class="text-xl font-bold mt-2">Standard</h2>
+                <p class="mt-3 text-3xl font-extrabold">৳ 4,000</p><p class="text-sm text-slate-500">Demo project price</p>
+                <ul class="mt-5 space-y-3 text-slate-700"><li>✓ Three page design</li><li>✓ Mobile responsive</li><li>✓ Reusable cards</li></ul>
+                <a href="#note" class="block mt-7 text-center bg-teal-700 text-white rounded-lg py-3 font-semibold hover:bg-teal-800">Choose Standard</a>
+            </article>
+            <article class="rounded-xl bg-white border border-slate-200 p-6">
+                <h2 class="text-xl font-bold">Extended</h2><p class="mt-3 text-3xl font-extrabold">৳ 6,000</p><p class="text-sm text-slate-500">Demo project price</p>
+                <ul class="mt-5 space-y-3 text-slate-700"><li>✓ Five page design</li><li>✓ Responsive sections</li><li>✓ Component styling</li></ul>
+                <a href="#note" class="block mt-7 text-center border border-teal-700 text-teal-800 rounded-lg py-3 font-semibold hover:bg-teal-50">Choose Extended</a>
+            </article>
+        </section>
+        <section id="note" class="max-w-3xl mx-auto text-center pt-8"><h2 class="font-bold text-lg">Static Design Exercise</h2><p class="text-slate-600 mt-2">Buttons jump to this note. There is no payment or checkout feature yet.</p></section>
+    </main>
+</body>
+</html>
