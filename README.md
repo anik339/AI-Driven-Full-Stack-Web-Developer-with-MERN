@@ -1,366 +1,550 @@
-# 🚀 Full-Stack Web Development Journey
+# AI-Driven Full Stack Web Developer with MERN
 
-Welcome to my web development learning journey.
+**Anik Chandra Dey**  
+BSc in Computer Science and Engineering Student  
+American International University-Bangladesh (AIUB)
 
-This repository documents my progress from web development fundamentals toward becoming a Full-Stack MERN Developer through structured learning, practical assignments, projects, and continuous practice.
+This repository documents my learning journey toward becoming a Full Stack Web Developer using the MERN stack. It contains course practice files, assignments, frontend projects, learning resources, and progress tracking materials.
 
----
+My approach is to learn the fundamentals, practise with small examples, build projects, review my code, and use Git and GitHub to maintain my work.
 
-## 🎯 Goal
+## About This Repository
 
-My goal is to build strong practical skills in modern web development and gradually progress toward professional Full-Stack MERN development.
+The repository is organised around the first five learning modules of my course. It focuses on frontend fundamentals, responsive web design, version control, and AI-assisted development workflows.
 
-### Target Stack
+### Learning Modules
 
-- MongoDB
-- Express.js
-- React.js
-- Node.js
-
----
-
-## 🗺️ Learning Roadmap
-
-### Phase 1 — HTML5
-
-- HTML Fundamentals
-- Semantic HTML
-- Forms
-- Tables
-- Multimedia
-- Accessibility
-- Practical HTML Projects
-
-### Phase 2 — CSS3 & Responsive Design
-
-- CSS Fundamentals
-- Selectors
-- Box Model
-- Flexbox
-- CSS Grid
-- Media Queries
-- Responsive Web Design
-- Mobile-First Design
-
-### Phase 3 — Tailwind CSS
-
-- Utility-First CSS
-- Responsive Utilities
-- Layouts
-- Components
-- Typography
-- Spacing
-- Modern UI Development
-
-### Phase 4 — JavaScript
-
-- JavaScript Fundamentals
-- Variables & Data Types
-- Operators
-- Conditions & Loops
-- Functions
-- Arrays & Objects
-- ES6+
-- DOM Manipulation
-- Events
-- Form Handling
-- Asynchronous JavaScript
-- Promises
-- Async/Await
-- Fetch API
-- REST APIs
-
-### Phase 5 — React.js
-
-- Components
-- Props
-- State
-- Hooks
-- React Router
-- API Integration
-- State Management
-
-### Phase 6 — Backend Development
-
-- Node.js
-- Express.js
-- REST APIs
-- Middleware
-- Authentication
-- Authorization
-- JWT
-- Error Handling
-
-### Phase 7 — Database
-
-- MongoDB
-- Mongoose
-- CRUD Operations
-- Data Modeling
-- Database Relationships
-
-### Phase 8 — Full-Stack MERN
-
-- React + Node.js + Express + MongoDB
-- Authentication & Authorization
-- API Integration
-- Full-Stack Application Development
-- Deployment
-- Real-World Projects
-
----
-
-## 📊 Current Progress
-
-| Module | Focus | Status |
+| Module | Topics | Current Status |
 |---|---|---|
-| Module 1 | HTML5 | 🟡 Strengthening |
-| Module 2 | CSS3 | 🟡 Strengthening |
-| Module 3 | Tailwind CSS | 🟡 Strengthening |
-| Module 4 | Responsive Web Design | 🟡 Strengthening |
-| Module 5 | JavaScript | 🔵 Coming Next |
-| Module 6 | React.js | ⚪ Planned |
-| Module 7 | Node.js & Express.js | ⚪ Planned |
-| Module 8 | MongoDB | ⚪ Planned |
-| Module 9 | Full-Stack MERN | ⚪ Planned |
+| Module 1 | HTML5 Fundamentals | Covered / Practising |
+| Module 2 | CSS3 Fundamentals | Covered / Practising |
+| Module 3 | Tailwind CSS | Covered / Practising |
+| Module 4 | Responsive Design, AI Tools and GitHub Collaboration | Covered / Practising |
+| Module 5 | Claude Code Setup and AI-Assisted Development | Covered / Practising |
+| Next | JavaScript Fundamentals | Planned |
 
----
+*Status reflects my learning progress and is updated as I practise and review each topic.*
 
-## 🛠️ Current Focus
-
-At the moment, I am strengthening the fundamentals of:
-
-- HTML5
-- CSS3
-- Tailwind CSS
-- Responsive Web Design
-- Git & GitHub
-
-The focus is on improving code quality, responsive layouts, project structure, documentation, and practical implementation before moving deeper into JavaScript and the MERN stack.
-
----
-
-## 📚 Current Modules
-
-### Module 1 — HTML
-
-Topics include:
-
-- HTML Fundamentals
-- Semantic HTML
-- Forms
-- Tables
-- Audio & Video
-- HTML Projects
-
-📂 [View Module 1](./module-1%20(HTML)/)
-
----
-
-### Module 2 — CSS
-
-Topics include:
-
-- CSS Fundamentals
-- Selectors
-- Box Model
-- Flexbox
-- CSS Grid
-- Responsive Design
-
-📂 [View Module 2](./module-2%20(CSS)/)
-
----
-
-### Module 3 — Tailwind CSS
-
-Topics include:
-
-- Utility Classes
-- Responsive Design
-- Components
-- Layouts
-- Tailwind Projects
-
-📂 [View Module 3](./module-3%20(Tailwind%20CSS)/)
-
----
-
-### Module 4 — Responsive Web Design
-
-Topics include:
-
-- Mobile-First Design
-- Responsive Layouts
-- Portfolio Website
-- Blog Website
-- Flexbox & Grid
-- Media Queries
-- Git & GitHub Essentials
-
-📂 [View Module 4](./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/)
-
----
-
-## 🚀 Featured Projects
-
-### 1. Epixelab Landing Page
-
-A responsive landing page developed using HTML5 and Tailwind CSS.
-
-**Technologies**
-
-- HTML5
-- Tailwind CSS
-- Responsive Web Design
-
-**Key Features**
-
-- Responsive layout
-- Mobile-friendly design
-- Modern UI
-- Structured HTML
-- Tailwind CSS utility-based styling
-
-🔗 [View Source Code](./module-3-ostad-landing-page/)
-
----
-
-### 2. Dream Agency Landing Page
-
-A responsive agency landing page developed as part of the responsive web design practice.
-
-**Technologies**
-
-- HTML5
-- Tailwind CSS
-- JavaScript
-
-**Key Features**
-
-- Responsive layout
-- Mobile navigation
-- Interactive portfolio section
-- Client-side form validation
-- Accessibility improvements
-
-🔗 [View Source Code](./module-4-responsive-agency-landing-page/)
-
-> Note: The contact form is currently a frontend demonstration without backend integration.
-
----
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 AI-Driven-Full-Stack-Web-Developer-with-MERN/
 │
 ├── Assignment/
+│   ├── 01_Personal_Portfolio/
+│   ├── 02_Student_Registration/
+│   ├── 03_Smartphone_Contact/
+│   ├── 04_Chess_Board_Assignment/
+│   ├── 05_CSS_Service_Cards/
+│   ├── 06_CSS_Cafe_Landing_Page/
+│   ├── 07_Tailwind_Course_Cards/
+│   ├── 08_Tailwind_Pricing_Cards/
+│   ├── 09_Responsive_Campus_Event/
+│   └── 10_Claude_Code_Review_Board/
 │
 ├── Ostad_Learning_Tracker/
+│   ├── index.html
+│   └── styles.css
 │
 ├── module-1 (HTML)/
+│   ├── Code/
+│   ├── Resource/
+│   └── project/
 │
 ├── module-2 (CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
 │
 ├── module-3 (Tailwind CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
 │
 ├── module-3-ostad-landing-page/
 │
 ├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+│   ├── Code/
+│   ├── Project/
+│   └── Resources/
 │
-├── module-4-responsive-agency-landing-page/
-│
-├── .gitignore
-└── README.md
+└── module-5 (Claude Code Setup)/
+    ├── Code/
+    └── Project/
 ```
 
+## Technologies and Concepts
+
+### HTML5
+- Document structure and semantic elements
+- Links, images, lists, tables, and forms
+- Audio and video elements
+- Accessibility and form validation basics
+
+### CSS3
+- Selectors, specificity, and the box model
+- Typography, colours, spacing, and backgrounds
+- Flexbox and CSS Grid
+- Positioning, transitions, and transforms
+- Media queries and responsive layouts
+
+### Tailwind CSS
+- Utility-first styling
+- Spacing, sizing, typography, and colours
+- Flexbox, Grid, and responsive breakpoints
+- Hover and focus states
+- Component-style UI patterns
+
+### Responsive Design
+- Mobile-first layouts
+- Mobile, tablet, and desktop testing
+- Responsive navigation and content grids
+- Accessible forms and responsive media
+
+### Git and GitHub
+- Repository management
+- Staging, commits, and pushing changes
+- Branching and merging fundamentals
+- Pull requests and collaboration concepts
+
+### AI-Assisted Development
+- Writing clear prompts
+- Reviewing AI-generated code
+- Finding and understanding frontend issues
+- Testing suggested changes before applying them
+- Using Claude Code as a development-learning assistant
+
+## Assignments and Projects
+
+The `Assignment/` directory contains ten practice assignments covering HTML, CSS, Tailwind CSS, responsive design, and AI-assisted code review.
+
+The module-specific `project/` and `Project/` directories contain frontend practice projects such as:
+
+- Personal Portfolio
+- Digital Agency Landing Page
+- Product Catalogue
+- Tech Conference Website
+- Media Creator Portfolio
+- Responsive Design Studio
+- Team Collaboration Portal
+
+These projects help me practise page structure, styling, layout, responsiveness, and code organisation.
+
+## Learning Tracker
+
+The `Ostad_Learning_Tracker/` directory contains my personal learning tracker. It records the topics covered, study resources, and the next steps in my learning journey.
+
+## How to Run the Projects
+
+Most projects in the first five modules are static frontend examples.
+
+1. Clone or download this repository.
+2. Open the required module or project folder in Visual Studio Code.
+3. Open the relevant `index.html` file using a local development server, such as Live Server.
+4. Review the related CSS file and change the code to practise.
+5. Test the layout at different screen sizes.
+
+Some Tailwind CSS examples use a CDN and require an internet connection. Projects using a local build setup may require additional installation steps described in their respective folders.
+
+## Development Workflow
+
+My learning workflow is:
+
+1. Study the topic and its documentation.
+2. Practise with a small example.
+3. Build or modify a project.
+4. Test the result and review errors.
+5. Commit meaningful changes using Git.
+6. Push the changes to GitHub.
+7. Record what I learned and what needs improvement.
+
+I use AI tools as learning and debugging assistants, while working to understand the code and verify the changes I keep.
+
+## Next Learning Goals
+
+My next major step is JavaScript. I plan to study:
+
+- Variables, data types, and operators
+- Conditions and loops
+- Functions, arrays, and objects
+- DOM manipulation and events
+- Form handling and browser APIs
+- Asynchronous JavaScript and Fetch API
+
+After building a solid JavaScript foundation, I plan to progress to React, Node.js, Express.js, and MongoDB and develop complete MERN stack applications.
+
+## About Me
+
+I am Anik Chandra Dey, a BSc in Computer Science and Engineering student at AIUB. This repository represents my ongoing practice and progress toward becoming a Full Stack Web Developer.
+
+I aim to strengthen my fundamentals, write understandable code, solve problems independently, and build projects that demonstrate my development skills.
+
 ---
 
-## 🧠 Skills in Progress
+**Learning by doing: Study, Practise, Build, Review, and Improve.**# AI-Driven Full Stack Web Developer with MERN
 
-### Frontend
+**Anik Chandra Dey**  
+BSc in Computer Science and Engineering Student  
+American International University-Bangladesh (AIUB)
 
-- HTML5
-- CSS3
-- Tailwind CSS
-- Responsive Web Design
+This repository documents my learning journey toward becoming a Full Stack Web Developer using the MERN stack. It contains course practice files, assignments, frontend projects, learning resources, and progress tracking materials.
 
-### Development Tools
+My approach is to learn the fundamentals, practise with small examples, build projects, review my code, and use Git and GitHub to maintain my work.
 
-- Visual Studio Code
-- Git
-- GitHub
+## About This Repository
 
-### Development Practices
+The repository is organised around the first five learning modules of my course. It focuses on frontend fundamentals, responsive web design, version control, and AI-assisted development workflows.
 
-- Responsive Design
-- Clean Project Structure
-- Version Control
-- Documentation
-- AI-Assisted Development
+### Learning Modules
 
----
+| Module | Topics | Current Status |
+|---|---|---|
+| Module 1 | HTML5 Fundamentals | Covered / Practising |
+| Module 2 | CSS3 Fundamentals | Covered / Practising |
+| Module 3 | Tailwind CSS | Covered / Practising |
+| Module 4 | Responsive Design, AI Tools and GitHub Collaboration | Covered / Practising |
+| Module 5 | Claude Code Setup and AI-Assisted Development | Covered / Practising |
+| Next | JavaScript Fundamentals | Planned |
 
-## 📈 Development Journey
+*Status reflects my learning progress and is updated as I practise and review each topic.*
+
+## Repository Structure
 
 ```text
-HTML5
-  ↓
-CSS3
-  ↓
-Tailwind CSS
-  ↓
-Responsive Web Design
-  ↓
-JavaScript
-  ↓
-React.js
-  ↓
-Node.js + Express.js
-  ↓
-MongoDB
-  ↓
-Full-Stack MERN
-  ↓
-Real-World Applications
+AI-Driven-Full-Stack-Web-Developer-with-MERN/
+│
+├── Assignment/
+│   ├── 01_Personal_Portfolio/
+│   ├── 02_Student_Registration/
+│   ├── 03_Smartphone_Contact/
+│   ├── 04_Chess_Board_Assignment/
+│   ├── 05_CSS_Service_Cards/
+│   ├── 06_CSS_Cafe_Landing_Page/
+│   ├── 07_Tailwind_Course_Cards/
+│   ├── 08_Tailwind_Pricing_Cards/
+│   ├── 09_Responsive_Campus_Event/
+│   └── 10_Claude_Code_Review_Board/
+│
+├── Ostad_Learning_Tracker/
+│   ├── index.html
+│   └── styles.css
+│
+├── module-1 (HTML)/
+│   ├── Code/
+│   ├── Resource/
+│   └── project/
+│
+├── module-2 (CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
+│
+├── module-3 (Tailwind CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
+│
+├── module-3-ostad-landing-page/
+│
+├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+│   ├── Code/
+│   ├── Project/
+│   └── Resources/
+│
+└── module-5 (Claude Code Setup)/
+    ├── Code/
+    └── Project/
 ```
 
+## Technologies and Concepts
+
+### HTML5
+- Document structure and semantic elements
+- Links, images, lists, tables, and forms
+- Audio and video elements
+- Accessibility and form validation basics
+
+### CSS3
+- Selectors, specificity, and the box model
+- Typography, colours, spacing, and backgrounds
+- Flexbox and CSS Grid
+- Positioning, transitions, and transforms
+- Media queries and responsive layouts
+
+### Tailwind CSS
+- Utility-first styling
+- Spacing, sizing, typography, and colours
+- Flexbox, Grid, and responsive breakpoints
+- Hover and focus states
+- Component-style UI patterns
+
+### Responsive Design
+- Mobile-first layouts
+- Mobile, tablet, and desktop testing
+- Responsive navigation and content grids
+- Accessible forms and responsive media
+
+### Git and GitHub
+- Repository management
+- Staging, commits, and pushing changes
+- Branching and merging fundamentals
+- Pull requests and collaboration concepts
+
+### AI-Assisted Development
+- Writing clear prompts
+- Reviewing AI-generated code
+- Finding and understanding frontend issues
+- Testing suggested changes before applying them
+- Using Claude Code as a development-learning assistant
+
+## Assignments and Projects
+
+The `Assignment/` directory contains ten practice assignments covering HTML, CSS, Tailwind CSS, responsive design, and AI-assisted code review.
+
+The module-specific `project/` and `Project/` directories contain frontend practice projects such as:
+
+- Personal Portfolio
+- Digital Agency Landing Page
+- Product Catalogue
+- Tech Conference Website
+- Media Creator Portfolio
+- Responsive Design Studio
+- Team Collaboration Portal
+
+These projects help me practise page structure, styling, layout, responsiveness, and code organisation.
+
+## Learning Tracker
+
+The `Ostad_Learning_Tracker/` directory contains my personal learning tracker. It records the topics covered, study resources, and the next steps in my learning journey.
+
+## How to Run the Projects
+
+Most projects in the first five modules are static frontend examples.
+
+1. Clone or download this repository.
+2. Open the required module or project folder in Visual Studio Code.
+3. Open the relevant `index.html` file using a local development server, such as Live Server.
+4. Review the related CSS file and change the code to practise.
+5. Test the layout at different screen sizes.
+
+Some Tailwind CSS examples use a CDN and require an internet connection. Projects using a local build setup may require additional installation steps described in their respective folders.
+
+## Development Workflow
+
+My learning workflow is:
+
+1. Study the topic and its documentation.
+2. Practise with a small example.
+3. Build or modify a project.
+4. Test the result and review errors.
+5. Commit meaningful changes using Git.
+6. Push the changes to GitHub.
+7. Record what I learned and what needs improvement.
+
+I use AI tools as learning and debugging assistants, while working to understand the code and verify the changes I keep.
+
+## Next Learning Goals
+
+My next major step is JavaScript. I plan to study:
+
+- Variables, data types, and operators
+- Conditions and loops
+- Functions, arrays, and objects
+- DOM manipulation and events
+- Form handling and browser APIs
+- Asynchronous JavaScript and Fetch API
+
+After building a solid JavaScript foundation, I plan to progress to React, Node.js, Express.js, and MongoDB and develop complete MERN stack applications.
+
+## About Me
+
+I am Anik Chandra Dey, a BSc in Computer Science and Engineering student at AIUB. This repository represents my ongoing practice and progress toward becoming a Full Stack Web Developer.
+
+I aim to strengthen my fundamentals, write understandable code, solve problems independently, and build projects that demonstrate my development skills.
+
 ---
 
-## 🎓 Learning Approach
+**Learning by doing: Study, Practise, Build, Review, and Improve.**# AI-Driven Full Stack Web Developer with MERN
 
-I focus on learning through:
+**Anik Chandra Dey**  
+BSc in Computer Science and Engineering Student  
+American International University-Bangladesh (AIUB)
 
-- Practical coding
-- Assignments
-- Project-based learning
-- Problem solving
-- Responsive web development
-- Version control
-- Documentation
-- Continuous improvement
+This repository documents my learning journey toward becoming a Full Stack Web Developer using the MERN stack. It contains course practice files, assignments, frontend projects, learning resources, and progress tracking materials.
+
+My approach is to learn the fundamentals, practise with small examples, build projects, review my code, and use Git and GitHub to maintain my work.
+
+## About This Repository
+
+The repository is organised around the first five learning modules of my course. It focuses on frontend fundamentals, responsive web design, version control, and AI-assisted development workflows.
+
+### Learning Modules
+
+| Module | Topics | Current Status |
+|---|---|---|
+| Module 1 | HTML5 Fundamentals | Covered / Practising |
+| Module 2 | CSS3 Fundamentals | Covered / Practising |
+| Module 3 | Tailwind CSS | Covered / Practising |
+| Module 4 | Responsive Design, AI Tools and GitHub Collaboration | Covered / Practising |
+| Module 5 | Claude Code Setup and AI-Assisted Development | Covered / Practising |
+| Next | JavaScript Fundamentals | Planned |
+
+*Status reflects my learning progress and is updated as I practise and review each topic.*
+
+## Repository Structure
+
+```text
+AI-Driven-Full-Stack-Web-Developer-with-MERN/
+│
+├── Assignment/
+│   ├── 01_Personal_Portfolio/
+│   ├── 02_Student_Registration/
+│   ├── 03_Smartphone_Contact/
+│   ├── 04_Chess_Board_Assignment/
+│   ├── 05_CSS_Service_Cards/
+│   ├── 06_CSS_Cafe_Landing_Page/
+│   ├── 07_Tailwind_Course_Cards/
+│   ├── 08_Tailwind_Pricing_Cards/
+│   ├── 09_Responsive_Campus_Event/
+│   └── 10_Claude_Code_Review_Board/
+│
+├── Ostad_Learning_Tracker/
+│   ├── index.html
+│   └── styles.css
+│
+├── module-1 (HTML)/
+│   ├── Code/
+│   ├── Resource/
+│   └── project/
+│
+├── module-2 (CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
+│
+├── module-3 (Tailwind CSS)/
+│   ├── Code/
+│   ├── Resources/
+│   └── project/
+│
+├── module-3-ostad-landing-page/
+│
+├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+│   ├── Code/
+│   ├── Project/
+│   └── Resources/
+│
+└── module-5 (Claude Code Setup)/
+    ├── Code/
+    └── Project/
+```
+
+## Technologies and Concepts
+
+### HTML5
+- Document structure and semantic elements
+- Links, images, lists, tables, and forms
+- Audio and video elements
+- Accessibility and form validation basics
+
+### CSS3
+- Selectors, specificity, and the box model
+- Typography, colours, spacing, and backgrounds
+- Flexbox and CSS Grid
+- Positioning, transitions, and transforms
+- Media queries and responsive layouts
+
+### Tailwind CSS
+- Utility-first styling
+- Spacing, sizing, typography, and colours
+- Flexbox, Grid, and responsive breakpoints
+- Hover and focus states
+- Component-style UI patterns
+
+### Responsive Design
+- Mobile-first layouts
+- Mobile, tablet, and desktop testing
+- Responsive navigation and content grids
+- Accessible forms and responsive media
+
+### Git and GitHub
+- Repository management
+- Staging, commits, and pushing changes
+- Branching and merging fundamentals
+- Pull requests and collaboration concepts
+
+### AI-Assisted Development
+- Writing clear prompts
+- Reviewing AI-generated code
+- Finding and understanding frontend issues
+- Testing suggested changes before applying them
+- Using Claude Code as a development-learning assistant
+
+## Assignments and Projects
+
+The `Assignment/` directory contains ten practice assignments covering HTML, CSS, Tailwind CSS, responsive design, and AI-assisted code review.
+
+The module-specific `project/` and `Project/` directories contain frontend practice projects such as:
+
+- Personal Portfolio
+- Digital Agency Landing Page
+- Product Catalogue
+- Tech Conference Website
+- Media Creator Portfolio
+- Responsive Design Studio
+- Team Collaboration Portal
+
+These projects help me practise page structure, styling, layout, responsiveness, and code organisation.
+
+## Learning Tracker
+
+The `Ostad_Learning_Tracker/` directory contains my personal learning tracker. It records the topics covered, study resources, and the next steps in my learning journey.
+
+## How to Run the Projects
+
+Most projects in the first five modules are static frontend examples.
+
+1. Clone or download this repository.
+2. Open the required module or project folder in Visual Studio Code.
+3. Open the relevant `index.html` file using a local development server, such as Live Server.
+4. Review the related CSS file and change the code to practise.
+5. Test the layout at different screen sizes.
+
+Some Tailwind CSS examples use a CDN and require an internet connection. Projects using a local build setup may require additional installation steps described in their respective folders.
+
+## Development Workflow
+
+My learning workflow is:
+
+1. Study the topic and its documentation.
+2. Practise with a small example.
+3. Build or modify a project.
+4. Test the result and review errors.
+5. Commit meaningful changes using Git.
+6. Push the changes to GitHub.
+7. Record what I learned and what needs improvement.
+
+I use AI tools as learning and debugging assistants, while working to understand the code and verify the changes I keep.
+
+## Next Learning Goals
+
+My next major step is JavaScript. I plan to study:
+
+- Variables, data types, and operators
+- Conditions and loops
+- Functions, arrays, and objects
+- DOM manipulation and events
+- Form handling and browser APIs
+- Asynchronous JavaScript and Fetch API
+
+After building a solid JavaScript foundation, I plan to progress to React, Node.js, Express.js, and MongoDB and develop complete MERN stack applications.
+
+## About Me
+
+I am Anik Chandra Dey, a BSc in Computer Science and Engineering student at AIUB. This repository represents my ongoing practice and progress toward becoming a Full Stack Web Developer.
+
+I aim to strengthen my fundamentals, write understandable code, solve problems independently, and build projects that demonstrate my development skills.
 
 ---
 
-## 🔜 What's Next
-
-After strengthening the current frontend foundation, the next stage of this journey will focus on:
-
-1. JavaScript
-2. React.js
-3. Backend Development
-4. MongoDB
-5. Full-Stack MERN Applications
-6. Deployment
-7. AI-integrated Web Applications
-
----
-
-## ⭐ Repository Purpose
-
-This repository serves as a public record of my learning, practice, projects, and progress as I work toward becoming a professional Full-Stack Web Developer.
-
----
-
-**Built with consistency, practice, and continuous learning. 🚀**
+**Learning by doing: Study, Practise, Build, Review, and Improve.**
