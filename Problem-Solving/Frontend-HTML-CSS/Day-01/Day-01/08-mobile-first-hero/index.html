@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beginner frontend problem solving exercise 8: Mobile-First Hero Layout">
+  <title>Problem 08 - Mobile-First Hero Layout</title>
+  <style>
+  /* Base styles: border-box keeps padding inside element widths. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; background: #f4f7fc; color: #17253d; }
+a { color: #135baf; }
+.container { width: min(100% - 32px, 920px); margin-inline: auto; }
+.page-header { padding: 18px 0; border-bottom: 1px solid #dce5f1; background: #fff; }
+.page-header .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.page-header a { text-decoration: none; font-weight: bold; }
+main { padding-block: 30px 46px; }
+h1 { line-height: 1.25; font-size: clamp(1.65rem, 4vw, 2.3rem); }
+h2 { line-height: 1.3; }
+.task { background: #eaf3ff; border-left: 4px solid #2563eb; padding: 13px 16px; border-radius: 5px; margin-bottom: 24px; }
+.task p { margin: 0; }
+.panel { background: white; border: 1px solid #d8e4f3; padding: 22px; border-radius: 12px; box-shadow: 0 6px 22px rgba(20,50,90,.06); }
+footer { padding: 25px 0; color: #56677d; font-size: .9rem; border-top: 1px solid #dce5f1; }
+:focus-visible { outline: 3px solid #ef8b31; outline-offset: 3px; }
+  /* MOBILE FIRST: Single column is the default. */
+.hero { display: grid; gap: 20px; align-items: center; }
+.eyebrow { font-size: .75rem; font-weight: bold; letter-spacing: .12em; color: #2563eb; }
+.hero-copy h2 { font-size: clamp(1.6rem, 4vw, 2.5rem); }
+.hero-art { width: 100%; height: auto; display: block; }
+.button { display: inline-block; padding: 10px 14px; background: #1c5db0; color: #fff; border-radius: 8px; text-decoration: none; }
+/* BREAKPOINT: Use two columns when the screen has enough space. */
+@media (min-width: 720px) { .hero { grid-template-columns: 1fr 1fr; padding: 30px; } }
+#practice { padding-top: 25px; }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container"><strong>Frontend Problem Solving / Day 01</strong><a href="../START_HERE.html">All 10 Problems</a></div>
+  </header>
+  <main class="container">
+    <h1>Mobile-First Hero Layout</h1>
+    <div class="task"><p><strong>Problem 08:</strong> Make a hero section that stacks on a phone and becomes two columns on desktop without JavaScript.</p></div>
+    <section class="panel hero">
+  <div class="hero-copy"><p class="eyebrow">MOBILE-FIRST DESIGN</p><h2>Learn once. Test on every screen.</h2><p>Start with a simple phone layout and enhance it for wide screens.</p><a class="button" href="#practice">View practice goal</a></div>
+  <!-- SVG: A built-in illustration means no separate image download is needed. -->
+  <svg class="hero-art" role="img" aria-label="Illustration of a desktop monitor and mobile phone" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <rect x="30" y="25" width="440" height="285" rx="24" fill="#dceafe"/>
+    <rect x="78" y="67" width="296" height="186" rx="12" fill="#12325b"/>
+    <rect x="93" y="85" width="265" height="140" rx="5" fill="#fbfcff"/>
+    <rect x="110" y="102" width="232" height="20" rx="6" fill="#cde4ff"/>
+    <rect x="110" y="137" width="146" height="69" rx="8" fill="#90bfff"/>
+    <rect x="269" y="137" width="73" height="69" rx="8" fill="#dae9fc"/>
+    <path d="M175 253 L275 253 L260 283 L190 283 Z" fill="#425f86"/>
+    <rect x="327" y="148" width="105" height="163" rx="17" fill="#183e70"/>
+    <rect x="337" y="166" width="85" height="126" rx="9" fill="#f9fbff"/>
+    <rect x="346" y="180" width="66" height="28" rx="4" fill="#90bfff"/>
+    <rect x="346" y="221" width="66" height="12" rx="4" fill="#deebfc"/>
+    <rect x="346" y="243" width="48" height="12" rx="4" fill="#deebfc"/>
+  </svg>
+</section>
+<section id="practice"><h2>Your practice goal</h2><p>Resize the browser to 375px, 768px and 1200px and explain when the layout changes.</p></section>
+  </main>
+  <footer><div class="container">HTML + CSS only | No JavaScript | Practise by editing this file.</div></footer>
+</body>
+</html>

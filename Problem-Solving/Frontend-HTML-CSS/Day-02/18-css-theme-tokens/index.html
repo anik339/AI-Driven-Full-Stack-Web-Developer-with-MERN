@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reusable CSS Theme Tokens | Day 02</title>
+  <style>
+
+/* BASE: Keep all widths predictable, including padding and borders. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; color: #172334; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #134fa7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #f5a524; outline-offset: 3px; }
+.site-top { color: #fff; background: #112a4e; padding: 18px max(20px, calc((100vw - 1000px) / 2)); }
+.site-top a { color: #d6ecff; text-decoration: none; }
+.site-top a:hover { text-decoration: underline; }
+.site-top small { display: block; font-weight: 700; color: #a8cbf2; text-transform: uppercase; letter-spacing: .08em; }
+.container { width: min(100% - 36px, 1000px); margin-inline: auto; }
+.lesson-intro { padding: 28px 0 12px; }
+.lesson-intro h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.16; margin: 8px 0 10px; }
+.lesson-intro p { color: #435670; margin: 0 0 15px; max-width: 72ch; }
+.tag { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; background: #e2eefe; color: #174b86; }
+.stage { margin: 12px auto 24px; padding: 22px; background: white; border: 1px solid #dce5ef; box-shadow: 0 12px 34px rgba(17,42,78,.07); border-radius: 18px; }
+.exercise-task { border: 1px solid #d1dbed; border-left: 5px solid #2475ca; background: #eef5ff; border-radius: 12px; padding: 15px 18px; margin: 22px 0 36px; }
+.exercise-task h2 { margin: 0 0 4px; font-size: 17px; }
+.exercise-task p { margin: 0; }
+.muted { color: #627188; }
+.site-foot { font-size: 13px; color: #576b81; padding: 0 0 28px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.token-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 18px; }
+/* TOKENS: The same component uses different colour variables per theme. */
+.theme-card { --card-ink: #13456e; --card-bg: #e7f2ff; --card-ring: #6cb4ec; padding: 23px; background: var(--card-bg); color: var(--card-ink); border-radius: 15px; border: 2px solid var(--card-ring); }
+.theme-card h3 { margin: 0 0 8px; }
+.theme-card p { margin: 0; }
+/* OVERRIDE: This class changes just the variables, not the component layout. */
+.theme-card--warm { --card-ink: #793b20; --card-bg: #fff0d7; --card-ring: #e4ad62; }
+.swatch { display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: var(--card-ink); margin-right: 6px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION: Return to the exercise list without JavaScript. -->
+  <header class="site-top"><small>Frontend Problem Solving · Day 02 · #18</small><a href="../START_HERE.html">← Back to Day 02 exercises</a></header>
+  <main class="container">
+    <section class="lesson-intro" aria-labelledby="page-title">
+      <span class="tag">Problem 18 / 20</span>
+      <h1 id="page-title">Reusable CSS Theme Tokens</h1>
+      <p>Make two cards share the same layout but use different custom-property colours.</p>
+    </section>
+    <section class="stage" aria-label="Working example">
+<h2>Two styles, one component</h2>
+      <p class="muted">Open the CSS and find the three --card-* custom properties.</p>
+      <div class="token-grid">
+        <article class="theme-card"><h3><span class="swatch" aria-hidden="true"></span>Calm Blue</h3><p>Reusable card layout with cool colours and a clear border.</p></article>
+        <article class="theme-card theme-card--warm"><h3><span class="swatch" aria-hidden="true"></span>Warm Sand</h3><p>The same layout, with values overridden by a modifier class.</p></article>
+      </div>
+    </section>
+    <aside class="exercise-task" aria-label="Try it yourself">
+      <h2>Change yourself</h2>
+      <p>Create a third card with a green theme class. Override all three --card-* variables.</p>
+      <p><strong>Hint:</strong> Copy .theme-card--warm and change the colours in a new class.</p>
+    </aside>
+  </main>
+  <footer class="container site-foot">HTML + CSS only · No JavaScript · Practise, test, then explain.</footer>
+</body>
+</html>

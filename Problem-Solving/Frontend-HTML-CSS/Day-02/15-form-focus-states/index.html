@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Focus and Validation States | Day 02</title>
+  <style>
+
+/* BASE: Keep all widths predictable, including padding and borders. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; color: #172334; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #134fa7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #f5a524; outline-offset: 3px; }
+.site-top { color: #fff; background: #112a4e; padding: 18px max(20px, calc((100vw - 1000px) / 2)); }
+.site-top a { color: #d6ecff; text-decoration: none; }
+.site-top a:hover { text-decoration: underline; }
+.site-top small { display: block; font-weight: 700; color: #a8cbf2; text-transform: uppercase; letter-spacing: .08em; }
+.container { width: min(100% - 36px, 1000px); margin-inline: auto; }
+.lesson-intro { padding: 28px 0 12px; }
+.lesson-intro h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.16; margin: 8px 0 10px; }
+.lesson-intro p { color: #435670; margin: 0 0 15px; max-width: 72ch; }
+.tag { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; background: #e2eefe; color: #174b86; }
+.stage { margin: 12px auto 24px; padding: 22px; background: white; border: 1px solid #dce5ef; box-shadow: 0 12px 34px rgba(17,42,78,.07); border-radius: 18px; }
+.exercise-task { border: 1px solid #d1dbed; border-left: 5px solid #2475ca; background: #eef5ff; border-radius: 12px; padding: 15px 18px; margin: 22px 0 36px; }
+.exercise-task h2 { margin: 0 0 4px; font-size: 17px; }
+.exercise-task p { margin: 0; }
+.muted { color: #627188; }
+.site-foot { font-size: 13px; color: #576b81; padding: 0 0 28px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.form-card { max-width: 520px; }
+.field { display: grid; gap: 7px; margin: 0 0 18px; }
+.field label { font-weight: 700; }
+.field input, .field select { width: 100%; min-height: 44px; padding: 11px 12px; border: 2px solid #bac9da; border-radius: 10px; background: white; color: #172334; font: inherit; }
+/* VALIDATION: Show invalid styling only after users interact with the field. */
+.field input:not(:placeholder-shown):invalid { border-color: #b42335; background: #fff7f8; }
+.field input:not(:placeholder-shown):valid { border-color: #257852; }
+.field .hint { font-size: 13px; color: #566d87; }
+.submit { background: #174fa2; color: white; padding: 12px 24px; border: 0; border-radius: 9px; font: inherit; font-weight: 700; cursor: pointer; }
+.submit:hover { background: #0e3b80; }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION: Return to the exercise list without JavaScript. -->
+  <header class="site-top"><small>Frontend Problem Solving · Day 02 · #15</small><a href="../START_HERE.html">← Back to Day 02 exercises</a></header>
+  <main class="container">
+    <section class="lesson-intro" aria-labelledby="page-title">
+      <span class="tag">Problem 15 / 20</span>
+      <h1 id="page-title">Style Focus and Validation States</h1>
+      <p>Design keyboard-visible focus and browser validation feedback with HTML and CSS only.</p>
+    </section>
+    <section class="stage" aria-label="Working example">
+<div class="form-card">
+        <h2>Workshop interest form</h2>
+        <p class="muted">This demonstrates browser validation only. It does not send data to a server.</p>
+        <!-- FORM: Built-in HTML validation checks required fields and email syntax. -->
+        <form action="#example-submitted" method="get">
+          <div class="field"><label for="full-name">Full name</label><input id="full-name" name="name" type="text" required minlength="2" placeholder="Your full name" autocomplete="name"></div>
+          <div class="field"><label for="student-email">Email</label><input id="student-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email"><span class="hint">Enter a valid email format to pass the browser check.</span></div>
+          <div class="field"><label for="topic">Interest</label><select id="topic" name="topic" required><option value="">Select a topic</option><option>HTML</option><option>CSS</option><option>Responsive Design</option></select></div>
+          <button class="submit" type="submit">Validate fields</button>
+        </form>
+        <p id="example-submitted" class="muted">Note: A successful submission reloads this demo page. No data is stored.</p>
+      </div>
+    </section>
+    <aside class="exercise-task" aria-label="Try it yourself">
+      <h2>Change yourself</h2>
+      <p>Change the input border-radius to 0 and add a required message textarea. Test keyboard focus using Tab.</p>
+      <p><strong>Hint:</strong> Use &lt;textarea id&gt; with a matching &lt;label for&gt;.</p>
+    </aside>
+  </main>
+  <footer class="container site-foot">HTML + CSS only · No JavaScript · Practise, test, then explain.</footer>
+</body>
+</html>

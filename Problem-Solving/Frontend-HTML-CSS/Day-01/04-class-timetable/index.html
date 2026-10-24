@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beginner frontend problem solving exercise 4: Readable Class Timetable">
+  <title>Problem 04 - Readable Class Timetable</title>
+  <style>
+  /* Base styles: border-box keeps padding inside element widths. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; background: #f4f7fc; color: #17253d; }
+a { color: #135baf; }
+.container { width: min(100% - 32px, 920px); margin-inline: auto; }
+.page-header { padding: 18px 0; border-bottom: 1px solid #dce5f1; background: #fff; }
+.page-header .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.page-header a { text-decoration: none; font-weight: bold; }
+main { padding-block: 30px 46px; }
+h1 { line-height: 1.25; font-size: clamp(1.65rem, 4vw, 2.3rem); }
+h2 { line-height: 1.3; }
+.task { background: #eaf3ff; border-left: 4px solid #2563eb; padding: 13px 16px; border-radius: 5px; margin-bottom: 24px; }
+.task p { margin: 0; }
+.panel { background: white; border: 1px solid #d8e4f3; padding: 22px; border-radius: 12px; box-shadow: 0 6px 22px rgba(20,50,90,.06); }
+footer { padding: 25px 0; color: #56677d; font-size: .9rem; border-top: 1px solid #dce5f1; }
+:focus-visible { outline: 3px solid #ef8b31; outline-offset: 3px; }
+  .table-scroll { overflow-x: auto; }
+table { width: 100%; min-width: 570px; border-collapse: collapse; text-align: left; }
+caption { text-align: left; padding-bottom: 12px; font-weight: bold; }
+th, td { border: 1px solid #d4deeb; padding: 12px; }
+thead { background: #deebfa; }
+tbody tr:nth-child(even) { background: #f3f7fc; }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container"><strong>Frontend Problem Solving / Day 01</strong><a href="../START_HERE.html">All 10 Problems</a></div>
+  </header>
+  <main class="container">
+    <h1>Readable Class Timetable</h1>
+    <div class="task"><p><strong>Problem 04:</strong> Display a weekly class schedule in an accessible table, including on narrow mobile screens.</p></div>
+    <section class="panel" aria-labelledby="schedule-heading">
+  <h2 id="schedule-heading">My weekly practice plan</h2>
+  <!-- SCROLL: The wrapper scrolls only the table on small screens. -->
+  <div class="table-scroll">
+    <table>
+      <caption>Frontend learning schedule</caption>
+      <thead><tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Practice</th><th scope="col">Minutes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Monday</th><td>HTML</td><td>Semantic page</td><td>30</td></tr>
+        <tr><th scope="row">Tuesday</th><td>CSS</td><td>Box model</td><td>35</td></tr>
+        <tr><th scope="row">Wednesday</th><td>Responsive</td><td>Mobile layout</td><td>40</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+  </main>
+  <footer><div class="container">HTML + CSS only | No JavaScript | Practise by editing this file.</div></footer>
+</body>
+</html>

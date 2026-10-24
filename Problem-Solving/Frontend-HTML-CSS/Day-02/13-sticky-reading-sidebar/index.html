@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Reading Sidebar | Day 02</title>
+  <style>
+
+/* BASE: Keep all widths predictable, including padding and borders. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; color: #172334; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #134fa7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #f5a524; outline-offset: 3px; }
+.site-top { color: #fff; background: #112a4e; padding: 18px max(20px, calc((100vw - 1000px) / 2)); }
+.site-top a { color: #d6ecff; text-decoration: none; }
+.site-top a:hover { text-decoration: underline; }
+.site-top small { display: block; font-weight: 700; color: #a8cbf2; text-transform: uppercase; letter-spacing: .08em; }
+.container { width: min(100% - 36px, 1000px); margin-inline: auto; }
+.lesson-intro { padding: 28px 0 12px; }
+.lesson-intro h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.16; margin: 8px 0 10px; }
+.lesson-intro p { color: #435670; margin: 0 0 15px; max-width: 72ch; }
+.tag { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; background: #e2eefe; color: #174b86; }
+.stage { margin: 12px auto 24px; padding: 22px; background: white; border: 1px solid #dce5ef; box-shadow: 0 12px 34px rgba(17,42,78,.07); border-radius: 18px; }
+.exercise-task { border: 1px solid #d1dbed; border-left: 5px solid #2475ca; background: #eef5ff; border-radius: 12px; padding: 15px 18px; margin: 22px 0 36px; }
+.exercise-task h2 { margin: 0 0 4px; font-size: 17px; }
+.exercise-task p { margin: 0; }
+.muted { color: #627188; }
+.site-foot { font-size: 13px; color: #576b81; padding: 0 0 28px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.reading-layout { display: grid; gap: 24px; }
+.toc { background: #eaf1fc; border-radius: 12px; padding: 16px 20px; }
+.toc h3 { margin-top: 0; }
+.toc ul { padding-left: 22px; margin-bottom: 0; }
+.reading { min-width: 0; }
+.reading section { padding: 4px 0 48px; border-bottom: 1px solid #e1e8ef; }
+/* ANCHORS: scroll-margin-top stops sticky content hiding section headings. */
+.reading section { scroll-margin-top: 18px; }
+@media (min-width: 760px) {
+  .reading-layout { grid-template-columns: 220px minmax(0, 1fr); align-items: start; }
+  /* STICKY: The menu keeps its place until the parent layout ends. */
+  .toc { position: sticky; top: 22px; }
+}
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION: Return to the exercise list without JavaScript. -->
+  <header class="site-top"><small>Frontend Problem Solving · Day 02 · #13</small><a href="../START_HERE.html">← Back to Day 02 exercises</a></header>
+  <main class="container">
+    <section class="lesson-intro" aria-labelledby="page-title">
+      <span class="tag">Problem 13 / 20</span>
+      <h1 id="page-title">Sticky Reading Sidebar</h1>
+      <p>Make a table of contents stay in view as a reader scrolls a long article, without overlapping content.</p>
+    </section>
+    <section class="stage" aria-label="Working example">
+<h2>Understanding a small website</h2>
+      <div class="reading-layout">
+        <nav class="toc" aria-label="Article contents">
+          <h3>Contents</h3>
+          <ul><li><a href="#structure">Structure</a></li><li><a href="#style">Style</a></li><li><a href="#responsive">Responsive</a></li><li><a href="#testing">Testing</a></li></ul>
+        </nav>
+        <article class="reading">
+          <section id="structure"><h3>1. Structure</h3><p>Semantic HTML describes what each part of the page means. A main element marks the central content, while nav contains navigation links.</p><p>Clear headings allow both people and assistive technologies to understand sections. Use one meaningful page title and a logical heading hierarchy.</p></section>
+          <section id="style"><h3>2. Style</h3><p>CSS controls spacing, typography, colours, and positioning. A reusable class keeps the same style on related elements.</p><p>When a page looks wrong, inspect the box model first. Check padding, width, border, margin, and overflow.</p></section>
+          <section id="responsive"><h3>3. Responsive design</h3><p>Start with the smallest useful layout and add columns when there is enough room. Avoid fixed widths wider than the viewport.</p><p>At small widths, text should wrap and controls should remain accessible to keyboard and touch.</p></section>
+          <section id="testing"><h3>4. Testing</h3><p>Resize the browser to 360px, 768px, and 1280px. Check links, focus outlines, scrolling, and text legibility.</p><p>Test with keyboard Tab and Enter. If the page is usable without a mouse, you have improved accessibility.</p></section>
+        </article>
+      </div>
+    </section>
+    <aside class="exercise-task" aria-label="Try it yourself">
+      <h2>Change yourself</h2>
+      <p>Add a fifth article section called Deployment and link it in the sticky contents.</p>
+      <p><strong>Hint:</strong> Check that each href=&quot;#id&quot; matches a section id.</p>
+    </aside>
+  </main>
+  <footer class="container site-foot">HTML + CSS only · No JavaScript · Practise, test, then explain.</footer>
+</body>
+</html>

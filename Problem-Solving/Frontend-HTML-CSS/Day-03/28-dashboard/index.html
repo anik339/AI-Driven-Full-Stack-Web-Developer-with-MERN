@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Responsive Study Dashboard">
+  <title>Problem 28 | Responsive Study Dashboard</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 28</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Responsive Study Dashboard</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Combine summary cards and a readable weekly table. <strong>Concept:</strong> grid, responsive columns, overflow-x-auto</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+      <article class="bg-sky-50 p-5 rounded-xl"><p class="text-slate-600 text-sm">Practice sessions</p><p class="text-3xl font-bold text-sky-900">12</p></article>
+      <article class="bg-emerald-50 p-5 rounded-xl"><p class="text-slate-600 text-sm">Reviewed exercises</p><p class="text-3xl font-bold text-emerald-900">8</p></article>
+      <article class="bg-amber-50 p-5 rounded-xl"><p class="text-slate-600 text-sm">Pending review</p><p class="text-3xl font-bold text-amber-900">4</p></article>
+    </div>
+    <!-- OVERFLOW: Keep tables readable on narrow screens without shrinking text. -->
+    <div class="overflow-x-auto border border-slate-200 rounded-xl"><table class="w-full min-w-lg text-left"><caption class="text-left font-semibold p-4">Illustrative practice log</caption><thead class="bg-slate-100"><tr><th class="p-3">Week</th><th class="p-3">Topic</th><th class="p-3">Status</th></tr></thead><tbody><tr class="border-t border-slate-200"><td class="p-3">1</td><td class="p-3">HTML</td><td class="p-3">Reviewed</td></tr><tr class="border-t border-slate-200"><td class="p-3">2</td><td class="p-3">CSS</td><td class="p-3">In practice</td></tr><tr class="border-t border-slate-200"><td class="p-3">3</td><td class="p-3">Tailwind</td><td class="p-3">Planned</td></tr></tbody></table></div>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Add a new Week 4 row and a fourth summary card.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> At 375px the table scrolls inside its box, not the whole page.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

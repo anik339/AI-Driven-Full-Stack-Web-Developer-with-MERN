@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Product Detail Hero">
+  <title>Problem 29 | Product Detail Hero</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 29</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Product Detail Hero</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Create a balanced responsive product introduction. <strong>Concept:</strong> grid, order, typography, responsive padding</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <img class="w-full rounded-2xl bg-slate-100" src="assets/headphones.svg" alt="Illustration of blue over-ear headphones on a pale background">
+      <div><p class="text-xs font-bold uppercase tracking-widest text-sky-700 mb-2">Sample product UI</p><h3 class="text-3xl font-bold mb-3">Studio Headphones</h3><p class="text-slate-600 mb-4">A fictional listing used for responsive layout practice.</p><p class="text-2xl font-bold mb-5">$49 <span class="text-sm font-normal text-slate-600">Demo price</span></p><ul class="list-disc pl-5 text-slate-700 mb-6"><li>Simple HTML product details</li><li>Balanced two-column desktop layout</li><li>Readable mobile stacking</li></ul><a class="inline-block bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold" href="#notes">Product details</a></div>
+    </div><p id="notes" class="mt-6 text-sm text-slate-600">No cart or checkout functionality is implemented.</p>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Change md:grid-cols-2 to lg:grid-cols-2 and describe how the layout changes on tablets.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> Image has useful alt text and remains within its container.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

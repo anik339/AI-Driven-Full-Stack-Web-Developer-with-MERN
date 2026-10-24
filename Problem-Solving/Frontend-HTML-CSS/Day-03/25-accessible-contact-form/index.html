@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Contact Form Styling">
+  <title>Problem 25 | Contact Form Styling</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 25</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Contact Form Styling</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Style labels and fields without relying on placeholder text. <strong>Concept:</strong> focus, border, rounded, padding, text</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <!-- FORM: Each label connects to a unique field ID. -->
+    <form class="max-w-2xl grid gap-4" action="#form-note" method="get">
+      <div><label class="block font-semibold mb-2" for="visitor-name">Full name</label><input id="visitor-name" name="name" type="text" autocomplete="name" required placeholder="Anik Chandra Dey" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-2 focus:outline-sky-600"></div>
+      <div><label class="block font-semibold mb-2" for="visitor-email">Email</label><input id="visitor-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-2 focus:outline-sky-600"></div>
+      <div><label class="block font-semibold mb-2" for="message">Message</label><textarea id="message" name="message" rows="4" minlength="10" required class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-2 focus:outline-sky-600"></textarea></div>
+      <button class="bg-sky-700 text-white rounded-lg px-5 py-3 font-semibold" type="submit">Try browser validation</button>
+    </form><p id="form-note" class="text-sm text-slate-600 mt-4">This is a static demo. It does not send email or store form data.</p>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Add a required subject field with a label and a minimum length of 3.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> Blank required fields are blocked by native browser validation.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frontend coding practice 33: Study Dashboard with Sidebar">
+  <title>33. Study Dashboard with Sidebar | Day 04</title>
+  <style>
+/* BOX SIZING: Keep padding inside element widths. */
+*,*::before,*::after {box-sizing:border-box}
+:root {--navy:#142b49;--blue:#215ed3;--ink:#22314b;--line:#dce5ef;--mist:#f4f7fb;--white:#fff}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--mist);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+.site-header {background:var(--navy);color:var(--white);padding:16px 0}
+.wrap {width:min(100% - 32px,1050px);margin-inline:auto}
+.site-header .wrap {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.site-header a {color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.eyebrow {display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#bed7fc}
+main {padding:30px 0 50px}
+h1,h2,h3,p {margin-top:0}
+h1 {font-size:clamp(1.65rem,3.5vw,2.45rem);line-height:1.18;margin-bottom:10px}
+h2 {line-height:1.25}
+.intro {max-width:75ch;color:#475a73}
+.sheet {background:white;border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3.5vw,26px);box-shadow:0 10px 26px #142b490a;margin-top:18px}
+.sheet h2 {font-size:1.23rem}
+.task {background:#eaf2ff;border-left:4px solid var(--blue);padding:17px 19px;margin-top:18px;border-radius:8px}
+.task strong {color:#193b7c}
+.task p {margin:6px 0}
+.note {font-size:.88rem;color:#566780}
+code,pre {font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre {white-space:pre-wrap;overflow-wrap:anywhere;padding:15px;background:#13253d;color:#f7f9ff;border-radius:10px;font-size:.9rem}
+footer {color:#5a6c84;font-size:.85rem;padding-bottom:28px}
+:focus-visible {outline:3px solid #e9a32b;outline-offset:3px}
+img {max-width:100%;height:auto}
+@media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* EXERCISE STYLES: These rules build the working example. */
+.dashboard{display:grid;grid-template-columns:1fr;gap:18px}.sidebar{background:#e9f2fd;border-radius:10px;padding:18px}.sidebar a{color:#154a8d}.dash-content{min-width:0}.stat-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat-row p{margin:0;border:1px solid #dce5ef;border-radius:10px;padding:18px}.stat-row strong{display:block;font-size:1.6rem}.stat-row span{color:#57677b}@media(min-width:760px){.dashboard{grid-template-columns:240px minmax(0,1fr)}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap">
+    <div><span class="eyebrow">Day 04 / Module 4 / Problem 33</span><strong>Responsive Design, GitHub &amp; AI Tools</strong></div>
+    <a href="../START_HERE.html">Back to Day 04</a>
+  </div></header>
+  <main class="wrap">
+    <h1>Study Dashboard with Sidebar</h1>
+    <p class="intro"><strong>Goal:</strong> Show a sidebar that stacks above content on phones. <strong>Concept:</strong> Grid and mobile-first breakpoints</p>
+    <section class="sheet" aria-label="Working example">
+      <h2>Working example</h2>
+
+      <div class="dashboard"><aside class="sidebar"><h3>Learning menu</h3><ul><li><a href="#summary">Summary</a></li><li><a href="#log">Practice log</a></li></ul></aside><div class="dash-content"><section id="summary"><h3>Study summary</h3><div class="stat-row"><p><strong>12</strong><span>Sessions</span></p><p><strong>5</strong><span>Modules</span></p></div></section><section id="log"><h3>Practice log</h3><p>Review one HTML or CSS exercise each day.</p></section></div></div>
+    </section>
+    <aside class="task"><strong>Try yourself</strong><p>Adjust the desktop sidebar from 240px to 200px and compare.</p><p class="note"><strong>Test:</strong> At 375px the sidebar moves above the content.</p></aside>
+  </main>
+  <footer class="wrap">Reference solution for learning. Read the short comments, edit, test, and explain your changes. No JavaScript.</footer>
+</body>
+</html>

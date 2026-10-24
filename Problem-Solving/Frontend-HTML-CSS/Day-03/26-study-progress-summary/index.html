@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Static Progress Summary">
+  <title>Problem 26 | Static Progress Summary</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 26</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Static Progress Summary</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Represent sample values with meaningful progress elements. <strong>Concept:</strong> width, spacing, text, background color</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+      <!-- PROGRESS: The HTML progress element conveys value to assistive technology. -->
+      <div class="max-w-xl space-y-5">
+        <div><div class="flex justify-between items-center mb-2"><label for="html-progress" class="font-semibold">HTML practice</label><span class="text-slate-600">8 / 10</span></div><progress id="html-progress" value="8" max="10" class="w-full h-4 accent-sky-600">8 of 10</progress></div>
+        <div><div class="flex justify-between items-center mb-2"><label for="css-progress" class="font-semibold">CSS practice</label><span class="text-slate-600">6 / 10</span></div><progress id="css-progress" value="6" max="10" class="w-full h-4 accent-emerald-600">6 of 10</progress></div>
+        <div><div class="flex justify-between items-center mb-2"><label for="tw-progress" class="font-semibold">Tailwind practice</label><span class="text-slate-600">4 / 10</span></div><progress id="tw-progress" value="4" max="10" class="w-full h-4 accent-amber-600">4 of 10</progress></div>
+      </div><p class="text-sm text-slate-600 mt-5">Illustrative sample progress; update values to match your own practice.</p>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Change the third progress value from 4 to 7 and update the displayed fraction.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> Value and visible fraction match for every row.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

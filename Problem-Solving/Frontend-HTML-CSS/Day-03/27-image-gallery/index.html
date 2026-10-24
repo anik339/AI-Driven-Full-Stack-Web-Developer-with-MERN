@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Responsive Project Gallery">
+  <title>Problem 27 | Responsive Project Gallery</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 27</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Responsive Project Gallery</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Build an image grid with local files and useful alt text. <strong>Concept:</strong> object-cover, aspect ratio, responsive grid</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- IMG: Alt text describes the illustration instead of repeating the file name. -->
+      <figure class="overflow-hidden rounded-xl border border-slate-200"><img src="assets/portfolio.svg" alt="Blue portfolio dashboard illustration" class="w-full aspect-video object-cover"><figcaption class="p-4 font-semibold">Portfolio Layout</figcaption></figure>
+      <figure class="overflow-hidden rounded-xl border border-slate-200"><img src="assets/study.svg" alt="Green study progress panel illustration" class="w-full aspect-video object-cover"><figcaption class="p-4 font-semibold">Study Tracker</figcaption></figure>
+      <figure class="overflow-hidden rounded-xl border border-slate-200"><img src="assets/store.svg" alt="Purple ecommerce product card illustration" class="w-full aspect-video object-cover"><figcaption class="p-4 font-semibold">Product Cards</figcaption></figure>
+    </div>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Add a fourth gallery card with one of the existing images and meaningful alt text.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> Images never stretch beyond their card width.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

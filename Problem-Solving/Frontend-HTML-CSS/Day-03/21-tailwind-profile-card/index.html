@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Student Profile Card">
+  <title>Problem 21 | Student Profile Card</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 21</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Student Profile Card</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Build a neat personal intro using utility classes. <strong>Concept:</strong> flex, gap, rounded, color, spacing</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+      <!-- FLEX: Align the avatar beside the profile content. -->
+      <article class="max-w-2xl rounded-2xl bg-sky-50 border border-sky-100 p-6">
+        <div class="flex flex-wrap items-center gap-5">
+          <div class="w-20 h-20 rounded-full bg-sky-200 text-sky-900 font-bold text-2xl flex items-center justify-center" aria-hidden="true">AC</div>
+          <div><p class="text-xs font-bold uppercase tracking-wider text-sky-700 mb-1">About me</p><h3 class="text-2xl font-bold">Anik Chandra Dey</h3><p class="text-slate-600">BSc in CSE | AIUB</p></div>
+        </div>
+        <p class="mt-5 text-slate-700">Practising HTML, CSS, Tailwind CSS, and responsive layouts one problem at a time.</p>
+        <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-sm">HTML</span><span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-sm">CSS</span><span class="px-3 py-1 rounded-full bg-white border border-sky-200 text-sm">Tailwind</span></div>
+      </article>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Change p-6 to p-8 and change bg-sky-50 to bg-emerald-50. Add a fourth skill chip.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> Avatar and text wrap without leaving the screen at 375px.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

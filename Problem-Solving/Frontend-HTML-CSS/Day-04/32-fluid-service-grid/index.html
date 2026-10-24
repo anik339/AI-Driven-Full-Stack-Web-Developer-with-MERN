@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frontend coding practice 32: Fluid Service Card Grid">
+  <title>32. Fluid Service Card Grid | Day 04</title>
+  <style>
+/* BOX SIZING: Keep padding inside element widths. */
+*,*::before,*::after {box-sizing:border-box}
+:root {--navy:#142b49;--blue:#215ed3;--ink:#22314b;--line:#dce5ef;--mist:#f4f7fb;--white:#fff}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--mist);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+.site-header {background:var(--navy);color:var(--white);padding:16px 0}
+.wrap {width:min(100% - 32px,1050px);margin-inline:auto}
+.site-header .wrap {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.site-header a {color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.eyebrow {display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#bed7fc}
+main {padding:30px 0 50px}
+h1,h2,h3,p {margin-top:0}
+h1 {font-size:clamp(1.65rem,3.5vw,2.45rem);line-height:1.18;margin-bottom:10px}
+h2 {line-height:1.25}
+.intro {max-width:75ch;color:#475a73}
+.sheet {background:white;border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3.5vw,26px);box-shadow:0 10px 26px #142b490a;margin-top:18px}
+.sheet h2 {font-size:1.23rem}
+.task {background:#eaf2ff;border-left:4px solid var(--blue);padding:17px 19px;margin-top:18px;border-radius:8px}
+.task strong {color:#193b7c}
+.task p {margin:6px 0}
+.note {font-size:.88rem;color:#566780}
+code,pre {font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre {white-space:pre-wrap;overflow-wrap:anywhere;padding:15px;background:#13253d;color:#f7f9ff;border-radius:10px;font-size:.9rem}
+footer {color:#5a6c84;font-size:.85rem;padding-bottom:28px}
+:focus-visible {outline:3px solid #e9a32b;outline-offset:3px}
+img {max-width:100%;height:auto}
+@media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* EXERCISE STYLES: These rules build the working example. */
+.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px}.service-grid article{border:1px solid #b8cce3;border-radius:14px;padding:22px;background:#fbfdff}.service-no{display:inline-grid;place-items:center;background:#e0efff;color:#174c94;border-radius:10px;padding:5px 12px;font-weight:800}.service-grid h3{margin:12px 0 8px}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap">
+    <div><span class="eyebrow">Day 04 / Module 4 / Problem 32</span><strong>Responsive Design, GitHub &amp; AI Tools</strong></div>
+    <a href="../START_HERE.html">Back to Day 04</a>
+  </div></header>
+  <main class="wrap">
+    <h1>Fluid Service Card Grid</h1>
+    <p class="intro"><strong>Goal:</strong> Build cards that fit many viewport widths. <strong>Concept:</strong> CSS Grid and minmax</p>
+    <section class="sheet" aria-label="Working example">
+      <h2>Working example</h2>
+
+      <!-- AUTO FIT: Cards make new columns only when enough space exists. -->
+      <div class="service-grid"><article><span class="service-no">01</span><h3>HTML Review</h3><p>Improve semantic structure and labels.</p></article><article><span class="service-no">02</span><h3>CSS Layout</h3><p>Practise responsive Grid and Flexbox.</p></article><article><span class="service-no">03</span><h3>Git Workflow</h3><p>Review changes before committing.</p></article><article><span class="service-no">04</span><h3>AI Feedback</h3><p>Verify suggestions before accepting them.</p></article></div>
+    </section>
+    <aside class="task"><strong>Try yourself</strong><p>Change 210px in minmax to 260px. Add a fifth card.</p><p class="note"><strong>Test:</strong> No card overflows on a narrow phone.</p></aside>
+  </main>
+  <footer class="wrap">Reference solution for learning. Read the short comments, edit, test, and explain your changes. No JavaScript.</footer>
+</body>
+</html>

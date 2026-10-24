@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Article with Sidebar | Day 02</title>
+  <style>
+
+/* BASE: Keep all widths predictable, including padding and borders. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; color: #172334; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #134fa7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #f5a524; outline-offset: 3px; }
+.site-top { color: #fff; background: #112a4e; padding: 18px max(20px, calc((100vw - 1000px) / 2)); }
+.site-top a { color: #d6ecff; text-decoration: none; }
+.site-top a:hover { text-decoration: underline; }
+.site-top small { display: block; font-weight: 700; color: #a8cbf2; text-transform: uppercase; letter-spacing: .08em; }
+.container { width: min(100% - 36px, 1000px); margin-inline: auto; }
+.lesson-intro { padding: 28px 0 12px; }
+.lesson-intro h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.16; margin: 8px 0 10px; }
+.lesson-intro p { color: #435670; margin: 0 0 15px; max-width: 72ch; }
+.tag { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; background: #e2eefe; color: #174b86; }
+.stage { margin: 12px auto 24px; padding: 22px; background: white; border: 1px solid #dce5ef; box-shadow: 0 12px 34px rgba(17,42,78,.07); border-radius: 18px; }
+.exercise-task { border: 1px solid #d1dbed; border-left: 5px solid #2475ca; background: #eef5ff; border-radius: 12px; padding: 15px 18px; margin: 22px 0 36px; }
+.exercise-task h2 { margin: 0 0 4px; font-size: 17px; }
+.exercise-task p { margin: 0; }
+.muted { color: #627188; }
+.site-foot { font-size: 13px; color: #576b81; padding: 0 0 28px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.blog { display: grid; gap: 26px; }
+.article { min-width: 0; }
+.article h2 { font-size: clamp(23px, 3vw, 34px); line-height: 1.2; margin-top: 0; }
+.article p { max-width: 64ch; }
+.related { background: #eaf2fb; border-radius: 13px; padding: 17px; align-self: start; }
+.related h3 { margin: 0 0 8px; }
+.related ul { margin: 0; padding-left: 20px; }
+/* LAYOUT: Sidebar only becomes a second column when width permits. */
+@media (min-width: 800px) { .blog { grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); } }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION: Return to the exercise list without JavaScript. -->
+  <header class="site-top"><small>Frontend Problem Solving · Day 02 · #16</small><a href="../START_HERE.html">← Back to Day 02 exercises</a></header>
+  <main class="container">
+    <section class="lesson-intro" aria-labelledby="page-title">
+      <span class="tag">Problem 16 / 20</span>
+      <h1 id="page-title">Responsive Article with Sidebar</h1>
+      <p>Fix a blog layout so the sidebar moves below the main article on narrow screens.</p>
+    </section>
+    <section class="stage" aria-label="Working example">
+<div class="blog">
+        <article class="article">
+          <p class="tag">Learning notes</p>
+          <h2>What makes a page responsive?</h2>
+          <p>Responsive design means the page remains useful as the available space changes. A phone, a tablet, and a laptop should all show the content in a readable order.</p>
+          <h3>Begin with the content</h3><p>Use headings and paragraphs to establish a meaningful document structure before adding layout rules.</p>
+          <h3>Add flexible dimensions</h3><p>Use percentage widths, max-width, Flexbox, Grid, and media queries when needed. Avoid forcing all content into fixed pixel dimensions.</p>
+          <h3>Test at different widths</h3><p>Check for horizontal overflow, clipping, inaccessible controls, and overly small text. Verify the layout with keyboard navigation too.</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">Read MDN's responsive design guide</a>.</p>
+        </article>
+        <!-- ASIDE: Related resources are secondary to the article. -->
+        <aside class="related" aria-labelledby="related-title"><h3 id="related-title">Related topics</h3><ul><li>Viewport meta tag</li><li>Flexible width</li><li>CSS Grid</li><li>Media queries</li></ul></aside>
+      </div>
+    </section>
+    <aside class="exercise-task" aria-label="Try it yourself">
+      <h2>Change yourself</h2>
+      <p>Change the desktop layout from 2fr 1fr to 3fr 1fr. Add one more Related topics item.</p>
+      <p><strong>Hint:</strong> Keep minmax(0, ...) so long text cannot force overflow.</p>
+    </aside>
+  </main>
+  <footer class="container site-foot">HTML + CSS only · No JavaScript · Practise, test, then explain.</footer>
+</body>
+</html>

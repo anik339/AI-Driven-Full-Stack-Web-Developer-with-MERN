@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Wrap-Friendly Navigation">
+  <title>Problem 22 | Wrap-Friendly Navigation</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 22</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Wrap-Friendly Navigation</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Make a usable small-screen header without a hamburger script. <strong>Concept:</strong> flex-wrap, justify-between, typography</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <!-- FLEX WRAP: Links move to the next line when the screen is narrow. -->
+    <nav class="bg-slate-900 text-white rounded-xl px-5 py-4 flex flex-wrap items-center justify-between gap-4" aria-label="Demo main navigation">
+      <a class="text-lg font-bold text-white" href="#welcome">CampusLab</a>
+      <div class="flex flex-wrap gap-4 text-sm font-semibold"><a class="text-white underline-offset-4 hover:underline" href="#welcome">Home</a><a class="text-white underline-offset-4 hover:underline" href="#topics">Topics</a><a class="text-white underline-offset-4 hover:underline" href="#contact">Contact</a></div>
+    </nav>
+    <section id="welcome" class="py-6"><h3 class="text-xl font-bold">Responsive without a menu script</h3><p class="text-slate-600">All links remain visible even when wrapping.</p></section>
+    <section id="topics" class="py-5 border-t border-slate-200"><h3 class="font-semibold">Topics</h3><p class="text-slate-600">Semantic markup and utility classes.</p></section>
+    <section id="contact" class="py-5 border-t border-slate-200"><h3 class="font-semibold">Contact</h3><p class="text-slate-600">Links jump to actual sections.</p></section>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Add a fourth navigation link and matching section. Compare gap-4 with gap-2.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> At mobile width every link remains keyboard accessible and visible.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

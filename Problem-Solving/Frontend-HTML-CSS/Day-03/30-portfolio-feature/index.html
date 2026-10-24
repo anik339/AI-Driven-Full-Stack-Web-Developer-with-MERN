@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tailwind CSS hands-on practice: Portfolio Featured Projects">
+  <title>Problem 30 | Portfolio Featured Projects</title>
+  <!-- TAILWIND BUILD: Precompiled official Tailwind v4 utility CSS works offline. -->
+  <link rel="stylesheet" href="../assets/tailwind-compiled.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-slate-900 text-white px-4 py-4">
+    <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-3">
+      <div><p class="text-xs uppercase tracking-widest text-sky-200 font-bold">Day 03 | Module 3 | Problem 30</p><p class="font-semibold">Tailwind CSS practice</p></div>
+      <a class="text-sm font-semibold underline underline-offset-4" href="../START_HERE.html">All 10 problems</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-8">
+    <p class="text-sm font-semibold text-sky-700 mb-2">Utility-first styling | HTML + prebuilt CSS</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Portfolio Featured Projects</h1>
+    <p class="text-slate-600 mb-6"><strong>Goal:</strong> Introduce two projects with semantic article cards and responsive styling. <strong>Concept:</strong> utility-first layout, responsive cards, links</p>
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 shadow-sm" aria-label="Working example">
+      <h2 class="text-xl font-bold mb-5">Working example</h2>
+
+    <div class="rounded-2xl bg-slate-900 text-white p-6 md:p-8 mb-6"><p class="text-sky-200 font-semibold text-sm mb-2">Frontend practice</p><h3 class="text-2xl md:text-3xl font-bold mb-3">Build, test, improve.</h3><p class="text-slate-200 max-w-2xl mb-5">A small portfolio section showing selected learning projects. Replace sample descriptions with work you understand.</p><a href="#projects" class="inline-block rounded-lg bg-sky-500 text-white px-5 py-3 font-semibold">View projects</a></div>
+    <div id="projects" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <article class="border border-slate-200 rounded-xl p-6"><span class="text-xs font-bold uppercase text-sky-700">HTML + CSS</span><h3 class="font-bold text-xl mt-2">Personal Portfolio</h3><p class="text-slate-600 mt-2">Semantic page sections, responsive cards, and contact links.</p><a class="text-sky-700 underline mt-4 inline-block" href="#notes">See notes</a></article>
+      <article class="border border-slate-200 rounded-xl p-6"><span class="text-xs font-bold uppercase text-emerald-700">Tailwind</span><h3 class="font-bold text-xl mt-2">Study Dashboard</h3><p class="text-slate-600 mt-2">Utility classes, layout breakpoints, and static tables.</p><a class="text-sky-700 underline mt-4 inline-block" href="#notes">See notes</a></article>
+    </div><p id="notes" class="text-sm text-slate-600 mt-5">These are practice examples, not deployed products.</p>
+    </section>
+    <section class="mt-6 rounded-xl bg-sky-50 border border-sky-200 p-5" aria-labelledby="task-title">
+      <h2 id="task-title" class="text-lg font-bold text-sky-900 mb-2">Try yourself</h2>
+      <p class="text-slate-800 mb-2">Replace one project description with a project you have actually modified. Add a third card.</p>
+      <p class="text-sm text-slate-600"><strong>Test:</strong> On mobile the cards stack and links remain usable.</p>
+    </section>
+  </main>
+  <footer class="mx-auto max-w-5xl px-4 pb-10 text-sm text-slate-600">Real Tailwind CSS v4 utility classes. No custom JavaScript, CDN, or internet needed.</footer>
+</body>
+</html>

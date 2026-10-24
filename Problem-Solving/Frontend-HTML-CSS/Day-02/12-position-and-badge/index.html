@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position a Badge Without Breaking Layout | Day 02</title>
+  <style>
+
+/* BASE: Keep all widths predictable, including padding and borders. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f3f6fb; color: #172334; font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: #134fa7; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #f5a524; outline-offset: 3px; }
+.site-top { color: #fff; background: #112a4e; padding: 18px max(20px, calc((100vw - 1000px) / 2)); }
+.site-top a { color: #d6ecff; text-decoration: none; }
+.site-top a:hover { text-decoration: underline; }
+.site-top small { display: block; font-weight: 700; color: #a8cbf2; text-transform: uppercase; letter-spacing: .08em; }
+.container { width: min(100% - 36px, 1000px); margin-inline: auto; }
+.lesson-intro { padding: 28px 0 12px; }
+.lesson-intro h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.16; margin: 8px 0 10px; }
+.lesson-intro p { color: #435670; margin: 0 0 15px; max-width: 72ch; }
+.tag { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700; background: #e2eefe; color: #174b86; }
+.stage { margin: 12px auto 24px; padding: 22px; background: white; border: 1px solid #dce5ef; box-shadow: 0 12px 34px rgba(17,42,78,.07); border-radius: 18px; }
+.exercise-task { border: 1px solid #d1dbed; border-left: 5px solid #2475ca; background: #eef5ff; border-radius: 12px; padding: 15px 18px; margin: 22px 0 36px; }
+.exercise-task h2 { margin: 0 0 4px; font-size: 17px; }
+.exercise-task p { margin: 0; }
+.muted { color: #627188; }
+.site-foot { font-size: 13px; color: #576b81; padding: 0 0 28px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 20px; }
+/* PARENT: position: relative creates a positioning context for the badge. */
+.product { position: relative; padding: 24px; background: #f8fbff; border: 1px solid #d5e2ef; border-radius: 14px; min-width: 0; }
+/* BADGE: absolute positioning is relative to .product, not the whole page. */
+.badge { position: absolute; top: 12px; right: 12px; padding: 4px 10px; background: #186f51; color: white; font-size: 12px; border-radius: 50px; font-weight: 700; }
+.iconbox { margin: 28px 0 14px; width: 70px; height: 70px; border-radius: 16px; display: grid; place-items: center; font-size: 36px; background: #dceaff; }
+.product h3 { margin: 0 0 6px; }
+.product p { margin: 0; color: #52617a; }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION: Return to the exercise list without JavaScript. -->
+  <header class="site-top"><small>Frontend Problem Solving · Day 02 · #12</small><a href="../START_HERE.html">← Back to Day 02 exercises</a></header>
+  <main class="container">
+    <section class="lesson-intro" aria-labelledby="page-title">
+      <span class="tag">Problem 12 / 20</span>
+      <h1 id="page-title">Position a Badge Without Breaking Layout</h1>
+      <p>Attach a label to a card corner and keep it visible at phone widths.</p>
+    </section>
+    <section class="stage" aria-label="Working example">
+<h2>Course highlights</h2>
+      <div class="demo-grid">
+        <article class="product">
+          <span class="badge">Featured</span>
+          <div class="iconbox" aria-hidden="true">✦</div>
+          <h3>Responsive Layout</h3><p>A simple practice project using CSS Grid and media queries.</p>
+        </article>
+        <article class="product">
+          <span class="badge">Popular</span>
+          <div class="iconbox" aria-hidden="true">✧</div>
+          <h3>Semantic HTML</h3><p>Organise content with header, main, article, and footer.</p>
+        </article>
+      </div>
+    </section>
+    <aside class="exercise-task" aria-label="Try it yourself">
+      <h2>Change yourself</h2>
+      <p>Move the badge from the top-right to the top-left of each card. Add one more card with a badge.</p>
+      <p><strong>Hint:</strong> Change right: 12px to left: 12px and remove right.</p>
+    </aside>
+  </main>
+  <footer class="container site-foot">HTML + CSS only · No JavaScript · Practise, test, then explain.</footer>
+</body>
+</html>

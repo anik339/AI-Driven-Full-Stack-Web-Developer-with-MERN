@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frontend coding practice 50: Final Frontend Mini Portfolio">
+  <title>50. Final Frontend Mini Portfolio | Day 05</title>
+  <style>
+/* BOX SIZING: Keep padding inside element widths. */
+*,*::before,*::after {box-sizing:border-box}
+:root {--navy:#142b49;--blue:#215ed3;--ink:#22314b;--line:#dce5ef;--mist:#f4f7fb;--white:#fff}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--mist);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+.site-header {background:var(--navy);color:var(--white);padding:16px 0}
+.wrap {width:min(100% - 32px,1050px);margin-inline:auto}
+.site-header .wrap {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.site-header a {color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.eyebrow {display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#bed7fc}
+main {padding:30px 0 50px}
+h1,h2,h3,p {margin-top:0}
+h1 {font-size:clamp(1.65rem,3.5vw,2.45rem);line-height:1.18;margin-bottom:10px}
+h2 {line-height:1.25}
+.intro {max-width:75ch;color:#475a73}
+.sheet {background:white;border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3.5vw,26px);box-shadow:0 10px 26px #142b490a;margin-top:18px}
+.sheet h2 {font-size:1.23rem}
+.task {background:#eaf2ff;border-left:4px solid var(--blue);padding:17px 19px;margin-top:18px;border-radius:8px}
+.task strong {color:#193b7c}
+.task p {margin:6px 0}
+.note {font-size:.88rem;color:#566780}
+code,pre {font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre {white-space:pre-wrap;overflow-wrap:anywhere;padding:15px;background:#13253d;color:#f7f9ff;border-radius:10px;font-size:.9rem}
+footer {color:#5a6c84;font-size:.85rem;padding-bottom:28px}
+:focus-visible {outline:3px solid #e9a32b;outline-offset:3px}
+img {max-width:100%;height:auto}
+@media (prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* EXERCISE STYLES: These rules build the working example. */
+.portfolio-shell{border:1px solid #b8cce3;border-radius:16px;overflow:hidden}.portfolio-nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center;background:#173656;color:#fff;padding:20px}.portfolio-nav div{display:flex;flex-wrap:wrap;gap:15px}.portfolio-nav a{color:white}.portfolio-hero{display:grid;grid-template-columns:1fr;align-items:center;background:#e5f1ff;gap:22px;padding:clamp(22px,5vw,46px)}.portfolio-hero h3{font-size:clamp(1.8rem,4vw,2.8rem);margin:10px 0}.kicker{text-transform:uppercase;font-size:.8rem;font-weight:800;letter-spacing:.13em;color:#144988}.cta{display:inline-block;background:#215ed3;color:white;text-decoration:none;padding:10px 18px;border-radius:8px}.avatar-panel{width:min(100%,230px);aspect-ratio:1;display:grid;place-items:center;background:#9dccfa;color:#1b467a;border-radius:30px;font-size:5rem;font-weight:900;justify-self:center}.portfolio-work{padding:24px}.portfolio-cards{display:grid;grid-template-columns:1fr;gap:14px}.portfolio-cards article{padding:18px;border:1px solid #c1d3e9;border-radius:10px}.portfolio-cards p{margin-bottom:0}.portfolio-contact{background:#f4f7fb;padding:22px;border-top:1px solid #dce5ef}@media(min-width:760px){.portfolio-hero{grid-template-columns:1.2fr .8fr}.portfolio-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap">
+    <div><span class="eyebrow">Day 05 / Module 5 / Problem 50</span><strong>Claude Code Setup &amp; AI-Assisted Frontend Review</strong></div>
+    <a href="../START_HERE.html">Back to Day 05</a>
+  </div></header>
+  <main class="wrap">
+    <h1>Final Frontend Mini Portfolio</h1>
+    <p class="intro"><strong>Goal:</strong> Combine semantic HTML, responsive design, and good project descriptions. <strong>Concept:</strong> integrated practice + AI review rules</p>
+    <section class="sheet" aria-label="Working example">
+      <h2>Working example</h2>
+
+      <!-- CAPSTONE: A small complete static landing section. -->
+      <div class="portfolio-shell"><nav class="portfolio-nav" aria-label="Mini portfolio"><strong>AC / Portfolio</strong><div><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav><section class="portfolio-hero" id="about"><div><p class="kicker">Frontend learning project</p><h3>Hi, I'm Anik.</h3><p>A CSE student learning to build accessible and responsive web pages. This is a practice example that I can edit and test.</p><a class="cta" href="#work">See practice work</a></div><div class="avatar-panel" aria-hidden="true">AC</div></section><section class="portfolio-work" id="work"><h3>Practice projects</h3><div class="portfolio-cards"><article><h4>Portfolio Layout</h4><p>Semantic HTML with responsive spacing.</p></article><article><h4>Product Cards</h4><p>Grid layout with reusable styles.</p></article><article><h4>Course Tracker</h4><p>Static learning progress design.</p></article></div></section><footer class="portfolio-contact" id="contact"><h3>Contact section</h3><p>This demo does not publish personal contact details.</p></footer></div>
+    </section>
+    <aside class="task"><strong>Try yourself</strong><p>Replace one sample project with a project you actually edited. Add a concise note about what you changed and how you tested it.</p><p class="note"><strong>Test:</strong> Links jump correctly and the mini portfolio fits at 320px.</p></aside>
+  </main>
+  <footer class="wrap">Reference solution for learning. Read the short comments, edit, test, and explain your changes. No JavaScript.</footer>
+</body>
+</html>
