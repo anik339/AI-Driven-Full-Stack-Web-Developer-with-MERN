@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A portfolio concept for a visual creator working across short films, photography, and digital storytelling.">
+  <title>Mira Studio | Media Creator</title>
+  <!-- Tailwind CSS CDN is used for this learning demo; an internet connection is required. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Top navigation -->
+  <header class="border-b border-slate-200">
+    <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-5" aria-label="Main navigation">
+      <a class="font-extrabold tracking-tight" href="../index.html">Tailwind Practice</a>
+      <a class="text-sm font-semibold text-blue-700 hover:underline" href="../index.html">All 5 Projects</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero section -->
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/80">MEDIA CREATOR PORTFOLIO</p>
+        <h1 class="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">Stories with a point of view.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/85">A portfolio concept for a visual creator working across short films, photography, and digital storytelling.</p>
+        <a class="mt-8 inline-flex rounded-xl bg-white px-6 py-3 font-bold text-slate-900 transition hover:-translate-y-0.5" href="#details">View Selected Work</a>
+      </div>
+    </section>
+    <!-- Main content cards -->
+    <section id="details" class="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="text-sm font-bold uppercase tracking-widest text-blue-700">Practice project</p><h2 class="mt-2 text-3xl font-extrabold">Explore the details</h2></div>
+        <p class="max-w-md text-slate-600">A static HTML and Tailwind CSS learning project. Review the markup and try changing the utility classes.</p>
+      </div>
+      <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><article class="rounded-2xl bg-slate-100 p-5"><div class="flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-200 to-orange-200 text-4xl">◉</div><h3 class="mt-4 text-xl font-bold">City in Motion</h3><p class="mt-2 text-slate-600">A visual study of movement, light, and daily routines.</p></article><article class="rounded-2xl bg-slate-100 p-5"><div class="flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-sky-200 to-indigo-300 text-4xl">▧</div><h3 class="mt-4 text-xl font-bold">Quiet Spaces</h3><p class="mt-2 text-slate-600">Photography exploring calm spaces and natural textures.</p></article><article class="rounded-2xl bg-slate-100 p-5"><div class="flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-amber-200 to-rose-300 text-4xl">▶</div><h3 class="mt-4 text-xl font-bold">Small Stories</h3><p class="mt-2 text-slate-600">Short-form storytelling built around everyday details.</p></article></section>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="border-t border-slate-200"><div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 px-5 py-6 text-sm text-slate-500"><p>Created for frontend learning practice.</p><a class="font-semibold text-blue-700 hover:underline" href="../index.html">Back to project list</a></div></footer>
+</body>
+</html>
