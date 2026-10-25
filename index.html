@@ -1,205 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Anik Chandra Dey | Web Development Journey</title>
-  <meta
-    name="description"
-    content="Anik Chandra Dey's web development learning journey, frontend projects, and practice work."
-  >
-
+  <meta name="description" content="Anik Chandra Dey's web development learning journey, frontend projects, and practice work.">
+  <title>Anik Chandra Dey | Web Development Portfolio</title>
   <style>
-    /* BASIC RESET */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Keep sizing predictable across all elements. */
+    * { box-sizing: border-box; }
 
-    /* COLOUR AND SPACING VARIABLES */
+    /* Shared colours for the portfolio. */
     :root {
       --primary: #2563eb;
-      --dark: #172033;
-      --muted: #64748b;
-      --light: #f4f7fb;
-      --white: #ffffff;
+      --primary-dark: #1d4ed8;
+      --ink: #172033;
+      --muted: #5f6f86;
+      --page: #f3f6fb;
+      --card: #ffffff;
+      --border: #dce5f0;
+      --soft-blue: #dbeafe;
     }
 
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
-      color: var(--dark);
-      background: var(--light);
+      color: var(--ink);
+      background: var(--page);
     }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid #f59e0b; outline-offset: 4px; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      width: min(1080px, 92%);
-      margin: 0 auto;
-    }
-
-    /* TOP NAVIGATION */
-    header {
-      background: var(--white);
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    nav {
-      min-height: 70px;
+    .container { width: min(1120px, 92%); margin-inline: auto; }
+    .site-header { background: var(--card); border-bottom: 1px solid var(--border); }
+    .nav {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
-      padding: 14px 0;
+      padding-block: 14px;
     }
+    .brand { color: var(--primary); font-size: 1.15rem; font-weight: 800; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 0; }
 
-    .brand {
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      list-style: none;
-    }
-
-    /* INTRODUCTION SECTION */
-    .hero {
-      padding: 76px 0 60px;
-    }
-
-    .eyebrow {
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      max-width: 760px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
+    .hero { padding-block: 76px 58px; }
+    .eyebrow { color: var(--primary); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { max-width: 850px; font-size: clamp(2.2rem, 5.5vw, 4.2rem); line-height: 1.12; margin: 12px 0 22px; }
+    .hero-copy { max-width: 760px; color: var(--muted); font-size: 1.12rem; margin-bottom: 26px; }
     .button {
       display: inline-block;
+      padding: 12px 20px;
+      border-radius: 9px;
       background: var(--primary);
-      color: var(--white);
-      padding: 11px 18px;
-      border-radius: 8px;
+      color: #fff;
       font-weight: 700;
     }
+    .button:hover { background: var(--primary-dark); text-decoration: none; }
 
-    .button:hover {
-      background: #1d4ed8;
-      text-decoration: none;
-    }
-
-    /* CONTENT SECTIONS */
-    section {
-      padding: 30px 0 48px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
+    section { padding-block: 30px 48px; scroll-margin-top: 20px; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.25rem); line-height: 1.25; margin: 0 0 10px; }
+    .section-intro { color: var(--muted); margin: 0 0 24px; font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .card {
-      background: var(--white);
-      padding: 24px;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(23, 32, 51, .035);
     }
+    .badge { display: inline-block; border-radius: 999px; background: var(--soft-blue); color: #1d4ed8; padding: 4px 12px; font-size: .9rem; margin-bottom: 12px; }
+    h3 { margin: 0 0 10px; font-size: 1.25rem; }
+    .card p { color: var(--muted); margin: 0 0 16px; }
+    .card-link { font-weight: 700; }
+    .note { border-left: 4px solid var(--primary); background: #eaf2ff; padding: 15px 18px; border-radius: 0 10px 10px 0; color: #334155; }
 
-    .card h3 {
-      margin-bottom: 10px;
+    footer { margin-top: 22px; padding: 28px 0; background: var(--ink); color: #fff; }
+    footer p { margin: 0; color: #dbe4f0; text-align: center; }
+
+    /* Stack cards on smaller screens. */
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding-top: 52px; }
     }
-
-    .card p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .status {
-      display: inline-block;
-      background: #dbeafe;
-      color: #1d4ed8;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: 30px;
-      padding: 26px 0;
-      background: var(--dark);
-      color: var(--white);
-      text-align: center;
-    }
-
-    footer p {
-      color: #cbd5e1;
-    }
-
-    /* MOBILE LAYOUT */
-    @media (max-width: 760px) {
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
+    @media (max-width: 560px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 21px; }
+      .hero { padding-top: 42px; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">Anik | Web Development</a>
       <nav aria-label="Main navigation">
-        <a class="brand" href="./index.html">Anik | Web Development</a>
-
-        <ul>
+        <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#learning">Learning</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -211,70 +113,52 @@
 
   <main>
     <section class="hero container" id="about">
-      <p class="eyebrow">MY WEB DEVELOPMENT JOURNEY</p>
-
+      <p class="eyebrow">My Web Development Journey</p>
       <h1>Hi, I'm Anik Chandra Dey.</h1>
-
-      <p>
-        I am a BSc in Computer Science and Engineering student at AIUB.
-        I am building my web development foundation through coursework,
-        assignments, frontend projects, and regular practice.
-      </p>
-
-      <p>
-        My current focus is HTML, CSS, Tailwind CSS, responsive design,
-        Git, and GitHub. JavaScript is my next learning goal.
-      </p>
-
+      <p class="hero-copy">I am a BSc in Computer Science and Engineering student at AIUB. I am building my web development foundation through coursework, assignments, frontend projects, and regular practice.</p>
+      <p class="hero-copy">My current focus is HTML, CSS, Tailwind CSS, responsive design, Git, and GitHub. JavaScript is my next learning goal.</p>
       <a class="button" href="#projects">Explore My Projects</a>
     </section>
 
     <section class="container" id="learning">
       <h2>My Learning Modules</h2>
-      <p class="section-intro">
-        My current coursework and practical learning materials.
-      </p>
-
+      <p class="section-intro">My current coursework and practical learning materials.</p>
       <div class="grid">
         <article class="card">
-          <span class="status">Module 1</span>
+          <span class="badge">Module 1</span>
           <h3>HTML5</h3>
           <p>Semantic structure, links, forms, tables, and media.</p>
-          <a href="./module-1%20(HTML)/">Explore HTML</a>
+          <!-- The lesson index is inside the Code folder, not the module root. -->
+          <a class="card-link" href="./module-1%20%28HTML%29/Code/index.html">Explore HTML</a>
         </article>
-
         <article class="card">
-          <span class="status">Module 2</span>
+          <span class="badge">Module 2</span>
           <h3>CSS3</h3>
           <p>Styling, the box model, Flexbox, Grid, and media queries.</p>
-          <a href="./module-2%20(CSS)/">Explore CSS</a>
+          <a class="card-link" href="./module-2%20%28CSS%29/Code/index.html">Explore CSS</a>
         </article>
-
         <article class="card">
-          <span class="status">Module 3</span>
+          <span class="badge">Module 3</span>
           <h3>Tailwind CSS</h3>
           <p>Utility-first styling and responsive UI practice.</p>
-          <a href="./module-3%20(Tailwind%20CSS)/">Explore Tailwind</a>
+          <a class="card-link" href="./module-3%20%28Tailwind%20CSS%29/Code/index.html">Explore Tailwind</a>
         </article>
-
         <article class="card">
-          <span class="status">Module 4</span>
+          <span class="badge">Module 4</span>
           <h3>Responsive Design</h3>
           <p>Mobile-first layouts, AI tools, and GitHub collaboration.</p>
-          <a href="./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/">Explore Module 4</a>
+          <a class="card-link" href="./module-4%20%28Responsive%20Web%20Design%2C%20AI%20Tools%20and%20GitHub%20Collaboration%29/Code/index.html">Explore Module 4</a>
         </article>
-
         <article class="card">
-          <span class="status">Module 5</span>
+          <span class="badge">Module 5</span>
           <h3>Claude Code Setup</h3>
           <p>Learning materials and AI-assisted frontend workflows.</p>
-          <a href="./module-5%20(Claude%20Code%20Setup)/">Explore Module 5</a>
+          <a class="card-link" href="./module-5%20%28Claude%20Code%20Setup%29/Code/index.html">Explore Module 5</a>
         </article>
-
         <article class="card">
-          <span class="status">Next Goal</span>
+          <span class="badge">Next Goal</span>
           <h3>JavaScript</h3>
-          <p>My next step is learning programming fundamentals.</p>
+          <p>My next step is learning programming fundamentals and solving beginner problems.</p>
           <span>Coming next</span>
         </article>
       </div>
@@ -282,56 +166,47 @@
 
     <section class="container" id="projects">
       <h2>Practice Projects</h2>
-      <p class="section-intro">
-        Selected projects from my current learning journey.
-      </p>
-
+      <p class="section-intro">Selected projects from my current learning journey.</p>
       <div class="grid">
         <article class="card">
           <h3>Ostad Landing Page</h3>
-          <p>A landing page practice project using frontend fundamentals.</p>
-          <a href="./module-3-ostad-landing-page/index.html">View Project</a>
+          <p>A landing-page practice project built during my frontend coursework.</p>
+          <a class="card-link" href="./module-3-ostad-landing-page/index.html">View Project</a>
         </article>
-
         <article class="card">
           <h3>Responsive Agency Website</h3>
           <p>A website project focused on layout and responsive behaviour.</p>
-          <a href="./module-4-responsive-agency-landing-page/index.html">View Project</a>
+          <a class="card-link" href="./module-4-responsive-agency-landing-page/index.html">View Project</a>
         </article>
-
         <article class="card">
-          <h3>Frontend Practice</h3>
-          <p>Guided exercises for HTML, CSS, and responsive design.</p>
-          <a href="./Problem-Solving/Frontend-HTML-CSS/">Explore Practice</a>
+          <h3>Frontend Problem Solving</h3>
+          <p>Guided HTML, CSS, Tailwind, and responsive-design exercises.</p>
+          <a class="card-link" href="./Problem-Solving/Frontend-HTML-CSS/index.html">Explore Practice</a>
         </article>
       </div>
     </section>
 
     <section class="container" id="practice">
       <h2>Assignments and Learning Tracker</h2>
-      <p class="section-intro">
-        My assignments and progress notes help me review what I have studied.
-      </p>
-
+      <p class="section-intro">Practice tasks and progress notes from my learning journey.</p>
       <div class="grid">
         <article class="card">
           <h3>Assignments</h3>
           <p>Practice tasks from my frontend learning modules.</p>
-          <a href="./Assignment/">View Assignments</a>
+          <a class="card-link" href="./Assignment/index.html">View Assignments</a>
         </article>
-
         <article class="card">
           <h3>Learning Tracker</h3>
           <p>A personal page for tracking topics and learning progress.</p>
-          <a href="./Ostad_Learning_Tracker/index.html">Open Tracker</a>
+          <a class="card-link" href="./Ostad_Learning_Tracker/index.html">Open Tracker</a>
         </article>
-
         <article class="card">
           <h3>GitHub Repository</h3>
           <p>Browse the source files and follow my progress.</p>
-          <a href="https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN">View on GitHub</a>
+          <a class="card-link" href="https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN">View on GitHub</a>
         </article>
       </div>
+      <p class="note">This is a learning portfolio. I am continuing to practise, test, and improve each project as I progress toward JavaScript and the MERN stack.</p>
     </section>
   </main>
 
