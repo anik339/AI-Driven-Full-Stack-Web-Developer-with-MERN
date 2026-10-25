@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind CSS Projects | Anik</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 28px 16px;
+  font-family: Arial, sans-serif; line-height: 1.6;
+  color: #172033; background: #f4f7fb;
+}
+main { max-width: 960px; margin: auto; }
+h1 { line-height: 1.2; }
+.intro { color: #526176; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 16px; margin-top: 24px;
+}
+.card {
+  background: white; border: 1px solid #dce4ef;
+  border-radius: 12px; padding: 20px;
+}
+a { color: #1d4ed8; font-weight: 700; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<a href="../index.html">Back to Module 3</a>
+<h1>Tailwind CSS Projects</h1>
+<p class="intro">Choose an available project or example.</p>
+<div class="grid">
+<article class="card">
+  <h2>Ostad Landing Page</h2>
+  <p>A frontend landing page practice project.</p>
+  <a href="../../module-3-ostad-landing-page/index.html">Open Project</a>
+</article>
+<article class="card">
+  <h2>Tailwind Example</h2>
+  <p>Open the existing Tailwind HTML example.</p>
+  <a href="../Resources/src/index.html">Open Example</a>
+</article>
+</div>
+</main>
+</body>
+</html>
