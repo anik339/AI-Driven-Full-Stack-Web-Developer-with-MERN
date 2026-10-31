@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaNote — Responsive Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f5f8ef;color:#18231a;font-family:"DM Sans",sans-serif}.wrap{max-width:1080px;margin:auto;padding:0 25px}.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}.logo{font-family:"Space Grotesk";font-weight:700;font-size:21px}.logo span{color:#6d9e43}.nav a{color:#4c5b48;text-decoration:none;font-size:13px;margin-left:24px}.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;padding:90px 0 110px}.eyebrow{color:#648b42;font-size:10px;font-weight:700;letter-spacing:.17em}.hero h1{font:700 clamp(48px,7vw,82px)/.98 "Space Grotesk";letter-spacing:-.07em;margin:18px 0}.hero h1 span{color:#719f4b}.hero p{max-width:470px;color:#64705f;line-height:1.8;font-size:15px}.btn{display:inline-block;margin-top:18px;padding:14px 20px;border-radius:7px;background:#243a26;color:white;text-decoration:none;font-size:12px;font-weight:700}.art{position:relative;min-height:360px;border-radius:28px;background:#d9edc8;display:grid;place-items:center;overflow:hidden}.art:before,.art:after{content:"";position:absolute;border:1px solid #9bbd80;border-radius:50%;width:270px;height:270px}.art:after{width:360px;height:360px}.note{position:relative;z-index:1;width:210px;padding:23px;border-radius:14px;background:#fffef8;box-shadow:0 20px 50px #526f3b22;transform:rotate(-5deg)}.note small{color:#80a75c;font-size:9px;font-weight:700;letter-spacing:.14em}.note strong{display:block;margin:15px 0;font:700 27px/1.05 "Space Grotesk"}.note span{display:block;width:80%;height:6px;margin-top:7px;border-radius:9px;background:#e1e9d9}.features{padding:55px 0 85px;border-top:1px solid #dce6d3}.features h2{font:700 34px "Space Grotesk";letter-spacing:-.04em}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:22px;border:1px solid #e1e9d9;border-radius:13px;background:#fff}.card b{font:600 17px "Space Grotesk"}.card p{color:#6d7868;font-size:12px;line-height:1.7}.footer{padding:25px 0;border-top:1px solid #dce6d3;color:#77816f;font-size:11px}@media(max-width:700px){.hero{grid-template-columns:1fr;padding:55px 0 70px}.art{min-height:280px}.cards{grid-template-columns:1fr}.nav a{margin-left:10px;font-size:11px}.hero h1{font-size:58px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav"><div class="logo">Nova<span>Note</span>.</div><div><a href="#features">Features</a><a href="../../index.html">Portfolio</a></div></nav>
+    <main class="hero">
+      <div><span class="eyebrow">A CALMER SPACE FOR YOUR IDEAS</span><h1>Think clearly.<br><span>Create freely.</span></h1><p>NovaNote is a concept landing page for a simple note-taking experience. This practice project explores responsive layouts, typography, spacing, and clear calls to action.</p><a class="btn" href="#features">Explore the concept ↗</a></div>
+      <div class="art"><div class="note"><small>YOUR NEXT BIG IDEA</small><strong>Make room<br>for better<br>thinking.</strong><span></span><span></span><span style="width:55%"></span></div></div>
+    </main>
+    <section class="features" id="features"><span class="eyebrow">BUILT FOR FOCUS</span><h2>Simple by design.</h2><div class="cards"><article class="card"><b>Capture ideas</b><p>Keep quick thoughts in one clean and organized place.</p></article><article class="card"><b>Stay focused</b><p>A calm interface helps keep attention on the task at hand.</p></article><article class="card"><b>Work anywhere</b><p>A responsive layout adapts to mobile, tablet, and desktop screens.</p></article></div></section>
+    <footer class="footer">Practice project by Anik Chandra Dey · <a href="../../index.html">Back to portfolio</a></footer>
+  </div>
+</body>
+</html>

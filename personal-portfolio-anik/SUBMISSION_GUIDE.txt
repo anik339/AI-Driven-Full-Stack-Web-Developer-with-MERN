@@ -1,0 +1,63 @@
+ANIK CHANDRA DEY — PERSONAL PORTFOLIO ASSIGNMENT
+================================================
+Student: Anik Chandra Dey
+ID: 23-50589-1
+Department: CSE, AIUB
+
+BEFORE YOU SUBMIT
+-----------------
+1. Extract the ZIP file.
+2. Open personal-portfolio-anik/index.html in Chrome.
+3. Check your photo, all eight required sections, three Project Preview links, and mobile menu.
+4. If you need a working email contact form, you must first supply a real email/form backend; the assignment only asks for its DESIGN.
+
+OPTION A: USE YOUR EXISTING GITHUB REPOSITORY
+---------------------------------------------
+Existing repository:
+https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN
+
+1. Sign in to GitHub and open the repository.
+2. Open the Code tab and select Add file > Upload files.
+3. Upload the extracted personal-portfolio-anik FOLDER with all of its contents.
+   Important: GitHub should show personal-portfolio-anik/index.html,
+   personal-portfolio-anik/tailwind.css, personal-portfolio-anik/styles.css,
+   personal-portfolio-anik/assets/profile.jpg, and all 3 projects/.../index.html files.
+4. Enter commit message: Add responsive personal portfolio assignment
+5. Click Commit changes.
+6. Open the new personal-portfolio-anik folder on GitHub and copy the URL from the browser.
+7. In the assignment's Add URL field, paste that folder link (preferred) or the repository URL if needed.
+8. Double-check that the repo visibility is Public and files appear on GitHub BEFORE submitting.
+
+OPTION B: NEW DEDICATED GITHUB REPOSITORY (CLEANEST SUBMISSION)
+--------------------------------------------------------------
+1. Click New repository in GitHub.
+2. Name it personal-portfolio-anik (or another available name).
+3. Set visibility to Public and create it.
+4. Choose Add file > Upload files.
+5. Upload the CONTENTS INSIDE the extracted folder to the new repository ROOT:
+   index.html, styles.css, tailwind.css, README.md, SUBMISSION_GUIDE.txt,
+   assets/ and projects/.
+   Verify the new repository root contains index.html directly (not nested).
+6. Commit changes and submit the new repository URL.
+
+OPTIONAL: PUBLISH A LIVE WEBSITE WITH GITHUB PAGES
+--------------------------------------------------
+For a dedicated repository with index.html at its root:
+  Repository > Settings > Pages > Build and deployment > Deploy from a branch
+  Choose main and /(root), Save. Wait until GitHub shows a published site URL.
+  Open THAT URL and check your page. Do not assume it has been published until GitHub confirms.
+For your existing multi-module repository the Pages path may differ.
+The assignment only asks for the PUBLIC SOURCE REPOSITORY URL, not a Pages URL.
+
+FINAL CHECKS
+------------
+[ ] Public GitHub repo / uploaded project folder is accessible
+[ ] index.html, tailwind.css, styles.css, assets/profile.jpg are present
+[ ] 3 practice project pages are present and open
+[ ] Navbar works on mobile/desktop
+[ ] All 8 sections and profile picture appear
+[ ] There is no unintended sideways/horizontal scrolling
+[ ] Submission URL pasted into your assignment platform before deadline
+
+Known limitation: The contact form is only an HTML/CSS visual design, NOT a message delivery system.
+No custom JavaScript or script.js is used anywhere in this package.
