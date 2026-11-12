@@ -1,24 +1,36 @@
 
-# Dependencies
-node_modules/
+# ==========================================
+# GITIGNORE
+# AI-Driven Full Stack Web Developer with MERN
+# ==========================================
 
-# Build Output
-dist/
 
-# Environment Variables
-.env
-.env.*
-!.env.example
+# ------------------------------------------
+# 1. Operating System Files
+# Ignore unnecessary system-generated files
+# ------------------------------------------
 
-# Log Files
-*.log
-
-# Editor Files
-.vscode/
-
-# Operating System Files
 .DS_Store
 Thumbs.db
 
-# Ignore generated diagnostic files
+
+# ------------------------------------------
+# 2. Generated Diagnostic Files
+# Ignore temporary diagnostic files
+# ------------------------------------------
+
 **/build-error.txt
+
+
+# ------------------------------------------
+# 3. Course-provided Learning Resources
+# Keep private course materials out of GitHub
+# ------------------------------------------
+
+/module-6(foundation of java script)/Resource/js-booklet.pdf
+/module-6(foundation of java script)/Resource/js-week-3.pdf
+
+
+# ==========================================
+# END OF GITIGNORE
+# ==========================================
