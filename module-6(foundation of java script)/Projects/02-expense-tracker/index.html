@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track income and expenses with vanilla JavaScript.">
+  <title>Expense Tracker | JavaScript Project 02</title>
+  <link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header><p class="eyebrow">JavaScript Project 02</p><h1>Know where your money goes.</h1>
+      <p class="subtitle">Record income and spending, review your balance, and keep a simple history in your browser.</p></header>
+    <section class="summary grid" aria-label="Money summary">
+      <article class="panel summary-card"><span>Current balance</span><strong id="balance">$0.00</strong></article>
+      <article class="panel summary-card"><span>Total income</span><strong id="income">$0.00</strong></article>
+      <article class="panel summary-card"><span>Total expenses</span><strong id="expenses">$0.00</strong></article>
+    </section>
+    <div class="main-grid">
+      <section class="panel panel-pad">
+        <h2>Add a transaction</h2>
+        <form id="transaction-form" class="stack">
+          <div class="field"><label for="description">Description</label><input id="description" maxlength="70" placeholder="e.g. Monthly salary" required></div>
+          <div class="form-row">
+            <div class="field"><label for="amount">Amount ($)</label><input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+            <div class="field"><label for="type">Type</label><select id="type"><option value="expense">Expense</option><option value="income">Income</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="category">Category</label><select id="category"><option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option><option>Salary</option><option>Other</option></select></div>
+            <div class="field"><label for="date">Date</label><input id="date" type="date" required></div>
+          </div>
+          <button class="btn" type="submit">Save transaction</button>
+          <p id="form-message" class="status-message" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="panel panel-pad">
+        <div class="row-between"><h2>Transaction history</h2><select id="type-filter" aria-label="Filter transactions"><option value="all">All types</option><option value="income">Income</option><option value="expense">Expenses</option></select></div>
+        <ul id="transaction-list" class="transactions" aria-live="polite"></ul>
+        <p id="empty-state" class="empty-state">No transactions yet. Add your first one.</p>
+      </section>
+    </div>
+    <footer>Project 02 · Your financial data stays in this browser.</footer>
+  </main>
+</body>
+</html>

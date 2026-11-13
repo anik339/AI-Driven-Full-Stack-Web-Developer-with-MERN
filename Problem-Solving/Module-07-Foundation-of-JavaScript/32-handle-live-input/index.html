@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Display a character count as the user types.">
+  <title>Handle Live Input</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Module 7 — DOM Manipulation and Events · Problem 32 of 50</p>
+      <h1>Handle Live Input</h1>
+      <p class="lead">Display a character count as the user types.</p>
+    </header>
+    <section class="card">
+      <p class="label">Task</p>
+      <p class="task">Display a character count as the user types.</p>
+      <p><strong>Concept:</strong> input event, value</p>
+      <button id="run-example" class="btn" type="button">Run Solution</button>
+      <div id="demo-area" aria-live="polite"></div>
+      <p class="label">Program output</p>
+      <pre id="output" aria-live="polite">Click “Run Solution” to see the result.</pre>
+    </section>
+    <section class="card">
+      <h2>Expected output</h2>
+      <p class="explain">Character count updates on every keystroke.</p>
+    </section>
+    <section class="card">
+      <h2>Easy explanation</h2>
+      <p class="explain">The input event fires whenever the value changes due to user input. It is useful for live search and counters.</p>
+    </section>
+    <section class="card">
+      <h2>Your practice challenge</h2>
+      <div class="challenge">Show remaining characters for a 100-character message limit.</div>
+      <p class="muted small">Try it yourself before moving to the next problem.</p>
+    </section>
+    <section class="card">
+      <details>
+        <summary>Read the complete JavaScript code</summary>
+        <pre class="code" id="code-view">Loading script.js…</pre>
+      </details>
+      <p class="muted small">The same code is saved in script.js. Open that file in VS Code to edit it.</p>
+    </section>
+    <footer>JavaScript Problem Solving · Module 7 — DOM Manipulation and Events · Beginner-friendly practice</footer>
+  </main>
+  <script>
+    // Load the actual script file into the code viewer.
+    fetch("./script.js")
+      .then(response => response.text())
+      .then(source => document.querySelector("#code-view").textContent = source)
+      .catch(() => document.querySelector("#code-view").textContent = "Open script.js in VS Code to read the code.");
+  </script>
+</body>
+</html>

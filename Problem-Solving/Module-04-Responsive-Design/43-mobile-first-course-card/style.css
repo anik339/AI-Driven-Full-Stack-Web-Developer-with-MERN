@@ -1,0 +1,11 @@
+/* MODULE 4: Responsive Design
+   Start with small-screen styles. Add media queries only when the layout needs them. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+img { max-width: 100%; display: block; }
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+/* Responsive solution */
+.course-card { display: grid; gap: 14px; padding: 16px; background: white; border-radius: 12px; }
+.course-card img { width: 100%; border-radius: 8px; }
+@media (min-width: 650px) { .course-card { grid-template-columns: 180px 1fr; align-items: center; } }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Demonstrate action, method and enctype with safe sample values." name="description"/>
+  <title>
+   HTML Form Submission Attributes
+  </title>
+ </head>
+ <body>
+  <!-- MODULE 1: HTML-only practice. No CSS or JavaScript is used here. -->
+  <header>
+   <p>
+    Module 01 &middot; HTML &middot; Problem 47 of 50
+   </p>
+   <h1>
+    HTML Form Submission Attributes
+   </h1>
+   <p>
+    Demonstrate action, method and enctype with safe sample values.
+   </p>
+  </header>
+  <main>
+   <form action="#demo-submit" enctype="multipart/form-data" id="demo-submit" method="post">
+    <label for="upload-name">
+     Name
+     <input id="upload-name" name="name" required=""/>
+    </label>
+    <label for="attachment">
+     Sample file
+     <input id="attachment" name="attachment" type="file"/>
+    </label>
+    <button type="submit">
+     Submit demo form
+    </button>
+   </form>
+   <p>
+    This example shows markup only; no server endpoint is configured.
+   </p>
+  </main>
+ </body>
+</html>

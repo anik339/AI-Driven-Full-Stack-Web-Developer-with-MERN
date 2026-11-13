@@ -1,0 +1,12 @@
+/* MODULE 4: Responsive Design
+   Start with small-screen styles. Add media queries only when the layout needs them. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+img { max-width: 100%; display: block; }
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+/* Responsive solution */
+.site-header { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; background: white; border-radius: 12px; }
+.site-header div { display: flex; gap: 12px; }
+@media (min-width: 680px) { .site-header { flex-direction: row; justify-content: space-between; align-items: center; } }
+.cta { background: #1d4ed8; color: white; padding: 8px 12px; border-radius: 8px; }

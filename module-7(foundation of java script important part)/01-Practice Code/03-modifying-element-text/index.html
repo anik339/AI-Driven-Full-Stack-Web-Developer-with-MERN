@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use textContent and innerText to read or update the text inside an element. Both are useful, but innerText reflects visible rendered text while textContent reads text in the DOM.">
+  <title>03. Changing Text with textContent and innerText</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · PRACTICE CODE</p>
+      <h1>03. Changing Text with textContent and innerText</h1>
+      <p class="lead">Use textContent and innerText to read or update the text inside an element. Both are useful, but innerText reflects visible rendered text while textContent reads text in the DOM.</p>
+    </header>
+    
+<section class="panel pad stack">
+  <h2 id="sample-heading">Original heading</h2>
+  <p id="visible-copy">This paragraph is visible on the page.</p>
+  <p id="hidden-copy" hidden>This hidden text is still present in the DOM.</p>
+  <div class="row">
+    <button id="use-text-content" class="btn" type="button">Set with textContent</button>
+    <button id="use-inner-text" class="btn secondary" type="button">Set with innerText</button>
+    <button id="compare" class="btn secondary" type="button">Compare reading</button>
+  </div>
+  <div id="text-output" class="output">The result will appear here.</div>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

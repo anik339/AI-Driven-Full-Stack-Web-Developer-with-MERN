@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practice accessible client-side form validation with vanilla JavaScript.">
+  <title>Smart Form Validation | JavaScript Project 08</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell form-shell">
+    <header><p class="eyebrow">JavaScript Project 08</p><h1>Good forms guide users.</h1><p class="subtitle">Practice real-time validation, clear error messages, password checks, and accessible form feedback.</p></header>
+    <section class="panel panel-pad">
+      <form id="signup-form" novalidate class="stack">
+        <div class="field"><label for="full-name">Full name</label><input id="full-name" name="fullName" autocomplete="name" placeholder="Your name" aria-describedby="name-error"><small id="name-error" class="error"></small></div>
+        <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-error"><small id="email-error" class="error"></small></div>
+        <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" aria-describedby="password-error"><div class="strength-track"><div id="strength-bar"></div></div><small id="password-error" class="error"></small><small id="strength-label" class="muted small">Password strength: not checked</small></div>
+        <div class="field"><label for="confirm-password">Confirm password</label><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter password again" aria-describedby="confirm-error"><small id="confirm-error" class="error"></small></div>
+        <label class="checkbox-row"><input id="terms" type="checkbox" aria-describedby="terms-error"> <span>I understand this is a front-end validation demo.</span></label><small id="terms-error" class="error"></small>
+        <button class="btn" type="submit">Validate form</button>
+        <p id="success-message" class="success-message" role="status" hidden></p>
+      </form>
+    </section>
+    <footer>Project 08 · Demo only. This form does not create an account or send personal information.</footer>
+  </main>
+</body>
+</html>

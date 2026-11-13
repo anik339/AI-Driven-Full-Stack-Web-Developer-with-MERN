@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="When an event occurs, the browser passes an Event object to the event handler. event.target identifies the element that originally triggered the event.">
+  <title>11. The Event Object and target Property</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · PRACTICE CODE</p>
+      <h1>11. The Event Object and target Property</h1>
+      <p class="lead">When an event occurs, the browser passes an Event object to the event handler. event.target identifies the element that originally triggered the event.</p>
+    </header>
+    
+<section class="panel pad stack">
+  <h2>Click a button inside this button group</h2>
+  <div id="button-group" class="row button-group">
+    <button class="btn" type="button" data-action="save">Save</button>
+    <button class="btn secondary" type="button" data-action="edit">Edit</button>
+    <button class="btn secondary" type="button" data-action="delete">Delete</button>
+  </div>
+  <p class="muted small">All three buttons are handled by one listener on the parent container.</p>
+  <div id="event-object-output" class="output">Click a button to inspect the event object.</div>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Architecture with Components</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <p>Module 02 · CSS · Problem 45 of 50</p>
+  <h1>CSS Architecture with Components</h1>
+  <p>Use component classes and avoid styling by tag alone.</p>
+  <section class="demo">
+    <div class="profile-card"><h2 class="profile-card__title">Ava Rahman</h2><p class="profile-card__role">Frontend learner</p></div>
+  </section>
+  <details><summary>Read the CSS solution</summary><pre id="css-source">Loading style.css…</pre></details>
+</main>
+<script>
+  // Display the CSS source so you can study it in the browser too.
+  fetch("./style.css").then(r => r.text()).then(t => document.querySelector("#css-source").textContent = t);
+</script>
+</body></html>

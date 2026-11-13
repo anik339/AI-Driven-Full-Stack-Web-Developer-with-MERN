@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search GitHub users and recent public repositories using the GitHub API.">
+  <title>GitHub Profile Finder | JavaScript Project 07</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell github-shell">
+    <header><p class="eyebrow">JavaScript Project 07 · API Practice</p><h1>Explore GitHub profiles.</h1><p class="subtitle">Enter a GitHub username to fetch public profile information and recently updated repositories.</p></header>
+    <form id="search-form" class="search-form panel panel-pad">
+      <div class="field grow"><label for="username">GitHub username</label><input id="username" placeholder="e.g. torvalds" autocomplete="off" required></div>
+      <button class="btn" type="submit">Find profile</button>
+    </form>
+    <p id="status" class="status-message" role="status">Try a public GitHub username.</p>
+    <section id="profile" class="profile-layout" hidden>
+      <article class="panel profile-card panel-pad">
+        <img id="avatar" class="avatar" src="" alt="GitHub user avatar">
+        <h2 id="name"></h2><p id="handle" class="muted"></p><p id="bio" class="bio"></p>
+        <a id="profile-link" class="btn profile-link" href="#" target="_blank" rel="noreferrer">Open GitHub profile ↗</a>
+        <div class="profile-stats"><div><strong id="followers">0</strong><span>Followers</span></div><div><strong id="following">0</strong><span>Following</span></div><div><strong id="repos-count">0</strong><span>Public repos</span></div></div>
+        <p id="location" class="muted small"></p>
+      </article>
+      <article class="panel panel-pad repos-panel"><h2>Recently updated repositories</h2><ul id="repo-list" class="repo-list"></ul><p id="repo-empty" class="muted small" hidden>No public repositories found.</p></article>
+    </section>
+    <footer>Project 07 · Uses the public GitHub REST API. Unauthenticated API rate limits apply.</footer>
+  </main>
+</body>
+</html>

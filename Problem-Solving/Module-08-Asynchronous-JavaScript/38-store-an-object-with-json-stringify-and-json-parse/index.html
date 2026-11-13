@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Save and restore a user profile object.">
+  <title>Store an Object with JSON.stringify() and JSON.parse()</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Module 8 — Advanced and Asynchronous JavaScript · Problem 38 of 50</p>
+      <h1>Store an Object with JSON.stringify() and JSON.parse()</h1>
+      <p class="lead">Save and restore a user profile object.</p>
+    </header>
+    <section class="card">
+      <p class="label">Task</p>
+      <p class="task">Save and restore a user profile object.</p>
+      <p><strong>Concept:</strong> JSON.stringify(), JSON.parse(), localStorage</p>
+      <button id="run-example" class="btn" type="button">Run Solution</button>
+      <div id="demo-area" aria-live="polite"></div>
+      <p class="label">Program output</p>
+      <pre id="output" aria-live="polite">Click “Run Solution” to see the result.</pre>
+    </section>
+    <section class="card">
+      <h2>Expected output</h2>
+      <p class="explain">The restored profile values appear.</p>
+    </section>
+    <section class="card">
+      <h2>Easy explanation</h2>
+      <p class="explain">Storage accepts strings. Use JSON.stringify() before storing objects and JSON.parse() after reading them. Parsing invalid JSON can throw.</p>
+    </section>
+    <section class="card">
+      <h2>Your practice challenge</h2>
+      <div class="challenge">Store an array of three skills in localStorage.</div>
+      <p class="muted small">Try it yourself before moving to the next problem.</p>
+    </section>
+    <section class="card">
+      <details>
+        <summary>Read the complete JavaScript code</summary>
+        <pre class="code" id="code-view">Loading script.js…</pre>
+      </details>
+      <p class="muted small">The same code is saved in script.js. Open that file in VS Code to edit it.</p>
+    </section>
+    <footer>JavaScript Problem Solving · Module 8 — Advanced and Asynchronous JavaScript · Beginner-friendly practice</footer>
+  </main>
+  <script>
+    // Load the actual script file into the code viewer.
+    fetch("./script.js")
+      .then(response => response.text())
+      .then(source => document.querySelector("#code-view").textContent = source)
+      .catch(() => document.querySelector("#code-view").textContent = "Open script.js in VS Code to read the code.");
+  </script>
+</body>
+</html>

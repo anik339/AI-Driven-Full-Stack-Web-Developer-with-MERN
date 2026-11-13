@@ -1,0 +1,22 @@
+# Copy Part of an Array with slice
+
+## Task
+Create a new array containing selected items.
+
+## Main concept
+slice() non-mutating method
+
+## Expected result
+Original remains unchanged; Slice: 20, 30, 40
+
+## Explanation
+slice(start, end) returns a shallow copy from start up to, but not including, end.
+
+## Try it yourself
+Get the last two values using a negative start index.
+
+## How to run
+1. Open this problem folder in VS Code.
+2. Open `index.html` with Live Server.
+3. Read the source file and comments before changing anything.
+4. Make your own version of the challenge and test it in the browser.

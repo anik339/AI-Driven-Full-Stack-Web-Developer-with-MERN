@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Navigation Wrap</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 06 of 50</p><h1>Responsive Navigation Wrap</h1><p>Allow navigation links to wrap instead of overflow.</p></header>
+  <section class="demo">
+    <nav class="nav"><strong>LearnHub</strong><div class="links"><a href="#courses">Courses</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="about"><h2>Example destination: About</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="contact"><h2>Example destination: Contact</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="courses"><h2>Example destination: Courses</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="projects"><h2>Example destination: Projects</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

@@ -1,0 +1,12 @@
+/* MODULE 4: Responsive Design
+   Start with small-screen styles. Add media queries only when the layout needs them. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+img { max-width: 100%; display: block; }
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+/* Responsive solution */
+.blog-layout { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.blog-layout article, .blog-layout aside { padding: 20px; background: white; border-radius: 10px; }
+.blog-layout aside a { display: block; margin-top: 10px; }
+@media (min-width: 850px) { .blog-layout { grid-template-columns: minmax(0, 1fr) 260px; } }

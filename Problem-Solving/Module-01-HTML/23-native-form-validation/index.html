@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Use built-in HTML validation attributes.">
+  <title>Native Form Validation</title>
+
+</head>
+<body>
+  <!-- MODULE 1: HTML-only practice. No CSS or JavaScript is used here. -->
+  <header>
+    <p>Module 01 · HTML · Problem 23 of 50</p>
+    <h1>Native Form Validation</h1>
+    <p>Use built-in HTML validation attributes.</p>
+  </header>
+  <main>
+    <form>
+      <p><label for="username">Username <input id="username" name="username" required minlength="3" maxlength="20"></label></p>
+      <p><label for="user-email">Email <input id="user-email" name="email" type="email" required></label></p>
+      <p><label for="postal-code">Postal code <input id="postal-code" name="postalCode" pattern="[0-9]{4,6}" title="Enter 4 to 6 digits" required></label></p>
+      <button type="submit">Check fields</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,149 +1,2831 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="description" content="Anik Chandra Dey's OSTAD MERN learning record covering Modules 1–5 since 6 August 2026.">
- <title>Ostad Learning Tracker | Anik Chandra Dey | Modules 1–5</title>
- <!-- STYLES: Keep page structure and presentation in separate files. -->
- <link rel="stylesheet" href="styles.css">
-</head>
-<body>
- <a class="skip-link" href="#main">Skip to course record</a>
- <header class="site-header" id="top">
-  <div class="container navline"><a class="brand" href="#top"><span class="brand-square">ACD<span class="brand-dot">.</span></span><span>OSTAD <small>MERN COURSE / LEARNING RECORD</small></span></a>
-   <nav class="nav" aria-label="Page sections"><a href="#weeks">Weeks</a><a href="#modules">Topics</a><a href="#assignments">Assignments</a><a href="#sources">Resources</a></nav>
-  </div>
-  <!-- INTRO: Identity, course start date and self-reported progress. -->
-  <div class="container hero">
-   <div class="hero-main">
-    <p class="eyebrow"><span class="eyebrow-stroke"></span>MY STUDY RECORD / 2026</p>
-    <h1>Learning to build <em>for the web.</em></h1>
-    <p class="intro">Module 01–05 syllabus review · HTML, CSS, Tailwind CSS, responsive design, AI tools, GitHub and Claude Code setup.</p>
-    <div class="student-lines">
-     <div><span>Student</span><strong>Anik Chandra Dey</strong></div>
-     <div><span>Program</span><strong>BSc in Computer Science &amp; Engineering</strong></div>
-     <div><span>University</span><strong>American International University-Bangladesh (AIUB)</strong></div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Anik Chandra Dey's OSTAD MERN learning record covering eight learning modules, 400 topic-wise practice problems, assignments and skill development." name="description"/>
+  <title>
+   Ostad Learning Tracker | Anik Chandra Dey | Eight Modules
+  </title>
+  <!-- STYLES: Keep page structure and presentation in separate files. -->
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to course record
+  </a>
+  <header class="site-header" id="top">
+   <div class="container navline">
+    <a class="brand" href="#top">
+     <span class="brand-square">
+      ACD
+      <span class="brand-dot">
+       .
+      </span>
+     </span>
+     <span>
+      OSTAD
+      <small>
+       MERN COURSE / LEARNING RECORD
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Page sections" class="nav">
+     <a href="../index.html">
+      Repository Home
+     </a>
+     <a href="#overview">
+      Overview
+     </a>
+     <a href="#weeks">
+      Weeks
+     </a>
+     <a href="#modules">
+      Modules
+     </a>
+     <a href="#problem-solving">
+      Problem Solving
+     </a>
+     <a href="#skills">
+      Skills
+     </a>
+     <a href="#assignments">
+      Assignments
+     </a>
+     <a href="#sources">
+      Resources
+     </a>
+    </nav>
+   </div>
+   <!-- INTRO: Identity, course start date and self-reported progress. -->
+   <div class="container hero">
+    <div class="hero-main">
+     <p class="eyebrow">
+      <span class="eyebrow-stroke">
+      </span>
+      MY STUDY RECORD / 2026
+     </p>
+     <h1>
+      Learning to build
+      <em>
+       for the web.
+      </em>
+     </h1>
+     <p class="intro">
+      Module 01&ndash;08 learning map &middot; HTML, CSS, Tailwind CSS, responsive design, AI-assisted workflow, JavaScript fundamentals, DOM and events, advanced JavaScript and asynchronous programming.
+     </p>
+     <div class="student-lines">
+      <div>
+       <span>
+        Student
+       </span>
+       <strong>
+        Anik Chandra Dey
+       </strong>
+      </div>
+      <div>
+       <span>
+        Program
+       </span>
+       <strong>
+        BSc in Computer Science &amp; Engineering
+       </strong>
+      </div>
+      <div>
+       <span>
+        University
+       </span>
+       <strong>
+        American International University-Bangladesh (AIUB)
+       </strong>
+      </div>
+     </div>
+    </div>
+    <div class="progress-panel">
+     <span class="panel-label">
+      MODULE PACKS AVAILABLE
+     </span>
+     <div class="progress-count">
+      <strong>
+       08
+      </strong>
+      <span>
+       / 08 module packs
+      </span>
+     </div>
+     <div aria-label="Eight module learning packs are available" class="progress-line" role="img">
+      <span>
+      </span>
+     </div>
+     <p class="progress-note">
+      Eight module-wise learning and practice folders are represented in this tracker. Availability does not mean that every lesson, project or problem has been completed.
+     </p>
+     <dl class="dates">
+      <div>
+       <dt>
+        Course started
+       </dt>
+       <dd>
+        <time datetime="2026-08-06">
+         06 AUG 2026
+        </time>
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Tracker updated
+       </dt>
+       <dd>
+        <time datetime="2026-11-13">
+         13 NOV 2026
+        </time>
+       </dd>
+      </div>
+     </dl>
+     <div class="personal-progress" id="personal-progress">
+      <span class="personal-progress-label">
+       MY STUDY CHECKLIST
+      </span>
+      <strong aria-live="polite" id="completed-count">
+       0 / 8 modules marked studied
+      </strong>
+      <div aria-label="Modules marked as studied" aria-valuemax="8" aria-valuemin="0" aria-valuenow="0" class="personal-progress-track" role="progressbar">
+       <span id="personal-progress-fill">
+       </span>
+      </div>
+      <button class="reset-progress" id="reset-progress" type="button">
+       Reset my study checks
+      </button>
+     </div>
     </div>
    </div>
-   <div class="progress-panel">
-    <span class="panel-label">SELF-REPORTED COVERAGE</span>
-    <div class="progress-count"><strong>05</strong><span>/ 05 modules</span></div>
-    <div class="progress-line" role="img" aria-label="All five module learning packs covered"><span></span></div>
-    <p class="progress-note">All five module topic packs are marked covered based on your update. Practical mastery has not been independently assessed.</p>
-    <dl class="dates"><div><dt>Course started</dt><dd><time datetime="2026-08-06">06 AUG 2026</time></dd></div><div><dt>Record through</dt><dd><time datetime="2026-10-23">23 OCT 2026</time></dd></div></dl>
+  </header>
+  <main class="container" id="main">
+   <!-- OVERVIEW: Six learning modules are available in this repository. -->
+   <section aria-labelledby="overview-title" class="section" id="overview">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       01 / COURSE STATUS
+      </p>
+      <h2 id="overview-title">
+       Eight learning modules
+      </h2>
+     </div>
+     <p>
+      Eight module folders and their practice guides are listed below. Use the study checkboxes to record your own progress.
+     </p>
+    </div>
+    <div class="overview-grid">
+     <a class="overview" href="#module-1" style="--accent:#ff875d">
+      <span class="overview-num">
+       01
+      </span>
+      <strong>
+       HTML5
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-2" style="--accent:#71acff">
+      <span class="overview-num">
+       02
+      </span>
+      <strong>
+       CSS3
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-3" style="--accent:#57d6d0">
+      <span class="overview-num">
+       03
+      </span>
+      <strong>
+       Tailwind CSS v4
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-4" style="--accent:#b5a0ff">
+      <span class="overview-num">
+       04
+      </span>
+      <strong>
+       Responsive Design
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-5" style="--accent:#ffd479">
+      <span class="overview-num">
+       05
+      </span>
+      <strong>
+       Claude Code + AI Workflow
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-6" style="--accent:#7dd3fc">
+      <span class="overview-num">
+       06
+      </span>
+      <strong>
+       JavaScript Fundamentals
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-7" style="--accent:#78dfb5">
+      <span class="overview-num">
+       07
+      </span>
+      <strong>
+       DOM + Events
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+     <a class="overview" href="#module-8" style="--accent:#c5a6ff">
+      <span class="overview-num">
+       08
+      </span>
+      <strong>
+       Advanced + Async JavaScript
+      </strong>
+      <small>
+       Open topics &nearrow;
+      </small>
+     </a>
+    </div>
+   </section>
+   <section aria-labelledby="weeks-title" class="section" id="weeks">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       02 / WEEKLY LEARNING MAP
+      </p>
+      <h2 id="weeks-title">
+       From 6 August to 23 October
+      </h2>
+     </div>
+     <p>
+      12 calendar-week blocks since the start date, showing course order and a useful review structure.
+     </p>
+    </div>
+    <div class="notice">
+     <span aria-hidden="true" class="notice-symbol">
+      i
+     </span>
+     <p>
+      <strong>
+       About the week dates:
+      </strong>
+      Your exact lesson-by-lesson completion dates were not provided. W01&ndash;W05 follow the module order; W06&ndash;W12 are suggested revision groupings of topics you already covered. They are
+      <strong>
+       not
+      </strong>
+      claimed class attendance or completed-on dates.
+      <strong>
+       Modules 7&ndash;8 note:
+      </strong>
+      The DOM/events and advanced/asynchronous JavaScript practice packs are included in the current tracker, but no exact lesson-completion dates were supplied for them.
+     </p>
+    </div>
+    <div class="week-grid">
+     <article class="week-card" style="--accent:#ff875d">
+      <div class="week-card-header">
+       <span class="week-num">
+        W01
+       </span>
+       <span class="week-date">
+        <time datetime="2026-08-06">
+         06 Aug
+        </time>
+        &ndash;
+        <time datetime="2026-08-12">
+         12 Aug
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Sequence map
+      </span>
+      <h3>
+       HTML fundamentals
+      </h3>
+      <p>
+       Document structure; text, links, images, lists and basic tables.
+      </p>
+      <div class="week-foot">
+       Module 01 &middot; Curriculum sequence
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#71acff">
+      <div class="week-card-header">
+       <span class="week-num">
+        W02
+       </span>
+       <span class="week-date">
+        <time datetime="2026-08-13">
+         13 Aug
+        </time>
+        &ndash;
+        <time datetime="2026-08-19">
+         19 Aug
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Sequence map
+      </span>
+      <h3>
+       CSS basics
+      </h3>
+      <p>
+       CSS types, selectors, colors, margin/padding and box model.
+      </p>
+      <div class="week-foot">
+       Module 02 &middot; Curriculum sequence
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#57d6d0">
+      <div class="week-card-header">
+       <span class="week-num">
+        W03
+       </span>
+       <span class="week-date">
+        <time datetime="2026-08-20">
+         20 Aug
+        </time>
+        &ndash;
+        <time datetime="2026-08-26">
+         26 Aug
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Sequence map
+      </span>
+      <h3>
+       Tailwind CSS basics
+      </h3>
+      <p>
+       Utility-first layout, typography, sizing and cards.
+      </p>
+      <div class="week-foot">
+       Module 03 &middot; Curriculum sequence
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#b5a0ff">
+      <div class="week-card-header">
+       <span class="week-num">
+        W04
+       </span>
+       <span class="week-date">
+        <time datetime="2026-08-27">
+         27 Aug
+        </time>
+        &ndash;
+        <time datetime="2026-09-02">
+         02 Sep
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Sequence map
+      </span>
+      <h3>
+       Responsive design + Git
+      </h3>
+      <p>
+       Mobile breakpoints, media, AI feedback and Git workflow.
+      </p>
+      <div class="week-foot">
+       Module 04 &middot; Curriculum sequence
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#ffd479">
+      <div class="week-card-header">
+       <span class="week-num">
+        W05
+       </span>
+       <span class="week-date">
+        <time datetime="2026-09-03">
+         03 Sep
+        </time>
+        &ndash;
+        <time datetime="2026-09-09">
+         09 Sep
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Sequence map
+      </span>
+      <h3>
+       Claude Code setup
+      </h3>
+      <p>
+       VS Code, permissions, CLAUDE.md, first safe prompts.
+      </p>
+      <div class="week-foot">
+       Module 05 &middot; Curriculum sequence
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W06
+       </span>
+       <span class="week-date">
+        <time datetime="2026-09-10">
+         10 Sep
+        </time>
+        &ndash;
+        <time datetime="2026-09-16">
+         16 Sep
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       HTML revision
+      </h3>
+      <p>
+       Revisit forms, image/audio/video, semantic HTML and accessibility.
+      </p>
+      <div class="week-foot">
+       Module 01 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W07
+       </span>
+       <span class="week-date">
+        <time datetime="2026-09-17">
+         17 Sep
+        </time>
+        &ndash;
+        <time datetime="2026-09-23">
+         23 Sep
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       CSS revision
+      </h3>
+      <p>
+       Revisit Flexbox, Grid, position, media queries and transitions.
+      </p>
+      <div class="week-foot">
+       Module 02 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W08
+       </span>
+       <span class="week-date">
+        <time datetime="2026-09-24">
+         24 Sep
+        </time>
+        &ndash;
+        <time datetime="2026-09-30">
+         30 Sep
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       Tailwind revision
+      </h3>
+      <p>
+       Revisit responsive utilities, states, dark mode and reusable cards.
+      </p>
+      <div class="week-foot">
+       Module 03 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W09
+       </span>
+       <span class="week-date">
+        <time datetime="2026-10-01">
+         01 Oct
+        </time>
+        &ndash;
+        <time datetime="2026-10-07">
+         07 Oct
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       Responsive QA revision
+      </h3>
+      <p>
+       Check mobile/tablet/desktop layouts, images, forms and tables.
+      </p>
+      <div class="week-foot">
+       Module 04 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W10
+       </span>
+       <span class="week-date">
+        <time datetime="2026-10-08">
+         08 Oct
+        </time>
+        &ndash;
+        <time datetime="2026-10-14">
+         14 Oct
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       Git and AI revision
+      </h3>
+      <p>
+       Review branches, commits, pull requests and AI-assisted code review.
+      </p>
+      <div class="week-foot">
+       Module 04 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W11
+       </span>
+       <span class="week-date">
+        <time datetime="2026-10-15">
+         15 Oct
+        </time>
+        &ndash;
+        <time datetime="2026-10-21">
+         21 Oct
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       Claude Code revision
+      </h3>
+      <p>
+       Revisit project instructions, safe prompts, diff review and debugging.
+      </p>
+      <div class="week-foot">
+       Module 05 &middot; Suggested review
+      </div>
+     </article>
+     <article class="week-card" style="--accent:#82a6bd">
+      <div class="week-card-header">
+       <span class="week-num">
+        W12
+       </span>
+       <span class="week-date">
+        <time datetime="2026-10-22">
+         22 Oct
+        </time>
+        &ndash;
+        <time datetime="2026-10-23">
+         23 Oct
+        </time>
+       </span>
+      </div>
+      <span class="week-kind">
+       Review grouping
+      </span>
+      <h3>
+       Portfolio and assignment recap
+      </h3>
+      <p>
+       Review the work available across Modules 1&ndash;6 and the ten assignment files.
+      </p>
+      <div class="week-foot">
+       Modules 01&ndash;06 &middot; Suggested review
+      </div>
+     </article>
+    </div>
+   </section>
+   <section aria-labelledby="modules-title" class="section" id="modules">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       03 / ALL STUDIED TOPICS
+      </p>
+      <h2 id="modules-title">
+       What I am learning &amp; where to practise
+      </h2>
+     </div>
+     <p>
+      Open a module to review its topics, then use the linked module-wise practice guide. Mark a module as studied only after you have worked through it.
+     </p>
+    </div>
+    <div class="module-stack">
+     <article class="module" id="module-1" style="--accent:#ff875d">
+      <div class="module-topline">
+       <span class="module-digit">
+        01
+       </span>
+       <div>
+        <p class="minor">
+         Covered syllabus &middot; Module 1
+        </p>
+        <h3>
+         HTML Fundamentals
+        </h3>
+        <p class="module-summary">
+         Document structure, useful tags, accessible forms, media and modern HTML5.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-1" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details" open="">
+       <summary>
+        <span>
+         View detailed topics and reading resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in your supplied Code lessons
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Foundation
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            HTML document structure
+           </li>
+           <li>
+            Headings, paragraphs and text tags
+           </li>
+           <li>
+            Links and anchor navigation
+           </li>
+           <li>
+            Images and alt text
+           </li>
+           <li>
+            Ordered and unordered lists
+           </li>
+           <li>
+            Tables with thead/tbody
+           </li>
+           <li>
+            Attributes, div and span
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Forms and meaning
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Forms, labels and input types
+           </li>
+           <li>
+            Buttons, select and textarea
+           </li>
+           <li>
+            Semantic HTML landmarks
+           </li>
+           <li>
+            HTML comments and formatting tags
+           </li>
+           <li>
+            HTML entities and symbols
+           </li>
+           <li>
+            Link/script tags (markup reference only)
+           </li>
+           <li>
+            Meta tags and basic SEO
+           </li>
+           <li>
+            Accessible article structure
+           </li>
+           <li>
+            Form validation attributes
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Media and HTML5
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            iframe and embedding
+           </li>
+           <li>
+            Audio and video elements
+           </li>
+           <li>
+            Responsive picture and images
+           </li>
+           <li>
+            Block vs inline elements
+           </li>
+           <li>
+            Details, summary and dialog concepts
+           </li>
+           <li>
+            Progress, meter and output
+           </li>
+           <li>
+            Template, data, SVG and canvas
+           </li>
+           <li>
+            HTML5 special elements
+           </li>
+           <li>
+            Quick reference and best practices
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-1 (HTML)/index.html">
+           <code>
+            module-1 (HTML)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-01-HTML/README.md">
+           <code>
+            Problem-Solving/Module-01-HTML/README.md
+           </code>
+          </a>
+         </p>
+         <ul class="resource-list">
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: HTML structure
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Read the basics, then compare with Code/01&ndash;12.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: Forms and buttons
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Review label/for, input types and form structure.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: Web forms
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Look up native form controls and validation.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://validator.w3.org/" rel="noopener noreferrer" target="_blank">
+            <span>
+             HTML Validator
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Validate markup after making changes.
+           </p>
+          </li>
+         </ul>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Open the HTML lessons and explain why each section uses its tags. Review your first three assignments.
+          </p>
+         </div>
+         <p class="minor" style="margin-top:14px">
+          Assignment reference
+         </p>
+         <ul class="mini-list">
+          <li>
+           01 &mdash; Personal Portfolio
+          </li>
+          <li>
+           02 &mdash; Student Registration
+          </li>
+          <li>
+           03 &mdash; Smartphone Contact
+          </li>
+         </ul>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-2" style="--accent:#71acff">
+      <div class="module-topline">
+       <span class="module-digit">
+        02
+       </span>
+       <div>
+        <p class="minor">
+         Covered syllabus &middot; Module 2
+        </p>
+        <h3>
+         CSS Fundamentals
+        </h3>
+        <p class="module-summary">
+         Selectors, cascade, spacing, typography, Flexbox, Grid and responsive CSS.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-2" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details">
+       <summary>
+        <span>
+         View detailed topics and reading resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in your supplied Code lessons
+         </h4>
+         <div class="topic-group">
+          <h4>
+           First steps
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Inline, internal and external CSS
+           </li>
+           <li>
+            CSS syntax and selectors
+           </li>
+           <li>
+            CSS comments
+           </li>
+           <li>
+            Colors and background
+           </li>
+           <li>
+            Borders and border radius
+           </li>
+           <li>
+            Margin, padding and box model
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Text and layout
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Text and font styling
+           </li>
+           <li>
+            Line height and spacing
+           </li>
+           <li>
+            Display and overflow
+           </li>
+           <li>
+            Float and clear
+           </li>
+           <li>
+            Units and custom properties
+           </li>
+           <li>
+            Cascade and specificity
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Modern CSS
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Pseudo-classes and elements
+           </li>
+           <li>
+            Position and z-index
+           </li>
+           <li>
+            Flexbox layouts
+           </li>
+           <li>
+            CSS Grid layouts
+           </li>
+           <li>
+            Responsive media queries
+           </li>
+           <li>
+            Responsive images and object-fit
+           </li>
+           <li>
+            Forms and tables styling
+           </li>
+           <li>
+            Transitions and transforms
+           </li>
+           <li>
+            Lists, links and buttons
+           </li>
+           <li>
+            CSS organization and quick reference
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-2 (CSS)/index.html">
+           <code>
+            module-2 (CSS)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-02-CSS/README.md">
+           <code>
+            Problem-Solving/Module-02-CSS/README.md
+           </code>
+          </a>
+         </p>
+         <ul class="resource-list">
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: CSS styling basics
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Begin with selectors and the box model.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: CSS layout
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Practice Flexbox, Grid and positioning.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" rel="noopener noreferrer" target="_blank">
+            <span>
+             MDN: Box model
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Draw content, padding, border and margin.
+           </p>
+          </li>
+         </ul>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Inspect the standalone stylesheet in each Code lesson. Change one property and predict the output before refreshing.
+          </p>
+         </div>
+         <p class="minor" style="margin-top:14px">
+          Assignment reference
+         </p>
+         <ul class="mini-list">
+          <li>
+           04 &mdash; Chess Board
+          </li>
+          <li>
+           05 &mdash; CSS Service Cards
+          </li>
+          <li>
+           06 &mdash; Caf&eacute; Landing Page
+          </li>
+         </ul>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-3" style="--accent:#57d6d0">
+      <div class="module-topline">
+       <span class="module-digit">
+        03
+       </span>
+       <div>
+        <p class="minor">
+         Covered syllabus &middot; Module 3
+        </p>
+        <h3>
+         Tailwind CSS
+        </h3>
+        <p class="module-summary">
+         Utility-first styling, breakpoints, interface states and reusable patterns.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-3" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details">
+       <summary>
+        <span>
+         View detailed topics and reading resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in your supplied Code lessons
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Core utilities
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Utility-first classes
+           </li>
+           <li>
+            Colors and backgrounds
+           </li>
+           <li>
+            Typography
+           </li>
+           <li>
+            Spacing and sizing
+           </li>
+           <li>
+            Borders and box model
+           </li>
+           <li>
+            Display and overflow
+           </li>
+           <li>
+            Flexbox
+           </li>
+           <li>
+            Grid
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Responsive UI
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Responsive breakpoints
+           </li>
+           <li>
+            Position and z-index
+           </li>
+           <li>
+            Shadows and radius
+           </li>
+           <li>
+            Hover and focus states
+           </li>
+           <li>
+            Forms and validation
+           </li>
+           <li>
+            Tables and lists
+           </li>
+           <li>
+            Images and object-fit
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Extra styling
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Gradients and backdrop effects
+           </li>
+           <li>
+            Transitions and transforms
+           </li>
+           <li>
+            Dark mode
+           </li>
+           <li>
+            Arbitrary values
+           </li>
+           <li>
+            Container layout
+           </li>
+           <li>
+            Accessibility utilities
+           </li>
+           <li>
+            Reusable patterns
+           </li>
+           <li>
+            Navigation, headers and footers
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Reference topics
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Form/table/media combinations
+           </li>
+           <li>
+            Arbitrary variants and states
+           </li>
+           <li>
+            React className preview &mdash; not React proficiency
+           </li>
+           <li>
+            Vite production setup overview &mdash; no JS course
+           </li>
+           <li>
+            Quick reference
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-3 (Tailwind CSS)/index.html">
+           <code>
+            module-3 (Tailwind CSS)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-03-Tailwind-CSS/README.md">
+           <code>
+            Problem-Solving/Module-03-Tailwind-CSS/README.md
+           </code>
+          </a>
+         </p>
+         <ul class="resource-list">
+          <li class="resource">
+           <a href="https://tailwindcss.com/docs/styling-with-utility-classes" rel="noopener noreferrer" target="_blank">
+            <span>
+             Tailwind: Utility classes
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Read each class as one style instruction.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://tailwindcss.com/docs/responsive-design" rel="noopener noreferrer" target="_blank">
+            <span>
+             Tailwind: Responsive design
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Compare default classes with md: and lg:.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://tailwindcss.com/docs/hover-focus-and-other-states" rel="noopener noreferrer" target="_blank">
+            <span>
+             Tailwind: Hover and focus
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Try focus-visible and hover states.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://tailwindcss.com/docs/installation/play-cdn" rel="noopener noreferrer" target="_blank">
+            <span>
+             Tailwind: Play CDN
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Learning demo only; production uses a build setup.
+           </p>
+          </li>
+         </ul>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Rebuild a CSS card using Tailwind classes, then explain spacing, grid columns and mobile breakpoints.
+          </p>
+         </div>
+         <p class="minor" style="margin-top:14px">
+          Assignment reference
+         </p>
+         <ul class="mini-list">
+          <li>
+           07 &mdash; Course Cards
+          </li>
+          <li>
+           08 &mdash; Pricing Cards
+          </li>
+         </ul>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-4" style="--accent:#b5a0ff">
+      <div class="module-topline">
+       <span class="module-digit">
+        04
+       </span>
+       <div>
+        <p class="minor">
+         Covered syllabus &middot; Module 4
+        </p>
+        <h3>
+         Responsive Design, AI Tools &amp; GitHub
+        </h3>
+        <p class="module-summary">
+         Mobile-first thinking, accessible layouts, careful AI review and collaboration basics.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-4" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details">
+       <summary>
+        <span>
+         View detailed topics and reading resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in your supplied Code lessons
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Responsive design
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Responsive design fundamentals
+           </li>
+           <li>
+            Mobile-first approach and breakpoints
+           </li>
+           <li>
+            Flexbox and grid layouts
+           </li>
+           <li>
+            Responsive images, forms and tables
+           </li>
+           <li>
+            Responsive navigation and typography
+           </li>
+           <li>
+            Accessibility, performance and device testing
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Using AI
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            AI tools in web development
+           </li>
+           <li>
+            Prompt writing and code review
+           </li>
+           <li>
+            Reviewing suggested HTML/CSS changes
+           </li>
+           <li>
+            AI-assisted responsive debugging
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Git and teamwork
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Git and GitHub repository basics
+           </li>
+           <li>
+            Stage, commit, push and pull
+           </li>
+           <li>
+            Branches and pull requests
+           </li>
+           <li>
+            Merge conflict basics
+           </li>
+           <li>
+            Team workflow and safe reviews
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/index.html">
+           <code>
+            module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-04-Responsive-Design/README.md">
+           <code>
+            Problem-Solving/Module-04-Responsive-Design/README.md
+           </code>
+          </a>
+         </p>
+         <ul class="resource-list">
+          <li class="resource">
+           <a href="https://web.dev/learn/design" rel="noopener noreferrer" target="_blank">
+            <span>
+             web.dev: Responsive design
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Go to Media queries, Images and Responsive layouts.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://developer.chrome.com/docs/devtools/device-mode" rel="noopener noreferrer" target="_blank">
+            <span>
+             Chrome DevTools: Device mode
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Test phone, tablet and desktop widths.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://docs.github.com/en/get-started/using-github/hello-world" rel="noopener noreferrer" target="_blank">
+            <span>
+             GitHub: Hello World
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Follow the branch, commit and pull request example.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" rel="noopener noreferrer" target="_blank">
+            <span>
+             Git Book: Branching
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Review why branches help team work.
+           </p>
+          </li>
+         </ul>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Open a responsive page at 375px, 768px and desktop size. Explain one fix and commit it in Git.
+          </p>
+         </div>
+         <p class="minor" style="margin-top:14px">
+          Assignment reference
+         </p>
+         <ul class="mini-list">
+          <li>
+           09 &mdash; Responsive Campus Event
+          </li>
+         </ul>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-5" style="--accent:#ffd479">
+      <div class="module-topline">
+       <span class="module-digit">
+        05
+       </span>
+       <div>
+        <p class="minor">
+         Covered syllabus &middot; Module 5
+        </p>
+        <h3>
+         HTML, CSS, Tailwind &amp; Claude Code Setup
+        </h3>
+        <p class="module-summary">
+         Setup, project instructions, safe permissions and AI-assisted frontend editing.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-5" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details">
+       <summary>
+        <span>
+         View detailed topics and reading resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in your supplied Code lessons
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Setup and access
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Windows installation and version check
+           </li>
+           <li>
+            First sign-in and account access
+           </li>
+           <li>
+            Claude Code in VS Code
+           </li>
+           <li>
+            First safe coding session
+           </li>
+           <li>
+            Project CLAUDE.md instructions
+           </li>
+           <li>
+            Permissions and security
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Frontend recap
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            HTML5 structure and semantic tags
+           </li>
+           <li>
+            CSS design system basics
+           </li>
+           <li>
+            Tailwind v4 browser practice
+           </li>
+           <li>
+            Tailwind CLI build overview
+           </li>
+           <li>
+            Responsive accessible interfaces
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           AI workflow
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Git/GitHub workflow review
+           </li>
+           <li>
+            Setup troubleshooting
+           </li>
+           <li>
+            Practical AI prompts
+           </li>
+           <li>
+            Reviewing changes before acceptance
+           </li>
+           <li>
+            Project improvement routine
+           </li>
+           <li>
+            Final practical checklist
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-5 (Claude Code Setup)/index.html">
+           <code>
+            module-5 (Claude Code Setup)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-05-Claude-Code-and-AI-Workflow/README.md">
+           <code>
+            Problem-Solving/Module-05-Claude-Code-and-AI-Workflow/README.md
+           </code>
+          </a>
+         </p>
+         <ul class="resource-list">
+          <li class="resource">
+           <a href="https://code.claude.com/docs/en/quickstart" rel="noopener noreferrer" target="_blank">
+            <span>
+             Claude Code: Quickstart
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Follow installation and the first safe session.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://code.claude.com/docs/en/setup" rel="noopener noreferrer" target="_blank">
+            <span>
+             Claude Code: Setup
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Check prerequisites and configuration.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://code.claude.com/docs/en/memory" rel="noopener noreferrer" target="_blank">
+            <span>
+             Claude Code: Project memory
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Learn what CLAUDE.md should contain.
+           </p>
+          </li>
+          <li class="resource">
+           <a href="https://code.claude.com/docs/en/settings" rel="noopener noreferrer" target="_blank">
+            <span>
+             Claude Code: Settings
+            </span>
+            <span aria-hidden="true">
+             &nearrow;
+            </span>
+           </a>
+           <p>
+            Review permission boundaries and settings.
+           </p>
+          </li>
+         </ul>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Read existing code, ask Claude to explain it, inspect proposed changes and verify them in a browser before committing.
+          </p>
+         </div>
+         <p class="minor" style="margin-top:14px">
+          Assignment reference
+         </p>
+         <ul class="mini-list">
+          <li>
+           10 &mdash; Claude Code Review Board
+          </li>
+         </ul>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-6" style="--accent:#7dd3fc">
+      <div class="module-topline">
+       <span class="module-digit">
+        06
+       </span>
+       <div>
+        <p class="minor">
+         Available learning pack &middot; Module 6
+        </p>
+        <h3>
+         JavaScript Fundamentals
+        </h3>
+        <p class="module-summary">
+         JavaScript fundamentals, practical projects, core language concepts and 50 topic-wise runnable practice problems.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-6" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details">
+       <summary>
+        <span>
+         View JavaScript topics and practice resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Topics in the supplied JavaScript lesson folder
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Core language
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Overview, output and comments
+           </li>
+           <li>
+            Variables and data types
+           </li>
+           <li>
+            Operators and conditions
+           </li>
+           <li>
+            Switch statements and loops
+           </li>
+           <li>
+            Functions, parameters and return values
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Data structures
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Objects and arrays
+           </li>
+           <li>
+            for...in and for...of
+           </li>
+           <li>
+            Array methods
+           </li>
+           <li>
+            String methods
+           </li>
+           <li>
+            Date, Math and Number objects
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Practice extensions
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            DOM events and form handling
+           </li>
+           <li>
+            Local storage
+           </li>
+           <li>
+            Fetch and JSON
+           </li>
+           <li>
+            Promises and async/await
+           </li>
+           <li>
+            50 topic-wise JavaScript problems
+           </li>
+          </ul>
+         </div>
+         <p class="module-task">
+          Project practice: use the JavaScript project folder in Module 06 if it is present in your local repository. Run each project, understand the code and customize it before adding it to your portfolio.
+         </p>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to study
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-6(foundation of java script)/index.html">
+           <code>
+            module-6(foundation of java script)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-06-JavaScript/README.md">
+           <code>
+            Problem-Solving/Module-06-JavaScript/README.md
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          Project hub
+          <a href="../module-6(foundation of java script)/Projects/index.html">
+           <code>
+            module-6(foundation of java script)/Projects/index.html
+           </code>
+          </a>
+         </p>
+         <div class="module-task">
+          <span class="minor">
+           Revise by doing
+          </span>
+          <p>
+           Run one lesson, explain the code, then complete a related problem. Use the browser console to inspect errors and output.
+          </p>
+         </div>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-7" style="--accent:#78dfb5">
+      <div class="module-topline">
+       <span class="module-digit">
+        07
+       </span>
+       <div>
+        <p class="minor">
+         Available practice pack &middot; Module 7
+        </p>
+        <h3>
+         JavaScript DOM and Events
+        </h3>
+        <p class="module-summary">
+         11 core lesson topics covering DOM selection, content, attributes, classes, styles, element creation/removal and browser events, plus 50 practice problems.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-7" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details" open="True">
+       <summary>
+        <span>
+         View lesson topics and practice resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Core topics
+         </h4>
+         <div class="topic-group">
+          <h4>
+           DOM fundamentals
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            JavaScript DOM &mdash; understanding the Document Object Model
+           </li>
+           <li>
+            Accessing and selecting elements
+           </li>
+           <li>
+            Changing text with textContent and innerText
+           </li>
+           <li>
+            Working with attributes: getAttribute() and setAttribute()
+           </li>
+           <li>
+            Adding and removing classes with classList
+           </li>
+           <li>
+            Changing styles with the style property
+           </li>
+           <li>
+            Creating new elements with createElement()
+           </li>
+           <li>
+            Appending elements with append()
+           </li>
+           <li>
+            Removing elements with removeChild() and remove()
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Browser events
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Mouse events, keyboard events, form events and window events
+           </li>
+           <li>
+            The Event object and target property
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Recommended reinforcement
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Event bubbling and capturing
+           </li>
+           <li>
+            Event delegation for dynamic lists
+           </li>
+           <li>
+            preventDefault(), stopPropagation() and DOMContentLoaded
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to practise
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-7(foundation of java script important part)/index.html">
+           <code>
+            module-7(foundation of java script important part)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-07-Foundation-of-JavaScript/README.md">
+           <code>
+            Problem-Solving/Module-07-Foundation-of-JavaScript/README.md
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          Project hub
+          <a href="../module-7(foundation of java script important part)/02-Projects/index.html">
+           <code>
+            module-7(foundation of java script important part)/02-Projects/index.html
+           </code>
+          </a>
+         </p>
+         <div class="module-task">
+          <span class="minor">
+           Recommended practice
+          </span>
+          <p>
+           Complete the DOM examples in order. For every exercise, identify the selected element, the DOM property or method used, and the event that triggers the change. Then solve the related challenge without copying.
+          </p>
+         </div>
+        </aside>
+       </div>
+      </details>
+     </article>
+     <article class="module" id="module-8" style="--accent:#c5a6ff">
+      <div class="module-topline">
+       <span class="module-digit">
+        08
+       </span>
+       <div>
+        <p class="minor">
+         Available practice pack &middot; Module 8
+        </p>
+        <h3>
+         Advanced and Asynchronous JavaScript
+        </h3>
+        <p class="module-summary">
+         18 core lesson topics covering scope, closures, OOP, functions, Promises, async/await, Fetch, modules, storage and modern JavaScript operators, plus 50 practice problems.
+        </p>
+       </div>
+       <label class="module-check">
+        <input data-module-check="module-8" type="checkbox"/>
+        <span>
+         Studied
+        </span>
+       </label>
+      </div>
+      <details class="module-details" open="True">
+       <summary>
+        <span>
+         View lesson topics and practice resources
+        </span>
+        <span aria-hidden="true" class="summary-chevron">
+         ⌄
+        </span>
+       </summary>
+       <div class="module-content">
+        <section class="module-topic-section">
+         <h4 class="column-title">
+          Core topics
+         </h4>
+         <div class="topic-group">
+          <h4>
+           Language and execution
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            JavaScript scope and lexical environment
+           </li>
+           <li>
+            Closures in JavaScript
+           </li>
+           <li>
+            JavaScript OOP (Object-Oriented Programming)
+           </li>
+           <li>
+            Arrow functions vs regular functions
+           </li>
+           <li>
+            JavaScript hoisting
+           </li>
+           <li>
+            Destructuring arrays and objects
+           </li>
+           <li>
+            Spread and rest operators
+           </li>
+           <li>
+            Immediately Invoked Function Expressions (IIFE)
+           </li>
+           <li>
+            map() and reduce() methods
+           </li>
+           <li>
+            Optional chaining
+           </li>
+           <li>
+            Nullish coalescing
+           </li>
+           <li>
+            Falsy values and truthy values
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Asynchronous JavaScript and browser APIs
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Promises and async/await
+           </li>
+           <li>
+            Error handling with try, catch and finally
+           </li>
+           <li>
+            JavaScript ES modules and import
+           </li>
+           <li>
+            Fetch API and asynchronous data handling
+           </li>
+           <li>
+            Web Storage: localStorage and sessionStorage
+           </li>
+          </ul>
+         </div>
+         <div class="topic-group">
+          <h4>
+           Recommended reinforcement
+          </h4>
+          <ul class="topic-chips">
+           <li>
+            Event loop, call stack and task queues
+           </li>
+           <li>
+            Promise.all() and Promise.allSettled()
+           </li>
+           <li>
+            Fetch response checks and network-error handling
+           </li>
+           <li>
+            Debouncing, throttling and request cancellation
+           </li>
+          </ul>
+         </div>
+        </section>
+        <aside class="module-sources">
+         <h4 class="column-title">
+          Where to practise
+         </h4>
+         <p class="code-location">
+          Module lesson hub
+          <a href="../module-8(asynchronous javascript)/index.html">
+           <code>
+            module-8(asynchronous javascript)/index.html
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          50-problem practice guide
+          <a href="../Problem-Solving/Module-08-Asynchronous-JavaScript/README.md">
+           <code>
+            Problem-Solving/Module-08-Asynchronous-JavaScript/README.md
+           </code>
+          </a>
+         </p>
+         <p class="code-location">
+          Project hub
+          <a href="../module-8(asynchronous javascript)/02-Projects/index.html">
+           <code>
+            module-8(asynchronous javascript)/02-Projects/index.html
+           </code>
+          </a>
+         </p>
+         <div class="module-task">
+          <span class="minor">
+           Recommended practice
+          </span>
+          <p>
+           Trace asynchronous code before running it. Practise Promise chains and async/await, handle rejected requests, inspect Network and Console in DevTools, and use Live Server for ES module examples.
+          </p>
+         </div>
+        </aside>
+       </div>
+      </details>
+     </article>
+    </div>
+   </section>
+   <section class="section" id="problem-solving">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       04 / TOPIC-WISE PRACTICE
+      </p>
+      <h2>
+       Problem-Solving Library
+      </h2>
+     </div>
+     <p>
+      Eight folders with 50 problems each. Read the task, run the example, study the comments and solve the challenge yourself. The problem count is material available, not completed work.
+     </p>
+    </div>
+    <div class="problem-summary">
+     <strong>
+      400
+     </strong>
+     <span>
+      topic-wise problems &middot; 50 per module
+     </span>
+    </div>
+    <div class="problem-grid">
+     <article class="problem-card" style="--accent:#ff875d">
+      <span class="problem-number">
+       MODULE 01
+      </span>
+      <h3>
+       HTML
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-01-HTML/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#71acff">
+      <span class="problem-number">
+       MODULE 02
+      </span>
+      <h3>
+       CSS
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-02-CSS/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#57d6d0">
+      <span class="problem-number">
+       MODULE 03
+      </span>
+      <h3>
+       Tailwind CSS
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-03-Tailwind-CSS/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#b5a0ff">
+      <span class="problem-number">
+       MODULE 04
+      </span>
+      <h3>
+       Responsive Design
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-04-Responsive-Design/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#ffd479">
+      <span class="problem-number">
+       MODULE 05
+      </span>
+      <h3>
+       Claude Code + AI Workflow
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-05-Claude-Code-and-AI-Workflow/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#7dd3fc">
+      <span class="problem-number">
+       MODULE 06
+      </span>
+      <h3>
+       JavaScript Fundamentals
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-06-JavaScript/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#78dfb5">
+      <span class="problem-number">
+       MODULE 07
+      </span>
+      <h3>
+       DOM + Events
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-07-Foundation-of-JavaScript/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+     <article class="problem-card" style="--accent:#c5a6ff">
+      <span class="problem-number">
+       MODULE 08
+      </span>
+      <h3>
+       Advanced + Async JavaScript
+      </h3>
+      <p class="problem-count">
+       50 problems
+      </p>
+      <a href="../Problem-Solving/Module-08-Asynchronous-JavaScript/README.md">
+       Open practice guide &rarr;
+      </a>
+     </article>
+    </div>
+    <p class="problem-dashboard-link">
+     <a href="../Problem-Solving/index.html">
+      Open the complete Problem-Solving dashboard &rarr;
+     </a>
+    </p>
+    <p class="problem-note">
+     Run HTML/CSS/JavaScript exercises with VS Code and Live Server where needed. Tailwind CDN and Fetch API examples require an internet connection. ES module examples must be served through Live Server rather than opened as file:// URLs.
+    </p>
+   </section>
+   <section class="section" id="skills">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       05 / SKILL DEVELOPMENT
+      </p>
+      <h2>
+       Skills I am building
+      </h2>
+     </div>
+     <p>
+      A practical skill map for a junior full-stack web developer. These are learning targets, not a claim that every skill is already mastered.
+     </p>
+    </div>
+    <div class="skill-grid">
+     <article class="skill-card">
+      <span class="skill-number">
+       01
+      </span>
+      <h3>
+       Semantic HTML
+      </h3>
+      <p>
+       Structure pages, forms, media and accessible landmarks.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       02
+      </span>
+      <h3>
+       CSS and UI layout
+      </h3>
+      <p>
+       Use the box model, selectors, Flexbox, Grid and maintainable styles.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       03
+      </span>
+      <h3>
+       Tailwind CSS
+      </h3>
+      <p>
+       Build consistent interfaces with utility classes and responsive states.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       04
+      </span>
+      <h3>
+       Responsive QA
+      </h3>
+      <p>
+       Test mobile, tablet and desktop layouts with browser DevTools.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       05
+      </span>
+      <h3>
+       Git and GitHub
+      </h3>
+      <p>
+       Use status, diff, branches, commits, pushes and pull requests safely.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       06
+      </span>
+      <h3>
+       AI-assisted workflow
+      </h3>
+      <p>
+       Write clear prompts, inspect diffs and verify generated code.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       07
+      </span>
+      <h3>
+       JavaScript fundamentals
+      </h3>
+      <p>
+       Work with variables, functions, arrays, objects and control flow.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       08
+      </span>
+      <h3>
+       DOM and events
+      </h3>
+      <p>
+       Select, create and update elements and handle user interactions.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       09
+      </span>
+      <h3>
+       Async JavaScript
+      </h3>
+      <p>
+       Use Promises, async/await, Fetch, modules and browser storage.
+      </p>
+     </article>
+     <article class="skill-card">
+      <span class="skill-number">
+       10
+      </span>
+      <h3>
+       Problem-solving
+      </h3>
+      <p>
+       Break tasks down, debug errors, explain code and test edge cases.
+      </p>
+     </article>
+    </div>
+   </section>
+   <section aria-labelledby="assignments-title" class="section" id="assignments">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       04 / PRACTICAL WORK
+      </p>
+      <h2 id="assignments-title">
+       Assignments &amp; project practice
+      </h2>
+     </div>
+     <p>
+      Ten assignment examples are listed below. The JavaScript module also includes a separate 10-project practice pack; available files do not automatically mean the work is completed.
+     </p>
+    </div>
+    <div class="assignments-panel">
+     <ol class="assignment-list">
+      <li class="assignment-row">
+       <span class="a-index">
+        01
+       </span>
+       <div>
+        <strong>
+         Personal Portfolio
+        </strong>
+        <small>
+         Existing assignment file reviewed
+        </small>
+       </div>
+       <span class="assignment-tag">
+        HTML
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        02
+       </span>
+       <div>
+        <strong>
+         Student Registration Form
+        </strong>
+        <small>
+         Existing assignment file reviewed
+        </small>
+       </div>
+       <span class="assignment-tag">
+        HTML
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        03
+       </span>
+       <div>
+        <strong>
+         Smartphone Contact Form
+        </strong>
+        <small>
+         Existing assignment file reviewed
+        </small>
+       </div>
+       <span class="assignment-tag">
+        HTML
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        04
+       </span>
+       <div>
+        <strong>
+         Chess Board
+        </strong>
+        <small>
+         Folder was shown; recreated example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        CSS
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        05
+       </span>
+       <div>
+        <strong>
+         Service Cards
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        CSS
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        06
+       </span>
+       <div>
+        <strong>
+         Caf&eacute; Landing Page
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        CSS
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        07
+       </span>
+       <div>
+        <strong>
+         Course Cards
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        Tailwind
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        08
+       </span>
+       <div>
+        <strong>
+         Pricing Cards
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        Tailwind
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        09
+       </span>
+       <div>
+        <strong>
+         Responsive Campus Event
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        Responsive + Git
+       </span>
+      </li>
+      <li class="assignment-row">
+       <span class="a-index">
+        10
+       </span>
+       <div>
+        <strong>
+         Claude Code Review Board
+        </strong>
+        <small>
+         Practice example available
+        </small>
+       </div>
+       <span class="assignment-tag">
+        Claude Code
+       </span>
+      </li>
+     </ol>
+     <div class="assignment-note">
+      <strong>
+       Source clarity
+      </strong>
+      <p>
+       You supplied the original first three HTML assignments. The Chess Board folder appeared in your screenshot, but the original source was not available. The remaining assignments are practice examples created for your module pack. Check and customize each before presenting it as completed work.
+      </p>
+      <p>
+       <strong>
+        JavaScript project practice:
+       </strong>
+       Modules 06, 07 and 08 contain 20 runnable JavaScript projects in total. Use each module&rsquo;s project hub to open them, read the README, run the code and customize your work.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="sources-title" class="section" id="sources">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       05 / HOW TO STUDY
+      </p>
+      <h2 id="sources-title">
+       My learning and revision routine
+      </h2>
+     </div>
+     <p>
+      Use the module guides and problem-solving folders to practise consistently and record your own progress.
+     </p>
+    </div>
+    <div class="reading-grid">
+     <article>
+      <span>
+       STEP 01
+      </span>
+      <h3>
+       Open the lesson
+      </h3>
+      <p>
+       Go to
+       <code>
+        Open the module folder dashboard from the Modules section. Each module dashboard links to its lessons, practice work and projects.
+       </code>
+       in VS Code. Open the matching example and its CSS file, if present.
+      </p>
+     </article>
+     <article>
+      <span>
+       STEP 02
+      </span>
+      <h3>
+       Compare with documentation
+      </h3>
+      <p>
+       Use the official links inside the expanded module to confirm a tag, property, Tailwind utility, Git workflow or Claude setup step.
+      </p>
+     </article>
+     <article>
+      <span>
+       STEP 03
+      </span>
+      <h3>
+       Modify and explain
+      </h3>
+      <p>
+       Change one piece of HTML or styling, inspect the output and explain what changed. Test responsive examples on multiple widths.
+      </p>
+     </article>
+    </div>
+    <div class="end-cap">
+     <div>
+      <span class="end-kicker">
+       CURRENT CHECKPOINT
+      </span>
+      <h3>
+       Modules 01&ndash;08: learning resources available
+      </h3>
+      <p>
+       Next MERN stages after JavaScript: React, Node.js, Express.js, MongoDB, authentication, testing and deployment.
+      </p>
+     </div>
+     <a href="https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN" rel="noopener noreferrer" target="_blank">
+      My GitHub repository &nearrow;
+     </a>
+    </div>
+    <div class="repository-shortcuts">
+     <a href="../index.html">
+      Repository home
+     </a>
+     <a href="../Problem-Solving/index.html">
+      400 problem-solving exercises
+     </a>
+     <a href="../Assignment/index.html">
+      Course assignments
+     </a>
+     <a href="https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN" rel="noopener noreferrer" target="_blank">
+      GitHub repository
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container foot-inner">
+    <span>
+     &copy; 2026 &middot; Anik Chandra Dey &middot; CSE, AIUB
+    </span>
+    <span>
+     OSTAD / FULL STACK WITH MERN &middot; TRACKER UPDATED 13 NOV 2026
+    </span>
    </div>
-  </div>
- </header>
- <main id="main" class="container">
-  <!-- OVERVIEW: Only the five modules already described by the student. -->
-  <section class="section" aria-labelledby="overview-title"><div class="section-heading"><div><p class="eyebrow">01 / COURSE STATUS</p><h2 id="overview-title">The modules I covered</h2></div><p>These five modules form the current learning record. No JavaScript study has been marked complete.</p></div><div class="overview-grid"><a class="overview" href="#module-1" style="--accent:#ff875d"><span class="overview-num">01</span><strong>HTML5</strong><small>Covered topics ↗</small></a><a class="overview" href="#module-2" style="--accent:#71acff"><span class="overview-num">02</span><strong>CSS3</strong><small>Covered topics ↗</small></a><a class="overview" href="#module-3" style="--accent:#57d6d0"><span class="overview-num">03</span><strong>Tailwind CSS v4</strong><small>Covered topics ↗</small></a><a class="overview" href="#module-4" style="--accent:#b5a0ff"><span class="overview-num">04</span><strong>Responsive + Git</strong><small>Covered topics ↗</small></a><a class="overview" href="#module-5" style="--accent:#ffd479"><span class="overview-num">05</span><strong>Claude Code</strong><small>Covered topics ↗</small></a></div></section>
+  </footer>
+  <script>
+   /* LEARNING TRACKER: Saves your checked modules in this browser only. */
+(() => {
+  const STORAGE_KEY = "ostad-learning-tracker-progress-v2";
+  const checkboxes = Array.from(document.querySelectorAll("[data-module-check]"));
+  const countLabel = document.getElementById("completed-count");
+  const progressFill = document.getElementById("personal-progress-fill");
+  const progressBar = document.querySelector(".personal-progress-track");
+  const resetButton = document.getElementById("reset-progress");
 
-  <section class="section" id="weeks" aria-labelledby="weeks-title">
-   <div class="section-heading"><div><p class="eyebrow">02 / WEEKLY LEARNING MAP</p><h2 id="weeks-title">From 6 August to 23 October</h2></div><p>12 calendar-week blocks since the start date, showing course order and a useful review structure.</p></div>
-   <div class="notice"><span class="notice-symbol" aria-hidden="true">i</span><p><strong>About the week dates:</strong> Your exact lesson-by-lesson completion dates were not provided. W01–W05 follow the module order; W06–W12 are suggested revision groupings of topics you already covered. They are <strong>not</strong> claimed class attendance or completed-on dates.</p></div>
-   <div class="week-grid"><article class="week-card" style="--accent:#ff875d">
- <div class="week-card-header"><span class="week-num">W01</span><span class="week-date"><time datetime="2026-08-06">06 Aug</time> – <time datetime="2026-08-12">12 Aug</time></span></div>
- <span class="week-kind">Sequence map</span><h3>HTML fundamentals</h3><p>Document structure; text, links, images, lists and basic tables.</p><div class="week-foot">Module 01 · Curriculum sequence</div>
-</article><article class="week-card" style="--accent:#71acff">
- <div class="week-card-header"><span class="week-num">W02</span><span class="week-date"><time datetime="2026-08-13">13 Aug</time> – <time datetime="2026-08-19">19 Aug</time></span></div>
- <span class="week-kind">Sequence map</span><h3>CSS basics</h3><p>CSS types, selectors, colors, margin/padding and box model.</p><div class="week-foot">Module 02 · Curriculum sequence</div>
-</article><article class="week-card" style="--accent:#57d6d0">
- <div class="week-card-header"><span class="week-num">W03</span><span class="week-date"><time datetime="2026-08-20">20 Aug</time> – <time datetime="2026-08-26">26 Aug</time></span></div>
- <span class="week-kind">Sequence map</span><h3>Tailwind CSS basics</h3><p>Utility-first layout, typography, sizing and cards.</p><div class="week-foot">Module 03 · Curriculum sequence</div>
-</article><article class="week-card" style="--accent:#b5a0ff">
- <div class="week-card-header"><span class="week-num">W04</span><span class="week-date"><time datetime="2026-08-27">27 Aug</time> – <time datetime="2026-09-02">02 Sep</time></span></div>
- <span class="week-kind">Sequence map</span><h3>Responsive design + Git</h3><p>Mobile breakpoints, media, AI feedback and Git workflow.</p><div class="week-foot">Module 04 · Curriculum sequence</div>
-</article><article class="week-card" style="--accent:#ffd479">
- <div class="week-card-header"><span class="week-num">W05</span><span class="week-date"><time datetime="2026-09-03">03 Sep</time> – <time datetime="2026-09-09">09 Sep</time></span></div>
- <span class="week-kind">Sequence map</span><h3>Claude Code setup</h3><p>VS Code, permissions, CLAUDE.md, first safe prompts.</p><div class="week-foot">Module 05 · Curriculum sequence</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W06</span><span class="week-date"><time datetime="2026-09-10">10 Sep</time> – <time datetime="2026-09-16">16 Sep</time></span></div>
- <span class="week-kind">Review grouping</span><h3>HTML revision</h3><p>Revisit forms, image/audio/video, semantic HTML and accessibility.</p><div class="week-foot">Module 01 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W07</span><span class="week-date"><time datetime="2026-09-17">17 Sep</time> – <time datetime="2026-09-23">23 Sep</time></span></div>
- <span class="week-kind">Review grouping</span><h3>CSS revision</h3><p>Revisit Flexbox, Grid, position, media queries and transitions.</p><div class="week-foot">Module 02 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W08</span><span class="week-date"><time datetime="2026-09-24">24 Sep</time> – <time datetime="2026-09-30">30 Sep</time></span></div>
- <span class="week-kind">Review grouping</span><h3>Tailwind revision</h3><p>Revisit responsive utilities, states, dark mode and reusable cards.</p><div class="week-foot">Module 03 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W09</span><span class="week-date"><time datetime="2026-10-01">01 Oct</time> – <time datetime="2026-10-07">07 Oct</time></span></div>
- <span class="week-kind">Review grouping</span><h3>Responsive QA revision</h3><p>Check mobile/tablet/desktop layouts, images, forms and tables.</p><div class="week-foot">Module 04 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W10</span><span class="week-date"><time datetime="2026-10-08">08 Oct</time> – <time datetime="2026-10-14">14 Oct</time></span></div>
- <span class="week-kind">Review grouping</span><h3>Git and AI revision</h3><p>Review branches, commits, pull requests and AI-assisted code review.</p><div class="week-foot">Module 04 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W11</span><span class="week-date"><time datetime="2026-10-15">15 Oct</time> – <time datetime="2026-10-21">21 Oct</time></span></div>
- <span class="week-kind">Review grouping</span><h3>Claude Code revision</h3><p>Revisit project instructions, safe prompts, diff review and debugging.</p><div class="week-foot">Module 05 · Suggested review</div>
-</article><article class="week-card" style="--accent:#82a6bd">
- <div class="week-card-header"><span class="week-num">W12</span><span class="week-date"><time datetime="2026-10-22">22 Oct</time> – <time datetime="2026-10-23">23 Oct</time></span></div>
- <span class="week-kind">Review grouping</span><h3>Portfolio and assignment recap</h3><p>Review the work available in Modules 1–5 and the ten assignment files.</p><div class="week-foot">Modules 01–05 · Suggested review</div>
-</article></div>
-  </section>
+  let savedProgress = {};
+  try {
+    savedProgress = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};
+  } catch (error) {
+    savedProgress = {};
+  }
 
-  <section class="section" id="modules" aria-labelledby="modules-title">
-   <div class="section-heading"><div><p class="eyebrow">03 / ALL STUDIED TOPICS</p><h2 id="modules-title">What I learned &amp; where to read it</h2></div><p>Expand a module for its topics, local code location, official resources and practice references.</p></div>
-   <div class="module-stack"><article class="module" id="module-1" style="--accent:#ff875d">
- <div class="module-topline"><span class="module-digit">01</span><div><p class="minor">Covered syllabus · Module 1</p><h3>HTML Fundamentals</h3><p class="module-summary">Document structure, useful tags, accessible forms, media and modern HTML5.</p></div><span class="mini-status">Covered ✓</span></div>
- <details class="module-details" open>
-  <summary><span>View detailed topics and reading resources</span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
-  <div class="module-content">
-    <section class="module-topic-section"><h4 class="column-title">Topics in your supplied Code lessons</h4><div class="topic-group"><h4>Foundation</h4><ul class="topic-chips"><li>HTML document structure</li><li>Headings, paragraphs and text tags</li><li>Links and anchor navigation</li><li>Images and alt text</li><li>Ordered and unordered lists</li><li>Tables with thead/tbody</li><li>Attributes, div and span</li></ul></div><div class="topic-group"><h4>Forms and meaning</h4><ul class="topic-chips"><li>Forms, labels and input types</li><li>Buttons, select and textarea</li><li>Semantic HTML landmarks</li><li>HTML comments and formatting tags</li><li>HTML entities and symbols</li><li>Link/script tags (markup reference only)</li><li>Meta tags and basic SEO</li><li>Accessible article structure</li><li>Form validation attributes</li></ul></div><div class="topic-group"><h4>Media and HTML5</h4><ul class="topic-chips"><li>iframe and embedding</li><li>Audio and video elements</li><li>Responsive picture and images</li><li>Block vs inline elements</li><li>Details, summary and dialog concepts</li><li>Progress, meter and output</li><li>Template, data, SVG and canvas</li><li>HTML5 special elements</li><li>Quick reference and best practices</li></ul></div></section>
-    <aside class="module-sources"><h4 class="column-title">Where to study</h4><p class="code-location">Your local lesson index<br><a href="../module-1 (HTML)/Code/index.html" title="This local link works after you place this tracker inside your MERN repository."><code>module-1 (HTML)/Code/index.html</code></a></p><ul class="resource-list"><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" target="_blank" rel="noopener noreferrer"><span>MDN: HTML structure</span><span aria-hidden="true">↗</span></a><p>Read the basics, then compare with Code/01–12.</p></li><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms" target="_blank" rel="noopener noreferrer"><span>MDN: Forms and buttons</span><span aria-hidden="true">↗</span></a><p>Review label/for, input types and form structure.</p></li><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener noreferrer"><span>MDN: Web forms</span><span aria-hidden="true">↗</span></a><p>Look up native form controls and validation.</p></li><li class="resource"><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer"><span>HTML Validator</span><span aria-hidden="true">↗</span></a><p>Validate markup after making changes.</p></li></ul><div class="module-task"><span class="minor">Revise by doing</span><p>Open the HTML lessons and explain why each section uses its tags. Review your first three assignments.</p></div><p class="minor" style="margin-top:14px">Assignment reference</p><ul class="mini-list"><li>01 — Personal Portfolio</li><li>02 — Student Registration</li><li>03 — Smartphone Contact</li></ul></aside>
-  </div>
- </details>
-</article>
-<article class="module" id="module-2" style="--accent:#71acff">
- <div class="module-topline"><span class="module-digit">02</span><div><p class="minor">Covered syllabus · Module 2</p><h3>CSS Fundamentals</h3><p class="module-summary">Selectors, cascade, spacing, typography, Flexbox, Grid and responsive CSS.</p></div><span class="mini-status">Covered ✓</span></div>
- <details class="module-details" >
-  <summary><span>View detailed topics and reading resources</span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
-  <div class="module-content">
-    <section class="module-topic-section"><h4 class="column-title">Topics in your supplied Code lessons</h4><div class="topic-group"><h4>First steps</h4><ul class="topic-chips"><li>Inline, internal and external CSS</li><li>CSS syntax and selectors</li><li>CSS comments</li><li>Colors and background</li><li>Borders and border radius</li><li>Margin, padding and box model</li></ul></div><div class="topic-group"><h4>Text and layout</h4><ul class="topic-chips"><li>Text and font styling</li><li>Line height and spacing</li><li>Display and overflow</li><li>Float and clear</li><li>Units and custom properties</li><li>Cascade and specificity</li></ul></div><div class="topic-group"><h4>Modern CSS</h4><ul class="topic-chips"><li>Pseudo-classes and elements</li><li>Position and z-index</li><li>Flexbox layouts</li><li>CSS Grid layouts</li><li>Responsive media queries</li><li>Responsive images and object-fit</li><li>Forms and tables styling</li><li>Transitions and transforms</li><li>Lists, links and buttons</li><li>CSS organization and quick reference</li></ul></div></section>
-    <aside class="module-sources"><h4 class="column-title">Where to study</h4><p class="code-location">Your local lesson index<br><a href="../module-2 (CSS)/Code/index.html" title="This local link works after you place this tracker inside your MERN repository."><code>module-2 (CSS)/Code/index.html</code></a></p><ul class="resource-list"><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" target="_blank" rel="noopener noreferrer"><span>MDN: CSS styling basics</span><span aria-hidden="true">↗</span></a><p>Begin with selectors and the box model.</p></li><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout" target="_blank" rel="noopener noreferrer"><span>MDN: CSS layout</span><span aria-hidden="true">↗</span></a><p>Practice Flexbox, Grid and positioning.</p></li><li class="resource"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" target="_blank" rel="noopener noreferrer"><span>MDN: Box model</span><span aria-hidden="true">↗</span></a><p>Draw content, padding, border and margin.</p></li></ul><div class="module-task"><span class="minor">Revise by doing</span><p>Inspect the standalone stylesheet in each Code lesson. Change one property and predict the output before refreshing.</p></div><p class="minor" style="margin-top:14px">Assignment reference</p><ul class="mini-list"><li>04 — Chess Board</li><li>05 — CSS Service Cards</li><li>06 — Café Landing Page</li></ul></aside>
-  </div>
- </details>
-</article>
-<article class="module" id="module-3" style="--accent:#57d6d0">
- <div class="module-topline"><span class="module-digit">03</span><div><p class="minor">Covered syllabus · Module 3</p><h3>Tailwind CSS</h3><p class="module-summary">Utility-first styling, breakpoints, interface states and reusable patterns.</p></div><span class="mini-status">Covered ✓</span></div>
- <details class="module-details" >
-  <summary><span>View detailed topics and reading resources</span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
-  <div class="module-content">
-    <section class="module-topic-section"><h4 class="column-title">Topics in your supplied Code lessons</h4><div class="topic-group"><h4>Core utilities</h4><ul class="topic-chips"><li>Utility-first classes</li><li>Colors and backgrounds</li><li>Typography</li><li>Spacing and sizing</li><li>Borders and box model</li><li>Display and overflow</li><li>Flexbox</li><li>Grid</li></ul></div><div class="topic-group"><h4>Responsive UI</h4><ul class="topic-chips"><li>Responsive breakpoints</li><li>Position and z-index</li><li>Shadows and radius</li><li>Hover and focus states</li><li>Forms and validation</li><li>Tables and lists</li><li>Images and object-fit</li></ul></div><div class="topic-group"><h4>Extra styling</h4><ul class="topic-chips"><li>Gradients and backdrop effects</li><li>Transitions and transforms</li><li>Dark mode</li><li>Arbitrary values</li><li>Container layout</li><li>Accessibility utilities</li><li>Reusable patterns</li><li>Navigation, headers and footers</li></ul></div><div class="topic-group"><h4>Reference topics</h4><ul class="topic-chips"><li>Form/table/media combinations</li><li>Arbitrary variants and states</li><li>React className preview — not React proficiency</li><li>Vite production setup overview — no JS course</li><li>Quick reference</li></ul></div></section>
-    <aside class="module-sources"><h4 class="column-title">Where to study</h4><p class="code-location">Your local lesson index<br><a href="../module-3 (Tailwind CSS)/Code/index.html" title="This local link works after you place this tracker inside your MERN repository."><code>module-3 (Tailwind CSS)/Code/index.html</code></a></p><ul class="resource-list"><li class="resource"><a href="https://tailwindcss.com/docs/styling-with-utility-classes" target="_blank" rel="noopener noreferrer"><span>Tailwind: Utility classes</span><span aria-hidden="true">↗</span></a><p>Read each class as one style instruction.</p></li><li class="resource"><a href="https://tailwindcss.com/docs/responsive-design" target="_blank" rel="noopener noreferrer"><span>Tailwind: Responsive design</span><span aria-hidden="true">↗</span></a><p>Compare default classes with md: and lg:.</p></li><li class="resource"><a href="https://tailwindcss.com/docs/hover-focus-and-other-states" target="_blank" rel="noopener noreferrer"><span>Tailwind: Hover and focus</span><span aria-hidden="true">↗</span></a><p>Try focus-visible and hover states.</p></li><li class="resource"><a href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer"><span>Tailwind: Play CDN</span><span aria-hidden="true">↗</span></a><p>Learning demo only; production uses a build setup.</p></li></ul><div class="module-task"><span class="minor">Revise by doing</span><p>Rebuild a CSS card using Tailwind classes, then explain spacing, grid columns and mobile breakpoints.</p></div><p class="minor" style="margin-top:14px">Assignment reference</p><ul class="mini-list"><li>07 — Course Cards</li><li>08 — Pricing Cards</li></ul></aside>
-  </div>
- </details>
-</article>
-<article class="module" id="module-4" style="--accent:#b5a0ff">
- <div class="module-topline"><span class="module-digit">04</span><div><p class="minor">Covered syllabus · Module 4</p><h3>Responsive Design, AI Tools &amp; GitHub</h3><p class="module-summary">Mobile-first thinking, accessible layouts, careful AI review and collaboration basics.</p></div><span class="mini-status">Covered ✓</span></div>
- <details class="module-details" >
-  <summary><span>View detailed topics and reading resources</span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
-  <div class="module-content">
-    <section class="module-topic-section"><h4 class="column-title">Topics in your supplied Code lessons</h4><div class="topic-group"><h4>Responsive design</h4><ul class="topic-chips"><li>Responsive design fundamentals</li><li>Mobile-first approach and breakpoints</li><li>Flexbox and grid layouts</li><li>Responsive images, forms and tables</li><li>Responsive navigation and typography</li><li>Accessibility, performance and device testing</li></ul></div><div class="topic-group"><h4>Using AI</h4><ul class="topic-chips"><li>AI tools in web development</li><li>Prompt writing and code review</li><li>Reviewing suggested HTML/CSS changes</li><li>AI-assisted responsive debugging</li></ul></div><div class="topic-group"><h4>Git and teamwork</h4><ul class="topic-chips"><li>Git and GitHub repository basics</li><li>Stage, commit, push and pull</li><li>Branches and pull requests</li><li>Merge conflict basics</li><li>Team workflow and safe reviews</li></ul></div></section>
-    <aside class="module-sources"><h4 class="column-title">Where to study</h4><p class="code-location">Your local lesson index<br><a href="../module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/Code/index.html" title="This local link works after you place this tracker inside your MERN repository."><code>module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/Code/index.html</code></a></p><ul class="resource-list"><li class="resource"><a href="https://web.dev/learn/design" target="_blank" rel="noopener noreferrer"><span>web.dev: Responsive design</span><span aria-hidden="true">↗</span></a><p>Go to Media queries, Images and Responsive layouts.</p></li><li class="resource"><a href="https://developer.chrome.com/docs/devtools/device-mode" target="_blank" rel="noopener noreferrer"><span>Chrome DevTools: Device mode</span><span aria-hidden="true">↗</span></a><p>Test phone, tablet and desktop widths.</p></li><li class="resource"><a href="https://docs.github.com/en/get-started/using-github/hello-world" target="_blank" rel="noopener noreferrer"><span>GitHub: Hello World</span><span aria-hidden="true">↗</span></a><p>Follow the branch, commit and pull request example.</p></li><li class="resource"><a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" target="_blank" rel="noopener noreferrer"><span>Git Book: Branching</span><span aria-hidden="true">↗</span></a><p>Review why branches help team work.</p></li></ul><div class="module-task"><span class="minor">Revise by doing</span><p>Open a responsive page at 375px, 768px and desktop size. Explain one fix and commit it in Git.</p></div><p class="minor" style="margin-top:14px">Assignment reference</p><ul class="mini-list"><li>09 — Responsive Campus Event</li></ul></aside>
-  </div>
- </details>
-</article>
-<article class="module" id="module-5" style="--accent:#ffd479">
- <div class="module-topline"><span class="module-digit">05</span><div><p class="minor">Covered syllabus · Module 5</p><h3>HTML, CSS, Tailwind &amp; Claude Code Setup</h3><p class="module-summary">Setup, project instructions, safe permissions and AI-assisted frontend editing.</p></div><span class="mini-status">Covered ✓</span></div>
- <details class="module-details" >
-  <summary><span>View detailed topics and reading resources</span><span class="summary-chevron" aria-hidden="true">⌄</span></summary>
-  <div class="module-content">
-    <section class="module-topic-section"><h4 class="column-title">Topics in your supplied Code lessons</h4><div class="topic-group"><h4>Setup and access</h4><ul class="topic-chips"><li>Windows installation and version check</li><li>First sign-in and account access</li><li>Claude Code in VS Code</li><li>First safe coding session</li><li>Project CLAUDE.md instructions</li><li>Permissions and security</li></ul></div><div class="topic-group"><h4>Frontend recap</h4><ul class="topic-chips"><li>HTML5 structure and semantic tags</li><li>CSS design system basics</li><li>Tailwind v4 browser practice</li><li>Tailwind CLI build overview</li><li>Responsive accessible interfaces</li></ul></div><div class="topic-group"><h4>AI workflow</h4><ul class="topic-chips"><li>Git/GitHub workflow review</li><li>Setup troubleshooting</li><li>Practical AI prompts</li><li>Reviewing changes before acceptance</li><li>Project improvement routine</li><li>Final practical checklist</li></ul></div></section>
-    <aside class="module-sources"><h4 class="column-title">Where to study</h4><p class="code-location">Your local lesson index<br><a href="../module-5 (HTML CSS Tailwind Claude Code Setup)/Code/index.html" title="This local link works after you place this tracker inside your MERN repository."><code>module-5 (HTML CSS Tailwind Claude Code Setup)/Code/index.html</code></a></p><ul class="resource-list"><li class="resource"><a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer"><span>Claude Code: Quickstart</span><span aria-hidden="true">↗</span></a><p>Follow installation and the first safe session.</p></li><li class="resource"><a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer"><span>Claude Code: Setup</span><span aria-hidden="true">↗</span></a><p>Check prerequisites and configuration.</p></li><li class="resource"><a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener noreferrer"><span>Claude Code: Project memory</span><span aria-hidden="true">↗</span></a><p>Learn what CLAUDE.md should contain.</p></li><li class="resource"><a href="https://code.claude.com/docs/en/settings" target="_blank" rel="noopener noreferrer"><span>Claude Code: Settings</span><span aria-hidden="true">↗</span></a><p>Review permission boundaries and settings.</p></li></ul><div class="module-task"><span class="minor">Revise by doing</span><p>Read existing code, ask Claude to explain it, inspect proposed changes and verify them in a browser before committing.</p></div><p class="minor" style="margin-top:14px">Assignment reference</p><ul class="mini-list"><li>10 — Claude Code Review Board</li></ul></aside>
-  </div>
- </details>
-</article></div>
-  </section>
+  function updateProgress() {
+    const completed = checkboxes.filter((box) => box.checked).length;
+    const total = checkboxes.length;
+    const percentage = total ? (completed / total) * 100 : 0;
 
-  <section class="section" id="assignments" aria-labelledby="assignments-title"><div class="section-heading"><div><p class="eyebrow">04 / PRACTICAL WORK</p><h2 id="assignments-title">Assignments &amp; practice files</h2></div><p>Ten assignment examples associated with the covered modules. Availability does not by itself mean each assignment was submitted.</p></div>
-   <div class="assignments-panel"><ol class="assignment-list"><li class="assignment-row"><span class="a-index">01</span><div><strong>Personal Portfolio</strong><small>Existing assignment file reviewed</small></div><span class="assignment-tag">HTML</span></li><li class="assignment-row"><span class="a-index">02</span><div><strong>Student Registration Form</strong><small>Existing assignment file reviewed</small></div><span class="assignment-tag">HTML</span></li><li class="assignment-row"><span class="a-index">03</span><div><strong>Smartphone Contact Form</strong><small>Existing assignment file reviewed</small></div><span class="assignment-tag">HTML</span></li><li class="assignment-row"><span class="a-index">04</span><div><strong>Chess Board</strong><small>Folder was shown; recreated example available</small></div><span class="assignment-tag">CSS</span></li><li class="assignment-row"><span class="a-index">05</span><div><strong>Service Cards</strong><small>Practice example available</small></div><span class="assignment-tag">CSS</span></li><li class="assignment-row"><span class="a-index">06</span><div><strong>Café Landing Page</strong><small>Practice example available</small></div><span class="assignment-tag">CSS</span></li><li class="assignment-row"><span class="a-index">07</span><div><strong>Course Cards</strong><small>Practice example available</small></div><span class="assignment-tag">Tailwind</span></li><li class="assignment-row"><span class="a-index">08</span><div><strong>Pricing Cards</strong><small>Practice example available</small></div><span class="assignment-tag">Tailwind</span></li><li class="assignment-row"><span class="a-index">09</span><div><strong>Responsive Campus Event</strong><small>Practice example available</small></div><span class="assignment-tag">Responsive + Git</span></li><li class="assignment-row"><span class="a-index">10</span><div><strong>Claude Code Review Board</strong><small>Practice example available</small></div><span class="assignment-tag">Claude Code</span></li></ol><div class="assignment-note"><strong>Source clarity</strong><p>You supplied the original first three HTML assignments. The Chess Board folder appeared in your screenshot, but the original source was not available. The remaining assignments are practice examples created for your module pack. Check and customize each before presenting it as completed work.</p></div></div>
-  </section>
+    if (countLabel) {
+      countLabel.textContent = `${completed} / ${total} modules marked studied`;
+    }
+    if (progressFill) {
+      progressFill.style.width = `${percentage}%`;
+    }
+    if (progressBar) {
+      progressBar.setAttribute("aria-valuenow", String(completed));
+    }
+  }
 
-  <section class="section" id="sources" aria-labelledby="sources-title"><div class="section-heading"><div><p class="eyebrow">05 / HOW TO STUDY</p><h2 id="sources-title">My reading routine</h2></div><p>A simple way to revisit the covered material without adding the next module yet.</p></div>
-   <div class="reading-grid"><article><span>STEP 01</span><h3>Open the lesson</h3><p>Go to <code>module-X/Code/index.html</code> in VS Code. Open the matching example and its CSS file, if present.</p></article><article><span>STEP 02</span><h3>Compare with documentation</h3><p>Use the official links inside the expanded module to confirm a tag, property, Tailwind utility, Git workflow or Claude setup step.</p></article><article><span>STEP 03</span><h3>Modify and explain</h3><p>Change one piece of HTML or styling, inspect the output and explain what changed. Test responsive examples on multiple widths.</p></article></div>
-   <div class="end-cap"><div><span class="end-kicker">CURRENT CHECKPOINT</span><h3>Module 01–05: covered</h3><p>Next subject: JavaScript, not included in this record and not marked started or completed.</p></div><a href="https://github.com/anik339/AI-Driven-Full-Stack-Web-Developer-with-MERN" target="_blank" rel="noopener noreferrer">My GitHub repository ↗</a></div>
-  </section>
- </main>
- <footer class="site-footer"><div class="container foot-inner"><span>© 2026 · Anik Chandra Dey · CSE, AIUB</span><span>OSTAD / FULL STACK WITH MERN · RECORD THROUGH 23 OCT 2026</span></div></footer>
-</body>
+  checkboxes.forEach((checkbox) => {
+    const moduleId = checkbox.dataset.moduleCheck;
+    checkbox.checked = Boolean(savedProgress[moduleId]);
+
+    checkbox.addEventListener("change", () => {
+      savedProgress[moduleId] = checkbox.checked;
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProgress));
+      } catch (error) {
+        // The checklist still works for this page view if browser storage is unavailable.
+      }
+      updateProgress();
+    });
+  });
+
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+        savedProgress[checkbox.dataset.moduleCheck] = false;
+      });
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProgress));
+      } catch (error) {
+        // Ignore storage restrictions; update the visible checklist anyway.
+      }
+      updateProgress();
+    });
+  }
+
+  updateProgress();
+})();
+  </script>
+ </body>
 </html>

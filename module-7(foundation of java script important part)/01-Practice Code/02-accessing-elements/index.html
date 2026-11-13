@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to select HTML elements with getElementById(), querySelector(), and querySelectorAll(). These methods let JavaScript find the exact part of the page it needs.">
+  <title>02. Accessing DOM Elements</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · PRACTICE CODE</p>
+      <h1>02. Accessing DOM Elements</h1>
+      <p class="lead">Learn how to select HTML elements with getElementById(), querySelector(), and querySelectorAll(). These methods let JavaScript find the exact part of the page it needs.</p>
+    </header>
+    
+<section class="panel pad stack">
+  <h2 id="target-heading">Select me using JavaScript</h2>
+  <p class="description">This paragraph has a class named description.</p>
+  <ul id="topic-list" class="clean">
+    <li class="topic">DOM</li><li class="topic">Events</li><li class="topic">Attributes</li>
+  </ul>
+  <div class="row">
+    <button id="by-id" class="btn" type="button">Select by ID</button>
+    <button id="by-query" class="btn secondary" type="button">Select by CSS selector</button>
+    <button id="all-items" class="btn secondary" type="button">Select all topics</button>
+  </div>
+  <div id="selection-output" class="output">Choose a button to see which element was selected.</div>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

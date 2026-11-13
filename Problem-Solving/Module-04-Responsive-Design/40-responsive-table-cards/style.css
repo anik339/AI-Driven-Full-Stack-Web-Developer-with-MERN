@@ -1,0 +1,11 @@
+/* MODULE 4: Responsive Design
+   Start with small-screen styles. Add media queries only when the layout needs them. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+img { max-width: 100%; display: block; }
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+/* Responsive solution */
+.responsive-table { width: 100%; border-collapse: collapse; background: white; }
+.responsive-table th, .responsive-table td { padding: 12px; border: 1px solid #cbd5e1; text-align: left; }
+@media (max-width: 600px) { .responsive-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); } .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td { display: block; width: 100%; } .responsive-table tr { margin-bottom: 12px; border: 1px solid #cbd5e1; } .responsive-table td { display: flex; justify-content: space-between; } .responsive-table td::before { content: attr(data-label); font-weight: bold; } }

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Hero Section</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 21 of 50</p><h1>Responsive Hero Section</h1><p>Create a hero that scales its title and spacing.</p></header>
+  <section class="demo">
+    <section class="hero"><div><p class="eyebrow">Build your future</p><h2>Learn web development by doing.</h2><p>Practise every topic with small projects.</p><a href="#start">Start learning</a></div><img src="https://placehold.co/640x480?text=Developer" alt="Illustration of a developer workspace"></section>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="start"><h2>Example destination: Start</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

@@ -1,0 +1,10 @@
+/* MODULE 4: Responsive Design
+   Start with small-screen styles. Add media queries only when the layout needs them. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
+img { max-width: 100%; display: block; }
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+/* Responsive solution */
+.project-strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 75%); gap: 12px; overflow-x: auto; padding: 6px 2px 14px; scroll-snap-type: x mandatory; }
+.project-strip article { min-height: 130px; padding: 18px; background: white; border-radius: 10px; scroll-snap-align: start; }

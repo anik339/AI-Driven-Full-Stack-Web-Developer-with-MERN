@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a task board that lets a user add tasks, mark them complete, filter the list, delete individual tasks, and keep the list after refreshing the browser.">
+  <title>02. Interactive Task Board</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · COMPLETE PROJECT</p>
+      <h1>02. Interactive Task Board</h1>
+      <p class="lead">Build a task board that lets a user add tasks, mark them complete, filter the list, delete individual tasks, and keep the list after refreshing the browser.</p>
+    </header>
+    
+<section class="panel pad stack">
+  <form id="task-form" class="task-form">
+    <div class="field grow"><label for="task-input">New task</label><input id="task-input" maxlength="100" placeholder="e.g. Practice event delegation" required></div>
+    <button class="btn" type="submit">Add task</button>
+  </form>
+  <div class="between">
+    <div class="row" id="filters">
+      <button class="filter active" data-filter="all" type="button">All</button>
+      <button class="filter" data-filter="active" type="button">Active</button>
+      <button class="filter" data-filter="done" type="button">Completed</button>
+    </div>
+    <span id="task-count" class="muted small">0 tasks</span>
+  </div>
+  <ul id="task-list" class="task-list" aria-live="polite"></ul>
+  <p id="empty-state" class="empty">Your task board is empty. Add a task to begin.</p>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

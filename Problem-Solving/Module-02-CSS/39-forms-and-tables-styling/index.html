@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forms and Tables Styling</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <p>Module 02 · CSS · Problem 39 of 50</p>
+  <h1>Forms and Tables Styling</h1>
+  <p>Style inputs and table rows for readability.</p>
+  <section class="demo">
+    <form class="styled-form"><label>Email <input type="email" placeholder="you@example.com"></label></form><table class="styled-table"><thead><tr><th>Topic</th><th>Hours</th></tr></thead><tbody><tr><td>HTML</td><td>5</td></tr><tr><td>CSS</td><td>8</td></tr></tbody></table>
+  </section>
+  <details><summary>Read the CSS solution</summary><pre id="css-source">Loading style.css…</pre></details>
+</main>
+<script>
+  // Display the CSS source so you can study it in the browser too.
+  fetch("./style.css").then(r => r.text()).then(t => document.querySelector("#css-source").textContent = t);
+</script>
+</body></html>

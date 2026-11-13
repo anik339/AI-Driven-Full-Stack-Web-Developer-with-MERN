@@ -1,1 +1,31 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Module 1 | HTML5</title><style>*{box-sizing:border-box}body{margin:0;padding:28px 16px;font:16px/1.6 Arial,sans-serif;color:#172033;background:#f4f7fb}main{max-width:900px;margin:auto}a{color:#2563eb;font-weight:700;overflow-wrap:anywhere}.back{display:inline-block;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin-top:22px}.card{background:white;border:1px solid #dce4ef;border-radius:12px;padding:20px}p{color:#64748b}</style></head><body><main><a class="back" href="../index.html">Back to Portfolio</a><h1>Module 1: HTML5 Fundamentals</h1><p>HTML lessons, five practice projects, and learning resources.</p><div class="grid"><section class="card"><h2>HTML Lessons</h2><p>Semantic markup, links, forms, tables, and media.</p><a href="Code/index.html">Open HTML Lessons</a></section><section class="card"><h2>Five HTML Projects</h2><p>Choose a project from the list.</p><a href="project/index.html">Browse HTML Projects</a></section><section class="card"><h2>Lecture Resource</h2><a href="Resource/MERN-Lecture-01-Web-and-HTML.pdf">Open Lecture PDF</a></section></div></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML5 Fundamentals learning module, lessons, projects, resources and problem-solving.">
+  <title>Module 01 | HTML5 Fundamentals</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#172033;font:16px/1.6 system-ui,sans-serif}
+    .wrap{width:min(1000px,calc(100% - 32px));margin:auto}
+    header{padding:34px 0;background:#122b4a;color:white}
+    .eyebrow{color:#2457d6;font-size:.76rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    header .eyebrow{color:#9bd8ff}
+    h1{margin:.25rem 0;font-size:clamp(2rem,5vw,3rem);line-height:1.1}
+    .lead{max-width:72ch;color:#d4e2f0}
+    main{padding:32px 0 48px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+    .card{padding:22px;background:#fff;border:1px solid #dbe3ef;border-radius:14px}
+    .card h2{margin:8px 0;font-size:1.2rem}
+    .card p:not(.eyebrow){color:#5d6b82}
+    a{color:#2457d6;font-weight:800}
+    a:focus-visible{outline:3px solid #e49a20;outline-offset:3px}
+    footer{padding:0 0 30px;color:#64748b;font-size:.9rem}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><a href="../index.html" style="color:white">← Repository home</a><p class="eyebrow">MODULE 01</p><h1>HTML5 Fundamentals</h1><p class="lead">Learn to structure accessible, semantic web pages before adding styles and behaviour.</p></div></header>
+<main class="wrap"><div class="grid"><article class="card"><p class="eyebrow">LESSONS</p><h2>HTML Code Lessons</h2><p>30 commented examples covering document structure, forms, media, accessibility and semantic elements.</p><a href="Code/index.html">Open →</a></article><article class="card"><p class="eyebrow">PROJECTS</p><h2>HTML Practice Projects</h2><p>Five standalone projects. Each project has its own folder and entry page.</p><a href="project/index.html">Open →</a></article><article class="card"><p class="eyebrow">RESOURCE</p><h2>Course Resource</h2><p>Open the supplied web and HTML lecture PDF.</p><a href="Resource/MERN-Lecture-01-Web-and-HTML.pdf">Open →</a></article><article class="card"><p class="eyebrow">PROBLEM SOLVING</p><h2>50 HTML Problems</h2><p>Fifty runnable topic-wise problems with source code, expected results and extension tasks.</p><a href="../Problem-Solving/Module-01-HTML/index.html">Open →</a></article></div></main>
+<footer class="wrap">Learn → Practise → Build → Test → Review</footer>
+</body>
+</html>

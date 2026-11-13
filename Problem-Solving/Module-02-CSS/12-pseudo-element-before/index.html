@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pseudo-element Before</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <p>Module 02 · CSS · Problem 12 of 50</p>
+  <h1>Pseudo-element Before</h1>
+  <p>Add a decorative marker before each checklist item.</p>
+  <section class="demo">
+    <ul class="checklist"><li>Write semantic HTML</li><li>Style with CSS</li><li>Test on mobile</li></ul>
+  </section>
+  <details><summary>Read the CSS solution</summary><pre id="css-source">Loading style.css…</pre></details>
+</main>
+<script>
+  // Display the CSS source so you can study it in the browser too.
+  fetch("./style.css").then(r => r.text()).then(t => document.querySelector("#css-source").textContent = t);
+</script>
+</body></html>

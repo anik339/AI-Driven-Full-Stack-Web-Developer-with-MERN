@@ -1,0 +1,12 @@
+/* MODULE 2: CSS Foundations
+   The comments explain why each rule is used. Edit the rules and refresh the page. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; color: #203047; background: #f4f7fb; }
+main { max-width: 850px; margin: 0 auto; }
+h1 { color: #2449a6; }
+.demo { background: white; border: 1px solid #d7dfeb; border-radius: 12px; padding: 16px; }
+
+/* Task-specific CSS */
+.layer-stage { position: relative; height: 150px; }
+.back-layer { position: absolute; inset: 10px 70px 25px 10px; background: #bfdbfe; padding: 20px; }
+.front-layer { position: absolute; top: 45px; left: 100px; z-index: 2; background: #1d4ed8; color: white; padding: 14px; }

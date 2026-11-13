@@ -1,84 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Anik Chandra Dey's web development learning journey, frontend modules, assignments, and practice projects.">
-  <title>Anik Chandra Dey | Web Development Portfolio</title>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Anik Chandra Dey's full-stack web development learning repository: eight modules, 400 topic-wise practice problems, assignments and 20 JavaScript projects." name="description"/>
+  <meta content="#122b4a" name="theme-color"/>
+  <title>
+   Anik Chandra Dey | Full-Stack Web Development Learning Repository
+  </title>
   <style>
-    * { box-sizing: border-box; }
-    :root { --blue:#2563eb; --ink:#172033; --muted:#64748b; --paper:#f4f7fb; --white:#fff; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Arial,Helvetica,sans-serif; line-height:1.65; color:var(--ink); background:var(--paper); }
-    a { color:var(--blue); text-decoration:none; overflow-wrap:anywhere; }
-    a:hover { text-decoration:underline; }
-    .container { width:min(1080px,92%); margin-inline:auto; }
-    header { background:var(--white); border-bottom:1px solid #e2e8f0; }
-    nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding:14px 0; }
-    .brand { font-weight:800; color:var(--ink); }
-    nav ul { display:flex; flex-wrap:wrap; gap:16px; list-style:none; margin:0; padding:0; }
-    .hero { padding:68px 0 42px; }
-    .eyebrow { color:var(--blue); font-weight:700; letter-spacing:.08em; }
-    h1 { font-size:clamp(2rem,5vw,3.4rem); line-height:1.15; max-width:800px; margin:.35em 0; }
-    h2 { font-size:clamp(1.5rem,3vw,2rem); margin:0 0 8px; }
-    .intro { color:var(--muted); max-width:760px; }
-    .button { display:inline-block; background:var(--blue); color:white; padding:10px 16px; border-radius:8px; font-weight:700; margin-top:8px; }
-    .button:hover { background:#1d4ed8; text-decoration:none; }
-    section { padding:26px 0 42px; }
-    .section-intro { color:var(--muted); margin:0 0 20px; }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-    .card { min-width:0; background:white; border:1px solid #e2e8f0; border-radius:12px; padding:21px; box-shadow:0 3px 12px rgba(15,23,42,.035); }
-    .card h3 { margin:8px 0; }
-    .card p { color:var(--muted); margin:0 0 14px; }
-    .tag { display:inline-block; background:#dbeafe; color:#1d4ed8; padding:3px 9px; border-radius:999px; font-size:.82rem; font-weight:700; }
-    footer { margin-top:20px; padding:24px 0; text-align:center; background:#172033; color:#fff; }
-    footer p { margin:0; color:#cbd5e1; }
-    @media (max-width:760px) { nav { align-items:flex-start; flex-direction:column; } .grid { grid-template-columns:1fr; } .hero { padding-top:44px; } }
+   *{box-sizing:border-box}
+    :root{--ink:#172033;--muted:#5d6b82;--line:#dbe3ef;--brand:#2457d6;--page:#f3f6fb;--white:#fff}
+    body{margin:0;background:var(--page);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    a:focus-visible{outline:3px solid #e49a20;outline-offset:4px;border-radius:4px}
+    .wrap{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+    .topbar{background:#fff;border-bottom:1px solid var(--line)}
+    nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{font-weight:850;color:var(--ink);letter-spacing:-.02em}
+    .navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem}
+    .hero{padding:64px 0 42px}
+    .eyebrow{color:var(--brand);font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    h1{max-width:850px;margin:.35rem 0;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.08;letter-spacing:-.04em}
+    .intro{max-width:760px;color:var(--muted);font-size:1.08rem}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .button{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:9px;background:var(--brand);color:#fff;font-weight:800}
+    .button.secondary{background:#e5edff;color:#1e40af}
+    section{padding:26px 0 40px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(1.45rem,3vw,2rem)}
+    .section-head p{max-width:650px;margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}
+    .card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--white);box-shadow:0 6px 18px rgba(20,40,70,.035)}
+    .tag{display:inline-block;padding:4px 9px;border-radius:999px;background:#e5edff;color:#1e40af;font-size:.76rem;font-weight:850}
+    .card h3{margin:10px 0 6px;font-size:1.15rem}
+    .card p{margin:0 0 14px;color:var(--muted)}
+    .card-link{font-weight:850}
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .stat{padding:12px 16px;border:1px solid var(--line);border-radius:11px;background:#fff}
+    .stat strong{display:block;font-size:1.3rem}
+    .notice{padding:18px;border:1px solid #c9def6;border-radius:12px;background:#e8f2ff;color:#1e3a5f}
+    footer{margin-top:18px;padding:26px 0;background:#122b4a;color:#d4e2f0}
+    footer p{margin:0}
+    @media(max-width:640px){.hero{padding-top:42px}.navlinks{gap:12px;font-size:.86rem}}
   </style>
-</head>
-<body>
-<header><div class="container"><nav aria-label="Main navigation">
-  <a class="brand" href="./index.html">Anik | Web Development</a>
-  <ul><li><a href="#about">About</a></li><li><a href="#modules">Modules</a></li><li><a href="#projects">Projects</a></li><li><a href="#practice">Practice</a></li></ul>
-</nav></div></header>
-<main>
-  <section class="hero container" id="about">
-    <p class="eyebrow">MY WEB DEVELOPMENT JOURNEY</p>
-    <h1>Hi, I'm Anik Chandra Dey.</h1>
-    <p class="intro">I am a BSc in Computer Science and Engineering student at AIUB. I am building my web development foundation through coursework, assignments, frontend projects, and regular practice.</p>
-    <p class="intro">My current focus is HTML, CSS, Tailwind CSS, responsive design, Git, and GitHub. JavaScript is my next learning goal.</p>
-    <a class="button" href="#projects">Explore my projects</a>
-  </section>
-  <section class="container" id="modules">
-    <h2>Learning Modules</h2><p class="section-intro">Open a module to access its lesson page, project list, or available resources.</p>
-    <div class="grid">
-      <article class="card"><span class="tag">Module 1</span><h3>HTML5 Fundamentals</h3><p>Semantic markup, links, forms, tables, images, and media.</p><a href="./module-1%20(HTML)/index.html">Open HTML Module</a></article>
-      <article class="card"><span class="tag">Module 2</span><h3>CSS3 Fundamentals</h3><p>Selectors, box model, Flexbox, Grid, and responsive styling.</p><a href="./module-2%20(CSS)/index.html">Open CSS Module</a></article>
-      <article class="card"><span class="tag">Module 3</span><h3>Tailwind CSS</h3><p>Utility-first styling and the available Tailwind practice resource.</p><a href="./module-3%20(Tailwind%20CSS)/index.html">Open Tailwind Module</a></article>
-      <article class="card"><span class="tag">Module 4</span><h3>Responsive Design & GitHub</h3><p>Mobile-first layouts, AI tools, and collaboration workflows.</p><a href="./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/index.html">Open Module 4</a></article>
-      <article class="card"><span class="tag">Module 5</span><h3>Claude Code Setup</h3><p>AI-assisted development lessons and practice projects.</p><a href="./module-5%20(Claude%20Code%20Setup)/index.html">Open Module 5</a></article>
-      <article class="card"><span class="tag">Next goal</span><h3>JavaScript</h3><p>My next learning phase: programming fundamentals, DOM, and events.</p><span>Coming next</span></article>
+ </head>
+ <body>
+  <header class="topbar">
+   <div class="wrap">
+    <nav aria-label="Main navigation">
+     <a class="brand" href="./index.html">
+      Anik Chandra Dey &middot; Web Development
+     </a>
+     <div class="navlinks">
+      <a href="#modules">
+       Modules
+      </a>
+      <a href="#projects">
+       Projects
+      </a>
+      <a href="#practice">
+       Problem Solving
+      </a>
+      <a href="./README.md">
+       README
+      </a>
+      <a href="./Ostad_Learning_Tracker/index.html">
+       Learning Tracker
+      </a>
+     </div>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="hero wrap">
+    <p class="eyebrow">
+     Learning repository &middot; Junior MERN developer goal
+    </p>
+    <h1>
+     Learn the fundamentals. Build real projects. Understand every line.
+    </h1>
+    <p class="intro">
+     A structured collection of eight web development modules, commented lessons, assignments, practical projects, a personal learning tracker and 400 topic-wise coding exercises. The repository records available learning material; it does not automatically claim mastery.
+    </p>
+    <div class="hero-actions">
+     <a class="button" href="#modules">
+      Explore eight modules
+     </a>
+     <a class="button secondary" href="./Problem-Solving/index.html">
+      Open 400 problems
+     </a>
+     <a class="button secondary" href="./Ostad_Learning_Tracker/index.html">
+      Open Learning Tracker
+     </a>
     </div>
-  </section>
-  <section class="container" id="projects">
-    <h2>Practice Projects</h2><p class="section-intro">Selected practice work from my current learning journey.</p>
-    <div class="grid">
-      <article class="card"><h3>HTML Projects</h3><p>Five standalone HTML practice pages.</p><a href="./module-1%20(HTML)/project/index.html">Browse HTML Projects</a></article>
-      <article class="card"><h3>CSS Projects</h3><p>Five styled projects with separate HTML and CSS files.</p><a href="./module-2%20(CSS)/project/index.html">Browse CSS Projects</a></article>
-      <article class="card"><h3>Ostad Landing Page</h3><p>A landing page practice project.</p><a href="./module-3-ostad-landing-page/index.html">Open Landing Page</a></article>
-      <article class="card"><h3>Responsive Agency Website</h3><p>A responsive website practice project.</p><a href="./module-4-responsive-agency-landing-page/index.html">Open Agency Project</a></article>
-      <article class="card"><h3>Tailwind Example</h3><p>Open the existing Tailwind example page.</p><a href="./module-3%20(Tailwind%20CSS)/Resources/src/index.html">Open Tailwind Example</a></article>
+    <div class="stats">
+     <div class="stat">
+      <strong>
+       8
+      </strong>
+      Learning modules
+     </div>
+     <div class="stat">
+      <strong>
+       400
+      </strong>
+      Runnable problems
+     </div>
+     <div class="stat">
+      <strong>
+       20
+      </strong>
+      JavaScript projects
+     </div>
+     <div class="stat">
+      <strong>
+       10
+      </strong>
+      Course assignments
+     </div>
     </div>
-  </section>
-  <section class="container" id="practice">
-    <h2>Assignments & Problem Solving</h2><p class="section-intro">Practice tasks and guided exercises help me review concepts and improve through testing and code changes.</p>
-    <div class="grid">
-      <article class="card"><h3>Assignments</h3><p>Ten practice assignments from the frontend modules.</p><a href="./Assignment/index.html">Browse Assignments</a></article>
-      <article class="card"><h3>Frontend Problem Solving</h3><p>Fifty guided HTML, CSS, Tailwind, and responsive workflow exercises.</p><a href="./Problem-Solving/Frontend-HTML-CSS/index.html">Explore 50 Exercises</a></article>
-      <article class="card"><h3>Learning Tracker</h3><p>My personal learning progress tracker.</p><a href="./Ostad_Learning_Tracker/index.html">Open Learning Tracker</a></article>
+   </section>
+   <section class="wrap" id="modules">
+    <div class="section-head">
+     <h2>
+      Learning modules
+     </h2>
+     <p>
+      Open a module to access its lessons, practice files, resources, projects and related problem-solving set.
+     </p>
     </div>
-  </section>
-</main>
-<footer><div class="container"><p>Anik Chandra Dey | Learn, Practise, Build, Test, Improve.</p></div></footer>
-</body>
+    <div class="grid">
+     <article class="card">
+      <span class="tag">
+       MODULE 01
+      </span>
+      <h3>
+       HTML5 Fundamentals
+      </h3>
+      <p>
+       Semantic markup, forms, tables, images, media and accessibility.
+      </p>
+      <a class="card-link" href="./module-1%20(HTML)/index.html">
+       Open HTML module &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 02
+      </span>
+      <h3>
+       CSS3 Fundamentals
+      </h3>
+      <p>
+       Selectors, box model, typography, Flexbox, Grid and responsive styling.
+      </p>
+      <a class="card-link" href="./module-2%20(CSS)/index.html">
+       Open CSS module &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 03
+      </span>
+      <h3>
+       Tailwind CSS
+      </h3>
+      <p>
+       Utility-first design, responsive variants, components and practice labs.
+      </p>
+      <a class="card-link" href="./module-3%20(Tailwind%20CSS)/index.html">
+       Open Tailwind module &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 04
+      </span>
+      <h3>
+       Responsive Design, AI Tools &amp; GitHub
+      </h3>
+      <p>
+       Mobile-first layouts, accessibility, collaboration and code review.
+      </p>
+      <a class="card-link" href="./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/index.html">
+       Open Module 4 &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 05
+      </span>
+      <h3>
+       Claude Code Setup
+      </h3>
+      <p>
+       Safe AI-assisted development, prompting, project instructions and review.
+      </p>
+      <a class="card-link" href="./module-5%20(Claude%20Code%20Setup)/index.html">
+       Open Module 5 &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 06
+      </span>
+      <h3>
+       JavaScript Fundamentals
+      </h3>
+      <p>
+       28 lesson topics with separate HTML and JavaScript examples.
+      </p>
+      <a class="card-link" href="./module-6(foundation%20of%20java%20script)/index.html">
+       Open JavaScript module &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 07
+      </span>
+      <h3>
+       JavaScript DOM and Events
+      </h3>
+      <p>
+       DOM selection, text and attributes, classList, element creation and browser events.
+      </p>
+      <a class="card-link" href="./module-7(foundation%20of%20java%20script%20important%20part)/index.html">
+       Open Module 7 &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 08
+      </span>
+      <h3>
+       Advanced and Asynchronous JavaScript
+      </h3>
+      <p>
+       Scope, closures, OOP, Promises, async/await, Fetch, ES modules and the event loop.
+      </p>
+      <a class="card-link" href="./module-8(asynchronous%20javascript)/index.html">
+       Open Module 8 &rarr;
+      </a>
+     </article>
+    </div>
+   </section>
+   <section class="wrap" id="projects">
+    <div class="section-head">
+     <h2>
+      Featured projects
+     </h2>
+     <p>
+      Projects are organised inside their learning modules. Open the JavaScript project hub for 20 focused practice applications across Modules 06&ndash;08.
+     </p>
+    </div>
+    <div class="grid">
+     <article class="card">
+      <h3>
+       Ostad Landing Page
+      </h3>
+      <p>
+       Tailwind CSS landing page practice.
+      </p>
+      <a class="card-link" href="./module-3%20(Tailwind%20CSS)/project/10_ostad_landing_page/index.html">
+       Open project &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <h3>
+       Anik Personal Portfolio
+      </h3>
+      <p>
+       Personal portfolio with responsive sections and assets.
+      </p>
+      <a class="card-link" href="./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/Project/06_anik_personal_portfolio/index.html">
+       Open project &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <h3>
+       Dream Agency Landing Page
+      </h3>
+      <p>
+       Figma-inspired responsive agency website using Tailwind CSS and JavaScript.
+      </p>
+      <a class="card-link" href="./module-4%20(Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration)/Project/07_dream_agency_landing_page/index.html">
+       Open project &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULES 06&ndash;08 &middot; 20 PROJECTS
+      </span>
+      <h3>
+       JavaScript Project Hubs
+      </h3>
+      <p>
+       Ten JavaScript fundamentals projects, five DOM projects and five asynchronous JavaScript projects.
+      </p>
+      <a class="card-link" href="./module-6(foundation%20of%20java%20script)/Projects/index.html">
+       Open Module 6 Projects &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 07 &middot; 5 PROJECTS
+      </span>
+      <h3>
+       DOM and Events Project Hub
+      </h3>
+      <p>
+       Five projects that practise dynamic elements, event handling, task boards, carts and form validation.
+      </p>
+      <a class="card-link" href="./module-7(foundation%20of%20java%20script%20important%20part)/02-Projects/index.html">
+       Open Module 7 Projects &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <span class="tag">
+       MODULE 08 &middot; 5 PROJECTS
+      </span>
+      <h3>
+       Advanced JavaScript Project Hub
+      </h3>
+      <p>
+       Five projects that practise async data, APIs, Promise workflows and browser storage.
+      </p>
+      <a class="card-link" href="./module-8(asynchronous%20javascript)/02-Projects/index.html">
+       Open Module 8 Projects &rarr;
+      </a>
+     </article>
+    </div>
+   </section>
+   <section class="wrap" id="practice">
+    <div class="section-head">
+     <h2>
+      Assignments and practice
+     </h2>
+     <p>
+      Use the learning tracker, assignments and 400 topic-wise exercises to plan and review your independent practice.
+     </p>
+    </div>
+    <div class="grid">
+     <article class="card">
+      <span class="tag">
+       400 PROBLEMS
+      </span>
+      <h3>
+       Topic-wise Problem Solving
+      </h3>
+      <p>
+       Eight module-wise sets with 50 runnable problems each, from HTML and CSS to DOM and asynchronous JavaScript.
+      </p>
+      <a class="card-link" href="./Problem-Solving/index.html">
+       Open Problem-Solving Hub &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <h3>
+       Course Assignments
+      </h3>
+      <p>
+       Ten assignments covering HTML, CSS, Tailwind, responsive design and AI workflow.
+      </p>
+      <a class="card-link" href="./Assignment/index.html">
+       Browse assignments &rarr;
+      </a>
+     </article>
+     <article class="card">
+      <h3>
+       Learning Tracker
+      </h3>
+      <p>
+       Review the existing course learning record and module references.
+      </p>
+      <a class="card-link" href="./Ostad_Learning_Tracker/index.html">
+       Open tracker &rarr;
+      </a>
+     </article>
+    </div>
+   </section>
+   <section class="wrap">
+    <div class="notice">
+     <strong>
+      Junior MERN developer goal:
+     </strong>
+     These eight modules provide a broad frontend and JavaScript foundation. They do not complete the MERN stack. React, Node.js, Express.js, MongoDB, authentication, testing and deployment remain the next major learning stages.
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrap">
+    <p>
+     Anik Chandra Dey &middot; Learn &rarr; Practise &rarr; Build &rarr; Test &rarr; Review &rarr; Improve.
+    </p>
+   </div>
+  </footer>
+ </body>
 </html>

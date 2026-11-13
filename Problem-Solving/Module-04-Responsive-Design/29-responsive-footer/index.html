@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Footer</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 29 of 50</p><h1>Responsive Footer</h1><p>Stack footer columns on mobile and align them on desktop.</p></header>
+  <section class="demo">
+    <footer class="footer"><section><h2>CodePath</h2><p>Learn by building.</p></section><section><h3>Resources</h3><a href="#docs">Docs</a><a href="#help">Help</a></section><section><h3>Community</h3><a href="#github">GitHub</a><a href="#contact">Contact</a></section></footer>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="contact"><h2>Example destination: Contact</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="docs"><h2>Example destination: Docs</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="github"><h2>Example destination: Github</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="help"><h2>Example destination: Help</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

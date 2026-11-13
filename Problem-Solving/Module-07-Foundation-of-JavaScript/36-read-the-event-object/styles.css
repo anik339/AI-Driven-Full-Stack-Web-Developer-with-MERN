@@ -1,0 +1,21 @@
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#172238;background:#f3f6fc;--blue:#315efb;--muted:#66748a;--line:#dfe6f0}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}
+.wrap{width:min(900px,calc(100% - 28px));margin:auto;padding:30px 0 50px}
+.eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+h1{font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:-.035em;line-height:1.15;margin:8px 0}
+h2{font-size:1.1rem;margin:0 0 12px}.lead{color:var(--muted);line-height:1.65;max-width:760px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 10px 30px #24385b0a}
+.task,.explain{line-height:1.7}.label{font-size:.76rem;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.btn,.demo-button{border:0;border-radius:10px;padding:11px 16px;background:var(--blue);color:#fff;font-weight:750;cursor:pointer}
+.demo-button{background:#eaf0ff;color:#2448c7;border:1px solid #d4dfff;padding:8px 12px;margin:3px}
+#demo-area{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0;min-height:20px}
+#output{white-space:pre-wrap;overflow-wrap:anywhere;background:#f7f9fd;border:1px dashed #cbd6e7;border-radius:11px;padding:13px;min-height:52px;line-height:1.6}
+.muted{color:var(--muted)}.small{font-size:.85rem}
+details{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcff}
+summary{font-weight:750;cursor:pointer}
+pre.code{white-space:pre;overflow:auto;max-height:560px;background:#101827;color:#e7edf8;padding:16px;border-radius:10px;font-size:.82rem;line-height:1.55}
+.challenge{background:#f4f7ff;border-left:4px solid var(--blue);padding:12px 14px;border-radius:7px;line-height:1.65}
+footer{text-align:center;color:#8793a7;font-size:.78rem;margin-top:25px}
+.demo-input{padding:10px 12px;border:1px solid #cbd6e7;border-radius:9px;max-width:100%}
+.demo-card{border:1px solid #dfe6f0;border-radius:10px;padding:12px}
+@media(max-width:600px){.wrap{padding-top:20px}.card{padding:15px}pre.code{font-size:.75rem}}

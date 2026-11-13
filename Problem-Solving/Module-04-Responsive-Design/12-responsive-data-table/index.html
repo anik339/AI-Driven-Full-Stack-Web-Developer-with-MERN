@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Data Table</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 12 of 50</p><h1>Responsive Data Table</h1><p>Allow a wide table to scroll inside a wrapper on small screens.</p></header>
+  <section class="demo">
+    <div class="table-wrap"><table><thead><tr><th>Course</th><th>Duration</th><th>Level</th><th>Projects</th></tr></thead><tbody><tr><td>HTML</td><td>2 weeks</td><td>Beginner</td><td>5</td></tr><tr><td>CSS</td><td>3 weeks</td><td>Beginner</td><td>8</td></tr></tbody></table></div>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

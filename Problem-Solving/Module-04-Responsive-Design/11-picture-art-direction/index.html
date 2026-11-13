@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Picture Art Direction</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 11 of 50</p><h1>Picture Art Direction</h1><p>Use picture sources to choose different crops at different widths.</p></header>
+  <section class="demo">
+    <picture><source media="(max-width: 600px)" srcset="https://placehold.co/480x640?text=Portrait+Crop"><img src="https://placehold.co/1000x420?text=Wide+Hero" alt="Responsive hero artwork"></picture>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

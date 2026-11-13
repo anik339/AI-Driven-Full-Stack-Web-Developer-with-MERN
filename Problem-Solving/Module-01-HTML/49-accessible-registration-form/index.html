@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Combine labels, fieldsets, validation and helpful instructions.">
+  <title>Accessible Registration Form</title>
+
+</head>
+<body>
+  <!-- MODULE 1: HTML-only practice. No CSS or JavaScript is used here. -->
+  <header>
+    <p>Module 01 · HTML · Problem 49 of 50</p>
+    <h1>Accessible Registration Form</h1>
+    <p>Combine labels, fieldsets, validation and helpful instructions.</p>
+  </header>
+  <main>
+    <form>
+      <fieldset>
+        <legend>Registration details</legend>
+        <p><label for="reg-name">Full name <input id="reg-name" name="name" autocomplete="name" required></label></p>
+        <p><label for="reg-email">Email <input id="reg-email" name="email" type="email" autocomplete="email" required></label></p>
+        <p><label for="reg-password">Password <input id="reg-password" name="password" type="password" minlength="8" required></label></p>
+        <p><input id="terms" name="terms" type="checkbox" required><label for="terms">I agree to the sample terms</label></p>
+      </fieldset>
+      <button type="submit">Create sample account</button>
+    </form>
+  </main>
+</body>
+</html>

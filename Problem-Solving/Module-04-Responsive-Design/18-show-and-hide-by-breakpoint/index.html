@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Show and Hide by Breakpoint</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 18 of 50</p><h1>Show and Hide by Breakpoint</h1><p>Display a compact note on mobile and a full note on desktop.</p></header>
+  <section class="demo">
+    <p class="mobile-note">Mobile view: short navigation tip.</p><p class="desktop-note">Desktop view: a longer explanation can be displayed when more room is available.</p>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

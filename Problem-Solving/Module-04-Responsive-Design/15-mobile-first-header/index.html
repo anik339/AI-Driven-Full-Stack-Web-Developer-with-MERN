@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile-First Header</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 15 of 50</p><h1>Mobile-First Header</h1><p>Stack brand and actions on mobile, align them on desktop.</p></header>
+  <section class="demo">
+    <header class="site-header"><strong>CodePath</strong><div><a href="#login">Log in</a><a class="cta" href="#join">Join</a></div></header>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="join"><h2>Example destination: Join</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="login"><h2>Example destination: Login</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

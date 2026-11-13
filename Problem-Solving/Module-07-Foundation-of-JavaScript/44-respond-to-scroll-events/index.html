@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Display the scroll position inside a scrollable box.">
+  <title>Respond to Scroll Events</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Module 7 — DOM Manipulation and Events · Problem 44 of 50</p>
+      <h1>Respond to Scroll Events</h1>
+      <p class="lead">Display the scroll position inside a scrollable box.</p>
+    </header>
+    <section class="card">
+      <p class="label">Task</p>
+      <p class="task">Display the scroll position inside a scrollable box.</p>
+      <p><strong>Concept:</strong> scroll event, scrollTop</p>
+      <button id="run-example" class="btn" type="button">Run Solution</button>
+      <div id="demo-area" aria-live="polite"></div>
+      <p class="label">Program output</p>
+      <pre id="output" aria-live="polite">Click “Run Solution” to see the result.</pre>
+    </section>
+    <section class="card">
+      <h2>Expected output</h2>
+      <p class="explain">Scrolling inside the box updates the scrollTop value.</p>
+    </section>
+    <section class="card">
+      <h2>Easy explanation</h2>
+      <p class="explain">scrollTop tells how far an element has been scrolled vertically. The scroll event can fire frequently.</p>
+    </section>
+    <section class="card">
+      <h2>Your practice challenge</h2>
+      <div class="challenge">Show a scroll progress percentage using scrollTop and scrollHeight.</div>
+      <p class="muted small">Try it yourself before moving to the next problem.</p>
+    </section>
+    <section class="card">
+      <details>
+        <summary>Read the complete JavaScript code</summary>
+        <pre class="code" id="code-view">Loading script.js…</pre>
+      </details>
+      <p class="muted small">The same code is saved in script.js. Open that file in VS Code to edit it.</p>
+    </section>
+    <footer>JavaScript Problem Solving · Module 7 — DOM Manipulation and Events · Beginner-friendly practice</footer>
+  </main>
+  <script>
+    // Load the actual script file into the code viewer.
+    fetch("./script.js")
+      .then(response => response.text())
+      .then(source => document.querySelector("#code-view").textContent = source)
+      .catch(() => document.querySelector("#code-view").textContent = "Open script.js in VS Code to read the code.");
+  </script>
+</body>
+</html>

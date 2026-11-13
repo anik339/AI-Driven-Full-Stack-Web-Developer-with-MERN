@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High Contrast and Focus</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 35 of 50</p><h1>High Contrast and Focus</h1><p>Keep focus outlines visible and avoid relying only on colour.</p></header>
+  <section class="demo">
+    <a class="contrast-link" href="#content">Open content</a><button class="contrast-button">Save</button>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="content"><h2>Example destination: Content</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

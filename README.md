@@ -1,155 +1,131 @@
-# AI-Driven Full Stack Web Developer with MERN
+# AI-Driven Full-Stack Web Developer with MERN
 
-**Anik Chandra Dey**  
-BSc in Computer Science and Engineering Student  
-American International University-Bangladesh (AIUB)
+**Owner:** Anik Chandra Dey  
+**Learning target:** Junior Full-Stack Web Developer (MERN)  
+**Repository stage:** HTML, CSS, Tailwind CSS, responsive design, Git/GitHub workflow, AI-assisted development and JavaScript foundations.
 
-## About Me
+This repository is a structured learning record. It brings together the eight available learning modules, commented lesson examples, assignments, project work, a learning tracker and 400 topic-wise practice problems. A file being present means it is available to study; it does not automatically mean the work has been completed or mastered.
 
-I am a Computer Science and Engineering student at AIUB, learning web development through structured coursework, hands-on assignments, and practical projects.
+## Start here
 
-My goal is to become a Junior Full Stack Web Developer specializing in the MERN stack. I am currently strengthening my frontend fundamentals and preparing to begin JavaScript.
+1. Open [`index.html`](./index.html) in VS Code with Live Server for the repository home page.
+2. Open the [Ostad Learning Tracker](./Ostad_Learning_Tracker/index.html) to review the module map and mark your own study progress.
+3. Open the [Problem-Solving Hub](./Problem-Solving/index.html) for 400 topic-wise exercises.
+4. Browse the [Assignments](./Assignment/index.html) and each module's project hub.
 
-This repository documents my learning journey, practice exercises, projects, and continuous improvement.
+## Learning modules
 
-## Learning Progress
-
-| Module | Topics | Status |
+| Module | Focus | Included material |
 |---|---|---|
-| Module 1 | HTML5 Fundamentals | Covered / Practising |
-| Module 2 | CSS3 Fundamentals | Covered / Practising |
-| Module 3 | Tailwind CSS | Covered / Practising |
-| Module 4 | Responsive Design, AI Tools and GitHub Collaboration | Covered / Practising |
-| Module 5 | Claude Code Setup and AI-Assisted Development | Covered / Practising |
-| Next | JavaScript Fundamentals | Planned |
+| 01 | [HTML5 Fundamentals](./module-1%20%28HTML%29/index.html) | Semantic HTML, forms, tables, images, media and accessibility practice |
+| 02 | [CSS3 Fundamentals](./module-2%20%28CSS%29/index.html) | Selectors, cascade, box model, typography, Flexbox, Grid and responsive CSS |
+| 03 | [Tailwind CSS](./module-3%20%28Tailwind%20CSS%29/index.html) | Utility-first styling, responsive variants, components, labs and projects |
+| 04 | [Responsive Design, AI Tools and GitHub](./module-4%20%28Responsive%20Web%20Design,%20AI%20Tools%20and%20GitHub%20Collaboration%29/index.html) | Mobile-first design, accessibility, responsive QA, Git workflow and collaboration |
+| 05 | [Claude Code Setup and AI Workflow](./module-5%20%28Claude%20Code%20Setup%29/index.html) | Setup, permissions, project instructions, prompting and code review |
+| 06 | [JavaScript Fundamentals](./module-6%28foundation%20of%20java%20script%29/index.html) | 28 lesson topics and 10 runnable browser projects |
+| 07 | [JavaScript DOM and Events](./module-7%28foundation%20of%20java%20script%20important%20part%29/index.html) | 11 lesson topics and 5 DOM/event projects |
+| 08 | [Advanced and Asynchronous JavaScript](./module-8%28asynchronous%20javascript%29/index.html) | 19 lesson topics and 5 projects covering scope, closures, Promises, Fetch and the event loop |
 
-*I continue practising the topics covered in each module. The status reflects my learning progress, not a formal skills assessment.*
+**JavaScript practice across Modules 06–08:** 58 lesson topics and 20 project examples. API-based projects need an internet connection; the ES modules lesson must run through Live Server.
 
-## Repository Structure
+## Topic-wise problem solving
 
-- `Assignment/` — Ten frontend practice assignments.
-- `Ostad_Learning_Tracker/` — Personal learning progress tracker.
-- `Problem-Solving/Frontend-HTML-CSS/` — Fifty guided frontend exercises organised into five days.
-- `module-1 (HTML)/` — HTML lessons, learning resources, and projects.
-- `module-2 (CSS)/` — CSS lessons, resources, and projects.
-- `module-3 (Tailwind CSS)/` — Tailwind CSS lessons, resources, and projects.
-- `module-3-ostad-landing-page/` — Landing page practice project.
-- `module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/` — Responsive design lessons and practice projects.
-- `module-4-responsive-agency-landing-page/` — Responsive agency landing page project.
-- `module-5 (Claude Code Setup)/` — Claude Code learning materials and frontend projects.
+[`Problem-Solving/`](./Problem-Solving/index.html) contains **400 exercises**, with exactly 50 problem folders in each module set.
 
-## Technologies and Skills in Progress
+| Problem set | Topic | Problems |
+|---|---|---:|
+| Module 01 | HTML | 50 |
+| Module 02 | CSS | 50 |
+| Module 03 | Tailwind CSS | 50 |
+| Module 04 | Responsive design and GitHub workflow | 50 |
+| Module 05 | Claude Code and AI workflow | 50 |
+| Module 06 | JavaScript fundamentals | 50 |
+| Module 07 | DOM and browser events | 50 |
+| Module 08 | Advanced and asynchronous JavaScript | 50 |
+| **Total** | | **400** |
 
-### HTML5
-- Semantic HTML and document structure
-- Links, images, lists, tables, and forms
-- Audio and video elements
-- Accessibility fundamentals
+Each problem folder includes a `README.md`. Modules 01–04 and 06–08 mainly use runnable examples; Module 05 uses guided workflow tasks, prompts, checklists and sample project files where provided. Read the instructions first, inspect or run the example, modify the code where applicable and explain the result in your own words.
 
-### CSS3
-- Selectors, specificity, and the box model
-- Typography, colours, spacing, and positioning
-- Flexbox and CSS Grid
-- Transitions, transforms, and responsive media queries
+## JavaScript project hubs
 
-### Tailwind CSS
-- Utility-first styling
-- Responsive breakpoints
-- Layouts, spacing, typography, and UI components
-- Hover and focus states
+- [Module 06 — 10 JavaScript fundamentals projects](./module-6%28foundation%20of%20java%20script%29/Projects/index.html)
+- [Module 07 — 5 DOM and Events projects](./module-7%28foundation%20of%20java%20script%20important%20part%29/02-Projects/index.html)
+- [Module 08 — 5 Advanced and Async JavaScript projects](./module-8%28asynchronous%20javascript%29/02-Projects/index.html)
 
-### Responsive Web Design
-- Mobile-first layouts
-- Desktop, tablet, and mobile testing
-- Responsive navigation, images, forms, and grids
+Projects are learning examples. Test their behavior, understand the code and customize them before presenting them as portfolio work. Public API demos can be affected by network availability and service rate limits.
 
-### Git, GitHub, and AI-Assisted Development
-- Repository management and version control
-- Commits, pushing changes, and collaboration workflows
-- Writing clear AI prompts
-- Reviewing, testing, and understanding AI-assisted code changes
+## Run the repository in VS Code
 
-## Assignments
+### Static HTML, CSS and JavaScript
 
-The `Assignment/` directory contains ten practice assignments covering:
+1. Extract the repository ZIP.
+2. Open the `AI-Driven-Full-Stack-Web-Developer-with-MERN` folder in VS Code.
+3. Install the **Live Server** extension if needed.
+4. Open the required module, project or problem folder and right-click its `index.html`.
+5. Select **Open with Live Server**.
+6. Open browser DevTools → Console to inspect logs and errors.
 
-1. Personal Portfolio
-2. Student Registration Form
-3. Smartphone Contact Information
-4. Chess Board
-5. CSS Service Cards
-6. CSS Cafe Landing Page
-7. Tailwind Course Cards
-8. Tailwind Pricing Cards
-9. Responsive Campus Event
-10. Claude Code Review Board
+### JavaScript ES modules and Fetch examples
 
-These assignments help me practise page structure, styling, responsive layouts, and code organisation.
+Use Live Server rather than opening the file through `file://`. Fetch/API examples require an internet connection. Public demo APIs may be temporarily unavailable; check the browser Console and Network tabs.
 
-## Frontend Problem Solving
+### Tailwind build projects
 
-The `Problem-Solving/Frontend-HTML-CSS/` directory contains fifty guided exercises organised into five days.
+Some Tailwind projects include a local build workflow. Open the relevant project folder and follow its `README.md` or `package.json` scripts. For example:
 
-The exercises cover HTML fundamentals, CSS layouts, Tailwind-style utility practice, responsive design, Git collaboration concepts, and AI-assisted code review workflows.
+```powershell
+cd "module-3 (Tailwind CSS)\practice"
+npm install
+npm run build:all
+```
 
-My practice approach is to understand each problem, review the code, make my own modifications, test the result, and explain why the implementation works.
+Use the project-specific instructions before running commands; not every lesson requires npm.
 
-## Featured Projects
+## Learning Tracker
 
-### 1. Ostad Landing Page
+The [Ostad Learning Tracker](./Ostad_Learning_Tracker/index.html) includes the eight-module map, practice links, skills and assignment references. Its study checkboxes save to the current browser's `localStorage`; they do not sync to GitHub or another device. Mark a module as studied only after you have worked through it.
 
-A landing page practice project built while learning HTML and Tailwind CSS.
+## Code quality and learning approach
 
-[View Source Code](./module-3-ostad-landing-page/)
+The examples are organised to support beginner-friendly reading:
 
-### 2. Responsive Agency Landing Page
+- Clear folder and file names.
+- Small lessons that focus on one concept at a time.
+- Comments explaining important lines and decisions.
+- Separate HTML, CSS and JavaScript files where useful.
+- Semantic markup, responsive layouts and accessible form labels.
+- JavaScript examples using readable names, functions, arrays, objects and event handlers.
+- Basic validation, error handling and browser debugging.
 
-A responsive agency website practice project focused on layout, visual structure, and responsive behaviour.
+Use the comments as a guide, not as a substitute for understanding. Change the examples and explain what each important line does.
 
-[View Source Code](./module-4-responsive-agency-landing-page/)
+## What is not covered yet
 
-More projects will be highlighted as I review, improve, and document them.
+These eight modules build frontend and JavaScript foundations. They do **not** mean that the complete MERN stack has been completed. The next learning stages are:
 
-## How to Run the Projects
+1. **React:** components, props, state, hooks, routing, forms and API integration.
+2. **Node.js:** runtime, modules, npm, environment variables and asynchronous code.
+3. **Express.js:** REST APIs, middleware, validation and error handling.
+4. **MongoDB:** documents, collections, CRUD, indexes and data modelling.
+5. **Authentication and security:** password hashing, sessions/JWT, authorization, CORS and input validation.
+6. **Testing and deployment:** unit/integration tests, environment configuration and deployment.
+7. **Portfolio capstones:** build and deploy full-stack applications with frontend, backend, database and documented setup.
 
-Most projects in the first five modules are frontend examples.
+## GitHub workflow
 
-1. Clone or download this repository.
-2. Open the required project folder in Visual Studio Code.
-3. Open the relevant `index.html` file in a browser or use Live Server.
-4. Review the related HTML and CSS files.
-5. Test the layout at different screen sizes.
+Follow [`GITHUB_PUSH_GUIDE_BN.md`](./GITHUB_PUSH_GUIDE_BN.md) for the Bengali push checklist. Keep your existing `.git` folder when replacing files in an already connected local repository.
 
-Some Tailwind examples use a CDN and require an internet connection. Projects using a local build setup may require additional installation steps described in their respective folders.
+```powershell
+git status
+git diff --check
+git add .
+git diff --cached --check
+git commit -m "Complete eight learning modules and add 400 practice problems"
+git push origin main
+```
 
-## Development Workflow
-
-My development and learning workflow is:
-
-**Learn → Practise → Build → Test → Review → Commit → Push**
-
-I use AI tools as learning and debugging assistants. I aim to understand the code I keep, verify suggested changes, and improve my ability to solve problems independently.
-
-## Next Learning Goals
-
-My next learning phase is JavaScript.
-
-- Variables, data types, and operators
-- Conditions and loops
-- Functions
-- Arrays, strings, and objects
-- DOM manipulation and events
-- Form handling and asynchronous JavaScript
-- Fetch API and REST API fundamentals
-
-After building a solid JavaScript foundation, I plan to learn React, Node.js, Express.js, and MongoDB and build complete full-stack applications.
-
-## Long-Term Goal
-
-My goal is to become a Junior Full Stack Web Developer by strengthening my programming fundamentals, building practical projects, learning version control, and developing independent debugging and problem-solving skills.
-
-This repository represents my ongoing learning journey and will be updated as I gain new skills and complete more projects.
+If your active branch is `master`, push to `master` instead. Check `git branch --show-current` before pushing.
 
 ---
 
-**Learning by doing: Study, Practise, Build, Review, and Improve.**
+**Learning workflow:** Understand → Practise → Build → Test → Review → Commit → Improve.

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3"
+  },
+  "name": "module-3-tailwind-practice-labs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:all": "node ./scripts/build-all.cjs"
+  }
+}

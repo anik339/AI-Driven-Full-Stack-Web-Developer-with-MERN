@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly task manager built with vanilla JavaScript.">
+  <title>Task Manager | JavaScript Project 01</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">JavaScript Project 01</p>
+      <h1>Make today count.</h1>
+      <p class="subtitle">A simple task manager. Add work, set priority, complete tasks, and keep your list after refreshing the page.</p>
+    </header>
+
+    <section class="stats grid" aria-label="Task summary">
+      <article class="panel stat"><span class="muted small">All tasks</span><strong id="total-count">0</strong></article>
+      <article class="panel stat"><span class="muted small">Remaining</span><strong id="active-count">0</strong></article>
+      <article class="panel stat"><span class="muted small">Completed</span><strong id="completed-count">0</strong></article>
+    </section>
+
+    <section class="panel panel-pad composer" aria-labelledby="form-title">
+      <h2 id="form-title">Add a task</h2>
+      <form id="task-form" class="task-form">
+        <div class="field grow">
+          <label for="task-input">Task name</label>
+          <input id="task-input" name="task" maxlength="100" placeholder="e.g. Build a responsive navigation bar" required>
+        </div>
+        <div class="field priority-field">
+          <label for="task-priority">Priority</label>
+          <select id="task-priority" name="priority">
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">+ Add task</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <div class="row-between section-heading">
+        <h2>Your tasks</h2>
+        <button id="clear-completed" class="btn btn-secondary small-btn" type="button">Clear completed</button>
+      </div>
+      <div class="filters" id="filters" aria-label="Filter tasks">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button class="filter" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state">No tasks yet. Add your first task above.</p>
+    </section>
+    <footer>Project 01 · HTML + CSS + Vanilla JavaScript · Data is saved in this browser.</footer>
+  </main>
+</body>
+</html>

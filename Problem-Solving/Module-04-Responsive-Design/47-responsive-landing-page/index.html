@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Landing Page</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 47 of 50</p><h1>Responsive Landing Page</h1><p>Combine hero, feature cards and footer into a small responsive landing page.</p></header>
+  <section class="demo">
+    <div class="landing"><header><strong>Bright Studio</strong><nav><a href="#features">Features</a><a href="#contact">Contact</a></nav></header><section class="landing-hero"><div><h2>Make your next idea real.</h2><p>A responsive starter page for a small digital studio.</p><a href="#contact">Get started</a></div><img src="https://placehold.co/600x420?text=Studio" alt="Studio team working together"></section><section id="features" class="features"><article>Design</article><article>Development</article><article>Support</article></section></div>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="contact"><h2>Example destination: Contact</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

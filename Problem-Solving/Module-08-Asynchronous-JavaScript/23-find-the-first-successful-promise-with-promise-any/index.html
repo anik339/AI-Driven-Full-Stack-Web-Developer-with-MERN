@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Return the first fulfilled Promise even if another rejects first.">
+  <title>Find the First Successful Promise with Promise.any()</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Module 8 — Advanced and Asynchronous JavaScript · Problem 23 of 50</p>
+      <h1>Find the First Successful Promise with Promise.any()</h1>
+      <p class="lead">Return the first fulfilled Promise even if another rejects first.</p>
+    </header>
+    <section class="card">
+      <p class="label">Task</p>
+      <p class="task">Return the first fulfilled Promise even if another rejects first.</p>
+      <p><strong>Concept:</strong> Promise.any(), AggregateError</p>
+      <button id="run-example" class="btn" type="button">Run Solution</button>
+      <div id="demo-area" aria-live="polite"></div>
+      <p class="label">Program output</p>
+      <pre id="output" aria-live="polite">Click “Run Solution” to see the result.</pre>
+    </section>
+    <section class="card">
+      <h2>Expected output</h2>
+      <p class="explain">Server B succeeded.</p>
+    </section>
+    <section class="card">
+      <h2>Easy explanation</h2>
+      <p class="explain">Promise.any() ignores rejections until a Promise fulfils. If all reject, it throws an AggregateError.</p>
+    </section>
+    <section class="card">
+      <h2>Your practice challenge</h2>
+      <div class="challenge">Make every task fail and handle the AggregateError.</div>
+      <p class="muted small">Try it yourself before moving to the next problem.</p>
+    </section>
+    <section class="card">
+      <details>
+        <summary>Read the complete JavaScript code</summary>
+        <pre class="code" id="code-view">Loading script.js…</pre>
+      </details>
+      <p class="muted small">The same code is saved in script.js. Open that file in VS Code to edit it.</p>
+    </section>
+    <footer>JavaScript Problem Solving · Module 8 — Advanced and Asynchronous JavaScript · Beginner-friendly practice</footer>
+  </main>
+  <script>
+    // Load the actual script file into the code viewer.
+    fetch("./script.js")
+      .then(response => response.text())
+      .then(source => document.querySelector("#code-view").textContent = source)
+      .catch(() => document.querySelector("#code-view").textContent = "Open script.js in VS Code to read the code.");
+  </script>
+</body>
+</html>

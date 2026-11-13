@@ -1,0 +1,12 @@
+/* MODULE 2: CSS Foundations
+   The comments explain why each rule is used. Edit the rules and refresh the page. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; color: #203047; background: #f4f7fb; }
+main { max-width: 850px; margin: 0 auto; }
+h1 { color: #2449a6; }
+.demo { background: white; border: 1px solid #d7dfeb; border-radius: 12px; padding: 16px; }
+
+/* Task-specific CSS */
+.styled-form input { display: block; width: 100%; max-width: 320px; padding: 10px; border: 1px solid #94a3b8; border-radius: 8px; }
+.styled-table { width: 100%; border-collapse: collapse; margin-top: 18px; background: white; }
+.styled-table th, .styled-table td { padding: 10px; border-bottom: 1px solid #dbe3ef; text-align: left; }

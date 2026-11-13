@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The DOM (Document Object Model) is the browser's object-based representation of an HTML page. JavaScript can read and change this page through the DOM.">
+  <title>01. Understanding the DOM</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · PRACTICE CODE</p>
+      <h1>01. Understanding the DOM</h1>
+      <p class="lead">The DOM (Document Object Model) is the browser's object-based representation of an HTML page. JavaScript can read and change this page through the DOM.</p>
+    </header>
+    
+<section class="panel pad stack">
+  <h2 id="main-heading">Welcome to the DOM</h2>
+  <p id="intro-text">This paragraph is an HTML element. JavaScript can find it and update it.</p>
+  <div class="row">
+    <button id="change-button" class="btn" type="button">Change the page</button>
+    <button id="reset-button" class="btn secondary" type="button">Reset</button>
+  </div>
+  <div class="output" id="dom-output">The browser has loaded this HTML document.</div>
+</section>
+<section class="panel pad" style="margin-top:16px">
+  <h2>A simple DOM tree</h2>
+  <ul class="clean">
+    <li>document
+      <ul>
+        <li>html
+          <ul><li>head</li><li>body
+            <ul><li>main</li><li>section</li><li>h1 / p / button</li></ul>
+          </li></ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p class="muted small">The tree is simplified for learning. The browser creates a larger DOM tree from the full document.</p>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

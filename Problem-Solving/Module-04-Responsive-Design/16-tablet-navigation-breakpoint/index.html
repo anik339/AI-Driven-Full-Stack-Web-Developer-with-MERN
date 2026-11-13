@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tablet Navigation Breakpoint</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 16 of 50</p><h1>Tablet Navigation Breakpoint</h1><p>Increase spacing and font size on wider navigation.</p></header>
+  <section class="demo">
+    <nav class="tablet-nav"><a href="#one">Overview</a><a href="#two">Lessons</a><a href="#three">Projects</a><a href="#four">Resources</a></nav>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="four"><h2>Example destination: Four</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="one"><h2>Example destination: One</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="three"><h2>Example destination: Three</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="two"><h2>Example destination: Two</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

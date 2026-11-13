@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Blog Layout</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 46 of 50</p><h1>Responsive Blog Layout</h1><p>Create a blog article and related sidebar that adapts to mobile.</p></header>
+  <section class="demo">
+    <div class="blog-layout"><article><h2>Learning responsive design</h2><p>Responsive design adapts content to the available space.</p><p>Start with flexible dimensions and add breakpoints where the layout needs them.</p></article><aside><h3>Related posts</h3><a href="#css">CSS Grid</a><a href="#flex">Flexbox</a></aside></div>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="css"><h2>Example destination: Css</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="flex"><h2>Example destination: Flex</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

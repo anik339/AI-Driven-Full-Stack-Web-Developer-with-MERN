@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox Row</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <p>Module 02 · CSS · Problem 32 of 50</p>
+  <h1>Flexbox Row</h1>
+  <p>Align navigation links in one row with Flexbox.</p>
+  <section class="demo">
+    <nav class="flex-nav"><a href="#home">Home</a><a href="#courses">Courses</a><a href="#projects">Projects</a></nav>
+  </section>
+  <details><summary>Read the CSS solution</summary><pre id="css-source">Loading style.css…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="courses"><h2>Example destination: Courses</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="home"><h2>Example destination: Home</h2><p>This section is the destination for the sample in-page link.</p></section>
+<section class="link-target" id="projects"><h2>Example destination: Projects</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>
+  // Display the CSS source so you can study it in the browser too.
+  fetch("./style.css").then(r => r.text()).then(t => document.querySelector("#css-source").textContent = t);
+</script>
+</body></html>

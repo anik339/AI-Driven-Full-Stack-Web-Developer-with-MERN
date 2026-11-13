@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sticky Header</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 28 of 50</p><h1>Sticky Header</h1><p>Keep a header visible while scrolling without covering content.</p></header>
+  <section class="demo">
+    <header class="sticky-header"><strong>Study Notes</strong><nav><a href="#one">One</a> <a href="#two">Two</a></nav></header><section id="one" class="long-section">First section</section><section id="two" class="long-section">Second section</section>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>

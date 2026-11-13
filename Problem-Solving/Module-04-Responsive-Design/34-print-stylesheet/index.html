@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Print Stylesheet</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header><p>Module 04 · Responsive Design · Problem 34 of 50</p><h1>Print Stylesheet</h1><p>Hide navigation and preserve readable article content when printing.</p></header>
+  <section class="demo">
+    <nav class="print-nav"><a href="#top">Home</a> · <a href="#article">Article</a></nav><article id="article" class="print-article"><h2>Print-friendly notes</h2><p>Important learning content should remain readable on paper.</p></article>
+  </section>
+  <details><summary>Read responsive CSS</summary><pre id="css-source">Loading…</pre></details>
+
+<!-- Added sample destinations so every demonstration link has a real target. -->
+<section class="link-target" id="top"><h2>Example destination: Top</h2><p>This section is the destination for the sample in-page link.</p></section>
+</main>
+<script>fetch("./style.css").then(r=>r.text()).then(t=>document.querySelector("#css-source").textContent=t);</script>
+</body></html>
