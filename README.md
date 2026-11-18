@@ -1,73 +1,178 @@
-# Anik Chandra Dey | Frontend & MERN Stack Developer in Progress
+# ✦ ANIK CHANDRA DEY
 
-Computer Science and Engineering student at American International University-Bangladesh (AIUB), passionate about web development, programming, and building practical software projects.
+### Computer Science & Engineering Student | Aspiring Full-Stack Developer
 
-## About Me
+**Building skills. Creating projects. Turning ideas into reality.**
 
-- **Name:** Anik Chandra Dey
-- **University:** American International University-Bangladesh (AIUB)
-- **Department:** Computer Science & Engineering
-- **Email:** anik65605@gmail.com
-- **GitHub:** [anik339](https://github.com/anik339)
+[![GitHub](https://img.shields.io/badge/GitHub-anik339-181717?style=for-the-badge&logo=github)](https://github.com/anik339)
+[![AIUB](https://img.shields.io/badge/University-AIUB-003366?style=for-the-badge)](https://www.aiub.edu/)
+[![Learning](https://img.shields.io/badge/Learning-Web_Development-6C63FF?style=for-the-badge)](https://github.com/anik339)
 
-Currently developing my web development skills through structured learning, programming exercises, and hands-on projects.
+---
 
-## Learning Progress
+## ◈ ABOUT ME
 
-| Module | Topics |
-|---|---|
-| Module 1 | HTML |
-| Module 2 | CSS |
-| Module 3 | Tailwind CSS |
-| Module 4 | Responsive Web Design, AI Tools & GitHub Collaboration |
-| Module 5 | Claude Code Setup |
-| Module 6 | JavaScript Fundamentals |
-| Module 7 | Important JavaScript Concepts |
-| Module 8 | Asynchronous JavaScript |
+Hello! I'm **Anik Chandra Dey**, a Computer Science and Engineering student at **American International University-Bangladesh (AIUB)**.
 
-## Frontend Projects
+I'm passionate about web development, programming, problem-solving, and building practical digital solutions.
 
-### 01. Personal Portfolio
-Personal portfolio website showcasing profile information, skills, and projects.
+This repository represents my development journey — from learning the fundamentals of web technologies to creating interactive frontend applications and progressing toward full-stack development.
 
-[View Project](./Frontend-Projects/01-personal-portfolio/)
+I believe in learning by doing, writing cleaner code, and continuously improving through practical experience.
 
-### 02. E-commerce Storefront
-Frontend e-commerce interface with product browsing and shopping interactions.
+**My development philosophy:**
 
-[View Project](./Frontend-Projects/02-ecommerce-storefront/)
+> Learn with curiosity. Build with purpose. Improve with consistency.
 
-### 03. Admin Analytics Dashboard
-Analytics dashboard interface with data visualisation and dashboard interactions.
+---
 
-[View Project](./Frontend-Projects/03-admin-analytics-dashboard/)
+## ◈ TECHNOLOGY TOOLKIT
 
-### 04. Project Management & Kanban Board
-Task management application featuring task organisation, status tracking, and Kanban interactions.
+### Currently Learning & Practising
 
-[View Project](./Frontend-Projects/04-project-management-kanban/)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
 
-### 05. Job & Internship Portal
-Job discovery interface featuring search, filtering, saved opportunities, and application form demonstrations.
+### Development Environment
 
-[View Project](./Frontend-Projects/05-job-internship-portal/)
-
-## Technologies
-
-- HTML5
-- CSS3
-- Tailwind CSS
-- JavaScript (ES6+)
-- Responsive Web Design
+- Visual Studio Code
 - Git & GitHub
-- VS Code
+- Google Chrome
+- AI-assisted development tools
+- Live Server
 
-## Repository Structure
+---
+
+## ◈ LEARNING JOURNEY
+
+A structured collection of my completed learning modules and practical exercises.
+
+| Module | Learning Area | Status |
+|:---:|---|:---:|
+| 01 | HTML Fundamentals | ✅ Completed |
+| 02 | CSS Fundamentals | ✅ Completed |
+| 03 | Tailwind CSS | ✅ Completed |
+| 04 | Responsive Web Design, AI Tools & GitHub Collaboration | ✅ Completed |
+| 05 | Claude Code Setup | ✅ Completed |
+| 06 | Foundation of JavaScript | ✅ Completed |
+| 07 | Important JavaScript Concepts | ✅ Completed |
+| 08 | Asynchronous JavaScript | ✅ Completed |
+
+**Learning Progress:** Modules 01–08 completed.
+
+### Explore Course Materials
+
+| Module | Repository Folder |
+|---|---|
+| Module 01 | `module-1 (HTML)` |
+| Module 02 | `module-2 (CSS)` |
+| Module 03 | `module-3 (Tailwind CSS)` |
+| Module 04 | `module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)` |
+| Module 05 | `module-5 (Claude Code Setup)` |
+| Module 06 | `module-6(foundation of java script)` |
+| Module 07 | `module-7(foundation of java script important part)` |
+| Module 08 | `module-8(asynchronous javascript)` |
+
+---
+
+## ◈ FEATURED PROJECTS
+
+Five practical frontend projects developed to apply my learning through real-world-inspired interfaces and interactive functionality.
+
+### 01 — Personal Portfolio
+
+**A personal space to present my developer identity.**
+
+- Personal introduction and profile
+- Skills and project presentation
+- Contact information
+- Responsive interface
+
+[→ Explore Project 01](./Frontend-Projects/01-personal-portfolio/)
+
+---
+
+### 02 — NOVA E-commerce Storefront
+
+**An interactive storefront experience.**
+
+- Product browsing interface
+- Shopping cart interactions
+- Wishlist functionality
+- Checkout demonstration
+- Responsive product layouts
+
+[→ Explore Project 02](./Frontend-Projects/02-ecommerce-storefront/)
+
+---
+
+### 03 — Admin Analytics Dashboard
+
+**A dashboard interface for presenting business information.**
+
+- Analytics overview
+- Data visualisation
+- Workspace interface
+- Dashboard settings
+- Interactive navigation
+
+[→ Explore Project 03](./Frontend-Projects/03-admin-analytics-dashboard/)
+
+---
+
+### 04 — Project Management & Kanban Board
+
+**A productivity-focused task management application.**
+
+- Create, edit and delete tasks
+- Kanban task organisation
+- Drag-and-drop interactions
+- Priority and assignee filters
+- Workspace interface
+
+[→ Explore Project 04](./Frontend-Projects/04-project-management-kanban/)
+
+---
+
+### 05 — Job & Internship Portal
+
+**A frontend platform for exploring career opportunities.**
+
+- Job search and filtering
+- Job details interface
+- Save and unsave opportunities
+- Application form demonstration
+- Responsive navigation
+
+[→ Explore Project 05](./Frontend-Projects/05-job-internship-portal/)
+
+---
+
+## ◈ PRACTICE & DEVELOPMENT
+
+Beyond course modules, this repository also contains additional learning resources and coding exercises.
+
+| Directory | Description |
+|---|---|
+| `Assignment/` | Course assignments and practical tasks |
+| `Problem-Solving/` | JavaScript exercises and programming challenges |
+| `Ostad_Learning_Tracker/` | Learning progress and course tracking |
+| `Frontend-Projects/` | Five practical frontend applications |
+
+---
+
+## ◈ REPOSITORY ARCHITECTURE
 
 ```text
 AI-Driven-Full-Stack-Web-Developer-with-MERN/
 │
 ├── Assignment/
+│
 ├── Frontend-Projects/
 │   ├── 01-personal-portfolio/
 │   ├── 02-ecommerce-storefront/
@@ -78,34 +183,70 @@ AI-Driven-Full-Stack-Web-Developer-with-MERN/
 ├── module-1 (HTML)/
 ├── module-2 (CSS)/
 ├── module-3 (Tailwind CSS)/
-├── module-4/
-├── module-5/
-├── module-6/
-├── module-7/
-├── module-8/
+├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+├── module-5 (Claude Code Setup)/
+├── module-6(foundation of java script)/
+├── module-7(foundation of java script important part)/
+├── module-8(asynchronous javascript)/
 │
 ├── Ostad_Learning_Tracker/
-└── Problem-Solving/
-
+├── Problem-Solving/
+│
+├── .gitignore
+└── README.md
 ```
-
-## Learning Goals
-
-- Strengthen JavaScript fundamentals.
-- Learn React.js and component-based development.
-- Build interactive frontend applications.
-- Learn API integration.
-- Progress toward Node.js, Express.js, MongoDB, and MySQL.
-- Develop full-stack applications through practical projects.
-
-## Contact
-
-**Anik Chandra Dey**
-
-GitHub: https://github.com/anik339
-
-Email: anik65605@gmail.com
 
 ---
 
-*This repository documents my learning journey, practical exercises, and web development projects.*
+## ◈ MY DEVELOPMENT ROADMAP
+
+My next goal is to move from frontend development toward building complete full-stack applications.
+
+- [x] HTML, CSS & Tailwind CSS
+- [x] Responsive Web Design
+- [x] JavaScript Modules 01–08
+- [x] Five Practical Frontend Projects
+- [ ] React.js Fundamentals
+- [ ] React Components & Hooks
+- [ ] State Management
+- [ ] API Integration
+- [ ] Node.js & Express.js
+- [ ] MongoDB
+- [ ] MySQL
+- [ ] Authentication & Authorization
+- [ ] Full-Stack MERN Applications
+
+*The unchecked items represent future learning goals.*
+
+---
+
+## ◈ WHAT'S NEXT?
+
+I'm focused on strengthening my JavaScript knowledge, learning React, and gradually expanding my development skills toward backend technologies.
+
+My long-term goal is to become a capable Full-Stack Developer who can design, develop, and maintain complete web applications.
+
+---
+
+## ◈ CONNECT WITH ME
+
+**Anik Chandra Dey**
+
+🎓 Computer Science & Engineering  
+🏛️ American International University-Bangladesh (AIUB)
+
+📧 **Email:** [anik65605@gmail.com](mailto:anik65605@gmail.com)
+
+💻 **GitHub:** [github.com/anik339](https://github.com/anik339)
+
+---
+
+<div align="center">
+
+### ✦ BUILD • LEARN • CREATE • IMPROVE ✦
+
+*This repository is a reflection of my learning journey, practical work, and continuous growth in software development.*
+
+**Thanks for visiting my repository!**
+
+</div>
