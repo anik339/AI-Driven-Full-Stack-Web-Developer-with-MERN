@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS Transform: Translate, Scale, Rotate and Skew</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="wrap"><p>MODULE 02 · CSS SUPPLEMENTARY</p><h1>CSS Transform: Translate, Scale, Rotate and Skew</h1><p>Compare the four common 2D transform functions and see how transform-origin changes the result.</p></div></header><main class="wrap"><section class="panel">
+<div class="grid">
+  <div class="demo"><h2>Translate</h2><div class="shape translate">Move</div><code>translate(12px, -8px)</code></div>
+  <div class="demo"><h2>Scale</h2><div class="shape scale">Resize</div><code>scale(1.08)</code></div>
+  <div class="demo"><h2>Rotate</h2><div class="shape rotate">Turn</div><code>rotate(8deg)</code></div>
+  <div class="demo"><h2>Skew</h2><div class="shape skew">Slant</div><code>skew(-8deg, 0)</code></div>
+</div>
+<p class="tip">Hover each shape. Transform changes visual rendering without changing the normal document flow.</p>
+<pre><code>.shape:hover { transform: translate(12px, -8px) scale(1.05) rotate(4deg) skew(-5deg); }
+.shape { transform-origin: center; transition: transform .25s ease; }</code></pre>
+</section><p><a href="../index.html">Back to CSS lessons</a></p></main><footer class="wrap">Run with VS Code Live Server. Edit style.css and observe each change.</footer></body></html>

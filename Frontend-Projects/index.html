@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anik Chandra Dey's five-project frontend learning portfolio pack.">
+  <title>Anik Chandra Dey | Frontend Project Pack</title>
+  <style>
+    /* Root launcher styles: intentionally self-contained so the pack opens immediately. */
+    :root{color-scheme:light;--bg:#f4f6fb;--surface:#fff;--text:#182238;--muted:#68748b;--line:#e1e6f0;--brand:#5b5ce2;--shadow:0 18px 50px rgba(30,45,80,.09)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,"Segoe UI",Arial,sans-serif}
+    .wrap{width:min(1120px,calc(100% - 36px));margin:auto}.hero{padding:62px 0 38px}.eyebrow{color:var(--brand);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    h1{max-width:780px;margin:10px 0;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.08;letter-spacing:-.055em}.intro{max-width:720px;color:var(--muted);font-size:1.05rem}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{padding:7px 12px;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:.82rem;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:16px 0 54px}.card{display:flex;flex-direction:column;min-height:250px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow)}
+    .number{color:var(--brand);font-weight:900;font-size:.78rem;letter-spacing:.12em}.card h2{margin:9px 0 7px;font-size:1.25rem;line-height:1.25}.card p{margin:0 0 22px;color:var(--muted);font-size:.94rem}.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto}.open{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:10px;background:var(--brand);color:white;text-decoration:none;font-weight:800;font-size:.9rem}.readme{color:var(--brand);font-weight:700;text-decoration:none;font-size:.88rem}
+    footer{padding:20px 0 36px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+    @media(max-width:680px){.hero{padding-top:42px}.grid{grid-template-columns:1fr}.card{min-height:0}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Frontend learning portfolio · 2026</p>
+      <h1>Anik Chandra Dey<br>Five Project Collection</h1>
+      <p class="intro">A single launch page for five independent frontend practice projects. Each project has its own HTML, CSS, JavaScript, and README file. Open a project below to explore it.</p>
+      <div class="meta"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Vanilla JavaScript</span><span class="pill">Responsive UI</span><span class="pill">Frontend only</span></div>
+    </header>
+    <section class="grid" aria-label="Frontend projects">
+      <article class="card"><span class="number">PROJECT 01</span><h2>Personal Portfolio</h2><p>Personal introduction, profile photo, AIUB CSE background, current learning skills, project showcase, and contact form.</p><div class="actions"><a class="open" href="01-personal-portfolio/index.html">Open project ↗</a><a class="readme" href="01-personal-portfolio/README.md">README</a></div></article>
+      <article class="card"><span class="number">PROJECT 02</span><h2>NOVA Market — E-commerce Storefront</h2><p>Product catalogue, search, category filters, sorting, cart, quantity controls, wishlist, and demo checkout.</p><div class="actions"><a class="open" href="02-ecommerce-storefront/index.html">Open project ↗</a><a class="readme" href="02-ecommerce-storefront/README.md">README</a></div></article>
+      <article class="card"><span class="number">PROJECT 03</span><h2>Northstar — Admin Analytics Dashboard</h2><p>Dashboard KPIs, charts, transactions, customers, products, workspace manager, profile, notifications, and settings.</p><div class="actions"><a class="open" href="03-admin-analytics-dashboard/index.html">Open project ↗</a><a class="readme" href="03-admin-analytics-dashboard/README.md">README</a></div></article>
+      <article class="card"><span class="number">PROJECT 04</span><h2>Taskflow — Project Management</h2><p>Kanban tasks, board/list/calendar views, projects, workspace switching, filters, profile, notifications, and preferences.</p><div class="actions"><a class="open" href="04-project-management-kanban/index.html">Open project ↗</a><a class="readme" href="04-project-management-kanban/README.md">README</a></div></article>
+      <article class="card"><span class="number">PROJECT 05</span><h2>Launchpad — Job & Internship Portal</h2><p>Job discovery, filters, saved roles, demo application history, employer workspace, profile, and settings.</p><div class="actions"><a class="open" href="05-job-internship-portal/index.html">Open project ↗</a><a class="readme" href="05-job-internship-portal/README.md">README</a></div></article>
+    </section>
+  </main>
+  <footer><div class="wrap">Built as a frontend learning collection by Anik Chandra Dey · All data and actions are local demo content; no backend or real payments are connected.</div></footer>
+</body>
+</html>

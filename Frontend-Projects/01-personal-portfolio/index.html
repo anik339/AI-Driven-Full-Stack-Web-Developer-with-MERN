@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- Personal Portfolio: main page structure. See README.md for setup and feature notes. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Anik Chandra Dey, a Computer Science and Engineering student at AIUB learning and building with frontend technologies.">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Anik Chandra Dey | CSE Student & Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Anik Chandra Dey home">
+        <span class="brand-mark">AD</span>
+        <span class="brand-name">Anik<span>Dey</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-label="Open navigation menu" aria-expanded="false"
+              aria-controls="primary-navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="primary-navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#education">Journey</a>
+        <a class="nav-link nav-contact" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.7 8.7 0 1 0 20.5 15.5Z"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Available for learning opportunities</p>
+          <p class="hero-intro">Hello, I'm</p>
+          <h1>Anik Chandra Dey<span class="accent-dot">.</span></h1>
+          <h2>CSE Student &amp; <span class="gradient-text">Frontend Developer</span></h2>
+          <p class="hero-description">
+            I am a Computer Science and Engineering student at American International University-Bangladesh (AIUB), building a strong foundation in frontend development. I enjoy turning ideas into responsive, accessible interfaces and learning by creating practical projects.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-socials" aria-label="Social links">
+            <a href="https://github.com/anik339" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GH</a>
+            <a href="mailto:anik65605@gmail.com" aria-label="Send email">@</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Decorative developer profile illustration">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="profile-card">
+            <div class="profile-card-top"><span></span><span></span><span></span><p>developer.js</p></div>
+            <img class="profile-avatar" src="assets/images/anik-chandra-dey.jpg" alt="Portrait of Anik Chandra Dey">
+            <p class="profile-greeting">const developer = {</p>
+            <p class="profile-line"><span>name:</span> "Anik Chandra Dey",</p>
+            <p class="profile-line"><span>role:</span> "CSE Student",</p>
+            <p class="profile-line"><span>university:</span> "AIUB",</p>
+            <p class="profile-line"><span>focus:</span> "Frontend Development"</p>
+            <p class="profile-greeting">};</p>
+            <div class="profile-card-footer"><span class="status-dot"></span> Always learning & building</div>
+          </div>
+          <div class="floating-tag tag-html">&lt;/&gt; HTML</div>
+          <div class="floating-tag tag-css">✳ CSS</div>
+          <div class="floating-tag tag-js">JS</div>
+        </div>
+      </div>
+      <div class="hero-bottom container">
+        <span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>01 / 06</span>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container two-column">
+        <div>
+          <p class="section-kicker">01 — ABOUT ME</p>
+          <h2 class="section-title">Curious mind.<br><span class="gradient-text">Thoughtful builder.</span></h2>
+        </div>
+        <div class="about-content">
+          <p class="lead">I'm Anik Chandra Dey, a Computer Science and Engineering student at American International University-Bangladesh (AIUB), focused on building a strong foundation in frontend development.</p>
+          <p>
+            I have been learning HTML, CSS, Tailwind CSS, and JavaScript through
+            structured lessons and hands-on practice. I like breaking problems
+            into smaller steps, writing readable code, and improving my work
+            through testing and feedback.
+          </p>
+          <p>
+            My current goal is to become confident with frontend development,
+            build practical projects, and then move forward with React and the
+            wider MERN stack.
+          </p>
+          <a class="text-link" href="#contact">Let's connect <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">02 — WHAT I USE</p>
+            <h2 class="section-title">Skills & <span class="gradient-text">tools.</span></h2>
+          </div>
+          <p class="section-note">Technologies I'm learning and using in my practice projects.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card"><span class="skill-icon html-icon">5</span><h3>HTML5</h3><p>Semantic structure, forms, and accessible markup.</p></article>
+          <article class="skill-card"><span class="skill-icon css-icon">✳</span><h3>CSS3</h3><p>Layouts, responsive design, animations, and styling.</p></article>
+          <article class="skill-card"><span class="skill-icon tailwind-icon">≈</span><h3>Tailwind CSS</h3><p>Utility-first styling and responsive UI building.</p></article>
+          <article class="skill-card"><span class="skill-icon js-icon">JS</span><h3>JavaScript</h3><p>DOM, events, arrays, functions, and async basics.</p></article>
+          <article class="skill-card"><span class="skill-icon git-icon">⌘</span><h3>Git & GitHub</h3><p>Version control, commits, branches, and repositories.</p></article>
+          <article class="skill-card"><span class="skill-icon tools-icon">⚙</span><h3>VS Code</h3><p>Writing, debugging, and organizing code.</p></article>
+        </div>
+        <p class="skills-disclaimer">Skill list reflects current learning. Update it as you gain experience.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">03 — SELECTED WORK</p>
+            <h2 class="section-title">Projects I've <span class="gradient-text">built.</span></h2>
+          </div>
+          <p class="section-note">Five practical frontend projects built with HTML, CSS, and vanilla JavaScript. Open each live demo from its project card.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-art art-one"><span class="art-label">01 / PORTFOLIO</span><div class="mini-browser"><div class="mini-browser-bar"></div><div class="mini-hero"></div><div class="mini-lines"><i></i><i></i><i></i></div></div></div>
+            <div class="project-info"><div class="project-meta"><span>HTML · CSS · JS</span><span>01</span></div><h3>Personal Portfolio</h3><p>A responsive portfolio introducing my background, current skills, learning journey, and selected work.</p><a class="text-link project-link" href="index.html">View portfolio <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-two"><span class="art-label">02 / E-COMMERCE</span><div class="mini-task"><b>NOVA Market</b><i>✓ Product catalogue</i><i>✓ Shopping cart</i><i>♡ Wishlist</i></div></div>
+            <div class="project-info"><div class="project-meta"><span>HTML · CSS · JS</span><span>02</span></div><h3>NOVA Market Storefront</h3><p>Product search, category filters, sorting, cart, wishlist, and a clearly labelled demo checkout.</p><a class="text-link project-link" href="../02-ecommerce-storefront/index.html" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-three"><span class="art-label">03 / DASHBOARD</span><div class="mini-weather"><strong>৳</strong><span>Analytics</span><div class="weather-sun"></div></div></div>
+            <div class="project-info"><div class="project-meta"><span>HTML · CSS · JS</span><span>03</span></div><h3>Northstar Admin Dashboard</h3><p>Interactive analytics, transactions, customers, products, workspace controls, and settings.</p><a class="text-link project-link" href="../03-admin-analytics-dashboard/index.html" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-two"><span class="art-label">04 / PRODUCTIVITY</span><div class="mini-task"><b>Taskflow</b><i>✓ To do</i><i>↗ In progress</i><i>✓ Completed</i></div></div>
+            <div class="project-info"><div class="project-meta"><span>HTML · CSS · JS</span><span>04</span></div><h3>Taskflow Kanban Board</h3><p>Manage workspaces and projects, organise tasks, and switch between board, list, and calendar views.</p><a class="text-link project-link" href="../04-project-management-kanban/index.html" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-one"><span class="art-label">05 / CAREER</span><div class="mini-browser"><div class="mini-browser-bar"></div><div class="mini-hero"></div><div class="mini-lines"><i></i><i></i><i></i></div></div></div>
+            <div class="project-info"><div class="project-meta"><span>HTML · CSS · JS</span><span>05</span></div><h3>Launchpad Job Portal</h3><p>Explore opportunities, save jobs, manage demo applications, and use employer job-posting tools.</p><a class="text-link project-link" href="../05-job-internship-portal/index.html" target="_blank" rel="noopener noreferrer">Open project <span aria-hidden="true">↗</span></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container two-column">
+        <div>
+          <p class="section-kicker">04 — MY JOURNEY</p>
+          <h2 class="section-title">Learning with <span class="gradient-text">purpose.</span></h2>
+          <p class="section-note journey-note">Education and current learning focus. Only confirmed details are included.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item"><span class="timeline-dot"></span><p class="timeline-date">CURRENT EDUCATION</p><h3>American International University-Bangladesh (AIUB)</h3><p>Computer Science and Engineering (CSE) student.</p></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><p class="timeline-date">CURRENT LEARNING</p><h3>Frontend Development</h3><p>Practicing HTML, CSS, Tailwind CSS, JavaScript, Git, and GitHub through hands-on projects.</p></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><p class="timeline-date">LEARNING NEXT</p><h3>React & Modern Frontend</h3><p>Planning to learn components, hooks, routing, state management, and API integration.</p></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><p class="timeline-date">FUTURE GOAL</p><h3>Full-Stack Development</h3><p>Building toward the MERN stack with Node.js, Express, and MongoDB.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section section-soft" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker">05 — GET IN TOUCH</p>
+          <h2 class="section-title">Have a project<br>in <span class="gradient-text">mind?</span></h2>
+          <p class="contact-intro">I'm open to learning opportunities, collaboration, and thoughtful conversations about web development.</p>
+          <a class="contact-email" href="mailto:anik65605@gmail.com">anik65605@gmail.com <span aria-hidden="true">↗</span></a>
+          <p class="small-note">GitHub: <a href="https://github.com/anik339" target="_blank" rel="noopener noreferrer">github.com/anik339</a></p>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required minlength="2">
+            <small class="field-error" id="name-error"></small>
+          </div>
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <small class="field-error" id="email-error"></small>
+          </div>
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="What is this about?" required minlength="3">
+            <small class="field-error" id="subject-error"></small>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message..." required minlength="10"></textarea>
+            <small class="field-error" id="message-error"></small>
+          </div>
+          <button class="button button-primary submit-button" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite">The form validates your details and opens your email app. It does not store messages.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">AD</span><span class="brand-name">Anik<span>Dey</span></span></a>
+      <p>Designed & built with care. © <span id="current-year"></span> Anik Chandra Dey.</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

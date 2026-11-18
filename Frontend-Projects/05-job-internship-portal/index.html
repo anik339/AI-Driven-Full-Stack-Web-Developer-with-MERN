@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Launchpad — Job & Internship Portal: main page structure. See README.md for setup and feature notes. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive frontend-only job and internship portal demo.">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>Launchpad — Find your next opportunity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home"><span class="brand-icon">L</span><span>launchpad<span class="brand-dot">.</span></span></a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a class="active" href="#jobs">Find jobs</a><a href="#career-tips">Career tips</a><a href="#about">About</a></nav>
+      <div class="header-actions"><button class="saved-shortcut" id="saved-shortcut" type="button" aria-pressed="false">♡ Saved <span id="saved-count">0</span></button><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button><button class="notification-shortcut" id="notification-button" type="button" aria-label="Notifications">♧<span id="notification-count">2</span></button><button class="profile-shortcut" id="profile-shortcut" type="button" aria-label="Open profile">AD</button><button class="post-job" id="employer-link" type="button">For employers ↗</button><button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy"><p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p><h1>Find work that<br><em>moves you forward.</em></h1><p class="hero-description">Discover internships and early-career opportunities from teams building what comes next.</p><a href="#jobs" class="hero-cta">Explore opportunities <span>↗</span></a><div class="hero-proof"><div class="proof-avatars"><i>AR</i><i>NS</i><i>FK</i><i>+</i></div><span>Good opportunities start with one search.</span></div></div>
+        <div class="hero-visual"><div class="visual-backdrop"></div><div class="floating-note note-one"><span class="note-icon">✳</span><span><strong>New opportunities</strong><small>Updated regularly in this demo</small></span></div><div class="visual-card"><div class="visual-card-top"><span>YOUR CAREER, YOUR WAY</span><span>✦</span></div><div class="visual-illustration"><div class="sun-shape"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="person-shape"><i></i><b></b></div></div><div class="visual-card-bottom"><strong>Make your next move.</strong><span>Explore · Learn · Grow</span></div></div><div class="floating-note note-two"><span class="note-icon note-blue">↗</span><span><strong>Built for your next step</strong><small>Internships · Graduate roles · Remote</small></span></div></div>
+      </div>
+    </section>
+
+    <section class="search-section container" id="jobs">
+      <div class="search-heading"><div><p class="eyebrow">THE OPPORTUNITY BOARD</p><h2>Find your <em>fit.</em></h2></div><p>Search roles, explore teams, and save the opportunities worth coming back to.</p></div>
+      <form class="search-panel" id="search-form">
+        <label class="search-field"><span>⌕</span><span class="field-copy"><small>WHAT ARE YOU LOOKING FOR?</small><input id="keyword-search" type="search" placeholder="Job title, skill or company"></span></label>
+        <label class="search-field"><span>⌖</span><span class="field-copy"><small>LOCATION</small><select id="location-filter"><option value="all">Anywhere</option><option value="Dhaka">Dhaka</option><option value="Remote">Remote</option><option value="Chattogram">Chattogram</option><option value="Hybrid">Hybrid</option></select></span></label>
+        <label class="search-field"><span>▤</span><span class="field-copy"><small>JOB TYPE</small><select id="type-filter"><option value="all">All types</option><option value="Internship">Internship</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Contract">Contract</option></select></span></label>
+        <button class="search-button" type="submit">Search jobs <span>→</span></button>
+      </form>
+      <div class="job-toolbar"><div class="result-count" id="result-count">Showing opportunities</div><div class="toolbar-right"><label class="category-select">Category <select id="category-filter"><option value="all">All categories</option><option value="Technology">Technology</option><option value="Design">Design</option><option value="Marketing">Marketing</option><option value="Business">Business</option><option value="Data">Data</option></select></label><label class="sort-select">Sort <select id="sort-filter"><option value="latest">Latest first</option><option value="company">Company A–Z</option><option value="title">Job title A–Z</option></select></label><button class="reset-button" id="reset-filters" type="button">Reset</button></div></div>
+
+      <div class="jobs-layout">
+        <aside class="filter-sidebar">
+          <div class="filter-heading"><strong>Refine results</strong><button id="clear-all" type="button">Clear all</button></div>
+          <div class="filter-group"><h3>Work arrangement</h3><label><input type="checkbox" name="workmode" value="On-site"> On-site</label><label><input type="checkbox" name="workmode" value="Hybrid"> Hybrid</label><label><input type="checkbox" name="workmode" value="Remote"> Remote</label></div>
+          <div class="filter-group"><h3>Experience level</h3><label><input type="checkbox" name="experience" value="Entry level"> Entry level</label><label><input type="checkbox" name="experience" value="Student"> Student</label><label><input type="checkbox" name="experience" value="1–2 years"> 1–2 years</label></div>
+          <div class="filter-group"><h3>Opportunity</h3><label><input type="checkbox" name="typecheck" value="Internship"> Internship</label><label><input type="checkbox" name="typecheck" value="Full-time"> Full-time</label><label><input type="checkbox" name="typecheck" value="Part-time"> Part-time</label></div>
+          <div class="sidebar-note"><span>✦</span><strong>A thoughtful search goes a long way.</strong><p>Save interesting roles and revisit them when you're ready.</p></div>
+        </aside>
+
+        <section class="job-results" aria-label="Job search results"><div class="job-list" id="job-list" aria-live="polite"></div><div class="no-results" id="no-results" hidden><span>⌕</span><h3>No matching opportunities</h3><p>Try changing your keywords or filters.</p><button class="reset-button" id="empty-reset" type="button">Reset search</button></div><div class="pagination-row"><span id="pagination-label">Showing results</span><div><button id="previous-page" type="button" disabled>‹</button><span id="page-indicator">1 / 1</span><button id="next-page" type="button" disabled>›</button></div></div></section>
+      </div>
+    </section>
+
+    <section class="career-section" id="career-tips"><div class="container career-inner"><div><p class="eyebrow">A LITTLE CAREER MOMENTUM</p><h2>Make room for<br><em>what's next.</em></h2><p>Explore a role, understand what it asks for, and take the next step at your own pace.</p></div><div class="career-steps"><article><span>01</span><strong>Explore</strong><p>Look beyond the job title. Read the details and expectations.</p></article><article><span>02</span><strong>Prepare</strong><p>Connect your skills and projects to what the team needs.</p></article><article><span>03</span><strong>Apply</strong><p>Submit a thoughtful application when you're ready.</p></article></div></div></section>
+  </main>
+
+  <footer class="footer" id="about"><div class="container footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-icon">L</span><span>launchpad<span class="brand-dot">.</span></span></a><p>A frontend learning project for exploring job and internship discovery.</p><span>© <span id="year"></span> Launchpad · Demo portal only</span></div></footer>
+
+  <div class="modal-backdrop" id="job-modal" hidden><section class="job-modal-card" role="dialog" aria-modal="true" aria-labelledby="job-modal-title"><button class="modal-close" id="close-job-modal" type="button" aria-label="Close">×</button><div id="job-detail-content"></div></section></div>
+  <div class="modal-backdrop" id="apply-modal" hidden><section class="apply-modal-card" role="dialog" aria-modal="true" aria-labelledby="apply-title"><header class="apply-header"><div><p class="eyebrow">TAKE THE NEXT STEP</p><h2 id="apply-title">Quick application</h2><p id="apply-job-name"></p></div><button class="modal-close" id="close-apply-modal" type="button" aria-label="Close">×</button></header><form id="apply-form" novalidate><div class="form-field"><label for="applicant-name">Full name *</label><input id="applicant-name" type="text" placeholder="Your full name" required minlength="2"><small class="field-error" id="name-error"></small></div><div class="form-field"><label for="applicant-email">Email address *</label><input id="applicant-email" type="email" placeholder="you@example.com" required><small class="field-error" id="email-error"></small></div><div class="form-field"><label for="applicant-link">Portfolio / LinkedIn URL (optional)</label><input id="applicant-link" type="url" placeholder="https://..."><small class="field-error" id="link-error"></small></div><div class="form-field"><label for="resume-file">Resume (optional demo field)</label><input id="resume-file" type="file" accept=".pdf,.doc,.docx"><small class="field-hint">The selected file is not uploaded or saved.</small></div><div class="demo-disclaimer"><strong>Demo application only.</strong> This form does not send your information to an employer or store it.</div><p class="form-error" id="apply-error" role="alert"></p><button class="apply-submit" type="submit">Submit demo application <span>↗</span></button></form></section></div>
+  <!-- Shared modal for the employer workspace, profile, settings, and notifications. -->
+  <div class="portal-modal-backdrop" id="portal-modal-backdrop" hidden>
+    <section class="portal-modal" role="dialog" aria-modal="true" aria-labelledby="portal-modal-title">
+      <header class="portal-modal-header"><div><p class="eyebrow">LAUNCHPAD PORTAL</p><h2 id="portal-modal-title">Portal</h2></div><button class="modal-close" id="portal-modal-close" type="button" aria-label="Close">×</button></header>
+      <div id="portal-modal-content"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

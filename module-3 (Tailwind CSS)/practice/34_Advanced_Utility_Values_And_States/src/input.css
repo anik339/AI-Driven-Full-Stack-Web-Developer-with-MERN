@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+  --lesson-surface: #fff7ed;
+  --lesson-ink: #7c2d12;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Table: colgroup and col</title>
+</head>
+<body>
+  <header>
+    <h1>HTML Table: colgroup and col</h1>
+    <p>Use colgroup and col to apply presentation to table columns.</p>
+  </header>
+  <main>
+    <table border="1">
+      <caption>Weekly study plan</caption>
+      <!-- colgroup groups column definitions; col targets one or more columns. -->
+      <colgroup>
+        <col style="background-color: #eaf2ff;">
+        <col span="2" style="background-color: #f4f8e8;">
+        <col style="background-color: #fff1e7;">
+      </colgroup>
+      <thead>
+        <tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Hours</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Monday</th><td>HTML tables</td><td>2</td><td>Complete</td></tr>
+        <tr><th scope="row">Tuesday</th><td>CSS layout</td><td>3</td><td>Practice</td></tr>
+        <tr><th scope="row">Wednesday</th><td>JavaScript</td><td>2</td><td>Pending</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row" colspan="2">Total hours</th><td>7</td><td>—</td></tr></tfoot>
+    </table>
+    <h2>What to remember</h2>
+    <ul>
+      <li><code>colgroup</code> groups one or more columns.</li>
+      <li><code>col</code> defines a column or a span of columns.</li>
+      <li>Use table headers and <code>scope</code> to keep the table understandable to assistive technology.</li>
+      <li>Use CSS for most visual styling; this example uses inline styles only to make the column effect easy to see.</li>
+    </ul>
+  </main>
+</body>
+</html>

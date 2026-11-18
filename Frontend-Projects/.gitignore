@@ -1,0 +1,15 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies/build output (not required by these static projects)
+node_modules/
+dist/
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example

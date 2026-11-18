@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- NOVA Market — E-commerce Storefront: main page structure. See README.md for setup and feature notes. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOVA Market — a responsive e-commerce storefront demo built with HTML, CSS and JavaScript.">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>NOVA Market | Everyday essentials, thoughtfully selected</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="announcement-bar">A little something for your everyday <span>—</span> discover the edit <span aria-hidden="true">↗</span></div>
+
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="#home" aria-label="NOVA Market home">
+        <span class="brand-symbol">N</span><span>NOVA<span class="brand-light">MARKET</span></span>
+      </a>
+
+      <form class="search-form" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Search products</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        <input id="search-input" type="search" placeholder="Search for products, brands..." autocomplete="off">
+        <kbd>ENTER</kbd>
+      </form>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.7 8.7 0 1 0 20.5 15.5Z"></path></svg>
+        </button>
+        <button class="icon-button wishlist-header" id="wishlist-shortcut" type="button" aria-label="Show wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.2-8.8 11-8.8 11s-8.8-5.8-8.8-11A4.8 4.8 0 0 1 12 6.1a4.8 4.8 0 0 1 8.8 2.7Z"></path></svg>
+          <span class="count-badge" id="wishlist-count">0</span>
+        </button>
+        <button class="cart-button" id="open-cart" type="button" aria-label="Open shopping cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span>Bag</span><span class="count-badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="category-nav container" aria-label="Store categories">
+      <a class="nav-category active" href="#shop" data-nav-category="All">All products</a>
+      <a class="nav-category" href="#shop" data-nav-category="Fashion">Fashion</a>
+      <a class="nav-category" href="#shop" data-nav-category="Tech">Tech</a>
+      <a class="nav-category" href="#shop" data-nav-category="Home">Home & living</a>
+      <a class="nav-category" href="#shop" data-nav-category="Accessories">Accessories</a>
+      <span class="nav-spacer"></span>
+      <span class="nav-note">Curated for everyday living</span>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE EVERYDAY EDIT · 2026</p>
+        <h1>Good things.<br><em>Good days.</em></h1>
+        <p>Thoughtful finds for the way you live, work, and move. Explore our edit of everyday essentials.</p>
+        <a class="button button-dark" href="#shop">Explore collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-footnote"><span class="tiny-star">✳</span> A demo storefront made for learning and building.</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-main">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Curated neutral fashion and lifestyle items" fetchpriority="high">
+        </div>
+        <div class="hero-sticker"><span>THE</span><strong>NOVA<br>EDIT</strong><span>NO. 01 / 26</span></div>
+        <div class="hero-caption">FIND YOUR<br>EVERYDAY FAVOURITE.</div>
+      </div>
+    </section>
+
+    <section class="benefits-strip">
+      <div class="container benefits-grid">
+        <div><span class="benefit-icon">✳</span><span><strong>Thoughtful selection</strong><small>Useful things, chosen well</small></span></div>
+        <div><span class="benefit-icon">↗</span><span><strong>Easy shopping</strong><small>Simple, clear, convenient</small></span></div>
+        <div><span class="benefit-icon">♡</span><span><strong>Save your favourites</strong><small>Keep the good ones close</small></span></div>
+      </div>
+    </section>
+
+    <section class="shop-section container" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">A CONSIDERED COLLECTION</p><h2>Shop the <em>edit.</em></h2></div>
+        <p class="section-description">A few good finds for your everyday routine. Find something you love.</p>
+      </div>
+
+      <div class="shop-toolbar">
+        <div class="filter-list" id="filter-list" aria-label="Filter products by category">
+          <button class="filter-chip active" type="button" data-category="All">All <span id="all-count">0</span></button>
+          <button class="filter-chip" type="button" data-category="Fashion">Fashion</button>
+          <button class="filter-chip" type="button" data-category="Tech">Tech</button>
+          <button class="filter-chip" type="button" data-category="Home">Home & living</button>
+          <button class="filter-chip" type="button" data-category="Accessories">Accessories</button>
+        </div>
+        <label class="sort-control">Sort by
+          <select id="sort-select" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="results-line"><span id="results-count">Showing all products</span><div class="results-actions"><button id="clear-wishlist" class="clear-button" type="button" hidden>Clear wishlist</button><button id="clear-filters" class="clear-button" type="button">Clear filters</button></div></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span>⌕</span><h3>No products found</h3><p>Try another search or clear your filters.</p>
+        <button class="button button-dark" id="empty-reset" type="button">Show all products</button>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container newsletter-inner">
+        <div><p class="eyebrow">A NOTE FROM NOVA</p><h2>Good finds, <em>occasionally.</em></h2><p>This demo newsletter is here to practice form interaction — no email is collected.</p></div>
+        <form class="newsletter-form" id="newsletter-form">
+          <label class="sr-only" for="newsletter-email">Your email address</label>
+          <input id="newsletter-email" type="email" placeholder="Your email address" required>
+          <button type="submit" aria-label="Submit newsletter email">Join <span aria-hidden="true">↗</span></button>
+          <small id="newsletter-message" role="status">Demo form only. No subscription will be sent.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand-block"><a class="brand" href="#home"><span class="brand-symbol">N</span><span>NOVA<span class="brand-light">MARKET</span></span></a><p>Thoughtful finds for everyday living.<br>A frontend learning project.</p></div>
+      <div class="footer-column"><strong>Explore</strong><a href="#shop">All products</a><a href="#shop" data-footer-category="Fashion">Fashion</a><a href="#shop" data-footer-category="Tech">Tech</a></div>
+      <div class="footer-column"><strong>Project</strong><a href="#home">Back to top</a><a href="https://github.com/anik339" target="_blank" rel="noopener noreferrer">Developer GitHub ↗</a><a href="mailto:anik65605@gmail.com">Contact developer ↗</a></div>
+      <div class="footer-note"><span>BUILT TO LEARN.</span><strong>01 / 02</strong><small>HTML · CSS · JAVASCRIPT</small></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year"></span> NOVA Market Demo</span><span>Demo storefront — no real payments or orders.</span></div>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">Shopping bag <span id="drawer-item-count">(0)</span></h2></div><button class="close-button" id="close-cart" type="button" aria-label="Close shopping cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>♡</span><h3>Your bag is waiting.</h3><p>Add something lovely from the collection.</p><button class="button button-dark" id="continue-shopping" type="button">Continue shopping</button></div>
+    <div class="drawer-footer" id="drawer-footer">
+      <div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">৳0</strong></div>
+      <p>Shipping and taxes are not included in this demo.</p>
+      <button class="button button-dark checkout-button" id="checkout-button" type="button">Continue to checkout <span>↗</span></button>
+    </div>
+  </aside>
+
+  <section class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header"><div><p class="eyebrow">ALMOST THERE</p><h2 id="checkout-title">Checkout demo</h2></div><button class="close-button" id="close-checkout" type="button" aria-label="Close checkout">×</button></div>
+      <div class="checkout-summary"><span>Order subtotal</span><strong id="checkout-total">৳0</strong></div>
+      <form id="checkout-form" novalidate>
+        <div class="form-field"><label for="customer-name">Full name</label><input id="customer-name" name="customerName" type="text" placeholder="Your full name" required minlength="2"><small class="field-error" id="customer-name-error"></small></div>
+        <div class="form-field"><label for="customer-email">Email address</label><input id="customer-email" name="customerEmail" type="email" placeholder="you@example.com" required><small class="field-error" id="customer-email-error"></small></div>
+        <div class="form-field"><label for="customer-address">Delivery address</label><textarea id="customer-address" name="customerAddress" rows="3" placeholder="Street, area, city" required minlength="8"></textarea><small class="field-error" id="customer-address-error"></small></div>
+        <div class="demo-notice"><strong>Demo checkout only.</strong> No payment is collected, no order is sent, and no personal information is stored.</div>
+        <button class="button button-dark checkout-button" type="submit">Place demo order <span>↗</span></button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Product quick-view dialog: populated from the local product catalogue. -->
+  <section class="product-modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" aria-hidden="true">
+    <div class="product-modal-card">
+      <button class="close-button" id="close-product-modal" type="button" aria-label="Close product details">×</button>
+      <div id="product-modal-content"></div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

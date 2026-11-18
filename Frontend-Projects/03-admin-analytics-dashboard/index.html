@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Northstar — Admin Analytics Dashboard: main page structure. See README.md for setup and feature notes. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive frontend-only admin analytics dashboard demo.">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Northstar — Analytics Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="Northstar dashboard home">
+        <span class="brand-mark">N</span><span>NORTHSTAR</span>
+      </a>
+
+      <!-- Workspace selector opens a real local workspace manager. -->
+      <button class="workspace-switcher" id="workspace-switcher" type="button" aria-haspopup="dialog">
+        <span class="workspace-icon" id="workspace-icon">N</span>
+        <span class="workspace-copy"><strong id="workspace-name">Northstar Studio</strong><small>Workspace</small></span>
+        <span class="switcher-arrow">⌄</span>
+      </button>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview" data-page="Overview"><span class="nav-icon">▦</span>Overview</a>
+        <a class="nav-link" href="#analytics" data-page="Analytics"><span class="nav-icon">◫</span>Analytics</a>
+        <a class="nav-link" href="#transactions" data-page="Transactions"><span class="nav-icon">⇄</span>Transactions<span class="nav-count">8</span></a>
+        <a class="nav-link" href="#customers" data-page="Customers"><span class="nav-icon">♙</span>Customers</a>
+        <a class="nav-link" href="#products" data-page="Products"><span class="nav-icon">◇</span>Products</a>
+      </nav>
+
+      <p class="nav-label nav-label-spaced">PREFERENCES</p>
+      <nav class="main-nav" aria-label="Preferences">
+        <a class="nav-link" href="#settings" data-page="Settings"><span class="nav-icon">⚙</span>Settings</a>
+        <button class="nav-link nav-button" id="help-button" type="button"><span class="nav-icon">?</span>Help center</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <span class="upgrade-spark">✳</span>
+          <strong>Your workspace, at a glance.</strong>
+          <p>This dashboard is a frontend learning project with sample data.</p>
+          <a href="#overview">Explore dashboard ↗</a>
+        </div>
+        <button class="profile-button" id="profile-button" type="button" aria-haspopup="dialog">
+          <span class="avatar avatar-purple">AD</span>
+          <span class="profile-copy"><strong id="sidebar-profile-name">Anik Chandra Dey</strong><small>Workspace administrator</small></span>
+          <span class="profile-dots">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open navigation">☰</button>
+          <div><p class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb-current">Overview</strong></p><h1 id="page-title">Overview</h1></div>
+        </div>
+        <div class="topbar-actions">
+          <div class="date-chip"><span>◷</span><span id="today-date">Today</span></div>
+          <button class="top-icon theme-button" id="theme-toggle" type="button" aria-label="Toggle dark mode"><span class="sun">☼</span><span class="moon">☾</span></button>
+          <button class="top-icon notification-button" id="notification-button" type="button" aria-label="Notifications">♧<i></i></button>
+          <span class="avatar avatar-purple top-avatar">AD</span>
+        </div>
+      </header>
+
+      <main class="dashboard-content" id="overview">
+        <section class="welcome-row">
+          <div><p class="muted-overline">YOUR DASHBOARD IS READY</p><h2>Good to see you, Anik <span>✳</span></h2><p class="welcome-subtitle">Here's what's happening with your store today.</p></div>
+          <div class="welcome-actions">
+            <label class="period-select-label" for="period-select">Period</label>
+            <select id="period-select" class="period-select"><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option></select>
+            <button class="primary-button" id="report-button" type="button"><span>↓</span> Export report</button>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Key performance indicators">
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Total revenue</span><span class="stat-icon stat-icon-violet">৳</span></div>
+            <div class="stat-value" id="revenue-value">৳248,560</div>
+            <div class="stat-bottom"><span class="trend positive">↗ 12.8%</span><span class="stat-compare">vs previous period</span></div>
+            <div class="mini-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:45%"></i><i style="height:36%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:80%"></i><i style="height:66%"></i><i style="height:100%"></i></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Total orders</span><span class="stat-icon stat-icon-blue">▤</span></div>
+            <div class="stat-value" id="orders-value">1,429</div>
+            <div class="stat-bottom"><span class="trend positive">↗ 8.2%</span><span class="stat-compare">vs previous period</span></div>
+            <div class="mini-bars blue-bars" aria-hidden="true"><i style="height:45%"></i><i style="height:30%"></i><i style="height:55%"></i><i style="height:47%"></i><i style="height:74%"></i><i style="height:63%"></i><i style="height:82%"></i><i style="height:100%"></i></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">New customers</span><span class="stat-icon stat-icon-orange">♙</span></div>
+            <div class="stat-value" id="customers-value">684</div>
+            <div class="stat-bottom"><span class="trend positive">↗ 6.4%</span><span class="stat-compare">vs previous period</span></div>
+            <div class="mini-bars orange-bars" aria-hidden="true"><i style="height:30%"></i><i style="height:54%"></i><i style="height:42%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:83%"></i><i style="height:74%"></i><i style="height:100%"></i></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Conversion rate</span><span class="stat-icon stat-icon-green">◎</span></div>
+            <div class="stat-value" id="conversion-value">3.68%</div>
+            <div class="stat-bottom"><span class="trend negative">↘ 0.4%</span><span class="stat-compare">vs previous period</span></div>
+            <div class="mini-bars green-bars" aria-hidden="true"><i style="height:78%"></i><i style="height:64%"></i><i style="height:75%"></i><i style="height:57%"></i><i style="height:70%"></i><i style="height:60%"></i><i style="height:66%"></i><i style="height:58%"></i></div>
+          </article>
+        </section>
+
+        <section class="middle-grid" id="analytics">
+          <article class="panel revenue-panel">
+            <div class="panel-heading">
+              <div><h3>Revenue overview</h3><p>Track your revenue performance over time</p></div>
+              <button class="more-button" type="button" data-toast="Revenue chart options are part of this demo.">•••</button>
+            </div>
+            <div class="chart-legend"><span><i class="legend-dot legend-primary"></i>Revenue</span><span><i class="legend-dot legend-secondary"></i>Previous period</span><strong id="chart-total">৳248,560</strong></div>
+            <div class="chart-wrap">
+              <div class="y-axis"><span>৳30k</span><span>৳20k</span><span>৳10k</span><span>৳0</span></div>
+              <div class="chart-main">
+                <div class="chart-grid-lines"><i></i><i></i><i></i><i></i></div>
+                <svg id="revenue-chart" viewBox="0 0 700 220" preserveAspectRatio="none" role="img" aria-label="Revenue line chart"></svg>
+                <div class="x-axis" id="chart-labels"><span>01 Jun</span><span>05 Jun</span><span>10 Jun</span><span>15 Jun</span><span>20 Jun</span><span>25 Jun</span><span>30 Jun</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel channel-panel">
+            <div class="panel-heading"><div><h3>Sales by channel</h3><p>Where your customers come from</p></div><button class="more-button" type="button" data-toast="Channel chart options are part of this demo.">•••</button></div>
+            <div class="donut-area"><div class="donut-chart"><div class="donut-hole"><strong>100%</strong><span>Sales</span></div></div></div>
+            <div class="channel-legend">
+              <div><span><i class="channel-dot dot-purple"></i>Direct</span><strong>48%</strong></div>
+              <div><span><i class="channel-dot dot-blue"></i>Social media</span><strong>32%</strong></div>
+              <div><span><i class="channel-dot dot-orange"></i>Referral</span><strong>20%</strong></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel transactions-panel" id="transactions">
+            <div class="panel-heading transaction-heading"><div><h3>Recent transactions</h3><p>A quick look at your latest orders</p></div><a class="view-all" href="#transactions" id="view-all">View all <span>↗</span></a></div>
+            <div class="table-tools"><label class="table-search"><span>⌕</span><input type="search" id="transaction-search" placeholder="Search customer or order..." aria-label="Search transactions"></label><select id="status-filter" aria-label="Filter by payment status"><option value="all">All status</option><option value="Paid">Paid</option><option value="Pending">Pending</option><option value="Refunded">Refunded</option></select></div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>ORDER ID</th><th>CUSTOMER</th><th>DATE</th><th>AMOUNT</th><th>STATUS</th></tr></thead>
+                <tbody id="transaction-body"></tbody>
+              </table>
+            </div>
+            <div class="table-footer"><span id="transaction-count">Showing 5 of 8 transactions</span><div class="pagination"><button id="prev-page" type="button" aria-label="Previous page" disabled>‹</button><span id="page-number">1 / 2</span><button id="next-page" type="button" aria-label="Next page">›</button></div></div>
+          </article>
+
+          <article class="panel products-panel" id="products">
+            <div class="panel-heading"><div><h3>Top products</h3><p>Your best performing items</p></div><button class="more-button" type="button" data-toast="Product list is sample data.">•••</button></div>
+            <div class="top-products" id="top-products">
+              <div class="top-product"><span class="product-thumb thumb-one">◈</span><span class="top-product-copy"><strong>Everyday Sneakers</strong><small>Fashion · 248 sold</small></span><strong>৳72,400</strong></div>
+              <div class="top-product"><span class="product-thumb thumb-two">◉</span><span class="top-product-copy"><strong>Studio Headphones</strong><small>Electronics · 186 sold</small></span><strong>৳64,900</strong></div>
+              <div class="top-product"><span class="product-thumb thumb-three">▱</span><span class="top-product-copy"><strong>Daily Carry Backpack</strong><small>Accessories · 154 sold</small></span><strong>৳38,600</strong></div>
+              <div class="top-product"><span class="product-thumb thumb-four">⌚</span><span class="top-product-copy"><strong>Classic Minimal Watch</strong><small>Accessories · 98 sold</small></span><strong>৳31,200</strong></div>
+            </div>
+            <a class="products-link" href="#products" data-page="Products">Explore product insights <span>→</span></a>
+          </article>
+        </section>
+
+        <!-- Secondary pages are rendered here when a sidebar route is selected. -->
+        <section id="page-view" class="page-view" hidden></section>
+
+        <footer class="dashboard-footer" id="overview-footer"><span>© <span id="current-year"></span> Northstar Studio. Frontend demo project.</span><span>Sample data · No backend connected</span></footer>
+      </main>
+    </div>
+  </div>
+
+  <div class="mobile-backdrop" id="mobile-backdrop" hidden></div>
+  <!-- Shared accessible modal used by profile, help, notifications, and workspace actions. -->
+  <div class="utility-backdrop" id="utility-backdrop" hidden>
+    <section class="utility-modal" role="dialog" aria-modal="true" aria-labelledby="utility-title">
+      <header class="utility-modal-header"><div><p class="muted-overline">NORTHSTAR WORKSPACE</p><h2 id="utility-title">Panel</h2></div><button id="utility-close" class="utility-close" type="button" aria-label="Close panel">×</button></header>
+      <div id="utility-content"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
