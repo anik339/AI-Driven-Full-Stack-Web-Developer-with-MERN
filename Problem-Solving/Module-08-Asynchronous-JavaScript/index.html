@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Scope, closures, OOP, Promises, async/await, Fetch, modules, browser storage, event loop, debounce and retries.">
+<meta name="theme-color" content="#14213d">
+<title>Module 08 — Advanced &amp; Asynchronous JavaScript | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 08 — Advanced &amp; Asynchronous JavaScript</h1>
+    <p class="lead">Scope, closures, OOP, Promises, async/await, Fetch, modules, browser storage, event loop, debounce and retries.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="global, function and block scope read variables from the scopes where they are available. global scope, function scope, block scope, let, const">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Global, Function and Block Scope</h2>
+          <p class="task-description">Read variables from the scopes where they are available.</p>
+          <p class="concept"><strong>Focus:</strong> global scope, function scope, block scope, let, const</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-global-function-and-block-scope/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-global-function-and-block-scope/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="lexical scope in nested functions return a value from an inner function using an outer variable. lexical environment, nested function">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Lexical Scope in Nested Functions</h2>
+          <p class="task-description">Return a value from an inner function using an outer variable.</p>
+          <p class="concept"><strong>Focus:</strong> lexical environment, nested function</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-lexical-scope-in-nested-functions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-lexical-scope-in-nested-functions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="variable shadowing use the same variable name in two separate nested scopes. shadowing, block scope">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Variable Shadowing</h2>
+          <p class="task-description">Use the same variable name in two separate nested scopes.</p>
+          <p class="concept"><strong>Focus:</strong> shadowing, block scope</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-variable-shadowing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-variable-shadowing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a counter with a closure create a counter that remembers its value between function calls. closure, lexical environment">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Counter with a Closure</h2>
+          <p class="task-description">Create a counter that remembers its value between function calls.</p>
+          <p class="concept"><strong>Focus:</strong> closure, lexical environment</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-create-a-counter-with-a-closure/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-create-a-counter-with-a-closure/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a private bank balance with a closure expose deposit, withdraw and getbalance methods while keeping balance private. closure, data privacy, factory function">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Private Bank Balance with a Closure</h2>
+          <p class="task-description">Expose deposit, withdraw and getBalance methods while keeping balance private.</p>
+          <p class="concept"><strong>Focus:</strong> closure, data privacy, factory function</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-create-a-private-bank-balance-with-a-closure/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-create-a-private-bank-balance-with-a-closure/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a function factory return a function that remembers a multiplier. closure, function factory">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Function Factory</h2>
+          <p class="task-description">Return a function that remembers a multiplier.</p>
+          <p class="concept"><strong>Focus:</strong> closure, function factory</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-create-a-function-factory/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-create-a-function-factory/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a class and constructor create two student objects from one class blueprint. class, constructor, new, instance">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Class and Constructor</h2>
+          <p class="task-description">Create two Student objects from one class blueprint.</p>
+          <p class="concept"><strong>Focus:</strong> class, constructor, new, instance</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-create-a-class-and-constructor/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-create-a-class-and-constructor/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="understand this in an object method use this to read a property from the object that calls a method. this, object method">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Understand this in an Object Method</h2>
+          <p class="task-description">Use this to read a property from the object that calls a method.</p>
+          <p class="concept"><strong>Focus:</strong> this, object method</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-understand-this-in-an-object-method/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-understand-this-in-an-object-method/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use class inheritance with extends and super create a developer class that inherits from employee. extends, super, inheritance">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Class Inheritance with extends and super</h2>
+          <p class="task-description">Create a Developer class that inherits from Employee.</p>
+          <p class="concept"><strong>Focus:</strong> extends, super, inheritance</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-use-class-inheritance-with-extends-and-super/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-use-class-inheritance-with-extends-and-super/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use private class fields protect a balance field using the # private-field syntax. private fields, encapsulation">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Private Class Fields</h2>
+          <p class="task-description">Protect a balance field using the # private-field syntax.</p>
+          <p class="concept"><strong>Focus:</strong> private fields, encapsulation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-use-private-class-fields/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-use-private-class-fields/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="arrow functions vs regular functions compare syntax and understand lexical this in arrow functions. arrow function, regular function, lexical this">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Arrow Functions vs Regular Functions</h2>
+          <p class="task-description">Compare syntax and understand lexical this in arrow functions.</p>
+          <p class="concept"><strong>Focus:</strong> arrow function, regular function, lexical this</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-arrow-functions-vs-regular-functions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-arrow-functions-vs-regular-functions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="understand var hoisting read a var variable before its assignment line. hoisting, var">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Understand var Hoisting</h2>
+          <p class="task-description">Read a var variable before its assignment line.</p>
+          <p class="concept"><strong>Focus:</strong> hoisting, var</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-understand-var-hoisting/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-understand-var-hoisting/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="function declaration hoisting call a function declaration before the line where it appears. function declaration, hoisting">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Function Declaration Hoisting</h2>
+          <p class="task-description">Call a function declaration before the line where it appears.</p>
+          <p class="concept"><strong>Focus:</strong> function declaration, hoisting</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-function-declaration-hoisting/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-function-declaration-hoisting/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="understand the temporal dead zone catch the error caused by reading let before initialization. let, const, temporal dead zone, referenceerror">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Understand the Temporal Dead Zone</h2>
+          <p class="task-description">Catch the error caused by reading let before initialization.</p>
+          <p class="concept"><strong>Focus:</strong> let, const, Temporal Dead Zone, ReferenceError</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-understand-the-temporal-dead-zone/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-understand-the-temporal-dead-zone/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a promise that resolves resolve a promise after a short delay. promise, resolve, then">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Promise that Resolves</h2>
+          <p class="task-description">Resolve a Promise after a short delay.</p>
+          <p class="concept"><strong>Focus:</strong> Promise, resolve, then</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-create-a-promise-that-resolves/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-create-a-promise-that-resolves/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="reject a promise and catch the error reject a promise and display its error message. reject, catch, error">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Reject a Promise and Catch the Error</h2>
+          <p class="task-description">Reject a Promise and display its error message.</p>
+          <p class="concept"><strong>Focus:</strong> reject, catch, Error</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-reject-a-promise-and-catch-the-error/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-reject-a-promise-and-catch-the-error/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use then(), catch() and finally() handle success, failure and cleanup in a promise chain. then, catch, finally">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use then(), catch() and finally()</h2>
+          <p class="task-description">Handle success, failure and cleanup in a Promise chain.</p>
+          <p class="concept"><strong>Focus:</strong> then, catch, finally</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-use-then-catch-and-finally/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-use-then-catch-and-finally/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use async and await wait for a promise and display its result in readable async code. async function, await">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use async and await</h2>
+          <p class="task-description">Wait for a Promise and display its result in readable async code.</p>
+          <p class="concept"><strong>Focus:</strong> async function, await</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-use-async-and-await/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-use-async-and-await/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="run asynchronous tasks sequentially run two delayed tasks one after another and measure the total time. await, sequential execution">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Run Asynchronous Tasks Sequentially</h2>
+          <p class="task-description">Run two delayed tasks one after another and measure the total time.</p>
+          <p class="concept"><strong>Focus:</strong> await, sequential execution</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-run-asynchronous-tasks-sequentially/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-run-asynchronous-tasks-sequentially/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="run tasks together with promise.all() start independent promises together and wait for every result. promise.all(), concurrency">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Run Tasks Together with Promise.all()</h2>
+          <p class="task-description">Start independent Promises together and wait for every result.</p>
+          <p class="concept"><strong>Focus:</strong> Promise.all(), concurrency</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-run-tasks-together-with-promise-all/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-run-tasks-together-with-promise-all/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle every result with promise.allsettled() collect successful and failed results without stopping at the first rejection. promise.allsettled(), fulfilled, rejected">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Every Result with Promise.allSettled()</h2>
+          <p class="task-description">Collect successful and failed results without stopping at the first rejection.</p>
+          <p class="concept"><strong>Focus:</strong> Promise.allSettled(), fulfilled, rejected</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-handle-every-result-with-promise-allsettled/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-handle-every-result-with-promise-allsettled/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="race promises with promise.race() display the result of the first promise that settles. promise.race()">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Race Promises with Promise.race()</h2>
+          <p class="task-description">Display the result of the first Promise that settles.</p>
+          <p class="concept"><strong>Focus:</strong> Promise.race()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-race-promises-with-promise-race/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-race-promises-with-promise-race/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="find the first successful promise with promise.any() return the first fulfilled promise even if another rejects first. promise.any(), aggregateerror">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Find the First Successful Promise with Promise.any()</h2>
+          <p class="task-description">Return the first fulfilled Promise even if another rejects first.</p>
+          <p class="concept"><strong>Focus:</strong> Promise.any(), AggregateError</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-find-the-first-successful-promise-with-promise-any/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-find-the-first-successful-promise-with-promise-any/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle errors with try, catch and finally protect a calculation from invalid input and always run cleanup code. try, catch, finally, throw">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Errors with try, catch and finally</h2>
+          <p class="task-description">Protect a calculation from invalid input and always run cleanup code.</p>
+          <p class="concept"><strong>Focus:</strong> try, catch, finally, throw</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-handle-errors-with-try-catch-and-finally/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-handle-errors-with-try-catch-and-finally/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use named exports and imports import add and subtract from a separate javascript module file. es modules, named export, named import">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Named Exports and Imports</h2>
+          <p class="task-description">Import add and subtract from a separate JavaScript module file.</p>
+          <p class="concept"><strong>Focus:</strong> ES modules, named export, named import</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-use-named-exports-and-imports/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-use-named-exports-and-imports/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use a default export import a default greeting function from another file. default export, default import">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use a Default Export</h2>
+          <p class="task-description">Import a default greeting function from another file.</p>
+          <p class="concept"><strong>Focus:</strong> default export, default import</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-use-a-default-export/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-use-a-default-export/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="destructure values from an array extract the first three skills from an array. array destructuring">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Destructure Values from an Array</h2>
+          <p class="task-description">Extract the first three skills from an array.</p>
+          <p class="concept"><strong>Focus:</strong> array destructuring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-destructure-values-from-an-array/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-destructure-values-from-an-array/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="destructure object properties and rename them extract name and rename role to jobtitle. object destructuring, alias">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Destructure Object Properties and Rename Them</h2>
+          <p class="task-description">Extract name and rename role to jobTitle.</p>
+          <p class="concept"><strong>Focus:</strong> object destructuring, alias</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-destructure-object-properties-and-rename-them/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-destructure-object-properties-and-rename-them/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use default values in destructuring provide fallback values when object properties are undefined. destructuring defaults">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Default Values in Destructuring</h2>
+          <p class="task-description">Provide fallback values when object properties are undefined.</p>
+          <p class="concept"><strong>Focus:</strong> destructuring defaults</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-use-default-values-in-destructuring/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-use-default-values-in-destructuring/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="destructure a nested object read city and country from a nested address object. nested destructuring">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Destructure a Nested Object</h2>
+          <p class="task-description">Read city and country from a nested address object.</p>
+          <p class="concept"><strong>Focus:</strong> nested destructuring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-destructure-a-nested-object/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-destructure-a-nested-object/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="copy and merge arrays with spread merge two arrays and create a separate copy. spread operator, array copy">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Copy and Merge Arrays with Spread</h2>
+          <p class="task-description">Merge two arrays and create a separate copy.</p>
+          <p class="concept"><strong>Focus:</strong> spread operator, array copy</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-copy-and-merge-arrays-with-spread/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-copy-and-merge-arrays-with-spread/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="copy and update an object with spread change a user&#x27;s role without changing the original object. object spread, immutable update">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Copy and Update an Object with Spread</h2>
+          <p class="task-description">Change a user&#x27;s role without changing the original object.</p>
+          <p class="concept"><strong>Focus:</strong> object spread, immutable update</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-copy-and-update-an-object-with-spread/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-copy-and-update-an-object-with-spread/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use rest parameters collect any number of function arguments into an array. rest parameters, ...numbers, reduce">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Rest Parameters</h2>
+          <p class="task-description">Collect any number of function arguments into an array.</p>
+          <p class="concept"><strong>Focus:</strong> rest parameters, ...numbers, reduce</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-use-rest-parameters/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-use-rest-parameters/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fetch data from a public api request three sample posts from jsonplaceholder and display their titles. fetch(), response.json(), async/await">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Fetch Data from a Public API</h2>
+          <p class="task-description">Request three sample posts from JSONPlaceholder and display their titles.</p>
+          <p class="concept"><strong>Focus:</strong> fetch(), response.json(), async/await</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-fetch-data-from-a-public-api/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-fetch-data-from-a-public-api/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check http errors with response.ok request an unknown demo resource and inspect the http response. response.ok, response.status, error handling">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check HTTP Errors with response.ok</h2>
+          <p class="task-description">Request an unknown demo resource and inspect the HTTP response.</p>
+          <p class="concept"><strong>Focus:</strong> response.ok, response.status, error handling</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-check-http-errors-with-response-ok/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-check-http-errors-with-response-ok/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build a search url with urlsearchparams create a query string safely and request matching posts. url, urlsearchparams, fetch">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Build a Search URL with URLSearchParams</h2>
+          <p class="task-description">Create a query string safely and request matching posts.</p>
+          <p class="concept"><strong>Focus:</strong> URL, URLSearchParams, fetch</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-build-a-search-url-with-urlsearchparams/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-build-a-search-url-with-urlsearchparams/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="save and read a value with localstorage save a learning goal in the browser and read it back. localstorage.setitem(), getitem()">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Save and Read a Value with localStorage</h2>
+          <p class="task-description">Save a learning goal in the browser and read it back.</p>
+          <p class="concept"><strong>Focus:</strong> localStorage.setItem(), getItem()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-save-and-read-a-value-with-localstorage/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-save-and-read-a-value-with-localstorage/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="store an object with json.stringify() and json.parse() save and restore a user profile object. json.stringify(), json.parse(), localstorage">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Store an Object with JSON.stringify() and JSON.parse()</h2>
+          <p class="task-description">Save and restore a user profile object.</p>
+          <p class="concept"><strong>Focus:</strong> JSON.stringify(), JSON.parse(), localStorage</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-store-an-object-with-json-stringify-and-json-parse/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-store-an-object-with-json-stringify-and-json-parse/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use sessionstorage store a temporary value for the current tab session. sessionstorage.setitem(), getitem(), removeitem()">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use sessionStorage</h2>
+          <p class="task-description">Store a temporary value for the current tab session.</p>
+          <p class="concept"><strong>Focus:</strong> sessionStorage.setItem(), getItem(), removeItem()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-use-sessionstorage/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-use-sessionstorage/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create an iife create and immediately run a function expression. iife, function scope">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create an IIFE</h2>
+          <p class="task-description">Create and immediately run a function expression.</p>
+          <p class="concept"><strong>Focus:</strong> IIFE, function scope</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-create-an-iife/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-create-an-iife/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="calculate a total with reduce() add every price in an array using reduce(). reduce(), accumulator, initial value">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Calculate a Total with reduce()</h2>
+          <p class="task-description">Add every price in an array using reduce().</p>
+          <p class="concept"><strong>Focus:</strong> reduce(), accumulator, initial value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-calculate-a-total-with-reduce/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-calculate-a-total-with-reduce/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="group data with reduce() calculate total spending for each expense category. reduce(), accumulator object">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Group Data with reduce()</h2>
+          <p class="task-description">Calculate total spending for each expense category.</p>
+          <p class="concept"><strong>Focus:</strong> reduce(), accumulator object</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-group-data-with-reduce/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-group-data-with-reduce/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transform an array with map() create a new array with a 10% tax added to every price. map(), callback, new array">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transform an Array with map()</h2>
+          <p class="task-description">Create a new array with a 10% tax added to every price.</p>
+          <p class="concept"><strong>Focus:</strong> map(), callback, new array</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-transform-an-array-with-map/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-transform-an-array-with-map/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transform an array of objects with map() create an array containing only product names. map(), object arrays, destructuring">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transform an Array of Objects with map()</h2>
+          <p class="task-description">Create an array containing only product names.</p>
+          <p class="concept"><strong>Focus:</strong> map(), object arrays, destructuring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-transform-an-array-of-objects-with-map/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-transform-an-array-of-objects-with-map/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="safely read nested data with optional chaining read a user&#x27;s city even when the address property may be missing. optional chaining, ?.">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Safely Read Nested Data with Optional Chaining</h2>
+          <p class="task-description">Read a user&#x27;s city even when the address property may be missing.</p>
+          <p class="concept"><strong>Focus:</strong> optional chaining, ?.</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-safely-read-nested-data-with-optional-chaining/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-safely-read-nested-data-with-optional-chaining/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use nullish coalescing (??) use a fallback only when a value is null or undefined. nullish coalescing, ??, falsy values">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Nullish Coalescing (??)</h2>
+          <p class="task-description">Use a fallback only when a value is null or undefined.</p>
+          <p class="concept"><strong>Focus:</strong> nullish coalescing, ??, falsy values</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-use-nullish-coalescing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-use-nullish-coalescing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="identify truthy and falsy values convert common javascript values to boolean. boolean(), truthy, falsy">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Identify Truthy and Falsy Values</h2>
+          <p class="task-description">Convert common JavaScript values to Boolean.</p>
+          <p class="concept"><strong>Focus:</strong> Boolean(), truthy, falsy</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-identify-truthy-and-falsy-values/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-identify-truthy-and-falsy-values/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="understand the event loop and microtasks predict the order of synchronous code, promise callbacks and timer callbacks. call stack, event loop, microtask, task queue">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Understand the Event Loop and Microtasks</h2>
+          <p class="task-description">Predict the order of synchronous code, Promise callbacks and timer callbacks.</p>
+          <p class="concept"><strong>Focus:</strong> call stack, event loop, microtask, task queue</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-understand-the-event-loop-and-microtasks/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-understand-the-event-loop-and-microtasks/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a debounce function wait until the user stops typing before showing a search message. debounce, settimeout, cleartimeout">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Debounce Function</h2>
+          <p class="task-description">Wait until the user stops typing before showing a search message.</p>
+          <p class="concept"><strong>Focus:</strong> debounce, setTimeout, clearTimeout</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-create-a-debounce-function/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-create-a-debounce-function/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="retry an asynchronous operation retry a failing operation a limited number of times until it succeeds. async/await, try/catch, retry logic">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Retry an Asynchronous Operation</h2>
+          <p class="task-description">Retry a failing operation a limited number of times until it succeeds.</p>
+          <p class="concept"><strong>Focus:</strong> async/await, try/catch, retry logic</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-retry-an-asynchronous-operation/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-retry-an-asynchronous-operation/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

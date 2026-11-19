@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Repository inspection, CLAUDE.md, prompts, task planning, code review, debugging, testing, Git and deployment workflows.">
+<meta name="theme-color" content="#14213d">
+<title>Module 05 — Claude Code &amp; AI Workflow | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 05 — Claude Code &amp; AI Workflow</h1>
+    <p class="lead">Repository inspection, CLAUDE.md, prompts, task planning, code review, debugging, testing, Git and deployment workflows.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">AI workflow practice</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>About this module:</strong> These are AI-assisted workflow exercises. Some tasks include sample projects and supporting files rather than a standalone runnable web page. Read each task guide, prompt and acceptance checklist before working.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="inspect a repository before editing you have opened an unfamiliar web project. understand its structure before changing any files. repository inspection">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Inspect a Repository Before Editing</h2>
+          <p class="task-description">You have opened an unfamiliar web project. Understand its structure before changing any files.</p>
+          <p class="concept"><strong>Focus:</strong> Repository inspection</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-inspect-a-repository-before-editing/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="01-inspect-a-repository-before-editing/README.md">Task guide</a><a class="task-link secondary" href="01-inspect-a-repository-before-editing/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a project claude.md create clear instructions that help an ai coding assistant work consistently in this repository. claude code rules">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Project CLAUDE.md</h2>
+          <p class="task-description">Create clear instructions that help an AI coding assistant work consistently in this repository.</p>
+          <p class="concept"><strong>Focus:</strong> Claude Code rules</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-create-a-project-claude-md/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="02-create-a-project-claude-md/README.md">Task guide</a><a class="task-link secondary" href="02-create-a-project-claude-md/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="break a feature into small tasks a feature request is too broad to implement safely in one change. task planning">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Break a Feature into Small Tasks</h2>
+          <p class="task-description">A feature request is too broad to implement safely in one change.</p>
+          <p class="concept"><strong>Focus:</strong> Task planning</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-break-a-feature-into-small-tasks/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="03-break-a-feature-into-small-tasks/README.md">Task guide</a><a class="task-link secondary" href="03-break-a-feature-into-small-tasks/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build a semantic header a page has a header built with generic div elements and unclear navigation. html implementation">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Build a Semantic Header</h2>
+          <p class="task-description">A page has a header built with generic div elements and unclear navigation.</p>
+          <p class="concept"><strong>Focus:</strong> HTML implementation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-build-a-semantic-header/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="04-build-a-semantic-header/README.md">Task guide</a><a class="task-link secondary" href="04-build-a-semantic-header/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fix unlabelled form controls a contact form has inputs that rely only on placeholder text. accessibility">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Fix Unlabelled Form Controls</h2>
+          <p class="task-description">A contact form has inputs that rely only on placeholder text.</p>
+          <p class="concept"><strong>Focus:</strong> Accessibility</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-fix-unlabelled-form-controls/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="05-fix-unlabelled-form-controls/README.md">Task guide</a><a class="task-link secondary" href="05-fix-unlabelled-form-controls/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="introduce css design tokens a stylesheet repeats the same colours, spacing and border radii in many places. css refactoring">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Introduce CSS Design Tokens</h2>
+          <p class="task-description">A stylesheet repeats the same colours, spacing and border radii in many places.</p>
+          <p class="concept"><strong>Focus:</strong> CSS refactoring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-introduce-css-design-tokens/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="06-introduce-css-design-tokens/README.md">Task guide</a><a class="task-link secondary" href="06-introduce-css-design-tokens/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="make a card grid responsive a three-column card grid overflows on a phone. responsive implementation">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Make a Card Grid Responsive</h2>
+          <p class="task-description">A three-column card grid overflows on a phone.</p>
+          <p class="concept"><strong>Focus:</strong> Responsive implementation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-make-a-card-grid-responsive/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="07-make-a-card-grid-responsive/README.md">Task guide</a><a class="task-link secondary" href="07-make-a-card-grid-responsive/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="convert a card to tailwind utilities a small card uses a long custom stylesheet and should be rebuilt with tailwind utilities. tailwind workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Convert a Card to Tailwind Utilities</h2>
+          <p class="task-description">A small card uses a long custom stylesheet and should be rebuilt with Tailwind utilities.</p>
+          <p class="concept"><strong>Focus:</strong> Tailwind workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-convert-a-card-to-tailwind-utilities/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="08-convert-a-card-to-tailwind-utilities/README.md">Task guide</a><a class="task-link secondary" href="08-convert-a-card-to-tailwind-utilities/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add native form validation a registration form accepts empty and invalid email fields. forms">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Add Native Form Validation</h2>
+          <p class="task-description">A registration form accepts empty and invalid email fields.</p>
+          <p class="concept"><strong>Focus:</strong> Forms</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-add-native-form-validation/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="09-add-native-form-validation/README.md">Task guide</a><a class="task-link secondary" href="09-add-native-form-validation/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="run an accessibility review a landing page needs a basic accessibility review before publishing. accessibility review">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Run an Accessibility Review</h2>
+          <p class="task-description">A landing page needs a basic accessibility review before publishing.</p>
+          <p class="concept"><strong>Focus:</strong> Accessibility review</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-run-an-accessibility-review/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="10-run-an-accessibility-review/README.md">Task guide</a><a class="task-link secondary" href="10-run-an-accessibility-review/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="review page performance a page contains large images, unnecessary assets and render-blocking resources. performance">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Review Page Performance</h2>
+          <p class="task-description">A page contains large images, unnecessary assets and render-blocking resources.</p>
+          <p class="concept"><strong>Focus:</strong> Performance</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-review-page-performance/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="11-review-page-performance/README.md">Task guide</a><a class="task-link secondary" href="11-review-page-performance/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="debug a console error the browser console shows an error after a recent code change. debugging">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Debug a Console Error</h2>
+          <p class="task-description">The browser console shows an error after a recent code change.</p>
+          <p class="concept"><strong>Focus:</strong> Debugging</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-debug-a-console-error/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="12-debug-a-console-error/README.md">Task guide</a><a class="task-link secondary" href="12-debug-a-console-error/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="repair a broken relative path an image or stylesheet does not load after a file was moved into a subfolder. debugging">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Repair a Broken Relative Path</h2>
+          <p class="task-description">An image or stylesheet does not load after a file was moved into a subfolder.</p>
+          <p class="concept"><strong>Focus:</strong> Debugging</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-repair-a-broken-relative-path/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="13-repair-a-broken-relative-path/README.md">Task guide</a><a class="task-link secondary" href="13-repair-a-broken-relative-path/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="refactor duplicate css safely several selectors repeat identical declarations. css refactoring">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Refactor Duplicate CSS Safely</h2>
+          <p class="task-description">Several selectors repeat identical declarations.</p>
+          <p class="concept"><strong>Focus:</strong> CSS refactoring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-refactor-duplicate-css-safely/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="14-refactor-duplicate-css-safely/README.md">Task guide</a><a class="task-link secondary" href="14-refactor-duplicate-css-safely/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="explain an unfamiliar function you need to understand a function before editing it. code reading">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Explain an Unfamiliar Function</h2>
+          <p class="task-description">You need to understand a function before editing it.</p>
+          <p class="concept"><strong>Focus:</strong> Code reading</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-explain-an-unfamiliar-function/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="15-explain-an-unfamiliar-function/README.md">Task guide</a><a class="task-link secondary" href="15-explain-an-unfamiliar-function/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a manual test plan a feature is implemented but has no test cases. testing">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Manual Test Plan</h2>
+          <p class="task-description">A feature is implemented but has no test cases.</p>
+          <p class="concept"><strong>Focus:</strong> Testing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-create-a-manual-test-plan/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="16-create-a-manual-test-plan/README.md">Task guide</a><a class="task-link secondary" href="16-create-a-manual-test-plan/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write a regression test a bug has been fixed once, but the same problem could return later. testing">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Write a Regression Test</h2>
+          <p class="task-description">A bug has been fixed once, but the same problem could return later.</p>
+          <p class="concept"><strong>Focus:</strong> Testing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-write-a-regression-test/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="17-write-a-regression-test/README.md">Task guide</a><a class="task-link secondary" href="17-write-a-regression-test/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="review changes before commit you have modified several files and want to understand the impact. git review">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Review Changes Before Commit</h2>
+          <p class="task-description">You have modified several files and want to understand the impact.</p>
+          <p class="concept"><strong>Focus:</strong> Git review</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-review-changes-before-commit/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="18-review-changes-before-commit/README.md">Task guide</a><a class="task-link secondary" href="18-review-changes-before-commit/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check responsive breakpoints a page looks correct on desktop but breaks at tablet width. responsive qa">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Check Responsive Breakpoints</h2>
+          <p class="task-description">A page looks correct on desktop but breaks at tablet width.</p>
+          <p class="concept"><strong>Focus:</strong> Responsive QA</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-check-responsive-breakpoints/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="19-check-responsive-breakpoints/README.md">Task guide</a><a class="task-link secondary" href="19-check-responsive-breakpoints/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="audit image assets a project has many image files with unclear dimensions and alt text. asset management">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Audit Image Assets</h2>
+          <p class="task-description">A project has many image files with unclear dimensions and alt text.</p>
+          <p class="concept"><strong>Focus:</strong> Asset management</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-audit-image-assets/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="20-audit-image-assets/README.md">Task guide</a><a class="task-link secondary" href="20-audit-image-assets/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check git status safely before starting work, you need to understand the current repository state. git basics">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Check Git Status Safely</h2>
+          <p class="task-description">Before starting work, you need to understand the current repository state.</p>
+          <p class="concept"><strong>Focus:</strong> Git basics</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-check-git-status-safely/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="21-check-git-status-safely/README.md">Task guide</a><a class="task-link secondary" href="21-check-git-status-safely/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="initialize a local git repository a new project folder is not yet tracked by git. git basics">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Initialize a Local Git Repository</h2>
+          <p class="task-description">A new project folder is not yet tracked by Git.</p>
+          <p class="concept"><strong>Focus:</strong> Git basics</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-initialize-a-local-git-repository/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="22-initialize-a-local-git-repository/README.md">Task guide</a><a class="task-link secondary" href="22-initialize-a-local-git-repository/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a useful .gitignore the repository should not track dependencies, secrets or generated files. git hygiene">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Useful .gitignore</h2>
+          <p class="task-description">The repository should not track dependencies, secrets or generated files.</p>
+          <p class="concept"><strong>Focus:</strong> Git hygiene</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-create-a-useful-gitignore/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="23-create-a-useful-gitignore/README.md">Task guide</a><a class="task-link secondary" href="23-create-a-useful-gitignore/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write meaningful commit messages your commit history contains vague messages such as update and fix. git hygiene">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Write Meaningful Commit Messages</h2>
+          <p class="task-description">Your commit history contains vague messages such as update and fix.</p>
+          <p class="concept"><strong>Focus:</strong> Git hygiene</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-write-meaningful-commit-messages/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="24-write-meaningful-commit-messages/README.md">Task guide</a><a class="task-link secondary" href="24-write-meaningful-commit-messages/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a feature branch you need to implement a feature without working directly on main. branch workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Feature Branch</h2>
+          <p class="task-description">You need to implement a feature without working directly on main.</p>
+          <p class="concept"><strong>Focus:</strong> Branch workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-create-a-feature-branch/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="25-create-a-feature-branch/README.md">Task guide</a><a class="task-link secondary" href="25-create-a-feature-branch/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="stage only intended files you changed source code and generated output, but only source files should be committed. staging">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Stage Only Intended Files</h2>
+          <p class="task-description">You changed source code and generated output, but only source files should be committed.</p>
+          <p class="concept"><strong>Focus:</strong> Staging</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-stage-only-intended-files/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="26-stage-only-intended-files/README.md">Task guide</a><a class="task-link secondary" href="26-stage-only-intended-files/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="inspect a git diff you want to verify what changed before committing. git review">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Inspect a Git Diff</h2>
+          <p class="task-description">You want to verify what changed before committing.</p>
+          <p class="concept"><strong>Focus:</strong> Git review</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-inspect-a-git-diff/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="27-inspect-a-git-diff/README.md">Task guide</a><a class="task-link secondary" href="27-inspect-a-git-diff/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="undo an unstaged edit safely you accidentally changed one line in a practice file and want to understand safe recovery. git recovery">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Undo an Unstaged Edit Safely</h2>
+          <p class="task-description">You accidentally changed one line in a practice file and want to understand safe recovery.</p>
+          <p class="concept"><strong>Focus:</strong> Git recovery</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-undo-an-unstaged-edit-safely/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="28-undo-an-unstaged-edit-safely/README.md">Task guide</a><a class="task-link secondary" href="28-undo-an-unstaged-edit-safely/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="merge a feature branch a completed feature branch needs to be merged into main locally. branch workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Merge a Feature Branch</h2>
+          <p class="task-description">A completed feature branch needs to be merged into main locally.</p>
+          <p class="concept"><strong>Focus:</strong> Branch workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-merge-a-feature-branch/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="29-merge-a-feature-branch/README.md">Task guide</a><a class="task-link secondary" href="29-merge-a-feature-branch/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="resolve a merge conflict two branches changed the same lines in a readme file. conflict resolution">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Resolve a Merge Conflict</h2>
+          <p class="task-description">Two branches changed the same lines in a README file.</p>
+          <p class="concept"><strong>Focus:</strong> Conflict resolution</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-resolve-a-merge-conflict/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="30-resolve-a-merge-conflict/README.md">Task guide</a><a class="task-link secondary" href="30-resolve-a-merge-conflict/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="draft a pull request description a feature branch is ready for review. pull requests">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Draft a Pull Request Description</h2>
+          <p class="task-description">A feature branch is ready for review.</p>
+          <p class="concept"><strong>Focus:</strong> Pull requests</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-draft-a-pull-request-description/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="31-draft-a-pull-request-description/README.md">Task guide</a><a class="task-link secondary" href="31-draft-a-pull-request-description/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="review a pull request a teammate has submitted a pull request with a ui change. pull requests">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Review a Pull Request</h2>
+          <p class="task-description">A teammate has submitted a pull request with a UI change.</p>
+          <p class="concept"><strong>Focus:</strong> Pull requests</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-review-a-pull-request/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="32-review-a-pull-request/README.md">Task guide</a><a class="task-link secondary" href="32-review-a-pull-request/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="protect the main branch you want to reduce accidental direct pushes to the main branch. github settings">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Protect the Main Branch</h2>
+          <p class="task-description">You want to reduce accidental direct pushes to the main branch.</p>
+          <p class="concept"><strong>Focus:</strong> GitHub settings</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-protect-the-main-branch/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="33-protect-the-main-branch/README.md">Task guide</a><a class="task-link secondary" href="33-protect-the-main-branch/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write a professional readme a repository readme does not explain how to run the project. documentation">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Write a Professional README</h2>
+          <p class="task-description">A repository README does not explain how to run the project.</p>
+          <p class="concept"><strong>Focus:</strong> Documentation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-write-a-professional-readme/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="34-write-a-professional-readme/README.md">Task guide</a><a class="task-link secondary" href="34-write-a-professional-readme/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add project screenshots a project needs visual evidence for its github readme. documentation">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Add Project Screenshots</h2>
+          <p class="task-description">A project needs visual evidence for its GitHub README.</p>
+          <p class="concept"><strong>Focus:</strong> Documentation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-add-project-screenshots/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="35-add-project-screenshots/README.md">Task guide</a><a class="task-link secondary" href="35-add-project-screenshots/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a github issue template you want bug reports to contain reproducible information. github collaboration">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a GitHub Issue Template</h2>
+          <p class="task-description">You want bug reports to contain reproducible information.</p>
+          <p class="concept"><strong>Focus:</strong> GitHub collaboration</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-create-a-github-issue-template/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="36-create-a-github-issue-template/README.md">Task guide</a><a class="task-link secondary" href="36-create-a-github-issue-template/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="plan work with github projects a learning project has many tasks and needs a simple tracking board. project management">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Plan Work with GitHub Projects</h2>
+          <p class="task-description">A learning project has many tasks and needs a simple tracking board.</p>
+          <p class="concept"><strong>Focus:</strong> Project management</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-plan-work-with-github-projects/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="37-plan-work-with-github-projects/README.md">Task guide</a><a class="task-link secondary" href="37-plan-work-with-github-projects/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use conventional commits you want a consistent commit history across the repository. git hygiene">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Use Conventional Commits</h2>
+          <p class="task-description">You want a consistent commit history across the repository.</p>
+          <p class="concept"><strong>Focus:</strong> Git hygiene</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-use-conventional-commits/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="38-use-conventional-commits/README.md">Task guide</a><a class="task-link secondary" href="38-use-conventional-commits/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a version tag a stable project milestone is ready to mark with a version tag. releases">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Version Tag</h2>
+          <p class="task-description">A stable project milestone is ready to mark with a version tag.</p>
+          <p class="concept"><strong>Focus:</strong> Releases</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-create-a-version-tag/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="39-create-a-version-tag/README.md">Task guide</a><a class="task-link secondary" href="39-create-a-version-tag/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="deploy a static site with github pages a static html/css project is ready for a public preview. deployment">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Deploy a Static Site with GitHub Pages</h2>
+          <p class="task-description">A static HTML/CSS project is ready for a public preview.</p>
+          <p class="concept"><strong>Focus:</strong> Deployment</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-deploy-a-static-site-with-github-pages/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="40-deploy-a-static-site-with-github-pages/README.md">Task guide</a><a class="task-link secondary" href="40-deploy-a-static-site-with-github-pages/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use plan-then-implement workflow you want claude code to plan a change before touching the code. claude code workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Use Plan-Then-Implement Workflow</h2>
+          <p class="task-description">You want Claude Code to plan a change before touching the code.</p>
+          <p class="concept"><strong>Focus:</strong> Claude Code workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-use-plan-then-implement-workflow/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="41-use-plan-then-implement-workflow/README.md">Task guide</a><a class="task-link secondary" href="41-use-plan-then-implement-workflow/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="make incremental changes a request includes five ui changes and may be difficult to review as one patch. claude code workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Make Incremental Changes</h2>
+          <p class="task-description">A request includes five UI changes and may be difficult to review as one patch.</p>
+          <p class="concept"><strong>Focus:</strong> Claude Code workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-make-incremental-changes/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="42-make-incremental-changes/README.md">Task guide</a><a class="task-link secondary" href="42-make-incremental-changes/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="ask for an explanation before editing you are unsure why a component is structured in a particular way. code understanding">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Ask for an Explanation Before Editing</h2>
+          <p class="task-description">You are unsure why a component is structured in a particular way.</p>
+          <p class="concept"><strong>Focus:</strong> Code understanding</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-ask-for-an-explanation-before-editing/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="43-ask-for-an-explanation-before-editing/README.md">Task guide</a><a class="task-link secondary" href="43-ask-for-an-explanation-before-editing/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="restrict the file scope you want to change one component without touching the rest of the repository. safe editing">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Restrict the File Scope</h2>
+          <p class="task-description">You want to change one component without touching the rest of the repository.</p>
+          <p class="concept"><strong>Focus:</strong> Safe editing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-restrict-the-file-scope/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="44-restrict-the-file-scope/README.md">Task guide</a><a class="task-link secondary" href="44-restrict-the-file-scope/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="preserve existing api behaviour a refactor should improve readability without changing function inputs or outputs. refactoring">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Preserve Existing API Behaviour</h2>
+          <p class="task-description">A refactor should improve readability without changing function inputs or outputs.</p>
+          <p class="concept"><strong>Focus:</strong> Refactoring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-preserve-existing-api-behaviour/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="45-preserve-existing-api-behaviour/README.md">Task guide</a><a class="task-link secondary" href="45-preserve-existing-api-behaviour/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="verify dependencies before installing a tutorial suggests installing a package, but the project may already have it. dependencies">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Verify Dependencies Before Installing</h2>
+          <p class="task-description">A tutorial suggests installing a package, but the project may already have it.</p>
+          <p class="concept"><strong>Focus:</strong> Dependencies</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-verify-dependencies-before-installing/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="46-verify-dependencies-before-installing/README.md">Task guide</a><a class="task-link secondary" href="46-verify-dependencies-before-installing/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="audit npm scripts you need to know which commands are available to run and build the project. dependencies">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Audit npm Scripts</h2>
+          <p class="task-description">You need to know which commands are available to run and build the project.</p>
+          <p class="concept"><strong>Focus:</strong> Dependencies</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-audit-npm-scripts/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="47-audit-npm-scripts/README.md">Task guide</a><a class="task-link secondary" href="47-audit-npm-scripts/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a reusable ui component several pages repeat the same button or card markup. component design">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Create a Reusable UI Component</h2>
+          <p class="task-description">Several pages repeat the same button or card markup.</p>
+          <p class="concept"><strong>Focus:</strong> Component design</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-create-a-reusable-ui-component/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="48-create-a-reusable-ui-component/README.md">Task guide</a><a class="task-link secondary" href="48-create-a-reusable-ui-component/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="final quality gate before push your changes are complete and you are about to push to github. release quality">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Final Quality Gate Before Push</h2>
+          <p class="task-description">Your changes are complete and you are about to push to GitHub.</p>
+          <p class="concept"><strong>Focus:</strong> Release quality</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-final-quality-gate-before-push/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="49-final-quality-gate-before-push/README.md">Task guide</a><a class="task-link secondary" href="49-final-quality-gate-before-push/TASK.md">Task brief</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="capstone ai-assisted feature workflow implement a small responsive course card feature using an ai-assisted workflow. capstone">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Workflow practice</span>
+          </div>
+          <h2>Capstone AI-Assisted Feature Workflow</h2>
+          <p class="task-description">Implement a small responsive course card feature using an AI-assisted workflow.</p>
+          <p class="concept"><strong>Focus:</strong> Capstone</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-capstone-ai-assisted-feature-workflow/sample-project/index.html">Open sample &rarr;</a>
+            <a class="task-link secondary" href="50-capstone-ai-assisted-feature-workflow/README.md">Task guide</a><a class="task-link secondary" href="50-capstone-ai-assisted-feature-workflow/TASK.md">Task brief</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

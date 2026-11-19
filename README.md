@@ -250,3 +250,16 @@ My long-term goal is to become a capable Full-Stack Developer who can design, de
 **Thanks for visiting my repository!**
 
 </div>
+
+
+## ◈ PROBLEM-SOLVING HUB
+
+Browse all 400 topic-wise practice tasks across eight modules: [Open the Problem-Solving Hub](./Problem-Solving/index.html).
+
+
+
+## ◈ REPOSITORY NAVIGATION & QUALITY
+
+- [Open the Problem-Solving Hub](./Problem-Solving/index.html) — 400 topic-wise practice tasks across eight modules.
+- [GitHub Pages Publishing Guide (বাংলা)](./PUBLISHING_GUIDE_BN.md) — enable the five frontend Live Demos.
+- [Repository QA Report (বাংলা)](./QA_REPORT_BN.md) — link checks and remaining notes.

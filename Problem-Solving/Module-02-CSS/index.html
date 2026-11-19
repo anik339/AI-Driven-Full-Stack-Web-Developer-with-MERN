@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CSS selectors, cascade, specificity, colours, box model, typography, layout, Flexbox, Grid, responsive CSS and transitions.">
+<meta name="theme-color" content="#14213d">
+<title>Module 02 — CSS Foundations | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 02 — CSS Foundations</h1>
+    <p class="lead">CSS selectors, cascade, specificity, colours, box model, typography, layout, Flexbox, Grid, responsive CSS and transitions.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="css rule syntax style a heading and paragraph using a selector, property and value. selector, declaration, property and value">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>CSS Rule Syntax</h2>
+          <p class="task-description">Style a heading and paragraph using a selector, property and value.</p>
+          <p class="concept"><strong>Focus:</strong> selector, declaration, property and value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-css-rule-syntax/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-css-rule-syntax/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="element selector style every paragraph using an element selector. type selector">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Element Selector</h2>
+          <p class="task-description">Style every paragraph using an element selector.</p>
+          <p class="concept"><strong>Focus:</strong> type selector</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-element-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-element-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="class selector apply a reusable card style using a class. class selector and reusable styling">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Class Selector</h2>
+          <p class="task-description">Apply a reusable card style using a class.</p>
+          <p class="concept"><strong>Focus:</strong> class selector and reusable styling</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-class-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-class-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="id selector target one unique element with an id selector. id selector">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>ID Selector</h2>
+          <p class="task-description">Target one unique element with an ID selector.</p>
+          <p class="concept"><strong>Focus:</strong> ID selector</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-id-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-id-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="grouping selectors apply the same font to multiple heading levels. grouping selector">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Grouping Selectors</h2>
+          <p class="task-description">Apply the same font to multiple heading levels.</p>
+          <p class="concept"><strong>Focus:</strong> grouping selector</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-grouping-selectors/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-grouping-selectors/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="descendant selector style links only when they appear inside the navigation. descendant combinator">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Descendant Selector</h2>
+          <p class="task-description">Style links only when they appear inside the navigation.</p>
+          <p class="concept"><strong>Focus:</strong> descendant combinator</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-descendant-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-descendant-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="child combinator style only direct list children, not nested items. child combinator &gt;">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Child Combinator</h2>
+          <p class="task-description">Style only direct list children, not nested items.</p>
+          <p class="concept"><strong>Focus:</strong> child combinator &gt;</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-child-combinator/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-child-combinator/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="attribute selector style required form controls using an attribute selector. attribute selectors">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Attribute Selector</h2>
+          <p class="task-description">Style required form controls using an attribute selector.</p>
+          <p class="concept"><strong>Focus:</strong> attribute selectors</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-attribute-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-attribute-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="hover pseudo-class change a button&#x27;s appearance when the pointer hovers over it. hover and transition">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Hover Pseudo-class</h2>
+          <p class="task-description">Change a button&#x27;s appearance when the pointer hovers over it.</p>
+          <p class="concept"><strong>Focus:</strong> hover and transition</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-hover-pseudo-class/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-hover-pseudo-class/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="visible keyboard focus make keyboard focus visible on links and buttons. focus-visible and outline">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Visible Keyboard Focus</h2>
+          <p class="task-description">Make keyboard focus visible on links and buttons.</p>
+          <p class="concept"><strong>Focus:</strong> focus-visible and outline</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-visible-keyboard-focus/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-visible-keyboard-focus/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="nth-child selector highlight every second row in a list. nth-child() pseudo-class">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Nth-child Selector</h2>
+          <p class="task-description">Highlight every second row in a list.</p>
+          <p class="concept"><strong>Focus:</strong> nth-child() pseudo-class</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-nth-child-selector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-nth-child-selector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="pseudo-element before add a decorative marker before each checklist item. ::before and generated content">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Pseudo-element Before</h2>
+          <p class="task-description">Add a decorative marker before each checklist item.</p>
+          <p class="concept"><strong>Focus:</strong> ::before and generated content</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-pseudo-element-before/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-pseudo-element-before/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="text and background colours use foreground and background colours with sufficient contrast. color and background-color">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Text and Background Colours</h2>
+          <p class="task-description">Use foreground and background colours with sufficient contrast.</p>
+          <p class="concept"><strong>Focus:</strong> color and background-color</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-text-and-background-colours/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-text-and-background-colours/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transparent colours use rgba() to create a translucent overlay. alpha channel and rgba()">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transparent Colours</h2>
+          <p class="task-description">Use rgba() to create a translucent overlay.</p>
+          <p class="concept"><strong>Focus:</strong> alpha channel and rgba()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-transparent-colours/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-transparent-colours/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="background gradient create a smooth linear gradient background. linear-gradient()">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Background Gradient</h2>
+          <p class="task-description">Create a smooth linear gradient background.</p>
+          <p class="concept"><strong>Focus:</strong> linear-gradient()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-background-gradient/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-background-gradient/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="borders and radius use border styles and rounded corners to define a card. border, border-style, border-radius">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Borders and Radius</h2>
+          <p class="task-description">Use border styles and rounded corners to define a card.</p>
+          <p class="concept"><strong>Focus:</strong> border, border-style, border-radius</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-borders-and-radius/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-borders-and-radius/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="box model dimensions understand content, padding, border and margin. css box model">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Box Model Dimensions</h2>
+          <p class="task-description">Understand content, padding, border and margin.</p>
+          <p class="concept"><strong>Focus:</strong> CSS box model</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-box-model-dimensions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-box-model-dimensions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="border-box reset use border-box so declared widths include padding and borders. box-sizing: border-box">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Border-box Reset</h2>
+          <p class="task-description">Use border-box so declared widths include padding and borders.</p>
+          <p class="concept"><strong>Focus:</strong> box-sizing: border-box</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-border-box-reset/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-border-box-reset/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="margin and spacing create consistent vertical spacing between cards. margin and spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Margin and Spacing</h2>
+          <p class="task-description">Create consistent vertical spacing between cards.</p>
+          <p class="concept"><strong>Focus:</strong> margin and spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-margin-and-spacing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-margin-and-spacing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="padding and internal space give a message panel breathing room inside its border. padding">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Padding and Internal Space</h2>
+          <p class="task-description">Give a message panel breathing room inside its border.</p>
+          <p class="concept"><strong>Focus:</strong> padding</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-padding-and-internal-space/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-padding-and-internal-space/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="typography and font size create a clear title and body text hierarchy. font-size, font-weight, letter-spacing and line-height">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Typography and Font Size</h2>
+          <p class="task-description">Create a clear title and body text hierarchy.</p>
+          <p class="concept"><strong>Focus:</strong> font-size, font-weight, letter-spacing and line-height</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-typography-and-font-size/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-typography-and-font-size/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="font family fallbacks choose a font stack with sensible fallbacks. font-family and fallback stack">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Font Family Fallbacks</h2>
+          <p class="task-description">Choose a font stack with sensible fallbacks.</p>
+          <p class="concept"><strong>Focus:</strong> font-family and fallback stack</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-font-family-fallbacks/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-font-family-fallbacks/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="text spacing and alignment control line height, letter spacing and text alignment. text-align, letter-spacing, line-height and text-transform">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Text Spacing and Alignment</h2>
+          <p class="task-description">Control line height, letter spacing and text alignment.</p>
+          <p class="concept"><strong>Focus:</strong> text-align, letter-spacing, line-height and text-transform</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-text-spacing-and-alignment/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-text-spacing-and-alignment/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="display block and inline compare block, inline and inline-block behaviour. display: block, inline and inline-block">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Display Block and Inline</h2>
+          <p class="task-description">Compare block, inline and inline-block behaviour.</p>
+          <p class="concept"><strong>Focus:</strong> display: block, inline and inline-block</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-display-block-and-inline/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-display-block-and-inline/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="overflow handling prevent long content from breaking a card layout. overflow and overflow-wrap">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Overflow Handling</h2>
+          <p class="task-description">Prevent long content from breaking a card layout.</p>
+          <p class="concept"><strong>Focus:</strong> overflow and overflow-wrap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-overflow-handling/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-overflow-handling/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="float and clear wrap text around an image using float and clear. float and clear">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Float and Clear</h2>
+          <p class="task-description">Wrap text around an image using float and clear.</p>
+          <p class="concept"><strong>Focus:</strong> float and clear</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-float-and-clear/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-float-and-clear/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="css units and variables use rem units and a reusable custom property. px, rem, %, custom properties and var()">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>CSS Units and Variables</h2>
+          <p class="task-description">Use rem units and a reusable custom property.</p>
+          <p class="concept"><strong>Focus:</strong> px, rem, %, custom properties and var()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-css-units-and-variables/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-css-units-and-variables/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="cascade and specificity observe which selector wins when rules conflict. cascade and specificity">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Cascade and Specificity</h2>
+          <p class="task-description">Observe which selector wins when rules conflict.</p>
+          <p class="concept"><strong>Focus:</strong> cascade and specificity</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-cascade-and-specificity/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-cascade-and-specificity/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="pseudo-classes and pseudo-elements style first-child, checked and placeholder states. pseudo-classes and pseudo-elements">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Pseudo-classes and Pseudo-elements</h2>
+          <p class="task-description">Style first-child, checked and placeholder states.</p>
+          <p class="concept"><strong>Focus:</strong> pseudo-classes and pseudo-elements</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-pseudo-classes-and-pseudo-elements/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-pseudo-classes-and-pseudo-elements/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="position relative and absolute place a badge inside a card using positioned ancestors. position relative and absolute">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Position Relative and Absolute</h2>
+          <p class="task-description">Place a badge inside a card using positioned ancestors.</p>
+          <p class="concept"><strong>Focus:</strong> position relative and absolute</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-position-relative-and-absolute/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-position-relative-and-absolute/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="z-index layers place a notification above a decorative panel. z-index and stacking context">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Z-index Layers</h2>
+          <p class="task-description">Place a notification above a decorative panel.</p>
+          <p class="concept"><strong>Focus:</strong> z-index and stacking context</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-z-index-layers/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-z-index-layers/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flexbox row align navigation links in one row with flexbox. display:flex, align-items and gap">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flexbox Row</h2>
+          <p class="task-description">Align navigation links in one row with Flexbox.</p>
+          <p class="concept"><strong>Focus:</strong> display:flex, align-items and gap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-flexbox-row/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-flexbox-row/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flexbox wrapping allow cards to wrap onto another row. flex-wrap and flex shorthand">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flexbox Wrapping</h2>
+          <p class="task-description">Allow cards to wrap onto another row.</p>
+          <p class="concept"><strong>Focus:</strong> flex-wrap and flex shorthand</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-flexbox-wrapping/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-flexbox-wrapping/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flexbox alignment center a login panel both horizontally and vertically. justify-content and align-items">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flexbox Alignment</h2>
+          <p class="task-description">Center a login panel both horizontally and vertically.</p>
+          <p class="concept"><strong>Focus:</strong> justify-content and align-items</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-flexbox-alignment/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-flexbox-alignment/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="css grid columns build a three-column card layout using grid. display:grid and repeat()">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>CSS Grid Columns</h2>
+          <p class="task-description">Build a three-column card layout using Grid.</p>
+          <p class="concept"><strong>Focus:</strong> display:grid and repeat()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-css-grid-columns/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-css-grid-columns/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="grid template areas create a simple header, sidebar and content layout. grid-template-areas and grid-area">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Grid Template Areas</h2>
+          <p class="task-description">Create a simple header, sidebar and content layout.</p>
+          <p class="concept"><strong>Focus:</strong> grid-template-areas and grid-area</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-grid-template-areas/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-grid-template-areas/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive design basics use a media query to reduce card columns on small screens. media queries and breakpoints">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Design Basics</h2>
+          <p class="task-description">Use a media query to reduce card columns on small screens.</p>
+          <p class="concept"><strong>Focus:</strong> media queries and breakpoints</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-responsive-design-basics/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-responsive-design-basics/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="image object fit crop an image to a fixed frame without stretching it. object-fit and object-position">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Image Object Fit</h2>
+          <p class="task-description">Crop an image to a fixed frame without stretching it.</p>
+          <p class="concept"><strong>Focus:</strong> object-fit and object-position</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-image-object-fit/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-image-object-fit/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="forms and tables styling style inputs and table rows for readability. form control and table styling">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Forms and Tables Styling</h2>
+          <p class="task-description">Style inputs and table rows for readability.</p>
+          <p class="concept"><strong>Focus:</strong> form control and table styling</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-forms-and-tables-styling/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-forms-and-tables-styling/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transition on interaction animate a card&#x27;s shadow and movement smoothly. transition and hover">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transition on Interaction</h2>
+          <p class="task-description">Animate a card&#x27;s shadow and movement smoothly.</p>
+          <p class="concept"><strong>Focus:</strong> transition and hover</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-transition-on-interaction/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-transition-on-interaction/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transform an element rotate and scale a decorative badge. transform rotate and scale">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transform an Element</h2>
+          <p class="task-description">Rotate and scale a decorative badge.</p>
+          <p class="concept"><strong>Focus:</strong> transform rotate and scale</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-transform-an-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-transform-an-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="reduced motion preference respect users who prefer reduced motion. prefers-reduced-motion">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Reduced Motion Preference</h2>
+          <p class="task-description">Respect users who prefer reduced motion.</p>
+          <p class="concept"><strong>Focus:</strong> prefers-reduced-motion</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-reduced-motion-preference/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-reduced-motion-preference/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="list markers customize list markers without changing the content. list-style and ::marker">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>List Markers</h2>
+          <p class="task-description">Customize list markers without changing the content.</p>
+          <p class="concept"><strong>Focus:</strong> list-style and ::marker</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-list-markers/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-list-markers/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="link and button states style link hover, focus and visited states. link pseudo-classes and focus">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Link and Button States</h2>
+          <p class="task-description">Style link hover, focus and visited states.</p>
+          <p class="concept"><strong>Focus:</strong> link pseudo-classes and focus</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-link-and-button-states/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-link-and-button-states/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="css architecture with components use component classes and avoid styling by tag alone. component naming and bem-style classes">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>CSS Architecture with Components</h2>
+          <p class="task-description">Use component classes and avoid styling by tag alone.</p>
+          <p class="concept"><strong>Focus:</strong> component naming and BEM-style classes</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-css-architecture-with-components/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-css-architecture-with-components/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="css functions calc() calculate a content width using calc(). calc()">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>CSS Functions calc()</h2>
+          <p class="task-description">Calculate a content width using calc().</p>
+          <p class="concept"><strong>Focus:</strong> calc()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-css-functions-calc/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-css-functions-calc/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="clamp fluid typography use clamp() for a heading that scales with the viewport. clamp(minimum, preferred, maximum)">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Clamp Fluid Typography</h2>
+          <p class="task-description">Use clamp() for a heading that scales with the viewport.</p>
+          <p class="concept"><strong>Focus:</strong> clamp(minimum, preferred, maximum)</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-clamp-fluid-typography/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-clamp-fluid-typography/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible focus and colour create visible focus and readable contrast for a notice. contrast and focus visibility">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible Focus and Colour</h2>
+          <p class="task-description">Create visible focus and readable contrast for a notice.</p>
+          <p class="concept"><strong>Focus:</strong> contrast and focus visibility</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-accessible-focus-and-colour/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-accessible-focus-and-colour/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="container query card adapt a card based on its container width. container-type and @container">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Container Query Card</h2>
+          <p class="task-description">Adapt a card based on its container width.</p>
+          <p class="concept"><strong>Focus:</strong> container-type and @container</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-container-query-card/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-container-query-card/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="devtools debug outline use temporary outlines to debug layout boxes. devtools inspection and outline">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>DevTools Debug Outline</h2>
+          <p class="task-description">Use temporary outlines to debug layout boxes.</p>
+          <p class="concept"><strong>Focus:</strong> DevTools inspection and outline</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-devtools-debug-outline/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-devtools-debug-outline/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

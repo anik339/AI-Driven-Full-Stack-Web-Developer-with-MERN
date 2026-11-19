@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Utility-first styling, spacing, typography, colours, responsive variants, states, forms, components and theme customisation.">
+<meta name="theme-color" content="#14213d">
+<title>Module 03 — Tailwind CSS | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 03 — Tailwind CSS</h1>
+    <p class="lead">Utility-first styling, spacing, typography, colours, responsive variants, states, forms, components and theme customisation.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="tailwind browser setup load tailwind css v4 in a standalone html page. tailwind browser cdn and utility-first workflow">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Tailwind Browser Setup</h2>
+          <p class="task-description">Load Tailwind CSS v4 in a standalone HTML page.</p>
+          <p class="concept"><strong>Focus:</strong> Tailwind browser CDN and utility-first workflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-tailwind-browser-setup/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-tailwind-browser-setup/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="utility-first styling build a simple notice using small utility classes. utility-first css approach">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Utility-First Styling</h2>
+          <p class="task-description">Build a simple notice using small utility classes.</p>
+          <p class="concept"><strong>Focus:</strong> utility-first CSS approach</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-utility-first-styling/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-utility-first-styling/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="text colour and weight create a title hierarchy with text colour and font weight. text colour, font size and font weight utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Text Colour and Weight</h2>
+          <p class="task-description">Create a title hierarchy with text colour and font weight.</p>
+          <p class="concept"><strong>Focus:</strong> text colour, font size and font weight utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-text-colour-and-weight/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-text-colour-and-weight/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="background and padding create a coloured card with internal spacing. bg-, p- and rounded- utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Background and Padding</h2>
+          <p class="task-description">Create a coloured card with internal spacing.</p>
+          <p class="concept"><strong>Focus:</strong> bg-, p- and rounded- utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-background-and-padding/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-background-and-padding/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="margin and space between create vertical spacing between content blocks. space-y- and margin utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Margin and Space Between</h2>
+          <p class="task-description">Create vertical spacing between content blocks.</p>
+          <p class="concept"><strong>Focus:</strong> space-y- and margin utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-margin-and-space-between/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-margin-and-space-between/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="width and height utilities create a fixed-size square badge. size, w- and h-">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Width and Height Utilities</h2>
+          <p class="task-description">Create a fixed-size square badge.</p>
+          <p class="concept"><strong>Focus:</strong> size, w- and h-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-width-and-height-utilities/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-width-and-height-utilities/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="max width container keep a long reading section comfortable on wide screens. max-w- and mx-auto">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Max Width Container</h2>
+          <p class="task-description">Keep a long reading section comfortable on wide screens.</p>
+          <p class="concept"><strong>Focus:</strong> max-w- and mx-auto</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-max-width-container/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-max-width-container/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flexbox row place a logo and navigation links in one row. flex, items-center, justify-between and gap">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flexbox Row</h2>
+          <p class="task-description">Place a logo and navigation links in one row.</p>
+          <p class="concept"><strong>Focus:</strong> flex, items-center, justify-between and gap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-flexbox-row/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-flexbox-row/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flex direction stack profile content vertically on a narrow card. flex-col and responsive sm:flex-row">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flex Direction</h2>
+          <p class="task-description">Stack profile content vertically on a narrow card.</p>
+          <p class="concept"><strong>Focus:</strong> flex-col and responsive sm:flex-row</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-flex-direction/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-flex-direction/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="grid columns create a three-column feature grid. grid, grid-cols- and gap-">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Grid Columns</h2>
+          <p class="task-description">Create a three-column feature grid.</p>
+          <p class="concept"><strong>Focus:</strong> grid, grid-cols- and gap-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-grid-columns/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-grid-columns/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive prefixes change text size and padding at different breakpoints. sm:, md:, lg: responsive prefixes">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Prefixes</h2>
+          <p class="task-description">Change text size and padding at different breakpoints.</p>
+          <p class="concept"><strong>Focus:</strong> sm:, md:, lg: responsive prefixes</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-responsive-prefixes/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-responsive-prefixes/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="hover state change a card border and shadow on hover. hover: variant and transition utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Hover State</h2>
+          <p class="task-description">Change a card border and shadow on hover.</p>
+          <p class="concept"><strong>Focus:</strong> hover: variant and transition utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-hover-state/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-hover-state/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="focus state make a button visibly focused for keyboard users. focus-visible and ring utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Focus State</h2>
+          <p class="task-description">Make a button visibly focused for keyboard users.</p>
+          <p class="concept"><strong>Focus:</strong> focus-visible and ring utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-focus-state/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-focus-state/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="dark theme surface create a dark themed card using explicit dark classes. dark: variant and theme colours">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Dark Theme Surface</h2>
+          <p class="task-description">Create a dark themed card using explicit dark classes.</p>
+          <p class="concept"><strong>Focus:</strong> dark: variant and theme colours</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-dark-theme-surface/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-dark-theme-surface/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="colour palette use consistent colour shades for a status message. tailwind colour scale">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Colour Palette</h2>
+          <p class="task-description">Use consistent colour shades for a status message.</p>
+          <p class="concept"><strong>Focus:</strong> Tailwind colour scale</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-colour-palette/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-colour-palette/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="theme custom property use an arbitrary value for a project-specific colour. arbitrary values and opacity modifiers">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Theme Custom Property</h2>
+          <p class="task-description">Use an arbitrary value for a project-specific colour.</p>
+          <p class="concept"><strong>Focus:</strong> arbitrary values and opacity modifiers</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-theme-custom-property/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-theme-custom-property/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flex alignment center a call-to-action group. items-center, justify-center and flex-wrap">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flex Alignment</h2>
+          <p class="task-description">Center a call-to-action group.</p>
+          <p class="concept"><strong>Focus:</strong> items-center, justify-center and flex-wrap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-flex-alignment/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-flex-alignment/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="spacing scale build a card using consistent spacing utilities. p-, mt-, space-y- and tracking-">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Spacing Scale</h2>
+          <p class="task-description">Build a card using consistent spacing utilities.</p>
+          <p class="concept"><strong>Focus:</strong> p-, mt-, space-y- and tracking-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-spacing-scale/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-spacing-scale/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="positioning place a notification badge on an avatar. relative, absolute, top/right offsets">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Positioning</h2>
+          <p class="task-description">Place a notification badge on an avatar.</p>
+          <p class="concept"><strong>Focus:</strong> relative, absolute, top/right offsets</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-positioning/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-positioning/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="overflow control clip a card&#x27;s image to rounded corners. overflow-hidden and object-cover">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Overflow Control</h2>
+          <p class="task-description">Clip a card&#x27;s image to rounded corners.</p>
+          <p class="concept"><strong>Focus:</strong> overflow-hidden and object-cover</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-overflow-control/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-overflow-control/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="typography hierarchy style a page title, subtitle and supporting text. font size, weight, tracking and leading">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Typography Hierarchy</h2>
+          <p class="task-description">Style a page title, subtitle and supporting text.</p>
+          <p class="concept"><strong>Focus:</strong> font size, weight, tracking and leading</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-typography-hierarchy/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-typography-hierarchy/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="background image and overlay place readable text over a background image. background utilities, opacity and layering">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Background Image and Overlay</h2>
+          <p class="task-description">Place readable text over a background image.</p>
+          <p class="concept"><strong>Focus:</strong> background utilities, opacity and layering</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-background-image-and-overlay/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-background-image-and-overlay/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="border and ring highlight a selected option with a border and ring. border- and ring-">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Border and Ring</h2>
+          <p class="task-description">Highlight a selected option with a border and ring.</p>
+          <p class="concept"><strong>Focus:</strong> border- and ring-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-border-and-ring/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-border-and-ring/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="shadow and opacity create depth using a soft shadow and muted secondary content. shadow and opacity modifiers">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Shadow and Opacity</h2>
+          <p class="task-description">Create depth using a soft shadow and muted secondary content.</p>
+          <p class="concept"><strong>Focus:</strong> shadow and opacity modifiers</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-shadow-and-opacity/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-shadow-and-opacity/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transition and duration animate a button colour change smoothly. transition-colors and duration-">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transition and Duration</h2>
+          <p class="task-description">Animate a button colour change smoothly.</p>
+          <p class="concept"><strong>Focus:</strong> transition-colors and duration-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-transition-and-duration/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-transition-and-duration/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transform and scale scale a card slightly on hover. scale and transform variants">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transform and Scale</h2>
+          <p class="task-description">Scale a card slightly on hover.</p>
+          <p class="concept"><strong>Focus:</strong> scale and transform variants</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-transform-and-scale/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-transform-and-scale/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive navbar build a navigation row that wraps on small screens. flex-wrap, justify-between and gap">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Navbar</h2>
+          <p class="task-description">Build a navigation row that wraps on small screens.</p>
+          <p class="concept"><strong>Focus:</strong> flex-wrap, justify-between and gap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-responsive-navbar/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-responsive-navbar/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="pricing cards create three pricing cards using responsive grid. responsive grid and card composition">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Pricing Cards</h2>
+          <p class="task-description">Create three pricing cards using responsive grid.</p>
+          <p class="concept"><strong>Focus:</strong> responsive grid and card composition</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-pricing-cards/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-pricing-cards/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="product card build a product card with image, rating and cta. card, image, spacing, button and hover utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Product Card</h2>
+          <p class="task-description">Build a product card with image, rating and CTA.</p>
+          <p class="concept"><strong>Focus:</strong> card, image, spacing, button and hover utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-product-card/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-product-card/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="course grid display course cards with responsive columns. grid breakpoints and card spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Course Grid</h2>
+          <p class="task-description">Display course cards with responsive columns.</p>
+          <p class="concept"><strong>Focus:</strong> grid breakpoints and card spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-course-grid/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-course-grid/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible contact form style form controls with visible labels and focus states. form layout, label, border and focus ring">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible Contact Form</h2>
+          <p class="task-description">Style form controls with visible labels and focus states.</p>
+          <p class="concept"><strong>Focus:</strong> form layout, label, border and focus ring</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-accessible-contact-form/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-accessible-contact-form/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="aspect ratio media keep a video preview in a consistent aspect ratio. aspect-video and object-cover">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Aspect Ratio Media</h2>
+          <p class="task-description">Keep a video preview in a consistent aspect ratio.</p>
+          <p class="concept"><strong>Focus:</strong> aspect-video and object-cover</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-aspect-ratio-media/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-aspect-ratio-media/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="object position control which part of an image remains visible when cropped. object-cover and object-position">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Object Position</h2>
+          <p class="task-description">Control which part of an image remains visible when cropped.</p>
+          <p class="concept"><strong>Focus:</strong> object-cover and object-position</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-object-position/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-object-position/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="list and table styling style a list and a compact data table. list-style, table width, border and padding utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>List and Table Styling</h2>
+          <p class="task-description">Style a list and a compact data table.</p>
+          <p class="concept"><strong>Focus:</strong> list-style, table width, border and padding utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-list-and-table-styling/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-list-and-table-styling/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="custom form controls create a checkbox row with accent colour. accent- and flex alignment">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Custom Form Controls</h2>
+          <p class="task-description">Create a checkbox row with accent colour.</p>
+          <p class="concept"><strong>Focus:</strong> accent- and flex alignment</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-custom-form-controls/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-custom-form-controls/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="cursor and pointer events show disabled interaction on a button. cursor-pointer, cursor-not-allowed and disabled">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Cursor and Pointer Events</h2>
+          <p class="task-description">Show disabled interaction on a button.</p>
+          <p class="concept"><strong>Focus:</strong> cursor-pointer, cursor-not-allowed and disabled</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-cursor-and-pointer-events/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-cursor-and-pointer-events/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="filters and backdrop blur create a translucent panel with backdrop blur. backdrop-blur and translucent background">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Filters and Backdrop Blur</h2>
+          <p class="task-description">Create a translucent panel with backdrop blur.</p>
+          <p class="concept"><strong>Focus:</strong> backdrop-blur and translucent background</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-filters-and-backdrop-blur/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-filters-and-backdrop-blur/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="scroll behaviour add smooth scrolling to a long in-page navigation example. scroll-smooth and scroll-mt-">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Scroll Behaviour</h2>
+          <p class="task-description">Add smooth scrolling to a long in-page navigation example.</p>
+          <p class="concept"><strong>Focus:</strong> scroll-smooth and scroll-mt-</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-scroll-behaviour/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-scroll-behaviour/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="sizing and min/max width constrain a content card while letting it shrink on mobile. w-full, max-w- and mx-auto">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Sizing and Min/Max Width</h2>
+          <p class="task-description">Constrain a content card while letting it shrink on mobile.</p>
+          <p class="concept"><strong>Focus:</strong> w-full, max-w- and mx-auto</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-sizing-and-min-max-width/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-sizing-and-min-max-width/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transformations rotate an icon and translate a small decorative shape. rotate and translate utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transformations</h2>
+          <p class="task-description">Rotate an icon and translate a small decorative shape.</p>
+          <p class="concept"><strong>Focus:</strong> rotate and translate utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-transformations/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-transformations/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="text alignment and decoration use alignment and decoration utilities for links and headings. text-center, underline and decoration utilities">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Text Alignment and Decoration</h2>
+          <p class="task-description">Use alignment and decoration utilities for links and headings.</p>
+          <p class="concept"><strong>Focus:</strong> text-center, underline and decoration utilities</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-text-alignment-and-decoration/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-text-alignment-and-decoration/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="box shadow and opacity create a badge with a soft shadow and translucent surface. shadow and opacity modifiers">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Box Shadow and Opacity</h2>
+          <p class="task-description">Create a badge with a soft shadow and translucent surface.</p>
+          <p class="concept"><strong>Focus:</strong> shadow and opacity modifiers</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-box-shadow-and-opacity/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-box-shadow-and-opacity/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive dashboard build a simple dashboard with sidebar and content grid. responsive grid with arbitrary column sizes">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Dashboard</h2>
+          <p class="task-description">Build a simple dashboard with sidebar and content grid.</p>
+          <p class="concept"><strong>Focus:</strong> responsive grid with arbitrary column sizes</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-responsive-dashboard/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-responsive-dashboard/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="dark mode card create a dark-mode-aware profile panel. dark mode variants and nested utility combinations">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Dark Mode Card</h2>
+          <p class="task-description">Create a dark-mode-aware profile panel.</p>
+          <p class="concept"><strong>Focus:</strong> dark mode variants and nested utility combinations</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-dark-mode-card/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-dark-mode-card/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="reusable component pattern create two consistent cards from the same utility pattern. repeatable component styling">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Reusable Component Pattern</h2>
+          <p class="task-description">Create two consistent cards from the same utility pattern.</p>
+          <p class="concept"><strong>Focus:</strong> repeatable component styling</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-reusable-component-pattern/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-reusable-component-pattern/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="arbitrary spacing values use a one-off spacing value and compare it with the scale. arbitrary values p-[22px]">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Arbitrary Spacing Values</h2>
+          <p class="task-description">Use a one-off spacing value and compare it with the scale.</p>
+          <p class="concept"><strong>Focus:</strong> arbitrary values p-[22px]</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-arbitrary-spacing-values/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-arbitrary-spacing-values/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="tailwind build workflow read a small local build setup checklist. package.json, cli build and generated css">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Tailwind Build Workflow</h2>
+          <p class="task-description">Read a small local build setup checklist.</p>
+          <p class="concept"><strong>Focus:</strong> package.json, CLI build and generated CSS</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-tailwind-build-workflow/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-tailwind-build-workflow/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="tailwind component quality review review a card for readability, responsiveness and accessibility. accessibility, semantic html and responsive review">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Tailwind Component Quality Review</h2>
+          <p class="task-description">Review a card for readability, responsiveness and accessibility.</p>
+          <p class="concept"><strong>Focus:</strong> accessibility, semantic HTML and responsive review</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-tailwind-component-quality-review/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-tailwind-component-quality-review/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="image filter effects use grayscale and hover variants to change an image on interaction. grayscale, transition and group-hover">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Image Filter Effects</h2>
+          <p class="task-description">Use grayscale and hover variants to change an image on interaction.</p>
+          <p class="concept"><strong>Focus:</strong> grayscale, transition and group-hover</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-image-filter-effects/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-image-filter-effects/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="loading skeleton create a simple loading placeholder using animate-pulse. animate-pulse and skeleton placeholders">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Loading Skeleton</h2>
+          <p class="task-description">Create a simple loading placeholder using animate-pulse.</p>
+          <p class="concept"><strong>Focus:</strong> animate-pulse and skeleton placeholders</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-loading-skeleton/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-loading-skeleton/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

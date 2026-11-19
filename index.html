@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <meta content="Anik Chandra Dey's full-stack web development learning repository: eight modules, 400 topic-wise practice problems, assignments and 20 JavaScript projects." name="description"/>
+  <meta content="Anik Chandra Dey's web development learning repository: eight modules, 400 topic-wise practice tasks, assignments, JavaScript projects and five frontend portfolio projects." name="description"/>
   <meta content="#122b4a" name="theme-color"/>
   <title>
    Anik Chandra Dey | Full-Stack Web Development Learning Repository
@@ -43,6 +43,12 @@
     .notice{padding:18px;border:1px solid #c9def6;border-radius:12px;background:#e8f2ff;color:#1e3a5f}
     footer{margin-top:18px;padding:26px 0;background:#122b4a;color:#d4e2f0}
     footer p{margin:0}
+
+    .project-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+    .project-actions .button{min-height:38px;padding:8px 12px;border-radius:8px;font-size:.86rem}
+    .project-actions .button.secondary{background:#e5edff;color:#1e40af}
+    .demo-note{margin-top:18px;padding:14px 16px;border:1px solid #f0d7a6;border-radius:11px;background:#fff8e8;color:#684b16;font-size:.92rem}
+    .project-card .tag{margin-bottom:3px}
     @media(max-width:640px){.hero{padding-top:42px}.navlinks{gap:12px;font-size:.86rem}}
   </style>
  </head>
@@ -59,6 +65,9 @@
       </a>
       <a href="#projects">
        Projects
+      </a>
+      <a href="#frontend-live-demos">
+       Live Demos
       </a>
       <a href="#practice">
        Problem Solving
@@ -82,7 +91,7 @@
      Learn the fundamentals. Build real projects. Understand every line.
     </h1>
     <p class="intro">
-     A structured collection of eight web development modules, commented lessons, assignments, practical projects, a personal learning tracker and 400 topic-wise coding exercises. The repository records available learning material; it does not automatically claim mastery.
+     A structured collection of eight web development modules, commented lessons, assignments, practical projects, a personal learning tracker and 400 topic-wise practice tasks. The repository records available learning material; it does not automatically claim mastery.
     </p>
     <div class="hero-actions">
      <a class="button" href="#modules">
@@ -106,13 +115,19 @@
       <strong>
        400
       </strong>
-      Runnable problems
+      Practice tasks
      </div>
      <div class="stat">
       <strong>
        20
       </strong>
       JavaScript projects
+     </div>
+     <div class="stat">
+      <strong>
+       5
+      </strong>
+      Frontend portfolio projects
      </div>
      <div class="stat">
       <strong>
@@ -333,6 +348,68 @@
      </article>
     </div>
    </section>
+   <section class="wrap" id="frontend-live-demos">
+    <div class="section-head">
+     <h2>My Frontend Projects &mdash; Live Demos</h2>
+     <p>Five standalone frontend projects built with HTML, CSS and JavaScript. Each card provides a live preview link and a direct link to its source folder.</p>
+    </div>
+    <div class="grid">
+     <article class="card project-card">
+      <span class="tag">Personal profile</span>
+      <h3>Personal Portfolio</h3>
+      <p>A responsive portfolio presenting Anik's profile, skills, learning journey and contact information.</p>
+      <div class="project-actions">
+       <a class="button" href="https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/01-personal-portfolio/" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+       <a class="button secondary" href="./Frontend-Projects/01-personal-portfolio/">Source Code</a>
+      </div>
+     </article>
+     <article class="card project-card">
+      <span class="tag">Shopping experience</span>
+      <h3>NOVA Market — E-commerce Storefront</h3>
+      <p>Product browsing, search, category filters, cart, wishlist, local storage and a demo checkout flow.</p>
+      <div class="project-actions">
+       <a class="button" href="https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/02-ecommerce-storefront/" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+       <a class="button secondary" href="./Frontend-Projects/02-ecommerce-storefront/">Source Code</a>
+      </div>
+     </article>
+     <article class="card project-card">
+      <span class="tag">Admin dashboard</span>
+      <h3>Northstar — Admin Analytics Dashboard</h3>
+      <p>A frontend dashboard with workspace management, analytics, customer and product tools, settings and sample data.</p>
+      <div class="project-actions">
+       <a class="button" href="https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/03-admin-analytics-dashboard/" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+       <a class="button secondary" href="./Frontend-Projects/03-admin-analytics-dashboard/">Source Code</a>
+      </div>
+     </article>
+     <article class="card project-card">
+      <span class="tag">Productivity app</span>
+      <h3>Taskflow — Project Management & Kanban</h3>
+      <p>Task creation and editing, Kanban workflow, project and workspace controls, filters and browser-based persistence.</p>
+      <div class="project-actions">
+       <a class="button" href="https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/04-project-management-kanban/" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+       <a class="button secondary" href="./Frontend-Projects/04-project-management-kanban/">Source Code</a>
+      </div>
+     </article>
+     <article class="card project-card">
+      <span class="tag">Career portal</span>
+      <h3>Launchpad — Job & Internship Portal</h3>
+      <p>Job search, filters, saved opportunities, application demo, employer workspace and profile settings.</p>
+      <div class="project-actions">
+       <a class="button" href="https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/05-job-internship-portal/" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+       <a class="button secondary" href="./Frontend-Projects/05-job-internship-portal/">Source Code</a>
+      </div>
+     </article>
+     <article class="card project-card">
+      <span class="tag">STANDALONE JAVASCRIPT PROJECT</span>
+      <h3>JavaScript Task Manager</h3>
+      <p>A separate JavaScript project repository. Open the repository to review its source code and setup instructions.</p>
+      <div class="project-actions">
+       <a class="button secondary" href="https://github.com/anik339/javascript-task-manager" target="_blank" rel="noopener noreferrer">Source Repository &rarr;</a>
+      </div>
+     </article>
+    </div>
+    <p class="demo-note"><strong>Live demo note:</strong> These preview URLs use GitHub Pages. They will open after GitHub Pages is enabled for this repository using the <code>main</code> branch and <code>/(root)</code> folder, and the deployment has completed. If Pages is not enabled yet, use the Source Code links or follow <a href="./PUBLISHING_GUIDE_BN.md">the publishing guide</a>.</p>
+   </section>
    <section class="wrap" id="practice">
     <div class="section-head">
      <h2>
@@ -351,7 +428,7 @@
        Topic-wise Problem Solving
       </h3>
       <p>
-       Eight module-wise sets with 50 runnable problems each, from HTML and CSS to DOM and asynchronous JavaScript.
+       Eight module-wise sets with 50 tasks each, combining runnable web exercises with AI-assisted workflow practice.
       </p>
       <a class="card-link" href="./Problem-Solving/index.html">
        Open Problem-Solving Hub &rarr;

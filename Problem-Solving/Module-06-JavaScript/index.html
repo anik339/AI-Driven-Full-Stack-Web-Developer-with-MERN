@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Variables, data types, operators, conditions, loops, functions, arrays, objects, strings, dates and practical logic.">
+<meta name="theme-color" content="#14213d">
+<title>Module 06 — JavaScript Fundamentals | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 06 — JavaScript Fundamentals</h1>
+    <p class="lead">Variables, data types, operators, conditions, loops, functions, arrays, objects, strings, dates and practical logic.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="print output with console.log print a message in the browser developer console and on the lesson page. console.log and output values">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Print Output with console.log</h2>
+          <p class="task-description">Print a message in the browser developer console and on the lesson page.</p>
+          <p class="concept"><strong>Focus:</strong> console.log and output values</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-print-output-with-console-log/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-print-output-with-console-log/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write single-line and multi-line comments add comments that explain why code is written. // and / / comments">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Write Single-Line and Multi-Line Comments</h2>
+          <p class="task-description">Add comments that explain why code is written.</p>
+          <p class="concept"><strong>Focus:</strong> // and / / comments</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-write-single-line-and-multi-line-comments/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-write-single-line-and-multi-line-comments/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="declare variables with let and const store a learner name and course name in variables. let and const">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Declare Variables with let and const</h2>
+          <p class="task-description">Store a learner name and course name in variables.</p>
+          <p class="concept"><strong>Focus:</strong> let and const</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-declare-variables-with-let-and-const/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-declare-variables-with-let-and-const/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="compare var, let and const observe how let can be reassigned while const cannot. variable declarations and reassignment">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Compare var, let and const</h2>
+          <p class="task-description">Observe how let can be reassigned while const cannot.</p>
+          <p class="concept"><strong>Focus:</strong> variable declarations and reassignment</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-compare-var-let-and-const/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-compare-var-let-and-const/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="identify primitive data types create string, number, boolean, undefined, null and bigint values. primitive data types and typeof">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Identify Primitive Data Types</h2>
+          <p class="task-description">Create string, number, boolean, undefined, null and bigint values.</p>
+          <p class="concept"><strong>Focus:</strong> primitive data types and typeof</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-identify-primitive-data-types/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-identify-primitive-data-types/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use typeof to inspect values print the type of several values. typeof operator">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use typeof to Inspect Values</h2>
+          <p class="task-description">Print the type of several values.</p>
+          <p class="concept"><strong>Focus:</strong> typeof operator</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-use-typeof-to-inspect-values/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-use-typeof-to-inspect-values/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use template literals build a sentence from variables using backticks. template literals and interpolation">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Template Literals</h2>
+          <p class="task-description">Build a sentence from variables using backticks.</p>
+          <p class="concept"><strong>Focus:</strong> template literals and interpolation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-use-template-literals/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-use-template-literals/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="perform arithmetic operations calculate the total price and remainder. addition, subtraction, multiplication, division and modulo">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Perform Arithmetic Operations</h2>
+          <p class="task-description">Calculate the total price and remainder.</p>
+          <p class="concept"><strong>Focus:</strong> addition, subtraction, multiplication, division and modulo</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-perform-arithmetic-operations/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-perform-arithmetic-operations/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="compare values use strict comparison operators to compare two scores. comparison operators and strict equality">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Compare Values</h2>
+          <p class="task-description">Use strict comparison operators to compare two scores.</p>
+          <p class="concept"><strong>Focus:</strong> comparison operators and strict equality</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-compare-values/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-compare-values/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="combine conditions with logical operators check whether a learner qualifies for a certificate. &amp;&amp;, || and !">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Combine Conditions with Logical Operators</h2>
+          <p class="task-description">Check whether a learner qualifies for a certificate.</p>
+          <p class="concept"><strong>Focus:</strong> &amp;&amp;, || and !</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-combine-conditions-with-logical-operators/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-combine-conditions-with-logical-operators/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use assignment and increment operators update a running score using assignment operators. =, +=, =, -= and ++">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Assignment and Increment Operators</h2>
+          <p class="task-description">Update a running score using assignment operators.</p>
+          <p class="concept"><strong>Focus:</strong> =, +=, =, -= and ++</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-use-assignment-and-increment-operators/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-use-assignment-and-increment-operators/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write an if...else condition check whether a person is old enough for a sample service. if and else">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Write an if...else Condition</h2>
+          <p class="task-description">Check whether a person is old enough for a sample service.</p>
+          <p class="concept"><strong>Focus:</strong> if and else</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-write-an-if-else-condition/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-write-an-if-else-condition/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use else if for multiple ranges convert a numeric score into a grade. if, else if and else">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use else if for Multiple Ranges</h2>
+          <p class="task-description">Convert a numeric score into a grade.</p>
+          <p class="concept"><strong>Focus:</strong> if, else if and else</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-use-else-if-for-multiple-ranges/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-use-else-if-for-multiple-ranges/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use switch...case display a message based on a selected day. switch, case, break and default">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use switch...case</h2>
+          <p class="task-description">Display a message based on a selected day.</p>
+          <p class="concept"><strong>Focus:</strong> switch, case, break and default</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-use-switch-case/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-use-switch-case/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use the ternary operator choose a message with a short conditional expression. conditional (ternary) operator">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use the Ternary Operator</h2>
+          <p class="task-description">Choose a message with a short conditional expression.</p>
+          <p class="concept"><strong>Focus:</strong> conditional (ternary) operator</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-use-the-ternary-operator/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-use-the-ternary-operator/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="run a basic for loop print the numbers from 1 through 5. for loop initialization, condition and update">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Run a Basic for Loop</h2>
+          <p class="task-description">Print the numbers from 1 through 5.</p>
+          <p class="concept"><strong>Focus:</strong> for loop initialization, condition and update</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-run-a-basic-for-loop/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-run-a-basic-for-loop/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use break and continue skip one number and stop the loop at a limit. break and continue">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use break and continue</h2>
+          <p class="task-description">Skip one number and stop the loop at a limit.</p>
+          <p class="concept"><strong>Focus:</strong> break and continue</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-use-break-and-continue/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-use-break-and-continue/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use a while loop repeat a counter while it is less than or equal to five. while loop">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use a while Loop</h2>
+          <p class="task-description">Repeat a counter while it is less than or equal to five.</p>
+          <p class="concept"><strong>Focus:</strong> while loop</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-use-a-while-loop/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-use-a-while-loop/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use a do...while loop run a block once before checking its condition. do...while loop">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use a do...while Loop</h2>
+          <p class="task-description">Run a block once before checking its condition.</p>
+          <p class="concept"><strong>Focus:</strong> do...while loop</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-use-a-do-while-loop/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-use-a-do-while-loop/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a function declaration write a reusable function that greets a learner. function declaration and function call">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a Function Declaration</h2>
+          <p class="task-description">Write a reusable function that greets a learner.</p>
+          <p class="concept"><strong>Focus:</strong> function declaration and function call</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-create-a-function-declaration/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-create-a-function-declaration/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="pass function parameters send a name into a greeting function. parameters and arguments">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Pass Function Parameters</h2>
+          <p class="task-description">Send a name into a greeting function.</p>
+          <p class="concept"><strong>Focus:</strong> parameters and arguments</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-pass-function-parameters/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-pass-function-parameters/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="return a value from a function create a function that calculates a rectangle area. return statement">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Return a Value from a Function</h2>
+          <p class="task-description">Create a function that calculates a rectangle area.</p>
+          <p class="concept"><strong>Focus:</strong> return statement</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-return-a-value-from-a-function/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-return-a-value-from-a-function/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use default parameters provide a default country when no argument is supplied. default function parameters">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Default Parameters</h2>
+          <p class="task-description">Provide a default country when no argument is supplied.</p>
+          <p class="concept"><strong>Focus:</strong> default function parameters</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-use-default-parameters/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-use-default-parameters/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="write an arrow function convert a simple function into arrow-function syntax. arrow functions and implicit return">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Write an Arrow Function</h2>
+          <p class="task-description">Convert a simple function into arrow-function syntax.</p>
+          <p class="concept"><strong>Focus:</strong> arrow functions and implicit return</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-write-an-arrow-function/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-write-an-arrow-function/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create and read an object store a person&#x27;s information in an object. object literal and dot notation">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create and Read an Object</h2>
+          <p class="task-description">Store a person&#x27;s information in an object.</p>
+          <p class="concept"><strong>Focus:</strong> object literal and dot notation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-create-and-read-an-object/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-create-and-read-an-object/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="update and add object properties change an object property and add a new one. object property assignment">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Update and Add Object Properties</h2>
+          <p class="task-description">Change an object property and add a new one.</p>
+          <p class="concept"><strong>Focus:</strong> object property assignment</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-update-and-add-object-properties/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-update-and-add-object-properties/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create an object method add a method that uses this to describe an object. object methods and this">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create an Object Method</h2>
+          <p class="task-description">Add a method that uses this to describe an object.</p>
+          <p class="concept"><strong>Focus:</strong> object methods and this</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-create-an-object-method/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-create-an-object-method/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create an array store a list of skills and read its length. array literal and length">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create an Array</h2>
+          <p class="task-description">Store a list of skills and read its length.</p>
+          <p class="concept"><strong>Focus:</strong> array literal and length</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-create-an-array/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-create-an-array/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="access array items by index read the first and last items of an array. zero-based array index">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Access Array Items by Index</h2>
+          <p class="task-description">Read the first and last items of an array.</p>
+          <p class="concept"><strong>Focus:</strong> zero-based array index</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-access-array-items-by-index/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-access-array-items-by-index/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="loop through an array with for...of visit each item in a skills array. for...of iterable loop">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Loop Through an Array with for...of</h2>
+          <p class="task-description">Visit each item in a skills array.</p>
+          <p class="concept"><strong>Focus:</strong> for...of iterable loop</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-loop-through-an-array-with-for-of/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-loop-through-an-array-with-for-of/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="loop through object keys with for...in read each key and value from an object. for...in object property keys">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Loop Through Object Keys with for...in</h2>
+          <p class="task-description">Read each key and value from an object.</p>
+          <p class="concept"><strong>Focus:</strong> for...in object property keys</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-loop-through-object-keys-with-for-in/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-loop-through-object-keys-with-for-in/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add items with push and remove with pop add a skill and remove the last skill. push() and pop()">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Add Items with push and Remove with pop</h2>
+          <p class="task-description">Add a skill and remove the last skill.</p>
+          <p class="concept"><strong>Focus:</strong> push() and pop()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-add-items-with-push-and-remove-with-pop/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-add-items-with-push-and-remove-with-pop/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check array membership use includes and indexof to find a value. includes() and indexof()">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check Array Membership</h2>
+          <p class="task-description">Use includes and indexOf to find a value.</p>
+          <p class="concept"><strong>Focus:</strong> includes() and indexOf()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-check-array-membership/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-check-array-membership/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="copy part of an array with slice create a new array containing selected items. slice() non-mutating method">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Copy Part of an Array with slice</h2>
+          <p class="task-description">Create a new array containing selected items.</p>
+          <p class="concept"><strong>Focus:</strong> slice() non-mutating method</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-copy-part-of-an-array-with-slice/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-copy-part-of-an-array-with-slice/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="change an array with splice remove and insert array items at a chosen position. splice() mutating method">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Change an Array with splice</h2>
+          <p class="task-description">Remove and insert array items at a chosen position.</p>
+          <p class="concept"><strong>Focus:</strong> splice() mutating method</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-change-an-array-with-splice/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-change-an-array-with-splice/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="transform values with map create a new array with prices including tax. map()">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Transform Values with map</h2>
+          <p class="task-description">Create a new array with prices including tax.</p>
+          <p class="concept"><strong>Focus:</strong> map()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-transform-values-with-map/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-transform-values-with-map/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="filter an array keep only numbers greater than or equal to 50. filter()">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Filter an Array</h2>
+          <p class="task-description">Keep only numbers greater than or equal to 50.</p>
+          <p class="concept"><strong>Focus:</strong> filter()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-filter-an-array/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-filter-an-array/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="calculate a sum with reduce add all numbers using reduce and an initial value. reduce() accumulator and initial value">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Calculate a Sum with reduce</h2>
+          <p class="task-description">Add all numbers using reduce and an initial value.</p>
+          <p class="concept"><strong>Focus:</strong> reduce() accumulator and initial value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-calculate-a-sum-with-reduce/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-calculate-a-sum-with-reduce/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="find an item and test conditions use find, some and every on a product list. find(), some() and every()">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Find an Item and Test Conditions</h2>
+          <p class="task-description">Use find, some and every on a product list.</p>
+          <p class="concept"><strong>Focus:</strong> find(), some() and every()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-find-an-item-and-test-conditions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-find-an-item-and-test-conditions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use string length and case methods read a string&#x27;s length and change its letter case. length, touppercase and tolowercase">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use String Length and Case Methods</h2>
+          <p class="task-description">Read a string&#x27;s length and change its letter case.</p>
+          <p class="concept"><strong>Focus:</strong> length, toUpperCase and toLowerCase</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-use-string-length-and-case-methods/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-use-string-length-and-case-methods/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="search within a string check whether a sentence contains a word. includes(), startswith() and endswith()">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Search Within a String</h2>
+          <p class="task-description">Check whether a sentence contains a word.</p>
+          <p class="concept"><strong>Focus:</strong> includes(), startsWith() and endsWith()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-search-within-a-string/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-search-within-a-string/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="slice, replace and trim a string clean a user-entered name and replace a word. trim(), replace() and slice()">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Slice, Replace and Trim a String</h2>
+          <p class="task-description">Clean a user-entered name and replace a word.</p>
+          <p class="concept"><strong>Focus:</strong> trim(), replace() and slice()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-slice-replace-and-trim-a-string/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-slice-replace-and-trim-a-string/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="split and join strings convert a comma-separated list into an array and back. split() and join()">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Split and Join Strings</h2>
+          <p class="task-description">Convert a comma-separated list into an array and back.</p>
+          <p class="concept"><strong>Focus:</strong> split() and join()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-split-and-join-strings/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-split-and-join-strings/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use the date object read the current date and format year, month and day. date constructor and date getters">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use the Date Object</h2>
+          <p class="task-description">Read the current date and format year, month and day.</p>
+          <p class="concept"><strong>Focus:</strong> Date constructor and date getters</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-use-the-date-object/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-use-the-date-object/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use math methods round a number and find its minimum and maximum. math.round, floor, ceil, min and max">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Math Methods</h2>
+          <p class="task-description">Round a number and find its minimum and maximum.</p>
+          <p class="concept"><strong>Focus:</strong> Math.round, floor, ceil, min and max</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-use-math-methods/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-use-math-methods/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="convert strings to numbers convert numeric text using number and handle invalid input. number() and number.isnan()">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Convert Strings to Numbers</h2>
+          <p class="task-description">Convert numeric text using Number and handle invalid input.</p>
+          <p class="concept"><strong>Focus:</strong> Number() and Number.isNaN()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-convert-strings-to-numbers/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-convert-strings-to-numbers/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use parseint and parsefloat extract an integer and decimal number from strings. parseint(), parsefloat() and radix">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use parseInt and parseFloat</h2>
+          <p class="task-description">Extract an integer and decimal number from strings.</p>
+          <p class="concept"><strong>Focus:</strong> parseInt(), parseFloat() and radix</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-use-parseint-and-parsefloat/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-use-parseint-and-parsefloat/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check nan and finite numbers validate numeric results before using them. number.isnan and number.isfinite">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check NaN and Finite Numbers</h2>
+          <p class="task-description">Validate numeric results before using them.</p>
+          <p class="concept"><strong>Focus:</strong> Number.isNaN and Number.isFinite</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-check-nan-and-finite-numbers/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-check-nan-and-finite-numbers/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="generate a random integer generate a random whole number from 1 to 10. math.random and math.floor">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Generate a Random Integer</h2>
+          <p class="task-description">Generate a random whole number from 1 to 10.</p>
+          <p class="concept"><strong>Focus:</strong> Math.random and Math.floor</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-generate-a-random-integer/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-generate-a-random-integer/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="calculate a shopping cart total combine arrays, objects, loops and arithmetic to calculate a cart. array of objects, map(), reduce() and arithmetic">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Calculate a Shopping Cart Total</h2>
+          <p class="task-description">Combine arrays, objects, loops and arithmetic to calculate a cart.</p>
+          <p class="concept"><strong>Focus:</strong> array of objects, map(), reduce() and arithmetic</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-calculate-a-shopping-cart-total/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-calculate-a-shopping-cart-total/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

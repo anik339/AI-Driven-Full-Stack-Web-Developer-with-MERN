@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DOM selection, content and attribute updates, classes, element creation, events, forms, delegation and interactive interfaces.">
+<meta name="theme-color" content="#14213d">
+<title>Module 07 — JavaScript DOM &amp; Events | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 07 — JavaScript DOM &amp; Events</h1>
+    <p class="lead">DOM selection, content and attribute updates, classes, element creation, events, forms, delegation and interactive interfaces.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="dom tree and the document object read the page title and inspect the main document elements. document, documentelement, body">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>DOM Tree and the document Object</h2>
+          <p class="task-description">Read the page title and inspect the main document elements.</p>
+          <p class="concept"><strong>Focus:</strong> document, documentElement, body</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-dom-tree-and-the-document-object/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-dom-tree-and-the-document-object/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select an element with getelementbyid() select an element by its unique id and change its text. getelementbyid(), id">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select an Element with getElementById()</h2>
+          <p class="task-description">Select an element by its unique id and change its text.</p>
+          <p class="concept"><strong>Focus:</strong> getElementById(), id</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-select-an-element-with-getelementbyid/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-select-an-element-with-getelementbyid/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select the first match with queryselector() select the first element with the class notice. queryselector(), css selectors">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select the First Match with querySelector()</h2>
+          <p class="task-description">Select the first element with the class notice.</p>
+          <p class="concept"><strong>Focus:</strong> querySelector(), CSS selectors</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-select-the-first-match-with-queryselector/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-select-the-first-match-with-queryselector/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select multiple elements with queryselectorall() select every list item and add its position number. queryselectorall(), nodelist, foreach()">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select Multiple Elements with querySelectorAll()</h2>
+          <p class="task-description">Select every list item and add its position number.</p>
+          <p class="concept"><strong>Focus:</strong> querySelectorAll(), NodeList, forEach()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-select-multiple-elements-with-queryselectorall/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-select-multiple-elements-with-queryselectorall/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select by class name find every element with the class fruit. getelementsbyclassname(), htmlcollection">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select by Class Name</h2>
+          <p class="task-description">Find every element with the class fruit.</p>
+          <p class="concept"><strong>Focus:</strong> getElementsByClassName(), HTMLCollection</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-select-by-class-name/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-select-by-class-name/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select by tag name count all paragraph elements in a container. getelementsbytagname()">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select by Tag Name</h2>
+          <p class="task-description">Count all paragraph elements in a container.</p>
+          <p class="concept"><strong>Focus:</strong> getElementsByTagName()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-select-by-tag-name/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-select-by-tag-name/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="change text with textcontent replace an element&#x27;s plain text. textcontent">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Change Text with textContent</h2>
+          <p class="task-description">Replace an element&#x27;s plain text.</p>
+          <p class="concept"><strong>Focus:</strong> textContent</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-change-text-with-textcontent/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-change-text-with-textcontent/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="read and change text with innertext change the visible text of a paragraph. innertext">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Read and Change Text with innerText</h2>
+          <p class="task-description">Change the visible text of a paragraph.</p>
+          <p class="concept"><strong>Focus:</strong> innerText</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-read-and-change-text-with-innertext/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-read-and-change-text-with-innertext/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="insert trusted html with innerhtml insert a fixed html snippet and inspect the created element. innerhtml, html parsing, xss safety">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Insert Trusted HTML with innerHTML</h2>
+          <p class="task-description">Insert a fixed HTML snippet and inspect the created element.</p>
+          <p class="concept"><strong>Focus:</strong> innerHTML, HTML parsing, XSS safety</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-insert-trusted-html-with-innerhtml/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-insert-trusted-html-with-innerhtml/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="read an attribute with getattribute() read the alt attribute of a sample image. getattribute()">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Read an Attribute with getAttribute()</h2>
+          <p class="task-description">Read the alt attribute of a sample image.</p>
+          <p class="concept"><strong>Focus:</strong> getAttribute()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-read-an-attribute-with-getattribute/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-read-an-attribute-with-getattribute/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="change an attribute with setattribute() set a link&#x27;s href, target and rel attributes. setattribute()">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Change an Attribute with setAttribute()</h2>
+          <p class="task-description">Set a link&#x27;s href, target and rel attributes.</p>
+          <p class="concept"><strong>Focus:</strong> setAttribute()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-change-an-attribute-with-setattribute/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-change-an-attribute-with-setattribute/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check and remove an attribute check whether a button is disabled, then remove that attribute. hasattribute(), removeattribute()">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check and Remove an Attribute</h2>
+          <p class="task-description">Check whether a button is disabled, then remove that attribute.</p>
+          <p class="concept"><strong>Focus:</strong> hasAttribute(), removeAttribute()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-check-and-remove-an-attribute/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-check-and-remove-an-attribute/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add a css class add a class without overwriting existing classes. classlist.add()">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Add a CSS Class</h2>
+          <p class="task-description">Add a class without overwriting existing classes.</p>
+          <p class="concept"><strong>Focus:</strong> classList.add()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-add-a-css-class/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-add-a-css-class/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="remove a css class remove only the temporary class from an element. classlist.remove()">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Remove a CSS Class</h2>
+          <p class="task-description">Remove only the temporary class from an element.</p>
+          <p class="concept"><strong>Focus:</strong> classList.remove()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-remove-a-css-class/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-remove-a-css-class/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="toggle a css class switch a class on and off with one method. classlist.toggle()">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Toggle a CSS Class</h2>
+          <p class="task-description">Switch a class on and off with one method.</p>
+          <p class="concept"><strong>Focus:</strong> classList.toggle()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-toggle-a-css-class/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-toggle-a-css-class/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check a class with contains() check whether a card has a particular class. classlist.contains()">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check a Class with contains()</h2>
+          <p class="task-description">Check whether a card has a particular class.</p>
+          <p class="concept"><strong>Focus:</strong> classList.contains()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-check-a-class-with-contains/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-check-a-class-with-contains/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="change inline styles change a card&#x27;s background, padding and border radius. element.style">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Change Inline Styles</h2>
+          <p class="task-description">Change a card&#x27;s background, padding and border radius.</p>
+          <p class="concept"><strong>Focus:</strong> element.style</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-change-inline-styles/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-change-inline-styles/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="set a css custom property set a css variable and use it as a card&#x27;s background. style.setproperty(), css custom properties">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Set a CSS Custom Property</h2>
+          <p class="task-description">Set a CSS variable and use it as a card&#x27;s background.</p>
+          <p class="concept"><strong>Focus:</strong> style.setProperty(), CSS custom properties</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-set-a-css-custom-property/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-set-a-css-custom-property/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="create a new element create a heading and paragraph using javascript. document.createelement()">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Create a New Element</h2>
+          <p class="task-description">Create a heading and paragraph using JavaScript.</p>
+          <p class="concept"><strong>Focus:</strong> document.createElement()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-create-a-new-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-create-a-new-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add elements with append() append two new list items to an existing list. append()">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Add Elements with append()</h2>
+          <p class="task-description">Append two new list items to an existing list.</p>
+          <p class="concept"><strong>Focus:</strong> append()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-add-elements-with-append/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-add-elements-with-append/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add an element at the beginning insert a new item before existing children. prepend()">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Add an Element at the Beginning</h2>
+          <p class="task-description">Insert a new item before existing children.</p>
+          <p class="concept"><strong>Focus:</strong> prepend()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-add-an-element-at-the-beginning/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-add-an-element-at-the-beginning/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="add a node with appendchild() create and append one list item using appendchild(). appendchild()">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Add a Node with appendChild()</h2>
+          <p class="task-description">Create and append one list item using appendChild().</p>
+          <p class="concept"><strong>Focus:</strong> appendChild()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-add-a-node-with-appendchild/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-add-a-node-with-appendchild/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="insert before another element insert a new node before a specific list item. insertbefore()">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Insert Before Another Element</h2>
+          <p class="task-description">Insert a new node before a specific list item.</p>
+          <p class="concept"><strong>Focus:</strong> insertBefore()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-insert-before-another-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-insert-before-another-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="remove an element with remove() remove an element directly from the dom. element.remove()">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Remove an Element with remove()</h2>
+          <p class="task-description">Remove an element directly from the DOM.</p>
+          <p class="concept"><strong>Focus:</strong> element.remove()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-remove-an-element-with-remove/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-remove-an-element-with-remove/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="remove a child with removechild() remove the second item from a list. removechild()">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Remove a Child with removeChild()</h2>
+          <p class="task-description">Remove the second item from a list.</p>
+          <p class="concept"><strong>Focus:</strong> removeChild()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-remove-a-child-with-removechild/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-remove-a-child-with-removechild/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="replace an element replace an old heading with a new heading. replacewith()">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Replace an Element</h2>
+          <p class="task-description">Replace an old heading with a new heading.</p>
+          <p class="concept"><strong>Focus:</strong> replaceWith()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-replace-an-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-replace-an-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="copy an element with clonenode() clone a card including its child elements. clonenode(), deep clone">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Copy an Element with cloneNode()</h2>
+          <p class="task-description">Clone a card including its child elements.</p>
+          <p class="concept"><strong>Focus:</strong> cloneNode(), deep clone</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-copy-an-element-with-clonenode/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-copy-an-element-with-clonenode/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build a list from an array render four skills from a javascript array. array iteration, createelement(), append()">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Build a List from an Array</h2>
+          <p class="task-description">Render four skills from a JavaScript array.</p>
+          <p class="concept"><strong>Focus:</strong> Array iteration, createElement(), append()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-build-a-list-from-an-array/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-build-a-list-from-an-array/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle a click event change a message when a button is clicked. addeventlistener(), click">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle a Click Event</h2>
+          <p class="task-description">Change a message when a button is clicked.</p>
+          <p class="concept"><strong>Focus:</strong> addEventListener(), click</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-handle-a-click-event/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-handle-a-click-event/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle a double-click event change a card after it is double-clicked. dblclick event">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle a Double-Click Event</h2>
+          <p class="task-description">Change a card after it is double-clicked.</p>
+          <p class="concept"><strong>Focus:</strong> dblclick event</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-handle-a-double-click-event/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-handle-a-double-click-event/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle mouse enter and leave change a panel&#x27;s message when the pointer enters or leaves. mouseenter, mouseleave">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Mouse Enter and Leave</h2>
+          <p class="task-description">Change a panel&#x27;s message when the pointer enters or leaves.</p>
+          <p class="concept"><strong>Focus:</strong> mouseenter, mouseleave</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-handle-mouse-enter-and-leave/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-handle-mouse-enter-and-leave/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle live input display a character count as the user types. input event, value">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Live Input</h2>
+          <p class="task-description">Display a character count as the user types.</p>
+          <p class="concept"><strong>Focus:</strong> input event, value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-handle-live-input/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-handle-live-input/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle a select change event display the course selected in a dropdown. change event, select.value">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle a Select Change Event</h2>
+          <p class="task-description">Display the course selected in a dropdown.</p>
+          <p class="concept"><strong>Focus:</strong> change event, select.value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-handle-a-select-change-event/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-handle-a-select-change-event/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="submit a form with preventdefault() show a welcome message after a form is submitted without reloading. submit event, preventdefault()">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Submit a Form with preventDefault()</h2>
+          <p class="task-description">Show a welcome message after a form is submitted without reloading.</p>
+          <p class="concept"><strong>Focus:</strong> submit event, preventDefault()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-submit-a-form-with-preventdefault/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-submit-a-form-with-preventdefault/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle keyboard events display the key name when a user presses a key in an input. keydown, event.key, event.code">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Keyboard Events</h2>
+          <p class="task-description">Display the key name when a user presses a key in an input.</p>
+          <p class="concept"><strong>Focus:</strong> keydown, event.key, event.code</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-handle-keyboard-events/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-handle-keyboard-events/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="read the event object display event type, target and timestamp when a button is clicked. event, event.type, event.target, timestamp">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Read the Event Object</h2>
+          <p class="task-description">Display event type, target and timestamp when a button is clicked.</p>
+          <p class="concept"><strong>Focus:</strong> event, event.type, event.target, timeStamp</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-read-the-event-object/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-read-the-event-object/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="understand target and currenttarget compare the element that started an event with the element whose listener is running. event.target, event.currenttarget">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Understand target and currentTarget</h2>
+          <p class="task-description">Compare the element that started an event with the element whose listener is running.</p>
+          <p class="concept"><strong>Focus:</strong> event.target, event.currentTarget</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-understand-target-and-currenttarget/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-understand-target-and-currenttarget/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="use event delegation handle clicks on all list items using one listener on their parent. event bubbling, closest(), delegation">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Use Event Delegation</h2>
+          <p class="task-description">Handle clicks on all list items using one listener on their parent.</p>
+          <p class="concept"><strong>Focus:</strong> event bubbling, closest(), delegation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-use-event-delegation/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-use-event-delegation/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="validate a form with javascript require a name and a valid email before showing success. required, trim(), checkvalidity()">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Validate a Form with JavaScript</h2>
+          <p class="task-description">Require a name and a valid email before showing success.</p>
+          <p class="concept"><strong>Focus:</strong> required, trim(), checkValidity()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-validate-a-form-with-javascript/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-validate-a-form-with-javascript/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="reset a form restore a form control to its initial value. form.reset(), reset event">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Reset a Form</h2>
+          <p class="task-description">Restore a form control to its initial value.</p>
+          <p class="concept"><strong>Focus:</strong> form.reset(), reset event</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-reset-a-form/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-reset-a-form/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="handle focus and blur show a message when an input receives or loses focus. focus, blur">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Handle Focus and Blur</h2>
+          <p class="task-description">Show a message when an input receives or loses focus.</p>
+          <p class="concept"><strong>Focus:</strong> focus, blur</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-handle-focus-and-blur/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-handle-focus-and-blur/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="check document ready state read the browser&#x27;s current document loading state. document.readystate, defer">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Check Document Ready State</h2>
+          <p class="task-description">Read the browser&#x27;s current document loading state.</p>
+          <p class="concept"><strong>Focus:</strong> document.readyState, defer</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-check-document-ready-state/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-check-document-ready-state/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="respond to window resize display the browser window dimensions and update them when resized. resize, innerwidth, innerheight">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Respond to Window Resize</h2>
+          <p class="task-description">Display the browser window dimensions and update them when resized.</p>
+          <p class="concept"><strong>Focus:</strong> resize, innerWidth, innerHeight</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-respond-to-window-resize/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-respond-to-window-resize/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="respond to scroll events display the scroll position inside a scrollable box. scroll event, scrolltop">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Respond to Scroll Events</h2>
+          <p class="task-description">Display the scroll position inside a scrollable box.</p>
+          <p class="concept"><strong>Focus:</strong> scroll event, scrollTop</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-respond-to-scroll-events/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-respond-to-scroll-events/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="read custom data with dataset read product id and name from data- attributes. data attributes, dataset">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Read Custom Data with dataset</h2>
+          <p class="task-description">Read product id and name from data- attributes.</p>
+          <p class="concept"><strong>Focus:</strong> data attributes, dataset</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-read-custom-data-with-dataset/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-read-custom-data-with-dataset/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="find a parent with closest() find the nearest product card that contains a clicked button. closest()">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Find a Parent with closest()</h2>
+          <p class="task-description">Find the nearest product card that contains a clicked button.</p>
+          <p class="concept"><strong>Focus:</strong> closest()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-find-a-parent-with-closest/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-find-a-parent-with-closest/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build an interactive counter use plus and minus buttons to update a number on the page. click event, textcontent, state variable">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Build an Interactive Counter</h2>
+          <p class="task-description">Use plus and minus buttons to update a number on the page.</p>
+          <p class="concept"><strong>Focus:</strong> click event, textContent, state variable</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-build-an-interactive-counter/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-build-an-interactive-counter/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build a simple to-do list add tasks and delete them using event delegation. createelement(), append(), click, event delegation">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Build a Simple To-Do List</h2>
+          <p class="task-description">Add tasks and delete them using event delegation.</p>
+          <p class="concept"><strong>Focus:</strong> createElement(), append(), click, event delegation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-build-a-simple-to-do-list/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-build-a-simple-to-do-list/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="filter a list while typing show only skills that match the search field. input event, includes(), tolowercase()">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Filter a List While Typing</h2>
+          <p class="task-description">Show only skills that match the search field.</p>
+          <p class="concept"><strong>Focus:</strong> input event, includes(), toLowerCase()</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-filter-a-list-while-typing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-filter-a-list-while-typing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="build an accessible accordion show or hide an answer when its question button is clicked. click, hidden, aria-expanded">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Build an Accessible Accordion</h2>
+          <p class="task-description">Show or hide an answer when its question button is clicked.</p>
+          <p class="concept"><strong>Focus:</strong> click, hidden, aria-expanded</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-build-an-accessible-accordion/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-build-an-accessible-accordion/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

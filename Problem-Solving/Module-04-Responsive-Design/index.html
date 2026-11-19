@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mobile-first layouts, breakpoints, fluid containers, responsive images, navigation, forms, tables and accessibility.">
+<meta name="theme-color" content="#14213d">
+<title>Module 04 — Responsive Web Design | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 04 — Responsive Web Design</h1>
+    <p class="lead">Mobile-first layouts, breakpoints, fluid containers, responsive images, navigation, forms, tables and accessibility.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="viewport meta tag set the viewport so mobile browsers use the device width. viewport meta tag and device-width">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Viewport Meta Tag</h2>
+          <p class="task-description">Set the viewport so mobile browsers use the device width.</p>
+          <p class="concept"><strong>Focus:</strong> viewport meta tag and device-width</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-viewport-meta-tag/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-viewport-meta-tag/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="mobile-first base layout start with one column and enhance the layout for wider screens. mobile-first css and min-width media query">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Mobile-First Base Layout</h2>
+          <p class="task-description">Start with one column and enhance the layout for wider screens.</p>
+          <p class="concept"><strong>Focus:</strong> mobile-first CSS and min-width media query</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-mobile-first-base-layout/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-mobile-first-base-layout/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="tablet breakpoint create a two-column layout for medium screens. tablet breakpoint and grid">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Tablet Breakpoint</h2>
+          <p class="task-description">Create a two-column layout for medium screens.</p>
+          <p class="concept"><strong>Focus:</strong> tablet breakpoint and grid</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-tablet-breakpoint/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-tablet-breakpoint/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fluid container use percentage width and max-width for a flexible page container. width, max-width and auto margins">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Fluid Container</h2>
+          <p class="task-description">Use percentage width and max-width for a flexible page container.</p>
+          <p class="concept"><strong>Focus:</strong> width, max-width and auto margins</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-fluid-container/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-fluid-container/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fluid typography with clamp scale a heading smoothly between minimum and maximum sizes. clamp() and viewport units">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Fluid Typography with clamp</h2>
+          <p class="task-description">Scale a heading smoothly between minimum and maximum sizes.</p>
+          <p class="concept"><strong>Focus:</strong> clamp() and viewport units</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-fluid-typography-with-clamp/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-fluid-typography-with-clamp/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive navigation wrap allow navigation links to wrap instead of overflow. flex-wrap and responsive navigation">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Navigation Wrap</h2>
+          <p class="task-description">Allow navigation links to wrap instead of overflow.</p>
+          <p class="concept"><strong>Focus:</strong> flex-wrap and responsive navigation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-responsive-navigation-wrap/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-responsive-navigation-wrap/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="flexible card grid use auto-fit and minmax to create a flexible grid. auto-fit and minmax">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Flexible Card Grid</h2>
+          <p class="task-description">Use auto-fit and minmax to create a flexible grid.</p>
+          <p class="concept"><strong>Focus:</strong> auto-fit and minmax</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-flexible-card-grid/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-flexible-card-grid/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="grid auto-fill compare auto-fill behaviour in a grid. auto-fill and minmax">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Grid Auto-Fill</h2>
+          <p class="task-description">Compare auto-fill behaviour in a grid.</p>
+          <p class="concept"><strong>Focus:</strong> auto-fill and minmax</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-grid-auto-fill/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-grid-auto-fill/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="grid template areas responsive rearrange header, sidebar and content for mobile. grid-template-areas and media queries">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Grid Template Areas Responsive</h2>
+          <p class="task-description">Rearrange header, sidebar and content for mobile.</p>
+          <p class="concept"><strong>Focus:</strong> grid-template-areas and media queries</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-grid-template-areas-responsive/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-grid-template-areas-responsive/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive image make an image shrink with its parent without distortion. max-width, width and auto height">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Image</h2>
+          <p class="task-description">Make an image shrink with its parent without distortion.</p>
+          <p class="concept"><strong>Focus:</strong> max-width, width and auto height</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-responsive-image/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-responsive-image/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="picture art direction use picture sources to choose different crops at different widths. picture and media source selection">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Picture Art Direction</h2>
+          <p class="task-description">Use picture sources to choose different crops at different widths.</p>
+          <p class="concept"><strong>Focus:</strong> picture and media source selection</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-picture-art-direction/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-picture-art-direction/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive data table allow a wide table to scroll inside a wrapper on small screens. overflow-x and min-width">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Data Table</h2>
+          <p class="task-description">Allow a wide table to scroll inside a wrapper on small screens.</p>
+          <p class="concept"><strong>Focus:</strong> overflow-x and min-width</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-responsive-data-table/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-responsive-data-table/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive form width make form controls fill the available mobile width. fluid form width and max-width">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Form Width</h2>
+          <p class="task-description">Make form controls fill the available mobile width.</p>
+          <p class="concept"><strong>Focus:</strong> fluid form width and max-width</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-responsive-form-width/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-responsive-form-width/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="two-column content layout switch a text and image section from stacked to two columns. responsive two-column grid">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Two-Column Content Layout</h2>
+          <p class="task-description">Switch a text and image section from stacked to two columns.</p>
+          <p class="concept"><strong>Focus:</strong> responsive two-column grid</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-two-column-content-layout/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-two-column-content-layout/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="mobile-first header stack brand and actions on mobile, align them on desktop. mobile-first flex direction">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Mobile-First Header</h2>
+          <p class="task-description">Stack brand and actions on mobile, align them on desktop.</p>
+          <p class="concept"><strong>Focus:</strong> mobile-first flex direction</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-mobile-first-header/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-mobile-first-header/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="tablet navigation breakpoint increase spacing and font size on wider navigation. tablet-specific spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Tablet Navigation Breakpoint</h2>
+          <p class="task-description">Increase spacing and font size on wider navigation.</p>
+          <p class="concept"><strong>Focus:</strong> tablet-specific spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-tablet-navigation-breakpoint/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-tablet-navigation-breakpoint/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="desktop max width limit a long text area on large displays. max-width and ch unit">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Desktop Max Width</h2>
+          <p class="task-description">Limit a long text area on large displays.</p>
+          <p class="concept"><strong>Focus:</strong> max-width and ch unit</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-desktop-max-width/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-desktop-max-width/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="show and hide by breakpoint display a compact note on mobile and a full note on desktop. display and breakpoint visibility">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Show and Hide by Breakpoint</h2>
+          <p class="task-description">Display a compact note on mobile and a full note on desktop.</p>
+          <p class="concept"><strong>Focus:</strong> display and breakpoint visibility</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-show-and-hide-by-breakpoint/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-show-and-hide-by-breakpoint/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="container query basics adapt a component to its own container width. container-type and @container">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Container Query Basics</h2>
+          <p class="task-description">Adapt a component to its own container width.</p>
+          <p class="concept"><strong>Focus:</strong> container-type and @container</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-container-query-basics/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-container-query-basics/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive card grid create cards that automatically fit available space. auto-fit and minmax">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Card Grid</h2>
+          <p class="task-description">Create cards that automatically fit available space.</p>
+          <p class="concept"><strong>Focus:</strong> auto-fit and minmax</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-responsive-card-grid/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-responsive-card-grid/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive hero section create a hero that scales its title and spacing. fluid type and responsive hero grid">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Hero Section</h2>
+          <p class="task-description">Create a hero that scales its title and spacing.</p>
+          <p class="concept"><strong>Focus:</strong> fluid type and responsive hero grid</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-responsive-hero-section/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-responsive-hero-section/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive sidebar move a sidebar below the main content on mobile. responsive content/sidebar layout">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Sidebar</h2>
+          <p class="task-description">Move a sidebar below the main content on mobile.</p>
+          <p class="concept"><strong>Focus:</strong> responsive content/sidebar layout</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-responsive-sidebar/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-responsive-sidebar/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="dashboard responsive layout create a dashboard that changes from one to three metric columns. progressive grid breakpoints">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Dashboard Responsive Layout</h2>
+          <p class="task-description">Create a dashboard that changes from one to three metric columns.</p>
+          <p class="concept"><strong>Focus:</strong> progressive grid breakpoints</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-dashboard-responsive-layout/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-dashboard-responsive-layout/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="aspect ratio media keep a video preview at a 16:9 ratio. aspect-ratio and object-fit">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Aspect Ratio Media</h2>
+          <p class="task-description">Keep a video preview at a 16:9 ratio.</p>
+          <p class="concept"><strong>Focus:</strong> aspect-ratio and object-fit</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-aspect-ratio-media/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-aspect-ratio-media/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="object position cropping keep the subject visible in a cropped portrait image. object-position and cover">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Object Position Cropping</h2>
+          <p class="task-description">Keep the subject visible in a cropped portrait image.</p>
+          <p class="concept"><strong>Focus:</strong> object-position and cover</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-object-position-cropping/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-object-position-cropping/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fluid spacing use clamp to create spacing that grows with the viewport. clamp() for fluid spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Fluid Spacing</h2>
+          <p class="task-description">Use clamp to create spacing that grows with the viewport.</p>
+          <p class="concept"><strong>Focus:</strong> clamp() for fluid spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-fluid-spacing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-fluid-spacing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="minmax grid columns prevent a grid column from becoming too narrow. minmax() and min-content overflow">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Minmax Grid Columns</h2>
+          <p class="task-description">Prevent a grid column from becoming too narrow.</p>
+          <p class="concept"><strong>Focus:</strong> minmax() and min-content overflow</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-minmax-grid-columns/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-minmax-grid-columns/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="sticky header keep a header visible while scrolling without covering content. position: sticky, top and z-index">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Sticky Header</h2>
+          <p class="task-description">Keep a header visible while scrolling without covering content.</p>
+          <p class="concept"><strong>Focus:</strong> position: sticky, top and z-index</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-sticky-header/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-sticky-header/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive footer stack footer columns on mobile and align them on desktop. responsive footer grid">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Footer</h2>
+          <p class="task-description">Stack footer columns on mobile and align them on desktop.</p>
+          <p class="concept"><strong>Focus:</strong> responsive footer grid</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-responsive-footer/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-responsive-footer/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible css-only disclosure use details/summary instead of hiding content behind hover. native disclosure and responsive content">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible CSS-Only Disclosure</h2>
+          <p class="task-description">Use details/summary instead of hiding content behind hover.</p>
+          <p class="concept"><strong>Focus:</strong> native disclosure and responsive content</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-accessible-css-only-disclosure/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-accessible-css-only-disclosure/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="orientation query adjust a landscape layout when the device is in portrait orientation. orientation media feature">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Orientation Query</h2>
+          <p class="task-description">Adjust a landscape layout when the device is in portrait orientation.</p>
+          <p class="concept"><strong>Focus:</strong> orientation media feature</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-orientation-query/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-orientation-query/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="reduced motion preference disable non-essential movement for users who prefer reduced motion. prefers-reduced-motion">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Reduced Motion Preference</h2>
+          <p class="task-description">Disable non-essential movement for users who prefer reduced motion.</p>
+          <p class="concept"><strong>Focus:</strong> prefers-reduced-motion</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-reduced-motion-preference/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-reduced-motion-preference/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="system dark mode use prefers-color-scheme to respond to the user&#x27;s theme. prefers-color-scheme">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>System Dark Mode</h2>
+          <p class="task-description">Use prefers-color-scheme to respond to the user&#x27;s theme.</p>
+          <p class="concept"><strong>Focus:</strong> prefers-color-scheme</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-system-dark-mode/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-system-dark-mode/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="print stylesheet hide navigation and preserve readable article content when printing. @media print">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Print Stylesheet</h2>
+          <p class="task-description">Hide navigation and preserve readable article content when printing.</p>
+          <p class="concept"><strong>Focus:</strong> @media print</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-print-stylesheet/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-print-stylesheet/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="high contrast and focus keep focus outlines visible and avoid relying only on colour. focus-visible and contrast">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>High Contrast and Focus</h2>
+          <p class="task-description">Keep focus outlines visible and avoid relying only on colour.</p>
+          <p class="concept"><strong>Focus:</strong> focus-visible and contrast</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-high-contrast-and-focus/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-high-contrast-and-focus/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="touch target size make buttons comfortable to tap on a touch screen. minimum touch target size and spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Touch Target Size</h2>
+          <p class="task-description">Make buttons comfortable to tap on a touch screen.</p>
+          <p class="concept"><strong>Focus:</strong> minimum touch target size and spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-touch-target-size/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-touch-target-size/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="hover capability query apply hover styling only when the device supports convenient hover. hover and pointer media features">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Hover Capability Query</h2>
+          <p class="task-description">Apply hover styling only when the device supports convenient hover.</p>
+          <p class="concept"><strong>Focus:</strong> hover and pointer media features</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-hover-capability-query/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-hover-capability-query/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive typography scale use clamp to scale h1, h2 and body text. fluid type scale">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Typography Scale</h2>
+          <p class="task-description">Use clamp to scale h1, h2 and body text.</p>
+          <p class="concept"><strong>Focus:</strong> fluid type scale</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-responsive-typography-scale/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-responsive-typography-scale/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive video embed keep an embedded video frame responsive. aspect-ratio for embedded media">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Video Embed</h2>
+          <p class="task-description">Keep an embedded video frame responsive.</p>
+          <p class="concept"><strong>Focus:</strong> aspect-ratio for embedded media</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-responsive-video-embed/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-responsive-video-embed/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive table cards transform a compact data table into stacked rows on mobile. data-label and mobile table pattern">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Table Cards</h2>
+          <p class="task-description">Transform a compact data table into stacked rows on mobile.</p>
+          <p class="concept"><strong>Focus:</strong> data-label and mobile table pattern</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-responsive-table-cards/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-responsive-table-cards/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="horizontal scroll region create a horizontally scrollable row of project cards. overflow-x and scroll-snap">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Horizontal Scroll Region</h2>
+          <p class="task-description">Create a horizontally scrollable row of project cards.</p>
+          <p class="concept"><strong>Focus:</strong> overflow-x and scroll-snap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-horizontal-scroll-region/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-horizontal-scroll-region/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="long text wrapping prevent long words and urls from breaking a mobile layout. overflow-wrap and min-width">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Long Text Wrapping</h2>
+          <p class="task-description">Prevent long words and URLs from breaking a mobile layout.</p>
+          <p class="concept"><strong>Focus:</strong> overflow-wrap and min-width</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-long-text-wrapping/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-long-text-wrapping/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="mobile-first course card create a course card that expands horizontally at a breakpoint. mobile-first card layout">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Mobile-First Course Card</h2>
+          <p class="task-description">Create a course card that expands horizontally at a breakpoint.</p>
+          <p class="concept"><strong>Focus:</strong> mobile-first card layout</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-mobile-first-course-card/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-mobile-first-course-card/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="split screen to stacked layout stack a two-panel layout on narrow screens. responsive split layout">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Split Screen to Stacked Layout</h2>
+          <p class="task-description">Stack a two-panel layout on narrow screens.</p>
+          <p class="concept"><strong>Focus:</strong> responsive split layout</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-split-screen-to-stacked-layout/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-split-screen-to-stacked-layout/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive portfolio grid build a portfolio grid with one, two and three columns. progressive grid breakpoints">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Portfolio Grid</h2>
+          <p class="task-description">Build a portfolio grid with one, two and three columns.</p>
+          <p class="concept"><strong>Focus:</strong> progressive grid breakpoints</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-responsive-portfolio-grid/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-responsive-portfolio-grid/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive blog layout create a blog article and related sidebar that adapts to mobile. responsive article and sidebar">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Blog Layout</h2>
+          <p class="task-description">Create a blog article and related sidebar that adapts to mobile.</p>
+          <p class="concept"><strong>Focus:</strong> responsive article and sidebar</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-responsive-blog-layout/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-responsive-blog-layout/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive landing page combine hero, feature cards and footer into a small responsive landing page. responsive page composition">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Landing Page</h2>
+          <p class="task-description">Combine hero, feature cards and footer into a small responsive landing page.</p>
+          <p class="concept"><strong>Focus:</strong> responsive page composition</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-responsive-landing-page/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-responsive-landing-page/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="prevent horizontal overflow find and prevent a child element from making the page wider than the viewport. min-width: 0, max-width and overflow-wrap">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Prevent Horizontal Overflow</h2>
+          <p class="task-description">Find and prevent a child element from making the page wider than the viewport.</p>
+          <p class="concept"><strong>Focus:</strong> min-width: 0, max-width and overflow-wrap</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-prevent-horizontal-overflow/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-prevent-horizontal-overflow/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive search bar make a search form fill the available space and keep its button usable. responsive form controls and flex layout">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Search Bar</h2>
+          <p class="task-description">Make a search form fill the available space and keep its button usable.</p>
+          <p class="concept"><strong>Focus:</strong> responsive form controls and flex layout</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-responsive-search-bar/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-responsive-search-bar/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive disclosure panel create a help panel that stays readable on mobile and desktop. native details with responsive spacing">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Disclosure Panel</h2>
+          <p class="task-description">Create a help panel that stays readable on mobile and desktop.</p>
+          <p class="concept"><strong>Focus:</strong> native details with responsive spacing</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-responsive-disclosure-panel/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-responsive-disclosure-panel/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

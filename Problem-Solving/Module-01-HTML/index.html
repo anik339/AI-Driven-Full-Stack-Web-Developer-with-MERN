@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="HTML5 structure, headings, text, links, images, lists, tables, forms, semantic markup and accessibility.">
+<meta name="theme-color" content="#14213d">
+<title>Module 01 — HTML | Problem-Solving Library</title>
+<style>
+:root{--ink:#172033;--muted:#5d6b82;--line:#dce4ef;--brand:#315efb;--brand-dark:#2448c7;--page:#f3f6fb;--surface:#fff;--soft:#eaf0ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 Inter,Segoe UI,Arial,sans-serif}
+a{color:var(--brand-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+header{padding:28px 0 22px;background:#14213d;color:#fff}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.back{color:#dbe7ff;font-weight:700}
+.eyebrow{margin:24px 0 5px;color:#aebfff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;letter-spacing:-.04em}
+.lead{max-width:780px;color:#d4deef;margin:12px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.pill{padding:7px 11px;border:1px solid #52617d;border-radius:999px;color:#e7edff;font-size:.82rem;font-weight:700}
+main{padding:26px 0 50px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search-wrap{flex:1;min-width:min(100%,260px);max-width:520px}
+input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;outline:none}
+input:focus{border-color:var(--brand);box-shadow:0 0 0 3px #315efb22}
+.result-count{color:var(--muted);font-weight:700;font-size:.9rem}
+.notice{margin:0 0 22px;padding:14px 16px;border:1px solid #cbdaf8;border-radius:12px;background:#edf3ff;color:#29416f}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}
+.task-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 7px 22px #172b4d08}
+.task-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.task-number{color:var(--brand-dark);font-size:.73rem;font-weight:900;letter-spacing:.1em}
+.task-kind{color:var(--muted);font-size:.7rem;font-weight:700}
+.task-card h2{font-size:1.05rem;line-height:1.35;margin:9px 0 7px}
+.task-description{color:var(--muted);margin:0 0 8px;font-size:.9rem}
+.concept{font-size:.8rem;color:#53627a;margin:0 0 14px}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.task-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:8px;font-size:.82rem;font-weight:800}
+.task-link.primary{background:var(--brand);color:#fff}
+.task-link.secondary{background:var(--soft);color:var(--brand-dark)}
+.empty{display:none;padding:24px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:#fff;color:var(--muted)}
+footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media(max-width:560px){.task-top{align-items:flex-start;flex-direction:column;gap:2px}.task-actions a{flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="../index.html">&larr; All problem-solving modules</a>
+      <a class="back" href="../../index.html">Main repository home</a>
+    </div>
+    <p class="eyebrow">Problem-solving library · 8 modules · 400 practice tasks</p>
+    <h1>Module 01 — HTML</h1>
+    <p class="lead">HTML5 structure, headings, text, links, images, lists, tables, forms, semantic markup and accessibility.</p>
+    <div class="pills"><span class="pill">50 tasks</span><span class="pill">Beginner-friendly exercises</span><span class="pill">Task guide included</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <aside class="notice"><strong>How to practise:</strong> Read the task guide first, open the example with VS Code Live Server, inspect the code comments, then try the challenge independently.</aside>
+  <div class="toolbar">
+    <div class="search-wrap"><label for="task-search">Search tasks</label><input id="task-search" type="search" placeholder="Search by task title or topic..." autocomplete="off"></div>
+    <span class="result-count" id="result-count" aria-live="polite">50 of 50 tasks</span>
+  </div>
+  <section class="grid" id="task-grid" aria-label="Module tasks">
+    
+        <article class="task-card" data-search="valid html5 document create a complete html5 page with language, character encoding, viewport and title. doctype, html, head, body, lang, charset and viewport">
+          <div class="task-top">
+            <span class="task-number">TASK 01</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Valid HTML5 Document</h2>
+          <p class="task-description">Create a complete HTML5 page with language, character encoding, viewport and title.</p>
+          <p class="concept"><strong>Focus:</strong> doctype, html, head, body, lang, charset and viewport</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="01-valid-html5-document/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="01-valid-html5-document/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="correct heading hierarchy build a page with one main heading and correctly nested section headings. h1–h6 and document outline">
+          <div class="task-top">
+            <span class="task-number">TASK 02</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Correct Heading Hierarchy</h2>
+          <p class="task-description">Build a page with one main heading and correctly nested section headings.</p>
+          <p class="concept"><strong>Focus:</strong> h1–h6 and document outline</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="02-correct-heading-hierarchy/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="02-correct-heading-hierarchy/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="paragraphs and line breaks use paragraphs for separate ideas and br only for meaningful line breaks. p, br and address">
+          <div class="task-top">
+            <span class="task-number">TASK 03</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Paragraphs and Line Breaks</h2>
+          <p class="task-description">Use paragraphs for separate ideas and br only for meaningful line breaks.</p>
+          <p class="concept"><strong>Focus:</strong> p, br and address</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="03-paragraphs-and-line-breaks/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="03-paragraphs-and-line-breaks/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="emphasis and importance use strong and em to express meaning, not just appearance. strong, em, b and i">
+          <div class="task-top">
+            <span class="task-number">TASK 04</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Emphasis and Importance</h2>
+          <p class="task-description">Use strong and em to express meaning, not just appearance.</p>
+          <p class="concept"><strong>Focus:</strong> strong, em, b and i</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="04-emphasis-and-importance/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="04-emphasis-and-importance/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="ordered list create a numbered list showing the steps to start a project. ol and li">
+          <div class="task-top">
+            <span class="task-number">TASK 05</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Ordered List</h2>
+          <p class="task-description">Create a numbered list showing the steps to start a project.</p>
+          <p class="concept"><strong>Focus:</strong> ol and li</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="05-ordered-list/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="05-ordered-list/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="unordered list show a collection of tools where order does not matter. ul and li">
+          <div class="task-top">
+            <span class="task-number">TASK 06</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Unordered List</h2>
+          <p class="task-description">Show a collection of tools where order does not matter.</p>
+          <p class="concept"><strong>Focus:</strong> ul and li</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="06-unordered-list/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="06-unordered-list/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="nested lists organize frontend and backend technologies into nested lists. nested ul and li">
+          <div class="task-top">
+            <span class="task-number">TASK 07</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Nested Lists</h2>
+          <p class="task-description">Organize frontend and backend technologies into nested lists.</p>
+          <p class="concept"><strong>Focus:</strong> Nested ul and li</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="07-nested-lists/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="07-nested-lists/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="description list explain common web terms using a description list. dl, dt and dd">
+          <div class="task-top">
+            <span class="task-number">TASK 08</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Description List</h2>
+          <p class="task-description">Explain common web terms using a description list.</p>
+          <p class="concept"><strong>Focus:</strong> dl, dt and dd</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="08-description-list/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="08-description-list/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="external link create a descriptive external link that opens safely in a new tab. a, href, target and rel">
+          <div class="task-top">
+            <span class="task-number">TASK 09</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>External Link</h2>
+          <p class="task-description">Create a descriptive external link that opens safely in a new tab.</p>
+          <p class="concept"><strong>Focus:</strong> a, href, target and rel</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="09-external-link/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="09-external-link/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="in-page navigation link navigation items to sections using fragment identifiers. href fragments and unique id values">
+          <div class="task-top">
+            <span class="task-number">TASK 10</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>In-Page Navigation</h2>
+          <p class="task-description">Link navigation items to sections using fragment identifiers.</p>
+          <p class="concept"><strong>Focus:</strong> href fragments and unique id values</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="10-in-page-navigation/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="10-in-page-navigation/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="relative page links connect two pages in the same project using relative paths. relative urls and file paths">
+          <div class="task-top">
+            <span class="task-number">TASK 11</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Relative Page Links</h2>
+          <p class="task-description">Connect two pages in the same project using relative paths.</p>
+          <p class="concept"><strong>Focus:</strong> Relative URLs and file paths</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="11-relative-page-links/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="11-relative-page-links/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="email and telephone links create mailto and tel links with readable labels. mailto: and tel: url schemes">
+          <div class="task-top">
+            <span class="task-number">TASK 12</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Email and Telephone Links</h2>
+          <p class="task-description">Create mailto and tel links with readable labels.</p>
+          <p class="concept"><strong>Focus:</strong> mailto: and tel: URL schemes</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="12-email-and-telephone-links/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="12-email-and-telephone-links/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="image with useful alternative text add a local image with alt text and dimensions. img, src, alt, width, height, figure and figcaption">
+          <div class="task-top">
+            <span class="task-number">TASK 13</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Image with Useful Alternative Text</h2>
+          <p class="task-description">Add a local image with alt text and dimensions.</p>
+          <p class="concept"><strong>Focus:</strong> img, src, alt, width, height, figure and figcaption</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="13-image-with-useful-alternative-text/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="13-image-with-useful-alternative-text/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="responsive image sources use picture and source to offer image alternatives. picture, source, media and img fallback">
+          <div class="task-top">
+            <span class="task-number">TASK 14</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Responsive Image Sources</h2>
+          <p class="task-description">Use picture and source to offer image alternatives.</p>
+          <p class="concept"><strong>Focus:</strong> picture, source, media and img fallback</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="14-responsive-image-sources/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="14-responsive-image-sources/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="simple data table create a timetable with caption and scoped headers. table, caption, thead, tbody, tr, th, td and scope">
+          <div class="task-top">
+            <span class="task-number">TASK 15</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Simple Data Table</h2>
+          <p class="task-description">Create a timetable with caption and scoped headers.</p>
+          <p class="concept"><strong>Focus:</strong> table, caption, thead, tbody, tr, th, td and scope</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="15-simple-data-table/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="15-simple-data-table/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="table with colspan merge a header across two columns. colspan and table headers">
+          <div class="task-top">
+            <span class="task-number">TASK 16</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Table with Colspan</h2>
+          <p class="task-description">Merge a header across two columns.</p>
+          <p class="concept"><strong>Focus:</strong> colspan and table headers</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="16-table-with-colspan/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="16-table-with-colspan/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible contact form build a form with labels, names and appropriate input types. form, label, for, id, name, input and textarea">
+          <div class="task-top">
+            <span class="task-number">TASK 17</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible Contact Form</h2>
+          <p class="task-description">Build a form with labels, names and appropriate input types.</p>
+          <p class="concept"><strong>Focus:</strong> form, label, for, id, name, input and textarea</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="17-accessible-contact-form/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="17-accessible-contact-form/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="common input types create a small form demonstrating different input types. search, url, number, date and range input types">
+          <div class="task-top">
+            <span class="task-number">TASK 18</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Common Input Types</h2>
+          <p class="task-description">Create a small form demonstrating different input types.</p>
+          <p class="concept"><strong>Focus:</strong> search, url, number, date and range input types</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="18-common-input-types/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="18-common-input-types/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="radio button group let a user select exactly one study schedule. fieldset, legend and radio group names">
+          <div class="task-top">
+            <span class="task-number">TASK 19</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Radio Button Group</h2>
+          <p class="task-description">Let a user select exactly one study schedule.</p>
+          <p class="concept"><strong>Focus:</strong> fieldset, legend and radio group names</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="19-radio-button-group/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="19-radio-button-group/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="checkbox group allow multiple technologies to be selected. checkbox and shared name">
+          <div class="task-top">
+            <span class="task-number">TASK 20</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Checkbox Group</h2>
+          <p class="task-description">Allow multiple technologies to be selected.</p>
+          <p class="concept"><strong>Focus:</strong> checkbox and shared name</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="20-checkbox-group/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="20-checkbox-group/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="select and optgroup organize course options into categories. select, option and optgroup">
+          <div class="task-top">
+            <span class="task-number">TASK 21</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Select and Optgroup</h2>
+          <p class="task-description">Organize course options into categories.</p>
+          <p class="concept"><strong>Focus:</strong> select, option and optgroup</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="21-select-and-optgroup/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="21-select-and-optgroup/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="textarea with character guidance create a labelled message field with a length limit. textarea, minlength, maxlength and required">
+          <div class="task-top">
+            <span class="task-number">TASK 22</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Textarea with Character Guidance</h2>
+          <p class="task-description">Create a labelled message field with a length limit.</p>
+          <p class="concept"><strong>Focus:</strong> textarea, minlength, maxlength and required</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="22-textarea-with-character-guidance/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="22-textarea-with-character-guidance/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="native form validation use built-in html validation attributes. required, minlength, maxlength, pattern and title">
+          <div class="task-top">
+            <span class="task-number">TASK 23</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Native Form Validation</h2>
+          <p class="task-description">Use built-in HTML validation attributes.</p>
+          <p class="concept"><strong>Focus:</strong> required, minlength, maxlength, pattern and title</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="23-native-form-validation/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="23-native-form-validation/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="button types demonstrate submit, reset and plain buttons. button type submit, reset and button">
+          <div class="task-top">
+            <span class="task-number">TASK 24</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Button Types</h2>
+          <p class="task-description">Demonstrate submit, reset and plain buttons.</p>
+          <p class="concept"><strong>Focus:</strong> button type submit, reset and button</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="24-button-types/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="24-button-types/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="fieldset and legend group related personal information fields. fieldset and legend">
+          <div class="task-top">
+            <span class="task-number">TASK 25</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Fieldset and Legend</h2>
+          <p class="task-description">Group related personal information fields.</p>
+          <p class="concept"><strong>Focus:</strong> fieldset and legend</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="25-fieldset-and-legend/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="25-fieldset-and-legend/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="datalist suggestions offer suggested values while allowing custom input. input list and datalist">
+          <div class="task-top">
+            <span class="task-number">TASK 26</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Datalist Suggestions</h2>
+          <p class="task-description">Offer suggested values while allowing custom input.</p>
+          <p class="concept"><strong>Focus:</strong> input list and datalist</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="26-datalist-suggestions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="26-datalist-suggestions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="semantic page landmarks create a page using semantic layout elements. header, nav, main, article, aside and footer">
+          <div class="task-top">
+            <span class="task-number">TASK 27</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Semantic Page Landmarks</h2>
+          <p class="task-description">Create a page using semantic layout elements.</p>
+          <p class="concept"><strong>Focus:</strong> header, nav, main, article, aside and footer</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="27-semantic-page-landmarks/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="27-semantic-page-landmarks/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="article with author and time mark an article&#x27;s publication date with time datetime. article, header, footer and time datetime">
+          <div class="task-top">
+            <span class="task-number">TASK 28</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Article with Author and Time</h2>
+          <p class="task-description">Mark an article&#x27;s publication date with time datetime.</p>
+          <p class="concept"><strong>Focus:</strong> article, header, footer and time datetime</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="28-article-with-author-and-time/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="28-article-with-author-and-time/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="skip navigation link add a skip link that moves keyboard users to main content. fragment links and accessible navigation">
+          <div class="task-top">
+            <span class="task-number">TASK 29</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Skip Navigation Link</h2>
+          <p class="task-description">Add a skip link that moves keyboard users to main content.</p>
+          <p class="concept"><strong>Focus:</strong> Fragment links and accessible navigation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="29-skip-navigation-link/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="29-skip-navigation-link/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="metadata for search and sharing add a meaningful title, description, language and viewport metadata. title, meta description, charset, viewport and lang">
+          <div class="task-top">
+            <span class="task-number">TASK 30</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Metadata for Search and Sharing</h2>
+          <p class="task-description">Add a meaningful title, description, language and viewport metadata.</p>
+          <p class="concept"><strong>Focus:</strong> title, meta description, charset, viewport and lang</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="30-metadata-for-search-and-sharing/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="30-metadata-for-search-and-sharing/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="language and direction attributes mark a language change and isolate bidirectional text. lang, bdi and bdo">
+          <div class="task-top">
+            <span class="task-number">TASK 31</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Language and Direction Attributes</h2>
+          <p class="task-description">Mark a language change and isolate bidirectional text.</p>
+          <p class="concept"><strong>Focus:</strong> lang, bdi and bdo</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="31-language-and-direction-attributes/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="31-language-and-direction-attributes/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="code and keyboard instructions show source code, keyboard input and preformatted text. code, kbd, pre">
+          <div class="task-top">
+            <span class="task-number">TASK 32</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Code and Keyboard Instructions</h2>
+          <p class="task-description">Show source code, keyboard input and preformatted text.</p>
+          <p class="concept"><strong>Focus:</strong> code, kbd, pre</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="32-code-and-keyboard-instructions/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="32-code-and-keyboard-instructions/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="abbreviation and quotations mark abbreviations, short quotations and long quotations. abbr, q and blockquote">
+          <div class="task-top">
+            <span class="task-number">TASK 33</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Abbreviation and Quotations</h2>
+          <p class="task-description">Mark abbreviations, short quotations and long quotations.</p>
+          <p class="concept"><strong>Focus:</strong> abbr, q and blockquote</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="33-abbreviation-and-quotations/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="33-abbreviation-and-quotations/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="html character entities display reserved characters and common symbols. named and numeric character references">
+          <div class="task-top">
+            <span class="task-number">TASK 34</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>HTML Character Entities</h2>
+          <p class="task-description">Display reserved characters and common symbols.</p>
+          <p class="concept"><strong>Focus:</strong> Named and numeric character references</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="34-html-character-entities/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="34-html-character-entities/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="sandboxed inline frame embed a small document using iframe srcdoc and a restrictive sandbox. iframe, title, sandbox and srcdoc">
+          <div class="task-top">
+            <span class="task-number">TASK 35</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Sandboxed Inline Frame</h2>
+          <p class="task-description">Embed a small document using iframe srcdoc and a restrictive sandbox.</p>
+          <p class="concept"><strong>Focus:</strong> iframe, title, sandbox and srcdoc</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="35-sandboxed-inline-frame/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="35-sandboxed-inline-frame/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="audio with controls embed an audio sample with controls and fallback text. audio, source, controls and fallback">
+          <div class="task-top">
+            <span class="task-number">TASK 36</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Audio with Controls</h2>
+          <p class="task-description">Embed an audio sample with controls and fallback text.</p>
+          <p class="concept"><strong>Focus:</strong> audio, source, controls and fallback</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="36-audio-with-controls/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="36-audio-with-controls/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="video with captions track embed a video and explain the purpose of captions. video, source, poster, track">
+          <div class="task-top">
+            <span class="task-number">TASK 37</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Video with Captions Track</h2>
+          <p class="task-description">Embed a video and explain the purpose of captions.</p>
+          <p class="concept"><strong>Focus:</strong> video, source, poster, track</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="37-video-with-captions-track/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="37-video-with-captions-track/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="details and summary faq build a no-javascript faq using details and summary. details and summary">
+          <div class="task-top">
+            <span class="task-number">TASK 38</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Details and Summary FAQ</h2>
+          <p class="task-description">Build a no-JavaScript FAQ using details and summary.</p>
+          <p class="concept"><strong>Focus:</strong> details and summary</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="38-details-and-summary-faq/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="38-details-and-summary-faq/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="progress element show the progress of a course using progress. progress value and max">
+          <div class="task-top">
+            <span class="task-number">TASK 39</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Progress Element</h2>
+          <p class="task-description">Show the progress of a course using progress.</p>
+          <p class="concept"><strong>Focus:</strong> progress value and max</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="39-progress-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="39-progress-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="meter element represent a measurement within a known range. meter min, max, low, high, optimum and value">
+          <div class="task-top">
+            <span class="task-number">TASK 40</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Meter Element</h2>
+          <p class="task-description">Represent a measurement within a known range.</p>
+          <p class="concept"><strong>Focus:</strong> meter min, max, low, high, optimum and value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="40-meter-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="40-meter-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="machine-readable date and data use time and data for values with machine-readable meaning. time datetime and data value">
+          <div class="task-top">
+            <span class="task-number">TASK 41</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Machine-Readable Date and Data</h2>
+          <p class="task-description">Use time and data for values with machine-readable meaning.</p>
+          <p class="concept"><strong>Focus:</strong> time datetime and data value</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="41-machine-readable-date-and-data/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="41-machine-readable-date-and-data/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="template element place inert reusable markup inside a template element. template content">
+          <div class="task-top">
+            <span class="task-number">TASK 42</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Template Element</h2>
+          <p class="task-description">Place inert reusable markup inside a template element.</p>
+          <p class="concept"><strong>Focus:</strong> template content</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="42-template-element/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="42-template-element/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="inline svg graphic create a small scalable graphic with inline svg markup. svg, viewbox, circle, path, title and desc">
+          <div class="task-top">
+            <span class="task-number">TASK 43</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Inline SVG Graphic</h2>
+          <p class="task-description">Create a small scalable graphic with inline SVG markup.</p>
+          <p class="concept"><strong>Focus:</strong> svg, viewBox, circle, path, title and desc</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="43-inline-svg-graphic/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="43-inline-svg-graphic/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="canvas fallback content create a canvas element with meaningful fallback text. canvas and fallback content">
+          <div class="task-top">
+            <span class="task-number">TASK 44</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Canvas Fallback Content</h2>
+          <p class="task-description">Create a canvas element with meaningful fallback text.</p>
+          <p class="concept"><strong>Focus:</strong> canvas and fallback content</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="44-canvas-fallback-content/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="44-canvas-fallback-content/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="special html elements use dfn, var, samp, wbr, ruby and noscript in context. dfn, var, samp, wbr, ruby and noscript">
+          <div class="task-top">
+            <span class="task-number">TASK 45</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Special HTML Elements</h2>
+          <p class="task-description">Use dfn, var, samp, wbr, ruby and noscript in context.</p>
+          <p class="concept"><strong>Focus:</strong> dfn, var, samp, wbr, ruby and noscript</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="45-special-html-elements/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="45-special-html-elements/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible article checklist build an article with landmarks, headings, links and an image alternative. semantic article, image alt text, heading order and descriptive links">
+          <div class="task-top">
+            <span class="task-number">TASK 46</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible Article Checklist</h2>
+          <p class="task-description">Build an article with landmarks, headings, links and an image alternative.</p>
+          <p class="concept"><strong>Focus:</strong> Semantic article, image alt text, heading order and descriptive links</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="46-accessible-article-checklist/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="46-accessible-article-checklist/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="html form submission attributes demonstrate action, method and enctype with safe sample values. action, method, name and multipart/form-data">
+          <div class="task-top">
+            <span class="task-number">TASK 47</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>HTML Form Submission Attributes</h2>
+          <p class="task-description">Demonstrate action, method and enctype with safe sample values.</p>
+          <p class="concept"><strong>Focus:</strong> action, method, name and multipart/form-data</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="47-html-form-submission-attributes/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="47-html-form-submission-attributes/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="html project file structure create links to files inside a small multi-page project. relative paths and folder organization">
+          <div class="task-top">
+            <span class="task-number">TASK 48</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>HTML Project File Structure</h2>
+          <p class="task-description">Create links to files inside a small multi-page project.</p>
+          <p class="concept"><strong>Focus:</strong> Relative paths and folder organization</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="48-html-project-file-structure/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="48-html-project-file-structure/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="accessible registration form combine labels, fieldsets, validation and helpful instructions. labels, autocomplete, required, minlength, fieldset and legend">
+          <div class="task-top">
+            <span class="task-number">TASK 49</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>Accessible Registration Form</h2>
+          <p class="task-description">Combine labels, fieldsets, validation and helpful instructions.</p>
+          <p class="concept"><strong>Focus:</strong> Labels, autocomplete, required, minlength, fieldset and legend</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="49-accessible-registration-form/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="49-accessible-registration-form/README.md">Task guide</a>
+          </div>
+        </article>
+        <article class="task-card" data-search="html final quality review review a small page for semantics, links, images and forms. semantic review and validation">
+          <div class="task-top">
+            <span class="task-number">TASK 50</span>
+            <span class="task-kind">Hands-on exercise</span>
+          </div>
+          <h2>HTML Final Quality Review</h2>
+          <p class="task-description">Review a small page for semantics, links, images and forms.</p>
+          <p class="concept"><strong>Focus:</strong> Semantic review and validation</p>
+          <div class="task-actions">
+            <a class="task-link primary" href="50-html-final-quality-review/index.html">Open exercise &rarr;</a>
+            <a class="task-link secondary" href="50-html-final-quality-review/README.md">Task guide</a>
+          </div>
+        </article>
+  </section>
+  <p class="empty" id="empty-state">No matching tasks. Try a different search term.</p>
+</main>
+<footer><div class="wrap">Anik Chandra Dey · Read the task, practise independently, test, and review before committing.</div></footer>
+<script>
+const searchInput = document.getElementById('task-search');
+const taskCards = [...document.querySelectorAll('.task-card')];
+const resultCount = document.getElementById('result-count');
+const emptyState = document.getElementById('empty-state');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  taskCards.forEach(card => {
+    const match = !query || card.dataset.search.includes(query);
+    card.hidden = !match;
+    if (match) visible++;
+  });
+  resultCount.textContent = `${visible} of ${taskCards.length} tasks`;
+  emptyState.style.display = visible ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

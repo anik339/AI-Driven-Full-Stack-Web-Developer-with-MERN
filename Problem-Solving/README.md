@@ -6,14 +6,14 @@ Each module set contains exactly 50 numbered task folders. Open `index.html` to 
 
 | Module | Topic | Tasks |
 |---|---|---:|
-| 01 | HTML5 | 50 |
-| 02 | CSS3 | 50 |
-| 03 | Tailwind CSS | 50 |
-| 04 | Responsive design and GitHub workflow | 50 |
-| 05 | Claude Code and AI-assisted workflow | 50 |
-| 06 | JavaScript fundamentals | 50 |
-| 07 | JavaScript DOM and Events | 50 |
-| 08 | Advanced and asynchronous JavaScript | 50 |
+| 01 | [HTML5](./Module-01-HTML/index.html) | 50 |
+| 02 | [CSS3](./Module-02-CSS/index.html) | 50 |
+| 03 | [Tailwind CSS](./Module-03-Tailwind-CSS/index.html) | 50 |
+| 04 | [Responsive design and GitHub workflow](./Module-04-Responsive-Design/index.html) | 50 |
+| 05 | [Claude Code and AI-assisted workflow](./Module-05-Claude-Code-and-AI-Workflow/index.html) | 50 |
+| 06 | [JavaScript fundamentals](./Module-06-JavaScript/index.html) | 50 |
+| 07 | [JavaScript DOM and Events](./Module-07-Foundation-of-JavaScript/index.html) | 50 |
+| 08 | [Advanced and asynchronous JavaScript](./Module-08-Asynchronous-JavaScript/index.html) | 50 |
 | **Total** | | **400** |
 
 ## What each task contains
