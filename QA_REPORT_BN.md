@@ -32,8 +32,8 @@ The five Live Demo links use this repository's GitHub Pages address. Their actua
 
 A whole-repository HTML scan still finds two missing generated CSS files referenced by these Module 03 supplementary pages:
 
-- `module-3 (Tailwind CSS)/practice/34_Advanced_Utility_Values_And_States/src/output.css`
-- `module-3 (Tailwind CSS)/practice/35_Custom_Breakpoints_And_Production_Optimization/src/output.css`
+- `frontend/modules/module-3 (Tailwind CSS)/practice/34_Advanced_Utility_Values_And_States/src/output.css`
+- `frontend/modules/module-3 (Tailwind CSS)/practice/35_Custom_Breakpoints_And_Production_Optimization/src/output.css`
 
 These are Tailwind build outputs, not Problem-Solving navigation links. They were not replaced with guessed CSS. Generate them using the Tailwind build workflow documented in the Module 03 materials before relying on those two supplementary pages.
 

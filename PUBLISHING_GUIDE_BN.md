@@ -1,6 +1,6 @@
 # GitHub Pages Publishing Guide (বাংলা)
 
-এই Repository-র Root Homepage এবং `Frontend-Projects`-এর পাঁচটি project live preview হিসেবে প্রকাশ করতে GitHub Pages চালু করতে হবে।
+এই Repository-র Root Homepage এবং `frontend/projects`-এর পাঁচটি project live preview হিসেবে প্রকাশ করতে GitHub Pages চালু করতে হবে।
 
 ## 1. GitHub Pages চালু করো
 
@@ -22,11 +22,11 @@ https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/
 
 ## 3. পাঁচটি Frontend Project-এর Live Demo
 
-- Personal Portfolio: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/01-personal-portfolio/
-- NOVA E-commerce: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/02-ecommerce-storefront/
-- Admin Analytics Dashboard: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/03-admin-analytics-dashboard/
-- Project Management Kanban: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/04-project-management-kanban/
-- Job & Internship Portal: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/Frontend-Projects/05-job-internship-portal/
+- Personal Portfolio: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/frontend/projects/01-personal-portfolio/
+- NOVA E-commerce: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/frontend/projects/02-ecommerce-storefront/
+- Admin Analytics Dashboard: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/frontend/projects/03-admin-analytics-dashboard/
+- Project Management Kanban: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/frontend/projects/04-project-management-kanban/
+- Job & Internship Portal: https://anik339.github.io/AI-Driven-Full-Stack-Web-Developer-with-MERN/frontend/projects/05-job-internship-portal/
 
 ## 4. যদি 404 দেখায়
 

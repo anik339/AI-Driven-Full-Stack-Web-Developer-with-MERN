@@ -69,14 +69,14 @@ A structured collection of my completed learning modules and practical exercises
 
 | Module | Repository Folder |
 |---|---|
-| Module 01 | `module-1 (HTML)` |
-| Module 02 | `module-2 (CSS)` |
-| Module 03 | `module-3 (Tailwind CSS)` |
-| Module 04 | `module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)` |
-| Module 05 | `module-5 (Claude Code Setup)` |
-| Module 06 | `module-6(foundation of java script)` |
-| Module 07 | `module-7(foundation of java script important part)` |
-| Module 08 | `module-8(asynchronous javascript)` |
+| Module 01 | `frontend/modules/module-1 (HTML)` |
+| Module 02 | `frontend/modules/module-2 (CSS)` |
+| Module 03 | `frontend/modules/module-3 (Tailwind CSS)` |
+| Module 04 | `frontend/modules/module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)` |
+| Module 05 | `frontend/modules/module-5 (Claude Code Setup)` |
+| Module 06 | `frontend/modules/module-6(foundation of java script)` |
+| Module 07 | `frontend/modules/module-7(foundation of java script important part)` |
+| Module 08 | `frontend/modules/module-8(asynchronous javascript)` |
 
 ---
 
@@ -93,7 +93,7 @@ Five practical frontend projects developed to apply my learning through real-wor
 - Contact information
 - Responsive interface
 
-[→ Explore Project 01](./Frontend-Projects/01-personal-portfolio/)
+[→ Explore Project 01](./frontend/projects/01-personal-portfolio/)
 
 ---
 
@@ -107,7 +107,7 @@ Five practical frontend projects developed to apply my learning through real-wor
 - Checkout demonstration
 - Responsive product layouts
 
-[→ Explore Project 02](./Frontend-Projects/02-ecommerce-storefront/)
+[→ Explore Project 02](./frontend/projects/02-ecommerce-storefront/)
 
 ---
 
@@ -121,7 +121,7 @@ Five practical frontend projects developed to apply my learning through real-wor
 - Dashboard settings
 - Interactive navigation
 
-[→ Explore Project 03](./Frontend-Projects/03-admin-analytics-dashboard/)
+[→ Explore Project 03](./frontend/projects/03-admin-analytics-dashboard/)
 
 ---
 
@@ -135,7 +135,7 @@ Five practical frontend projects developed to apply my learning through real-wor
 - Priority and assignee filters
 - Workspace interface
 
-[→ Explore Project 04](./Frontend-Projects/04-project-management-kanban/)
+[→ Explore Project 04](./frontend/projects/04-project-management-kanban/)
 
 ---
 
@@ -149,7 +149,7 @@ Five practical frontend projects developed to apply my learning through real-wor
 - Application form demonstration
 - Responsive navigation
 
-[→ Explore Project 05](./Frontend-Projects/05-job-internship-portal/)
+[→ Explore Project 05](./frontend/projects/05-job-internship-portal/)
 
 ---
 
@@ -162,7 +162,7 @@ Beyond course modules, this repository also contains additional learning resourc
 | `Assignment/` | Course assignments and practical tasks |
 | `Problem-Solving/` | JavaScript exercises and programming challenges |
 | `Ostad_Learning_Tracker/` | Learning progress and course tracking |
-| `Frontend-Projects/` | Five practical frontend applications |
+| `frontend/projects/` | Five practical frontend applications |
 
 ---
 
@@ -171,29 +171,33 @@ Beyond course modules, this repository also contains additional learning resourc
 ```text
 AI-Driven-Full-Stack-Web-Developer-with-MERN/
 │
+├── frontend/
+│   ├── modules/
+│   │   ├── module-1 (HTML)/
+│   │   ├── module-2 (CSS)/
+│   │   ├── module-3 (Tailwind CSS)/
+│   │   ├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
+│   │   ├── module-5 (Claude Code Setup)/
+│   │   ├── module-6(foundation of java script)/
+│   │   ├── module-7(foundation of java script important part)/
+│   │   └── module-8(asynchronous javascript)/
+│   │
+│   └── projects/
+│       ├── 01-personal-portfolio/
+│       ├── 02-ecommerce-storefront/
+│       ├── 03-admin-analytics-dashboard/
+│       ├── 04-project-management-kanban/
+│       └── 05-job-internship-portal/
+│
 ├── Assignment/
-│
-├── Frontend-Projects/
-│   ├── 01-personal-portfolio/
-│   ├── 02-ecommerce-storefront/
-│   ├── 03-admin-analytics-dashboard/
-│   ├── 04-project-management-kanban/
-│   └── 05-job-internship-portal/
-│
-├── module-1 (HTML)/
-├── module-2 (CSS)/
-├── module-3 (Tailwind CSS)/
-├── module-4 (Responsive Web Design, AI Tools and GitHub Collaboration)/
-├── module-5 (Claude Code Setup)/
-├── module-6(foundation of java script)/
-├── module-7(foundation of java script important part)/
-├── module-8(asynchronous javascript)/
-│
-├── Ostad_Learning_Tracker/
 ├── Problem-Solving/
-│
-├── .gitignore
-└── README.md
+├── Ostad_Learning_Tracker/
+├── index.html
+├── README.md
+├── GITHUB_PUSH_GUIDE_BN.md
+├── PUBLISHING_GUIDE_BN.md
+├── QA_REPORT_BN.md
+└── .gitignore
 ```
 
 ---
