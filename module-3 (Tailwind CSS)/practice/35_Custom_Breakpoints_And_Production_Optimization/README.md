@@ -8,9 +8,12 @@
 - Source scanning, unused utility elimination and minified production output.
 
 ## Run
-From `module-3 (Tailwind CSS)/practice`, run `npm install` once and `npm run build:all`. Then open this lab's `index.html` with Live Server.
+From `module-3 (Tailwind CSS)/practice`, run `npm ci` once and `npm run build:all`. Then open this lab's `index.html` with Live Server.
 
 ## Production command
 `npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify`
 
 Tailwind v4 scans source files automatically by default. Your separate `Resources` folder uses Tailwind v3.4.19 and its `content` array in `tailwind.config.js`; do not copy v3 configuration syntax into this v4 lab.
+
+
+The generated `src/output.css` file is included in this repository, so you can preview the exercise with Live Server without running the build first.

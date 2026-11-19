@@ -113,7 +113,7 @@ img { max-width: 100%; display: block; }
 .profile-card-top > span:nth-child(2) { background: #ffc65c; }
 .profile-card-top > span:nth-child(3) { background: #45c99a; }
 .profile-card-top p { margin: 0 auto; color: var(--muted); font: .72rem monospace; }
-.profile-avatar { width: 112px; height: 112px; display: block; margin: 23px auto 18px; border: 4px solid var(--surface-soft); border-radius: 28px; object-fit: cover; object-position: center 34%; box-shadow: 0 10px 25px rgba(30,40,80,.16); }
+.profile-avatar { width: 136px; height: 136px; display: block; margin: 23px auto 18px; border: 4px solid var(--surface-soft); border-radius: 28px; object-fit: cover; object-position: center 34%; box-shadow: 0 10px 25px rgba(30,40,80,.16); }
 .profile-greeting, .profile-line { margin: 7px 0; font: .84rem/1.5 monospace; }
 .profile-greeting { color: var(--accent); }
 .profile-line { padding-left: 15px; color: var(--muted); }

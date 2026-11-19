@@ -17,7 +17,7 @@ A responsive personal portfolio built with HTML5, CSS3, and vanilla JavaScript. 
 ├── README.md
 ├── css/style.css
 ├── js/script.js
-└── assets/images/anik-chandra-dey.jpg
+└── assets/images/anik-chandra-dey-2026.jpg
 ```
 
 ## Run
