@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This module is about browser-side JavaScript. Use the DOM and event references when a selector, property, event, or browser behaviour is unclear.">
+  <meta name="theme-color" content="#102542">
+  <title>Module 07 Learning Resources | JavaScript DOM and Events</title>
+  <style>
+    :root{--ink:#152238;--muted:#62718a;--line:#dce5f0;--blue:#2859d8;--navy:#102542;--paper:#f4f7fb;--white:#fff;--mint:#eaf8f3}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+    a:focus-visible{outline:3px solid #e9a32b;outline-offset:4px;border-radius:4px}
+    .wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+    .hero{background:var(--navy);color:#fff;padding:26px 0 42px}
+    .back{display:inline-block;color:#c7e2ff;font-weight:750;font-size:.9rem}
+    .eyebrow{margin:25px 0 7px;color:#92d7d2;font-size:.74rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    h1{max-width:850px;margin:0;font-size:clamp(2rem,5vw,3.35rem);line-height:1.1;letter-spacing:-.035em}
+    .lead{max-width:780px;margin:15px 0 0;color:#d1deee}
+    main{padding:34px 0 56px}
+    .section{margin:0 0 34px}
+    .section-head{margin-bottom:14px}
+    .section-head h2{margin:0;font-size:1.45rem}
+    .section-head p{margin:5px 0 0;color:var(--muted);max-width:75ch}
+    .resource-card{padding:21px;border:1px solid var(--line);border-radius:15px;background:var(--white);box-shadow:0 6px 20px #1d34520a}
+    .featured{border-color:#b9cbed;background:linear-gradient(135deg,#fff,#f0f5ff)}
+    .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:13px}
+    .resource-type{display:inline-block;color:#2859d8;font-size:.68rem;font-weight:900;letter-spacing:.12em}
+    .resource-card h3{margin:8px 0 7px;font-size:1.08rem;line-height:1.35}
+    .resource-card p{margin:0;color:var(--muted);font-size:.92rem}
+    .resource-link{display:inline-flex;gap:8px;align-items:center;margin-top:16px;font-weight:850}
+    .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:10px;padding:0;list-style:none}
+    .topic-grid li{padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:#fff;color:#3e4e66;font-size:.92rem}
+    .note,.study-box{padding:18px 20px;border:1px solid #cbd9ef;border-radius:14px;background:#edf3ff;color:#263c61}
+    .note p,.study-box p{margin:6px 0 0}
+    .study-box{background:var(--mint);border-color:#c9e8dc;color:#244a42}
+    .study-box ol{margin:10px 0 0;padding-left:22px}
+    footer{padding:0 0 28px;color:var(--muted);font-size:.84rem}
+    @media(max-width:600px){.hero{padding-bottom:32px}.resource-card{padding:17px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="./index.html">← Back to Module 07</a>
+      <p class="eyebrow">CURATED LEARNING LIBRARY · MODULE 07</p>
+      <h1>JavaScript DOM and Events</h1>
+      <p class="lead">Select and update page elements, create interface content, and respond to user actions. This module is about browser-side JavaScript. Use the DOM and event references when a selector, property, event, or browser behaviour is unclear.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="section" aria-labelledby="start-title">
+      <div class="section-head"><h2 id="start-title">Start here — best primary resource</h2><p>Begin with this resource before opening the additional references.</p></div>
+      <article class="resource-card featured">
+  <span class="resource-type">PRIMARY RESOURCE</span>
+  <h3>MDN — Dynamic Scripting with JavaScript</h3>
+  <p>A guided module for making web pages interactive, including DOM scripting and browser-side JavaScript concepts.</p>
+  <a class="resource-link" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" target="_blank" rel="noopener noreferrer">Open resource <span aria-hidden="true">↗</span></a>
+</article>
+    </section>
+    <section class="section" aria-labelledby="more-title">
+      <div class="section-head"><h2 id="more-title">Go deeper — trusted references</h2><p>Use these when you need another explanation, exact syntax, examples, or a way to validate your work.</p></div>
+      <div class="resource-grid"><article class="resource-card">
+  <span class="resource-type">WEB API GUIDE</span>
+  <h3>MDN — Document Object Model (DOM)</h3>
+  <p>Understand the DOM tree and how JavaScript and browser APIs represent and update documents.</p>
+  <a class="resource-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">Open resource <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource-card">
+  <span class="resource-type">IN-DEPTH TUTORIAL</span>
+  <h3>JavaScript.info — Document</h3>
+  <p>Study DOM tree navigation, searching, element properties, attributes, styles, and document updates.</p>
+  <a class="resource-link" href="https://javascript.info/document" target="_blank" rel="noopener noreferrer">Open resource <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource-card">
+  <span class="resource-type">IN-DEPTH TUTORIAL</span>
+  <h3>JavaScript.info — Introduction to Events</h3>
+  <p>Learn event handling, bubbling, capturing, delegation, and browser default actions.</p>
+  <a class="resource-link" href="https://javascript.info/events" target="_blank" rel="noopener noreferrer">Open resource <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource-card">
+  <span class="resource-type">OFFICIAL REFERENCE</span>
+  <h3>MDN — DOM Events</h3>
+  <p>Look up event types, event objects, and supported event properties.</p>
+  <a class="resource-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events" target="_blank" rel="noopener noreferrer">Open resource <span aria-hidden="true">↗</span></a>
+</article></div>
+    </section>
+    <section class="section" aria-labelledby="topics-title">
+      <div class="section-head"><h2 id="topics-title">What to look up</h2><p>Use these topic names as search terms inside the linked documentation.</p></div>
+      <ul class="topic-grid"><li>querySelector and selecting elements</li>
+<li>textContent, attributes, classList and styles</li>
+<li>createElement, append and remove</li>
+<li>Mouse, keyboard, form events, event object and delegation</li></ul>
+    </section>
+    <section class="section study-box" aria-labelledby="method-title">
+      <h2 id="method-title">When you get stuck — follow this method</h2>
+      <p>Run each local lesson with Live Server. Inspect the element in DevTools, change one line, and observe the result. When an event behaves unexpectedly, check the event reference and inspect the event object in the console.</p>
+      <ol>
+        <li>Read the relevant local lesson and its code comments.</li>
+        <li>Open the matching topic in the primary documentation.</li>
+        <li>Compare the official example with your own code.</li>
+        <li>Make one small change, run it, and inspect the result.</li>
+        <li>Explain the concept in your own words before moving on.</li>
+      </ol>
+    </section>
+    
+    <footer>These links lead to official documentation or established learning references. External pages may be updated; check version-specific instructions before changing an existing project. <a href="./index.html">Return to Module 07</a>.</footer>
+  </main>
+</body>
+</html>
