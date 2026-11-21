@@ -1,37 +1,36 @@
-# TaskFlow — Manual QA Checklist
+# CodeTrack Testing Checklist
 
-## Task operations
-- [ ] Create a task with a title only.
-- [ ] Create a task with description, priority, category, and due date.
-- [ ] Edit a task and confirm changes are shown.
-- [ ] Mark a task completed and active again.
-- [ ] Delete a task after the confirmation prompt.
-- [ ] Submit an empty or one-character title and confirm validation.
+## Project management
+- [ ] The default project appears on first load.
+- [ ] A new project can be created.
+- [ ] Blank and duplicate project names are rejected with a readable message.
+- [ ] Switching projects shows that project's own tasks.
 
-## Search, filters, and sorting
-- [ ] Search by title.
-- [ ] Search by description.
-- [ ] Filter active tasks.
-- [ ] Filter completed tasks.
-- [ ] Return to all tasks.
-- [ ] Change the sorting option and inspect the order.
+## Task CRUD and validation
+- [ ] A task can be created with a title only.
+- [ ] A task can be created with description, priority, and due date.
+- [ ] Blank task titles are rejected.
+- [ ] A task can be edited and saved.
+- [ ] Cancel edit restores the create-task form.
+- [ ] A task can be deleted after confirmation.
+
+## Status, search, and filters
+- [ ] Next status cycles To do → In progress → Completed → To do.
+- [ ] Search matches title and description.
+- [ ] Status and priority filters can be combined.
+- [ ] Sorting works for newest, due date, priority, and title.
+- [ ] Empty-state message appears when there are no matching tasks.
 
 ## Persistence and backup
-- [ ] Add tasks and refresh the browser; confirm they remain.
-- [ ] Change theme and refresh; confirm the preference remains.
-- [ ] Export a JSON backup and confirm the file downloads.
-- [ ] Check the app's storage warning behavior if browser storage is blocked.
+- [ ] Refreshing the page preserves projects and tasks.
+- [ ] Export creates a JSON backup.
+- [ ] Import restores a valid CodeTrack JSON backup.
+- [ ] Invalid JSON or an invalid backup displays an error message.
+- [ ] Theme preference survives refresh when browser storage is available.
 
-## Responsive and accessibility
-- [ ] Test desktop, tablet, and narrow mobile widths.
-- [ ] Navigate using Tab and Shift+Tab.
-- [ ] Activate buttons using Enter and Space.
-- [ ] Confirm visible focus outlines.
-- [ ] Confirm status messages are announced in the live region.
-
-## Edge cases
-- [ ] Enter `<script>alert(1)</script>` as a title; it must display as text.
-- [ ] Try long titles and descriptions.
-- [ ] Add a past due date.
-- [ ] Search for text that does not exist.
-- [ ] Test the empty task list.
+## Quality
+- [ ] No JavaScript errors appear in DevTools Console.
+- [ ] All user-provided text is rendered as text, not injected HTML.
+- [ ] Buttons and inputs have accessible names.
+- [ ] Keyboard focus is visible.
+- [ ] Layout works at mobile and desktop widths.

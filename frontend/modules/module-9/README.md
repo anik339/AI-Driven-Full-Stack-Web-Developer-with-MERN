@@ -1,53 +1,55 @@
-# Module 09 — DOM Manipulation, Browser APIs & Advanced JavaScript
+# Module 09 — Git & GitHub | JavaScript & OOP
 
-A practical learning module that bridges JavaScript fundamentals and modern browser application development.
+Module 9 develops two professional skills: managing code with Git/GitHub and designing maintainable JavaScript applications with object-oriented programming.
 
 ## Learning outcomes
-- Select, create, update, and remove DOM elements.
-- Handle browser events and event delegation.
-- Validate forms and provide accessible feedback.
-- Persist data with localStorage and sessionStorage.
-- Fetch JSON from an API and handle loading and error states.
-- Use async/await, try/catch/finally, and ES modules.
-- Use browser APIs with feature detection.
-- Build a responsive task manager with modular JavaScript.
+- Explain version control and the Git working-tree, staging, commit, branch, and remote workflow.
+- Create commits with meaningful messages and inspect repository history.
+- Create feature branches, merge work, and resolve merge conflicts.
+- Connect local repositories to GitHub and use clone, fetch, pull, push, and upstream branches.
+- Collaborate with Issues, Pull Requests, code review, Projects, Releases, and GitHub Pages.
+- Work with JavaScript objects, `this`, constructor functions, and prototypes.
+- Use ES6 classes, encapsulation, private fields, getters/setters, inheritance, polymorphism, abstraction, and composition.
+- Refactor code into focused classes and services.
+- Build the CodeTrack project using OOP architecture and a professional Git workflow.
 
 ## Folder structure
 ```text
 module-9/
+├── index.html
+├── module.css
+├── README.md
 ├── practice/
-│   ├── 01-dom-selection/
-│   ├── 02-create-elements/
-│   ├── 03-events/
-│   ├── 04-event-delegation/
-│   ├── 05-form-validation/
-│   ├── 06-web-storage/
-│   ├── 07-fetch-api/
-│   ├── 08-async-await/
-│   ├── 09-es-modules/
-│   ├── 10-accessibility/
-│   └── 11-browser-apis/
+│   ├── index.html
+│   ├── README.md
+│   ├── _shared/
+│   ├── 01–13 Git and GitHub lesson folders/
+│   └── 14–22 JavaScript and OOP lesson folders/
 └── project/
-    ├── css/
-    ├── js/
-    ├── assets/
     ├── index.html
     ├── README.md
-    └── TESTING_CHECKLIST.md
+    ├── GIT_WORKFLOW.md
+    ├── TESTING_CHECKLIST.md
+    ├── assets/
+    ├── css/
+    └── js/
+        ├── models/
+        └── services/
 ```
 
-## Study routine
-1. Read `practice/README.md`.
-2. Complete lessons in numerical order.
-3. Read each lesson's notes, run the example, inspect the JavaScript, then complete its challenge.
-4. Build the final project after completing the practice lessons.
-5. Test it with `project/TESTING_CHECKLIST.md`.
+## Study order
+1. Complete Git fundamentals (Lessons 01–09).
+2. Complete GitHub collaboration (Lessons 10–13).
+3. Practise JavaScript objects and the object model (Lessons 14–16).
+4. Study OOP principles and refactoring (Lessons 17–22).
+5. Build and test CodeTrack.
+6. Use `project/GIT_WORKFLOW.md` to create a feature branch, commit your work, push it, and open a Pull Request.
 
 ## Run
-Open a lesson's `index.html` with VS Code Live Server. The final project uses ES modules, so run `project/index.html` through Live Server or another local web server rather than a `file://` URL.
+- Open `index.html` to view the Module 9 Study Plan.
+- Open `practice/index.html` to browse all 22 lessons.
+- For JavaScript practice and CodeTrack, use VS Code Live Server because examples use browser scripts and ES modules.
+- Git/GitHub lessons are command-line and workflow exercises. Use a separate disposable folder named `git-practice-lab`.
 
-## Code quality
-Semantic HTML, accessible labels, responsive CSS, small reusable modules, safe `textContent` rendering, input validation, guarded storage access, and comments that explain important decisions.
-
-## Scope and privacy
-This is a frontend learning project. Data is stored only in the current browser and is not synchronized to a server. It has no authentication, cloud database, or multi-user support. Do not store passwords, payment details, or confidential data in browser storage.
+## Important
+Modules 1–8 are unchanged. Your main repository already has a `.git` folder and remote, so do not run `git init` inside the main course repository. Never commit access tokens, passwords, private keys, or real `.env` files.

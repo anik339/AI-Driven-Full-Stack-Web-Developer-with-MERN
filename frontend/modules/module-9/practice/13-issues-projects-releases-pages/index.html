@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Issues, Projects, Releases and GitHub Pages | Module 9</title>
+<link rel="stylesheet" href="../_shared/style.css">
+<style>
+.lesson-body{margin-top:22px;padding:24px;border:1px solid #dce5f0;border-radius:14px;background:#fff}
+.lesson-body h1{font-size:1.8rem;margin:0 0 12px}.lesson-body h2{margin:25px 0 9px;font-size:1.2rem}
+.lesson-body p,.lesson-body li{color:#52627a;line-height:1.75}.lesson-body ul,.lesson-body ol{padding-left:22px}
+.lesson-body pre{margin:14px 0;background:#101c30;color:#e4edff;padding:16px;border-radius:10px;overflow:auto;white-space:pre-wrap}
+.lesson-body code{font-family:Consolas,monospace;font-size:.92em}
+.lesson-body p code,.lesson-body li code{padding:2px 5px;border-radius:4px;background:#eef2f8;color:#26447c}
+</style>
+</head>
+<body><main class="shell">
+<a class="back" href="../index.html">← Back to Module 9 Practice</a>
+<p class="eyebrow">Module 9 · Git &amp; GitHub</p>
+<article class="lesson-body"><h1>Issues, Projects, Releases and GitHub Pages</h1>
+<p>Use GitHub&#x27;s project-management and publishing features to organize and present work.</p>
+<p>     ## Practise</p>
+<p> - Create an Issue with a clear title, reproduction steps, expected result, and actual result.</p>
+<p> - Add labels such as <code>bug</code>, <code>documentation</code>, or <code>enhancement</code>.</p>
+<p> - Use GitHub Projects to track Todo → In Progress → Review → Done.</p>
+<p> - Create a version tag after a stable milestone.</p>
+<p> - Publish a static site with GitHub Pages when the repository is suitable.</p>
+<p> ## Version tags</p>
+<pre><code> git tag -a v1.0.0 -m &quot;First stable learning release&quot;
+ git push origin v1.0.0
+ git tag</code></pre>
+<p> ## GitHub Pages checklist</p>
+<p> 1. Confirm the site has a valid <code>index.html</code>.</p>
+<p> 2. Open repository Settings → Pages.</p>
+<p> 3. Select the correct branch and folder.</p>
+<p> 4. Save and wait for deployment.</p>
+<p> 5. Open the published URL and test every relative link.</p>
+<p> ## Challenge</p>
+<p> Create one Issue, move it through a Project board, then close it with a commit or pull request reference.</p>
+<p> ## Note</p>
+<p> GitHub Pages publishes static files; it does not host a Node.js server or database.</p>
+<h2>Study method</h2>
+<ol>
+<li>Read the lesson completely.</li>
+<li>Run each command in a separate disposable practice repository where instructed.</li>
+<li>Predict the result before pressing Enter.</li>
+<li>Inspect the result with <code>git status</code>, <code>git log</code>, or the GitHub interface.</li>
+<li>Complete the challenge without copying a solution.</li>
+</ol></article>
+<footer>Read → Practise → Inspect → Explain</footer>
+</main></body></html>

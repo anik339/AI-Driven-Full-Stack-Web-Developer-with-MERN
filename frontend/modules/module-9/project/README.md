@@ -1,37 +1,45 @@
-# Project — TaskFlow Dashboard
+# Project — CodeTrack Developer Project Board
 
-A responsive task management dashboard built with semantic HTML, modern CSS, and modular vanilla JavaScript.
+CodeTrack is a responsive project and task manager built to practise JavaScript object-oriented programming and a professional Git/GitHub workflow.
 
 ## Features
-- Create, edit, complete, and delete tasks.
-- Search title, description, and category.
-- Filter all, active, and completed tasks.
-- Sort by due date, newest, or priority.
-- Set priority, category, description, and due date.
-- Summary cards for total, active, completed, and overdue tasks.
-- Persistent tasks and theme preference using localStorage.
-- Export task data as a JSON backup.
-- Responsive desktop, tablet, and mobile layout.
-- Accessible labels, keyboard-friendly controls, focus styles, and live status feedback.
-- Safe rendering of user-provided content using `textContent`.
+- Create multiple project boards.
+- Add, edit, delete, and advance task status.
+- Search task titles and descriptions.
+- Filter by status and priority.
+- Sort by newest, due date, priority, or title.
+- Summary counts for total, To do, In progress, and Completed.
+- Overdue task indicators.
+- Persistent browser storage with a guarded fallback.
+- JSON backup export and validated import.
+- Light/dark theme preference.
+- Responsive layout, semantic labels, keyboard focus styles, and live status feedback.
+- Safe rendering of user-provided text with `textContent`.
 
 ## Run locally
-1. Open the `module-9` folder in VS Code.
-2. Right-click `project/index.html`.
-3. Select **Open with Live Server**.
-4. Use the app in your browser.
+1. Open the repository in VS Code.
+2. Open `frontend/modules/module-9/project/index.html` with Live Server.
+3. Create a project and add a few tasks.
+4. Test editing, status changes, search, filters, sorting, theme, export, and import.
 
-No npm packages, build tools, API keys, or database setup are required.
+The project uses native JavaScript ES modules. Run it through Live Server or another local HTTP server; do not open it directly with a `file://` URL.
 
-## Architecture
-- `js/app.js` — app entry point and event wiring.
-- `js/dom.js` — DOM references and rendering.
-- `js/task-service.js` — task operations, filtering, and sorting.
-- `js/storage.js` — guarded local-storage access.
-- `js/validation.js` — input validation.
-- `js/dates.js` — date formatting and overdue calculations.
-- `js/constants.js` — shared values.
-- `js/ids.js` — task ID generation.
+## OOP architecture
+- `js/models/task.js` — `Task` class with private fields, validation, getters/setters, and serialization.
+- `js/models/project.js` — `Project` class that owns tasks and calculates project summaries.
+- `js/services/storage-repository.js` — persistence boundary for browser storage.
+- `js/services/project-service.js` — application rules and project/task operations.
+- `js/app.js` — `AppController`, DOM rendering, event handling, and browser interactions.
+- `js/constants.js` and `js/ids.js` — shared values and ID generation.
 
-## Scope
-This is a frontend portfolio project. Data stays in the current browser and is not synced to a server. A production multi-user service would need backend persistence, authentication, authorization, automated tests, monitoring, and a security review. Do not store sensitive information in localStorage.
+## OOP concepts demonstrated
+Encapsulation, classes, constructors, composition, single-responsibility separation, object collaboration, validation, and controlled state changes.
+
+## Data and privacy
+This is a local learning project. Data stays in the current browser and is not synchronized to a server. It does not provide accounts, authentication, authorization, cloud backup, or multi-user collaboration. Do not store passwords, payment information, or confidential data.
+
+## Testing
+- Use `TESTING_CHECKLIST.md` to verify the browser interface.
+- If Node.js is installed, run `npm test` from this project folder for the built-in model/service tests.
+- Run `npm run check` to syntax-check the application entry point.
+- No third-party npm dependencies are required.

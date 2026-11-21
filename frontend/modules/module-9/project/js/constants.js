@@ -1,4 +1,8 @@
-export const STORAGE_KEYS = Object.freeze({ tasks: "taskflow.tasks.v1", theme: "taskflow.theme.v1" });
-export const PRIORITY_ORDER = Object.freeze({ high: 0, medium: 1, low: 2 });
-export const VALID_PRIORITIES = Object.freeze(["low", "medium", "high"]);
-export const VALID_CATEGORIES = Object.freeze(["Learning", "Project", "Personal", "Work"]);
+export const STORAGE_KEY = "codetrack.module9.projects.v1";
+export const STATUSES = Object.freeze(["todo", "in-progress", "done"]);
+export const PRIORITIES = Object.freeze(["low", "medium", "high"]);
+export const STATUS_LABELS = Object.freeze({
+  todo: "To do",
+  "in-progress": "In progress",
+  done: "Completed"
+});

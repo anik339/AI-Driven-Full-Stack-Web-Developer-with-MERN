@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>`.gitignore` and Repository Hygiene | Module 9</title>
+<link rel="stylesheet" href="../_shared/style.css">
+<style>
+.lesson-body{margin-top:22px;padding:24px;border:1px solid #dce5f0;border-radius:14px;background:#fff}
+.lesson-body h1{font-size:1.8rem;margin:0 0 12px}.lesson-body h2{margin:25px 0 9px;font-size:1.2rem}
+.lesson-body p,.lesson-body li{color:#52627a;line-height:1.75}.lesson-body ul,.lesson-body ol{padding-left:22px}
+.lesson-body pre{margin:14px 0;background:#101c30;color:#e4edff;padding:16px;border-radius:10px;overflow:auto;white-space:pre-wrap}
+.lesson-body code{font-family:Consolas,monospace;font-size:.92em}
+.lesson-body p code,.lesson-body li code{padding:2px 5px;border-radius:4px;background:#eef2f8;color:#26447c}
+</style>
+</head>
+<body><main class="shell">
+<a class="back" href="../index.html">← Back to Module 9 Practice</a>
+<p class="eyebrow">Module 9 · Git &amp; GitHub</p>
+<article class="lesson-body"><h1><code>.gitignore</code> and Repository Hygiene</h1>
+<p>Keep generated files, dependencies, local configuration, and secrets out of Git history.</p>
+<p>     ## Example <code>.gitignore</code></p>
+<pre><code> node_modules/
+ .env
+ .env.*
+ !.env.example
+ dist/
+ build/
+ coverage/
+ .DS_Store
+ Thumbs.db
+ *.log</code></pre>
+<p> ## Practise</p>
+<p> 1. Add a <code>.gitignore</code> to the disposable practice repository.</p>
+<p> 2. Create a temporary file named <code>.env</code> and verify it is ignored with <code>git status</code>.</p>
+<p> 3. Run <code>git check-ignore -v .env</code> to see which rule matched.</p>
+<p> 4. Inspect <code>git status --ignored</code>.</p>
+<p> ## Important</p>
+<p> <code>.gitignore</code> does not automatically untrack a file that was already committed. If a harmless generated file was tracked by mistake, <code>git rm --cached &lt;path&gt;</code> removes it from the index while keeping the local file. If a secret was committed, rotate/revoke it immediately; deleting the file in a later commit does not erase it from history.</p>
+<p> ## Challenge</p>
+<p> Create a <code>.gitignore</code> suitable for a Node.js project and explain why <code>.env.example</code> can be committed while <code>.env</code> should remain local.</p>
+<h2>Study method</h2>
+<ol>
+<li>Read the lesson completely.</li>
+<li>Run each command in a separate disposable practice repository where instructed.</li>
+<li>Predict the result before pressing Enter.</li>
+<li>Inspect the result with <code>git status</code>, <code>git log</code>, or the GitHub interface.</li>
+<li>Complete the challenge without copying a solution.</li>
+</ol></article>
+<footer>Read → Practise → Inspect → Explain</footer>
+</main></body></html>

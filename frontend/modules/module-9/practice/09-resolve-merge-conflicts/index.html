@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resolve Merge Conflicts | Module 9</title>
+<link rel="stylesheet" href="../_shared/style.css">
+<style>
+.lesson-body{margin-top:22px;padding:24px;border:1px solid #dce5f0;border-radius:14px;background:#fff}
+.lesson-body h1{font-size:1.8rem;margin:0 0 12px}.lesson-body h2{margin:25px 0 9px;font-size:1.2rem}
+.lesson-body p,.lesson-body li{color:#52627a;line-height:1.75}.lesson-body ul,.lesson-body ol{padding-left:22px}
+.lesson-body pre{margin:14px 0;background:#101c30;color:#e4edff;padding:16px;border-radius:10px;overflow:auto;white-space:pre-wrap}
+.lesson-body code{font-family:Consolas,monospace;font-size:.92em}
+.lesson-body p code,.lesson-body li code{padding:2px 5px;border-radius:4px;background:#eef2f8;color:#26447c}
+</style>
+</head>
+<body><main class="shell">
+<a class="back" href="../index.html">← Back to Module 9 Practice</a>
+<p class="eyebrow">Module 9 · Git &amp; GitHub</p>
+<article class="lesson-body"><h1>Resolve Merge Conflicts</h1>
+<p>Recognize conflict markers, choose the intended final content, and complete a merge safely.</p>
+<p>     ## How a conflict happens</p>
+<p> Two branches change overlapping lines in the same file. Git cannot choose the correct result automatically.</p>
+<p> ## Conflict markers</p>
+<pre><code> &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ content from the current branch
+ =======
+ content from the branch being merged
+ &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/example</code></pre>
+<p> ## Practise</p>
+<p> 1. Create a branch and edit one line in <code>README.md</code>.</p>
+<p> 2. Switch to <code>main</code> and change the same line differently.</p>
+<p> 3. Merge the feature branch into <code>main</code>.</p>
+<p> 4. Open the conflicted file and decide what the final content should be.</p>
+<p> 5. Remove all conflict markers, save the file, run <code>git status</code>, stage the resolved file, and complete the merge commit if Git requires it.</p>
+<p> ## Challenge</p>
+<p> Resolve a conflict while preserving both useful changes, then inspect the final diff.</p>
+<p> ## Review</p>
+<p> Never leave <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, or <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> markers in committed files.</p>
+<h2>Study method</h2>
+<ol>
+<li>Read the lesson completely.</li>
+<li>Run each command in a separate disposable practice repository where instructed.</li>
+<li>Predict the result before pressing Enter.</li>
+<li>Inspect the result with <code>git status</code>, <code>git log</code>, or the GitHub interface.</li>
+<li>Complete the challenge without copying a solution.</li>
+</ol></article>
+<footer>Read → Practise → Inspect → Explain</footer>
+</main></body></html>

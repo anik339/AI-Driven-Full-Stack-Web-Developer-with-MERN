@@ -3,66 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="TaskFlow — a responsive task management dashboard built with vanilla JavaScript.">
-  <meta name="theme-color" content="#f4f6fb">
-  <title>TaskFlow — Personal Task Dashboard</title>
+  <meta name="description" content="CodeTrack is an object-oriented developer project and task manager built with vanilla JavaScript.">
+  <meta name="theme-color" content="#111827">
+  <title>CodeTrack — Developer Project Board</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/styles.css">
   <script type="module" src="./js/app.js"></script>
 </head>
 <body>
   <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="./index.html" aria-label="TaskFlow home"><span class="brand-mark" aria-hidden="true">T</span><span>taskflow<span class="brand-dot">.</span></span></a>
-      <div class="topbar-actions"><span class="date-label" id="today-label"></span><button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme"><span id="theme-icon" aria-hidden="true">◐</span></button></div>
-    </header>
+    <aside class="sidebar">
+      <a class="brand" href="./index.html" aria-label="CodeTrack home">
+        <span class="brand-mark">C</span><span>CodeTrack<small>DEVELOPER WORKSPACE</small></span>
+      </a>
+      <div class="sidebar-heading"><span>YOUR PROJECTS</span><span class="dot"></span></div>
+      <form id="project-form" class="project-create" autocomplete="off">
+        <label class="sr-only" for="project-name">New project name</label>
+        <input id="project-name" name="name" maxlength="48" placeholder="New project name" required>
+        <button type="submit" aria-label="Create project">+</button>
+      </form>
+      <nav id="project-list" class="project-list" aria-label="Projects"></nav>
+      <div class="sidebar-note">
+        <span class="note-icon">⌘</span>
+        <strong>Build in small steps.</strong>
+        <p>Use feature branches, meaningful commits and pull requests as you improve this project.</p>
+      </div>
+      <div class="sidebar-footer">MODULE 09 · JAVASCRIPT OOP</div>
+    </aside>
+
     <main class="main-content">
-      <section class="welcome-row" aria-labelledby="page-title">
-        <div><p class="eyebrow">PERSONAL WORKSPACE</p><h1 id="page-title">My tasks<span class="heading-dot">.</span></h1><p class="page-subtitle">A clear plan for focused work, one task at a time.</p></div>
-        <button class="primary-button" id="new-task-button" type="button">＋ New task</button>
-      </section>
-      <section class="stats-grid" aria-label="Task summary">
-        <article class="stat-card"><span class="stat-label">Total tasks</span><strong class="stat-value" id="stat-total">0</strong><span class="stat-note">In your workspace</span></article>
-        <article class="stat-card"><span class="stat-label">In progress</span><strong class="stat-value" id="stat-active">0</strong><span class="stat-note">Still to do</span></article>
-        <article class="stat-card"><span class="stat-label">Completed</span><strong class="stat-value" id="stat-completed">0</strong><span class="stat-note">Work finished</span></article>
-        <article class="stat-card stat-card-accent"><span class="stat-label">Overdue</span><strong class="stat-value" id="stat-overdue">0</strong><span class="stat-note">Needs attention</span></article>
-      </section>
-      <section class="workspace" aria-label="Task workspace">
-        <div class="toolbar">
-          <div class="filter-tabs" role="group" aria-label="Filter tasks">
-            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All tasks</button>
-            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
-            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
-          </div>
-          <div class="toolbar-controls">
-            <label class="search-box"><span class="visually-hidden">Search tasks</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search tasks…" autocomplete="off"></label>
-            <label class="sort-control"><span class="visually-hidden">Sort tasks</span><select id="sort-select"><option value="dueDate">Due date</option><option value="newest">Newest</option><option value="priority">Priority</option></select></label>
-          </div>
+      <header class="topbar">
+        <div><p class="eyebrow">YOUR WORKSPACE</p><h1 id="active-project-title">My Development Board</h1></div>
+        <div class="top-actions">
+          <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle color theme" title="Toggle theme">◐</button>
+          <button id="export-button" class="secondary-button" type="button">Export JSON</button>
+          <button id="import-button" class="secondary-button" type="button">Import JSON</button>
+          <input id="import-file" class="sr-only" type="file" accept="application/json,.json">
         </div>
-        <div class="list-heading"><div><h2>Task list</h2><p id="result-count">0 tasks</p></div><button class="text-button" id="export-button" type="button">Export backup ↓</button></div>
-        <div class="task-list" id="task-list" aria-live="polite" aria-relevant="additions removals text"></div>
+      </header>
+
+      <section class="stats-grid" aria-label="Project summary">
+        <article class="stat-card"><span class="stat-label">TOTAL TASKS</span><strong id="stat-total">0</strong><span class="stat-foot">In this project</span></article>
+        <article class="stat-card"><span class="stat-label">TO DO</span><strong id="stat-todo">0</strong><span class="stat-foot">Ready to start</span></article>
+        <article class="stat-card"><span class="stat-label">IN PROGRESS</span><strong id="stat-progress">0</strong><span class="stat-foot">Currently active</span></article>
+        <article class="stat-card"><span class="stat-label">COMPLETED</span><strong id="stat-done">0</strong><span class="stat-foot">Finished tasks</span></article>
       </section>
-      <footer class="app-footer"><p>Built for clarity and consistent progress.</p><button class="text-button danger-text" id="clear-completed-button" type="button">Clear completed</button></footer>
+
+      <section class="workspace-grid">
+        <section class="panel task-editor" aria-labelledby="editor-title">
+          <div class="panel-heading"><div><p class="eyebrow">TASK MANAGEMENT</p><h2 id="editor-title">Create a task</h2></div><span class="panel-symbol">＋</span></div>
+          <form id="task-form">
+            <label for="task-title">Task title <span>*</span></label>
+            <input id="task-title" name="title" maxlength="90" placeholder="e.g. Build reusable project card" required>
+            <label for="task-description">Description</label>
+            <textarea id="task-description" name="description" rows="3" maxlength="300" placeholder="What needs to be done?"></textarea>
+            <div class="form-row">
+              <div><label for="task-priority">Priority</label><select id="task-priority" name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></div>
+              <div><label for="task-due-date">Due date</label><input id="task-due-date" name="dueDate" type="date"></div>
+            </div>
+            <div class="form-actions"><button id="save-task" class="primary-button" type="submit">Add task</button><button id="cancel-edit" class="text-button" type="button" hidden>Cancel edit</button></div>
+            <p class="form-hint">Your tasks are saved in this browser using localStorage.</p>
+          </form>
+        </section>
+
+        <section class="panel task-workspace" aria-labelledby="tasks-title">
+          <div class="panel-heading task-heading"><div><p class="eyebrow">PROJECT OVERVIEW</p><h2 id="tasks-title">Work items</h2></div><span id="visible-count" class="count-pill">0 tasks</span></div>
+          <div class="toolbar">
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search tasks..." aria-label="Search tasks"></label>
+            <select id="status-filter" aria-label="Filter by status"><option value="all">All statuses</option><option value="todo">To do</option><option value="in-progress">In progress</option><option value="done">Completed</option></select>
+            <select id="priority-filter" aria-label="Filter by priority"><option value="all">All priorities</option><option value="high">High priority</option><option value="medium">Medium priority</option><option value="low">Low priority</option></select>
+            <select id="sort-select" aria-label="Sort tasks"><option value="newest">Newest first</option><option value="due-date">Due date</option><option value="priority">Priority</option><option value="title">Title A–Z</option></select>
+          </div>
+          <div id="task-list" class="task-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden><span>✦</span><h3>No tasks found</h3><p>Create a task or change the current filters to see your work items.</p></div>
+        </section>
+      </section>
+      <footer class="main-footer"><span>CodeTrack · A JavaScript OOP learning project</span><span>Made to practise clean code and Git workflow</span></footer>
     </main>
   </div>
-  <dialog class="task-dialog" id="task-dialog" aria-labelledby="dialog-title">
-    <form class="task-form" id="task-form" novalidate>
-      <div class="dialog-heading"><div><p class="eyebrow">TASK DETAILS</p><h2 id="dialog-title">Create a task</h2></div><button class="icon-button close-button" id="close-dialog-button" type="button" aria-label="Close dialog">×</button></div>
-      <input id="task-id" name="taskId" type="hidden">
-      <label class="field-label" for="task-title">Task title <span aria-hidden="true">*</span></label>
-      <input class="text-input" id="task-title" name="title" type="text" maxlength="90" required placeholder="e.g. Finish JavaScript practice">
-      <small class="field-hint">Use a clear title (2–90 characters).</small>
-      <label class="field-label" for="task-description">Description</label>
-      <textarea class="text-input textarea-input" id="task-description" name="description" rows="3" maxlength="500" placeholder="Add useful context or the next action…"></textarea>
-      <div class="form-grid">
-        <div><label class="field-label" for="task-priority">Priority</label><select class="text-input" id="task-priority" name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></div>
-        <div><label class="field-label" for="task-category">Category</label><select class="text-input" id="task-category" name="category"><option value="Learning">Learning</option><option value="Project">Project</option><option value="Personal">Personal</option><option value="Work">Work</option></select></div>
-      </div>
-      <label class="field-label" for="task-due-date">Due date</label><input class="text-input" id="task-due-date" name="dueDate" type="date">
-      <p class="form-error" id="form-error" role="alert"></p>
-      <div class="dialog-actions"><button class="secondary-button" id="cancel-button" type="button">Cancel</button><button class="primary-button" type="submit">Save task</button></div>
-    </form>
-  </dialog>
-  <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
