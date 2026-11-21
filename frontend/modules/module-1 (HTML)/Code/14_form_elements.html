@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 14 form elements. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Practice fieldset, legend, radio, checkbox, optgroup and datalist.">
+
+  <title>HTML Form Elements | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Form Elements</h1>
+
+    <p>Practice fieldset, legend, radio, checkbox, optgroup and datalist.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="options-form">
+
+      <h2>Learning preferences</h2>
+
+      <p><small>Practice only: data will not be saved.</small></p>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#options-form" method="get">
+
+<!-- FIELDSET: groups related form controls. -->
+<fieldset>
+
+          <legend>Learning mode</legend>
+
+          <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input type="radio" name="mode" value="reading" required> Reading</label></p>
+
+          <p><label><input type="radio" name="mode" value="project"> Project practice</label></p>
+        </fieldset>
+
+        <fieldset>
+
+          <legend>Topics you like</legend>
+
+          <p><label><input type="checkbox" name="topic" value="tags"> HTML tags</label></p>
+
+          <p><label><input type="checkbox" name="topic" value="forms"> Forms</label></p>
+        </fieldset>
+
+        <p><label for="level">Your level</label></p>
+
+        <p>
+<!-- SELECT: offers a predefined list of choices. -->
+<select id="level" name="level">
+
+          <optgroup label="Starter">
+
+            <option value="new">New learner</option>
+
+            <option value="basic">Know basic HTML</option>
+          </optgroup>
+
+          <optgroup label="Intermediate"><option value="practice">Building projects</option></optgroup>
+        </select></p>
+
+        <p><label for="city">City (type for suggestions)</label></p>
+
+        <p><input id="city" name="city" list="cities"></p>
+
+        <datalist id="cities">
+
+          <option value="Dhaka"></option>
+
+          <option value="Sylhet"></option>
+
+          <option value="Chattogram"></option>
+        </datalist>
+
+        <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="submit">Test form</button></p>
+      </form>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

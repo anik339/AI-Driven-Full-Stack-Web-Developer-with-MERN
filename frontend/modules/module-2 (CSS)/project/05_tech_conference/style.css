@@ -1,0 +1,415 @@
+/* TOPIC: style. Read each selector and test one property at a time. */
+/* Global reset and design tokens. */
+
+/* DESIGN TOKENS: central variables keep colors and spacing consistent. */
+:root  {
+  --ink: #182235;
+  --muted: #68748a;
+  --paper: #f7f8fc;
+  --surface: #fff;
+  --brand: #3157d5;
+  --brand-dark: #203da0;
+  --accent: #f2b84b;
+  --line: #e0e5ef;
+  --radius: 18px;
+  --shadow: 0 18px 44px rgba(24,34,53,.09);
+}
+/* BOX SIZING: makes element dimensions easier to predict. */
+
+*  {
+  box-sizing: border-box;
+}
+html  {
+  scroll-behavior: smooth;
+}
+/* BODY: sets the default font, page background and readable text. */
+
+body  {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+img, video  {
+  display: block;
+  max-width: 100%;
+}
+a  {
+  color: inherit;
+}
+button, input, textarea, select  {
+  font: inherit;
+}
+/* FOCUS: helps keyboard users find their current target. */
+
+/* ACCESSIBILITY WHY: keep an obvious keyboard focus indicator. */
+:focus-visible  {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+/* CONTAINER: limits width and centers content on large screens. */
+
+.container  {
+  width: min(1120px, calc(100% - 36px));
+  margin-inline: auto;
+}
+header  {
+  padding: 20px 0;
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--line);
+}
+/* NAVIGATION: aligns menu items and keeps spacing consistent. */
+
+.nav  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.logo  {
+  font-weight: 900;
+  letter-spacing: -.05em;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.nav-links  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.nav-links a  {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 700;
+}
+.nav-links a:hover  {
+  color: var(--brand);
+}
+main  {
+  padding-bottom: 64px;
+}
+.eyebrow  {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .75rem;
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+h1,h2,h3  {
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+h1  {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  margin: 0 0 18px;
+}
+h2  {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  margin: 0 0 12px;
+}
+h3  {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+p  {
+  margin: 0 0 14px;
+}
+.lead  {
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+.section  {
+  padding-top: 66px;
+}
+.section-head  {
+  max-width: 680px;
+  margin-bottom: 26px;
+}
+/* GRID: places cards into responsive rows and columns. */
+
+.grid  {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+}
+/* CARD: groups information with a reusable visual treatment. */
+
+.card  {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.muted  {
+  color: var(--muted);
+}
+.button  {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 17px;
+  border: 1px solid var(--brand);
+  border-radius: 10px;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+.button:hover  {
+  background: var(--brand-dark);
+}
+.button.secondary  {
+  color: var(--brand);
+  background: transparent;
+}
+.button.secondary:hover  {
+  color: white;
+  background: var(--brand);
+}
+footer  {
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: white;
+}
+/* MEDIA QUERY: adapts the layout when the screen width changes. */
+
+/* WIDTH WHY: cap long lines and prevent content from stretching on large screens. */
+@media (max-width: 640px)  {
+  .container  {
+    width: min(100% - 26px, 1120px);
+  }
+  .section  {
+    padding-top: 46px;
+  }
+  .card  {
+    padding: 19px;
+  }
+}
+/* BREAKPOINT WHY: change the layout only when the given condition matches. */
+@media (prefers-reduced-motion: reduce)  {
+  html  {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after  {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* Project-specific layout and components. */
+.logo span  {
+  color: #b7f36b;
+}
+.conference-hero  {
+  padding: 70px 0;
+  background: #171a36;
+  color: white;
+  overflow: hidden;
+}
+.conference-grid  {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 35px;
+  align-items: center;
+}
+.conference-hero .eyebrow  {
+  color: #b7f36b;
+}
+.conference-hero h1 span  {
+  color: #b7f36b;
+}
+.conference-hero .lead  {
+  color: #c6c9e0;
+}
+.conference-hero .button  {
+  margin-top: 20px;
+  background: #b7f36b;
+  border-color: #b7f36b;
+  color: #171a36;
+}
+.conference-hero .button:hover  {
+  background: #d4ff9e;
+}
+.event-details  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+}
+.event-details span  {
+  padding: 7px 10px;
+  border: 1px solid #4b4f75;
+  border-radius: 999px;
+  color: #e1e4f7;
+  font-size: .85rem;
+}
+.poster  {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #292e5c;
+  transform: rotate(2deg);
+}
+.poster-circle  {
+  position: absolute;
+  border-radius: 50%;
+}
+.circle-one  {
+  width: 280px;
+  height: 280px;
+  top: -35px;
+  left: -40px;
+  background: #b7f36b;
+}
+.circle-two  {
+  width: 210px;
+  height: 210px;
+  right: -25px;
+  top: 75px;
+  background: #fb795d;
+  mix-blend-mode: screen;
+}
+.circle-three  {
+  width: 180px;
+  height: 180px;
+  left: 80px;
+  bottom: -55px;
+  background: #777af9;
+  mix-blend-mode: screen;
+}
+.poster span  {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  bottom: 48px;
+  color: #171a36;
+  font-size: 2.5rem;
+  font-weight: 950;
+  line-height: .92;
+  letter-spacing: -.06em;
+}
+.poster small  {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: white;
+  font-weight: 900;
+}
+.number  {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--brand);
+  font-size: 2rem;
+  font-weight: 950;
+}
+.speaker-card  {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+.avatar  {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 18px;
+  border-radius: 22px;
+  font-weight: 950;
+  font-size: 1.2rem;
+}
+.avatar-blue  {
+  background: #dbe3ff;
+  color: #203da0;
+}
+.avatar-orange  {
+  background: #ffe2c0;
+  color: #87420d;
+}
+.avatar-green  {
+  background: #d5f5e8;
+  color: #116349;
+}
+.schedule  {
+  border-top: 1px solid var(--line);
+}
+.schedule > div  {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.schedule time  {
+  color: var(--brand);
+  font-weight: 900;
+}
+.schedule span  {
+  display: flex;
+  flex-direction: column;
+}
+.schedule small  {
+  margin-top: 4px;
+  color: var(--muted);
+}
+.register  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: clamp(22px, 5vw, 44px);
+  border-radius: 22px;
+  background: #e8edff;
+}
+.register form  {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.register label  {
+  font-weight: 800;
+  font-size: .9rem;
+}
+.register input:not([type="checkbox"])  {
+  padding: 12px;
+  border: 1px solid #b9c5df;
+  border-radius: 9px;
+}
+.consent  {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0;
+}
+.register button  {
+  cursor: pointer;
+}
+.foot-row  {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foot-row a  {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 800;
+}
+@media (max-width: 760px)  {
+  .conference-grid, .register  {
+    grid-template-columns: 1fr;
+  }
+  .poster  {
+    min-height: 290px;
+    max-width: 440px;
+  }
+  .schedule > div  {
+    grid-template-columns: 76px 1fr;
+  }
+}

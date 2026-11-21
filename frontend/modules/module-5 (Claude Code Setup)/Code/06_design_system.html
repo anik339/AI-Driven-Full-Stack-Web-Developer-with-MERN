@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Design Tokens and Reusable Components - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Design Tokens and Reusable Components | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 06 / MODULE 05</p><h1>Design Tokens and Reusable Components</h1><p>Use a consistent palette, spacing scale and component rules rather than random values.</p><div class="pills"><span class="pill">CSS variables</span><span class="pill">Consistency</span><span class="pill">Components</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>CSS custom properties</h2><p>Tokens provide a single place to change colors or dimensions.</p></header><div class="example"><div class="split"><div class="demo-card" style="background:#17243c;color:white">Dark surface</div><div class="demo-card" style="background:#e8efff;color:#2649af">Light accent</div></div></div><p class="small-head">CODE EXAMPLE</p><pre><code>/* Design tokens are shared across components. */
+:root { --brand: #355ee8; --ink: #17243c; --space: 1rem; --radius: 14px; }
+.button { background: var(--brand); border-radius: var(--radius); padding: var(--space); }</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Component states</h2><p>Provide hover and keyboard focus styles to make controls usable.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>.button:hover { filter: brightness(.92); }
+.button:focus-visible { outline: 3px solid #f1a82d; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }</code></pre></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Try the example, then change one thing and reload the browser.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

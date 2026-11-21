@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 22 interactive elements. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Details/summary and popover can work without JavaScript in modern browsers.">
+
+  <title>Native Interactive HTML | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>Native Interactive HTML</h1>
+
+    <p>Details/summary and popover can work without JavaScript in modern browsers.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Open and close an FAQ</h2>
+
+<!-- DETAILS: native expandable content; no custom JavaScript needed. -->
+<details>
+
+<!-- SUMMARY: clickable heading for its parent details element. -->
+<summary>What is semantic HTML?</summary>
+
+        <p>Semantic HTML uses meaningful elements such as nav, article and main.</p>
+      </details>
+
+      <details>
+
+        <summary>Why use labels on forms?</summary>
+
+        <p>Labels tell everyone what an input is for and improve click targets.</p>
+      </details>
+
+      <h2>HTML popover API</h2>
+
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="button" popovertarget="html-tip">Show a tip</button>
+
+      <div id="html-tip" popover>
+
+        <p>Popover is a built-in HTML feature supported in modern browsers.</p>
+      </div>
+
+      <h2>Static dialog example</h2>
+
+<!-- DIALOG: native dialog markup; scripting is needed to open it modally. -->
+<dialog open aria-label="Open dialog example">
+
+        <p>This non-modal dialog is visible because it has the open attribute.</p>
+      </dialog>
+
+      <p>A true modal dialog normally needs JavaScript to open with showModal().</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+
+@layer components {
+
+
+    .btn-primary {
+
+        background-color: #2563eb;
+
+        color: white;
+
+        padding: 12px 24px;
+
+        border-radius: 8px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+
+    }
+
+
+
+    .btn-primary:hover {
+
+        background-color: #1d4ed8;
+
+    }
+
+
+
+    .card-custom {
+
+        background:white;
+
+        padding:25px;
+
+        border-radius:15px;
+
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    }
+
+
+}

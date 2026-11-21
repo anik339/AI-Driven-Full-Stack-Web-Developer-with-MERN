@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staging Area and Meaningful Commits | Module 9</title>
+<link rel="stylesheet" href="../_shared/style.css">
+<style>
+.lesson-body{margin-top:22px;padding:24px;border:1px solid #dce5f0;border-radius:14px;background:#fff}
+.lesson-body h1{font-size:1.8rem;margin:0 0 12px}.lesson-body h2{margin:25px 0 9px;font-size:1.2rem}
+.lesson-body p,.lesson-body li{color:#52627a;line-height:1.75}.lesson-body ul,.lesson-body ol{padding-left:22px}
+.lesson-body pre{margin:14px 0;background:#101c30;color:#e4edff;padding:16px;border-radius:10px;overflow:auto;white-space:pre-wrap}
+.lesson-body code{font-family:Consolas,monospace;font-size:.92em}
+.lesson-body p code,.lesson-body li code{padding:2px 5px;border-radius:4px;background:#eef2f8;color:#26447c}
+</style>
+</head>
+<body><main class="shell">
+<a class="back" href="../index.html">← Back to Module 9 Practice</a>
+<p class="eyebrow">Module 9 · Git &amp; GitHub</p>
+<article class="lesson-body"><h1>Staging Area and Meaningful Commits</h1>
+<p>Stage specific changes, inspect what is staged, and write clear commit messages.</p>
+<p>     ## Learn</p>
+<p> - <code>git add</code> moves selected changes into the staging area.</p>
+<p> - A commit records the staged snapshot.</p>
+<p> - Small commits make code review and debugging easier.</p>
+<p> ## Commands</p>
+<pre><code> git add README.md
+ git add src/
+ git add -A
+ git diff --cached
+ git commit -m &quot;feat: add project navigation&quot;</code></pre>
+<p> ## Practise</p>
+<p> 1. Change two different files.</p>
+<p> 2. Stage only one file and inspect <code>git status</code>.</p>
+<p> 3. Run <code>git diff --cached</code> before committing.</p>
+<p> 4. Commit the first file, then stage and commit the second file separately.</p>
+<p> ## Commit message examples</p>
+<p> - <code>feat: add task filtering</code></p>
+<p> - <code>fix: handle empty search input</code></p>
+<p> - <code>docs: explain local setup</code></p>
+<p> - <code>refactor: extract task validation</code></p>
+<p> ## Challenge</p>
+<p> Write three commits that each represent one understandable change. Avoid vague messages such as <code>update</code>, <code>final</code>, or <code>changes</code>.</p>
+<h2>Study method</h2>
+<ol>
+<li>Read the lesson completely.</li>
+<li>Run each command in a separate disposable practice repository where instructed.</li>
+<li>Predict the result before pressing Enter.</li>
+<li>Inspect the result with <code>git status</code>, <code>git log</code>, or the GitHub interface.</li>
+<li>Complete the challenge without copying a solution.</li>
+</ol></article>
+<footer>Read → Practise → Inspect → Explain</footer>
+</main></body></html>

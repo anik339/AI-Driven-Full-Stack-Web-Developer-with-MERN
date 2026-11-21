@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A weather dashboard using the free Open-Meteo API.">
+  <title>Weather Dashboard | JavaScript Project 04</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell weather-shell">
+    <header><p class="eyebrow">JavaScript Project 04 · API Practice</p><h1>Weather, at a glance.</h1><p class="subtitle">Search for a city to see current conditions and today's forecast. This project uses the free Open-Meteo API and needs no API key.</p></header>
+    <form id="search-form" class="search-bar panel panel-pad">
+      <label class="sr-only" for="city-input">City name</label><input id="city-input" placeholder="Search a city, e.g. Dhaka" value="Dhaka" required>
+      <button class="btn" type="submit">Search weather</button>
+    </form>
+    <p id="status" class="status-message" role="status">Search for a city to load weather.</p>
+    <section id="weather-card" class="weather-card panel" hidden aria-live="polite">
+      <div class="weather-main"><div><p id="location-name" class="location-name"></p><p id="local-time" class="muted small"></p><p id="condition" class="condition"></p></div><div class="temperature"><span id="weather-icon">☀️</span><strong id="temperature">--°</strong></div></div>
+      <div class="weather-details grid">
+        <article><span>Feels like</span><strong id="feels-like">--°</strong></article>
+        <article><span>Humidity</span><strong id="humidity">--%</strong></article>
+        <article><span>Wind speed</span><strong id="wind">-- km/h</strong></article>
+        <article><span>Today's range</span><strong id="range">--° / --°</strong></article>
+      </div>
+      <p class="attribution">Weather data: Open-Meteo · <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">API information</a></p>
+    </section>
+    <footer>Project 04 · Practice fetch(), async/await, JSON, and API error handling.</footer>
+  </main>
+</body>
+</html>

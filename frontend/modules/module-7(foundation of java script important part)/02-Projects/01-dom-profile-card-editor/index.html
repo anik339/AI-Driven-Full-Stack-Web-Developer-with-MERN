@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build an editable profile card. The form updates visible text, an avatar's accessible attributes, CSS classes, and inline styles.">
+  <title>01. DOM Profile Card Editor</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · COMPLETE PROJECT</p>
+      <h1>01. DOM Profile Card Editor</h1>
+      <p class="lead">Build an editable profile card. The form updates visible text, an avatar's accessible attributes, CSS classes, and inline styles.</p>
+    </header>
+    
+<section class="profile-layout">
+  <article id="profile-card" class="panel profile-card">
+    <div id="avatar" class="avatar" aria-label="Profile initials">JD</div>
+    <p class="eyebrow">PROFILE PREVIEW</p>
+    <h2 id="profile-name">Jordan Developer</h2>
+    <p id="profile-role" class="role">Junior Frontend Developer</p>
+    <p id="profile-bio" class="muted">I am learning HTML, CSS, JavaScript, and the DOM.</p>
+    <a id="profile-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+    <span id="profile-status" class="status-pill">Available for learning</span>
+  </article>
+  <section class="panel pad editor">
+    <h2>Edit your profile</h2>
+    <form id="profile-form" class="stack">
+      <div class="field"><label for="name-input">Full name</label><input id="name-input" value="Jordan Developer" maxlength="45" required></div>
+      <div class="field"><label for="role-input">Role</label><input id="role-input" value="Junior Frontend Developer" maxlength="60" required></div>
+      <div class="field"><label for="bio-input">Short bio</label><textarea id="bio-input" maxlength="180">I am learning HTML, CSS, JavaScript, and the DOM.</textarea></div>
+      <div class="field"><label for="link-input">GitHub profile URL</label><input id="link-input" type="url" value="https://github.com/" required></div>
+      <label class="check"><input id="available-input" type="checkbox" checked> Available for learning projects</label>
+      <button class="btn" type="submit">Update profile card</button>
+      <p id="form-message" class="muted small" aria-live="polite"></p>
+    </form>
+    <button id="theme-button" class="btn secondary full" type="button">Toggle profile theme</button>
+  </section>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

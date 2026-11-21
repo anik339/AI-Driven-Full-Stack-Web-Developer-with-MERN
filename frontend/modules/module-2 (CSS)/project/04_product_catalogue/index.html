@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A CSS-only product catalogue with original CSS-drawn product illustrations and responsive product cards." name="description"/>
+  <title>
+   Form &amp; Field | Product Catalogue
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body>
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+   <div class="container nav">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="logo" href="#home">
+     form &amp; field
+     <span>
+      .
+     </span>
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Product sections" class="nav-links">
+     <a href="#new">
+      New arrivals
+     </a>
+     <a href="#catalogue">
+      Catalogue
+     </a>
+     <a href="#story">
+      Our story
+     </a>
+    </nav>
+    <a class="cart-link" href="#catalogue">
+     Catalogue
+     <span>
+      06 items
+     </span>
+    </a>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="home">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="shop-hero">
+    <!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+    <div class="container shop-hero-grid">
+     <div>
+      <p class="eyebrow">
+       Useful objects, made considered
+      </p>
+      <h1>
+       Make room for
+       <em>
+        better everyday.
+       </em>
+      </h1>
+      <p class="lead">
+       A practice storefront for thoughtfully chosen home and desk essentials. Product details are examples for frontend learning.
+      </p>
+      <a class="button" href="#catalogue">
+       Browse the collection
+      </a>
+     </div>
+     <div class="hero-product">
+      <div class="product-orb orb-a">
+      </div>
+      <div class="product-orb orb-b">
+      </div>
+      <div class="product-shape">
+      </div>
+      <span>
+       Everyday
+       <br/>
+       objects
+      </span>
+     </div>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="new">
+    <div class="section-head">
+     <p class="eyebrow">
+      Small details, daily impact
+     </p>
+     <h2>
+      Made to be used.
+     </h2>
+     <p class="lead">
+      Six sample products, styled with CSS. The catalogue is static and has no checkout or payment functionality.
+     </p>
+    </div>
+    <div class="product-grid" id="catalogue">
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="product-card">
+      <div class="product-visual visual-mug">
+       <span>
+        01
+       </span>
+       <div class="mug">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        Desk essentials
+       </span>
+       <span>
+        $24
+       </span>
+      </div>
+      <h3>
+       Everyday Ceramic Mug
+      </h3>
+      <p class="muted">
+       A comfortable shape for the first cup of the day.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="product-card">
+      <div class="product-visual visual-lamp">
+       <span>
+        02
+       </span>
+       <div class="lamp">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        Lighting
+       </span>
+       <span>
+        $68
+       </span>
+      </div>
+      <h3>
+       Arc Table Lamp
+      </h3>
+      <p class="muted">
+       Warm, focused light for thoughtful work.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+     <article class="product-card">
+      <div class="product-visual visual-vase">
+       <span>
+        03
+       </span>
+       <div class="vase">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        Home decor
+       </span>
+       <span>
+        $32
+       </span>
+      </div>
+      <h3>
+       Soft Form Vase
+      </h3>
+      <p class="muted">
+       A sculptural accent for a shelf or table.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+     <article class="product-card">
+      <div class="product-visual visual-notebook">
+       <span>
+        04
+       </span>
+       <div class="notebook">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        Stationery
+       </span>
+       <span>
+        $18
+       </span>
+      </div>
+      <h3>
+       Daily Notes Book
+      </h3>
+      <p class="muted">
+       Room for lists, ideas, and plans.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+     <article class="product-card">
+      <div class="product-visual visual-bottle">
+       <span>
+        05
+       </span>
+       <div class="bottle">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        On the go
+       </span>
+       <span>
+        $29
+       </span>
+      </div>
+      <h3>
+       Travel Bottle
+      </h3>
+      <p class="muted">
+       A reusable companion for busy days.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+     <article class="product-card">
+      <div class="product-visual visual-tray">
+       <span>
+        06
+       </span>
+       <div class="tray">
+       </div>
+      </div>
+      <div class="product-meta">
+       <span>
+        Organization
+       </span>
+       <span>
+        $21
+       </span>
+      </div>
+      <h3>
+       Catch-all Tray
+      </h3>
+      <p class="muted">
+       A landing spot for small daily essentials.
+      </p>
+      <a href="#story">
+       View details →
+      </a>
+     </article>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section story" id="story">
+    <div>
+     <p class="eyebrow">
+      Our point of view
+     </p>
+     <h2>
+      Fewer things.
+      <br/>
+      Better chosen.
+     </h2>
+    </div>
+    <p class="lead">
+     This project practices product hierarchy, cards, spacing, color systems, responsive grids, and accessible links. Replace the sample descriptions and prices with your own researched product content before publishing.
+    </p>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+   <div class="container footer-row">
+    <a class="logo" href="#home">
+     form &amp; field.
+    </a>
+    <span>
+     Student frontend project · No real sales or payments
+    </span>
+    <a href="#home">
+     Back to top ↑
+    </a>
+   </div>
+  </footer>
+ </body>
+</html>

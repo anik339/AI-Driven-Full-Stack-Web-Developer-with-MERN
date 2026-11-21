@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 23 progress meter output. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Represent progress, measurements and results with semantic HTML.">
+
+  <title>Progress, Meter and Output | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>Progress, Meter and Output</h1>
+
+    <p>Represent progress, measurements and results with semantic HTML.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Task completion</h2>
+
+      <p>HTML practice: 
+<!-- PROGRESS: reports task completion. -->
+<progress value="18" max="30">18 of 30 files</progress></p>
+
+      <h2>Score within a range</h2>
+
+      <p>Example confidence score: 
+<!-- METER: reports a measured value within a range. -->
+<meter min="0" max="100" low="35" high="75" optimum="90" value="80">80%</meter></p>
+
+      <h2>Static calculated result</h2>
+
+      <p>Sample order total: <output name="total">$150</output></p>
+
+      <p>progress = completion; meter = known range; output = result display.</p>
+
+      <p>The output will not update automatically without JavaScript or a server.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

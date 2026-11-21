@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: 06 ai prompts and code review. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8">
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Prompts and Code Review</title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+
+<!-- HEADER: introduces the page or a content section. -->
+<header class="bg-slate-950 px-5 py-10 text-white"><div class="mx-auto max-w-5xl">
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="index.html" class="text-sm text-cyan-300 hover:underline">Back to Code Lessons</a><h1 class="mt-3 text-4xl font-black">AI Prompts and Code Review</h1><p class="mt-3 text-slate-300">A good prompt states context, constraints, expected output and how the answer should be verified.</p></div></header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-5xl space-y-6 px-5 py-10">
+
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">Prompt 1: Explain code</h2><pre class="mt-4 whitespace-pre-wrap rounded-xl bg-slate-950 p-5 text-sm leading-6 text-cyan-200">Explain this HTML/CSS snippet for a beginner.
+Describe the purpose of each important class or property.
+Give one simple example and one common mistake.
+Do not rewrite the whole file.</pre></section>
+    
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">Prompt 2: Fix responsive overflow</h2><pre class="mt-4 whitespace-pre-wrap rounded-xl bg-slate-950 p-5 text-sm leading-6 text-cyan-200">At a 320px viewport, this page has horizontal scrolling.
+Inspect the supplied code and list the likely causes in order.
+Suggest the smallest fix first. Preserve the existing design.
+Explain how I can test the result at 320px, 375px, 768px and 1280px.</pre></section>
+    
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm"><h2 class="text-2xl font-bold">Prompt 3: Review before a pull request</h2><pre class="mt-4 whitespace-pre-wrap rounded-xl bg-slate-950 p-5 text-sm leading-6 text-cyan-200">Review this change as a careful teammate.
+Check responsive behavior, accessibility, semantic HTML, maintainability,
+unused styles and unintended visual changes.
+Report findings by severity and point to exact lines.
+Do not invent problems. Separate confirmed issues from suggestions.</pre></section>
+    
+    <section class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6"><h2 class="text-2xl font-bold text-emerald-950">Verify before accepting AI output</h2>
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="mt-4 list-disc space-y-2 pl-6 text-emerald-950"><li>Does the code use the requested technologies only?</li><li>Do all links, image paths and form labels work?</li><li>Does the layout work on small and large screens?</li><li>Can you explain why each important change is needed?</li><li>Did you check the browser console and Git diff?</li><li>Did you remove secrets, debug leftovers and unused code?</li></ul></section>
+  </main>
+</body>
+</html>

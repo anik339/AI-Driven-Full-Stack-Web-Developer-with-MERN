@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+@theme {
+
+    --color-brand: #2563eb;
+
+    --color-secondary: #16a34a;
+
+    --font-main: Arial, sans-serif;
+
+}

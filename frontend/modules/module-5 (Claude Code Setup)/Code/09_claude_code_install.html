@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Document metadata and responsive viewport. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Claude Code: Install and Sign In - HTML, CSS, Tailwind CSS and Claude Code learning module">
+  <title>Claude Code: Install and Sign In | Module 5</title>
+  <link rel="stylesheet" href="lesson.css">
+
+</head>
+<body>
+  <!-- Lesson navigation. -->
+  <header class="top"><div class="shell"><a class="brand" href="index.html">MOD<span style="color:var(--blue)">/05</span> <span class="micro">LEARNING LAB</span></a><a class="back" href="index.html">&#8592; All lessons</a></div></header>
+  <!-- Lesson content. -->
+  <main class="shell">
+    <header class="head"><p class="overline">LESSON 09 / MODULE 05</p><h1>Claude Code: Install and Sign In</h1><p>Install the actual Claude Code CLI on Windows or macOS/Linux, verify it and start a project. Reading this file does not install the CLI.</p><div class="pills"><span class="pill">Windows PowerShell</span><span class="pill">Authentication</span><span class="pill">CLI</span></div></header>
+    <section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Option A — Windows PowerShell</h2><p>Open PowerShell. Native installer is recommended by Claude Code documentation; review the official URL before running an internet-downloaded script.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code># Windows PowerShell: native installation
+irm https://claude.ai/install.ps1 | iex
+# Close and reopen PowerShell, then verify:
+claude --version</code></pre><p class="tip"><strong>Remember:</strong> This is a command to run manually in PowerShell, not an HTML command.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Option B — Windows WinGet</h2><p>Alternative installation managed through WinGet. WinGet installs must be updated through WinGet.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>winget install Anthropic.ClaudeCode
+claude --version
+# Later:
+winget upgrade Anthropic.ClaudeCode</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Option C — macOS, Linux and WSL</h2><p>Install natively in a Unix-style shell.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code>curl -fsSL https://claude.ai/install.sh | bash
+claude --version</code></pre></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Start the first session</h2><p>In VS Code open Terminal &gt; New Terminal in a project directory. Then launch Claude Code and follow the sign-in flow. A compatible plan or API access may be required.</p></header><p class="small-head">CODE EXAMPLE</p><pre><code># Run these commands inside YOUR project folder.
+claude
+# In the Claude Code interactive session (as needed):
+/login
+/help</code></pre><p class="tip"><strong>Remember:</strong> Do not share API keys, private tokens, passwords or secrets in prompts. Obtain account access from Anthropic.</p></section><section class="unit"><header><span class="overline">PRACTICE SECTION</span><h2>Official documentation</h2><p>Installation details can change; use the official setup and quickstart instructions as the source of truth.</p></header><div class="example"><p><a class="fake-btn" href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener noreferrer">Official Setup Guide ↗</a> &nbsp; <a class="fake-btn secondary" href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">Quickstart ↗</a></p></div></section>
+    <aside class="note-bar"><strong>Practice task:</strong> Open PowerShell, confirm git --version and claude --version, then try a read-only question about one of your HTML files.</aside>
+  </main>
+  <!-- Page footer. -->
+  <footer class="foot"><div class="shell"><span>Module 05 / Practical frontend foundation</span><span>English code comments &middot; HTML, CSS, Tailwind v4</span></div></footer>
+</body>
+</html>

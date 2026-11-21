@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a polished front-end form that validates name, email, password, password confirmation, and a terms checkbox. It demonstrates input and submit events, attributes, classes, styles, and text updates.">
+  <title>05. Smart Signup Form Validator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · COMPLETE PROJECT</p>
+      <h1>05. Smart Signup Form Validator</h1>
+      <p class="lead">Build a polished front-end form that validates name, email, password, password confirmation, and a terms checkbox. It demonstrates input and submit events, attributes, classes, styles, and text updates.</p>
+    </header>
+    
+<section class="panel pad form-panel">
+  <form id="signup-form" class="stack" novalidate>
+    <div class="field"><label for="full-name">Full name</label><input id="full-name" placeholder="Your full name" autocomplete="name" aria-describedby="name-error"><small id="name-error" class="error"></small></div>
+    <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error"><small id="email-error" class="error"></small></div>
+    <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" aria-describedby="password-error"><div class="strength-track"><span id="strength-bar"></span></div><small id="password-error" class="error"></small><small id="strength-text" class="muted small">Password strength: not checked</small></div>
+    <div class="field"><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" placeholder="Type password again" autocomplete="new-password" aria-describedby="confirm-error"><small id="confirm-error" class="error"></small></div>
+    <label class="terms"><input id="terms" type="checkbox"> <span>I understand this is a learning demo and no account will be created.</span></label>
+    <small id="terms-error" class="error"></small>
+    <button class="btn" type="submit">Validate details</button>
+    <p id="success-message" class="success" role="status" hidden></p>
+  </form>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

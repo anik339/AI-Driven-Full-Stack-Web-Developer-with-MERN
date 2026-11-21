@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: 08 team branch pull request workflow. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Team Branch and Pull Request Workflow
+  </title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+  </script>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="bg-slate-950 px-5 py-10 text-white">
+   <div class="mx-auto max-w-5xl">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="text-sm text-cyan-300 hover:underline" href="index.html">
+     Back to Code Lessons
+    </a>
+    <h1 class="mt-3 text-4xl font-black">
+     Team Branch and Pull Request Workflow
+    </h1>
+    <p class="mt-3 text-slate-300">
+     A shared repository works best when the team agrees on branch names, small commits, reviews and merge rules.
+    </p>
+   </div>
+  </header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-5xl space-y-8 px-5 py-10">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Recommended team flow
+    </h2>
+    
+<!-- ORDERED LIST: items follow a meaningful sequence. -->
+<ol class="mt-4 list-decimal space-y-3 pl-6 text-slate-700">
+     <li>
+      Agree on the task and acceptance criteria in an issue or task board.
+     </li>
+     <li>
+      Update your local main branch before starting.
+     </li>
+     <li>
+      Create a short-lived feature branch for one task.
+     </li>
+     <li>
+      Make small, meaningful commits and test your changes.
+     </li>
+     <li>
+      Push the branch and open a pull request with a clear summary.
+     </li>
+     <li>
+      Ask a teammate to review; respond to feedback and update the branch.
+     </li>
+     <li>
+      Merge after required checks and approvals pass.
+     </li>
+    </ol>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Common commands
+    </h2>
+    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-sm leading-7 text-cyan-200"><code>git status
+git switch main
+git pull
+git switch -c feature/responsive-navbar
+
+# edit files and test the result
+git add path/to/changed-file.html
+git commit -m "Improve responsive navigation"
+git push -u origin feature/responsive-navbar</code></pre>
+    <p class="mt-3 text-slate-600">
+     After pushing, open GitHub and create a pull request from your feature branch into the shared main branch.
+    </p>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+<!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+<section class="grid gap-4 md:grid-cols-2">
+    
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl bg-white p-6 shadow-sm">
+     <h2 class="text-xl font-bold">
+      Author checklist
+     </h2>
+     
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+      <li>
+       Describe what changed and why.
+      </li>
+      <li>
+       Attach screenshots at mobile and desktop widths when useful.
+      </li>
+      <li>
+       Link the related issue.
+      </li>
+      <li>
+       Test the affected pages.
+      </li>
+      <li>
+       Do not commit generated files or secrets by accident.
+      </li>
+     </ul>
+    </article>
+    
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl bg-white p-6 shadow-sm">
+     <h2 class="text-xl font-bold">
+      Reviewer checklist
+     </h2>
+     <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+      <li>
+       Check correctness and readability.
+      </li>
+      <li>
+       Check responsive behavior and accessibility.
+      </li>
+      <li>
+       Ask clear, respectful questions.
+      </li>
+      <li>
+       Separate blockers from optional suggestions.
+      </li>
+      <li>
+       Approve only when you understand the change.
+      </li>
+     </ul>
+    </article>
+   </section>
+   <section class="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+    <h2 class="text-2xl font-bold text-amber-950">
+     If a merge conflict appears
+    </h2>
+    <ol class="mt-3 list-decimal space-y-2 pl-6 text-amber-950">
+     <li>
+      Read the conflict markers and compare both changes.
+     </li>
+     <li>
+      Keep the intended parts from each version; do not blindly choose one side.
+     </li>
+     <li>
+      Remove all conflict markers after resolving.
+     </li>
+     <li>
+      Run the page and review the diff.
+     </li>
+     <li>
+      Stage and commit the resolved file.
+     </li>
+    </ol>
+   </section>
+   <section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Team rules worth agreeing on
+    </h2>
+    <p class="mt-3 text-slate-700">
+     Use descriptive branch names, consistent formatting, small pull requests, clear commit messages and protected main branches when available. Never share passwords or API keys in commits. Use GitHub Issues and Discussions according to the team's needs.
+    </p>
+   </section>
+  </main>
+ </body>
+</html>

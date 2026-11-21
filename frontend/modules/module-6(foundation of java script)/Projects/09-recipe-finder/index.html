@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search meals using TheMealDB public API.">
+  <title>Recipe Finder | JavaScript Project 09</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header><p class="eyebrow">JavaScript Project 09 · API Practice</p><h1>Find something good to cook.</h1><p class="subtitle">Search for meals by name, browse recipe cards, and open a recipe to see its ingredients and instructions.</p></header>
+    <form id="recipe-search" class="search-bar panel panel-pad">
+      <div class="field grow"><label for="recipe-query">Recipe name</label><input id="recipe-query" placeholder="e.g. chicken, pasta, curry" value="chicken" required></div>
+      <button class="btn" type="submit">Search recipes</button>
+    </form>
+    <p id="status" class="status-message" role="status">Loading recipes…</p>
+    <section id="recipe-grid" class="recipe-grid" aria-live="polite"></section>
+    <dialog id="recipe-dialog" class="recipe-dialog">
+      <div class="dialog-head"><h2 id="dialog-title">Recipe details</h2><button id="dialog-close" class="close-button" type="button" aria-label="Close recipe details">×</button></div>
+      <img id="dialog-image" class="dialog-image" src="" alt="">
+      <p id="dialog-category" class="muted small"></p>
+      <h3>Ingredients</h3><ul id="ingredient-list" class="ingredient-list"></ul>
+      <h3>Instructions</h3><p id="instructions" class="instructions"></p>
+      <a id="source-link" target="_blank" rel="noreferrer">Open source recipe ↗</a>
+    </dialog>
+    <footer>Project 09 · Uses TheMealDB public API. Internet connection required.</footer>
+  </main>
+</body>
+</html>

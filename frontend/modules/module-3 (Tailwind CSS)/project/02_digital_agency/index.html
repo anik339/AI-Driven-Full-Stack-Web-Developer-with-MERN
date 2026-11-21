@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practice landing page for a small creative studio helping teams turn complex ideas into useful digital experiences.">
+  <title>Northstar Studio | Digital Agency</title>
+  <!-- Tailwind CSS CDN is used for this learning demo; an internet connection is required. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Top navigation -->
+  <header class="border-b border-slate-200">
+    <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-5" aria-label="Main navigation">
+      <a class="font-extrabold tracking-tight" href="../index.html">Tailwind Practice</a>
+      <a class="text-sm font-semibold text-blue-700 hover:underline" href="../index.html">All 5 Projects</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero section -->
+    <section class="bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 text-white">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/80">DIGITAL AGENCY</p>
+        <h1 class="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">Make your next digital idea feel clear.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/85">A practice landing page for a small creative studio helping teams turn complex ideas into useful digital experiences.</p>
+        <a class="mt-8 inline-flex rounded-xl bg-white px-6 py-3 font-bold text-slate-900 transition hover:-translate-y-0.5" href="#details">Explore Services</a>
+      </div>
+    </section>
+    <!-- Main content cards -->
+    <section id="details" class="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="text-sm font-bold uppercase tracking-widest text-blue-700">Practice project</p><h2 class="mt-2 text-3xl font-extrabold">Explore the details</h2></div>
+        <p class="max-w-md text-slate-600">A static HTML and Tailwind CSS learning project. Review the markup and try changing the utility classes.</p>
+      </div>
+      <section class="grid gap-4 sm:grid-cols-3"><article class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-3xl">✳</div><h3 class="mt-4 text-xl font-bold">Brand Systems</h3><p class="mt-2 text-slate-600">A consistent visual language for growing teams.</p></article><article class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-3xl">▧</div><h3 class="mt-4 text-xl font-bold">Web Design</h3><p class="mt-2 text-slate-600">Clear layouts that work across screen sizes.</p></article><article class="rounded-2xl bg-white p-6 shadow-sm"><div class="text-3xl">↗</div><h3 class="mt-4 text-xl font-bold">Digital Strategy</h3><p class="mt-2 text-slate-600">Simple plans that connect user needs with business goals.</p></article></section>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="border-t border-slate-200"><div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 px-5 py-6 text-sm text-slate-500"><p>Created for frontend learning practice.</p><a class="font-semibold text-blue-700 hover:underline" href="../index.html">Back to project list</a></div></footer>
+</body>
+</html>

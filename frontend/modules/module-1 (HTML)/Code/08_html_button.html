@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 08 html button. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Compare button, submit, reset and disabled buttons.">
+
+  <title>HTML Buttons | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Buttons</h1>
+
+    <p>Compare button, submit, reset and disabled buttons.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="button-demo">
+
+      <h2>Button types</h2>
+
+      <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="button">Normal button (no action without JavaScript)</button></p>
+
+      <p><button type="button" disabled>Disabled button</button></p>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#button-demo" method="get">
+
+        <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="nickname">Nickname</label></p>
+
+        <p>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input id="nickname" type="text" name="nickname" required></p>
+
+        <p><button type="submit">Submit form</button></p>
+
+        <p><button type="reset">Reset form</button></p>
+      </form>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

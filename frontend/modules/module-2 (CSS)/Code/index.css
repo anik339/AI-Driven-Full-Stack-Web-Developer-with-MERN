@@ -1,0 +1,93 @@
+/* TOPIC: index. Read each selector and test one property at a time. */
+
+/* BOX SIZING: makes element dimensions easier to predict. */
+*  {
+  box-sizing: border-box;
+}
+/* BODY: sets the default font, page background and readable text. */
+
+body  {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #172033;
+  background: #f5f7fb;
+}
+.wrap  {
+  width: min(1100px, calc(100% - 32px));
+  margin: auto;
+}
+.top  {
+  padding: 56px 0;
+  background: linear-gradient(135deg, #172033, #3157d5);
+  color: white;
+}
+.eyebrow  {
+  margin: 0 0 8px;
+  color: #f6c66a;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+h1  {
+  margin: 0 0 12px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+.top p:last-child  {
+  max-width: 650px;
+  color: #e1e7ff;
+}
+.lesson-list  {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+  gap: 14px;
+  padding: 30px 0 50px;
+}
+.lesson-link  {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 2px 12px;
+  padding: 18px;
+  border: 1px solid #dce3ee;
+  border-radius: 14px;
+  background: white;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .18s, box-shadow .18s;
+}
+.lesson-link:hover  {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(23,32,51,.09);
+}
+.lesson-link span  {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: #e8edff;
+  color: #203da0;
+  font-weight: 850;
+}
+.lesson-link strong  {
+  align-self: end;
+}
+.lesson-link small  {
+  color: #5d687d;
+}
+.footer  {
+  padding: 22px 0 34px;
+  color: #5d687d;
+  border-top: 1px solid #dce3ee;
+}
+/* MEDIA QUERY: adapts the layout when the screen width changes. */
+
+/* BREAKPOINT WHY: change the layout only when the given condition matches. */
+@media (prefers-reduced-motion: reduce)  {
+  *, *::before, *::after  {
+    transition: none !important;
+  }
+}

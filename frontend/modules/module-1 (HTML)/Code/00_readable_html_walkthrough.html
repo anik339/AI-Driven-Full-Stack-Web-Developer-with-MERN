@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- DOCTYPE WHY: enable modern standards-mode rendering. -->
+<html lang="en">
+<head>
+  <!-- CHARSET WHY: display normal and international characters correctly. -->
+  <meta charset="utf-8">
+  <!-- VIEWPORT WHY: mobile browsers use the actual device width. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 1 - Readable HTML</title>
+</head>
+<body>
+  <!-- HEADER WHY: introduce the page with its primary heading. -->
+  <header><h1>My Developer Profile</h1></header>
+  <!-- NAV WHY: links help readers jump to meaningful sections. -->
+  <nav aria-label="Page sections">
+    <a href="#about">About</a> |
+    <a href="#skills">Skills</a> |
+    <a href="#contact">Contact</a>
+  </nav>
+  <!-- MAIN WHY: contain the unique page content in one landmark. -->
+  <main>
+    <section id="about">
+      <h2>About me</h2>
+      <!-- FIGURE WHY: keep an image with its visible caption. -->
+      <figure>
+        <img src="profile.jpg" alt="Portrait of a student sitting outdoors" width="260" height="350">
+        <figcaption>Learning web development step by step.</figcaption>
+      </figure>
+      <p>HTML gives a webpage its meaning and structure.</p>
+    </section>
+    <section id="skills">
+      <h2>Skills to practice</h2>
+      <!-- LIST WHY: group related items instead of inserting repeated line breaks. -->
+      <ul><li>HTML semantics</li><li>Forms</li><li>Accessibility</li></ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <!-- FORM WHY: each input has a matching label to support accessibility. -->
+      <form action="#" method="get">
+        <label for="visitor-name">Name</label>
+        <input id="visitor-name" name="name" type="text" required>
+        <button type="submit">Preview URL parameters</button>
+      </form>
+      <p>Learning demo: this form does not save information on a server.</p>
+    </section>
+  </main>
+  <!-- FOOTER WHY: separate end-of-page information from the main content. -->
+  <footer><small>Module 1 - HTML-only learning sample</small></footer>
+</body>
+</html>

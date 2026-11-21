@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 4 - Responsive Reasoning</title>
+  <style>
+    /* RESET WHY: predictable box sizes include padding and borders. */
+    *, *::before, *::after { box-sizing: border-box; }
+    /* BASE WHY: mobile-first means the phone layout is the default. */
+    body { margin: 0; font: 1rem/1.6 system-ui, sans-serif; color: #1c2b45; background: #f6f9fc; }
+    .container { width: min(100% - 2rem, 1100px); margin-inline: auto; }
+    .hero { padding: clamp(2rem, 6vw, 5rem) 0; }
+    /* GRID WHY: auto-fit adds columns only when each card fits. */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; }
+    .card { padding: 1.5rem; background: white; border: 1px solid #d7e1ee; border-radius: 1rem; }
+    /* MEDIA WHY: larger screens get two hero columns when space allows. */
+    @media (min-width: 768px) { .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; } }
+    /* FOCUS WHY: a visible keyboard ring is essential accessibility feedback. */
+    a:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero"><div><h1>Mobile first</h1><p>Begin with one column; expand as space becomes available.</p></div><p class="card">Resize to 375px, 768px, and 1280px. Note how this region changes.</p></header>
+    <section class="grid" aria-label="Responsive patterns">
+      <article class="card"><h2>Fluid width</h2><p>Use percentages plus a maximum.</p></article>
+      <article class="card"><h2>Grid</h2><p>Use columns that grow when space allows.</p></article>
+      <article class="card"><h2>Testing</h2><p>Check readability, touch spacing and overflow.</p></article>
+    </section>
+  </main>
+</body>
+</html>

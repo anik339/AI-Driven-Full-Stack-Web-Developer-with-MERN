@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track job applications with a simple JavaScript dashboard.">
+  <title>Job Application Tracker | JavaScript Project 10</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header><p class="eyebrow">JavaScript Project 10 · Portfolio Project</p><h1>Keep your job search organized.</h1><p class="subtitle">Record applications, update their status, filter your pipeline, and track your progress in one simple dashboard.</p></header>
+    <section class="stats grid" aria-label="Application summary">
+      <article class="panel stat"><span>Total applications</span><strong id="total-stat">0</strong></article>
+      <article class="panel stat"><span>Interviews</span><strong id="interview-stat">0</strong></article>
+      <article class="panel stat"><span>Offers</span><strong id="offer-stat">0</strong></article>
+    </section>
+    <section class="panel panel-pad">
+      <h2>Add an application</h2>
+      <form id="job-form" class="job-form">
+        <div class="field"><label for="company">Company</label><input id="company" maxlength="70" placeholder="Company name" required></div>
+        <div class="field"><label for="role">Role</label><input id="role" maxlength="70" placeholder="Junior Frontend Developer" required></div>
+        <div class="field"><label for="applied-date">Applied date</label><input id="applied-date" type="date" required></div>
+        <div class="field"><label for="job-status">Status</label><select id="job-status"><option value="applied">Applied</option><option value="interview">Interview</option><option value="offer">Offer</option><option value="rejected">Rejected</option></select></div>
+        <div class="field"><label for="job-link">Job URL (optional)</label><input id="job-link" type="url" placeholder="https://example.com/job"></div>
+        <button class="btn" type="submit">Add application</button>
+      </form>
+    </section>
+    <section class="applications-section">
+      <div class="row-between"><h2>Application pipeline</h2><div class="filters"><label class="sr-only" for="status-filter">Filter by status</label><select id="status-filter"><option value="all">All statuses</option><option value="applied">Applied</option><option value="interview">Interview</option><option value="offer">Offer</option><option value="rejected">Rejected</option></select></div></div>
+      <label class="sr-only" for="job-search">Search applications</label><input id="job-search" class="search-input" type="search" placeholder="Search company or role…">
+      <div id="application-list" class="application-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state">No applications yet. Add your first application above.</p>
+    </section>
+    <footer>Project 10 · Data is stored locally in this browser. No applications are sent to employers.</footer>
+  </main>
+</body>
+</html>

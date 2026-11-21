@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A static responsive dashboard concept for team collaboration and GitHub pull requests." name="description"/>
+  <title>
+   TeamFlow | Collaboration Portal
+  </title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+  </script>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="border-b border-slate-200 bg-white">
+   
+<!-- NAV: groups important navigation links. -->
+<!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+<!-- FLEX WHY: flex aligns content along one main axis; justify and items control alignment. -->
+<nav aria-label="Main navigation" class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="text-2xl font-black" href="#overview">
+     Team
+     <span class="text-indigo-700">
+      Flow
+     </span>
+    </a>
+    <div class="flex flex-wrap gap-4 text-sm font-semibold">
+     <a class="hover:text-indigo-700" href="#tasks">
+      Tasks
+     </a>
+     <a class="hover:text-indigo-700" href="#pull-requests">
+      Pull requests
+     </a>
+     <a class="hover:text-indigo-700" href="#workflow">
+      Workflow
+     </a>
+    </div>
+    <span class="w-fit rounded-full bg-emerald-100 px-3 py-1 text-sm font-bold text-emerald-800">
+     Demo workspace
+    </span>
+   </nav>
+  </header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-7xl space-y-8 px-5 py-8" id="overview">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+     <p class="text-sm font-bold uppercase tracking-widest text-indigo-700">
+      Team workspace
+     </p>
+     <h1 class="mt-2 text-3xl font-black sm:text-4xl">
+      Frontend Sprint Board
+     </h1>
+     <p class="mt-3 max-w-2xl text-slate-600">
+      A static UI concept showing how a small team can track responsive design tasks and review changes.
+     </p>
+    </div>
+    <div class="rounded-xl bg-white px-5 py-4 shadow-sm">
+     <p class="text-sm text-slate-500">
+      Sprint
+     </p>
+     <p class="text-xl font-black">
+      Module 4
+     </p>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl bg-white p-5 shadow-sm">
+     <p class="text-sm text-slate-500">
+      Open tasks
+     </p>
+     <p class="mt-2 text-3xl font-black">
+      08
+     </p>
+     <p class="mt-2 text-sm text-indigo-700">
+      Responsive UI
+     </p>
+    </article>
+    
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl bg-white p-5 shadow-sm">
+     <p class="text-sm text-slate-500">
+      In progress
+     </p>
+     <p class="mt-2 text-3xl font-black">
+      03
+     </p>
+     <p class="mt-2 text-sm text-amber-700">
+      Feature branches
+     </p>
+    </article>
+    <article class="rounded-2xl bg-white p-5 shadow-sm">
+     <p class="text-sm text-slate-500">
+      Pull requests
+     </p>
+     <p class="mt-2 text-3xl font-black">
+      02
+     </p>
+     <p class="mt-2 text-sm text-violet-700">
+      Review requested
+     </p>
+    </article>
+    <article class="rounded-2xl bg-white p-5 shadow-sm">
+     <p class="text-sm text-slate-500">
+      Ready to merge
+     </p>
+     <p class="mt-2 text-3xl font-black">
+      01
+     </p>
+     <p class="mt-2 text-sm text-emerald-700">
+      Checks passed
+     </p>
+    </article>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section id="tasks">
+    <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+     <div>
+      <h2 class="text-2xl font-black">
+       Task board
+      </h2>
+      <p class="mt-1 text-sm text-slate-500">
+       Example status cards; this page is not connected to a live database.
+      </p>
+     </div>
+     <span class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold">
+      Sprint: Responsive UI
+     </span>
+    </div>
+    <div class="grid gap-5 lg:grid-cols-3">
+     <section class="rounded-2xl bg-slate-200/70 p-4">
+      <h3 class="mb-4 font-bold">
+       To do
+       <span class="ml-2 rounded-full bg-white px-2 py-1 text-xs">
+        2
+       </span>
+      </h3>
+      <article class="mb-3 rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-indigo-700">
+        UI-14
+       </p>
+       <h4 class="mt-2 font-bold">
+        Test mobile navigation
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        Check 320px and 375px layouts.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Branch: feature/mobile-nav
+       </p>
+      </article>
+      <article class="rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-indigo-700">
+        UI-15
+       </p>
+       <h4 class="mt-2 font-bold">
+        Improve image sizing
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        Prevent overflow and layout shifts.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Branch: feature/fluid-images
+       </p>
+      </article>
+     </section>
+     <section class="rounded-2xl bg-indigo-100/70 p-4">
+      <h3 class="mb-4 font-bold">
+       In progress
+       <span class="ml-2 rounded-full bg-white px-2 py-1 text-xs">
+        2
+       </span>
+      </h3>
+      <article class="mb-3 rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-indigo-700">
+        UI-11
+       </p>
+       <h4 class="mt-2 font-bold">
+        Responsive card grid
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        One, two and three-column layouts.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Branch: feature/card-grid
+       </p>
+      </article>
+      <article class="rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-indigo-700">
+        DOC-04
+       </p>
+       <h4 class="mt-2 font-bold">
+        Document AI review prompt
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        Ask for a minimal, explainable fix.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Branch: docs/ai-review-prompt
+       </p>
+      </article>
+     </section>
+     <section class="rounded-2xl bg-emerald-100/70 p-4">
+      <h3 class="mb-4 font-bold">
+       Done
+       <span class="ml-2 rounded-full bg-white px-2 py-1 text-xs">
+        2
+       </span>
+      </h3>
+      <article class="mb-3 rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-emerald-700">
+        UI-08
+       </p>
+       <h4 class="mt-2 font-bold">
+        Add viewport meta tag
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        Verified on mobile emulation.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Merged into main
+       </p>
+      </article>
+      <article class="rounded-xl bg-white p-4 shadow-sm">
+       <p class="text-xs font-bold uppercase text-emerald-700">
+        DOC-02
+       </p>
+       <h4 class="mt-2 font-bold">
+        Write pull request checklist
+       </h4>
+       <p class="mt-2 text-sm text-slate-600">
+        Added testing and review notes.
+       </p>
+       <p class="mt-3 text-xs text-slate-500">
+        Merged into main
+       </p>
+      </article>
+     </section>
+    </div>
+   </section>
+   <section class="rounded-2xl bg-white p-6 shadow-sm" id="pull-requests">
+    <div class="flex flex-wrap items-start justify-between gap-3">
+     <div>
+      <p class="text-sm font-bold uppercase tracking-widest text-violet-700">
+       GitHub collaboration
+      </p>
+      <h2 class="mt-2 text-2xl font-black">
+       Pull request review
+      </h2>
+      <p class="mt-2 text-slate-600">
+       Example PR: improve the responsive card grid.
+      </p>
+     </div>
+     <span class="rounded-full bg-amber-100 px-3 py-1 text-sm font-bold text-amber-800">
+      Review requested
+     </span>
+    </div>
+    <div class="mt-5 grid gap-4 md:grid-cols-3">
+     <div class="rounded-xl border border-slate-200 p-4">
+      <p class="text-sm text-slate-500">
+       Source branch
+      </p>
+      <p class="mt-2 break-words font-mono text-sm">
+       feature/card-grid
+      </p>
+     </div>
+     <div class="rounded-xl border border-slate-200 p-4">
+      <p class="text-sm text-slate-500">
+       Target branch
+      </p>
+      <p class="mt-2 font-mono text-sm">
+       main
+      </p>
+     </div>
+     <div class="rounded-xl border border-slate-200 p-4">
+      <p class="text-sm text-slate-500">
+       Checks
+      </p>
+      <p class="mt-2 font-bold text-emerald-700">
+       Layout manually tested
+      </p>
+     </div>
+    </div>
+    <h3 class="mt-6 font-bold">
+     Reviewer checklist
+    </h3>
+    
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="mt-3 grid gap-2 text-slate-700 sm:grid-cols-2">
+     <li class="rounded-lg bg-slate-50 p-3">
+      Check mobile and desktop widths.
+     </li>
+     <li class="rounded-lg bg-slate-50 p-3">
+      Inspect changed files and diff.
+     </li>
+     <li class="rounded-lg bg-slate-50 p-3">
+      Confirm labels and alt text.
+     </li>
+     <li class="rounded-lg bg-slate-50 p-3">
+      Request fixes respectfully.
+     </li>
+    </ul>
+   </section>
+   <section class="rounded-2xl bg-slate-950 p-6 text-white sm:p-8" id="workflow">
+    <h2 class="text-2xl font-black">
+     Team workflow
+    </h2>
+    <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+     <div class="rounded-xl bg-white/10 p-4">
+      <p class="text-sm text-cyan-300">
+       01
+      </p>
+      <h3 class="mt-2 font-bold">
+       Plan
+      </h3>
+      <p class="mt-2 text-sm text-slate-300">
+       Create a task and agree on acceptance criteria.
+      </p>
+     </div>
+     <div class="rounded-xl bg-white/10 p-4">
+      <p class="text-sm text-cyan-300">
+       02
+      </p>
+      <h3 class="mt-2 font-bold">
+       Branch
+      </h3>
+      <p class="mt-2 text-sm text-slate-300">
+       Work on a focused feature branch.
+      </p>
+     </div>
+     <div class="rounded-xl bg-white/10 p-4">
+      <p class="text-sm text-cyan-300">
+       03
+      </p>
+      <h3 class="mt-2 font-bold">
+       Review
+      </h3>
+      <p class="mt-2 text-sm text-slate-300">
+       Push, open a PR and request feedback.
+      </p>
+     </div>
+     <div class="rounded-xl bg-white/10 p-4">
+      <p class="text-sm text-cyan-300">
+       04
+      </p>
+      <h3 class="mt-2 font-bold">
+       Merge
+      </h3>
+      <p class="mt-2 text-sm text-slate-300">
+       Resolve feedback and merge after checks.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer class="border-t border-slate-200 bg-white px-5 py-6 text-center text-sm text-slate-500">
+   TeamFlow | Static HTML and Tailwind CSS project concept
+  </footer>
+ </body>
+</html>

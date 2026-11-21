@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 20 audio video. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Use your supplied local audio and video files with native players.">
+
+  <title>HTML Audio and Video | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Audio and Video</h1>
+
+    <p>Use your supplied local audio and video files with native players.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Audio player</h2>
+
+<!-- AUDIO: controls shows the browser player; source points to audio. -->
+<audio controls preload="metadata">
+
+        <source src="sample_audio.mpeg" type="audio/mpeg">
+
+        Your browser does not support audio. 
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="sample_audio.mpeg">Download audio</a>.
+      </audio>
+
+      <h2>Video player</h2>
+
+<!-- VIDEO: controls shows playback; source points to video. -->
+<video controls preload="metadata" width="640">
+
+        <source src="sample_video.mp4" type="video/mp4">
+
+        Your browser does not support video. <a href="sample_video.mp4">Download video</a>.
+      </video>
+
+      <p>Shortcut: controls = play/pause/volume; preload = loading hint; source = filename.</p>
+
+      <p>Before publishing, add accurate captions and transcript when available; none are fabricated here.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

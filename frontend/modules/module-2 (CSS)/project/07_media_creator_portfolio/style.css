@@ -1,0 +1,401 @@
+/* TOPIC: style. Read each selector and test one property at a time. */
+/* Global reset and design tokens. */
+
+/* DESIGN TOKENS: central variables keep colors and spacing consistent. */
+:root  {
+  --ink: #182235;
+  --muted: #68748a;
+  --paper: #f7f8fc;
+  --surface: #fff;
+  --brand: #3157d5;
+  --brand-dark: #203da0;
+  --accent: #f2b84b;
+  --line: #e0e5ef;
+  --radius: 18px;
+  --shadow: 0 18px 44px rgba(24,34,53,.09);
+}
+/* BOX SIZING: makes element dimensions easier to predict. */
+
+*  {
+  box-sizing: border-box;
+}
+html  {
+  scroll-behavior: smooth;
+}
+/* BODY: sets the default font, page background and readable text. */
+
+body  {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+img, video  {
+  display: block;
+  max-width: 100%;
+}
+a  {
+  color: inherit;
+}
+button, input, textarea, select  {
+  font: inherit;
+}
+/* FOCUS: helps keyboard users find their current target. */
+
+/* ACCESSIBILITY WHY: keep an obvious keyboard focus indicator. */
+:focus-visible  {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+/* CONTAINER: limits width and centers content on large screens. */
+
+.container  {
+  width: min(1120px, calc(100% - 36px));
+  margin-inline: auto;
+}
+header  {
+  padding: 20px 0;
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--line);
+}
+/* NAVIGATION: aligns menu items and keeps spacing consistent. */
+
+.nav  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.logo  {
+  font-weight: 900;
+  letter-spacing: -.05em;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.nav-links  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.nav-links a  {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 700;
+}
+.nav-links a:hover  {
+  color: var(--brand);
+}
+main  {
+  padding-bottom: 64px;
+}
+.eyebrow  {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .75rem;
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+h1,h2,h3  {
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+h1  {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  margin: 0 0 18px;
+}
+h2  {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  margin: 0 0 12px;
+}
+h3  {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+p  {
+  margin: 0 0 14px;
+}
+.lead  {
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+.section  {
+  padding-top: 66px;
+}
+.section-head  {
+  max-width: 680px;
+  margin-bottom: 26px;
+}
+/* GRID: places cards into responsive rows and columns. */
+
+.grid  {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+}
+/* CARD: groups information with a reusable visual treatment. */
+
+.card  {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.muted  {
+  color: var(--muted);
+}
+.button  {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 17px;
+  border: 1px solid var(--brand);
+  border-radius: 10px;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+.button:hover  {
+  background: var(--brand-dark);
+}
+.button.secondary  {
+  color: var(--brand);
+  background: transparent;
+}
+.button.secondary:hover  {
+  color: white;
+  background: var(--brand);
+}
+footer  {
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: white;
+}
+/* MEDIA QUERY: adapts the layout when the screen width changes. */
+
+/* WIDTH WHY: cap long lines and prevent content from stretching on large screens. */
+@media (max-width: 640px)  {
+  .container  {
+    width: min(100% - 26px, 1120px);
+  }
+  .section  {
+    padding-top: 46px;
+  }
+  .card  {
+    padding: 19px;
+  }
+}
+/* BREAKPOINT WHY: change the layout only when the given condition matches. */
+@media (prefers-reduced-motion: reduce)  {
+  html  {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after  {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* Project-specific layout and components. */
+.logo span  {
+  color: #c35e3b;
+}
+.media-hero  {
+  padding: 64px 0;
+  background: #f1e8dd;
+}
+.media-hero-grid  {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 45px;
+  align-items: center;
+}
+.media-hero h1 em  {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  color: #b34e31;
+}
+.media-hero .button  {
+  margin-top: 18px;
+  background: #283a35;
+  border-color: #283a35;
+}
+.profile-frame  {
+  margin: 0;
+  padding: 12px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transform: rotate(2deg);
+}
+.profile-frame img  {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.profile-frame figcaption  {
+  padding: 10px 4px 2px;
+  color: var(--muted);
+  font-size: .78rem;
+}
+.gallery  {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 18px;
+}
+.gallery-item  {
+  margin: 0;
+}
+.gallery-large  {
+  grid-row: span 2;
+}
+.scene  {
+  min-height: 220px;
+  display: flex;
+  align-items: end;
+  padding: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.gallery-large .scene  {
+  min-height: 470px;
+}
+.scene span  {
+  font-size: 2.8rem;
+  line-height: 1;
+  font-weight: 950;
+  color: rgba(255,255,255,.85);
+}
+.scene-one  {
+  background: linear-gradient(160deg, transparent 20%, rgba(0,0,0,.7)), radial-gradient(circle at 30% 25%, #f4c97b 0 8%, transparent 9%), linear-gradient(140deg, #47665d, #182b34 60%, #0b151e);
+}
+.scene-two  {
+  background: linear-gradient(145deg, #f4c3a4, #d67b5a 48%, #643c55);
+}
+.scene-three  {
+  background: linear-gradient(165deg, #b6d4d7, #447c8b 48%, #1b394c);
+}
+.gallery-item figcaption  {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px 2px;
+}
+.gallery-item small  {
+  color: var(--muted);
+}
+.media-player-grid  {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 35px;
+  align-items: center;
+}
+.player-card  {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+.player-card video  {
+  width: 100%;
+  max-height: 380px;
+  background: #182235;
+  border-radius: 12px;
+}
+.player-card p  {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.audio-card audio  {
+  width: 100%;
+}
+.sound-art  {
+  min-height: 130px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #e4e9ff;
+  border-radius: 12px;
+}
+.sound-art span  {
+  width: 8px;
+  height: 35px;
+  border-radius: 999px;
+  background: #3157d5;
+}
+.sound-art span:nth-child(2), .sound-art span:nth-child(7)  {
+  height: 58px;
+}
+.sound-art span:nth-child(3), .sound-art span:nth-child(6)  {
+  height: 82px;
+}
+.sound-art span:nth-child(4)  {
+  height: 48px;
+}
+.contact  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: clamp(22px, 5vw, 44px);
+  border-radius: 22px;
+  background: #e8edff;
+}
+.contact form  {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.contact label  {
+  font-size: .9rem;
+  font-weight: 800;
+}
+.contact input, .contact textarea, .contact select  {
+  padding: 12px;
+  border: 1px solid #b9c5df;
+  border-radius: 9px;
+  background: white;
+}
+.contact button  {
+  margin-top: 8px;
+  cursor: pointer;
+}
+.foot-row  {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foot-row a  {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 800;
+}
+@media (max-width: 760px)  {
+  .media-hero-grid, .media-player-grid, .contact  {
+    grid-template-columns: 1fr;
+  }
+  .profile-frame  {
+    max-width: 320px;
+  }
+  .gallery  {
+    grid-template-columns: 1fr;
+  }
+  .gallery-large  {
+    grid-row: auto;
+  }
+  .gallery-large .scene  {
+    min-height: 300px;
+  }
+}

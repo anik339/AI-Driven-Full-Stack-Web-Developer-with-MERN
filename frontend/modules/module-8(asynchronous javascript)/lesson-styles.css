@@ -1,0 +1,43 @@
+/* Shared styles for Module 08 supplementary JavaScript lessons. */
+:root {
+  color-scheme: light;
+  --lesson-ink: #172033;
+  --lesson-muted: #5d6b82;
+  --lesson-line: #dce4ef;
+  --lesson-brand: #315efb;
+  --lesson-bg: #f3f6fb;
+  --lesson-panel: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 28px 16px;
+  background: var(--lesson-bg);
+  color: var(--lesson-ink);
+  font: 16px/1.65 Inter, Segoe UI, Arial, sans-serif;
+}
+.shell { width: min(900px, 100%); margin: 0 auto; display: grid; gap: 18px; }
+header { padding: 28px; border-radius: 18px; background: #14213d; color: #fff; }
+.eyebrow { margin: 0 0 8px; color: #aebfff; font-size: .74rem; font-weight: 800; letter-spacing: .13em; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.12; }
+.lead { max-width: 720px; margin: 12px 0 0; color: #d4deef; }
+.panel { padding: 22px; border: 1px solid var(--lesson-line); border-radius: 16px; background: var(--lesson-panel); box-shadow: 0 8px 24px rgba(23, 32, 51, .05); }
+.panel h2 { margin: 0 0 8px; font-size: 1.2rem; }
+.panel p { color: var(--lesson-muted); }
+.stack { display: grid; gap: 12px; }
+.output { min-height: 70px; padding: 14px; border: 1px solid var(--lesson-line); border-radius: 10px; background: #f8faff; }
+.section-title { margin: 12px 0 0; color: var(--lesson-brand); font-size: .95rem; }
+.result-row { display: grid; grid-template-columns: minmax(130px, .35fr) 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--lesson-line); }
+.result-row:last-child { border-bottom: 0; }
+.result-label { font-weight: 750; }
+.result-value { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; font: .9rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.note { margin: 8px 0 0; padding: 13px 15px; border-left: 4px solid #315efb; border-radius: 8px; background: #edf3ff; color: #29416f; }
+button { padding: 9px 14px; border: 0; border-radius: 8px; background: #315efb; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+button:hover { background: #2448c7; }
+button:focus-visible { outline: 3px solid #e6a23c; outline-offset: 3px; }
+footer { padding: 12px 2px; color: var(--lesson-muted); font-size: .84rem; }
+@media (max-width: 560px) {
+  body { padding: 16px 12px; }
+  header, .panel { padding: 18px; }
+  .result-row { grid-template-columns: 1fr; gap: 3px; }
+}

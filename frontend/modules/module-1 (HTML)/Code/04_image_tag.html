@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 04 image tag. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Load your own image with meaningful alt text and width/height.">
+
+  <title>HTML Image and Figure | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>HTML Image and Figure</h1>
+
+    <p>Load your own image with meaningful alt text and width/height.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section>
+
+      <h2>Uploaded profile photograph</h2>
+
+<!-- FIGURE: groups a media item with its caption. -->
+<figure>
+
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img src="profile.jpg" alt="Person seated outdoors beneath a tree" width="300" height="400" loading="lazy">
+
+        <figcaption>Using the local profile.jpg file with semantic caption.</figcaption>
+      </figure>
+
+      <p>src = Source. alt = Alternative text. width/height = original display dimensions (not CSS).</p>
+
+      <p>Use empty alt on purely decorative images; use meaningful alt when the image conveys content.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

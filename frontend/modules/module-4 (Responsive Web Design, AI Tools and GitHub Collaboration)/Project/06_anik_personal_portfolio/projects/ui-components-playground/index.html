@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Components Playground — Anik Chandra Dey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:45px 20px;background:#edf6fb;color:#142c40;font-family:"DM Sans",sans-serif}.wrap{max-width:850px;margin:auto}.back{color:#3d7392;text-decoration:none;font-size:11px;font-weight:700}.eyebrow{margin-top:35px;color:#397da4;font-size:9px;font-weight:700;letter-spacing:.16em}.title{margin:10px 0;font:700 clamp(34px,6vw,55px)/1.05 "Space Grotesk";letter-spacing:-.06em}.intro{max-width:540px;color:#607b8e;font-size:13px;line-height:1.8}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:32px}.box{padding:23px;border:1px solid #d4e5ee;border-radius:15px;background:white;box-shadow:0 12px 30px #214f6710}.box h2{margin:0 0 17px;font:600 16px "Space Grotesk"}.btns{display:flex;flex-wrap:wrap;gap:9px}.btn{padding:10px 14px;border:0;border-radius:7px;background:#1c5c84;color:white;font-size:10px;font-weight:700;cursor:pointer}.btn.alt{border:1px solid #a8c9db;background:white;color:#285e7b}.notice{margin-top:15px;color:#3d7392;font-size:11px;min-height:16px}.sample-card{display:flex;gap:11px;padding:13px;border:1px solid #d8e8ef;border-radius:10px}.sample-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:#dff2fb;color:#28739b;font-weight:700}.sample-card p{margin:4px 0 0;color:#7890a0;font-size:10px}.bars{display:grid;gap:9px}.bars i{display:block;height:8px;border-radius:8px;background:#d7eaf3}.bars i:nth-child(1){width:95%}.bars i:nth-child(2){width:75%}.bars i:nth-child(3){width:55%}.pill{display:inline-block;margin:4px 4px 0 0;padding:7px 10px;border-radius:50px;background:#e3f4fb;color:#397da4;font-size:9px;font-weight:700}@media(max-width:620px){.grid{grid-template-columns:1fr}body{padding-top:25px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="../../index.html">← Back to portfolio</a>
+    <p class="eyebrow">FRONT-END PRACTICE / 03</p>
+    <h1 class="title">UI Components<br>Playground.</h1>
+    <p class="intro">A small practice space for reusable interface patterns. Explore button styles, simple cards, badges, and layout elements built using HTML and CSS.</p>
+    <div class="grid">
+      <section class="box"><h2>Buttons &amp; interaction</h2><div class="btns"><span class="btn">Primary button</span><span class="btn alt">Secondary button</span></div><p class="notice">Visual components only · HTML + CSS.</p></section>
+      <section class="box"><h2>Information card</h2><div class="sample-card"><div class="sample-icon">AD</div><div><b style="font-size:12px">Anik Chandra Dey</b><p>CSE Student · AIUB</p></div></div></section>
+      <section class="box"><h2>Content placeholders</h2><div class="bars"><i></i><i></i><i></i></div></section>
+      <section class="box"><h2>Skill badges</h2><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Tailwind CSS</span><span class="pill">GitHub</span></section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Filters and Backdrop Filters
+</title>
+
+<link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+
+<body class="bg-gray-100 p-8">
+
+
+<div class="max-w-6xl mx-auto">
+
+
+<h1 class="text-5xl font-bold text-center text-blue-600 mb-12">
+
+Filters & Backdrop Filters
+
+</h1>
+
+
+
+
+
+<!-- Image Filters -->
+
+<section class="bg-white p-8 rounded-2xl shadow-xl mb-10">
+
+
+<h2 class="text-3xl font-bold mb-6">
+
+1. Image Filters
+
+</h2>
+
+
+<div class="grid md:grid-cols-4 gap-6">
+
+
+<div>
+
+<p class="font-bold mb-3">
+Normal
+</p>
+
+<img src="https://picsum.photos/400"
+class="rounded-xl">
+
+</div>
+
+
+
+<div>
+
+<p class="font-bold mb-3">
+Grayscale
+</p>
+
+<img src="https://picsum.photos/400"
+class="rounded-xl grayscale">
+
+</div>
+
+
+
+
+<div>
+
+<p class="font-bold mb-3">
+Blur
+</p>
+
+<img src="https://picsum.photos/400"
+class="rounded-xl blur-sm">
+
+</div>
+
+
+
+
+
+<div>
+
+<p class="font-bold mb-3">
+Brightness
+</p>
+
+<img src="https://picsum.photos/400"
+class="rounded-xl brightness-150">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Backdrop Filter -->
+
+<section class="relative h-96 rounded-2xl overflow-hidden">
+
+
+<img 
+src="https://picsum.photos/1200/600"
+class="w-full h-full object-cover">
+
+
+
+<div class="absolute inset-0 flex items-center justify-center">
+
+
+<div class="bg-white/30 backdrop-blur-md p-10 rounded-2xl text-center">
+
+
+<h2 class="text-3xl font-bold text-white">
+
+Backdrop Blur Effect
+
+</h2>
+
+
+<p class="text-white mt-3">
+
+Glassmorphism Design
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

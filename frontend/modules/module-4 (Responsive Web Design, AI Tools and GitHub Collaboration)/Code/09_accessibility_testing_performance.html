@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: 09 accessibility testing performance. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Responsive Testing, Accessibility and Performance
+  </title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+  </script>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body class="bg-slate-100 text-slate-900">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="bg-slate-950 px-5 py-10 text-white">
+   <div class="mx-auto max-w-5xl">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="text-sm text-cyan-300 hover:underline" href="index.html">
+     Back to Code Lessons
+    </a>
+    <h1 class="mt-3 text-4xl font-black">
+     Testing, Accessibility and Performance
+    </h1>
+    <p class="mt-3 text-slate-300">
+     A responsive page is not complete until it is usable, readable and tested.
+    </p>
+   </div>
+  </header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main class="mx-auto max-w-5xl space-y-6 px-5 py-10">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Responsive test plan
+    </h2>
+    <!-- TABLE WHY: horizontal scrolling prevents wide tables from squeezing small screens. -->
+    <div class="mt-4 overflow-x-auto">
+     
+<!-- TABLE: use only for tabular data, not general layout. -->
+<table class="w-full min-w-[560px] border-collapse text-left">
+      
+<!-- TABLE HEAD: names columns for easier scanning. -->
+<thead class="bg-slate-900 text-white">
+       <tr>
+        
+<!-- TH: scope explains whether a header describes a row or column. -->
+<th class="p-3" scope="col">
+         Viewport
+        </th>
+        <th class="p-3" scope="col">
+         What to inspect
+        </th>
+        <th class="p-3" scope="col">
+         Expected result
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="border-b">
+        <th class="p-3" scope="row">
+         320-390px
+        </th>
+        <td class="p-3">
+         Navigation, text, buttons
+        </td>
+        <td class="p-3">
+         No accidental horizontal page scroll
+        </td>
+       </tr>
+       <tr class="border-b">
+        <th class="p-3" scope="row">
+         640-900px
+        </th>
+        <td class="p-3">
+         Cards, forms, spacing
+        </td>
+        <td class="p-3">
+         Columns appear when content fits
+        </td>
+       </tr>
+       <tr class="border-b">
+        <th class="p-3" scope="row">
+         1024px+
+        </th>
+        <td class="p-3">
+         Max width, long lines
+        </td>
+        <td class="p-3">
+         Content stays readable, not stretched
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Accessibility basics
+    </h2>
+    
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="mt-4 list-disc space-y-2 pl-6 text-slate-700">
+     <li>
+      Use semantic landmarks and a sensible heading order.
+     </li>
+     <li>
+      Give informative images meaningful
+      <code>
+       alt
+      </code>
+      text; use empty alt for decorative images.
+     </li>
+     <li>
+      Connect every form label to its input with matching
+      <code>
+       for
+      </code>
+      and
+      <code>
+       id
+      </code>
+      .
+     </li>
+     <li>
+      Keep keyboard focus visible and all controls reachable without a mouse.
+     </li>
+     <li>
+      Use sufficient text contrast and do not communicate meaning with color alone.
+     </li>
+     <li>
+      Use descriptive link text rather than repeated "click here" labels.
+     </li>
+    </ul>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="rounded-2xl bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-bold">
+     Performance basics
+    </h2>
+    <ul class="mt-4 list-disc space-y-2 pl-6 text-slate-700">
+     <li>
+      Resize and compress images to a suitable size.
+     </li>
+     <li>
+      Use
+      <code>
+       loading="lazy"
+      </code>
+      for below-the-fold images when appropriate.
+     </li>
+     <li>
+      Set image dimensions to reduce layout shifts.
+     </li>
+     <li>
+      Avoid loading libraries that the page does not need.
+     </li>
+     <li>
+      For production, compile Tailwind with the official build workflow rather than relying on the browser CDN.
+     </li>
+    </ul>
+   </section>
+   <section class="rounded-2xl border border-cyan-200 bg-cyan-50 p-6">
+    <h2 class="text-xl font-bold text-cyan-950">
+     Browser DevTools checklist
+    </h2>
+    <p class="mt-3 leading-7 text-cyan-950">
+     Open device emulation, inspect the computed styles, check console errors, test keyboard navigation, throttle the network when useful, and compare the rendered page with the expected design. Use automated accessibility tools as helpers, not as a substitute for manual testing.
+    </p>
+   </section>
+  </main>
+ </body>
+</html>

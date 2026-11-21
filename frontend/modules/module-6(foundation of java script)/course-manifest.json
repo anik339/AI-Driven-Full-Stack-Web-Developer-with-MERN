@@ -1,0 +1,170 @@
+[
+  {
+    "topic": 1,
+    "folder": "01-javascript-overview",
+    "title": "JavaScript Overview",
+    "duration": "4 min"
+  },
+  {
+    "topic": 2,
+    "folder": "02-document-write-console-log",
+    "title": "document.write() and console.log()",
+    "duration": "5 min"
+  },
+  {
+    "topic": 3,
+    "folder": "03-js-comments",
+    "title": "JavaScript Comments",
+    "duration": "5 min"
+  },
+  {
+    "topic": 4,
+    "folder": "04-js-variables",
+    "title": "JavaScript Variables",
+    "duration": "13 min"
+  },
+  {
+    "topic": 5,
+    "folder": "05-primitive-data-types",
+    "title": "Primitive Data Types",
+    "duration": "11 min"
+  },
+  {
+    "topic": 6,
+    "folder": "06-non-primitive-data-types",
+    "title": "Non-Primitive Data Types",
+    "duration": "8 min"
+  },
+  {
+    "topic": 7,
+    "folder": "07-javascript-operators",
+    "title": "JavaScript Operators",
+    "duration": "22 min"
+  },
+  {
+    "topic": 8,
+    "folder": "08-if-else-statement",
+    "title": "If Else Statement",
+    "duration": "7 min"
+  },
+  {
+    "topic": 9,
+    "folder": "09-switch-case",
+    "title": "Switch Case",
+    "duration": "6 min"
+  },
+  {
+    "topic": 10,
+    "folder": "10-basic-for-loop",
+    "title": "Basic For Loop",
+    "duration": "6 min"
+  },
+  {
+    "topic": 11,
+    "folder": "11-loop-break-continue",
+    "title": "Loop Break and Continue",
+    "duration": "5 min"
+  },
+  {
+    "topic": 12,
+    "folder": "12-while-loop",
+    "title": "While Loop",
+    "duration": "4 min"
+  },
+  {
+    "topic": 13,
+    "folder": "13-do-while-loop",
+    "title": "Do While Loop",
+    "duration": "4 min"
+  },
+  {
+    "topic": 14,
+    "folder": "14-javascript-function",
+    "title": "JavaScript Function",
+    "duration": "3 min"
+  },
+  {
+    "topic": 15,
+    "folder": "15-function-parameter",
+    "title": "Function Parameter",
+    "duration": "4 min"
+  },
+  {
+    "topic": 16,
+    "folder": "16-function-return",
+    "title": "Function Return",
+    "duration": "7 min"
+  },
+  {
+    "topic": 17,
+    "folder": "17-javascript-object",
+    "title": "JavaScript Object",
+    "duration": "9 min"
+  },
+  {
+    "topic": 18,
+    "folder": "18-javascript-array",
+    "title": "JavaScript Array",
+    "duration": "3 min"
+  },
+  {
+    "topic": 19,
+    "folder": "19-for-in-loop",
+    "title": "For In Loop",
+    "duration": "4 min"
+  },
+  {
+    "topic": 20,
+    "folder": "20-for-of-loop",
+    "title": "For Of Loop",
+    "duration": "3 min"
+  },
+  {
+    "topic": 21,
+    "folder": "21-array-methods-part-1",
+    "title": "Array Methods — Part 1",
+    "duration": "16 min"
+  },
+  {
+    "topic": 22,
+    "folder": "22-array-methods-part-2",
+    "title": "Array Methods — Part 2",
+    "duration": "9 min"
+  },
+  {
+    "topic": 23,
+    "folder": "23-array-methods-part-3",
+    "title": "Array Methods — Part 3",
+    "duration": "18 min"
+  },
+  {
+    "topic": 24,
+    "folder": "24-string-methods-part-1",
+    "title": "String Methods — Part 1",
+    "duration": "14 min"
+  },
+  {
+    "topic": 25,
+    "folder": "25-string-methods-part-2",
+    "title": "String Methods — Part 2",
+    "duration": "17 min"
+  },
+  {
+    "topic": 26,
+    "folder": "26-javascript-date-object",
+    "title": "JavaScript Date Object",
+    "duration": "11 min"
+  },
+  {
+    "topic": 27,
+    "folder": "27-javascript-math-object",
+    "title": "JavaScript Math Object",
+    "duration": "10 min"
+  },
+  {
+    "topic": 28,
+    "folder": "28-javascript-numbers",
+    "title": "JavaScript Numbers",
+    "duration": "13 min"
+  }
+]

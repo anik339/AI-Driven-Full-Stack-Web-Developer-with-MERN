@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test JavaScript fundamentals with a multiple-choice quiz.">
+  <title>JavaScript Quiz | Project 03</title><link rel="stylesheet" href="./styles.css"><script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell quiz-shell">
+    <header><p class="eyebrow">JavaScript Project 03</p><h1>Test what you know.</h1><p class="subtitle">A short quiz about JavaScript fundamentals. Choose an answer, review your score, and try again.</p></header>
+    <section id="quiz-screen" class="panel panel-pad">
+      <div class="row-between quiz-meta"><span id="question-counter" class="muted small">Question 1 of 8</span><span id="score-label" class="score-label">Score: 0</span></div>
+      <div class="progress-track" aria-label="Quiz progress"><div id="progress-bar" class="progress-fill"></div></div>
+      <h2 id="question-text">Loading question…</h2>
+      <div id="answer-list" class="answer-list"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <div class="row-between quiz-actions"><span class="muted small">Select one answer to continue.</span><button id="next-button" class="btn" type="button" disabled>Next question →</button></div>
+    </section>
+    <section id="result-screen" class="panel panel-pad result-screen" hidden>
+      <p class="eyebrow">Quiz completed</p><h2 id="result-title">Good work!</h2><p id="result-score" class="result-score"></p><p id="result-message" class="muted"></p>
+      <button id="restart-button" class="btn" type="button">Try again</button>
+    </section>
+    <footer>Project 03 · Questions are stored in a JavaScript array.</footer>
+  </main>
+</body>
+</html>

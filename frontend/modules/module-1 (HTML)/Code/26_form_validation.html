@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- MODULE 1: 26 form validation. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Browser checks required, minlength, pattern, types and ranges before submitting.">
+
+  <title>Native HTML Form Validation | HTML Only</title>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body>
+
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+
+    <p>HTML / Code Practice</p>
+
+    <h1>Native HTML Form Validation</h1>
+
+    <p>Browser checks required, minlength, pattern, types and ranges before submitting.</p>
+  </header>
+
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="main-content">
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="validation-demo">
+
+      <h2>Validate with HTML attributes</h2>
+
+      <p><small>Practice form: not connected to a real account or server.</small></p>
+
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#validation-demo" method="get">
+
+        <p>
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="display-name">Username (3–16 letters/numbers)</label></p>
+
+        <p>
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input id="display-name" name="username" type="text" minlength="3" maxlength="16" pattern="[A-Za-z0-9]+" title="Use only English letters and numbers" required></p>
+
+        <p><label for="user-email">Email</label></p>
+
+        <p><input id="user-email" name="email" type="email" autocomplete="email" required></p>
+
+        <p><label for="age-input">Age (16 to 100)</label></p>
+
+        <p><input id="age-input" name="age" type="number" min="16" max="100" required></p>
+
+        <p><label for="website">Website (optional)</label></p>
+
+        <p><input id="website" name="website" type="url" placeholder="https://example.com"></p>
+
+        <p>
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button type="submit">Check and test submit</button></p>
+      </form>
+
+      <p>Client-side checks improve usability but a real backend must validate all data again.</p>
+    </section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+
+    <hr>
+
+    <p>HTML-only learning example. No CSS, Tailwind, JavaScript or backend is included.</p>
+  </footer>
+</body>
+</html>

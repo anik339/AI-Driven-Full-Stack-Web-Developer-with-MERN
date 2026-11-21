@@ -1,0 +1,11 @@
+{
+  "name": "codetrack-module-9-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CodeTrack OOP learning project for Module 9",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check js/app.js"
+  }
+}

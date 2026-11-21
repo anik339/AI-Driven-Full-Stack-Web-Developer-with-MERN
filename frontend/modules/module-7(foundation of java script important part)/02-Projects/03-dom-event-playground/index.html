@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create an event dashboard that demonstrates mouse, keyboard, form, and window events. The user can inspect event.target and event.currentTarget.">
+  <title>03. DOM Event Playground</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · COMPLETE PROJECT</p>
+      <h1>03. DOM Event Playground</h1>
+      <p class="lead">Create an event dashboard that demonstrates mouse, keyboard, form, and window events. The user can inspect event.target and event.currentTarget.</p>
+    </header>
+    
+<section class="event-grid">
+  <article class="panel pad stack">
+    <h2>Mouse events</h2>
+    <div id="mouse-pad" class="mouse-pad">Click or move the pointer here</div>
+    <p id="mouse-log" class="log">Waiting for mouse input…</p>
+  </article>
+  <article class="panel pad stack">
+    <h2>Keyboard events</h2>
+    <label for="key-input">Press a key while focused here</label>
+    <input id="key-input" placeholder="Press any key">
+    <p id="key-log" class="log">Waiting for keyboard input…</p>
+  </article>
+  <article class="panel pad stack">
+    <h2>Form events</h2>
+    <form id="demo-form" class="stack">
+      <input id="demo-name" placeholder="Your name" required>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+    <p id="form-log" class="log">Waiting for form submit…</p>
+  </article>
+  <article class="panel pad stack">
+    <h2>Event object</h2>
+    <div id="delegated-area" class="row">
+      <button class="btn" type="button" data-name="Alpha">Alpha</button>
+      <button class="btn secondary" type="button" data-name="Beta">Beta</button>
+      <button class="btn secondary" type="button" data-name="Gamma">Gamma</button>
+    </div>
+    <p id="target-log" class="log">Click a button to inspect its event.</p>
+  </article>
+</section>
+<section class="panel pad" style="margin-top:16px">
+  <h2>Window resize event</h2>
+  <p id="resize-log" class="log">Current window dimensions will appear here.</p>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

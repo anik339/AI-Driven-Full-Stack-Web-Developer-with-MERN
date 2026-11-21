@@ -1,0 +1,87 @@
+/* TOPIC: style. Read each selector and test one property at a time. */
+/* Global reset and design tokens. */
+
+/* DESIGN TOKENS: central variables keep colors and spacing consistent. */
+:root { --ink: #182235; --muted: #68748a; --paper: #f7f8fc; --surface: #fff; --brand: #3157d5; --brand-dark: #203da0; --accent: #f2b84b; --line: #e0e5ef; --radius: 18px; --shadow: 0 18px 44px rgba(24,34,53,.09); }
+/* BOX SIZING: makes element dimensions easier to predict. */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+/* BODY: sets the default font, page background and readable text. */
+
+/* FONT WHY: a readable font makes text consistent across the page. */
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; color: var(--ink); background: var(--paper); }
+/* WIDTH WHY: cap long lines and prevent content from stretching on large screens. */
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, textarea, select { font: inherit; }
+/* FOCUS: helps keyboard users find their current target. */
+
+/* ACCESSIBILITY WHY: keep an obvious keyboard focus indicator. */
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+/* CONTAINER: limits width and centers content on large screens. */
+
+.container { width: min(1120px, calc(100% - 36px)); margin-inline: auto; }
+header { padding: 20px 0; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); }
+/* NAVIGATION: aligns menu items and keeps spacing consistent. */
+
+/* FLEX WHY: use a one-dimensional layout for menus or aligned items. */
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+.logo { font-weight: 900; letter-spacing: -.05em; font-size: 1.2rem; text-decoration: none; }
+/* GAP WHY: space between flex/grid children without individual child margins. */
+.nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: .92rem; font-weight: 700; }
+.nav-links a:hover { color: var(--brand); }
+main { padding-bottom: 64px; }
+.eyebrow { color: var(--brand); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 900; margin: 0 0 10px; }
+h1,h2,h3 { line-height: 1.12; letter-spacing: -.04em; }
+h1 { font-size: clamp(2.4rem, 6vw, 5rem); margin: 0 0 18px; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); margin: 0 0 12px; }
+h3 { font-size: 1.15rem; margin: 0 0 8px; }
+p { margin: 0 0 14px; }
+.lead { color: var(--muted); max-width: 64ch; font-size: clamp(1rem, 2vw, 1.18rem); }
+.section { padding-top: 66px; }
+.section-head { max-width: 680px; margin-bottom: 26px; }
+/* GRID: places cards into responsive rows and columns. */
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 18px; }
+/* CARD: groups information with a reusable visual treatment. */
+
+.card { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.muted { color: var(--muted); }
+.button { display: inline-flex; justify-content: center; align-items: center; padding: 12px 17px; border: 1px solid var(--brand); border-radius: 10px; background: var(--brand); color: white; text-decoration: none; font-weight: 800; }
+.button:hover { background: var(--brand-dark); }
+.button.secondary { color: var(--brand); background: transparent; }
+.button.secondary:hover { color: white; background: var(--brand); }
+footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); background: white; }
+/* MEDIA QUERY: adapts the layout when the screen width changes. */
+
+@media (max-width: 640px) { .container { width: min(100% - 26px, 1120px); } .section { padding-top: 46px; } .card { padding: 19px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* Project-specific layout and components. */
+
+/* HERO: styles the first prominent section of the page. */
+.hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: 44px; align-items: center; padding-top: 72px; padding-bottom: 48px; }
+.hero h1 span { color: var(--brand); }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 26px 0 18px; }
+.availability { color: var(--muted); font-size: .9rem; }
+.availability span { display: inline-block; width: 9px; height: 9px; margin-right: 7px; border-radius: 50%; background: #16a36a; }
+.portrait { margin: 0; padding: 12px; background: white; border: 1px solid var(--line); border-radius: 26px; box-shadow: var(--shadow); transform: rotate(2deg); }
+.portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 18px; }
+.portrait figcaption { padding: 12px 5px 3px; color: var(--muted); font-size: .85rem; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.facts strong { color: var(--brand); font-size: 1.8rem; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-list span { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: white; font-weight: 750; }
+.project-card a { color: var(--brand); font-weight: 800; text-decoration: none; }
+.project-art { display: grid; place-items: center; height: 130px; margin-bottom: 18px; border-radius: 13px; color: white; font-size: 2.5rem; font-weight: 900; }
+.art-one { background: linear-gradient(135deg, #3157d5, #8b5cf6); } .art-two { background: linear-gradient(135deg, #0d9488, #164e63); } .art-three { background: linear-gradient(135deg, #d97706, #be123c); }
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 34px; background: #e8edff; border-radius: 22px; }
+.contact-form { display: flex; flex-direction: column; gap: 9px; }
+.contact-form label { font-weight: 800; font-size: .9rem; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid #bdc8df; border-radius: 9px; padding: 12px; background: white; }
+.contact-form .button { cursor: pointer; margin-top: 8px; }
+.foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.foot-row a { color: var(--brand); text-decoration: none; font-weight: 750; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; padding-top: 42px; gap: 28px; } .portrait { max-width: 320px; } .facts { grid-template-columns: 1fr; } .contact { grid-template-columns: 1fr; padding: 22px; } }

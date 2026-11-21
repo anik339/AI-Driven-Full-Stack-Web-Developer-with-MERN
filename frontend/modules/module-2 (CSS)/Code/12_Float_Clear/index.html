@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="CSS practice lesson: CSS Float and Clear." name="description"/>
+  <title>
+   CSS Float and Clear
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body id="top">
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header class="site-header">
+   <div class="wrap">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="brand" href="../index.html">
+     CSS Practice Lab
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Lesson navigation">
+     <a href="../index.html">
+      All lessons
+     </a>
+     <a href="#practice">
+      Practice
+     </a>
+    </nav>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main class="wrap">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="hero">
+    <p class="eyebrow">
+     CSS Core Practice
+    </p>
+    <h1>
+     CSS Float and Clear
+    </h1>
+    <p class="lead">
+     Learn float for legacy text wrapping and clear for old layouts.
+    </p>
+    <span class="pill">
+     HTML + CSS only
+    </span>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="section" id="practice">
+    
+<!-- SECTION: groups related content under a heading. -->
+<section class="demo float-demo">
+     
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img alt="Profile portrait used for float demonstration" src="../assets/profile.jpg"/>
+     <p>
+      Float moves an element to the left or right so text can wrap around it. This technique is useful to understand older stylesheets, although Flexbox and Grid are usually better for modern page layouts.
+     </p>
+     <div class="clear-demo">
+      This block uses clear: both, so it starts below the floated image.
+     </div>
+    </section>
+   </section>
+   <section class="section card">
+    <h2>
+     Practice task
+    </h2>
+    <p>
+     Change at least three CSS values in
+     <code>
+      style.css
+     </code>
+     , save the file, and refresh the browser. Explain what changed before moving to the next lesson.
+    </p>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer class="site-footer">
+   <div class="wrap">
+    CSS Practice Lab · Build understanding by experimenting.
+   </div>
+  </footer>
+ </body>
+</html>

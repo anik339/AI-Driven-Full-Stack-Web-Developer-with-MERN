@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Negative Margin, Width and Minimum Sizing</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="wrap"><p>MODULE 02 · CSS SUPPLEMENTARY</p><h1>Negative Margin, Width and Minimum Sizing</h1><p>Understand when negative margins can create controlled overlap, and compare width, height, min-width and min-height.</p></div></header><main class="wrap"><section class="panel">
+<div class="grid">
+  <section class="demo"><h2>Normal spacing</h2><div class="box normal">Normal card</div><p>Positive margin creates space outside an element.</p></section>
+  <section class="demo"><h2>Negative margin</h2><div class="stack"><div class="box back">Background card</div><div class="box overlap">Overlapping card</div></div><p>Negative margin pulls an element toward the previous element. Use it sparingly and check small screens.</p></section>
+  <section class="demo sizing"><h2>Minimum sizing</h2><div class="min-box">This box has min-width and min-height. Resize the browser to observe the effect.</div></section>
+</div>
+<pre><code>.overlap { margin-top: -18px; }
+.min-box { min-width: 180px; min-height: 120px; }
+.responsive-box { width: 100%; max-width: 600px; min-height: 120px; }</code></pre>
+</section><p><a href="../index.html">Back to CSS lessons</a></p></main><footer class="wrap">Run with VS Code Live Server. Edit style.css and observe each change.</footer></body></html>

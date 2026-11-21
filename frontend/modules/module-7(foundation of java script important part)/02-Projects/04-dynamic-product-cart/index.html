@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a small shopping cart interface. JavaScript creates product cards from an array, appends them to the page, and updates cart quantities through event delegation.">
+  <title>04. Dynamic Product Cart</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">MODULE 7 · COMPLETE PROJECT</p>
+      <h1>04. Dynamic Product Cart</h1>
+      <p class="lead">Build a small shopping cart interface. JavaScript creates product cards from an array, appends them to the page, and updates cart quantities through event delegation.</p>
+    </header>
+    
+<section class="shop-layout">
+  <div>
+    <div class="between"><h2>Products</h2><span id="product-total" class="muted small"></span></div>
+    <div id="product-grid" class="product-grid"></div>
+  </div>
+  <aside class="panel pad cart">
+    <div class="between"><h2>Your cart</h2><span id="cart-count" class="cart-count">0</span></div>
+    <ul id="cart-list" class="cart-list"></ul>
+    <p id="cart-empty" class="muted small">Your cart is empty.</p>
+    <div class="cart-total"><span>Total</span><strong id="cart-total">$0.00</strong></div>
+    <button id="clear-cart" class="btn secondary full" type="button">Clear cart</button>
+    <p class="muted small">Learning demo only. No payment is processed.</p>
+  </aside>
+</section>
+
+    <footer>Module 7 · JavaScript DOM and Events · Run with VS Code Live Server</footer>
+  </main>
+</body>
+</html>

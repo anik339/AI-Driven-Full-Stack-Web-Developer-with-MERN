@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- MODULE 2: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+ 
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A responsive personal portfolio made with semantic HTML and CSS only." name="description"/>
+  <title>
+   Alex Morgan | Frontend Developer
+  </title>
+  <!-- CSS LINK: loads the styles defined in this file. -->
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ 
+<!-- BODY: visible page content starts here. -->
+<body>
+  
+<!-- HEADER: introduces the page or a content section. -->
+<header>
+   <div class="container nav">
+    
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a class="logo" href="#home">
+     AM
+     <span>
+      .
+     </span>
+    </a>
+    
+<!-- NAV: groups important navigation links. -->
+<nav aria-label="Main navigation" class="nav-links">
+     <a href="#about">
+      About
+     </a>
+     <a href="#skills">
+      Skills
+     </a>
+     <a href="#projects">
+      Projects
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  
+<!-- MAIN: contains the unique primary content of this page. -->
+<main id="home">
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="hero container">
+    <div class="hero-copy">
+     <p class="eyebrow">
+      Portfolio / 2026
+     </p>
+     <h1>
+      Building useful things for the
+      <span>
+       open web.
+      </span>
+     </h1>
+     <p class="lead">
+      I am Alex, a frontend developer in training who enjoys turning clear ideas into accessible, responsive websites.
+     </p>
+     <div class="actions">
+      <a class="button" href="#projects">
+       Explore my work
+      </a>
+      <a class="button secondary" href="#contact">
+       Contact me
+      </a>
+     </div>
+     <p class="availability">
+      <span>
+      </span>
+      Open to internship opportunities
+     </p>
+    </div>
+    
+<!-- FIGURE: groups a media item with its caption. -->
+<figure class="portrait">
+     
+<!-- IMAGE: src loads the file; alt describes its meaning. -->
+<img alt="Portrait for the portfolio profile" src="../assets/profile.jpg"/>
+     <figcaption>
+      Curious mind. Practical builder.
+     </figcaption>
+    </figure>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="about">
+    <div class="section-head">
+     <p class="eyebrow">
+      01 / About
+     </p>
+     <h2>
+      Thoughtful design, solid foundations.
+     </h2>
+     <p class="lead">
+      I focus on semantic HTML, maintainable CSS, responsive layouts, and details that make interfaces easier to use.
+     </p>
+    </div>
+    <div class="facts">
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+      <strong>
+       01
+      </strong>
+      <h3>
+       Accessible
+      </h3>
+      <p class="muted">
+       Clear structure, labels, focus states, and useful alt text.
+      </p>
+     </article>
+     
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="card">
+      <strong>
+       02
+      </strong>
+      <h3>
+       Responsive
+      </h3>
+      <p class="muted">
+       Layouts that adapt from mobile screens to desktop.
+      </p>
+     </article>
+     <article class="card">
+      <strong>
+       03
+      </strong>
+      <h3>
+       Maintainable
+      </h3>
+      <p class="muted">
+       Reusable classes and readable stylesheets.
+      </p>
+     </article>
+    </div>
+   </section>
+   
+<!-- SECTION: groups related content under a heading. -->
+<section class="container section" id="skills">
+    <div class="section-head">
+     <p class="eyebrow">
+      02 / Skills
+     </p>
+     <h2>
+      Current toolkit
+     </h2>
+    </div>
+    <div class="skill-list">
+     <span>
+      HTML5
+     </span>
+     <span>
+      CSS3
+     </span>
+     <span>
+      Responsive Design
+     </span>
+     <span>
+      Flexbox
+     </span>
+     <span>
+      CSS Grid
+     </span>
+     <span>
+      Accessibility
+     </span>
+     <span>
+      Git Basics
+     </span>
+     <span>
+      Learning JavaScript next
+     </span>
+    </div>
+   </section>
+   <section class="container section" id="projects">
+    <div class="section-head">
+     <p class="eyebrow">
+      03 / Selected work
+     </p>
+     <h2>
+      Practice projects
+     </h2>
+    </div>
+    <!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+    <div class="grid">
+     <article class="card project-card">
+      <div class="project-art art-one">
+       01
+      </div>
+      <h3>
+       Personal Portfolio
+      </h3>
+      <p class="muted">
+       A clean profile and project showcase.
+      </p>
+      <a href="#contact">
+       Discuss project →
+      </a>
+     </article>
+     <article class="card project-card">
+      <div class="project-art art-two">
+       02
+      </div>
+      <h3>
+       Studio Landing Page
+      </h3>
+      <p class="muted">
+       A responsive landing-page layout.
+      </p>
+      <a href="#contact">
+       Discuss project →
+      </a>
+     </article>
+     <article class="card project-card">
+      <div class="project-art art-three">
+       03
+      </div>
+      <h3>
+       Product Catalogue
+      </h3>
+      <p class="muted">
+       Product cards and structured information.
+      </p>
+      <a href="#contact">
+       Discuss project →
+      </a>
+     </article>
+    </div>
+   </section>
+   <section class="container section contact" id="contact">
+    <div class="section-head">
+     <p class="eyebrow">
+      04 / Contact
+     </p>
+     <h2>
+      Have a project in mind?
+     </h2>
+     <p class="lead">
+      Use this sample form as a frontend exercise. It is not connected to a server.
+     </p>
+    </div>
+    
+<!-- FORM: collects user input; backend processing is not implemented. -->
+<form action="#contact" class="contact-form" method="get">
+     
+<!-- LABEL: names a field; matching for/id improves accessibility. -->
+<label for="name">
+      Your name
+     </label>
+     
+<!-- INPUT: receives data; type controls validation and keyboard behavior. -->
+<input autocomplete="name" id="name" name="name" required=""/>
+     <label for="email">
+      Email address
+     </label>
+     <input autocomplete="email" id="email" name="email" required="" type="email"/>
+     <label for="message">
+      Message
+     </label>
+     
+<!-- TEXTAREA: accepts a longer, multi-line message. -->
+<textarea id="message" name="message" required="" rows="4"></textarea>
+     
+<!-- BUTTON: choose type to avoid accidental form submission. -->
+<button class="button" type="submit">
+      Submit demo form
+     </button>
+    </form>
+   </section>
+  </main>
+  
+<!-- FOOTER: provides end-of-page information. -->
+<footer>
+   <div class="container foot-row">
+    <span>
+     Alex Morgan · Portfolio practice
+    </span>
+    <a href="#home">
+     Back to top ↑
+    </a>
+   </div>
+  </footer>
+ </body>
+</html>

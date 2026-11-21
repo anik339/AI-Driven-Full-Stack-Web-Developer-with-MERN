@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- RESPONSIVE: sm:, md: and lg: apply styles at wider breakpoints. -->
+<!-- MODULE 4: index. Edit this example to learn the code. -->
+
+<!-- ROOT: lang tells assistive tools which language this page uses. -->
+<html lang="en">
+
+<!-- HEAD: metadata, page title and linked resources live here. -->
+<head>
+  <meta charset="utf-8">
+  <!-- VIEWPORT: makes CSS adapt to phone and tablet widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A responsive landing page about responsible AI-assisted web development.">
+  <title>Build Better with AI | Responsive Landing Page</title>
+  <!-- TAILWIND v4: browser CDN for learning only; no custom JavaScript. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- BODY: visible page content starts here. -->
+<body class="bg-white text-slate-900">
+
+<!-- HEADER: introduces the page or a content section. -->
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur">
+<!-- NAV: groups important navigation links. -->
+<!-- RESPONSIVE WHY: sm:/md:/lg: classes change layout from smaller to larger screens. -->
+<!-- FLEX WHY: flex aligns content along one main axis; justify and items control alignment. -->
+<nav aria-label="Main navigation" class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+<!-- LINK: href sets the destination; prefer real URLs or section IDs. -->
+<a href="#home" class="text-xl font-black tracking-tight">Build<span class="text-violet-700">Better</span></a><div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold"><a class="hover:text-violet-700" href="#workflow">Workflow</a><a class="hover:text-violet-700" href="#principles">Principles</a><a class="hover:text-violet-700" href="#prompt">Prompt</a></div></nav></header>
+  
+<!-- MAIN: primary content. Utilities such as p-6, grid, and md: control layout. -->
+<main>
+
+<!-- SECTION: groups related content under a heading. -->
+<!-- GRID WHY: grid divides items into rows and columns; gap controls the spacing. -->
+<section id="home" class="bg-gradient-to-br from-violet-950 via-slate-900 to-slate-950 px-5 py-20 text-white sm:py-28"><div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2"><div><p class="text-sm font-bold uppercase tracking-[0.2em] text-violet-300">AI-assisted web development</p><h1 class="mt-5 text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Think clearly. Build responsibly. Test everywhere.</h1><p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">Use AI to explore options and understand problems, then use your own judgement and browser tests to deliver a responsive experience.</p><div class="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#workflow" class="rounded-xl bg-violet-400 px-6 py-3 text-center font-bold text-slate-950 hover:bg-violet-300">Explore the workflow</a><a href="#prompt" class="rounded-xl border border-slate-500 px-6 py-3 text-center font-bold hover:border-white">See a sample prompt</a></div></div><div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl sm:p-8"><p class="text-sm font-bold text-violet-300">THE LOOP</p><div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2"><div class="rounded-2xl bg-white/10 p-4"><p class="text-2xl">01</p><h2 class="mt-2 font-bold">Ask</h2><p class="mt-1 text-sm text-slate-300">Describe the goal.</p></div><div class="rounded-2xl bg-white/10 p-4"><p class="text-2xl">02</p><h2 class="mt-2 font-bold">Inspect</h2><p class="mt-1 text-sm text-slate-300">Understand the suggestion.</p></div><div class="rounded-2xl bg-white/10 p-4"><p class="text-2xl">03</p><h2 class="mt-2 font-bold">Test</h2><p class="mt-1 text-sm text-slate-300">Check real viewports.</p></div><div class="rounded-2xl bg-white/10 p-4"><p class="text-2xl">04</p><h2 class="mt-2 font-bold">Share</h2><p class="mt-1 text-sm text-slate-300">Commit and review.</p></div></div></div></div></section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="workflow" class="px-5 py-16 sm:py-20"><div class="mx-auto max-w-6xl"><div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-widest text-violet-700">A repeatable process</p><h2 class="mt-3 text-3xl font-black sm:text-4xl">AI supports the developer; it does not replace review.</h2></div><div class="mt-10 grid gap-5 md:grid-cols-3">
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl border border-slate-200 p-6"><h3 class="text-xl font-bold">Understand the issue</h3><p class="mt-3 leading-7 text-slate-600">Describe the current behavior, expected behavior, viewport size and relevant code.</p></article>
+<!-- ARTICLE: independent content that can stand alone. -->
+<article class="rounded-2xl border border-slate-200 p-6"><h3 class="text-xl font-bold">Make a small change</h3><p class="mt-3 leading-7 text-slate-600">Ask for the smallest appropriate fix and an explanation of the relevant utilities or CSS rules.</p></article><article class="rounded-2xl border border-slate-200 p-6"><h3 class="text-xl font-bold">Verify and share</h3><p class="mt-3 leading-7 text-slate-600">Test mobile and desktop, inspect the diff, then commit and request a peer review.</p></article></div></div></section>
+
+<!-- SECTION: groups related content under a heading. -->
+<section id="principles" class="bg-slate-100 px-5 py-16 sm:py-20"><div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2"><div><p class="text-sm font-bold uppercase tracking-widest text-violet-700">Quality principles</p><h2 class="mt-3 text-3xl font-black sm:text-4xl">Build for real people and real screens.</h2><p class="mt-4 leading-8 text-slate-600">Responsive design includes readable text, usable controls, keyboard access, sensible loading and content that adapts without breaking.</p></div>
+<!-- UNORDERED LIST: groups items without a ranking. -->
+<ul class="space-y-3"><li class="rounded-xl bg-white p-4"><strong>Mobile-first:</strong> start with the narrow layout and enhance it as space increases.</li><li class="rounded-xl bg-white p-4"><strong>Accessible:</strong> use semantic HTML, labels, meaningful alt text and visible focus states.</li><li class="rounded-xl bg-white p-4"><strong>Private:</strong> do not paste secrets or private customer data into AI tools.</li><li class="rounded-xl bg-white p-4"><strong>Reviewable:</strong> keep changes small and describe them clearly in a pull request.</li></ul></div></section>
+    
+    <section id="prompt" class="px-5 py-16 sm:py-20"><div class="mx-auto max-w-4xl rounded-3xl bg-slate-950 p-6 text-white sm:p-10"><p class="text-sm font-bold uppercase tracking-widest text-violet-300">Prompt example</p><h2 class="mt-3 text-3xl font-black">Ask for a fix you can learn from.</h2><pre class="mt-6 whitespace-pre-wrap rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200">Review the supplied responsive layout.
+At 360px wide, the cards overflow horizontally.
+Explain the likely cause, show the smallest change,
+keep the existing visual design, and do not add JavaScript.
+Give me a short checklist to verify the fix in DevTools.</pre><p class="mt-5 text-sm leading-6 text-slate-400">Always inspect the result, test the page and follow your team's AI-use policy.</p></div></section>
+  </main>
+
+<!-- FOOTER: provides end-of-page information. -->
+<footer class="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-500">BuildBetter | Static HTML and Tailwind CSS learning project</footer>
+</body>
+</html>
