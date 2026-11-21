@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 50 — Build a Mini Library Management System | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 50 · Capstone OOP</p><h1>Build a Mini Library Management System</h1><p class="lead">Combine classes, encapsulation, validation, and collaboration in one small domain model.</p><div class="pills"><span class="pill">Problem 50 of 50</span><span class="pill">capstone · OOP design · collections · validation</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Build Book, LibraryMember, and Library classes. Support adding books, registering members, borrowing available books, and returning books.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a maximum of three borrowed books per member, a search method, and a small test suite.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Anik borrows Clean Code and then returns it. Invalid borrow/return operations are rejected.</p><p><strong>Focus:</strong> capstone · OOP design · collections · validation</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class Book {
+    constructor(id, title) { this.id = id; this.title = title; this.isBorrowed = false; }
+  }
+  class LibraryMember {
+    constructor(id, name) { this.id = id; this.name = name; this.borrowedBookIds = new Set(); }
+  }
+  class Library {
+    #books = new Map();
+    #members = new Map();
+    addBook(book) { this.#books.set(book.id, book); }
+    register(member) { this.#members.set(member.id, member); }
+    borrow(bookId, memberId) {
+      const book = this.#books.get(bookId);
+      const member = this.#members.get(memberId);
+      if (!book || !member) throw new Error(&quot;Book or member not found&quot;);
+      if (book.isBorrowed) throw new Error(&quot;Book is already borrowed&quot;);
+      book.isBorrowed = true;
+      member.borrowedBookIds.add(bookId);
+      return `${member.name} borrowed ${book.title}`;
+    }
+    returnBook(bookId, memberId) {
+      const book = this.#books.get(bookId);
+      const member = this.#members.get(memberId);
+      if (!book || !member || !member.borrowedBookIds.has(bookId)) throw new Error(&quot;Invalid return&quot;);
+      book.isBorrowed = false;
+      member.borrowedBookIds.delete(bookId);
+      return `${member.name} returned ${book.title}`;
+    }
+  }
+
+  const library = new Library();
+  library.addBook(new Book(1, &quot;Clean Code&quot;));
+  library.register(new LibraryMember(7, &quot;Anik&quot;));
+  console.log(library.borrow(1, 7));
+  console.log(library.returnBook(1, 7));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Anik borrows Clean Code and then returns it. Invalid borrow/return operations are rejected.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 50 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

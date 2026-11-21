@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 40 — Model Inventory Items with a Class | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 40 · Practical OOP</p><h1>Model Inventory Items with a Class</h1><p class="lead">Represent inventory records and enforce valid stock changes.</p><div class="pills"><span class="pill">Problem 40 of 50</span><span class="pill">class · encapsulation · validation</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create an InventoryItem with private stock. Add restock and sell methods that reject invalid quantities or insufficient stock.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a low-stock warning method that returns true when stock is below a configurable threshold.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Keyboard: 12 units</p><p><strong>Focus:</strong> class · encapsulation · validation</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class InventoryItem {
+    #stock;
+    constructor(name, openingStock = 0) {
+      if (!Number.isInteger(openingStock) || openingStock &lt; 0) throw new Error(&quot;Invalid opening stock&quot;);
+      this.name = name;
+      this.#stock = openingStock;
+    }
+    get stock() { return this.#stock; }
+    restock(quantity) {
+      if (!Number.isInteger(quantity) || quantity &lt;= 0) throw new Error(&quot;Restock quantity must be positive&quot;);
+      this.#stock += quantity;
+      return this.#stock;
+    }
+    sell(quantity) {
+      if (!Number.isInteger(quantity) || quantity &lt;= 0) throw new Error(&quot;Sale quantity must be positive&quot;);
+      if (quantity &gt; this.#stock) throw new Error(&quot;Insufficient stock&quot;);
+      this.#stock -= quantity;
+      return this.#stock;
+    }
+  }
+
+  const keyboard = new InventoryItem(&quot;Keyboard&quot;, 10);
+  keyboard.sell(3);
+  keyboard.restock(5);
+  console.log(`${keyboard.name}: ${keyboard.stock} units`);
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Keyboard: 12 units</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 40 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

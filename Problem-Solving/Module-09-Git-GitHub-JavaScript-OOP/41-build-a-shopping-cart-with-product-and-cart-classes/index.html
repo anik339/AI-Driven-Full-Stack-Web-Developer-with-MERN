@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 41 — Build a Shopping Cart with Product and Cart Classes | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 41 · Practical OOP</p><h1>Build a Shopping Cart with Product and Cart Classes</h1><p class="lead">Use object collaboration to add, remove, and total cart items.</p><div class="pills"><span class="pill">Problem 41 of 50</span><span class="pill">class collaboration · Map · calculated total</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create Product and ShoppingCart classes. Add products by ID, merge quantities, remove an item, and calculate the total.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a discount method that returns a discounted total without mutating product prices.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Items: 3 · Total: 90</p><p><strong>Focus:</strong> class collaboration · Map · calculated total</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class Product {
+    constructor(id, name, price) {
+      if (price &lt; 0) throw new Error(&quot;Price cannot be negative&quot;);
+      Object.assign(this, { id, name, price });
+    }
+  }
+
+  class ShoppingCart {
+    #items = new Map();
+    add(product, quantity = 1) {
+      if (!Number.isInteger(quantity) || quantity &lt;= 0) throw new Error(&quot;Quantity must be positive&quot;);
+      const current = this.#items.get(product.id);
+      this.#items.set(product.id, { product, quantity: (current?.quantity ?? 0) + quantity });
+    }
+    remove(productId) { return this.#items.delete(productId); }
+    getTotal() {
+      return [...this.#items.values()].reduce((sum, item) =&gt; sum + item.product.price * item.quantity, 0);
+    }
+    getItemCount() {
+      return [...this.#items.values()].reduce((sum, item) =&gt; sum + item.quantity, 0);
+    }
+  }
+
+  const cart = new ShoppingCart();
+  const mouse = new Product(1, &quot;Mouse&quot;, 20);
+  const keyboard = new Product(2, &quot;Keyboard&quot;, 50);
+  cart.add(mouse, 2);
+  cart.add(keyboard, 1);
+  console.log(&quot;Items:&quot;, cart.getItemCount());
+  console.log(&quot;Total:&quot;, cart.getTotal());
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Items: 3 · Total: 90</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 41 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 31 — Hide Implementation Details with Abstraction | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 31 · Object-oriented programming</p><h1>Hide Implementation Details with Abstraction</h1><p class="lead">Expose a small public API while keeping internal steps private.</p><div class="pills"><span class="pill">Problem 31 of 50</span><span class="pill">abstraction · private methods · public API</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a ReportExporter class whose public export method validates data, formats it, and returns a CSV-like string. Keep formatting private.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add CSV escaping for commas and quotation marks in names.</div><h2 style="margin-top:18px">Expected behavior</h2><p>A two-line CSV-style report is returned.</p><p><strong>Focus:</strong> abstraction · private methods · public API</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class ReportExporter {
+    // Private method keeps the formatting detail out of the public API.
+    #formatRows(rows) {
+      return rows.map(row =&gt; `${row.name},${row.score}`).join(&quot;\n&quot;);
+    }
+
+    export(rows) {
+      if (!Array.isArray(rows)) throw new TypeError(&quot;Rows must be an array.&quot;);
+      // Callers only need to know about export(), not each internal step.
+      return this.#formatRows(rows);
+    }
+  }
+
+  const exporter = new ReportExporter();
+  console.log(exporter.export([{ name: &quot;Anik&quot;, score: 90 }, { name: &quot;Maya&quot;, score: 95 }]));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">A two-line CSV-style report is returned.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 31 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

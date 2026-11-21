@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 43 — Create a Task Board with Focused Classes | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 43 · Practical OOP</p><h1>Create a Task Board with Focused Classes</h1><p class="lead">Separate task data from board operations and keep transitions valid.</p><div class="pills"><span class="pill">Problem 43 of 50</span><span class="pill">domain model · status transitions · single responsibility</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a Task class and TaskBoard class. Allow tasks to move among todo, doing, and done, and reject unknown statuses.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a removeTask method and a listTasks method that returns copies rather than internal references.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Doing: 1</p><p><strong>Focus:</strong> domain model · status transitions · single responsibility</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  const VALID_STATUSES = new Set([&quot;todo&quot;, &quot;doing&quot;, &quot;done&quot;]);
+  class Task {
+    constructor(id, title) {
+      this.id = id;
+      this.title = title.trim();
+      this.status = &quot;todo&quot;;
+    }
+    moveTo(status) {
+      if (!VALID_STATUSES.has(status)) throw new Error(`Unknown status: ${status}`);
+      this.status = status;
+    }
+  }
+  class TaskBoard {
+    #tasks = new Map();
+    add(task) {
+      if (this.#tasks.has(task.id)) throw new Error(&quot;Duplicate task ID&quot;);
+      this.#tasks.set(task.id, task);
+    }
+    moveTask(id, status) {
+      const task = this.#tasks.get(id);
+      if (!task) throw new Error(&quot;Task not found&quot;);
+      task.moveTo(status);
+    }
+    countByStatus(status) {
+      return [...this.#tasks.values()].filter(task =&gt; task.status === status).length;
+    }
+  }
+  const board = new TaskBoard();
+  board.add(new Task(1, &quot;Learn OOP&quot;));
+  board.moveTask(1, &quot;doing&quot;);
+  console.log(&quot;Doing:&quot;, board.countByStatus(&quot;doing&quot;));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Doing: 1</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 43 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

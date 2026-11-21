@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 39 — Build a Small Event Emitter | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 39 · Application architecture</p><h1>Build a Small Event Emitter</h1><p class="lead">Allow independent parts of an application to subscribe to and publish events.</p><div class="pills"><span class="pill">Problem 39 of 50</span><span class="pill">observer pattern · publish/subscribe · unsubscribe</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Implement an EventEmitter with on, emit, and off methods. Register two listeners, emit an event, and remove one listener.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a once(eventName, callback) method that automatically unsubscribes after the first event.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Both listeners run for order 101; only the toast listener runs for order 102.</p><p><strong>Focus:</strong> observer pattern · publish/subscribe · unsubscribe</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class EventEmitter {
+    #listeners = new Map();
+
+    on(eventName, callback) {
+      // Each event stores a set so the same callback is not registered twice.
+      if (!this.#listeners.has(eventName)) this.#listeners.set(eventName, new Set());
+      this.#listeners.get(eventName).add(callback);
+      return () =&gt; this.off(eventName, callback); // Return an unsubscribe function.
+    }
+
+    emit(eventName, payload) {
+      this.#listeners.get(eventName)?.forEach(callback =&gt; callback(payload));
+    }
+
+    off(eventName, callback) {
+      this.#listeners.get(eventName)?.delete(callback);
+    }
+  }
+
+  const bus = new EventEmitter();
+  const logOrder = order =&gt; console.log(`Order received: ${order.id}`);
+  const showToast = order =&gt; console.log(`Toast: ${order.status}`);
+  const unsubscribe = bus.on(&quot;order:created&quot;, logOrder);
+  bus.on(&quot;order:created&quot;, showToast);
+  bus.emit(&quot;order:created&quot;, { id: 101, status: &quot;created&quot; });
+  unsubscribe();
+  bus.emit(&quot;order:created&quot;, { id: 102, status: &quot;created&quot; });
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Both listeners run for order 101; only the toast listener runs for order 102.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 39 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

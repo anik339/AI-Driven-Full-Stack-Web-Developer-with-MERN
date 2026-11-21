@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 45 — Apply the Strategy Pattern to Discounts | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 45 · Practical OOP</p><h1>Apply the Strategy Pattern to Discounts</h1><p class="lead">Swap pricing rules without adding conditional branches throughout a checkout class.</p><div class="pills"><span class="pill">Problem 45 of 50</span><span class="pill">strategy pattern · composition · interchangeable behavior</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create percentage and fixed-amount discount strategies. Inject the selected strategy into a Checkout class.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a no-discount strategy and allow the checkout to change strategy at runtime.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Percentage: 90 · Fixed: 85</p><p><strong>Focus:</strong> strategy pattern · composition · interchangeable behavior</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  const percentageDiscount = {
+    apply(total) { return total * 0.9; } // 10% off
+  };
+  const fixedDiscount = {
+    apply(total) { return Math.max(0, total - 15); } // $15 off, never below zero
+  };
+
+  class Checkout {
+    constructor(discountStrategy) { this.discountStrategy = discountStrategy; }
+    totalAfterDiscount(subtotal) {
+      // Checkout delegates the pricing rule to the injected strategy.
+      return this.discountStrategy.apply(subtotal);
+    }
+  }
+
+  console.log(&quot;Percentage:&quot;, new Checkout(percentageDiscount).totalAfterDiscount(100));
+  console.log(&quot;Fixed:&quot;, new Checkout(fixedDiscount).totalAfterDiscount(100));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Percentage: 90 · Fixed: 85</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 45 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

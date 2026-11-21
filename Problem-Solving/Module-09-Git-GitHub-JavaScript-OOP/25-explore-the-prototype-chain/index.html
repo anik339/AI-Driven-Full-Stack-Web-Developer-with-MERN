@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 25 — Explore the Prototype Chain | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 25 · JavaScript object model</p><h1>Explore the Prototype Chain</h1><p class="lead">Use Object.create and own-property checks to understand inherited properties.</p><div class="pills"><span class="pill">Problem 25 of 50</span><span class="pill">Object.create · prototype chain · hasOwn</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a vehicle prototype with a start method. Create a car object that inherits from it and distinguish own from inherited properties.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a second vehicle object and compare its prototype with the first car.</div><h2 style="margin-top:18px">Expected behavior</h2><p>start is inherited, while brand and model are own properties of car.</p><p><strong>Focus:</strong> Object.create · prototype chain · hasOwn</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  // The prototype provides behavior shared by related objects.
+  const vehicle = {
+    start() {
+      return `${this.brand} engine started.`;
+    }
+  };
+
+  // car inherits from vehicle but owns its brand and model properties.
+  const car = Object.create(vehicle);
+  car.brand = &quot;Toyota&quot;;
+  car.model = &quot;Corolla&quot;;
+
+  console.log(car.start());
+  console.log(&quot;Own keys:&quot;, Object.keys(car).join(&quot;, &quot;));
+  console.log(&quot;Has own start:&quot;, Object.hasOwn(car, &quot;start&quot;));
+  console.log(&quot;Prototype is vehicle:&quot;, Object.getPrototypeOf(car) === vehicle);
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">start is inherited, while brand and model are own properties of car.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 25 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

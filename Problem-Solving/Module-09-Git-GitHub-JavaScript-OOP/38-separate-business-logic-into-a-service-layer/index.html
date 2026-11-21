@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 38 — Separate Business Logic into a Service Layer | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 38 · Application architecture</p><h1>Separate Business Logic into a Service Layer</h1><p class="lead">Keep validation and business rules out of UI event handlers and repositories.</p><div class="pills"><span class="pill">Problem 38 of 50</span><span class="pill">service layer · single responsibility · validation</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a RegistrationService that validates user input and delegates persistence to a repository.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a duplicate-email check and keep that rule inside the service layer.</div><h2 style="margin-top:18px">Expected behavior</h2><p>A normalized user object is stored with a lowercase email.</p><p><strong>Focus:</strong> service layer · single responsibility · validation</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  const repository = {
+    users: [],
+    save(user) { this.users.push(user); return user; }
+  };
+
+  class RegistrationService {
+    constructor(userRepository) { this.repository = userRepository; }
+
+    register(input) {
+      // Business rules belong in the service, not in the storage adapter.
+      const name = String(input.name ?? &quot;&quot;).trim();
+      const email = String(input.email ?? &quot;&quot;).trim().toLowerCase();
+      if (name.length &lt; 2) throw new Error(&quot;Name must contain at least 2 characters.&quot;);
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new Error(&quot;Enter a valid email.&quot;);
+      return this.repository.save({ id: this.repository.users.length + 1, name, email });
+    }
+  }
+
+  const service = new RegistrationService(repository);
+  console.log(service.register({ name: &quot;Anik&quot;, email: &quot;ANIK@example.com&quot; }));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">A normalized user object is stored with a lowercase email.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 38 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 49 — Refactor Procedural Code into Focused Classes | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 49 · Refactoring</p><h1>Refactor Procedural Code into Focused Classes</h1><p class="lead">Move unrelated responsibilities into focused classes without changing behavior.</p><div class="pills"><span class="pill">Problem 49 of 50</span><span class="pill">refactoring · single responsibility · cohesion</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Refactor a function that validates a user, stores it, and formats a message into Validator, Repository, and Service responsibilities.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add an EmailValidator collaborator and inject it into UserService without making the service know validation details.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The user name is normalized and stored; each class has one clear responsibility.</p><p><strong>Focus:</strong> refactoring · single responsibility · cohesion</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class UserValidator {
+    validate(input) {
+      const name = String(input.name ?? &quot;&quot;).trim();
+      if (name.length &lt; 2) throw new Error(&quot;Name is required&quot;);
+      return { ...input, name };
+    }
+  }
+  class UserRepository {
+    users = [];
+    save(user) { this.users.push(user); return user; }
+  }
+  class UserService {
+    constructor(validator, repository) {
+      this.validator = validator;
+      this.repository = repository;
+    }
+    register(input) {
+      const validUser = this.validator.validate(input);
+      return this.repository.save(validUser);
+    }
+  }
+
+  const repository = new UserRepository();
+  const service = new UserService(new UserValidator(), repository);
+  const user = service.register({ id: 1, name: &quot;  Anik  &quot; });
+  console.log(`Registered ${user.name}; total users: ${repository.users.length}`);
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">The user name is normalized and stored; each class has one clear responsibility.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 49 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

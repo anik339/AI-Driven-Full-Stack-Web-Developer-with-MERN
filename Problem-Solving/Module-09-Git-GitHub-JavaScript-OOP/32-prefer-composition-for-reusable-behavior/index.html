@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 32 — Prefer Composition for Reusable Behavior | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 32 · Object-oriented programming</p><h1>Prefer Composition for Reusable Behavior</h1><p class="lead">Build an object from small collaborators instead of a deep inheritance tree.</p><div class="pills"><span class="pill">Problem 32 of 50</span><span class="pill">composition · dependency collaboration · separation of concerns</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a UserService by composing a userRepository and logger. The service should save a user and log the action.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Replace the logger with a silent test logger without changing UserService.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The logger prints the registration message and the repository contains one user.</p><p><strong>Focus:</strong> composition · dependency collaboration · separation of concerns</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  // A repository owns data access behavior.
+  const userRepository = {
+    users: [],
+    save(user) { this.users.push(user); return user; }
+  };
+
+  // A logger is another small collaborator.
+  const logger = {
+    info(message) { console.log(`[INFO] ${message}`); }
+  };
+
+  // UserService composes both dependencies rather than inheriting from them.
+  class UserService {
+    constructor(repository, log) {
+      this.repository = repository;
+      this.log = log;
+    }
+
+    register(user) {
+      const saved = this.repository.save(user);
+      this.log.info(`Registered ${saved.name}`);
+      return saved;
+    }
+  }
+
+  const service = new UserService(userRepository, logger);
+  service.register({ id: 1, name: &quot;Anik&quot; });
+  console.log(&quot;Saved users:&quot;, userRepository.users.length);
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">The logger prints the registration message and the repository contains one user.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 32 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

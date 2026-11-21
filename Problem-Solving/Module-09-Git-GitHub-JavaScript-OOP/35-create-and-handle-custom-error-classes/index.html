@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 35 — Create and Handle Custom Error Classes | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 35 · JavaScript reliability</p><h1>Create and Handle Custom Error Classes</h1><p class="lead">Represent domain-specific failures with meaningful error types.</p><div class="pills"><span class="pill">Problem 35 of 50</span><span class="pill">extends Error · custom errors · try/catch</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create an InsufficientFundsError and use it in a BankAccount withdrawal method. Catch the error and display its name and message.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add InvalidAmountError for zero, negative, or non-numeric withdrawal amounts.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The catch block identifies InsufficientFundsError and prints the requested and available amounts.</p><p><strong>Focus:</strong> extends Error · custom errors · try/catch</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  // Custom errors make expected business failures easy to identify.
+  class InsufficientFundsError extends Error {
+    constructor(requested, available) {
+      super(`Requested ${requested}, but only ${available} is available.`);
+      this.name = &quot;InsufficientFundsError&quot;;
+    }
+  }
+
+  class BankAccount {
+    constructor(balance) { this.balance = balance; }
+    withdraw(amount) {
+      if (amount &gt; this.balance) {
+        throw new InsufficientFundsError(amount, this.balance);
+      }
+      this.balance -= amount;
+      return this.balance;
+    }
+  }
+
+  try {
+    new BankAccount(50).withdraw(80);
+  } catch (error) {
+    // Check the error type before choosing a recovery action.
+    if (error instanceof InsufficientFundsError) {
+      console.log(`${error.name}: ${error.message}`);
+    } else {
+      throw error; // Do not hide unexpected programming errors.
+    }
+  }
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">The catch block identifies InsufficientFundsError and prints the requested and available amounts.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 35 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

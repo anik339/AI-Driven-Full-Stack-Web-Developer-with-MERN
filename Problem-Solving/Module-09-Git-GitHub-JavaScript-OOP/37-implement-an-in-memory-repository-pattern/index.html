@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 37 — Implement an In-Memory Repository Pattern | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 37 · Application architecture</p><h1>Implement an In-Memory Repository Pattern</h1><p class="lead">Separate collection storage from the application code that uses it.</p><div class="pills"><span class="pill">Problem 37 of 50</span><span class="pill">repository pattern · CRUD · abstraction</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Build a ProductRepository with create, findById, update, and delete methods backed by an array.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Prevent duplicate IDs and add a findAll method that returns copies of every product.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The product is created, updated to price 45, retrieved, and deleted successfully.</p><p><strong>Focus:</strong> repository pattern · CRUD · abstraction</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class ProductRepository {
+    #products = [];
+    create(product) {
+      // Store a copy so callers cannot mutate repository data by reference.
+      const saved = { ...product };
+      this.#products.push(saved);
+      return { ...saved };
+    }
+    findById(id) {
+      const found = this.#products.find(product =&gt; product.id === id);
+      return found ? { ...found } : null;
+    }
+    update(id, changes) {
+      const index = this.#products.findIndex(product =&gt; product.id === id);
+      if (index === -1) return null;
+      this.#products[index] = { ...this.#products[index], ...changes };
+      return { ...this.#products[index] };
+    }
+    delete(id) {
+      const before = this.#products.length;
+      this.#products = this.#products.filter(product =&gt; product.id !== id);
+      return this.#products.length &lt; before;
+    }
+  }
+
+  const repository = new ProductRepository();
+  repository.create({ id: 1, name: &quot;Keyboard&quot;, price: 50 });
+  console.log(repository.update(1, { price: 45 }));
+  console.log(repository.findById(1));
+  console.log(&quot;Deleted:&quot;, repository.delete(1));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">The product is created, updated to price 45, retrieved, and deleted successfully.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 37 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

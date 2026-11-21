@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 46 — Implement an Observer Pattern for App State | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 46 · Practical OOP</p><h1>Implement an Observer Pattern for App State</h1><p class="lead">Notify subscribers when a small state store changes.</p><div class="pills"><span class="pill">Problem 46 of 50</span><span class="pill">observer pattern · subscribe · state updates</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a Store class with getState, setState, and subscribe. Notify all listeners whenever state changes.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a selector subscription that notifies only when a selected value changes.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The subscriber receives the first state update only; it receives nothing after unsubscribe.</p><p><strong>Focus:</strong> observer pattern · subscribe · state updates</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  class Store {
+    #state;
+    #listeners = new Set();
+    constructor(initialState) { this.#state = initialState; }
+    getState() { return { ...this.#state }; }
+    subscribe(listener) {
+      this.#listeners.add(listener);
+      return () =&gt; this.#listeners.delete(listener);
+    }
+    setState(patch) {
+      // Replace state instead of mutating the existing object.
+      this.#state = { ...this.#state, ...patch };
+      this.#listeners.forEach(listener =&gt; listener(this.getState()));
+    }
+  }
+
+  const store = new Store({ theme: &quot;light&quot;, count: 0 });
+  const unsubscribe = store.subscribe(state =&gt; console.log(&quot;State changed:&quot;, state));
+  store.setState({ count: 1 });
+  unsubscribe();
+  store.setState({ theme: &quot;dark&quot; });
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">The subscriber receives the first state update only; it receives nothing after unsubscribe.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 46 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

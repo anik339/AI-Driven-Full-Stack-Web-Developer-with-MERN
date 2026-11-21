@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 47 — Validate Inputs with Defensive Programming | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 47 · JavaScript reliability</p><h1>Validate Inputs with Defensive Programming</h1><p class="lead">Reject invalid data at the boundary before it reaches business logic.</p><div class="pills"><span class="pill">Problem 47 of 50</span><span class="pill">guard clauses · Number.isFinite · validation</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Write a createProduct function that validates name, price, and stock before returning a normalized product object.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Return all validation errors together instead of stopping at the first invalid field.</div><h2 style="margin-top:18px">Expected behavior</h2><p>A normalized product object is returned; invalid data is rejected with a clear message.</p><p><strong>Focus:</strong> guard clauses · Number.isFinite · validation</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  function createProduct(input) {
+    // Guard clauses keep invalid data from entering the application.
+    const name = String(input.name ?? &quot;&quot;).trim();
+    const price = Number(input.price);
+    const stock = Number(input.stock);
+
+    if (name.length &lt; 2) throw new TypeError(&quot;Product name is too short.&quot;);
+    if (!Number.isFinite(price) || price &lt; 0) throw new TypeError(&quot;Price must be a non-negative number.&quot;);
+    if (!Number.isInteger(stock) || stock &lt; 0) throw new TypeError(&quot;Stock must be a non-negative integer.&quot;);
+
+    return { name, price, stock };
+  }
+
+  console.log(createProduct({ name: &quot;Keyboard&quot;, price: &quot;49.99&quot;, stock: &quot;12&quot; }));
+  try {
+    createProduct({ name: &quot;X&quot;, price: -1, stock: 2 });
+  } catch (error) {
+    console.log(&quot;Validation:&quot;, error.message);
+  }
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">A normalized product object is returned; invalid data is rejected with a clear message.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 47 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

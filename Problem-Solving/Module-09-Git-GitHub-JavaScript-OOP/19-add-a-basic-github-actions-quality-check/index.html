@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 19 — Add a Basic GitHub Actions Quality Check | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 19 · GitHub collaboration</p><h1>Add a Basic GitHub Actions Quality Check</h1><p class="lead">Run a repeatable automated check when code is pushed or a pull request is opened.</p><div class="pills"><span class="pill">Problem 19 of 50</span><span class="pill">GitHub Actions · workflow YAML · CI</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a workflow that checks JavaScript syntax on every push and pull request. Keep the workflow small and explain each step.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a second job that runs unit tests only after a package.json test script exists.</div><h2 style="margin-top:18px">Expected behavior</h2><p>The workflow starts on push and pull_request events. The syntax step fails if a checked JavaScript file has a parse error.</p><p><strong>Focus:</strong> GitHub Actions · workflow YAML · CI</p></section></div><section class="panel code-panel"><div class="code-head"><h2>PowerShell / Git command reference</h2><div class="actions"><button class="btn" id="run-example">Show safe workflow checklist</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>These are Git commands for a terminal. The browser cannot execute them.</p><pre class="codebox"><code id="source-code"># Create this file: .github/workflows/javascript-check.yml
+# GitHub Actions runs this workflow for pushes and pull requests.
+name: JavaScript syntax check
+on: [push, pull_request]
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check JavaScript files
+        run: |
+          find frontend -name &#x27;*.js&#x27; -not -path &#x27;*/node_modules/*&#x27; -print0 | while IFS= read -r -d &#x27;&#x27; file; do
+            node --check &quot;$file&quot;
+          done
+# Commit the workflow and inspect the Actions tab after pushing.
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Git commands are shown for manual execution in PowerShell. They are not executed by this webpage.</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 19 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>

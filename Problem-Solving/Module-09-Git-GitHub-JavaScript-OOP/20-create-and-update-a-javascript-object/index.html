@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 20 — Create and Update a JavaScript Object | Module 09</title><link rel="stylesheet" href="../assets/styles.css"><script src="./script.js" defer></script></head><body><header class="hero"><div class="wrap"><div class="topline"><a href="../index.html">← Module 09 problem dashboard</a><a href="../../../index.html">Main repository home</a></div><p class="eyebrow">Task 20 · JavaScript objects</p><h1>Create and Update a JavaScript Object</h1><p class="lead">Represent a developer profile with an object and update its properties safely.</p><div class="pills"><span class="pill">Problem 20 of 50</span><span class="pill">object literal · properties · bracket notation</span></div></div></header><main class="wrap wrap-main"><div class="backrow"><a href="./README.md">Read full task guide ↗</a><a href="../README.md">Module 09 guide ↗</a></div><div class="task-layout"><section class="panel"><h2>Problem statement</h2><p>Create a profile object with name, role, location, and skills. Add a skill, update the role, and read a property using bracket notation.</p><h2>What to practise</h2><ul><li>Understand the concept before writing code.</li><li>Use clear names and small, focused steps.</li><li>Test normal behavior and at least one edge case.</li><li>Explain the solution without relying on comments alone.</li></ul></section><section class="panel"><h2>Stretch challenge</h2><div class="challenge">Add a `links` object containing GitHub and portfolio URLs, then print only the GitHub URL.</div><h2 style="margin-top:18px">Expected behavior</h2><p>Anik · Dhaka · HTML, CSS, JavaScript, Git</p><p><strong>Focus:</strong> object literal · properties · bracket notation</p></section></div><section class="panel code-panel"><div class="code-head"><h2>Commented JavaScript solution (study after attempting)</h2><div class="actions"><button class="btn" id="run-example">Run example</button><button class="btn secondary" id="copy-code">Copy code</button></div></div><p>Try the problem yourself before opening this reference solution.</p><pre class="codebox"><code id="source-code">function runSolution() {
+  // An object groups related information under named properties.
+  const profile = {
+    name: &quot;Anik&quot;,
+    role: &quot;Frontend Learner&quot;,
+    location: &quot;Dhaka&quot;,
+    skills: [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JavaScript&quot;]
+  };
+
+  // Update one property without rebuilding the entire object.
+  profile.role = &quot;Junior JavaScript Developer&quot;;
+  // Arrays stored in objects can be updated with their own methods.
+  profile.skills.push(&quot;Git&quot;);
+
+  // Bracket notation is useful when the property name is dynamic.
+  const selectedProperty = &quot;location&quot;;
+  console.log(profile.name);
+  console.log(profile[selectedProperty]);
+  console.log(profile.skills.join(&quot;, &quot;));
+}
+</code></pre><h2 style="margin-top:18px">Output / practice checklist</h2><pre class="output" id="output">Anik · Dhaka · HTML, CSS, JavaScript, Git</pre></section><p style="margin-top:18px"><a href="../index.html">← Return to all 50 Module 09 problems</a></p></main><footer><div class="wrap">Module 09 · Task 20 · Read → Attempt → Run → Explain → Extend</div></footer><script>document.addEventListener('DOMContentLoaded',()=>{const runButton=document.querySelector('#run-example');if(runButton.textContent.trim()==='Run example' && typeof runExample==='function')runButton.addEventListener('click',runExample);document.querySelector('#copy-code').addEventListener('click',async()=>{const text=document.querySelector('#source-code').textContent;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-code').textContent='Copied';}catch{document.querySelector('#copy-code').textContent='Select code to copy';}});});</script></body></html>
